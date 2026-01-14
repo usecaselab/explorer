@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Use Case Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Patrick Hand', cursive;
+        background-color: #fff;
+        color: #2d2d2d;
+      }
+      h1, h2, h3, h4, h5, h6, .font-heading {
+        font-family: 'Space Grotesk', sans-serif;
+      }
+      /* Custom scrollbar to match the sketch vibe */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ethBlue: '#627EEA',
+              ethLightBlue: '#ECF0F9',
+              markerBlack: '#2d2d2d',
+              paper: '#ffffff',
+              alertRed: '#FFCDCD',
+              successGreen: '#C9EFC7',
+              pastelYellow: '#FFF4C3',
+            },
+            boxShadow: {
+              'sketch': '3px 3px 0px 0px rgba(0,0,0,1)',
+              'sketch-hover': '5px 5px 0px 0px rgba(0,0,0,1)',
+              'sketch-sm': '2px 2px 0px 0px rgba(0,0,0,1)',
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
