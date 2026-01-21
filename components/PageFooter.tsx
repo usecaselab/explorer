@@ -1,15 +1,8 @@
 import React from 'react';
-import { GitPullRequest } from 'lucide-react';
 
 const PageFooter: React.FC = () => {
   return (
-    <div className="mt-16 pt-8 border-t-2 border-black/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-        {/* Edit Button */}
-        <a href="#" className="flex items-center gap-2 text-gray-600 hover:text-black font-bold border-2 border-gray-200 hover:border-black rounded-lg px-4 py-2 transition-all group bg-white">
-            <GitPullRequest className="w-4 h-4 group-hover:rotate-12 transition-transform" />
-            Edit this Page
-        </a>
-
+    <div className="mt-16 pt-8 border-t-2 border-black/10 flex flex-col md:flex-row items-start md:items-center justify-end gap-6">
         {/* Page Metadata */}
         <div className="flex flex-col gap-2">
             <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Page last update: October 18, 2025</span>
