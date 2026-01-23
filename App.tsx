@@ -1,17 +1,12 @@
 
 import React, { useState, useMemo, useRef, useEffect } from 'react';
-import { DOMAINS, DOMAIN_IDS, DOMAIN_CATEGORIES } from './constants';
+import { DOMAINS, DOMAIN_CATEGORIES } from './constants';
 import { DomainData } from './types';
 import { parseDomainMarkdown } from './utils';
-import DomainSidebar from './components/DomainSidebar';
-import OverviewTab from './components/OverviewTab';
-import BountiesTab from './components/BountiesTab';
-import PageFooter from './components/PageFooter';
+import UseCaseModal from './components/UseCaseModal';
 import SiteFooter from './components/SiteFooter';
 import Logo from './components/Logo';
-import { Search, Menu, X, Triangle, Square, ExternalLink, ChevronRight, Home } from 'lucide-react';
-
-type Tab = 'overview' | 'bounties';
+import { Search, X } from 'lucide-react';
 
 // Home view for the landing state - Google-like search experience
 interface HomeViewProps {
@@ -251,9 +246,7 @@ const HomeView: React.FC<HomeViewProps> = ({
 const App: React.FC = () => {
   const [domains, setDomains] = useState<DomainData[]>(DOMAINS);
   const [activeDomainId, setActiveDomainId] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<Tab>('overview');
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  
+
   // Search State
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchFocused, setIsSearchFocused] = useState(false);
@@ -280,24 +273,9 @@ const App: React.FC = () => {
     loadDomainData();
   }, []);
 
-  const activeData = activeDomainId 
+  const activeData = activeDomainId
     ? (domains.find(d => d.id === activeDomainId) || domains[0])
     : null;
-
-  // Helper to find category of active domain
-  const activeCategory = useMemo(() => {
-      if (!activeData) return null;
-      for (const [category, items] of Object.entries(DOMAIN_CATEGORIES)) {
-          const normalize = (str: string) => str.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and');
-           const map: Record<string, string> = {
-                'Alternative Money': 'alt-money',
-                'AI': 'ai',
-            };
-          const ids = items.map(i => map[i] || normalize(i));
-          if (ids.includes(activeData.id)) return category;
-      }
-      return 'Explore';
-  }, [activeData]);
 
   // Close search when clicking outside
   useEffect(() => {
@@ -369,14 +347,16 @@ const App: React.FC = () => {
     setActiveDomainId(domainId);
     setSearchQuery('');
     setIsSearchFocused(false);
-    setActiveTab('overview');
   };
 
   // Handler for selecting a domain from anywhere
   const handleSelectDomain = (id: string) => {
     setActiveDomainId(id);
-    setIsSidebarOpen(false);
-    setActiveTab('overview');
+  };
+
+  // Handler for closing the modal
+  const handleCloseModal = () => {
+    setActiveDomainId(null);
   };
 
   return (
@@ -390,199 +370,23 @@ const App: React.FC = () => {
            }}
       />
 
-      {/* Header - Only shown when a domain is selected */}
+      {/* Main Content Area - Always show home page */}
+      <HomeView
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        isSearchFocused={isSearchFocused}
+        setIsSearchFocused={setIsSearchFocused}
+        searchResults={searchResults}
+        handleSelectSearchResult={handleSelectSearchResult}
+        searchContainerRef={searchContainerRef}
+        onSelectDomain={handleSelectDomain}
+      />
+      <SiteFooter />
+
+      {/* Use Case Modal - Shows on top of home page */}
       {activeData && (
-        <header className="sticky top-0 z-40 flex items-center justify-between px-4 md:px-6 py-3 border-b-2 border-black bg-white/95 backdrop-blur-sm shadow-sm">
-
-          <div className="flex items-center gap-4">
-              {/* Mobile Menu Button */}
-              <button
-                  className="md:hidden p-2 -ml-2 text-markerBlack"
-                  onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              >
-                  {isSidebarOpen ? <X /> : <Menu />}
-              </button>
-
-              {/* Logo / Title */}
-              <button
-                  className="flex items-center select-none hover:opacity-80 transition-opacity text-left"
-                  onClick={() => {
-                      setActiveDomainId(null);
-                      setSearchQuery('');
-                  }}
-              >
-                  <Logo showText />
-              </button>
-          </div>
-
-          {/* Autocomplete Search Bar */}
-          <div className="relative" ref={searchContainerRef}>
-              <div className={`
-                  flex items-center gap-2 border-2 border-black px-3 py-1.5 rounded-full bg-white transition-all
-                  ${isSearchFocused ? 'shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -translate-y-0.5 ring-2 ring-blue-100' : 'shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'}
-              `}>
-                  <Search className="w-4 h-4 text-gray-500" />
-                  <input
-                      type="text"
-                      placeholder="Search ideas, problems..."
-                      value={searchQuery}
-                      onChange={(e) => {
-                          setSearchQuery(e.target.value);
-                          setIsSearchFocused(true);
-                      }}
-                      onFocus={() => setIsSearchFocused(true)}
-                      className="outline-none text-sm w-32 md:w-64 bg-transparent font-medium text-markerBlack placeholder-gray-400"
-                  />
-                  {searchQuery && (
-                      <button onClick={() => setSearchQuery('')}>
-                          <X className="w-3 h-3 text-gray-400 hover:text-black" />
-                      </button>
-                  )}
-              </div>
-
-              {/* Search Results Dropdown */}
-              {isSearchFocused && searchQuery && (
-                  <div className="absolute top-full right-0 mt-2 w-80 bg-white border-2 border-black rounded-xl shadow-sketch overflow-hidden z-50 animate-in fade-in slide-in-from-top-2">
-                      {searchResults.length > 0 ? (
-                          <ul>
-                              {searchResults.map((result) => (
-                                  <li key={result.id}>
-                                      <button
-                                          onClick={() => handleSelectSearchResult(result.id)}
-                                          className="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-colors group"
-                                      >
-                                          <div className="flex justify-between items-start">
-                                              <span className="font-bold font-heading text-markerBlack group-hover:text-ethBlue">{result.title}</span>
-                                          </div>
-                                          <p className="text-xs text-gray-500 truncate mt-0.5">
-                                              <span className="text-gray-400 mr-1">↳</span>
-                                              {result.detail}
-                                          </p>
-                                      </button>
-                                  </li>
-                              ))}
-                          </ul>
-                      ) : (
-                          <div className="p-4 text-center text-gray-400 text-sm font-medium italic">
-                              No results found.
-                          </div>
-                      )}
-                  </div>
-              )}
-          </div>
-        </header>
+        <UseCaseModal data={activeData} onClose={handleCloseModal} />
       )}
-
-      {/* Main Content Area */}
-      {!activeData ? (
-        // Landing Page - Google-like search experience
-        <>
-          <HomeView
-            searchQuery={searchQuery}
-            setSearchQuery={setSearchQuery}
-            isSearchFocused={isSearchFocused}
-            setIsSearchFocused={setIsSearchFocused}
-            searchResults={searchResults}
-            handleSelectSearchResult={handleSelectSearchResult}
-            searchContainerRef={searchContainerRef}
-            onSelectDomain={handleSelectDomain}
-          />
-          <SiteFooter />
-        </>
-      ) : (
-        // Domain Detail View
-        <main className="flex-1 relative z-10 max-w-7xl mx-auto w-full p-4 md:p-6 flex flex-col md:flex-row gap-6">
-
-          {/* Sidebar */}
-          <aside className={`
-              fixed inset-y-0 left-0 w-72 bg-white border-r-2 border-black z-50 p-4 transform transition-transform duration-300 md:relative md:transform-none md:bg-transparent md:border-none md:z-0 md:p-0 md:w-auto
-              ${isSidebarOpen ? 'translate-x-0 shadow-[100vw_0_0_0_rgba(0,0,0,0.5)]' : '-translate-x-full md:translate-x-0'}
-          `}>
-              <div className="md:hidden flex justify-end mb-16">
-                  <button onClick={() => setIsSidebarOpen(false)}><X className="w-6 h-6 text-markerBlack" /></button>
-              </div>
-
-              <DomainSidebar
-                  domains={DOMAIN_IDS}
-                  selectedDomainId={activeDomainId}
-                  onSelect={handleSelectDomain}
-              />
-          </aside>
-
-          {/* Right Panel */}
-          <section className="flex-1 flex flex-col min-w-0">
-              {activeData && (
-                <div className="flex flex-col gap-4">
-                    
-                    <div className="border-2 border-black rounded-3xl bg-white p-1 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex-1 flex flex-col">
-                        <div className="p-6 md:p-8 flex-1 flex flex-col">
-                            
-                            {/* Title of Domain & Join Link */}
-                            <div className="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                                <div className="flex-1">
-                                    <h2 className="text-3xl md:text-5xl font-bold font-heading text-markerBlack leading-tight">{activeData.title}</h2>
-                                    {activeData.problemStatement === "Loading..." && (
-                                        <div className="inline-block bg-yellow-100 text-yellow-800 text-xs font-bold px-2 py-1 border border-yellow-300 rounded mt-2 animate-pulse">
-                                            Fetching data...
-                                        </div>
-                                    )}
-                                </div>
-                                
-                                <a 
-                                    href="#" 
-                                    className="flex-shrink-0 flex items-center justify-center gap-2 px-5 py-2.5 bg-ethLightBlue border-2 border-black rounded-xl font-bold text-markerBlack shadow-sketch-sm hover:shadow-sketch hover:-translate-y-0.5 transition-all text-sm md:text-base group"
-                                >
-                                    Join the Community 
-                                    <ExternalLink className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                                </a>
-                            </div>
-
-                            {/* Tab Navigation */}
-                            <div className="flex gap-6 border-b-2 border-dashed border-gray-200 mb-8 flex-wrap">
-                                {['Overview', 'Bounties'].map((tab) => {
-                                    const tabKey = tab.toLowerCase() as Tab;
-                                    const isActive = activeTab === tabKey;
-                                    return (
-                                        <button
-                                            key={tab}
-                                            onClick={() => setActiveTab(tabKey)}
-                                            className={`
-                                                pb-3 px-1 font-heading font-bold text-lg transition-all relative whitespace-nowrap
-                                                ${isActive 
-                                                    ? 'text-ethBlue' 
-                                                    : 'text-gray-400 hover:text-gray-600'}
-                                            `}
-                                        >
-                                            {tab}
-                                            {isActive && (
-                                                <span className="absolute bottom-[-2px] left-0 w-full h-[3px] bg-ethBlue rounded-full" />
-                                            )}
-                                        </button>
-                                    )
-                                })}
-                            </div>
-
-                            {/* Tab Content */}
-                            <div className="flex-1">
-                                {activeTab === 'overview' && (
-                                    <>
-                                        <OverviewTab data={activeData} />
-                                        <PageFooter />
-                                    </>
-                                )}
-                                {activeTab === 'bounties' && <BountiesTab bounties={activeData.bounties} />}
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-              )}
-          </section>
-
-        </main>
-      )}
-
-      {activeData && <SiteFooter />}
     </div>
   );
 };
