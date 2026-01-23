@@ -50,7 +50,7 @@ const HomeView: React.FC<HomeViewProps> = ({
     <div className="flex-1 flex flex-col items-center justify-start min-h-screen relative overflow-hidden">
 
       {/* Hero Section with decorated white background */}
-      <div className="relative z-10 w-full bg-white border-b-2 border-black">
+      <div className="relative z-20 w-full bg-white border-b-2 border-black">
 
         {/* Decorative Elements */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
