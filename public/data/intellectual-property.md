@@ -1,33 +1,50 @@
-# Intellectual Property
+# Intellectual Property (IP)
 
-## The Opportunity
-Registering IP is expensive, slow, and jurisdiction-bound. Creators struggle to monetize their work globally or track its usage. The current patent system favors large corporations over individual inventors.
+Categories: Enterprise
+Last edited time: November 1, 2025 3:43 PM
 
-## Ideas
+*overlaps with Scientific Research, Healthcare, Media & Entertainment
 
-### IP-NFTs
-Representing patents, copyrights, or trademarks as NFTs to allow for easy licensing, fractional ownership, and liquidity.
+# Problem
 
-### on-chain Royalty Standards
-Universal standards (like EIP-2981) that ensure creators receive a percentage of secondary sales across all marketplaces.
+Intellectual property systems—covering patents, copyrights, and trademarks—are fragmented, slow, and costly. Licensing often relies on one-time fees instead of usage-based models, leaving inventors undercompensated and innovation underfunded. Global variations in law, opaque registries, and expensive enforcement limit access, while creators and small innovators struggle to monetize rights fairly.
 
-### Patent Pools
-DAOs that collectively own and license patents, reducing litigation risks and lowering costs for members.
+# **Opportunities**
 
-### Proof of Creation
-Timestamping creative works on a blockchain to establish a verifiable date of creation for copyright claims.
+- Smart contracts for usage-based, automated licensing and royalty payments
+- Onchain registration for copyright, patents, and trademarks
+- Tokenized IP assets enabling fractional ownership, financing, and trading
+- Licensing pools and collective rights management
+- Cross-industry interoperability for IP across IoT, media, healthcare, and scientific research
+- Proof of existence / tamper proof records such as lab books or drafts to strengthen “first to invention” rather than just registration claims.
 
-## Projects
+# **Emerging Trends**
 
-### Story Protocol
-- Status: beta
-- URL: https://www.storyprotocol.xyz
-Infrastructure for IP licensing and management.
+- Open science and patent commons for faster innovation (Open COVID Pledge, CERN Open Hardware)
+- AI-generated content driving demand for new IP frameworks
+- Usage-based and subscription licensing models replacing static fee structures
 
-### Moleclue
-- Status: active
-- URL: https://molecule.to
-IP-NFTs for biopharma research.
+# Blockers
 
-## Resources
-- [The Future of IP](https://a16zcrypto.com) (2023)
+- Difficulty bridging off-chain legal contracts with onchain enforcement
+- High institutional inertia and entrenched intermediaries in patent and copyright offices
+
+# Resources
+
+**Projects**
+
+- [license.rocks](https://license.rocks/) ([Daud](https://x.com/zulfacar))
+- Story - L1 focused on IP
+
+Research
+
+- [BRI: How Blockchain is Transforming the Creative Industries](https://www.blockchainresearchinstitute.org/project/how-blockchain-is-transforming-the-creative-industries/) (2017) - Surveys blockchain’s role in copyright management across creative sectors.
+- [BRI: Patents and Blockchain Innovation](https://www.blockchainresearchinstitute.org/project/patents-and-blockchain-innovation/) (2018) - Fair compensation in patent licensing.
+- [BRI: Certifying Copyright in Canada on the Blockchain](https://www.blockchainresearchinstitute.org/project/certifying-copyright-in-canada-on-the-blockchain/) (2019) - Explores how Canada’s copyright office could use blockchain for copyright registration.
+- [BRI: KODAKOne: Changing the Still Image Marketplace](https://www.blockchainresearchinstitute.org/project/kodakone-changing-the-still-image-marketplace-on-the-blockchain/) (2019) - Case study on blockchain licensing for photographers and challenges of copyright law.
+- [BRI: Patents at the Trivergence](https://www.blockchainresearchinstitute.org/project/patents-at-the-trivergence/) (2022) - Explores blockchain, AI, and IoT convergence for patent innovation.
+- [Digital assets rights management through smart legal contracts](https://www.sciencedirect.com/science/article/pii/S2096720923000179) (2023) - Proposes hybrid smart legal + smart contract approach for royalties and rights transfer.
+- [Efficient copyright verification in a DApp](https://www.sciencedirect.com/science/article/pii/S2096720924000472) (2025) - Algorand-based system for decentralized copyright rights representation and verification.
+- Jan-Gero Alexander Hannemann’s report on tokenised patent licensing.
+    
+    [2025_07_30_Research_Report_Happy_Birthday_Ethereum.pdf](Intellectual%20Property%20(IP)/2025_07_30_Research_Report_Happy_Birthday_Ethereum.pdf)

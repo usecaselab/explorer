@@ -1,43 +1,47 @@
 # IT Infrastructure
 
-## The Opportunity
-Cloud computing is dominated by a few giants. Decentralized infrastructure offers censorship resistance, lower costs, and better uptime through redundancy.
+Categories: Enterprise
+Last edited time: December 22, 2025 7:17 PM
 
-## Ideas
+# Problem
 
-### Decentralized Storage
-Rent out unused hard drive space to store encrypted files for others (like Airbnb for data).
+Provisioning and managing IT infrastructure—storage, compute, bandwidth, and connectivity—remains centralized, costly, and vulnerable to chokepoints. Cloud giants dominate access to servers, GPUs, and content delivery, while telecom incumbents gatekeep connectivity and pricing. Systems for inter-carrier settlements, bandwidth resale, and storage verification are inefficient, opaque, and prone to censorship or single points of failure.
 
-### Decentralized Compute
-Rent out idle GPU/CPU cycles for rendering or AI model training.
+# Opportunities
 
-### Decentralized RPC
-Networks of nodes serving blockchain data requests to ensure no single point of failure for dApps.
+- GPU and compute marketplaces for AI and high-performance workloads
+- Open telecom and connectivity infrastructure (mesh, satellite, spectrum sharing, 5G, esim)
+- Decentralized VPNs, mixnets and bandwidth-sharing markets
+- Streaming, video, sensor and mapping services powered by token incentives
+- Intercarrier settlements and cross-network provisioning
+- General pattern of real time payment for priority access to contested resources.
 
-## Projects
+# **Emerging Trends**
 
-### Filecoin
-- Status: active
-- URL: https://filecoin.io
-Decentralized storage network.
+- Satellite-based global internet services (Starlink, OneWeb)
+- [MVNOs](https://en.wikipedia.org/wiki/Mobile_virtual_network_operator) decoupling device identity and operator provisioning
 
-### Akash Network
-- Status: active
-- URL: https://akash.network
-Open network for cloud computing.
+# Resources
 
-## Bounties
+**Projects**
 
-### Build a Filecoin Storage Bridge
-- Amount: 2000 USDC
-- Status: Open
-- URL: https://github.com/filecoin-project/devgrants
-Create a bridge to easily move data between S3 and Filecoin.
+- [Huddle01](https://huddle01.com/) - Decentralized video conferencing and streaming
+- [Livepeer](https://www.livepeer.org/) - Video transcoding and streaming marketplace
+- [Hivemapper](https://hivemapper.com/) - Token-incentivized mapping from dashcams
+- [FOAM](https://foam.space/) - Decentralized geolocation and mapping
+- [Filecoin](https://filecoin.io/) - Decentralized storage network with cryptographic proofs
+- Akash, [io.net](http://io.net) - GPU/compute marketplaces - Decentralized high-performance compute
+- [Nym](https://nymtech.net/), [GnosisVPN](https://vpn.gnosis.eth.limo/), Sentinel - Decentralized VPN and bandwidth-sharing platforms
+- [Helium](https://www.helium.com/), [World Mobile](https://worldmobile.io/) - Community-powered telecom and connectivity infrastructure
+- [Peaq](https://www.peaq.network/) - DePIN infrastructure for resource coordination across domains
+- [WeatherXM](https://weatherxm.com/) - weather station network
+- [GEODNET](https://geodnet.com/) - real-time positioning data network
+- [Kokio](https://www.kokio.app/) - onchain esim
 
-### Optimize Akash GPU Scheduler
-- Amount: 1500 AKT
-- Status: In Progress
-Improve the matching algorithm for GPU providers.
+**Research**
 
-## Resources
-- [Web3 Infrastructure Stack](https://messari.io) (2023)
+- [BRI: Distributed Connectivity](https://www.blockchainresearchinstitute.org/project/distributed-connectivity/) (2017) - Early study of blockchain’s impact on telecom infrastructure.
+- [BRI: 5G Bypass](https://www.blockchainresearchinstitute.org/project/5g-bypass/) (2019) - Explores blockchain-enabled mesh networks as an alternative to incumbent telecoms.
+- [BRI: Blockchain Transformation in Telecommunications](https://www.blockchainresearchinstitute.org/project/blockchain-transformation-in-telecommunications/) (2021) - Surveys applications from cross-carrier settlements to identity and service provisioning.
+- [Reward Sharing for Mixnets](https://cryptoeconomicsystems.pubpub.org/pub/diaz-reward-sharing-mixnets/release/2?readingCollection=082fed82) (2022) - reward sharing scheme for incentivized network privacy infrastructures such as the Nym mixnet
+- [TRADE-5G: A blockchain-based transparent and secure resource exchange for 5G network slicing](https://www.sciencedirect.com/science/article/pii/S2096720924000599) (2025) - Introduces a blockchain marketplace for 5G resources that improves efficiency and security while enabling new revenue streams for providers.

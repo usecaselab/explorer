@@ -1,174 +1,65 @@
 # Credit & Capital Formation
 
-## The Opportunity
+Categories: Enterprise
+Last edited time: January 23, 2026 9:33 PM
+
+# **Problem**
+
 Small and medium enterprises (SMEs) are underserved by traditional finance: credit is scarce, underwriting is costly, and capital markets are inaccessible. Inefficiencies in trade credit, slow processing time, and high intermediary fees constrain SME growth and resilience. Crowdfunding and other alternative financing options remain limited in scale and fail to provide sustained access to affordable capital.
 
-## Ideas
+# **Opportunities**
 
-### Trade credit clearing
-Netting obligations across SME networks.
+- Trade credit clearing: netting obligations across SME networks
+- Commitment pooling: mutualized reserves and cooperative liquidity
+- Factoring: tokenized receivables and real-time invoice financing
+- Crowdfunding: open platforms for equity, tokens, and community capital
+- Crowdlending: peer-to-peer loans with transparent terms
+- Microloans: accessible, low-friction capital for underserved entrepreneurs
+- Credit unions: blockchain-based cooperative finance models
+- Equity tokenization: SMEs can issue tokenized shares, bypassing expensive IPOs and private placements ([source](https://enterpriseonchain.substack.com/p/tokenizations-30t-futureheres-what))
 
-### Commitment pooling
-Mutualized reserves and cooperative liquidity.
+# **Emerging Trends**
 
-### Factoring
-Tokenized receivables and real-time invoice financing.
+- Lending marketplaces: [Lendio](https://www.lendio.com/)
+- [SBA backed loans](https://www.sba.gov/funding-programs/loans)
+- Embedded finance for SMEs (Stripe Capital, Shopify Capital)
+- Alt-credit scoring using alternative data (Tala, Nova Credit)
 
-### Crowdfunding
-Open platforms for equity, tokens, and community capital.
+# Blockers
 
-### Crowdlending
-Peer-to-peer loans with transparent terms.
+- Credit risk assessment and reliable SME identity/onchain reputation
+- Securities regulations, bank licensing regulations
 
-### Microloans
-Accessible, low-friction capital for underserved entrepreneurs.
+# **Resources**
 
-### Credit unions
-Blockchain-based cooperative finance models.
+**Projects**
 
-### Equity tokenization
-SMEs can issue tokenized shares, bypassing expensive IPOs and private placements.
+- Credit & Lending
+    - [3jane](https://www.3jane.xyz/) - credit infrastructure for Web3
+    - [Pact](https://pactfoundation.com/) - cooperative credit systems
+    - [EthicHub](https://www.ethichub.com/) - crowdlending to smallholder farmers
+    - [Kotanipay](https://kotanipay.com/) - microloans via mobile money rails
+    - World Credit mini-app - peer-to-peer microfinance
+    - [Haraka](https://haraka.xyz/) - microloans and alternative credit scoring
+    - [Union](https://union.finance/) - decentralized credit protocol
+    - [Topos](https://topos.one/) - global credit network (exploratory)
+    - [Cycles](https://cycles.money/) - trade credit clearing for SMEs
+    - [Grassroots Economics](https://www.grassrootseconomics.org/) - commitment pooling and community currencies
+    - [Jia](https://www.jia.xyz/) - SME loans with tokenized yield-sharing
+    - Goldfinch, Maple Finance - decentralized credit marketplaces
+    - [Filigreen](https://filigreen.org/) - community bank for DAOs (Josh Tan)
+- Capital Formation
+    - [Fairmint](https://www.fairmint.com/) - equity crowdfunding platform
+    - [CrowdFi](https://crowdfi.withfabric.xyz/) - decentralized crowdfunding rails
+    - Balancer LBP /  Fjord Foundry - token launchpad
+    - [Quadratic Accelerator](https://x.com/theqacc) - bonding curves plus quadratic funding
+    - Syndicated investment: [Legion](https://legion.cc/), [Echo](https://echo.xyz/), [StationX](https://www.stationx.network/)
+- Tokenization
+    - Aktionariat AG, a Swiss fintech firm, **tokenized SME equity using Ethereum**, enabling direct investor participation ([source](https://enterpriseonchain.substack.com/p/tokenizations-30t-futureheres-what))
+    - [Street.app](http://Street.app) - partial equity tokenization
+    - [Superstate](https://superstate.com/) - tokenized shares
+    - [Ondo](https://app.ondo.finance/) -
 
-## Projects
-
-### 3jane
-- Status: active
-- URL: https://www.3jane.xyz/
-
-Credit infrastructure for Web3.
-
-### Pact
-- Status: active
-- URL: https://pactfoundation.com/
-
-Cooperative credit systems.
-
-### EthicHub
-- Status: active
-- URL: https://www.ethichub.com/
-
-Crowdlending to smallholder farmers.
-
-### Kotanipay
-- Status: active
-- URL: https://kotanipay.com/
-
-Microloans via mobile money rails.
-
-### World Credit mini-app
-- Status: beta
-
-Peer-to-peer microfinance.
-
-### Haraka
-- Status: active
-- URL: https://haraka.xyz/
-
-Microloans and alternative credit scoring.
-
-### Union
-- Status: active
-- URL: https://union.finance/
-
-Decentralized credit protocol.
-
-### Topos
-- Status: beta
-- URL: https://topos.one/
-
-Global credit network (exploratory).
-
-### Cycles
-- Status: active
-- URL: https://cycles.money/
-
-Trade credit clearing for SMEs.
-
-### Grassroots Economics
-- Status: active
-- URL: https://www.grassrootseconomics.org/
-
-Commitment pooling and community currencies.
-
-### Jia
-- Status: active
-- URL: https://www.jia.xyz/
-
-SME loans with tokenized yield-sharing.
-
-### Goldfinch
-- Status: active
-- URL: https://goldfinch.finance
-
-Decentralized credit marketplace.
-
-### Maple Finance
-- Status: active
-- URL: https://maple.finance
-
-Decentralized corporate credit market.
-
-### Filigreen
-- Status: active
-- URL: https://filigreen.org/
-
-Community bank for DAOs.
-
-### Fairmint
-- Status: active
-- URL: https://www.fairmint.com/
-
-Equity crowdfunding platform.
-
-### CrowdFi
-- Status: active
-- URL: https://crowdfi.withfabric.xyz/
-
-Decentralized crowdfunding rails.
-
-### Balancer LBP
-- Status: active
-- URL: https://balancer.fi
-
-Token launchpad mechanism.
-
-### Fjord Foundry
-- Status: active
-- URL: https://fjordfoundry.com
-
-Liquidity bootstrapping platform.
-
-### Quadratic Accelerator
-- Status: beta
-- URL: https://x.com/theqacc
-
-Bonding curves plus quadratic funding.
-
-### StationX
-- Status: active
-- URL: https://www.stationx.network/
-
-Syndicated investment.
-
-### Legion
-- Status: active
-- URL: https://legion.cc/
-
-Syndicated investment.
-
-### Echo
-- Status: active
-- URL: https://echo.xyz/
-
-Syndicated investment.
-
-### Aktionariat
-- Status: active
-- URL: https://www.aktionariat.com/
-
-Tokenized SME equity.
-
-## Resources
+**Research**
 
 - [Use case spotlight: Piloting the tokenisation of investment bonds on EBSI](https://ec.europa.eu/digital-building-blocks/sites/spaces/EBSI/pages/915931247/Use+case+spotlight+piloting+the+tokenisation+of+investment+bonds+on+EBSI) (2025) - EU pilot for tokenized bonds enabling cheaper SME financing
-- [Tokenizations $30T Future](https://enterpriseonchain.substack.com/p/tokenizations-30t-futureheres-what) (2025) - Source on Equity tokenization

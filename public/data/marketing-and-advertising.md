@@ -1,30 +1,37 @@
 # Marketing & Advertising
 
-## The Opportunity
-Ad tech is plagued by fraud and middlemen taking 50%+ of spend. Users are tracked without consent. Web3 offers direct attribution and user ownership.
+Categories: Enterprise
+Last edited time: November 1, 2025 3:29 PM
 
-## Ideas
+# Problem
 
-### Brave/BAT Model
-Users get paid to view ads; advertisers pay users directly, removing the middleman.
+Digital advertising is dominated by centralized platforms that control audience data, take large cuts of ad spend, and operate with limited transparency. Fraud, fake impressions, and opaque attribution undermine trust. Creators and consumers capture little of the value they generate, while advertisers face rising costs and shrinking margins.
 
-### On-Chain Attribution
-Verifying marketing ROI by tracking conversion events (wallet transactions) directly on-chain without cookies.
+# **Opportunities**
 
-### Token-Gated Communities
-Brands creating exclusive content or merchandise access for holders of their NFTs.
+- Decentralized ad networks: transparent impression tracking, voluntary disclosure with ZK proofs.
+- Onchain influencer marketing: verifiable reach and engagement for payouts.
+- Programmable ad spend: direct funding of dapps or public goods via ad revenue.
+- Tokenized loyalty and rewards: integrating ad campaigns with consumer incentives.
 
-## Projects
+# **Emerging Trends**
 
-### Brave Browser
-- Status: active
-- URL: https://brave.com
-Privacy browser with Basic Attention Token.
+- Creator economy platforms for UGC and influencer deals (Billo, Trend.io, Grin)
+- Retail media networks monetizing shopper data (Amazon, Walmart)
+- AI-driven content generation and targeting (OpenAI, Jasper)
+- Privacy-first ad models in browsers and mobile (Apple ATT, Google Privacy Sandbox)
 
-### Lens Protocol
-- Status: active
-- URL: https://www.lens.xyz
-Social graph for building user-owned social apps.
+# Resources
 
-## Resources
-- [Web3 Marketing Playbook](https://a16z.com) (2022)
+**Projects**
+
+- [The Miracle](https://www.themiracle.io/) - target & activate crypto users
+- [EarnOS](https://earnos.com/) – ad platform integrating Web3 wallets and tokenized rewards.
+- [MadHive](https://www.madhive.com/about-us) – programmatic ad solutions with blockchain components.
+- [EthereumAds](https://ethereumads.com/) - lets web site operators sell advertising space
+- [AdLedger](https://adledger.org/) – blockchain consortium for advertising transparency.
+- [Brave](https://brave.com/) - pays users for their attention to advertisements and users can pay publishers to support them
+
+**Research**
+
+- [Applications of Blockchain Technology in marketing—A systematic review of marketing technology companies](https://www.sciencedirect.com/science/article/pii/S209672092100018X) (2021) - Analyzed 800 blockchain marketing companies, finding concentration in advertising and ecommerce, and identifying gaps in social, content, and data applications.

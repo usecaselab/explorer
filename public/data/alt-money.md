@@ -1,63 +1,85 @@
 # Alternative Money
 
-## The Opportunity
-Money design has long been limited to state and bank-backed systems. Alternative models rarely scale. Communities want value-aligned currencies but lack the platforms and governance to issue and sustain them. New currencies face barriers in liquidity, trust, regulatory hurdles, and go-to-market.
+Categories: Civil Society
+Last edited time: November 18, 2025 2:26 AM
 
-## Ideas
+## Problem
 
-### Algorithmic money supply
+Money underpins every exchange, yet the design space for monetary systems has been narrowly dominated by state fiat and bank-reserve backed money. Alternative forms — including local currencies, mutual credit systems, demurrage money or algorithmic units of account — have historically struggled to scale. Many communities, municipalities and networks desire currencies that reflect their values and incentives, but lack reliable platforms, protocols and governance frameworks to design, issue and circulate them. Innovators face the challenge of creating currencies that function as a viable **store of value**, **medium of exchange** and/or **unit of account**, while addressing liquidity, trust and adoption constraints.
 
-Design currencies that automatically adjust their supply based on real-time demand to maintain purchasing power stability without central bank intervention.
+---
 
-### Labor-backed money
+## Opportunities
 
-Create issuance mechanisms where tokens are minted solely through verifiable proof of human work or community service.
+Ethereum can enable networks, communities and regions to design, issue and govern currencies aligned with their values, supported by interoperable infrastructure for issuance, circulation, and user authentication.
 
-### Energy-backed money
+- **Algorithmic monetary policy:** Supply rules embedded in code, exploring demurrage (negative interest), inflation-adjusted supply, or seigniorage-share models.
+- **Community & local currencies:** Network- or territory-based currencies (e.g., BerkShares, Grassroots Economics, CityCoins, Circles) that enable value capture and tailored incentives for local economies.
+- **Credit-based money:** Mutual credit networks or IOU systems where medium of exchange emerges from platform trust and reputation rather than bank money.
+- **Commodity- or energy-backed units:** Currencies tied to baskets of goods, energy production or reserves (e.g., energy-linked credits or asset-backed stable tokens).
+- **Labor- and service-backed money:** Time-banking, service-exchange systems where value is anchored in labor or trusted work rather than fiat.
+- **Indexed or basket currencies:** Units constructed to preserve purchasing power by tracking commodities or economic indicators.
+- **Barter networks & swap-based systems:** Peer networks where value circulates via alternative mediums of exchange enabled by protocol tools and tokenization.
 
-Tokens pegged to or minted by kilowatt-hours of renewable energy production, creating a currency backed by physical laws.
+---
 
-### UBI issuance
+## Emerging Trends
 
-Networks that distribute newly minted tokens equally to verified unique humans, creating a baseline of economic security.
+Several shifts increase the feasibility and relevance of new currency systems:
 
-### Credit-based issuance
+- Institutional acceptance of Bitcoin as alternative SoV.
+- Institutionalization of stablecoins.
+- Growing debates and research on community currencies, token economy design and value circulation in local contexts. ([belfercenter.org](http://belfercenter.org))
+- Experimental deployments of community or complementary currencies, especially during crisis or economic stress contexts. ([IMF](https://www.imf.org/en/Publications/fandd/issues/2021/03/technological-innovation-fueling-community-currencies-adriano?utm_source=chatgpt.com))
 
-Mutual credit clearing systems where money is created through the extension of trust between peers rather than central debt.
+---
 
-### Index/basket pegged
+## Intervention Ideas
 
-Stablecoins pegged to a diversified basket of consumer goods (CPI on-chain) rather than volatile fiat currencies.
+- [Cycles.money](http://Cycles.money) and small business support. Stablecoins are a new unlock in this space.
+- Pooja Ohlhaver [new Community Currency Paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5136037)
+    - Introduces a new model called PCARE (Plural Community Asset Resource Exchange) which is a dual-currency model designed to help regulate these new scarce resources (attention & influence) in networked communities. PCARE separates a non-transferable, irrevocable stake for influence (you lock in your claim to influence), and separately, a transferable currency for resource exchange (attention, value flows).
+- Introduce the concept of City-level stablecoins.
+    - Pilot **local currency deployments** in municipalities or networks — for example labor-time banking, renewable-energy credits or service-exchange currencies — using smart contracts and transparent settlement.
+    - Avenues for compensating contributions to the city
+    - Small businesss suport (see: Circles)
 
-## Projects
+---
 
-### Bitcoin
-- Status: active
-- URL: https://bitcoin.org
+## Enablers / Blockers
 
-PoW issuance with fixed logarithmic supply curve
+- **Liquidity & adoption:** Alternative monetary systems struggle to achieve merchant acceptance, user adoption, circulation velocity and connection to larger financial systems. Without sufficient circulation and acceptance, a currency risks low utility and eventual stagnation.
+- **Regulation:** Currency issuance, redemption, consumer protection, tax treatment, KYC/AML and payment-licensing frameworks create friction and risk for non-traditional money. Legal or regulatory ambiguity deters communities and organizations from deploying currency systems.
+- **Oracle & governance risk:** Many alternative currency models depend on accurate real-world data, reliable oracles or robust governance frameworks; failures can undermine trust and stability. Without sound mechanisms for issuance, conversion and governance the system may suffer from volatility, centralization or capture.
 
-### Circles
-- Status: active
-- URL: https://joincircles.net
-
-Personal tokens with linear supply and demurrage
-
-### Eco
-- Status: dead
-- URL: https://eco.org
-
-Algorithmic monetary policy currency inspired by Hayek
-
-### CityCoins
-- Status: dead
-- URL: https://www.citycoins.co
-
-Civic-aligned tokens tied to municipalities & local incentives
+---
 
 ## Resources
 
-- [Egalitarian and Just Digital Currency Networks](#) (2020) - Theoretical exploration of equitable currency issuance and community control
-- [What Determines Demand for Digital Community Currencies?](#) (2023) - Study of adoption factors for digital community currencies
-- [Circulation of a digital community currency](#) (2023) - Empirical network-analysis of the Sarafu digital currency in Kenya
-- [Monetary Commons](#) (2025) - "a trust fund for everyone"
+**Projects**
+
+- [Cycles](https://cycles.money/) - peer-to-peer electronic clearing system
+[BerkShares](https://www.politico.com/news/magazine/2022/08/04/crypto-goes-farm-to-table-00048309) - Community currency in the US supporting local commerce
+- [Grassroots Economics](https://www.grassrootseconomics.org/) - Inclusion-currency networks in Kenya using alternative value systems
+- [CityCoins](https://www.citycoins.co/) - Civic-aligned tokens tied to municipalities and local incentives
+- [Circles](https://aboutcircles.com/) - Web-of-trust currency experiment using decentralized social networks
+- [Citizen Wallet](https://citizenwallet.xyz/) - Wallet infrastructure for community and civic currencies
+- [Eco](https://eco.org/) - Originally had a Hayek-inspired algo supply currency, but pivoted to payments
+- [Reserve](https://reserve.org/) - Asset-backed stablecoins and payments app
+- RAI ([Reflexer Finance](https://reflexer.finance/)) - Non-pegged rules-based stable-asset
+- [Trustlines](https://archive.devcon.org/devcon-3/trustlines-network-open-protocol-for-decentralized-iou-based-currency-networks/?tab=YouTube&playlist=Devcon+3) - Peer currency network and open protocol for IOU-based systems
+
+**Research**
+
+- [Egalitarian and Just Digital Currency Networks](https://arxiv.org/abs/2005.14631?utm_source=chatgpt.com) (2020) - Theoretical exploration of equitable currency issuance and community control
+- [From Community Currency to Crypto City Tokens: Potentials, Shortfalls and Future Outlooks of New Old Ideas](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5287466) (2023) - Analysis of local community currencies powered by blockchain
+- [Blockchain for local communities: an exploratory review of token economy aspects](https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1426802/full) (2024) - Review of token economy elements in community currency systems. ([Frontiers](https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1426802/full?utm_source=chatgpt.com))
+- [What Determines Demand for Digital Community Currencies?](https://www.ipe-berlin.org/fileadmin/institut-ipe/Dokumente/Working_Papers/ipe_working_paper_209.pdf) (2023) - Study of adoption factors for digital community currencies
+- [Circulation of a digital community currency](https://www.nature.com/articles/s41598-023-33184-1) (2023) - Empirical network-analysis of the Sarafu digital currency in Kenya
+- [Monetary Commons](https://monetarycommons.com/) (2025) - “a trust fund for everyone” ([tweet + video](https://x.com/yanisvaroufakis/status/1976538948781400403))
+
+---
+
+## Why It Matters for Ethereum
+
+Monetary systems represent one of the most foundational infrastructures of civilization. When programmable, transparent and interoperable, they unlock value networks beyond conventional financial systems. Ethereum offers the tools to build currencies that align with community values, local economies and thematic purposes to address the creation of new currencies and the nature of money itself.

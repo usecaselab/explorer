@@ -1,30 +1,74 @@
 # Media & Entertainment
 
-## The Opportunity
-Creators rely on platforms (Spotify, YouTube) that dictate monetization and reach. Web3 enables direct creator-to-fan relationships and new royalty models.
+Categories: Enterprise
+Last edited time: November 21, 2025 9:26 PM
 
-## Ideas
+# Problem
 
-### Music NFTs
-Selling songs or albums as limited editions where fans can share in royalties or access exclusive perks.
+Cultural production and distribution is bottlenecked by centralized intermediaries (studios, labels, ticketing giants, streaming platforms) that capture outsized value while creators and fans face high costs, limited transparency, and restricted access. Piracy, fake tickets, opaque royalties, and inequitable revenue splits undermine trust and sustainability. (film, music, writing, journalism, art, podcasts)
 
-### Web3 Publishing
-Blogging platforms where posts are stored on-chain and readers can tip or subscribe directly to the writer's wallet.
+# **Opportunities**
 
-### Decentralized Streaming
-Video or audio streaming protocols that pay creators by the second via micropayments.
+- NFT-based ticketing: verifiable, resalable access to events, concerts, and festivals.
+- Crowdfunded media: onchain funding and governance for films, music, and journalism.
+- Royalty tracking and payouts: smart contracts for transparent rights management.
+- Tokenized fan engagement: invest in artists, songs, or franchises with fractional ownership.
+- Decentralized streaming and publishing: censorship-resistant platforms for content distribution.
+- Verifiable journalism: provenance for media assets and claims, linked to fact-checking oracles.
 
-## Projects
+# **Emerging Trends**
 
-### Sound.xyz
-- Status: active
-- URL: https://sound.xyz
-Platform for music NFTs.
+- Creator-owned platforms and fan economies (Patreon, Substack, OnlyFans).
+- AI-generated music, video, and storylines (Suno, Runway).
+- Virtual idols and synthetic performers (Hatsune Miku, K-pop AIs).
+- Consolidation of streaming and subscription fatigue (Disney+, Spotify, Netflix).
+- Experience-driven media models (immersive shows, AR/VR concerts).
 
-### Mirror
-- Status: active
-- URL: https://mirror.xyz
-Web3 publishing platform.
+# Resources
 
-## Resources
-- [The Creator Economy in Web3](https://li.jin) (2021)
+**Projects**
+
+- [Soneium](https://soneium.org/) - Sony’s L2 ([explainer article](https://enterpriseonchain.substack.com/p/sonys-entertainment-layer-2-explored))
+    - focused on royalty automation & creator-owned IP
+    - initial use cases: NFT loyalty for concerts; NFT-based digital tickets for Prime Video buys.
+- Events & Ticketing
+    - [Events by Unlock](https://app.unlock-protocol.com/event) - NFT-based event ticketing and memberships
+    - [Guts Tickets](https://guts.tickets/)
+    - [Tokenproof](https://tokenproof.xyz/) - token-gated ticketing and access for events
+    - [Onopen](https://onopen.xyz/) - ticketing and memberships
+    - [itm.studio](https://itm.studio/) - experiences
+    - [KYD Labs](https://kydlabs.com/) ([article](https://x.com/KYDLabs/status/1918753011603841426)) - concert ticketing and engagement
+- Film
+    - [Shibuya](https://www.shibuya.film/) - film crowdfunding and participatory production
+    - [Film3](https://x.com/501cfilm3) - DAO-based film projects
+- Music
+    - [Audius](https://audius.co/) - streaming
+    - [Viral.fun](http://viral.fun/) ([joey iny](https://x.com/joeyiny))
+    - [Bolero](https://www.boleromusic.com/) - music rights investment and trading
+    - [Royal](https://thevalueprop.io/projects/royal) - marketplace for investing in music royalties
+    - [Metalabel](https://www.metalabel.com/) ([Yancey Strickler](https://x.com/ystrickler)) - collaborative publishing platform (stopped using blockchain?)
+    - [Catalog](https://catalog.works/) [dead] - support independent music
+    - [Songcamp](https://song.camp/) [dead] - [app](https://app.song.camp/)
+    - [Anotherblock](https://anotherblock.com/) [dead] - music rights marketplace
+    - [Open Music Initiative](https://open-music.org/) [dead] - creating an open-source protocol for the uniform identification of music rights holders and creators.
+    - [Opulous](https://opulous.org/) - [scammy/low quality] crowdfund song rights / prediction market about song revenues
+    - [Sound.xyz](https://www.sound.xyz/) (dead)
+    - [Bombo](https://wearebombo.com/) - electronic music community blending NFT ticketing, social interaction, and a secure fan-to-fan marketplace
+- Writing & Publishing
+    - [Paragraph](https://paragraph.com/) - decentralized publishing for writers
+    - [Book.io](https://book.io/) - NFT-based books and publishing
+- Journalism
+    - [JournoDAO](https://x.com/JournoDao) - decentralized journalism collective
+    - [ANSA](https://www.ansa.it/english/news/science_tecnology/2020/04/06/ansa-using-blockchain-to-help-readers_af820b4f-0947-439b-843e-52e114f53318.html) - Italian news agency fights fake news and enables readers to verify the origin of news stories by recording them on Mainnet
+- Art & Creative Tools
+    - [Titles](https://titles.xyz/) - artist-owned AI model licensing and distribution
+    - [Deca](https://deca.art/) - platform for digital and generative art
+- Podcasts
+    - [Pods](https://pods.media/) - tokenized podcast monetization
+
+**Research**
+
+- [BRI: Web3 and the Music Industry](https://www.blockchainresearchinstitute.org/project/web-3-and-the-music-industry/) (2022) - Explores blockchain’s potential for music rights, royalties, and fan engagement
+- Mac Budowski
+    - [**IP Protocols Part I: Why the next MARVEL might start as an NFT collection](https://kanfa.macbudkowski.com/ip-protocols-part-1-1) (2023)**
+    - [**How exactly do music NFTs plan to change the music industry?](https://kanfa.macbudkowski.com/music-nfts) (2023)**
