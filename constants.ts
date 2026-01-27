@@ -8,7 +8,6 @@ export const DOMAINS: DomainData[] = [
   { id: 'business-ops', title: 'Business Ops', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
   { id: 'credit-and-capital-formation', title: 'Credit & Capital Formation', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
   { id: 'data', title: 'Data', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
-  { id: 'digital-product-passport', title: 'Digital Product Passport', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
   { id: 'education', title: 'Education', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
   { id: 'energy', title: 'Energy', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
   { id: 'food-and-agriculture', title: 'Food & Agriculture', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
@@ -44,7 +43,6 @@ export const DOMAIN_IDS = [
   "Business Ops",
   "Credit & Capital Formation",
   "Data",
-  "Digital Product Passport",
   "Education",
   "Energy",
   "Food & Agriculture",
@@ -97,8 +95,7 @@ export const DOMAIN_CATEGORIES: Record<string, string[]> = {
     "Travel",
     "Social",
     "Media & Entertainment",
-    "Gaming & Autonomous Worlds",
-    "Digital Product Passport"
+    "Gaming & Autonomous Worlds"
   ],
   "Enterprise": [
     "Business Ops",

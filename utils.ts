@@ -65,16 +65,20 @@ export const parseDomainMarkdown = (markdown: string, existingData: DomainData):
 // Parse bullet points from Opportunities section as ideas
 const parseOpportunitiesAsIdeas = (text: string): Idea[] => {
   const ideas: Idea[] = [];
-
-  // First check if there's intro text before the bullet points
   const lines = text.split('\n');
 
   lines.forEach(line => {
     // Match bullet points with bold titles: - **Title:** Description or - **Title** Description
-    const boldMatch = line.match(/^-\s+\*\*([^*:]+)\*\*[:\s]*(.*)$/);
+    // Use non-greedy match [^*]+? to capture title including colons
+    const boldMatch = line.match(/^-\s+\*\*([^*]+?)\*\*[:\s]*(.*)$/);
     if (boldMatch) {
+      // Clean up the title - remove trailing colon if present
+      let title = boldMatch[1].trim();
+      if (title.endsWith(':')) {
+        title = title.slice(0, -1).trim();
+      }
       ideas.push({
-        title: boldMatch[1].trim(),
+        title,
         description: boldMatch[2].trim()
       });
     }
@@ -133,24 +137,88 @@ const parseNotionResources = (text: string): { projects: Project[], resources: R
   if (projectsMatch) {
     const projectLines = projectsMatch[1].split('\n');
     projectLines.forEach(line => {
-      // Match: - [Name](url) - Description or [Name](url) - Description
-      const match = line.match(/^-?\s*\[([^\]]+)\]\(([^)]+)\)\s*[-–—:]?\s*(.*)$/);
-      if (match) {
-        const name = match[1].trim();
-        const url = match[2].trim();
-        let description = match[3].trim();
+      const trimmedLine = line.trim();
+      if (!trimmedLine || trimmedLine.startsWith('**')) return;
 
-        // Determine status from description hints
+      // Pattern 1: Standard format - [Name](url) - Description
+      const standardMatch = trimmedLine.match(/^-?\s*\[([^\]]+)\]\(([^)]+)\)\s*[-–—:]?\s*(.*)$/);
+      if (standardMatch) {
+        const name = standardMatch[1].trim();
+        const url = standardMatch[2].trim();
+        let description = standardMatch[3].trim();
+
+        // Determine status from description or name hints
         let status: 'active' | 'dead' | 'beta' = 'active';
-        if (description.toLowerCase().includes('(dead)') || description.toLowerCase().includes('(defunct)')) {
+        const fullText = (name + ' ' + description).toLowerCase();
+        if (fullText.includes('[dead]') || fullText.includes('(dead)') || fullText.includes('(defunct)')) {
           status = 'dead';
-          description = description.replace(/\(dead\)/gi, '').replace(/\(defunct\)/gi, '').trim();
-        } else if (description.toLowerCase().includes('(beta)') || description.toLowerCase().includes('(wip)')) {
+          description = description.replace(/\[dead\]/gi, '').replace(/\(dead\)/gi, '').replace(/\(defunct\)/gi, '').trim();
+        } else if (fullText.includes('[beta]') || fullText.includes('(beta)') || fullText.includes('(wip)')) {
           status = 'beta';
-          description = description.replace(/\(beta\)/gi, '').replace(/\(wip\)/gi, '').trim();
+          description = description.replace(/\[beta\]/gi, '').replace(/\(beta\)/gi, '').replace(/\(wip\)/gi, '').trim();
         }
 
         projects.push({ name, url, description, status });
+        return;
+      }
+
+      // Pattern 2: Category with multiple links - "Category - [link1](...), [link2](...)"
+      const categoryMatch = trimmedLine.match(/^-?\s*([^-\[]+?)\s*[-–—]\s*(.*\[.+\]\(.+\).*)$/);
+      if (categoryMatch) {
+        const category = categoryMatch[1].trim();
+        const linksText = categoryMatch[2];
+
+        // Extract all [name](url) pairs from the text
+        const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+        let linkMatch;
+        let foundLinks = false;
+
+        while ((linkMatch = linkRegex.exec(linksText)) !== null) {
+          foundLinks = true;
+          let name = linkMatch[1].trim();
+          const url = linkMatch[2].trim();
+
+          // Determine status
+          let status: 'active' | 'dead' | 'beta' = 'active';
+          if (name.toLowerCase().includes('[dead]') || linksText.toLowerCase().includes('(dead)')) {
+            status = 'dead';
+            name = name.replace(/\s*\[dead\]/gi, '').trim();
+          }
+
+          projects.push({
+            name,
+            url,
+            description: category,
+            status
+          });
+        }
+
+        if (foundLinks) return;
+      }
+
+      // Pattern 3: Plain text without link - "Name (Company) - Description"
+      const plainMatch = trimmedLine.match(/^-?\s*([^-]+?)\s+[-–—]\s+(.+)$/);
+      if (plainMatch && !plainMatch[1].includes('[') && plainMatch[1].length < 80) {
+        projects.push({
+          name: plainMatch[1].trim(),
+          url: undefined,
+          description: plainMatch[2].trim(),
+          status: 'active'
+        });
+        return;
+      }
+
+      // Pattern 4: Indented sub-item (starts with spaces or tabs after dash)
+      if (line.match(/^\s{2,}-?\s*\[/)) {
+        const subMatch = trimmedLine.match(/^-?\s*\[([^\]]+)\]\(([^)]+)\)\s*[-–—:]?\s*(.*)$/);
+        if (subMatch) {
+          projects.push({
+            name: subMatch[1].trim(),
+            url: subMatch[2].trim(),
+            description: subMatch[3].trim(),
+            status: 'active'
+          });
+        }
       }
     });
   }
@@ -158,8 +226,12 @@ const parseNotionResources = (text: string): { projects: Project[], resources: R
   if (researchMatch) {
     const researchLines = researchMatch[1].split('\n');
     researchLines.forEach(line => {
+      const trimmedLine = line.trim();
+      if (!trimmedLine || trimmedLine.startsWith('**')) return;
+
       // Match: - [Title](url) (year) - Description
-      const match = line.match(/^-?\s*\[([^\]]+)\]\(([^)]+)\)\s*(?:\(([^)]+)\))?\s*[-–—:]?\s*(.*)$/);
+      // Year can be in parentheses like (2023) or (2024)
+      const match = trimmedLine.match(/^-?\s*\[([^\]]+)\]\(([^)]+)\)\s*(?:\((\d{4})\))?\s*[-–—:]?\s*(.*)$/);
       if (match) {
         resources.push({
           title: match[1].trim(),
