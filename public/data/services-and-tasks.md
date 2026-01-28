@@ -21,7 +21,7 @@ Ethereum can reduce verification and enforcement costs in peer-to-peer labor mar
 - **Verifiable worker reputation:** Portable attestations for skills, completion history, and ratings stored onchain or via verifiable credentials, enabling cross-platform portability.
 - **Programmable escrow:** Smart contracts for milestone-based payments, dispute resolution, and refunds that minimize platform mediation.
 - **Task credentials:** Cryptographic proofs of work, verified deliverable receipts, or NFT-based certificates that unlock access to higher-value opportunities.
-- **Decentralized arbitration systems*:*** Mediation solutions for labor contracting arrangements that ensure efficient and fair dispute outcomes.
+- **Decentralized arbitration systems:** Mediation solutions for labor contracting arrangements that ensure efficient and fair dispute outcomes.
 
 ---
 

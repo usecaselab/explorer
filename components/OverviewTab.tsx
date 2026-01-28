@@ -1,5 +1,6 @@
 import React from 'react';
 import { DomainData } from '../types';
+import { renderMarkdownLinks } from '../utils';
 import { ExternalLink, AlertCircle, Lightbulb, BookOpen, FolderGit2 } from 'lucide-react';
 
 interface OverviewTabProps {
@@ -31,7 +32,7 @@ const OverviewTab: React.FC<OverviewTabProps> = ({ data }) => {
           <div className="absolute -top-3 left-6 w-20 h-4 bg-alertRed/30 -rotate-1 border border-transparent"></div>
           
           <p className="text-lg font-medium text-gray-800 leading-relaxed">
-            {data.problemStatement}
+            {renderMarkdownLinks(data.problemStatement)}
           </p>
         </div>
       </section>
@@ -53,7 +54,7 @@ const OverviewTab: React.FC<OverviewTabProps> = ({ data }) => {
                         <div className="flex items-center gap-3 mb-1">
                             <h4 className="font-bold text-xl font-heading group-hover:text-blue-600 transition-colors">{idea.title}</h4>
                         </div>
-                        <p className="text-gray-600 font-medium leading-snug">{idea.description}</p>
+                        <p className="text-gray-600 font-medium leading-snug">{renderMarkdownLinks(idea.description)}</p>
                     </div>
                 </div>
               </div>
@@ -94,7 +95,7 @@ const OverviewTab: React.FC<OverviewTabProps> = ({ data }) => {
                                     title={statusInfo.label}
                                 />
                             </div>
-                            <p className="text-gray-600 font-medium leading-snug flex-1">{project.description}</p>
+                            <p className="text-gray-600 font-medium leading-snug flex-1">{renderMarkdownLinks(project.description)}</p>
                             {project.url && (
                                 <div className="flex justify-end mt-2">
                                     <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-ethBlue transition-colors" />
@@ -126,7 +127,7 @@ const OverviewTab: React.FC<OverviewTabProps> = ({ data }) => {
                   <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <p className="text-gray-700 font-medium max-w-2xl border-l-4 border-blue-200 pl-3">
-                  {res.description}
+                  {renderMarkdownLinks(res.description)}
                 </p>
               </a>
             </li>

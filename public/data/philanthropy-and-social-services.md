@@ -18,7 +18,7 @@ Ethereum can enable faster, transparent and verifiable resource flows, identity 
 - **Impact certificates & tokenization:** Verifiable records of outcomes (e.g., service delivery, participation) that support accountability and impact-reporting.
 - **Identity & banking for displaced people:** Portable identities and wallet access for refugees, migrant workers or displaced communities, enabling access to services and funding.
 - **Programmable commitment pools / assurance contracts**: Smart contracts that release funds only when pre-agreed milestones are met, enabling collaborative campaigns across organizations.
-- **Decentralized coordination platforms for social-services actors***:* Infrastructure enabling NGOs, volunteers and communities to coordinate service delivery, funding and verification at scale.
+- **Decentralized coordination platforms for social-services actors:** Infrastructure enabling NGOs, volunteers and communities to coordinate service delivery, funding and verification at scale.
 - **UBI**
 
 ---

@@ -17,7 +17,7 @@ Civil society groups, environmental defenders, human-rights advocates, journalis
 - **Whistleblower & evidence-integrity systems:** Tamper-proof timestamping and storage of testimonies, photographs, datasets with privacy-preserving disclosure.
 - **Transparent, auditable treasury & grant flows:** Real-time reporting of funding, disbursements and usage, enhancing donor/recipient transparency.
 - **Portable identity & credentials for NGOs, volunteers & journalists:** Selective-disclosure credentials backed by on-chain verification to manage trust while protecting privacy.
-- **Programmable rights & participatory governance tokens***:* Embedding rights-related commitments or governance frameworks into tokens or DAOs for accountability across actors.
+- **Programmable rights & participatory governance tokens:** Embedding rights-related commitments or governance frameworks into tokens or DAOs for accountability across actors.
 
 ---
 

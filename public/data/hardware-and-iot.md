@@ -1,6 +1,6 @@
-# IoT
+# Hardware & IoT
 
-Categories: Enterprise
+Categories: Digital
 Last edited time: December 18, 2025 5:27 AM
 
 # **Problem**

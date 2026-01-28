@@ -4,6 +4,7 @@ import { DomainData } from './types';
 // Initial empty state - populated via Markdown fetch in App.tsx
 export const DOMAINS: DomainData[] = [
   { id: 'advocacy-and-rights', title: 'Advocacy & Rights', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
+  { id: 'ai', title: 'AI', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
   { id: 'alt-money', title: 'Alternative Money', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
   { id: 'business-ops', title: 'Business Ops', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
   { id: 'credit-and-capital-formation', title: 'Credit & Capital Formation', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
@@ -16,7 +17,7 @@ export const DOMAINS: DomainData[] = [
   { id: 'health-and-bio', title: 'Health & Bio', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
   { id: 'insurance', title: 'Insurance', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
   { id: 'intellectual-property', title: 'Intellectual Property', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
-  { id: 'iot', title: 'IoT', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
+  { id: 'hardware-and-iot', title: 'Hardware & IoT', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
   { id: 'it-infrastructure', title: 'IT Infrastructure', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
   { id: 'law-and-regulation', title: 'Law & Regulation', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
   { id: 'marketing-and-advertising', title: 'Marketing & Advertising', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
@@ -39,6 +40,7 @@ export const DOMAINS: DomainData[] = [
 
 export const DOMAIN_IDS = [
   "Advocacy & Rights",
+  "AI",
   "Alternative Money",
   "Business Ops",
   "Credit & Capital Formation",
@@ -51,7 +53,7 @@ export const DOMAIN_IDS = [
   "Health & Bio",
   "Insurance",
   "Intellectual Property",
-  "IoT",
+  "Hardware & IoT",
   "IT Infrastructure",
   "Law & Regulation",
   "Marketing & Advertising",
@@ -73,6 +75,9 @@ export const DOMAIN_IDS = [
 ];
 
 export const DOMAIN_CATEGORIES: Record<string, string[]> = {
+  "AI": [
+    "AI"
+  ],
   "Society": [
     "Advocacy & Rights",
     "Global Governance",
@@ -103,12 +108,12 @@ export const DOMAIN_CATEGORIES: Record<string, string[]> = {
     "Transport & Logistics",
     "Productivity & Collaboration",
     "Intellectual Property",
-    "Marketing & Advertising",
-    "IoT"
+    "Marketing & Advertising"
   ],
   "Digital": [
     "Data",
-    "IT Infrastructure"
+    "IT Infrastructure",
+    "Hardware & IoT"
   ],
   "Physical": [
     "Energy",

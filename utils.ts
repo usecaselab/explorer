@@ -1,4 +1,43 @@
 import { DomainData, Idea, Project, Resource, Bounty } from './types';
+import React from 'react';
+
+// Render text with markdown links as React elements
+export const renderMarkdownLinks = (text: string): (string | React.ReactElement)[] => {
+  if (!text) return [''];
+
+  const parts: (string | React.ReactElement)[] = [];
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+  let match;
+  let keyCounter = 0;
+
+  while ((match = linkRegex.exec(text)) !== null) {
+    // Add text before the link
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index));
+    }
+
+    // Add the link as a React element
+    parts.push(
+      React.createElement('a', {
+        key: `link-${keyCounter++}`,
+        href: match[2],
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        className: 'text-blue-600 hover:underline'
+      }, match[1])
+    );
+
+    lastIndex = match.index + match[0].length;
+  }
+
+  // Add remaining text after last link
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+
+  return parts.length > 0 ? parts : [text];
+};
 
 export const parseDomainMarkdown = (markdown: string, existingData: DomainData): DomainData => {
   const newData = { ...existingData };
@@ -68,11 +107,20 @@ const parseOpportunitiesAsIdeas = (text: string): Idea[] => {
   const lines = text.split('\n');
 
   lines.forEach(line => {
-    // Match bullet points with bold titles: - **Title:** Description or - **Title** Description
-    // Use non-greedy match [^*]+? to capture title including colons
-    const boldMatch = line.match(/^-\s+\*\*([^*]+?)\*\*[:\s]*(.*)$/);
+    const trimmedLine = line.trim();
+
+    // Skip empty lines, headers, blockquotes, and non-bullet lines
+    if (!trimmedLine || !trimmedLine.startsWith('-') || trimmedLine.startsWith('---') || trimmedLine.startsWith('> ')) {
+      return;
+    }
+
+    // Remove the leading dash and trim
+    const content = trimmedLine.substring(1).trim();
+    if (!content) return;
+
+    // Pattern 1: Bold titles - **Title:** Description or - **Title** Description
+    const boldMatch = content.match(/^\*\*([^*]+?)\*\*[:\s]*(.*)$/);
     if (boldMatch) {
-      // Clean up the title - remove trailing colon if present
       let title = boldMatch[1].trim();
       if (title.endsWith(':')) {
         title = title.slice(0, -1).trim();
@@ -81,6 +129,35 @@ const parseOpportunitiesAsIdeas = (text: string): Idea[] => {
         title,
         description: boldMatch[2].trim()
       });
+      return;
+    }
+
+    // Pattern 2: Plain text with colon separator - Title: Description
+    const colonMatch = content.match(/^([^:]+):\s*(.+)$/);
+    if (colonMatch && colonMatch[1].length < 80) {
+      ideas.push({
+        title: colonMatch[1].trim(),
+        description: colonMatch[2].trim()
+      });
+      return;
+    }
+
+    // Pattern 3: Plain text without clear separator - use first sentence or chunk as title
+    if (content.length > 15) {
+      // Try to find a natural break point (first sentence)
+      const sentenceMatch = content.match(/^([^.!?]+[.!?])\s*(.*)$/);
+      if (sentenceMatch && sentenceMatch[1].length < 100) {
+        ideas.push({
+          title: sentenceMatch[1].trim(),
+          description: sentenceMatch[2].trim()
+        });
+      } else if (content.length < 120) {
+        // Short enough to be a single idea
+        ideas.push({
+          title: content,
+          description: ''
+        });
+      }
     }
   });
 
