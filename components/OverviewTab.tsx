@@ -52,7 +52,7 @@ const OverviewTab: React.FC<OverviewTabProps> = ({ data }) => {
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-2 md:gap-4">
                     <div className="flex-1">
                         <div className="flex items-center gap-3 mb-1">
-                            <h4 className="font-bold text-xl font-heading group-hover:text-blue-600 transition-colors">{idea.title}</h4>
+                            <h4 className="font-bold text-xl font-heading group-hover:text-blue-600 transition-colors">{renderMarkdownLinks(idea.title)}</h4>
                         </div>
                         <p className="text-gray-600 font-medium leading-snug">{renderMarkdownLinks(idea.description)}</p>
                     </div>

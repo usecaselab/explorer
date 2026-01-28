@@ -75,9 +75,6 @@ export const DOMAIN_IDS = [
 ];
 
 export const DOMAIN_CATEGORIES: Record<string, string[]> = {
-  "AI": [
-    "AI"
-  ],
   "Society": [
     "Advocacy & Rights",
     "Global Governance",
@@ -111,6 +108,7 @@ export const DOMAIN_CATEGORIES: Record<string, string[]> = {
     "Marketing & Advertising"
   ],
   "Digital": [
+    "AI",
     "Data",
     "IT Infrastructure",
     "Hardware & IoT"

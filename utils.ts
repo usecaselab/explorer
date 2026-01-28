@@ -27,7 +27,7 @@ export const renderMarkdownLinks = (text: string): (string | React.ReactElement)
           href: match[2],
           target: '_blank',
           rel: 'noopener noreferrer',
-          className: 'text-blue-600 hover:underline'
+          className: 'text-blue-600 hover:underline break-words'
         }, match[1])
       );
     } else if (match[3] !== undefined) {
@@ -216,26 +216,40 @@ const parseInterventionIdeas = (text: string): Idea[] => {
     if (trimmed.startsWith('-') && trimmed.length > 2) {
       // Remove the leading dash and any bold markers
       let content = trimmed.substring(1).trim();
-      // Extract title if bold
-      const boldMatch = content.match(/^\*\*([^*]+)\*\*[:\s]*(.*)/);
+      // Extract title if bold text exists anywhere in the line
+      const boldMatch = content.match(/^(.*?)\*\*([^*]+)\*\*[:\s]*(.*)/);
       if (boldMatch) {
+        // Combine prefix with bold text as title, rest as description
+        const prefix = boldMatch[1].trim();
+        const boldText = boldMatch[2].trim();
+        const suffix = boldMatch[3].trim();
         ideas.push({
-          title: boldMatch[1].trim(),
-          description: boldMatch[2].trim()
+          title: prefix ? `${prefix} ${boldText}` : boldText,
+          description: suffix
         });
       } else if (content.length > 10) {
         // Use first part as title if no bold
-        const parts = content.split(/[:\-–—]/);
-        if (parts.length > 1 && parts[0].length < 60) {
+        // Only split on colon followed by space (not dashes, which break markdown links and bold)
+        const colonMatch = content.match(/^([^:]+):\s+(.+)$/);
+        if (colonMatch && colonMatch[1].length < 80 && colonMatch[1].length > 5) {
           ideas.push({
-            title: parts[0].trim(),
-            description: parts.slice(1).join(' ').trim()
+            title: colonMatch[1].trim(),
+            description: colonMatch[2].trim()
           });
         } else {
-          ideas.push({
-            title: content.substring(0, 50) + (content.length > 50 ? '...' : ''),
-            description: content
-          });
+          // Try to find a natural sentence break
+          const sentenceMatch = content.match(/^([^.!?]+[.!?])\s*(.*)$/);
+          if (sentenceMatch && sentenceMatch[1].length < 120 && sentenceMatch[1].length > 10) {
+            ideas.push({
+              title: sentenceMatch[1].trim(),
+              description: sentenceMatch[2].trim()
+            });
+          } else {
+            ideas.push({
+              title: content.substring(0, 80) + (content.length > 80 ? '...' : ''),
+              description: content
+            });
+          }
         }
       }
     }

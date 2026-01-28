@@ -38,7 +38,6 @@ const HomeView: React.FC<HomeViewProps> = ({
 
   // Category config with icons and vibrant colors
   const categoryConfig: Record<string, { icon: string, gradient: string, iconBg: string, shadow: string }> = {
-    "AI": { icon: "🤖", gradient: "from-pink-500 to-rose-600", iconBg: "bg-pink-100", shadow: "shadow-pink-200" },
     "Society": { icon: "🏛️", gradient: "from-violet-500 to-purple-600", iconBg: "bg-violet-100", shadow: "shadow-violet-200" },
     "Finance": { icon: "💰", gradient: "from-emerald-500 to-green-600", iconBg: "bg-emerald-100", shadow: "shadow-emerald-200" },
     "Consumer": { icon: "🛒", gradient: "from-orange-500 to-amber-600", iconBg: "bg-orange-100", shadow: "shadow-orange-200" },
