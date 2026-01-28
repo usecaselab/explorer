@@ -207,49 +207,77 @@ const parseOpportunitiesAsIdeas = (text: string): Idea[] => {
 };
 
 // Parse intervention ideas (bullet points or prose)
+// Handles nested sub-bullets by joining them to the parent idea's description
 const parseInterventionIdeas = (text: string): Idea[] => {
   const ideas: Idea[] = [];
   const lines = text.split('\n');
 
+  // First pass: group top-level bullets with their sub-bullets
+  const groups: { main: string; subs: string[] }[] = [];
+  let currentGroup: { main: string; subs: string[] } | null = null;
+
   lines.forEach(line => {
-    const trimmed = line.trim();
-    if (trimmed.startsWith('-') && trimmed.length > 2) {
-      // Remove the leading dash and any bold markers
-      let content = trimmed.substring(1).trim();
-      // Extract title if bold text exists anywhere in the line
-      const boldMatch = content.match(/^(.*?)\*\*([^*]+)\*\*[:\s]*(.*)/);
-      if (boldMatch) {
-        // Combine prefix with bold text as title, rest as description
-        const prefix = boldMatch[1].trim();
-        const boldText = boldMatch[2].trim();
-        const suffix = boldMatch[3].trim();
+    // Check if this is a top-level bullet (no leading whitespace)
+    const isTopLevel = line.match(/^-\s+(.+)$/);
+    // Check if this is an indented sub-bullet
+    const isSubBullet = line.match(/^\s+-\s+(.+)$/);
+
+    if (isTopLevel) {
+      // Save previous group if exists
+      if (currentGroup) {
+        groups.push(currentGroup);
+      }
+      currentGroup = { main: isTopLevel[1].trim(), subs: [] };
+    } else if (isSubBullet && currentGroup) {
+      // Add sub-bullet content to current group
+      currentGroup.subs.push(isSubBullet[1].trim());
+    }
+  });
+
+  // Don't forget the last group
+  if (currentGroup) {
+    groups.push(currentGroup);
+  }
+
+  // Second pass: convert groups to ideas
+  groups.forEach(group => {
+    const content = group.main;
+    // Join sub-bullets as additional description
+    const subContent = group.subs.join(' ');
+
+    // Extract title if bold text exists anywhere in the line
+    const boldMatch = content.match(/^(.*?)\*\*([^*]+)\*\*[:\s]*(.*)/);
+    if (boldMatch) {
+      const prefix = boldMatch[1].trim();
+      const boldText = boldMatch[2].trim();
+      const suffix = [boldMatch[3].trim(), subContent].filter(Boolean).join(' ');
+      ideas.push({
+        title: prefix ? `${prefix} ${boldText}` : boldText,
+        description: suffix
+      });
+    } else if (content.length > 10) {
+      // Only split on colon followed by space (not dashes, which break markdown links and bold)
+      const colonMatch = content.match(/^([^:]+):\s+(.+)$/);
+      if (colonMatch && colonMatch[1].length < 80 && colonMatch[1].length > 5) {
         ideas.push({
-          title: prefix ? `${prefix} ${boldText}` : boldText,
-          description: suffix
+          title: colonMatch[1].trim(),
+          description: [colonMatch[2].trim(), subContent].filter(Boolean).join(' ')
         });
-      } else if (content.length > 10) {
-        // Use first part as title if no bold
-        // Only split on colon followed by space (not dashes, which break markdown links and bold)
-        const colonMatch = content.match(/^([^:]+):\s+(.+)$/);
-        if (colonMatch && colonMatch[1].length < 80 && colonMatch[1].length > 5) {
+      } else {
+        // Try to find a natural sentence break
+        const sentenceMatch = content.match(/^([^.!?]+[.!?])\s*(.*)$/);
+        if (sentenceMatch && sentenceMatch[1].length < 120 && sentenceMatch[1].length > 10) {
           ideas.push({
-            title: colonMatch[1].trim(),
-            description: colonMatch[2].trim()
+            title: sentenceMatch[1].trim(),
+            description: [sentenceMatch[2].trim(), subContent].filter(Boolean).join(' ')
           });
         } else {
-          // Try to find a natural sentence break
-          const sentenceMatch = content.match(/^([^.!?]+[.!?])\s*(.*)$/);
-          if (sentenceMatch && sentenceMatch[1].length < 120 && sentenceMatch[1].length > 10) {
-            ideas.push({
-              title: sentenceMatch[1].trim(),
-              description: sentenceMatch[2].trim()
-            });
-          } else {
-            ideas.push({
-              title: content.substring(0, 80) + (content.length > 80 ? '...' : ''),
-              description: content
-            });
-          }
+          // Use full content with sub-bullets as description
+          const fullDescription = [content, subContent].filter(Boolean).join(' ');
+          ideas.push({
+            title: content.substring(0, 80) + (content.length > 80 ? '...' : ''),
+            description: fullDescription
+          });
         }
       }
     }
