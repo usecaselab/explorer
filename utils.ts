@@ -1,37 +1,56 @@
 import { DomainData, Idea, Project, Resource, Bounty } from './types';
 import React from 'react';
 
-// Render text with markdown links as React elements
+// Render text with markdown formatting (links, bold, italic) as React elements
 export const renderMarkdownLinks = (text: string): (string | React.ReactElement)[] => {
   if (!text) return [''];
 
   const parts: (string | React.ReactElement)[] = [];
-  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  // Combined regex for links, bold, and italic
+  // Order matters: check links first, then bold (**text**), then italic (*text*)
+  const markdownRegex = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*|\*([^*]+)\*/g;
   let lastIndex = 0;
   let match;
   let keyCounter = 0;
 
-  while ((match = linkRegex.exec(text)) !== null) {
-    // Add text before the link
+  while ((match = markdownRegex.exec(text)) !== null) {
+    // Add text before the match
     if (match.index > lastIndex) {
       parts.push(text.substring(lastIndex, match.index));
     }
 
-    // Add the link as a React element
-    parts.push(
-      React.createElement('a', {
-        key: `link-${keyCounter++}`,
-        href: match[2],
-        target: '_blank',
-        rel: 'noopener noreferrer',
-        className: 'text-blue-600 hover:underline'
-      }, match[1])
-    );
+    if (match[1] !== undefined && match[2] !== undefined) {
+      // Link: [text](url)
+      parts.push(
+        React.createElement('a', {
+          key: `link-${keyCounter++}`,
+          href: match[2],
+          target: '_blank',
+          rel: 'noopener noreferrer',
+          className: 'text-blue-600 hover:underline'
+        }, match[1])
+      );
+    } else if (match[3] !== undefined) {
+      // Bold: **text**
+      parts.push(
+        React.createElement('strong', {
+          key: `bold-${keyCounter++}`,
+          className: 'font-semibold'
+        }, match[3])
+      );
+    } else if (match[4] !== undefined) {
+      // Italic: *text*
+      parts.push(
+        React.createElement('em', {
+          key: `italic-${keyCounter++}`
+        }, match[4])
+      );
+    }
 
     lastIndex = match.index + match[0].length;
   }
 
-  // Add remaining text after last link
+  // Add remaining text after last match
   if (lastIndex < text.length) {
     parts.push(text.substring(lastIndex));
   }
@@ -109,13 +128,19 @@ const parseOpportunitiesAsIdeas = (text: string): Idea[] => {
   lines.forEach(line => {
     const trimmedLine = line.trim();
 
-    // Skip empty lines, headers, blockquotes, and non-bullet lines
-    if (!trimmedLine || !trimmedLine.startsWith('-') || trimmedLine.startsWith('---') || trimmedLine.startsWith('> ')) {
+    // Skip empty lines, headers, blockquotes, horizontal rules
+    if (!trimmedLine || trimmedLine.startsWith('---') || trimmedLine.startsWith('> ') || trimmedLine.startsWith('#')) {
       return;
     }
 
-    // Remove the leading dash and trim
-    const content = trimmedLine.substring(1).trim();
+    // Handle bullet points (both top-level and sub-bullets)
+    // Match lines starting with -, *, or indented bullets
+    const bulletMatch = trimmedLine.match(/^[-*]\s+(.+)$/);
+    if (!bulletMatch) {
+      return;
+    }
+
+    const content = bulletMatch[1].trim();
     if (!content) return;
 
     // Pattern 1: Bold titles - **Title:** Description or - **Title** Description
@@ -133,8 +158,9 @@ const parseOpportunitiesAsIdeas = (text: string): Idea[] => {
     }
 
     // Pattern 2: Plain text with colon separator - Title: Description
-    const colonMatch = content.match(/^([^:]+):\s*(.+)$/);
-    if (colonMatch && colonMatch[1].length < 80) {
+    // Be more lenient with title length
+    const colonMatch = content.match(/^([^:]+):\s+(.+)$/);
+    if (colonMatch && colonMatch[1].length < 100 && colonMatch[1].length > 3) {
       ideas.push({
         title: colonMatch[1].trim(),
         description: colonMatch[2].trim()
@@ -142,20 +168,36 @@ const parseOpportunitiesAsIdeas = (text: string): Idea[] => {
       return;
     }
 
-    // Pattern 3: Plain text without clear separator - use first sentence or chunk as title
-    if (content.length > 15) {
+    // Pattern 3: Plain text with dash/em-dash separator - Title - Description
+    const dashMatch = content.match(/^([^–—-]{5,60})\s*[–—-]\s+(.{10,})$/);
+    if (dashMatch) {
+      ideas.push({
+        title: dashMatch[1].trim(),
+        description: dashMatch[2].trim()
+      });
+      return;
+    }
+
+    // Pattern 4: Plain text without clear separator
+    if (content.length >= 10) {
       // Try to find a natural break point (first sentence)
       const sentenceMatch = content.match(/^([^.!?]+[.!?])\s*(.*)$/);
-      if (sentenceMatch && sentenceMatch[1].length < 100) {
+      if (sentenceMatch && sentenceMatch[1].length < 120 && sentenceMatch[1].length > 10) {
         ideas.push({
           title: sentenceMatch[1].trim(),
           description: sentenceMatch[2].trim()
         });
-      } else if (content.length < 120) {
-        // Short enough to be a single idea
+      } else if (content.length <= 200) {
+        // Use the whole content as the title
         ideas.push({
           title: content,
           description: ''
+        });
+      } else {
+        // For very long content, truncate for title
+        ideas.push({
+          title: content.substring(0, 100) + '...',
+          description: content
         });
       }
     }
