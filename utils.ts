@@ -272,12 +272,23 @@ const parseInterventionIdeas = (text: string): Idea[] => {
             description: [sentenceMatch[2].trim(), subContent].filter(Boolean).join(' ')
           });
         } else {
-          // Use full content with sub-bullets as description
-          const fullDescription = [content, subContent].filter(Boolean).join(' ');
-          ideas.push({
-            title: content.substring(0, 80) + (content.length > 80 ? '...' : ''),
-            description: fullDescription
-          });
+          // Check if content contains a markdown link - extract link text for title
+          const linkMatch = content.match(/^(.*?)\[([^\]]+)\]\([^)]+\)(.*)$/);
+          if (linkMatch) {
+            // Combine prefix + link text + suffix as title (without the URL)
+            const titleParts = [linkMatch[1].trim(), linkMatch[2].trim(), linkMatch[3].trim()].filter(Boolean);
+            ideas.push({
+              title: titleParts.join(' '),
+              description: subContent
+            });
+          } else {
+            // Use full content with sub-bullets as description
+            const fullDescription = [content, subContent].filter(Boolean).join(' ');
+            ideas.push({
+              title: content.substring(0, 80) + (content.length > 80 ? '...' : ''),
+              description: fullDescription
+            });
+          }
         }
       }
     }
