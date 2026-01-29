@@ -13,9 +13,61 @@ app.use(express.json());
 
 // Parse markdown files on startup
 let usecases = [];
+let markdownContent = {}; // Store raw markdown by id
+
+// Domain categories mapping
+const DOMAIN_CATEGORIES = {
+  "Society": [
+    "Advocacy & Rights",
+    "Global Governance",
+    "Education",
+    "Law & Regulation",
+    "Public Administration",
+    "Philanthropy & Social Services",
+    "Security & Defense",
+    "Science & Research"
+  ],
+  "Finance": [
+    "Alternative Money",
+    "Credit & Capital Formation",
+    "Insurance",
+    "Public Finance & Procurement"
+  ],
+  "Consumer": [
+    "Retail & eCommerce",
+    "Services & Tasks",
+    "Travel",
+    "Social",
+    "Media & Entertainment",
+    "Gaming & Autonomous Worlds"
+  ],
+  "Enterprise": [
+    "Business Ops",
+    "Supply Chain",
+    "Transport & Logistics",
+    "Productivity & Collaboration",
+    "Intellectual Property",
+    "Marketing & Advertising"
+  ],
+  "Digital": [
+    "AI",
+    "Data",
+    "IT Infrastructure",
+    "Hardware & IoT"
+  ],
+  "Physical": [
+    "Energy",
+    "Food & Agriculture",
+    "Real Estate & Housing",
+    "Sustainability & Regeneration",
+    "Health & Bio"
+  ]
+};
 
 function parseMarkdownFile(filePath, id) {
   const content = readFileSync(filePath, 'utf8');
+  // Store raw markdown
+  markdownContent[id] = content;
   const text = content.replace(/\r\n/g, '\n');
 
   // Parse title
@@ -112,6 +164,50 @@ function loadUsecases() {
 loadUsecases();
 
 // API Endpoints
+
+// GET /api/categories - Get all categories with their domains
+app.get('/api/categories', (req, res) => {
+  // Build category response with domain details
+  const categories = {};
+
+  for (const [category, domainTitles] of Object.entries(DOMAIN_CATEGORIES)) {
+    categories[category] = domainTitles.map(title => {
+      const usecase = usecases.find(uc => uc.title === title);
+      return {
+        id: usecase?.id || title.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+        title: title,
+        problemStatement: usecase?.problemStatement?.substring(0, 200) + '...' || '',
+        ideasCount: usecase?.ideas?.length || 0,
+        projectsCount: usecase?.projects?.length || 0,
+        resourcesCount: usecase?.resources?.length || 0
+      };
+    });
+  }
+
+  res.json(categories);
+});
+
+// GET /api/usecases/:id/markdown - Get raw markdown for a use case
+app.get('/api/usecases/:id/markdown', (req, res) => {
+  const id = req.params.id;
+  const markdown = markdownContent[id];
+
+  if (!markdown) {
+    return res.status(404).json({ error: 'Use case not found' });
+  }
+
+  res.json({ id, markdown });
+});
+
+// GET /api/markdown - Get all raw markdown content
+app.get('/api/markdown', (req, res) => {
+  const all = usecases.map(uc => ({
+    id: uc.id,
+    title: uc.title,
+    markdown: markdownContent[uc.id]
+  }));
+  res.json(all);
+});
 
 // GET /api/usecases - List all use cases (summary)
 app.get('/api/usecases', (req, res) => {
