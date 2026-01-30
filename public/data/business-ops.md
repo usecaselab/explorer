@@ -1,8 +1,5 @@
 # Business Ops
 
-Categories: Enterprise
-Last edited time: January 11, 2026 9:16 PM
-
 # **Problem**
 
 Small and medium enterprises face heavy overhead in managing core operations—cap tables, payroll, contracts, treasury, procurement, and accounting. Each function relies on siloed Web2 tools (Carta, QuickBooks, Gusto, Deel, Stripe, Stripe Atlas, Mercury, Brex) that don’t interoperate, require constant reconciliation, and are vulnerable to errors, fraud, or delay. Cross-border operations add friction in payments, compliance, and document workflows. As a result, early-stage companies spend scarce time and money on back-office administration instead of growth.
@@ -25,16 +22,6 @@ Tokenized firm stack - beyond stablecoins (cash) and RWAs (assets) → tokenizin
 - Bookkeeping & Accounting: real-time, tamper-evident “triple-entry” ledgers providing auditable financial history.
 - Procurement: smart contracts for purchase orders, RFQs, RFPs, vendor agreements, automatic replenishment plans
 - AI CEOs: once the firm’s core systems are tokenized and software-defined, AI can act as an organizational brain—analyzing complete data flows, simulating strategies, and executing decisions onchain.
-
-# **Emerging Trends**
-
-- **Indie entrepreneurs**: single-founder or micro-teams launching products with embedded business logic.
-- **AI agent employees**: AI agents running tasks like sales, procurement, recruiting, and development with human oversight.
-
-# **Enablers / Blockers**
-
-- Integration with legacy tools like quickbooks and with fiat rails
-- Privacy - business operations should be private
 
 # Resources
 
@@ -84,46 +71,3 @@ Tokenized firm stack - beyond stablecoins (cash) and RWAs (assets) → tokenizin
 - [Business Process Model and Notation](https://en.wikipedia.org/wiki/Business_Process_Model_and_Notation)
     - [TABS: Transforming automatically BPMN models into blockchain smart contracts](https://www.sciencedirect.com/science/article/pii/S2096720922000562) (2023) - System that converts Business Process Model and Notation (BPMN) workflows directly into smart contracts
     - [Automated mechanism to support trade transactions in smart contracts with upgrade and repair](https://www.sciencedirect.com/science/article/pii/S2096720925000120) (2025) - System for automatically repairing and redeploying smart contracts when unforeseen events prevent transaction completion
-
-# Notes
-
-focus on startups/small businesses; things that are started by 1-2 people and want to have a solid foundation to easily grow
-
-- examples: social club; coffee shop
-- could also make it easy to issue tokens/shares, incentives, take in investment, loans, etc.
-- Start/run your company onchain
-- define core requirements to bring basic business onchain; how it would be different/better than the status quo (also what are the downsides); would it be enticing enough
-
-thesis:
-
-- real-world use cases that have taken off are tokenizing cash reserves+payments (stablecoins) and financial assets (RWAs). what comes next is going deeper into the firm stack → tokenizing the firm itself; its operating systems
-    - Stablecoins: first we tried crypto-native currencies (BTC, DAI, UST), but tokenizing real-world currencies (USDT, USDC) proved more impactful/useful
-    - RWAs: first we tried crypto-native assets (memecoins, governance tokens), but tokenizing real-world assets (BUILD) proved more impactful/useful
-    - Smart Orgs: first we tried crypto-native organizations (DAOs), but tokenizing real-world organizations will prove more impactful/useful
-- this is the forgotten vision behind DAOs. DAOs turned into governance fetishization; token voting on proposals. this is taking it back to the vision of the trust-minimized, automated organization.
-
-USP
-
-- automated enforcement of company policies (prevents unauthorized actions, mistakes, fraud/embezzlement)
-- solving principal agent problems; bureaucratic bloat
-- this is the cheapest, best UX, fastest, most secure and scalable way to start, run, and grow your company
-
-Intervention ideas:
-
-- partner with a big company to go through their processes and see what we can trial bringing onchain
-- get in touch with web2 tools that firms use to manage different parts of their operations today
-- work with ERP incumbents: SAP, Oracle, Microsoft
-
-“smart org”, “smart ERP”, “onchain ERP”, “dERP - decentralized ERP”, “autonomous ERP”
-
-NOT FOCUSING ON GOVERNANCE - start with more mundane operational systems
-
-- bringing an organization’s cap table, permissions, financing, cashflows, etc. onchain
-- which parts to progressively put onchain? from backoffice to frontend: cap table (carta), permissions, treasury management/yield, payroll/payments, agreements, incentives (performance-based bonuses)
-- launching new org vs. tokenizing existing org?
-- figuring out what firm type makes sense to start with: freelancer, SME, startup, co-op, public company
-
-Sequencing
-
-- Tokenize **internal rails** first (cap table, treasury, payroll) → then **external rails** (customer payments, investor liquidity).
-- Each layer adds resilience and composability, but can remain interoperable with TradFi/legal wrappers.

@@ -1,8 +1,5 @@
 # Health & Bio
 
-Categories: Enterprise
-Last edited time: November 1, 2025 3:29 PM
-
 # **Problem**
 
 Healthcare suffers from siloed data, opaque supply chains, and misaligned incentives. Patient records are fragmented, billing is complex, and counterfeit drugs undermine trust. Clinical trials are costly and inefficient, and innovators struggle with access to funding and data. Patients, providers, and researchers lack verifiable, interoperable systems to manage, share, and build on sensitive health information securely.
@@ -16,15 +13,6 @@ Healthcare suffers from siloed data, opaque supply chains, and misaligned incent
 - Crowdsourced and token-incentivized clinical trials with AI-driven analysis
 - IP-NFTs for biotech discoveries and molecule ownership, enabling new R&D finance models
 - Insurance - automated claims, instant reimbursements, fraud prevention, and transparent coverage
-
-# **Emerging Trends**
-
-- Gene editing and CRISPR therapies (Intellia, Editas)
-- Personalized and precision medicine (Foundation Medicine, Tempus)
-- Brain-computer interfaces for treatment and augmentation (Neuralink, Synchron)
-- Longevity research and anti-aging biotech (Altos Labs, Calico)
-- Bioprinting and organ fabrication (Organovo, United Therapeutics)
-- DIY biohacking and citizen science movements
 
 # Resources
 

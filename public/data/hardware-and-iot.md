@@ -1,8 +1,5 @@
 # Hardware & IoT
 
-Categories: Digital
-Last edited time: December 18, 2025 5:27 AM
-
 # **Problem**
 
 IoT networks—spanning smart wearables, homes, vehicles, factories, and cities—depend on centralized clouds and intermediaries for identity, access, and payments, creating privacy risks, data silos, and single points of failure. Business models for device coordination and resource sharing remain underdeveloped, with little transparency or programmability.
@@ -22,20 +19,6 @@ IoT networks—spanning smart wearables, homes, vehicles, factories, and cities�
     - Autonomous drones/robots interacting with smart contracts for payments and access control
     - Provenance and audit trails for robotic decision-making using Ethereum
     - Secure data sharing between IoT/robotic devices via Ethereum-based protocols
-
-# **Emerging Trends**
-
-- Smart homes and device ecosystems (Google Nest, Amazon Alexa)
-- Drone-as-a-service and urban surveillance networks (DJI, Anduril)
-- Shared mobility, energy, and urban commons (Zipcar, Sonnen, tool libraries)
-
-# **Blockers**
-
-- Hardware integrations for secure wallet component and trusted sensor data
-- Privacy and consent for user and device data in smart environments
-- Latency and scalability constraints for real-time device coordination
-- Regulatory and liability challenges for autonomous physical systems
-- Light clients to run verification and transaction broadcasting on-device
 
 # Resources
 

@@ -1,8 +1,5 @@
 # Media & Entertainment
 
-Categories: Enterprise
-Last edited time: November 21, 2025 9:26 PM
-
 # Problem
 
 Cultural production and distribution is bottlenecked by centralized intermediaries (studios, labels, ticketing giants, streaming platforms) that capture outsized value while creators and fans face high costs, limited transparency, and restricted access. Piracy, fake tickets, opaque royalties, and inequitable revenue splits undermine trust and sustainability. (film, music, writing, journalism, art, podcasts)
@@ -15,14 +12,6 @@ Cultural production and distribution is bottlenecked by centralized intermediari
 - Tokenized fan engagement: invest in artists, songs, or franchises with fractional ownership.
 - Decentralized streaming and publishing: censorship-resistant platforms for content distribution.
 - Verifiable journalism: provenance for media assets and claims, linked to fact-checking oracles.
-
-# **Emerging Trends**
-
-- Creator-owned platforms and fan economies (Patreon, Substack, OnlyFans).
-- AI-generated music, video, and storylines (Suno, Runway).
-- Virtual idols and synthetic performers (Hatsune Miku, K-pop AIs).
-- Consolidation of streaming and subscription fatigue (Disney+, Spotify, Netflix).
-- Experience-driven media models (immersive shows, AR/VR concerts).
 
 # Resources
 

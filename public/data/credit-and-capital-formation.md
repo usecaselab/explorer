@@ -1,8 +1,5 @@
 # Credit & Capital Formation
 
-Categories: Enterprise
-Last edited time: January 23, 2026 9:33 PM
-
 # **Problem**
 
 Small and medium enterprises (SMEs) are underserved by traditional finance: credit is scarce, underwriting is costly, and capital markets are inaccessible. Inefficiencies in trade credit, slow processing time, and high intermediary fees constrain SME growth and resilience. Crowdfunding and other alternative financing options remain limited in scale and fail to provide sustained access to affordable capital.
@@ -17,18 +14,6 @@ Small and medium enterprises (SMEs) are underserved by traditional finance: cred
 - Microloans: accessible, low-friction capital for underserved entrepreneurs
 - Credit unions: blockchain-based cooperative finance models
 - Equity tokenization: SMEs can issue tokenized shares, bypassing expensive IPOs and private placements ([source](https://enterpriseonchain.substack.com/p/tokenizations-30t-futureheres-what))
-
-# **Emerging Trends**
-
-- Lending marketplaces: [Lendio](https://www.lendio.com/)
-- [SBA backed loans](https://www.sba.gov/funding-programs/loans)
-- Embedded finance for SMEs (Stripe Capital, Shopify Capital)
-- Alt-credit scoring using alternative data (Tala, Nova Credit)
-
-# Blockers
-
-- Credit risk assessment and reliable SME identity/onchain reputation
-- Securities regulations, bank licensing regulations
 
 # **Resources**
 

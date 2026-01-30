@@ -1,8 +1,5 @@
 # IT Infrastructure
 
-Categories: Enterprise
-Last edited time: December 22, 2025 7:17 PM
-
 # Problem
 
 Provisioning and managing IT infrastructure—storage, compute, bandwidth, and connectivity—remains centralized, costly, and vulnerable to chokepoints. Cloud giants dominate access to servers, GPUs, and content delivery, while telecom incumbents gatekeep connectivity and pricing. Systems for inter-carrier settlements, bandwidth resale, and storage verification are inefficient, opaque, and prone to censorship or single points of failure.
@@ -15,11 +12,6 @@ Provisioning and managing IT infrastructure—storage, compute, bandwidth, and c
 - Streaming, video, sensor and mapping services powered by token incentives
 - Intercarrier settlements and cross-network provisioning
 - General pattern of real time payment for priority access to contested resources.
-
-# **Emerging Trends**
-
-- Satellite-based global internet services (Starlink, OneWeb)
-- [MVNOs](https://en.wikipedia.org/wiki/Mobile_virtual_network_operator) decoupling device identity and operator provisioning
 
 # Resources
 

@@ -1,8 +1,5 @@
 # Energy
 
-Categories: Enterprise
-Last edited time: November 1, 2025 3:43 PM
-
 # Problem
 
 Power systems are shifting to renewables and electrification (rooftop solar, EVs, heat pumps), which creates sharper peaks and local bottlenecks that are harder to manage with today’s tools. Small, distributed projects struggle to get financed and built because permits are slow, incentives are fragmented, and future cashflows are uncertain—making it hard to bundle many sites. Nuclear new build and SMRs face long licensing timelines, high upfront risk, and supply-chain quality hurdles, with limited end-to-end tracking for fuel and waste. Environmental claims (RECs, carbon intensity, green hydrogen) are hard to verify end-to-end, so double-counting and “greenwashing” remain risks. Meanwhile, as grids add automation and billions of connected devices, cyber-physical risk rises without common ways to authenticate devices and keep tamper-evident records of real energy flows and control actions.
@@ -15,20 +12,6 @@ Power systems are shifting to renewables and electrification (rooftop solar, EVs
 - Carbon credits and sustainability tracking for energy production
 - Distributed grid automation to mitigate cyber-physical risks
 - Hydrogen and next-gen fuels tokenization for transparent production and distribution
-
-# **Emerging Trends**
-
-- Community microgrids and virtual power plants (Brooklyn Microgrid, Sonnen)
-- EV-to-grid integration and smart charging networks (Tesla, Octopus Energy)
-- Hydrogen fuel ecosystems for storage and transport (Air Liquide, Plug Power)
-- Fusion energy pilots (Commonwealth Fusion Systems, Helion)
-- Green hydrogen ecosystems for storage and transport (Air Liquide, Plug Power)
-- Smart grids and virtual power plants with AI optimization (Octopus Energy, Sonnen)
-- AI-driven demand prediction and grid optimization (AutoGrid, Uplight)
-
-# Blockers
-
-- Need for reliable oracles linking physical energy flows to onchain records
 
 # Resources
 

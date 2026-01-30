@@ -1,8 +1,5 @@
 # Supply Chain
 
-Categories: Enterprise
-Last edited time: November 12, 2025 10:40 PM
-
 ## Problem
 
 Global supply chains today are highly fragmented, largely paper-driven and prone to costly delays. Manufacturers, suppliers, logistics providers, customs agencies and retailers operate across disconnected systems, which creates blind spots that hinder fraud detection, error-correction and real-time coordination. Settlement and financing processes frequently lag behind physical shipments by weeks, creating liquidity gaps. At the same time regulatory compliance and certification demands (for sustainability, safety, customs) add further friction to already complex flows.
@@ -20,13 +17,6 @@ Digitally-native, interoperable supply chain infrastructure for traceability, fi
 - **Open supply-chains:** Enabling coordination among independent farmers, artisans and open-hardware producers outside corporate platforms.
 - **Electronic Bill of Lading:** Replacing paper document of title with NFT-like digital representation of title and transfer rights.
 
-## Emerging Trends
-
-- Digitized trade-corridors and paperless customs/trade documentation (e.g., Singapore, UAE, EU)
-- Mandated sustainability and traceability regimes: ESG, deforestation-free supply-chains and full provenance disclosure
-- AI-driven logistics-orchestration: predictive demand, on-chain financing triggers, crowd-sourced capacity
-- Additive manufacturing / 3D-printing decentralized production requiring verifiable design IP, provenance and order-to-print workflows (see [Interfacer](https://www.interfacerproject.eu/), [Fab City](https://fab.city/), [Circular Factory](https://www.thecircularfactory.com/), [Open Source Ecology](https://opensourceecology.org/))
-
 ## Intervention Ideas
 
 - Related to [Digital Product Passport - Tokenizing Consumer Goods](Digital%20Product%20Passport%20-%20Tokenizing%20Consumer%20Goo%2027ad34f360e48057b679e26f7592a7be.md)
@@ -34,11 +24,6 @@ Digitally-native, interoperable supply chain infrastructure for traceability, fi
 - Prototype **smart-contract payments linked to IoT delivery events**: e.g., shipment verified → payment automatically released.
 - Pilot circular-economy flows using verifiable product-history minted as on-chain assets enabling resale, recycling and certification tracking.
 - Roll out programs for small-tier suppliers (farmers, artisans) to onboard into open supply-chain networks using verifiable credentials and tokenized participation.
-
-## Enablers / Blockers
-
-- **Oracle problem:** Verifying real-world physical events (deliveries, condition, location) on-chain remains complex and high integrity data is required. Without reliable real-world event validation, smart contracts and trace-logs lose trust and utility.
-- **Privacy:** While traceability is needed, commercially sensitive information (supplier pricing, volumes, contract terms) must be protected. Balancing transparency with confidentiality is a core blocker for adoption across supply-chain participants.
 
 ## Resources
 
@@ -71,7 +56,3 @@ Digitally-native, interoperable supply chain infrastructure for traceability, fi
 - [Janus: Preventing Counterfeits in Pharma SCM](https://www.sciencedirect.com/science/article/pii/S2096720923000325) (2023) - blockchain + hologram tags for counterfeit resistance
 - [Systematic Review: Blockchain & Supply Chain Traceability](https://www.sciencedirect.com/science/article/pii/S2096720924000538) (2025) - ISM-based analysis of blockchain’s role in enhancing traceability
 - [Blockchain in Fashion SCM](https://www.sciencedirect.com/science/article/pii/S2096720924000794) (2025) - Hyperledger-based collaboration models for SMEs in fashion supply chains
-
-## Why It Matters for Ethereum
-
-By encoding trusted digital identities, provenance, payment logic and interoperability into smart contracts, Ethereum offers the infrastructure to transform fragmented supply-chains into cohesive, composable, networks as global trade becomes increasingly digital, decentralized and regulated (ESG, product passports, circular economy).

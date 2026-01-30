@@ -1,15 +1,10 @@
 # Services & Tasks
 
-Categories: Consumer, Enterprise
-Last edited time: November 23, 2025 3:30 PM
-
 ### Problem
 
 The global market for services and task-based labor—spanning freelancers, gig workers, consultants, coaches, and household help—depends heavily on centralized platforms that intermediate discovery, reputation, and payments. These intermediaries extract high fees and exert disproportionate control over visibility and client access. Workers are often locked into closed ecosystems that restrict portability of reputation or verified work history.
 
 Trust between counterparties remains fragile: reviews are easily gamed, disputes lack transparency, and workers across borders face restricted access due to opaque platform policies rather than proven skill or reliability. This reduces both worker autonomy and market efficiency, particularly in domains where proof of quality or trustworthiness is hard to assess without a trusted intermediary.
-
----
 
 ### Opportunities
 
@@ -22,30 +17,6 @@ Ethereum can reduce verification and enforcement costs in peer-to-peer labor mar
 - **Programmable escrow:** Smart contracts for milestone-based payments, dispute resolution, and refunds that minimize platform mediation.
 - **Task credentials:** Cryptographic proofs of work, verified deliverable receipts, or NFT-based certificates that unlock access to higher-value opportunities.
 - **Decentralized arbitration systems:** Mediation solutions for labor contracting arrangements that ensure efficient and fair dispute outcomes.
-
----
-
-### Emerging Trends
-
-[Freelance work is up 260% (2022-2024).](https://my.mellow.io/docs/Trends_in_North_American_Global_Contractor_Recruitment.pdf) The shift toward autonomous, borderless labour coordination aligns with multiple concurrent trends: AI-powered matching and recruiting, the scaling of global freelance and gig economies, the emergence of agentic workforces and composable task protocols treating services as verifiable digital assets.
-
-Examples include major freelance marketplaces (Upwork, Fiverr), talent-matching platforms (Athena), on-demand expert networks (Toptal, GLG, Maven) and rising autonomous systems: [enterprise AI agents](https://www.pwc.com/us/en/tech-effect/ai-analytics/ai-agents.html) that perform tasks, coordinate workflows and serve as digital labour. *Research increasingly points to [“agentic work” as a separate labour class](https://arxiv.org/abs/2506.06576)* 
-
----
-
-### Leverage Points
-
-- 
-
----
-
-### Enablers / Blockers
-
-- **Labor and employment law:** Worker classification and platform liability remain ambiguous in most jurisdictions, limiting adoption of autonomous marketplaces.
-- **Privacy Law + KYC/AML Requirements:** Verification requirements complicate pseudonymous participation and cross-border transactions.
-- **Economic/Mechanism Design:** Sustainable incentive alignment is challenging, particularly for dispute resolution and reputation staking mechanisms.
-
----
 
 ### Resources
 
@@ -62,9 +33,3 @@ Examples include major freelance marketplaces (Upwork, Fiverr), talent-matching 
 
 - [TSCS: A blockchain-based tokenized subtitling crowdsourcing system](https://www.sciencedirect.com/science/article/pii/S2096720923000076) (2023) - Proposes token incentives and NFT receipts for subtitling work using IPFS storage and programmable settlement
 - [Blockchain-based crowdsourcing for human intelligence tasks with dual fairness](https://www.sciencedirect.com/science/article/pii/S2096720924000265) (2024) - Introduces a majority-vote mechanism for truth discovery and fair task allocation without central authority
-
----
-
-### Why It Matters for Ethereum
-
-The ability to encode trust directly into transactions, reputation, and arbitration logic allows open labor markets to function without a centralized platform. As AI agents begin to transact autonomously and cross-border work increases, Ethereum provides the foundation for transparent, programmable, and globally interoperable labor systems. This use case offers one of the most direct pathways to demonstrate Ethereum’s potential as *a trust infrastructure for human and agentic work*.

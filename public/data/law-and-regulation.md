@@ -1,15 +1,10 @@
 # Law & Regulation
 
-Categories: Government
-Last edited time: November 22, 2025 6:23 PM
-
 ## Problem
 
 Legal and regulatory systems rely on fragmented workflows: statutes are published as prose, licensing and compliance checks happen on paper or disconnected portals, and verification of conformance or ownership is slow and opaque. Regulatory oversight depends on costly audits and after-the-fact enforcement rather than continuous, ex-ante verification.
 
 At the same time, private legal agreements—wills, contracts, trusts, and dispute-resolution processes—remain slow, manual and jurisdiction-bound. This fragmentation makes legal systems expensive to operate, hard to audit, and inaccessible to individuals and small organizations.
-
----
 
 ## Opportunities
 
@@ -24,36 +19,6 @@ Ethereum can lower verification and enforcement costs across both **public-law**
 - **Trusts & estates:** Programmable fiduciary administration with transparent record-keeping.
 - **Dispute resolution:** Decentralized arbitration and online dispute-resolution mechanisms (e.g., Kleros) to reduce litigation overhead.
 - **Ricardian & parametric contracts:** Human-readable, machine-parsable agreements that can execute automatically or trigger based on measurable outcomes.
-
----
-
-## Emerging Trends
-
-- Governments and legal-tech initiatives exploring **machine-readable law** and **computable compliance** ([OECD](https://www.oecd.org/en.html), [European Commission](https://commission.europa.eu/index_en), [Norm.ai](https://www.norm.ai/)).
-- Growth of **verifiable credential standards** (W3C VCs, EBSI for RegTech) that support attestations, licensing and inspection proofs.
-- Expansion of **digital-law initiatives** (Legal XML, Smart Legal Contracts) seeking formal models linking statutes to executable logic.
-
----
-
-## Leverage Points
-
-- Bryant Eisenbach [fubuloubu@gmail.com](mailto:fubuloubu@gmail.com) the viper maintainer at one point tried to create a start up called gun clear for gun registration on ethereum
-- [~~Everest](https://everest.org/) at one point wanted to build a reusable KYC solution. Don’t totally trust them as fully aligned though.~~
-- [Norm.ai](http://Norm.ai) - Law as code, AI compliance startup
-- [Symbium](https://symbium.com/) - AI compliance and permitting (proprietary Complaw technology)
-- [PlanX (Open System Labs)](https://www.planx.uk/) - Create digital services using ready-made building blocks. Write complex planning rules and guidance as flowcharts.
-- Bloomberg I-teams. Most city level leads are open to chat: https://www.bloomberg.org/government-innovation/spurring-innovation-in-cities/i-teams-and-innovation-programs/ (also applicable to other Government leverage points)
-- [LESA](https://lesa.law/) - Kyle Bestape
-
----
-
-## Enablers / Blockers
-
-- **Legal recognition of smart contracts:** Smart contracts and digital credentials are not yet uniformly recognised as legally binding in many jurisdictions. Without statutory clarity, policy-as-code and programmable agreements cannot be enforced in courts.
-- **Standardization & interoperability:** Divergent rule formats, credential schemas and contract frameworks limit cross-jurisdiction deployment. Common data models and legal ontologies are prerequisites for interoperability.
-- **Institutional inertia:** Legal institutions and regulators move cautiously; adoption requires assurance of compliance with existing norms. Without pilot precedents and clear liability frameworks, agencies and firms hesitate to rely on decentralised tools.
-
----
 
 ## Resources
 
@@ -73,9 +38,3 @@ Ethereum can lower verification and enforcement costs across both **public-law**
 - [Exploring Blockchain-Based Alternative Dispute Resolution](https://ssrn.com/abstract=4748761) (2023) - blockchain ODR as complementary to traditional ADR
 - [A Study of a Blockchain-Based Judicial Evidence Preservation Scheme](https://www.sciencedirect.com/science/article/pii/S2096720924000058) (2024) - Demonstrates blockchain + IPFS for credible electronic evidence
 - [JudicBlock: Judicial Evidence Preservation Scheme Based on Blockchain Technology](https://www.mdpi.com/2813-5288/3/4/11) (2025) - Shows blockchain’s role in long-term judicial evidence integrity
-
----
-
-## Why It Matters for Ethereum
-
-By supporting policies, certifications, contracts and disputes onchain, Ethereum can serve as a shared substrate for legal interoperability. Policy-as-code frameworks bring laws into a testable form; programmable contracts and credential systems make compliance continuous rather than retrospective. As governments and industries converge on digital public infrastructure and verifiable credentials, Ethereum provides the most mature platform to anchor global legal interoperability and transparent rule enforcement.

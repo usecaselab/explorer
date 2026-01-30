@@ -1,13 +1,8 @@
 # Public Administration
 
-Categories: Government
-Last edited time: January 11, 2026 8:57 PM
-
 ## Problem
 
 Citizens often face duplicative verification processes, long wait times, paper-based records and limited transparency in how decisions are made. Cross-agency data exchange is inconsistent, making oversight and service delivery costly and error-prone. Corruption and inefficiency thrive where records can be altered or lost and where accountability mechanisms are weak.
-
----
 
 ## Opportunities
 
@@ -19,36 +14,12 @@ Citizens often face duplicative verification processes, long wait times, paper-b
 - **Participatory governance:** E-voting, participatory budgeting, petitions and citizen consultation platforms anchored on ledger systems.
 - **Digital public infrastructure (DPI):** Interoperable APIs and secure data-exchanges enabling cross-agency coordination.
 
----
-
-## Emerging Trends
-
-Governments are undergoing digital disruption and also smaller budgets which increase a need for digital solutions. Digital Public Goods and Infrastructure are also gaining recognition from institutional and global governing entities
-
-- Increased demand for citizen-centric public services, data interoperability and cross-agency automation.
-- Government digital ID initiatives ([eIDAS/](https://digital-strategy.ec.europa.eu/en/policies/eidas-regulation)[EU Digital Identity](https://ec.europa.eu/digital-building-blocks/sites/spaces/EUDIGITALIDENTITYWALLET/pages/915931811/The%2BEuropean%2BDigital%2BIdentity%2BRegulation) regulation)
-    - [Zug Digital ID](https://ezug.ch/en/) - identity system in Switzerland, offering residents digital access to government services and supporting functionalities like e-bike borrowing and municipal voting
-- Participatory deliberation tech & experiments: [pol.is](http://pol.is), [vTaiwan](https://info.vtaiwan.tw/) / [g0v](https://g0v.tw/intl/en/) ([Audrey Tang](https://time.com/6979012/audrey-tang-interview-plurality-democracy/)), RadicalXChange
-- [eGovernance](https://en.wikipedia.org/wiki/E-governance), [e-participation](https://en.wikipedia.org/wiki/E-participation), [eVoting](https://en.wikipedia.org/wiki/Electronic_voting)
-
----
-
 ## Intervention Ideas
 
 - Any kind of registry for real estate, vehicles, etc. that need tamper-resistance and public traceability (See California Avalanche DMV registry)
 - Hackathon/Co-design sprints and workshops
 - [Propel AI Residency](https://docs.google.com/document/d/19Q-Dp0vmQwXbhTGYHpuadxHPzAehc6HGU66EM_tN0k4/edit?tab=t.0#heading=h.ofd9cpd1f3sg) to create AI-first digital services.
 - See [Philanthropy & Social Services](Philanthropy%20&%20Social%20Services%20279d34f360e481779960cc1e2518c922.md)
-
----
-
-## Enablers / Blockers
-
-- **Institutional inertia:** Government bureaucracies and legacy systems are slow to adopt new protocols, which slows network effects and system interoperability. Without cross-agency coordination and willingness to change processes, blockchain-enabled e-governance will struggle.
-- **Legal recognition of smart contracts and digital credentials:** Many jurisdictions lack clear legal frameworks recognising blockchain-based credentials, smart contracts or on-chain registration systems. Without legal validity of digital credentials and records, governments may not trust or adopt them.
-- **Interoperability & legacy system integration:** Existing public-administration systems differ widely; ensuring new ledger-based services integrate smoothly is challenging. If systems cannot talk to each other or legacy data cannot be migrated, the value of shared infrastructure falls short.
-
----
 
 ## Resources
 
@@ -75,9 +46,3 @@ Governments are undergoing digital disruption and also smaller budgets which inc
 - [BRI: India’s Land Registry on Blockchain](https://www.blockchainresearchinstitute.org/project/indias-land-registry-on-blockchain/) (2018) - UNDP in India to address property title disputes & land registry corruption
 - [Blockchain for decentralised rural development and governance](https://www.sciencedirect.com/science/article/pii/S2096720922000276) (2022) - DAOs at national and regional levels to enable transparent, participatory governance where citizens vote on development priorities, budgets, and planning decisions.
 - [Information Sharing in Land Registration Using Hyperledger Fabric Blockchain](https://www.mdpi.com/2813-5288/2/2/6) (2024)
-
----
-
-## Why It Matters for Ethereum
-
-By anchoring identity, digital credentials, registries and cross-agency data flows on-chain, Ethereum enables government services that are more efficient, transparent and auditable. As citizens demand smoother public-services, governments need interoperable infrastructure.

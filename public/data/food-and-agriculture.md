@@ -1,8 +1,5 @@
 # Food & Agriculture
 
-Categories: Enterprise
-Last edited time: November 1, 2025 3:30 PM
-
 # Problem
 
 Farmers and small processors operate on thin margins and slow payments, pre-financing inputs without reliable ways to prove weights, grades, residues, or animal welfare at sale; lab results and inspections rarely stay attached to lots. Traceability breaks at handoffs: lot IDs change, temperature data isn’t captured end-to-end, and records sit in PDFs and supplier portals, so recalls, substitutions, and adulteration (e.g., diluted oils, mislabeled seafood) are hard to resolve. In the middle, grocers and restaurants juggle siloed POS, inventory, and supplier systems—leading to out-of-stocks, shrink, rebate and chargeback disputes, and weak links between SKUs/menus and verified origin, allergens, or nutrition. Consumers face labels that are hard to verify and a shelf bias toward ultra-processed, low-cost products because there’s no consistent way to price, reward, and replenish for proven freshness and healthier composition.
@@ -14,18 +11,6 @@ Farmers and small processors operate on thin margins and slow payments, pre-fina
 - Farmer financing and insurance through onchain credit, microloans, and parametric covers.
 - Loyalty and incentive systems for regenerative and sustainable practices
 - Community and cooperative marketplaces to retain more value locally
-
-# **Emerging Trends**
-
-- Regenerative agriculture and carbon farming markets (Indigo Ag, Nori)
-- Precision agriculture with IoT, drones, and AI (John Deere, xFarm)
-- Alternative proteins and new supply chains (Upside Foods, Impossible Foods)
-- Farm-to-consumer direct trade and local food platforms (Farmigo, CrowdFarming)
-- ESG-driven commodity finance and traceability mandates (EU Deforestation Regulation)
-
-# Blockers
-
-- Incentivizing integration with legacy supply chain stakeholders
 
 # Resources
 

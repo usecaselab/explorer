@@ -1,8 +1,5 @@
 # Marketing & Advertising
 
-Categories: Enterprise
-Last edited time: November 1, 2025 3:29 PM
-
 # Problem
 
 Digital advertising is dominated by centralized platforms that control audience data, take large cuts of ad spend, and operate with limited transparency. Fraud, fake impressions, and opaque attribution undermine trust. Creators and consumers capture little of the value they generate, while advertisers face rising costs and shrinking margins.
@@ -13,13 +10,6 @@ Digital advertising is dominated by centralized platforms that control audience 
 - Onchain influencer marketing: verifiable reach and engagement for payouts.
 - Programmable ad spend: direct funding of dapps or public goods via ad revenue.
 - Tokenized loyalty and rewards: integrating ad campaigns with consumer incentives.
-
-# **Emerging Trends**
-
-- Creator economy platforms for UGC and influencer deals (Billo, Trend.io, Grin)
-- Retail media networks monetizing shopper data (Amazon, Walmart)
-- AI-driven content generation and targeting (OpenAI, Jasper)
-- Privacy-first ad models in browsers and mobile (Apple ATT, Google Privacy Sandbox)
 
 # Resources
 

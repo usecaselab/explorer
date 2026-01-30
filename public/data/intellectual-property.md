@@ -1,10 +1,5 @@
 # Intellectual Property (IP)
 
-Categories: Enterprise
-Last edited time: November 1, 2025 3:43 PM
-
-*overlaps with Scientific Research, Healthcare, Media & Entertainment
-
 # Problem
 
 Intellectual property systems—covering patents, copyrights, and trademarks—are fragmented, slow, and costly. Licensing often relies on one-time fees instead of usage-based models, leaving inventors undercompensated and innovation underfunded. Global variations in law, opaque registries, and expensive enforcement limit access, while creators and small innovators struggle to monetize rights fairly.
@@ -17,17 +12,6 @@ Intellectual property systems—covering patents, copyrights, and trademarks—a
 - Licensing pools and collective rights management
 - Cross-industry interoperability for IP across IoT, media, healthcare, and scientific research
 - Proof of existence / tamper proof records such as lab books or drafts to strengthen “first to invention” rather than just registration claims.
-
-# **Emerging Trends**
-
-- Open science and patent commons for faster innovation (Open COVID Pledge, CERN Open Hardware)
-- AI-generated content driving demand for new IP frameworks
-- Usage-based and subscription licensing models replacing static fee structures
-
-# Blockers
-
-- Difficulty bridging off-chain legal contracts with onchain enforcement
-- High institutional inertia and entrenched intermediaries in patent and copyright offices
 
 # Resources
 

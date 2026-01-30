@@ -1,8 +1,5 @@
 # AI
 
-Categories: AI
-Last edited time: January 28, 2026 12:00 PM
-
 # Problem
 
 AI systems are increasingly powerful but remain opaque, centralized, and controlled by a handful of large corporations. Users lack visibility into model training data, inference processes, and decision-making logic. There's no verifiable way to audit AI outputs, track provenance, or ensure fair compensation to data contributors. As AI agents become autonomous actors in digital ecosystems, they need secure identities, wallets, and verifiable credentials to participate in economic activities.
@@ -16,14 +13,6 @@ AI systems are increasingly powerful but remain opaque, centralized, and control
 - **AI output provenance:** Watermarking, signing, and tracking AI-generated content to combat deepfakes and misinformation.
 - **Compute marketplaces:** Decentralized GPU networks for AI training and inference with verifiable computation.
 - **AI governance and alignment:** Onchain mechanisms for community oversight, bounties for alignment research, and transparent model evaluation.
-
-# Emerging Trends
-
-- AI agent frameworks and autonomous systems (AutoGPT, LangChain agents, CrewAI)
-- Decentralized compute networks (Akash, Render, io.net)
-- AI safety and alignment research acceleration
-- Model marketplace and fine-tuning platforms (Hugging Face, Replicate)
-- AI-generated content detection and watermarking
 
 # Resources
 

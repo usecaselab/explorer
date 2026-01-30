@@ -1,8 +1,5 @@
 # Data
 
-Categories: Enterprise
-Last edited time: January 12, 2026 3:36 PM
-
 # Problem
 
 Data already trades through brokers, ad-tech exchanges, and bespoke deals between publishers and buyers (AI teams, marketers, hedge funds), but the market is opaque and one-sided. Buyers can’t reliably check quality, coverage, provenance, or freshness before paying; sellers lose control once data leaves, while intermediaries capture margin and mask license terms. Deals hinge on NDAs and custom contracts, making due diligence, privacy/sectoral compliance (often cross-border), and audits slow and costly; leakage and quiet reselling are common. With no portable licenses, usage metering, or enforceable royalties, most participants either over-share or don’t share at all—leaving valuable data underused.
@@ -13,13 +10,6 @@ Data already trades through brokers, ad-tech exchanges, and bespoke deals betwee
 - Enterprise and scientific data marketplaces with programmable access and usage rights (licenses, metering, royalties, pay-per-use, revocation, automatic revenue splits to contributors)
 - Tokenized data assets and derivatives (e.g., streams, APIs, analytics outputs)
 - Decentralized fact-checking, oracles, and community knowledge games
-
-# Emerging Trends
-
-- AI model marketplaces and synthetic data exchanges (Hugging Face, MostlyAI)
-- Data trusts and cooperative governance of shared datasets (Open Data Institute, Data Union DAO)
-- Enterprise “data spaces” and industrial consortia (Catena-X, Gaia-X in Europe)
-- Community-driven misinformation detection (X Community Notes, NewsGuard)
 
 # Resources
 

@@ -1,13 +1,8 @@
 # Alternative Money
 
-Categories: Civil Society
-Last edited time: November 18, 2025 2:26 AM
-
 ## Problem
 
 Money underpins every exchange, yet the design space for monetary systems has been narrowly dominated by state fiat and bank-reserve backed money. Alternative forms — including local currencies, mutual credit systems, demurrage money or algorithmic units of account — have historically struggled to scale. Many communities, municipalities and networks desire currencies that reflect their values and incentives, but lack reliable platforms, protocols and governance frameworks to design, issue and circulate them. Innovators face the challenge of creating currencies that function as a viable **store of value**, **medium of exchange** and/or **unit of account**, while addressing liquidity, trust and adoption constraints.
-
----
 
 ## Opportunities
 
@@ -21,19 +16,6 @@ Ethereum can enable networks, communities and regions to design, issue and gover
 - **Indexed or basket currencies:** Units constructed to preserve purchasing power by tracking commodities or economic indicators.
 - **Barter networks & swap-based systems:** Peer networks where value circulates via alternative mediums of exchange enabled by protocol tools and tokenization.
 
----
-
-## Emerging Trends
-
-Several shifts increase the feasibility and relevance of new currency systems:
-
-- Institutional acceptance of Bitcoin as alternative SoV.
-- Institutionalization of stablecoins.
-- Growing debates and research on community currencies, token economy design and value circulation in local contexts. ([belfercenter.org](http://belfercenter.org))
-- Experimental deployments of community or complementary currencies, especially during crisis or economic stress contexts. ([IMF](https://www.imf.org/en/Publications/fandd/issues/2021/03/technological-innovation-fueling-community-currencies-adriano?utm_source=chatgpt.com))
-
----
-
 ## Intervention Ideas
 
 - [Cycles.money](http://Cycles.money) and small business support. Stablecoins are a new unlock in this space.
@@ -43,16 +25,6 @@ Several shifts increase the feasibility and relevance of new currency systems:
     - Pilot **local currency deployments** in municipalities or networks — for example labor-time banking, renewable-energy credits or service-exchange currencies — using smart contracts and transparent settlement.
     - Avenues for compensating contributions to the city
     - Small businesss suport (see: Circles)
-
----
-
-## Enablers / Blockers
-
-- **Liquidity & adoption:** Alternative monetary systems struggle to achieve merchant acceptance, user adoption, circulation velocity and connection to larger financial systems. Without sufficient circulation and acceptance, a currency risks low utility and eventual stagnation.
-- **Regulation:** Currency issuance, redemption, consumer protection, tax treatment, KYC/AML and payment-licensing frameworks create friction and risk for non-traditional money. Legal or regulatory ambiguity deters communities and organizations from deploying currency systems.
-- **Oracle & governance risk:** Many alternative currency models depend on accurate real-world data, reliable oracles or robust governance frameworks; failures can undermine trust and stability. Without sound mechanisms for issuance, conversion and governance the system may suffer from volatility, centralization or capture.
-
----
 
 ## Resources
 
@@ -77,9 +49,3 @@ Several shifts increase the feasibility and relevance of new currency systems:
 - [What Determines Demand for Digital Community Currencies?](https://www.ipe-berlin.org/fileadmin/institut-ipe/Dokumente/Working_Papers/ipe_working_paper_209.pdf) (2023) - Study of adoption factors for digital community currencies
 - [Circulation of a digital community currency](https://www.nature.com/articles/s41598-023-33184-1) (2023) - Empirical network-analysis of the Sarafu digital currency in Kenya
 - [Monetary Commons](https://monetarycommons.com/) (2025) - “a trust fund for everyone” ([tweet + video](https://x.com/yanisvaroufakis/status/1976538948781400403))
-
----
-
-## Why It Matters for Ethereum
-
-Monetary systems represent one of the most foundational infrastructures of civilization. When programmable, transparent and interoperable, they unlock value networks beyond conventional financial systems. Ethereum offers the tools to build currencies that align with community values, local economies and thematic purposes to address the creation of new currencies and the nature of money itself.

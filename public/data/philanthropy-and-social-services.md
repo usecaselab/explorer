@@ -1,13 +1,8 @@
 # Philanthropy & Social Services
 
-Categories: Civil Society
-Last edited time: November 1, 2025 7:34 PM
-
 ## Problem
 
 Mobilizing resources for aid and social support is often slow, opaque and costly, especially at the last mile. Fragmented registries, manual eligibility checks and multiple intermediary layers increase leakage and delays, particularly in crisis contexts. Cross-border constraints and banking frictions limit reach to vulnerable and unbanked populations. Verification and impact-reporting are inconsistent, making it difficult for donors and agencies to trace funds to outcomes while also protecting recipient privacy.
-
----
 
 ## Opportunities
 
@@ -20,32 +15,6 @@ Ethereum can enable faster, transparent and verifiable resource flows, identity 
 - **Programmable commitment pools / assurance contracts**: Smart contracts that release funds only when pre-agreed milestones are met, enabling collaborative campaigns across organizations.
 - **Decentralized coordination platforms for social-services actors:** Infrastructure enabling NGOs, volunteers and communities to coordinate service delivery, funding and verification at scale.
 - **UBI**
-
----
-
-## Emerging Trends
-
-- 
-
----
-
-## Leverage Points
-
-- Explore opportunities to re-route funding from private sector to public sector. Watershed/Wren could be partners.
-- Peer-2-Peer philanthropy platforms.
-    - Some cities (Denton, Texas) [allow citizens to cover utility bills](https://docs.basic.tech/get-started/welcome) of other residents, some ZK applications here.
-    - [City of Denver Colorado](https://www.axios.com/local/denver/2025/10/15/denver-homeless-shelter-funding-performance-safety), started linking shelter funding to performance due to tighter budgets and wanting better effectiveness.
-- **Portable identity** for displaced persons and unbanked individuals, integrated with local service-providers. RealFi Residency - a project that turns a credit card (Alisher - vaquita?)into a hardware wallet easily. Could be easily distributed and works through credit card tap
-- [Propel AI Fellowship.](https://docs.google.com/document/d/19Q-Dp0vmQwXbhTGYHpuadxHPzAehc6HGU66EM_tN0k4/edit?tab=t.0#heading=h.ofd9cpd1f3sg) Have a good budget and mostly focused on AI solutions for public services but still lack the privacy, transparency and audibility component that blockchain can bring. Nic Z can connect to the founders (ex. startup & digital government folks - [Leo](https://www.linkedin.com/in/leomancini/), [Dave](https://www.linkedin.com/in/daveguarino/) and [Alan](https://www.linkedin.com/in/alanjosephwilliams/))
-
----
-
-## Enablers / Blockers
-
-- **Data-protection & privacy law:** Ensuring beneficiary privacy, consent, selective disclosure and alignment with data-protection regimes is challenging for on-chain systems. Aid platforms involve sensitive personal and identity data; inability to guarantee privacy will impede adoption.
-- **Institutional inertia:** Many aid agencies, NGOs and service-systems are locked into legacy processes and intermediaries; shifting to new infrastructure is difficult.
-
----
 
 ## Resources
 
@@ -75,9 +44,3 @@ Ethereum can enable faster, transparent and verifiable resource flows, identity 
 - [The Market Consequences of Perceived Strategic Generosity: An Empirical Examination of NFT Charity Fundraisers](https://arxiv.org/abs/2401.12064) (2024)
 - [How Is Crypto Supporting Humanitarian Aid Work?](https://cryptoforinnovation.org/how-is-crypto-supporting-humanitarian-aid-work/) (2024) - Blockchain makes humanitarian aid more transparent and traceable. It improves financial inclusion by enabling loans, savings, and fast payments for the unbanked. New platforms let donors send crypto directly to recipients and help agencies track delivery.
 - [A blockchain‑based platform for ensuring provenance and traceability of donations for cultural heritage](https://www.sciencedirect.com/science/article/pii/S2096720925000053) (2025) - Proposes integrating traditional crowdfunding with smart contracts and a dApp to immutably record donation flows and enable donor verification.
-
----
-
-## Why It Matters for Ethereum
-
-The social-services and aid sector currently relies on opaque channels, slow intermediations and weak traceability. Ethereum-anchored infrastructure allows donors, NGOs and recipients to coordinate with less friction, track outcomes in real time and protect beneficiary privacy through selective disclosure and identity protocols.
