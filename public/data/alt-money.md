@@ -16,16 +16,6 @@ Ethereum can enable networks, communities and regions to design, issue and gover
 - **Indexed or basket currencies:** Units constructed to preserve purchasing power by tracking commodities or economic indicators.
 - **Barter networks & swap-based systems:** Peer networks where value circulates via alternative mediums of exchange enabled by protocol tools and tokenization.
 
-## Intervention Ideas
-
-- [Cycles.money](http://Cycles.money) and small business support. Stablecoins are a new unlock in this space.
-- Pooja Ohlhaver [new Community Currency Paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5136037)
-    - Introduces a new model called PCARE (Plural Community Asset Resource Exchange) which is a dual-currency model designed to help regulate these new scarce resources (attention & influence) in networked communities. PCARE separates a non-transferable, irrevocable stake for influence (you lock in your claim to influence), and separately, a transferable currency for resource exchange (attention, value flows).
-- Introduce the concept of City-level stablecoins.
-    - Pilot **local currency deployments** in municipalities or networks — for example labor-time banking, renewable-energy credits or service-exchange currencies — using smart contracts and transparent settlement.
-    - Avenues for compensating contributions to the city
-    - Small businesss suport (see: Circles)
-
 ## Resources
 
 **Projects**

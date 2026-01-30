@@ -17,14 +17,6 @@ Digitally-native, interoperable supply chain infrastructure for traceability, fi
 - **Open supply-chains:** Enabling coordination among independent farmers, artisans and open-hardware producers outside corporate platforms.
 - **Electronic Bill of Lading:** Replacing paper document of title with NFT-like digital representation of title and transfer rights.
 
-## Intervention Ideas
-
-- Related to [Digital Product Passport - Tokenizing Consumer Goods](Digital%20Product%20Passport%20-%20Tokenizing%20Consumer%20Goo%2027ad34f360e48057b679e26f7592a7be.md)
-- Build a **tokenized trade-finance marketplace** where invoices/receivables from upstream suppliers are represented as transferable tokens and integrated with settlement logic.
-- Prototype **smart-contract payments linked to IoT delivery events**: e.g., shipment verified → payment automatically released.
-- Pilot circular-economy flows using verifiable product-history minted as on-chain assets enabling resale, recycling and certification tracking.
-- Roll out programs for small-tier suppliers (farmers, artisans) to onboard into open supply-chain networks using verifiable credentials and tokenized participation.
-
 ## Resources
 
 **Projects**

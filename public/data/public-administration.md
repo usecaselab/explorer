@@ -14,13 +14,6 @@ Citizens often face duplicative verification processes, long wait times, paper-b
 - **Participatory governance:** E-voting, participatory budgeting, petitions and citizen consultation platforms anchored on ledger systems.
 - **Digital public infrastructure (DPI):** Interoperable APIs and secure data-exchanges enabling cross-agency coordination.
 
-## Intervention Ideas
-
-- Any kind of registry for real estate, vehicles, etc. that need tamper-resistance and public traceability (See California Avalanche DMV registry)
-- Hackathon/Co-design sprints and workshops
-- [Propel AI Residency](https://docs.google.com/document/d/19Q-Dp0vmQwXbhTGYHpuadxHPzAehc6HGU66EM_tN0k4/edit?tab=t.0#heading=h.ofd9cpd1f3sg) to create AI-first digital services.
-- See [Philanthropy & Social Services](Philanthropy%20&%20Social%20Services%20279d34f360e481779960cc1e2518c922.md)
-
 ## Resources
 
 **Projects**
