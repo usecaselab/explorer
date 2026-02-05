@@ -64,50 +64,44 @@ export const parseDomainMarkdown = (markdown: string, existingData: DomainData):
   // Normalize newlines
   const text = markdown.replace(/\r\n/g, '\n');
 
-  // Parse Title - first # header that's not followed by Problem/Opportunities/Resources etc.
-  const titleMatch = text.match(/^#\s+([^*\n]+)$/m);
-  if (titleMatch && !titleMatch[1].toLowerCase().startsWith('problem') &&
-      !titleMatch[1].toLowerCase().startsWith('opportunities') &&
-      !titleMatch[1].toLowerCase().startsWith('resources')) {
-    newData.title = titleMatch[1].trim();
+  // Parse YAML frontmatter for title
+  const frontmatterMatch = text.match(/^---\n([\s\S]*?)\n---/);
+  if (frontmatterMatch) {
+    const frontmatter = frontmatterMatch[1];
+    const titleMatch = frontmatter.match(/^title:\s*(.+)$/m);
+    if (titleMatch) {
+      newData.title = titleMatch[1].trim();
+    }
   }
 
-  // Split into sections based on #, ##, or ### headers (1-3 hash marks)
-  const sections = text.split(/^#{1,3}\s+/m);
+  // Remove frontmatter from text for section parsing
+  const bodyText = text.replace(/^---\n[\s\S]*?\n---\n*/, '');
+
+  // Split into sections based on ## headers
+  const sections = bodyText.split(/^##\s+/m);
 
   let allIdeas: Idea[] = [];
   let allProjects: Project[] = [];
   let allResources: Resource[] = [];
 
   sections.forEach(section => {
+    if (!section.trim()) return;
+
     const lines = section.trim().split('\n');
-    // Remove bold markers from header (e.g., "**Opportunities**" -> "opportunities")
-    const header = lines[0].trim().replace(/\*\*/g, '').toLowerCase();
+    const header = lines[0].trim().toLowerCase();
     const content = lines.slice(1).join('\n').trim();
 
-    if (header.startsWith('the opportunity') || header.startsWith('problem')) {
-      // Remove metadata lines (Categories:, Last edited time:) and horizontal rules
-      const cleanContent = content
-        .split('\n')
-        .filter(line => !line.startsWith('Categories:') && !line.startsWith('Last edited time:') && line.trim() !== '---')
-        .join('\n')
-        .trim();
-      newData.problemStatement = cleanContent;
+    if (header.startsWith('the opportunity')) {
+      newData.problemStatement = content.trim();
     } else if (header.startsWith('ideas')) {
-      allIdeas = [...allIdeas, ...parseIdeas(content)];
-    } else if (header.startsWith('opportunities')) {
-      // Parse opportunities as ideas (bullet point format)
-      allIdeas = [...allIdeas, ...parseOpportunitiesAsIdeas(content)];
-    } else if (header.startsWith('intervention ideas')) {
-      // Parse intervention ideas as ideas
-      allIdeas = [...allIdeas, ...parseInterventionIdeas(content)];
+      // Parse ideas with format: - idea name - description
+      allIdeas = [...allIdeas, ...parseIdeasBulletFormat(content)];
     } else if (header.startsWith('projects')) {
-      allProjects = [...allProjects, ...parseProjects(content)];
+      // Parse projects with format: - [name](url) - description
+      allProjects = [...allProjects, ...parseProjectsBulletFormat(content)];
     } else if (header.startsWith('resources')) {
-      // Notion format: Resources section contains **Projects** and **Research** subsections
-      const parsed = parseNotionResources(content);
-      allProjects = [...allProjects, ...parsed.projects];
-      allResources = [...allResources, ...parsed.resources];
+      // Parse resources with format: - [title](link) (year) - description
+      allResources = [...allResources, ...parseResourcesBulletFormat(content)];
     } else if (header.startsWith('bounties')) {
       newData.bounties = parseBounties(content);
     }
@@ -118,6 +112,76 @@ export const parseDomainMarkdown = (markdown: string, existingData: DomainData):
   newData.resources = allResources;
 
   return newData;
+};
+
+// Parse ideas in new bullet format: - idea name - description
+const parseIdeasBulletFormat = (text: string): Idea[] => {
+  const ideas: Idea[] = [];
+  const lines = text.split('\n');
+
+  lines.forEach(line => {
+    const trimmedLine = line.trim();
+    if (!trimmedLine || !trimmedLine.startsWith('-')) return;
+
+    // Match format: - idea name - description (use " - " as delimiter)
+    const match = trimmedLine.match(/^-\s+(.+?)\s+-\s+(.+)$/);
+    if (match) {
+      ideas.push({
+        title: match[1].trim(),
+        description: match[2].trim()
+      });
+    }
+  });
+
+  return ideas;
+};
+
+// Parse projects in new bullet format: - [name](url) - description
+const parseProjectsBulletFormat = (text: string): Project[] => {
+  const projects: Project[] = [];
+  const lines = text.split('\n');
+
+  lines.forEach(line => {
+    const trimmedLine = line.trim();
+    if (!trimmedLine) return;
+
+    // Match: - [Name](url) - Description or - [Name](url) Description
+    const match = trimmedLine.match(/^-?\s*\[([^\]]+)\]\(([^)]+)\)\s*[-–—:]?\s*(.*)$/);
+    if (match) {
+      projects.push({
+        name: match[1].trim(),
+        url: match[2].trim(),
+        description: match[3].trim(),
+        status: 'active'
+      });
+    }
+  });
+
+  return projects;
+};
+
+// Parse resources in new bullet format: - [title](link) (year) - description
+const parseResourcesBulletFormat = (text: string): Resource[] => {
+  const resources: Resource[] = [];
+  const lines = text.split('\n');
+
+  lines.forEach(line => {
+    const trimmedLine = line.trim();
+    if (!trimmedLine) return;
+
+    // Match: - [Title](url) (year) - Description
+    const match = trimmedLine.match(/^-?\s*\[([^\]]+)\]\(([^)]+)\)\s*(?:\((\d{4})\))?\s*[-–—:]?\s*(.*)$/);
+    if (match) {
+      resources.push({
+        title: match[1].trim(),
+        link: match[2].trim(),
+        year: match[3] || undefined,
+        description: match[4]?.trim() || ''
+      });
+    }
+  });
+
+  return resources;
 };
 
 // Parse bullet points from Opportunities section as ideas
