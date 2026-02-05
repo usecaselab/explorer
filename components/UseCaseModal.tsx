@@ -3,7 +3,7 @@ import { DomainData } from '../types';
 import OverviewTab from './OverviewTab';
 import BountiesTab from './BountiesTab';
 import PageFooter from './PageFooter';
-import { X, ExternalLink } from 'lucide-react';
+import { X } from 'lucide-react';
 
 type Tab = 'overview' | 'bounties';
 
@@ -56,21 +56,12 @@ const UseCaseModal: React.FC<UseCaseModalProps> = ({ data, onClose }) => {
             )}
           </div>
 
-          <div className="flex items-center gap-3">
-            <a
-              href="#"
-              className="hidden md:flex items-center justify-center gap-2 px-4 py-2 bg-ethLightBlue border-2 border-black rounded-xl font-bold text-markerBlack shadow-sketch-sm hover:shadow-sketch hover:-translate-y-0.5 transition-all text-sm group"
-            >
-              Join Community
-              <ExternalLink className="w-4 h-4 group-hover:scale-110 transition-transform" />
-            </a>
-            <button
-              onClick={onClose}
-              className="p-2 hover:bg-gray-100 rounded-xl transition-colors border-2 border-transparent hover:border-black"
-            >
-              <X className="w-6 h-6 text-markerBlack" />
-            </button>
-          </div>
+          <button
+            onClick={onClose}
+            className="p-2 hover:bg-gray-100 rounded-xl transition-colors border-2 border-transparent hover:border-black"
+          >
+            <X className="w-6 h-6 text-markerBlack" />
+          </button>
         </div>
 
         {/* Tab Navigation */}
