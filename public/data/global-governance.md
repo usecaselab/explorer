@@ -1,6 +1,6 @@
 ---
-title: Global Governance & Multilateral Coordination
-sector: Unknown
+title: Global Governance
+sector: Society
 ---
 
 ## The Opportunity
@@ -19,7 +19,7 @@ Global and sub-national governance suffers from fragmented frameworks, inconsist
 
 ## Projects
 
--
+
 
 ## Resources
 
