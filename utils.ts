@@ -114,7 +114,7 @@ export const parseDomainMarkdown = (markdown: string, existingData: DomainData):
   return newData;
 };
 
-// Parse ideas in new bullet format: - idea name - description
+// Parse ideas in new bullet format: - idea name - description OR - plain idea text
 const parseIdeasBulletFormat = (text: string): Idea[] => {
   const ideas: Idea[] = [];
   const lines = text.split('\n');
@@ -123,13 +123,22 @@ const parseIdeasBulletFormat = (text: string): Idea[] => {
     const trimmedLine = line.trim();
     if (!trimmedLine || !trimmedLine.startsWith('-')) return;
 
-    // Match format: - idea name - description (use " - " as delimiter)
+    // First try format: - idea name - description (use " - " as delimiter)
     const match = trimmedLine.match(/^-\s+(.+?)\s+-\s+(.+)$/);
     if (match) {
       ideas.push({
         title: match[1].trim(),
         description: match[2].trim()
       });
+    } else {
+      // Fallback: plain bullet point without separator - use full text as title
+      const plainMatch = trimmedLine.match(/^-\s+(.+)$/);
+      if (plainMatch && plainMatch[1].trim()) {
+        ideas.push({
+          title: plainMatch[1].trim(),
+          description: ''
+        });
+      }
     }
   });
 
