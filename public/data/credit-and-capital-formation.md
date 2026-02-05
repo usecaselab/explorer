@@ -1,23 +1,24 @@
-# Credit & Capital Formation
+---
+title: Credit & Capital Formation
+sector: Finance
+---
 
-# **Problem**
+## The Opportunity
 
 Small and medium enterprises (SMEs) are underserved by traditional finance: credit is scarce, underwriting is costly, and capital markets are inaccessible. Inefficiencies in trade credit, slow processing time, and high intermediary fees constrain SME growth and resilience. Crowdfunding and other alternative financing options remain limited in scale and fail to provide sustained access to affordable capital.
 
-# **Opportunities**
+## Ideas
 
-- Trade credit clearing: netting obligations across SME networks
-- Commitment pooling: mutualized reserves and cooperative liquidity
-- Factoring: tokenized receivables and real-time invoice financing
-- Crowdfunding: open platforms for equity, tokens, and community capital
-- Crowdlending: peer-to-peer loans with transparent terms
-- Microloans: accessible, low-friction capital for underserved entrepreneurs
-- Credit unions: blockchain-based cooperative finance models
-- Equity tokenization: SMEs can issue tokenized shares, bypassing expensive IPOs and private placements ([source](https://enterpriseonchain.substack.com/p/tokenizations-30t-futureheres-what))
+- Trade credit clearing - netting obligations across SME networks
+- Commitment pooling - mutualized reserves and cooperative liquidity
+- Factoring - tokenized receivables and real-time invoice financing
+- Crowdfunding - open platforms for equity, tokens, and community capital
+- Crowdlending - peer-to-peer loans with transparent terms
+- Microloans - accessible, low-friction capital for underserved entrepreneurs
+- Credit unions - blockchain-based cooperative finance models
+- Equity tokenization - SMEs can issue tokenized shares, bypassing expensive IPOs and private placements ([source](https://enterpriseonchain.substack.com/p/tokenizations-30t-futureheres-what))
 
-# **Resources**
-
-**Projects**
+## Projects
 
 - Credit & Lending
     - [3jane](https://www.3jane.xyz/) - credit infrastructure for Web3
@@ -45,6 +46,6 @@ Small and medium enterprises (SMEs) are underserved by traditional finance: cred
     - [Superstate](https://superstate.com/) - tokenized shares
     - [Ondo](https://app.ondo.finance/) -
 
-**Research**
+## Resources
 
 - [Use case spotlight: Piloting the tokenisation of investment bonds on EBSI](https://ec.europa.eu/digital-building-blocks/sites/spaces/EBSI/pages/915931247/Use+case+spotlight+piloting+the+tokenisation+of+investment+bonds+on+EBSI) (2025) - EU pilot for tokenized bonds enabling cheaper SME financing

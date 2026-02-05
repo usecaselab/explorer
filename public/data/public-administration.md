@@ -1,22 +1,23 @@
-# Public Administration
+---
+title: Public Administration
+sector: Society
+---
 
-## Problem
+## The Opportunity
 
 Citizens often face duplicative verification processes, long wait times, paper-based records and limited transparency in how decisions are made. Cross-agency data exchange is inconsistent, making oversight and service delivery costly and error-prone. Corruption and inefficiency thrive where records can be altered or lost and where accountability mechanisms are weak.
 
-## Opportunities
+## Ideas
 
-- **Digital ID:** A single, verified identity for citizens that can be used across government services.
-- **Civil registries:** Verifiable birth, death, marriage and residency records accessible across agencies.
-- **Business registries:** Incorporated-business, licensing and beneficial-ownership records with instant verification.
-- **Land & vehicle titles:** Ownership records with lien checks and immutable transfer histories.
-- **Permitting & case management:** Digital workflows for permits, applications and entitlements across agencies.
-- **Participatory governance:** E-voting, participatory budgeting, petitions and citizen consultation platforms anchored on ledger systems.
-- **Digital public infrastructure (DPI):** Interoperable APIs and secure data-exchanges enabling cross-agency coordination.
+- Digital ID - A single, verified identity for citizens that can be used across government services.
+- Civil registries - Verifiable birth, death, marriage and residency records accessible across agencies.
+- Business registries - Incorporated-business, licensing and beneficial-ownership records with instant verification.
+- Land & vehicle titles - Ownership records with lien checks and immutable transfer histories.
+- Permitting & case management - Digital workflows for permits, applications and entitlements across agencies.
+- Participatory governance - E-voting, participatory budgeting, petitions and citizen consultation platforms anchored on ledger systems.
+- Digital public infrastructure (DPI) - Interoperable APIs and secure data-exchanges enabling cross-agency coordination.
 
-## Resources
-
-**Projects**
+## Projects
 
 - Digital ID/SSI
     - [Bhutan NDI](https://www.bhutanndi.com/) ([tweet)](https://x.com/AyaMiyagotchi/status/1977798764485361966)
@@ -24,7 +25,6 @@ Citizens often face duplicative verification processes, long wait times, paper-b
     - [Palau Digital Residency Program](https://rns.id/) - offers global citizens the ability to have a legal Palau government-issued ID
 - Elections
     - [Vocdoni](https://vocdoni.io/) - Elections infrastructure
-    - Democracy Earth - liquid democracy (dead)
 - Land registries
     - India: [West Bengal](https://www.techcircle.in/2023/07/05/airchains-west-bengal-s-nkda-to-introduce-blockchain-based-land-ownership?utm_campaign=india-ethereum-ecosystem-overview&utm_medium=referral&utm_source=localethereum.beehiiv.com), [Telangana](https://www.blockchain.meity.gov.in/index.php/success-stories/13-blockchain-based-property-registration-management-system?utm_campaign=india-ethereum-ecosystem-overview&utm_medium=referral&utm_source=localethereum.beehiiv.com), [Andhra Pradesh](https://www.researchgate.net/publication/388826952_The_Applicability_of_Blockchain_Technology_in_Land_Registration_for_Developing_Economies_A_Case_Study_of_India?utm_campaign=india-ethereum-ecosystem-overview&utm_medium=referral&utm_source=localethereum.beehiiv.com)
     - [LAC PropertyChain](https://blog.chromia.com/lac-propertychain-pilot-to-launch-on-chromia-in-q3/?ref=blog.chromaway.com)
@@ -33,7 +33,7 @@ Citizens often face duplicative verification processes, long wait times, paper-b
 - [Onchain City](https://onchain.city/) - Government services; embassy, passport, licenses, visas, insurance ([post](https://x.com/0xKimberly/status/1967598460221415433))
 - [California DMV puts 42 million car titles on blockchain to fight fraud](https://www.reuters.com/technology/california-dmv-puts-42-million-car-titles-blockchain-fight-fraud-2024-07-30/) (2023)
 
-**Research**
+## Resources
 
 - [BRI: Business Licensing](https://www.blockchainresearchinstitute.org/project/business-licensing-governance-for-government-blockchains/) (2018) - Identifies the benefits that blockchains can provide local authorities in accelerating the launch of new businesses, supporting entrepreneurs, and reinforcing innovation cycles
 - [BRI: India’s Land Registry on Blockchain](https://www.blockchainresearchinstitute.org/project/indias-land-registry-on-blockchain/) (2018) - UNDP in India to address property title disputes & land registry corruption

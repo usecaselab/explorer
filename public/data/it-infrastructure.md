@@ -1,10 +1,13 @@
-# IT Infrastructure
+---
+title: IT Infrastructure
+sector: Digital
+---
 
-# Problem
+## The Opportunity
 
 Provisioning and managing IT infrastructure—storage, compute, bandwidth, and connectivity—remains centralized, costly, and vulnerable to chokepoints. Cloud giants dominate access to servers, GPUs, and content delivery, while telecom incumbents gatekeep connectivity and pricing. Systems for inter-carrier settlements, bandwidth resale, and storage verification are inefficient, opaque, and prone to censorship or single points of failure.
 
-# Opportunities
+## Ideas
 
 - GPU and compute marketplaces for AI and high-performance workloads
 - Open telecom and connectivity infrastructure (mesh, satellite, spectrum sharing, 5G, esim)
@@ -13,9 +16,7 @@ Provisioning and managing IT infrastructure—storage, compute, bandwidth, and c
 - Intercarrier settlements and cross-network provisioning
 - General pattern of real time payment for priority access to contested resources.
 
-# Resources
-
-**Projects**
+## Projects
 
 - [Huddle01](https://huddle01.com/) - Decentralized video conferencing and streaming
 - [Livepeer](https://www.livepeer.org/) - Video transcoding and streaming marketplace
@@ -30,7 +31,7 @@ Provisioning and managing IT infrastructure—storage, compute, bandwidth, and c
 - [GEODNET](https://geodnet.com/) - real-time positioning data network
 - [Kokio](https://www.kokio.app/) - onchain esim
 
-**Research**
+## Resources
 
 - [BRI: Distributed Connectivity](https://www.blockchainresearchinstitute.org/project/distributed-connectivity/) (2017) - Early study of blockchain’s impact on telecom infrastructure.
 - [BRI: 5G Bypass](https://www.blockchainresearchinstitute.org/project/5g-bypass/) (2019) - Explores blockchain-enabled mesh networks as an alternative to incumbent telecoms.

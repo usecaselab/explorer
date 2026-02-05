@@ -1,27 +1,26 @@
-# Security & Defense
+---
+title: Security & Defense
+sector: Society
+---
 
-## Problem
+## The Opportunity
 
 National defence and critical infrastructure increasingly depend on digital systems which are vulnerable to attack and manipulation. Supply-chains can be compromised with counterfeit or tampered components, cyber-defence still depends on secrets which may leak, and battlefield decision-makers face a deluge of unverified sensor data. As AI becomes embedded in operations, the integrity and provenance of both data and models become existential concerns. Traditional systems lack tamper-resistant audit-trails, real-time verification of sensor inputs or secure tracking of software and hardware artifacts. As autonomous systems proliferate, the risk of embedded adversarial manipulation of components or models grows, making provenance and real-time trust layers essential.
 
-## Opportunities
+## Ideas
 
-Protocols anchored on Ethereum can reduce verification, enforcement and integration costs in defence-cyber systems by providing transparent chains of custody auditability, portable trust credentials and composable verification infrastructure.
+- Authenticated users & validated sensor inputs - Smart-contract-anchored identity for users plus audit-trails for battlefield IoT and AI systems.
+- Security-clearance credentials - Portable, verifiable credentials for personnel which persist beyond traditional paper or siloed digital systems.
+- Cyber-threat-intelligence marketplaces - Tokenised and audited platforms for sharing threat data securely and verifiably across agencies and trusted partners.
+- On-chain versioning registry for software artifacts - SBOM-level provenance for software components and dependencies to prevent supply-chain attacks.
+- Supply-chain provenance for defense hardware - Immutable tracking of parts, maintenance histories and provenance for weapons-systems and components.
+- Decentralised decision-aid networks - Secure sharing and verification of AI-model updates, sensor-data cross-validation in multi-domain operations.
 
-- **Authenticated users & validated sensor inputs:** Smart-contract-anchored identity for users plus audit-trails for battlefield IoT and AI systems.
-- **Security-clearance credentials:** Portable, verifiable credentials for personnel which persist beyond traditional paper or siloed digital systems.
-- **Cyber-threat-intelligence marketplaces:** Tokenised and audited platforms for sharing threat data securely and verifiably across agencies and trusted partners.
-- **On-chain versioning registry for software artifacts:** SBOM-level provenance for software components and dependencies to prevent supply-chain attacks.
-- **Supply-chain provenance for defense hardware:** Immutable tracking of parts, maintenance histories and provenance for weapons-systems and components.
-- **Decentralised decision-aid networks:** Secure sharing and verification of AI-model updates, sensor-data cross-validation in multi-domain operations.
-
-## Resources
-
-**Projects**
+## Projects
 
 - [Human Protocol hCaptcha](https://www.humanprotocol.org/blog/how-does-hcaptcha-fit-into-human-protocol) - monetizes captchas through token rewards
 
-**Research**
+## Resources
 
 - [Using Prediction Markets to Enhance US Intelligence Capabilities](https://www.cia.gov/resources/csi/static/Prediction-Markets-Enhance-Intel.pdf) (2006)
 - [Blockchains in national defense: Trustworthy systems in a trustless world](https://www.jcs.mil/Portals/36/Documents/Doctrine/Education/jpme_papers/barnas_n.pdf) (2016) - Blockchain offers the Air Force a new cyber defense model that assumes compromise, ensures transparent security, and raises adversary costs, making it a critical technology for national defense

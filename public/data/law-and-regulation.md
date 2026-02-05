@@ -1,35 +1,33 @@
-# Law & Regulation
+---
+title: Law & Regulation
+sector: Society
+---
 
-## Problem
+## The Opportunity
 
 Legal and regulatory systems rely on fragmented workflows: statutes are published as prose, licensing and compliance checks happen on paper or disconnected portals, and verification of conformance or ownership is slow and opaque. Regulatory oversight depends on costly audits and after-the-fact enforcement rather than continuous, ex-ante verification.
 
 At the same time, private legal agreements—wills, contracts, trusts, and dispute-resolution processes—remain slow, manual and jurisdiction-bound. This fragmentation makes legal systems expensive to operate, hard to audit, and inaccessible to individuals and small organizations.
 
-## Opportunities
+## Ideas
 
-Ethereum can lower verification and enforcement costs across both **public-law** (rulemaking, certification, compliance) and **private-law** (contracts, estates, arbitration) domains. Encoding, verifying and enforcing legal norms through composable protocols for rulemaking, certification, compliance and private contracts make law machine-readable, auditable and interoperable.
+- Policy-as-code - Machine-readable statutes, licensing rules and regulations with testable logic for compliance.
+- Certification networks - Peer-to-peer certification systems for food safety, pharmaceuticals, energy efficiency or building codes.
+- Compliance proofs - Zero-knowledge mechanisms (zkKYC, zkAML, selective disclosure) enabling regulated entities to prove compliance without revealing sensitive data.
+- Audit frameworks - Tamper-evident logs of inspections, attestations and enforcement actions.
+- Gun-ownership & provenance registries - Encrypted, privacy-preserving registries to enable lawful ownership and traceability.
+- Smart wills & inheritance - Time-locked, oracle-triggered estate execution.
+- Trusts & estates - Programmable fiduciary administration with transparent record-keeping.
+- Dispute resolution - Decentralized arbitration and online dispute-resolution mechanisms (e.g., Kleros) to reduce litigation overhead.
+- Ricardian & parametric contracts - Human-readable, machine-parsable agreements that can execute automatically or trigger based on measurable outcomes.
 
-- **Policy-as-code:** Machine-readable statutes, licensing rules and regulations with testable logic for compliance.
-- **Certification networks:** Peer-to-peer certification systems for food safety, pharmaceuticals, energy efficiency or building codes.
-- **Compliance proofs:** Zero-knowledge mechanisms (zkKYC, zkAML, selective disclosure) enabling regulated entities to prove compliance without revealing sensitive data.
-- **Audit frameworks:** Tamper-evident logs of inspections, attestations and enforcement actions.
-- **Gun-ownership & provenance registries:** Encrypted, privacy-preserving registries to enable lawful ownership and traceability.
-- **Smart wills & inheritance:** Time-locked, oracle-triggered estate execution.
-- **Trusts & estates:** Programmable fiduciary administration with transparent record-keeping.
-- **Dispute resolution:** Decentralized arbitration and online dispute-resolution mechanisms (e.g., Kleros) to reduce litigation overhead.
-- **Ricardian & parametric contracts:** Human-readable, machine-parsable agreements that can execute automatically or trigger based on measurable outcomes.
-
-## Resources
-
-**Projects**
+## Projects
 
 - [Kleros](https://kleros.io/) - Decentralized dispute-resolution protocol using juror staking and incentive alignment.
 - [Sarcophagus](https://sarcophagus.io/) - “Dead-man’s switch” for time-locked inheritance and document release.
 - [Legalese](https://legalese.com/) - Smart-legal-agreement toolkit bridging human-readable text and executable code.
-- [OpenLaw](https://consensys.net/openlaw/) (dead) - Early smart-contract framework for legal agreements.
 
-**Research**
+## Resources
 
 - [Can Blockchain Help with Gun Registries?](https://www.blockchainresearchinstitute.org/project/can-blockchain-help-with-gun-registries/) (2020) - Explores blockchain-based firearms provenance and privacy-preserving ownership checks
 - [Blockchain-Based Dispute Resolution: Insights and Challenges](https://www.mdpi.com/2073-4336/14/3/34) (2022) - Defines smart contracts and analyses Kleros as a blockchain-based ODR mechanism.

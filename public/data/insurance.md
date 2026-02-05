@@ -1,24 +1,22 @@
-# Insurance
+---
+title: Insurance
+sector: Finance
+---
 
-### Problem
+## The Opportunity
 
 The insurance lifecycle remains manual, slow, and built on low-trust workflows. Administrative overhead across underwriting, policy administration and claims can consume 25–40 % of premiums. Carriers, brokers, reinsurers and regulators operate in silos, fragmenting data and slowing verification. Claims are often adversarial, opaque and difficult to audit. Capital is stuck in conservative reserves, limiting coverage for long-tail or emerging risks.
 
 Blockchain-insurance research confirms that high transaction costs, trust gaps and fragmentation are among the central pain points.
 
-### Opportunities
+## Ideas
 
-Automating underwriting, payouts, capital flows and risk sharing onchain to reduce cost, increase transparency, and open new insurance models.
+- Parametric policies - Smart-contract triggered claims (weather, flight delay, cargo) eliminate long verification loops.
+- Onchain risk pools & reinsurance marketplaces - Transparent, composable capital pools with tokenized participation allow wider investor access.
+- Tokenized reserves & transparent solvency reporting - Onchain reserve tracking enables real-time visibility and better risk pricing.
+- Tokenized policies for resale - Policies become tradable contracts, enabling secondary markets, swapping risk profiles and unlocking liquidity.
 
-- **Parametric policies:** Smart-contract triggered claims (weather, flight delay, cargo) eliminate long verification loops.
-- **Onchain risk pools & reinsurance marketplaces:** Transparent, composable capital pools with tokenized participation allow wider investor access.
-- **Tokenized reserves & transparent solvency reporting:** Onchain reserve tracking enables real-time visibility and better risk pricing.
-- **Tokenized policies for resale:** Policies become tradable contracts, enabling secondary markets, swapping risk profiles and unlocking liquidity.
-- Potential for peer-to-peer mutual models anchored onchain, enabling community underwriting of niche risks. ([MAPFRE](https://www.mapfre.com/en/insights/innovation/blockchain-in-insurance-risks-and-opportunities/?utm_source=chatgpt.com))
-
-### Resources
-
-**Projects**
+## Projects
 
 - [Ensuro](https://ensuro.co/) - bridges DeFi capital into reinsurance
 - [Arbol](https://www.arbol.io/) - Parametric weather and risk insurance platform using smart contracts
@@ -28,7 +26,7 @@ Automating underwriting, payouts, capital flows and risk sharing onchain to redu
 - [Nexus Mutual](https://nexusmutual.io/) - cover for smart contract risk
 - [Kleros Enterprise](https://docs.kleros.io/products/enterprise) - MetLife pilot
 
-**Research**
+## Resources
 
 - [Token-Based Insurance Solutions on Blockchain](https://arxiv.org/abs/2109.07902?utm_source=chatgpt.com) (2021) - Framework comparing token-based insurance models, underwriting mechanics, and capital flows on blockchain
 - [Insurance Is Embracing Blockchain and Metaverse](https://www.bcg.com/publications/2023/insurance-is-embracing-blockchain-and-metaverse?utm_source=chatgpt.com) (2023) - Industry outlook on how blockchain and digital-twin/metaverse technologies are disrupting underwriting and claims processes

@@ -1,10 +1,13 @@
-# Energy
+---
+title: Energy
+sector: Physical
+---
 
-# Problem
+## The Opportunity
 
 Power systems are shifting to renewables and electrification (rooftop solar, EVs, heat pumps), which creates sharper peaks and local bottlenecks that are harder to manage with today’s tools. Small, distributed projects struggle to get financed and built because permits are slow, incentives are fragmented, and future cashflows are uncertain—making it hard to bundle many sites. Nuclear new build and SMRs face long licensing timelines, high upfront risk, and supply-chain quality hurdles, with limited end-to-end tracking for fuel and waste. Environmental claims (RECs, carbon intensity, green hydrogen) are hard to verify end-to-end, so double-counting and “greenwashing” remain risks. Meanwhile, as grids add automation and billions of connected devices, cyber-physical risk rises without common ways to authenticate devices and keep tamper-evident records of real energy flows and control actions.
 
-# Opportunities
+## Ideas
 
 - Peer-to-peer energy trading and local microgrids
 - Tokenized financing for renewable installations and community energy projects
@@ -13,9 +16,7 @@ Power systems are shifting to renewables and electrification (rooftop solar, EVs
 - Distributed grid automation to mitigate cyber-physical risks
 - Hydrogen and next-gen fuels tokenization for transparent production and distribution
 
-# Resources
-
-**Projects**
+## Projects
 
 - [Glow](https://glow.org/)
 - [Daylight](https://godaylight.com/)
@@ -24,7 +25,7 @@ Power systems are shifting to renewables and electrification (rooftop solar, EVs
 - [Helios](https://www.helios.eco/) - financing for solar energy installation
 - [Combinder](https://www.combinder.io/) - Virtual power plant / smart grid platform on Peaq
 
-**Research**
+## Resources
 
 - [BRI: Distributed Power](https://www.blockchainresearchinstitute.org/project/distributed-power/) (2018) - peer-to-peer markets for excess energy
 - [BRI: Oil, Natural Gas, and Blockchain](https://www.blockchainresearchinstitute.org/project/oil-natural-gas-and-blockchain/) (2020)

@@ -1,10 +1,13 @@
-# Food & Agriculture
+---
+title: Food & Agriculture
+sector: Physical
+---
 
-# Problem
+## The Opportunity
 
 Farmers and small processors operate on thin margins and slow payments, pre-financing inputs without reliable ways to prove weights, grades, residues, or animal welfare at sale; lab results and inspections rarely stay attached to lots. Traceability breaks at handoffs: lot IDs change, temperature data isn’t captured end-to-end, and records sit in PDFs and supplier portals, so recalls, substitutions, and adulteration (e.g., diluted oils, mislabeled seafood) are hard to resolve. In the middle, grocers and restaurants juggle siloed POS, inventory, and supplier systems—leading to out-of-stocks, shrink, rebate and chargeback disputes, and weak links between SKUs/menus and verified origin, allergens, or nutrition. Consumers face labels that are hard to verify and a shelf bias toward ultra-processed, low-cost products because there’s no consistent way to price, reward, and replenish for proven freshness and healthier composition.
 
-# **Opportunities**
+## Ideas
 
 - Provenance and traceability systems to ensure food safety and authenticity
 - Tokenized assets for crops, land, and livestock to unlock liquidity and investment
@@ -12,9 +15,7 @@ Farmers and small processors operate on thin margins and slow payments, pre-fina
 - Loyalty and incentive systems for regenerative and sustainable practices
 - Community and cooperative marketplaces to retain more value locally
 
-# Resources
-
-**Projects**
+## Projects
 
 - SourceLink - Food supply chain traceability system
     
@@ -28,7 +29,7 @@ Farmers and small processors operate on thin margins and slow payments, pre-fina
 - [Ekonavi](https://ekonavi.com/) ([Breno](https://x.com/breno_navi)) - EF-funded ReFi project for ecological regeneration
 - [Peach Tycoon](https://peachtycoon.com/) - Tokenizing peach trees, allowing farmers to sell future produce rights directly to consumers
 
-**Research**
+## Resources
 
 - [BRI: griculture on the Blockchain](https://www.blockchainresearchinstitute.org/project/agriculture-on-the-blockchain) (2017) - Maps use cases from food provenance to cooperative finance and insurance for underserved farmers
 - [BRI: Food Traceability on Blockchain](https://www.blockchainresearchinstitute.org/project/food-traceability-on-blockchain/) (2017) - Case study of Walmart pilots using blockchain to quickly trace contaminated mangoes and pork

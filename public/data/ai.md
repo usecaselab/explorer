@@ -1,22 +1,23 @@
-# AI
+---
+title: AI
+sector: Digital
+---
 
-# Problem
+## The Opportunity
 
 AI systems are increasingly powerful but remain opaque, centralized, and controlled by a handful of large corporations. Users lack visibility into model training data, inference processes, and decision-making logic. There's no verifiable way to audit AI outputs, track provenance, or ensure fair compensation to data contributors. As AI agents become autonomous actors in digital ecosystems, they need secure identities, wallets, and verifiable credentials to participate in economic activities.
 
-# Opportunities
+## Ideas
 
-- **Verifiable AI inference:** Onchain proofs that a specific model produced a specific output, enabling accountability and auditability.
-- **Decentralized AI training:** Federated learning and collaborative model training with cryptographic guarantees and contributor rewards.
-- **AI agent wallets and identity:** Autonomous agents with onchain identities that can hold assets, sign transactions, and participate in DAOs.
-- **Model and dataset marketplaces:** Tokenized AI models and training datasets with programmable licensing, usage tracking, and royalty distribution.
-- **AI output provenance:** Watermarking, signing, and tracking AI-generated content to combat deepfakes and misinformation.
-- **Compute marketplaces:** Decentralized GPU networks for AI training and inference with verifiable computation.
-- **AI governance and alignment:** Onchain mechanisms for community oversight, bounties for alignment research, and transparent model evaluation.
+- Verifiable AI inference - Onchain proofs that a specific model produced a specific output, enabling accountability and auditability.
+- Decentralized AI training - Federated learning and collaborative model training with cryptographic guarantees and contributor rewards.
+- AI agent wallets and identity - Autonomous agents with onchain identities that can hold assets, sign transactions, and participate in DAOs.
+- Model and dataset marketplaces - Tokenized AI models and training datasets with programmable licensing, usage tracking, and royalty distribution.
+- AI output provenance - Watermarking, signing, and tracking AI-generated content to combat deepfakes and misinformation.
+- Compute marketplaces - Decentralized GPU networks for AI training and inference with verifiable computation.
+- AI governance and alignment - Onchain mechanisms for community oversight, bounties for alignment research, and transparent model evaluation.
 
-# Resources
-
-**Projects**
+## Projects
 
 - Compute Networks
     - [Akash](https://akash.network/) - Decentralized cloud compute marketplace
@@ -39,7 +40,7 @@ AI systems are increasingly powerful but remain opaque, centralized, and control
     - [SingularityNET](https://singularitynet.io/) - AI service marketplace
     - [Bittensor](https://bittensor.com/) - Decentralized machine learning network
 
-**Research**
+## Resources
 
 - [zkML: An optimizing compiler for ML in zero knowledge](https://arxiv.org/abs/2404.01174) (2024) - Explores efficient zero-knowledge proofs for machine learning models
 - [Decentralized AI: A Survey of Approaches and Technologies](https://arxiv.org/abs/2312.00754) (2024) - Comprehensive review of decentralized AI architectures

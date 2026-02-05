@@ -1,28 +1,29 @@
-# Advocacy & Rights
+---
+title: Advocacy & Rights
+sector: Society
+---
 
-## Problem
+## The Opportunity
 
 Civil society groups, environmental defenders, human-rights advocates, journalists and labor organizers face deep coordination challenges and funding fragility. They operate in contexts of weak institutional trust, opaque flows of support, fragmented identity and reputational systems, and vulnerability to censorship, fraud or repression. Traditional structures for campaign funding, proof of impact, whistleblower testimony, and cross-border collaboration often lack transparency, portability and verifiability — which undermines trust and limits coordination at scale.
 
-## Opportunities
+## Ideas
 
-- **Impact certificates, attestations & verifiable data:** Immutable records of environmental outcomes, labor violations or human-rights abuses can help civil-society actors substantiate claims.
-- **Conditional commitment pools & assurance contracts:** Smart-contract-driven funding models that unlock only when agreed conditions are met, supporting coordinated action across multiple organizations.
-- **Tools for organized labor — cross-jurisdictional networks:** Portable credentials, shared reputation and tokenized reward systems for unions or organizing networks spanning borders.
-- **Whistleblower & evidence-integrity systems:** Tamper-proof timestamping and storage of testimonies, photographs, datasets with privacy-preserving disclosure.
-- **Transparent, auditable treasury & grant flows:** Real-time reporting of funding, disbursements and usage, enhancing donor/recipient transparency.
-- **Portable identity & credentials for NGOs, volunteers & journalists:** Selective-disclosure credentials backed by on-chain verification to manage trust while protecting privacy.
-- **Programmable rights & participatory governance tokens:** Embedding rights-related commitments or governance frameworks into tokens or DAOs for accountability across actors.
+- Impact certificates, attestations & verifiable data - Immutable records of environmental outcomes, labor violations or human-rights abuses can help civil-society actors substantiate claims.
+- Conditional commitment pools & assurance contracts - Smart-contract-driven funding models that unlock only when agreed conditions are met, supporting coordinated action across multiple organizations.
+- Tools for organized labor — cross-jurisdictional networks - Portable credentials, shared reputation and tokenized reward systems for unions or organizing networks spanning borders.
+- Whistleblower & evidence-integrity systems - Tamper-proof timestamping and storage of testimonies, photographs, datasets with privacy-preserving disclosure.
+- Transparent, auditable treasury & grant flows - Real-time reporting of funding, disbursements and usage, enhancing donor/recipient transparency.
+- Portable identity & credentials for NGOs, volunteers & journalists - Selective-disclosure credentials backed by on-chain verification to manage trust while protecting privacy.
+- Programmable rights & participatory governance tokens - Embedding rights-related commitments or governance frameworks into tokens or DAOs for accountability across actors.
 
-## Resources
-
-**Projects**
+## Projects
 
 - [EN0VA](https://x.com/0xEN0VA) - Incentive-driven markets for collective action (hyperstition markets)
 - [Labor DAO](https://labordao.xyz/) - Decentralized organizing infrastructure for labor and communal coordination
 - ZK Whistleblower App, Dana Condrea
 
-**Research**
+## Resources
 
 - [Blockchain: Can It Improve Human Rights And If So How? (2018)](https://rwi.lu.se/2018/02/12/blockchain-human-rights/) - RWI Podcast on early research exploring land titles, anti-corruption and other rights use cases.
 - [The Impact of Blockchains for Human Rights, Democracy, and the Rule of Law](https://rm.coe.int/report-on-blockchains-en/1680a8ffc0) (2022) - Examines use cases and limitations of blockchain in rights, identity and accountability contexts

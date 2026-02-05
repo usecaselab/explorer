@@ -1,21 +1,21 @@
-# Real Estate & Housing
+---
+title: Real Estate & Housing
+sector: Physical
+---
 
-### Problem
+## The Opportunity
 
 Real estate transactions require many intermediaries: brokers, title companies, banks, registries, insurers and notaries. Records reside across disconnected databases and paper-based workflows, which slow settlement, raise costs and increase administrative burden. Ownership histories are often incomplete, title disputes are common and verifying property maintenance or energy-performance data is difficult. Smaller owners and renters face obstacles in accessing credit, verifying identity and establishing reliable references.
 
-### Opportunities
+## Ideas
 
-- **On-chain title & escrow:** Smart contracts replace paper registries and manual escrow flows, reducing settlement time and improving transparency. ([escrow example with bitcoin from trad escrow company](https://www.guaranty-escrow.com/real-estate-crypto-escrows))
-- **Smart-contract leasing:** Lease payments, deposits, renewals and dispute resolution run via code, eliminating many intermediaries.
-- **Tokenized real-estate funds:** Fractional access and transparent investor reporting allow smaller investors to participate in property markets.
-- **On-chain mortgage & home-equity rails:** Servicing and secondary markets become programmable, traceable and accessible.
-- **Community ownership primitives:** Co-ops and land trusts based on token-governance enable inclusive ownership and local alignment.
-- Fractionalizing affordable housing combined with resident governance on-chain could open **new models of housing access.**
+- On-chain title & escrow - Smart contracts replace paper registries and manual escrow flows, reducing settlement time and improving transparency. ([escrow example with bitcoin from trad escrow company](https://www.guaranty-escrow.com/real-estate-crypto-escrows))
+- Smart-contract leasing - Lease payments, deposits, renewals and dispute resolution run via code, eliminating many intermediaries.
+- Tokenized real-estate funds - Fractional access and transparent investor reporting allow smaller investors to participate in property markets.
+- On-chain mortgage & home-equity rails - Servicing and secondary markets become programmable, traceable and accessible.
+- Community ownership primitives - Co-ops and land trusts based on token-governance enable inclusive ownership and local alignment.
 
-### Resources
-
-**Projects**
+## Projects
 
 - [Propy](https://propy.com/) - On-chain title and escrow platform recording property transfers via smart contracts
 - [Fabrica](https://fabrica.land/) - Purchase and hold land parcels as NFTs linked to real-world properties
@@ -25,7 +25,7 @@ Real estate transactions require many intermediaries: brokers, title companies, 
 - [VestaEquity](https://vestaequity.net/) - Tokenized home-equity lines and financing
 - [Blocksquare](https://blocksquare.io/) - Tokenization framework for real-estate assets
 
-**Research**
+## Resources
 
 - [Tokenization of Real Estate Assets Using Blockchain](https://arxiv.org/pdf/2405.01852) (2024) - Framework demonstrating that blockchain lowers entry-barriers, improves transparency and supports record tracking
 - [Tokenized Real Estate: A New Era for Property Investment](https://www.ey.com/en_lu/insights/real-estate-hospitality-construction/real-estate-tokenization-a-new-era-for-property-investment-and-luxembourg-s-strategic-role) (2023) - Overview of tokenization benefits and regulatory challenges

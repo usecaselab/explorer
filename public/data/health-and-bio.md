@@ -1,10 +1,13 @@
-# Health & Bio
+---
+title: Health & Bio
+sector: Physical
+---
 
-# **Problem**
+## The Opportunity
 
 Healthcare suffers from siloed data, opaque supply chains, and misaligned incentives. Patient records are fragmented, billing is complex, and counterfeit drugs undermine trust. Clinical trials are costly and inefficient, and innovators struggle with access to funding and data. Patients, providers, and researchers lack verifiable, interoperable systems to manage, share, and build on sensitive health information securely.
 
-# **Opportunities**
+## Ideas
 
 - Health record systems enabling secure, patient-owned data and cross-provider interoperability
 - Prescription and pharmaceutical marketplaces with counterfeit resistance and traceability
@@ -14,9 +17,7 @@ Healthcare suffers from siloed data, opaque supply chains, and misaligned incent
 - IP-NFTs for biotech discoveries and molecule ownership, enabling new R&D finance models
 - Insurance - automated claims, instant reimbursements, fraud prevention, and transparent coverage
 
-# Resources
-
-**Projects**
+## Projects
 
 - [Safe Health](https://safehealthsystems.com/) - Blockchain-based digital health solutions; Hedera-powered case study for secure healthcare data
 - [Maharashtra COVID-19 certificates](https://blockchain.meity.gov.in/index.php/maharashtra-govt-onboards-blockchain-tech-for-issuing-covid-19-test-certificates?utm_campaign=india-ethereum-ecosystem-overview&utm_medium=referral&utm_source=localethereum.beehiiv.com) - Government-issued onchain COVID-19 test certificates
@@ -26,7 +27,7 @@ Healthcare suffers from siloed data, opaque supply chains, and misaligned incent
 - [HairDAO](https://www.hairdao.xyz/) - biotech community targeting hair loss therapies.
 - [AminoChain](https://aminochain.io/) - community-owned and decentralized biobank streamlines biosample procurement, safeguards data, and accelerates ethical breakthroughs in healthcare.
 
-**Research**
+## Resources
 
 - [BRI: Medical and Biopharma Research](https://www.blockchainresearchinstitute.org/project/medical-and-biopharma-research/) (2017) - Early exploration of blockchain for genetic and health data sharing
 - [BRI: Reinventing Healthcare on the Blockchain](https://www.blockchainresearchinstitute.org/project/reinventing-healthcare-on-the-blockchain/) (2018) - Advocates for patient-owned data models with monetization rights

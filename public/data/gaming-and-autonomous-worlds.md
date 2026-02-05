@@ -1,26 +1,25 @@
-# Gaming and Autonomous Worlds
+---
+title: Gaming and Autonomous Worlds
+sector: Unknown
+---
 
-### Problem
+## The Opportunity
 
 Most digital games today depend on closed servers and proprietary economies that restrict player control, transparency, and long-term viability. Items, progress, and in-game currencies can vanish when platforms change business models or shut down. Anti-cheat systems are opaque and often ineffective, and “open modding” rarely extends to real ownership, true creator monetization, or cross-platform interoperability. As AI-driven agents, community-run servers, and hybrid game worlds emerge, the traditional server-centric model struggles to support fairness, state sharing, and durable worlds beyond a single operator.
 
 The broader concern is that many blockchain gaming efforts today lean speculative or extractive (play-to-earn models) rather than delivering positive-sum outcomes or coordination-enhancing gameplay.
 
-### Opportunities
+## Ideas
 
-Ethereum provides a substrate for **verifiable, interoperable, and player-centric game ecosystems**. By anchoring key mechanics, assets, and economies onchain, game worlds can transition from siloed apps to open, extensible, multi-agent platforms.
+- Verifiable core loops - Onchain state and verifiable randomness ensure transparency in moves, scores, loot drops, and tournaments, with zk-proofs verifying off-chain elements without revealing secrets.
+- Player-owned assets & markets - Truly portable items/currency with minimal fees, rentals, AMM-driven markets, escrowed prize pools — shifting power from platforms to players.
+- UGC & mod royalties - Tokenized blueprints, maps or mods permit automatic revenue splits, cross-client recognition, and creator-driven extension of game logic.
+- Shared worlds - Composable “physics” contracts — terrain, crafting, combat logic — that multiple clients or shards can read/write, allowing persistent worlds that outlast any one operator.
+- Agent-native gameplay - Walleted NPCs and bots with budgets, onchain quests and verifiable completion proofs enable autonomous coordination of game worlds.
+- Esports & leagues - Transparent tournament brackets, provable anti-cheat attestations, instant rule-based payouts reduce overhead and disputes.
+- Games as coordination infrastructure - Onchain worlds could serve non-entertainment roles — governance simulations, public-goods funding mechanisms, training ecosystems for social cooperation or resource allocation.
 
-- **Verifiable core loops:** Onchain state and verifiable randomness ensure transparency in moves, scores, loot drops, and tournaments, with zk-proofs verifying off-chain elements without revealing secrets.
-- **Player-owned assets & markets:** Truly portable items/currency with minimal fees, rentals, AMM-driven markets, escrowed prize pools — shifting power from platforms to players.
-- **UGC & mod royalties:** Tokenized blueprints, maps or mods permit automatic revenue splits, cross-client recognition, and creator-driven extension of game logic.
-- **Shared worlds:** Composable “physics” contracts — terrain, crafting, combat logic — that multiple clients or shards can read/write, allowing persistent worlds that outlast any one operator.
-- **Agent-native gameplay:** Walleted NPCs and bots with budgets, onchain quests and verifiable completion proofs enable autonomous coordination of game worlds.
-- **Esports & leagues:** Transparent tournament brackets, provable anti-cheat attestations, instant rule-based payouts reduce overhead and disputes.
-- **Games as coordination infrastructure:** Onchain worlds could serve non-entertainment roles — governance simulations, public-goods funding mechanisms, training ecosystems for social cooperation or resource allocation.
-
-### Resources
-
-**Projects**
+## Projects
 
 - [Klang Games](https://www.klang-games.com/seed) - Large-scale life simulation MMO exploring emergent economies
 - [EVE Online](Gaming%20and%20Autonomous%20Worlds%20285d34f360e4807195fde026e0f16c12.md) - Example of persistent, player-driven virtual economy and world
@@ -32,7 +31,7 @@ Ethereum provides a substrate for **verifiable, interoperable, and player-centri
 - [Dark Forest Punk](https://dfpunk.xyz/) - decentralized MMO space conquest game built on Optimism with zkSNARKs using MUD
 - [Stadium](https://www.playstadium.gg/) - esports appchain
 
-**Research**
+## Resources
 
 - [Autonomous Worlds Essays](https://0xparc.org/blog/autonomous-worlds) - Conceptual framework by 0xPARC for onchain worlds as open, persistent systems
 - [Blockchain in Online Games and What Can Be Learned from It](https://www.researchgate.net/publication/378387237_Blockchain_in_Online_Games_and_What_Can_Be_Learned_from_It?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InB1YmxpY2F0aW9uIiwicGFnZSI6InB1YmxpY2F0aW9uIn19) (2023) - analysis of gaming + blockchain convergence

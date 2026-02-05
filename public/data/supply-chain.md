@@ -1,25 +1,24 @@
-# Supply Chain
+---
+title: Supply Chain
+sector: Enterprise
+---
 
-## Problem
+## The Opportunity
 
 Global supply chains today are highly fragmented, largely paper-driven and prone to costly delays. Manufacturers, suppliers, logistics providers, customs agencies and retailers operate across disconnected systems, which creates blind spots that hinder fraud detection, error-correction and real-time coordination. Settlement and financing processes frequently lag behind physical shipments by weeks, creating liquidity gaps. At the same time regulatory compliance and certification demands (for sustainability, safety, customs) add further friction to already complex flows.
 
-## Opportunities
+## Ideas
 
-Digitally-native, interoperable supply chain infrastructure for traceability, financing, identity and settlement so that goods, services and value flow with visibility and trust.
+- Smart contract payments - Conditional release of funds tied to IoT or oracle-verified delivery/severity events.
+- Trade finance - Tokenized invoices, letters of credit and receivables that can be sold, collateralized or traded.
+- Customs & compliance - Shared ledgers for real-time clearance, tariff mechanics and document exchange between jurisdictions.
+- Traceability & certification - Append-only product provenance and certification records (e.g., organic, fair trade, carbon tracking).
+- Inventory management - Tokenized SKUs and warehouse receipts that permit programmatic tracking, financing and movement of goods.
+- Recommerce & circular flows - Verifiable product-history for resale, recycling and sustainability reporting.
+- Open supply-chains - Enabling coordination among independent farmers, artisans and open-hardware producers outside corporate platforms.
+- Electronic Bill of Lading - Replacing paper document of title with NFT-like digital representation of title and transfer rights.
 
-- **Smart contract payments:** Conditional release of funds tied to IoT or oracle-verified delivery/severity events.
-- **Trade finance:** Tokenized invoices, letters of credit and receivables that can be sold, collateralized or traded.
-- **Customs & compliance:** Shared ledgers for real-time clearance, tariff mechanics and document exchange between jurisdictions.
-- **Traceability & certification:** Append-only product provenance and certification records (e.g., organic, fair trade, carbon tracking).
-- **Inventory management:** Tokenized SKUs and warehouse receipts that permit programmatic tracking, financing and movement of goods.
-- **Recommerce & circular flows:** Verifiable product-history for resale, recycling and sustainability reporting.
-- **Open supply-chains:** Enabling coordination among independent farmers, artisans and open-hardware producers outside corporate platforms.
-- **Electronic Bill of Lading:** Replacing paper document of title with NFT-like digital representation of title and transfer rights.
-
-## Resources
-
-**Projects**
+## Projects
 
 - [EY OpsChain Traceability](https://blockchain.ey.com/products/traceability) - Tokenized assets and inventory under privacy for more accurate forecasting and reduced administrative overhead
 - [EY Nightfall](https://polygon.technology/blog/introducing-polygon-nightfall-mainnet-decentralized-private-transactions-for-enterprise) - Private supply chain orchestration with traceability, provenance proofs and payments
@@ -32,11 +31,10 @@ Digitally-native, interoperable supply chain infrastructure for traceability, fi
     - [DoD case study](https://simbachain.com/case-study/department-of-defense/)
     - [US Air Force case study](https://simbachain.com/case-study/u-s-air-force/)
 - [Maersk pilots](https://www.maersk.com/news/articles/2021/07/27/how-blockchain-technology-is-beefing-up) – blockchain for shipping logistics.
-- [Statwig](https://statwig.com/) (dead) - public health supply chain
 - [Drug supply chain pilot](https://www.oracle.com/in/corporate/pressrelease/niti-aayog-oracle-pilot-real-drug-supply-chain-with-blockchain-iot-2018-09-28.html) – pharma verification with blockchain + IoT.
 - TradeLens - shipping blockchain co-developed by Maersk and IBM; aimed to be a neutral industry utility, but other shipping giants were uneasy about Maersk’s influence. “centralized control… and concerns over data privacy and neutrality” ultimately stymied TradeLens’s adoption ([source](https://enterpriseonchain.substack.com/p/why-businesses-are-pivoting-to-public))
 
-**Research**
+## Resources
 
 - [BRI: Introducing Asset Chains](https://www.blockchainresearchinstitute.org/project/introducing-asset-chains/) (2017) - frameworks for responsive, transparent supply chains with IoT integration
 - [BRI: Blockchain at Our Borders](https://www.blockchainresearchinstitute.org/project/blockchain-at-our-borders/) (2017) - blockchain for customs and cross-border flows

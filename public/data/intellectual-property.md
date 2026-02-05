@@ -1,10 +1,13 @@
-# Intellectual Property (IP)
+---
+title: Intellectual Property (IP)
+sector: Unknown
+---
 
-# Problem
+## The Opportunity
 
 Intellectual property systems—covering patents, copyrights, and trademarks—are fragmented, slow, and costly. Licensing often relies on one-time fees instead of usage-based models, leaving inventors undercompensated and innovation underfunded. Global variations in law, opaque registries, and expensive enforcement limit access, while creators and small innovators struggle to monetize rights fairly.
 
-# **Opportunities**
+## Ideas
 
 - Smart contracts for usage-based, automated licensing and royalty payments
 - Onchain registration for copyright, patents, and trademarks
@@ -13,9 +16,7 @@ Intellectual property systems—covering patents, copyrights, and trademarks—a
 - Cross-industry interoperability for IP across IoT, media, healthcare, and scientific research
 - Proof of existence / tamper proof records such as lab books or drafts to strengthen “first to invention” rather than just registration claims.
 
-# Resources
-
-**Projects**
+## Projects
 
 - [license.rocks](https://license.rocks/) ([Daud](https://x.com/zulfacar))
 - Story - L1 focused on IP
@@ -32,3 +33,7 @@ Research
 - Jan-Gero Alexander Hannemann’s report on tokenised patent licensing.
     
     [2025_07_30_Research_Report_Happy_Birthday_Ethereum.pdf](Intellectual%20Property%20(IP)/2025_07_30_Research_Report_Happy_Birthday_Ethereum.pdf)
+
+## Resources
+
+

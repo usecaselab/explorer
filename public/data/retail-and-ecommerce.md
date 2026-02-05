@@ -1,23 +1,24 @@
-# Retail & eCommerce
+---
+title: Retail & eCommerce
+sector: Consumer
+---
 
-### Problem
+## The Opportunity
 
 Retail and eCommerce workflows require stitching together product sourcing, inventory management, payments, logistics and after-sales service across many disconnected systems. Merchants and customers face risks from fraud, counterfeit goods, unreliable reviews and disputes over refunds. The result is high operational overhead, multiple intermediaries and limited portability of data and value across stores and marketplaces for users.
 
-### Opportunities
+## Ideas
 
-- **Onchain merchant payments:** Lower fees, instant settlement and programmable refunds reduce payment-rail friction.
-- **Tokenized loyalty:** Portable rewards with benefits and access gated by tokens or NFTs enable new loyalty architectures.
-- **Verifiable reviews & receipts:** Onchain attestations improve authenticity, support returns and reduce dispute risk.
-- **Physical goods marketplaces:** Tokenized listings and escrowed settlement bring transparency to resale and secondary markets.
-- **Commerce identity:** Reusable KYC and proof credentials reduce onboarding friction and fraud across merchants and marketplaces.
-- **Agent-driven commerce:** Autonomous agents or bots executing shopping tasks, rebates or optimized purchasing flows with onchain coordination.
-- **Autonomous auctions:** Where goods can be priced and sold without an intermediary.
-- **Full Commerce Stack:** Potential for integrating supply-chain provenance, dynamic pricing and loyalty token-flows in one unified commerce stack.
+- Onchain merchant payments - Lower fees, instant settlement and programmable refunds reduce payment-rail friction.
+- Tokenized loyalty - Portable rewards with benefits and access gated by tokens or NFTs enable new loyalty architectures.
+- Verifiable reviews & receipts - Onchain attestations improve authenticity, support returns and reduce dispute risk.
+- Physical goods marketplaces - Tokenized listings and escrowed settlement bring transparency to resale and secondary markets.
+- Commerce identity - Reusable KYC and proof credentials reduce onboarding friction and fraud across merchants and marketplaces.
+- Agent-driven commerce - Autonomous agents or bots executing shopping tasks, rebates or optimized purchasing flows with onchain coordination.
+- Autonomous auctions - Where goods can be priced and sold without an intermediary.
+- Full Commerce Stack - Potential for integrating supply-chain provenance, dynamic pricing and loyalty token-flows in one unified commerce stack.
 
-### Resources
-
-**Projects**
+## Projects
 
 - [FreePay](https://freepaypos.org/) - Intermediary-free payment terminal for merchants accepting crypto and tokens.
 - Commerce Payments Protocol (Shopify × Coinbase) - Stablecoin commerce payment rails.
@@ -28,7 +29,7 @@ Retail and eCommerce workflows require stitching together product sourcing, inve
 - Marketplaces for physical goods - [mass.market](http://mass.market), [Hopscotch](https://hopscotch.trade/), [Slice](https://slice.so/), [Boson](https://www.bosonprotocol.io/) – tokenized marketplace infrastructure.
 - Additional emerging projects exploring supply-chain provenance and onchain review/receipt attestations would round out the list.
 
-**Research**
+## Resources
 
 - [Blockchain-Based Loyalty Management System](https://www.researchgate.net/publication/391596390_Blockchain-Based_Loyalty_Management_System) (2023) - Proposes a platform where multiple loyalty programs operate via blockchain.
 - [The effect of tokenized rewards on customer loyalty programs](https://www.sciencedirect.com/science/article/pii/S0160738324001282) (2024) - Empirical study showing tokenized rewards improve customer intent

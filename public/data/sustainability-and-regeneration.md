@@ -1,22 +1,21 @@
-# Sustainability & Regeneration
+---
+title: Sustainability & Regeneration
+sector: Physical
+---
 
-## Problem
+## The Opportunity
 
 Many natural assets—such as water, forests and mineral resources—are extracted or consumed without adequate accounting for long-term sustainability or ecosystem value. Existing carbon markets and decarbonization schemes often lack trusted measurement and enforcement, undermining climate action and corporate claims. Conservation projects struggle to attract sufficient capital because biodiversity and ecosystem services are difficult to quantify and monetize. Meanwhile, circular-economy practices like reuse and recycling remain marginal because there is no reliable way to measure impact, trace product life cycles or reward participation.
 
-## Opportunities
+## Ideas
 
-Ethereum can make the value of ecosystems, resources and circular economies easier to transparently track, finance and sustainably manage.
+- Tokenising ecological assets - Creating tradable digital representations of forests, water rights, biodiversity credits or recycled material flows.
+- Credible measurement & verification - Using oracles, remote-sensing and blockchain logs to provide evidence-trails for environmental outcomes (e.g., carbon sequestration, restoration) with provenance.
+- Traceable supply & material flows for circularity - Tracking recycling, reuse, product-life-cycles and certification of materials in a transparent ledger.
+- Quality-tiered environmental assets - Differentiating asset classes by methodology, provenance, verification quality and governance, enabling transparency across markets.
+- Outcome-linked finance with milestones - Smart-contract-based release of funds or credits when independently verifiable events (e.g., reforestation, water-quality improvement) occur.
 
-- **Tokenising ecological assets:** Creating tradable digital representations of forests, water rights, biodiversity credits or recycled material flows.
-- **Credible measurement & verification:** Using oracles, remote-sensing and blockchain logs to provide evidence-trails for environmental outcomes (e.g., carbon sequestration, restoration) with provenance.
-- **Traceable supply & material flows for circularity:** Tracking recycling, reuse, product-life-cycles and certification of materials in a transparent ledger.
-- **Quality-tiered environmental assets:** Differentiating asset classes by methodology, provenance, verification quality and governance, enabling transparency across markets.
-- **Outcome-linked finance with milestones:** Smart-contract-based release of funds or credits when independently verifiable events (e.g., reforestation, water-quality improvement) occur.
-
-## Resources
-
-**Projects**
+## Projects
 
 - [Climate Action Data](https://climateactiondata.org/registries/) - Digital infrastructure connecting environmental registries, maximising transparency of carbon credits and minimising double-counting
 - [Regen Network](https://www.regen.network/) - Ecological state-machine and environmental-credit market based on on-chain infrastructure
@@ -26,7 +25,7 @@ Ethereum can make the value of ecosystems, resources and circular economies easi
 - [EY OpsChain ESG](https://blockchain.ey.com/products/esg) - Enterprise solution for supply-chain traceability and ESG-data sharing
 - [Toucan](https://toucan.earth/) - tokenized carbon credits
 
-**Research**
+## Resources
 
 - [The Nexus between ReFi, Carbon, Fossil Energy and Clean Energy Assets](https://www.sciencedirect.com/science/article/abs/pii/S0140988324001646) (2024) - Empirical study on ReFi, carbon markets and return-connectedness
 - [Blockchain on Sustainable Environmental Measures: A Review](https://www.mdpi.com/2813-5288/2/3/16) (2024)

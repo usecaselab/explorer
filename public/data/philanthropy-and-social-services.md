@@ -1,24 +1,23 @@
-# Philanthropy & Social Services
+---
+title: Philanthropy & Social Services
+sector: Society
+---
 
-## Problem
+## The Opportunity
 
 Mobilizing resources for aid and social support is often slow, opaque and costly, especially at the last mile. Fragmented registries, manual eligibility checks and multiple intermediary layers increase leakage and delays, particularly in crisis contexts. Cross-border constraints and banking frictions limit reach to vulnerable and unbanked populations. Verification and impact-reporting are inconsistent, making it difficult for donors and agencies to trace funds to outcomes while also protecting recipient privacy.
 
-## Opportunities
+## Ideas
 
-Ethereum can enable faster, transparent and verifiable resource flows, identity and accountability in aid and social-support systems.
+- Transparent donation flows & grant disbursements - On-chain tracking of donor funds, real-time visibility into flow and allocation, reducing leakage and improving trust.
+- Direct cash-transfer programs - Use of digital wallets, crypto or tokenized transfers to reach vulnerable or unbanked populations with minimal intermediaries.
+- Impact certificates & tokenization - Verifiable records of outcomes (e.g., service delivery, participation) that support accountability and impact-reporting.
+- Identity & banking for displaced people - Portable identities and wallet access for refugees, migrant workers or displaced communities, enabling access to services and funding.
+- Programmable commitment pools / assurance contracts - Smart contracts that release funds only when pre-agreed milestones are met, enabling collaborative campaigns across organizations.
+- Decentralized coordination platforms for social-services actors - Infrastructure enabling NGOs, volunteers and communities to coordinate service delivery, funding and verification at scale.
+- UBI - 
 
-- **Transparent donation flows & grant disbursements:** On-chain tracking of donor funds, real-time visibility into flow and allocation, reducing leakage and improving trust.
-- **Direct cash-transfer programs:** Use of digital wallets, crypto or tokenized transfers to reach vulnerable or unbanked populations with minimal intermediaries.
-- **Impact certificates & tokenization:** Verifiable records of outcomes (e.g., service delivery, participation) that support accountability and impact-reporting.
-- **Identity & banking for displaced people:** Portable identities and wallet access for refugees, migrant workers or displaced communities, enabling access to services and funding.
-- **Programmable commitment pools / assurance contracts**: Smart contracts that release funds only when pre-agreed milestones are met, enabling collaborative campaigns across organizations.
-- **Decentralized coordination platforms for social-services actors:** Infrastructure enabling NGOs, volunteers and communities to coordinate service delivery, funding and verification at scale.
-- **UBI**
-
-## Resources
-
-**Projects**
+## Projects
 
 - [Endaoment](https://endaoment.org/) - Crypto-based donor-advised fund platform for charities
 - [Gitcoin](https://www.gitcoin.co/) - Web3 funding platform for public-goods, including social-impact projects
@@ -35,7 +34,7 @@ Ethereum can enable faster, transparent and verifiable resource flows, identity 
 - [Crypto Council](https://cryptoforinnovation.org/how-are-web3-solutions-addressing-drought-in-kenya/) + [Mercy Corps](https://www.mercycorps.org/blog/anticipatory-cash-transfers-in-kenya) pilot with Diva, Fortune Credit, Shamba - climate insurance that automatically trigger anticipatory cash payments to impacted populations once the conditions for drought are sensed
 - [Unblocked Cash](https://thevalueprop.io/projects/unblocked-cash-project) - launched by Oxfam (a charity organization focused on alleviating global poverty) to help deliver aid with the use of e-voucher “tap-and-pay” cards linked to the blockchain. The first pilot — through a partnership with Sempo and ConsenSys — launched successfully in Vanuatu after Tropical Cyclone Harold.
 
-**Research**
+## Resources
 
 - [Managing charity 4.0 with blockchain: a case study](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7925260/) (2021) - Case study of Charity Wall and blockchain adoption in philanthropy
 - [Crypto and Humanitarian Aid – Reducing Costs at Speed](https://cryptoforinnovation.org/crypto-and-humanitarian-aid-reducing-costs-and-improving-speed/) (2022) - Aid agencies are using crypto to send help faster, cheaper, and more transparently. Projects like Oxfam’s UnBlocked and Emerging Impact’s Umoja cut delivery time by 96% and costs by 75% while letting people use simple payment cards. Crypto complements traditional aid and helps digitize social protection and financial inclusion during recovery.

@@ -70,12 +70,23 @@ function parseMarkdownFile(filePath, id) {
   markdownContent[id] = content;
   const text = content.replace(/\r\n/g, '\n');
 
-  // Parse title
-  const titleMatch = text.match(/^#\s+([^*\n]+)$/m);
-  let title = titleMatch ? titleMatch[1].trim() : id;
+  // Parse YAML frontmatter
+  let title = id;
+  let sector = '';
+  const frontmatterMatch = text.match(/^---\n([\s\S]*?)\n---/);
+  if (frontmatterMatch) {
+    const frontmatter = frontmatterMatch[1];
+    const titleMatch = frontmatter.match(/^title:\s*(.+)$/m);
+    const sectorMatch = frontmatter.match(/^sector:\s*(.+)$/m);
+    if (titleMatch) title = titleMatch[1].trim();
+    if (sectorMatch) sector = sectorMatch[1].trim();
+  }
 
-  // Split into sections
-  const sections = text.split(/^#{1,3}\s+/m);
+  // Remove frontmatter from text for section parsing
+  const bodyText = text.replace(/^---\n[\s\S]*?\n---\n*/, '');
+
+  // Split into sections by ## headers
+  const sections = bodyText.split(/^##\s+/m);
 
   let problemStatement = '';
   let ideas = [];
@@ -83,64 +94,58 @@ function parseMarkdownFile(filePath, id) {
   let resources = [];
 
   sections.forEach(section => {
+    if (!section.trim()) return;
+
     const lines = section.trim().split('\n');
-    const header = lines[0].trim().replace(/\*\*/g, '').toLowerCase();
+    const header = lines[0].trim().toLowerCase();
     const sectionContent = lines.slice(1).join('\n').trim();
 
-    if (header.startsWith('problem') || header.startsWith('the opportunity')) {
-      problemStatement = sectionContent
-        .split('\n')
-        .filter(line => !line.startsWith('Categories:') && !line.startsWith('Last edited time:') && line.trim() !== '---')
-        .join('\n')
-        .trim();
-    } else if (header.startsWith('opportunities')) {
-      // Parse opportunities as ideas
+    if (header.startsWith('the opportunity')) {
+      problemStatement = sectionContent.trim();
+    } else if (header.startsWith('ideas')) {
+      // Parse ideas with format: - idea name - description
       sectionContent.split('\n').forEach(line => {
-        const match = line.match(/^-\s+\*\*([^*]+?)\*\*[:\s]*(.*)$/);
+        // Match format: - idea name - description (use " - " as delimiter to handle hyphens in names)
+        const match = line.match(/^-\s+(.+?)\s+-\s+(.+)$/);
         if (match) {
           ideas.push({
-            title: match[1].trim().replace(/:$/, ''),
+            title: match[1].trim(),
             description: match[2].trim()
           });
         }
       });
+    } else if (header.startsWith('projects')) {
+      // Parse projects section
+      sectionContent.split('\n').forEach(line => {
+        const match = line.trim().match(/^-?\s*\[([^\]]+)\]\(([^)]+)\)\s*[-–—:]?\s*(.*)$/);
+        if (match) {
+          projects.push({
+            name: match[1].trim(),
+            url: match[2].trim(),
+            description: match[3].trim()
+          });
+        }
+      });
     } else if (header.startsWith('resources')) {
-      // Parse Projects subsection
-      const projectsMatch = sectionContent.match(/\*\*Projects\*\*\s*([\s\S]*?)(?=\*\*Research\*\*|$)/i);
-      if (projectsMatch) {
-        projectsMatch[1].split('\n').forEach(line => {
-          const match = line.trim().match(/^-?\s*\[([^\]]+)\]\(([^)]+)\)\s*[-–—:]?\s*(.*)$/);
-          if (match) {
-            projects.push({
-              name: match[1].trim(),
-              url: match[2].trim(),
-              description: match[3].trim()
-            });
-          }
-        });
-      }
-
-      // Parse Research subsection
-      const researchMatch = sectionContent.match(/\*\*Research\*\*\s*([\s\S]*?)$/i);
-      if (researchMatch) {
-        researchMatch[1].split('\n').forEach(line => {
-          const match = line.trim().match(/^-?\s*\[([^\]]+)\]\(([^)]+)\)\s*(?:\((\d{4})\))?\s*[-–—:]?\s*(.*)$/);
-          if (match) {
-            resources.push({
-              title: match[1].trim(),
-              link: match[2].trim(),
-              year: match[3] || null,
-              description: match[4]?.trim() || ''
-            });
-          }
-        });
-      }
+      // Parse resources with format: - [title](link) (year) - description
+      sectionContent.split('\n').forEach(line => {
+        const match = line.trim().match(/^-?\s*\[([^\]]+)\]\(([^)]+)\)\s*(?:\((\d{4})\))?\s*[-–—:]?\s*(.*)$/);
+        if (match) {
+          resources.push({
+            title: match[1].trim(),
+            link: match[2].trim(),
+            year: match[3] || null,
+            description: match[4]?.trim() || ''
+          });
+        }
+      });
     }
   });
 
   return {
     id,
     title,
+    sector,
     problemStatement,
     ideas,
     projects,
@@ -214,6 +219,7 @@ app.get('/api/usecases', (req, res) => {
   const summary = usecases.map(uc => ({
     id: uc.id,
     title: uc.title,
+    sector: uc.sector,
     problemStatement: uc.problemStatement.substring(0, 200) + '...',
     ideasCount: uc.ideas.length,
     projectsCount: uc.projects.length,

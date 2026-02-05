@@ -1,21 +1,22 @@
-# Media & Entertainment
+---
+title: Media & Entertainment
+sector: Consumer
+---
 
-# Problem
+## The Opportunity
 
 Cultural production and distribution is bottlenecked by centralized intermediaries (studios, labels, ticketing giants, streaming platforms) that capture outsized value while creators and fans face high costs, limited transparency, and restricted access. Piracy, fake tickets, opaque royalties, and inequitable revenue splits undermine trust and sustainability. (film, music, writing, journalism, art, podcasts)
 
-# **Opportunities**
+## Ideas
 
-- NFT-based ticketing: verifiable, resalable access to events, concerts, and festivals.
-- Crowdfunded media: onchain funding and governance for films, music, and journalism.
-- Royalty tracking and payouts: smart contracts for transparent rights management.
-- Tokenized fan engagement: invest in artists, songs, or franchises with fractional ownership.
-- Decentralized streaming and publishing: censorship-resistant platforms for content distribution.
-- Verifiable journalism: provenance for media assets and claims, linked to fact-checking oracles.
+- NFT-based ticketing - verifiable, resalable access to events, concerts, and festivals.
+- Crowdfunded media - onchain funding and governance for films, music, and journalism.
+- Royalty tracking and payouts - smart contracts for transparent rights management.
+- Tokenized fan engagement - invest in artists, songs, or franchises with fractional ownership.
+- Decentralized streaming and publishing - censorship-resistant platforms for content distribution.
+- Verifiable journalism - provenance for media assets and claims, linked to fact-checking oracles.
 
-# Resources
-
-**Projects**
+## Projects
 
 - [Soneium](https://soneium.org/) - Sony’s L2 ([explainer article](https://enterpriseonchain.substack.com/p/sonys-entertainment-layer-2-explored))
     - focused on royalty automation & creator-owned IP
@@ -36,12 +37,6 @@ Cultural production and distribution is bottlenecked by centralized intermediari
     - [Bolero](https://www.boleromusic.com/) - music rights investment and trading
     - [Royal](https://thevalueprop.io/projects/royal) - marketplace for investing in music royalties
     - [Metalabel](https://www.metalabel.com/) ([Yancey Strickler](https://x.com/ystrickler)) - collaborative publishing platform (stopped using blockchain?)
-    - [Catalog](https://catalog.works/) [dead] - support independent music
-    - [Songcamp](https://song.camp/) [dead] - [app](https://app.song.camp/)
-    - [Anotherblock](https://anotherblock.com/) [dead] - music rights marketplace
-    - [Open Music Initiative](https://open-music.org/) [dead] - creating an open-source protocol for the uniform identification of music rights holders and creators.
-    - [Opulous](https://opulous.org/) - [scammy/low quality] crowdfund song rights / prediction market about song revenues
-    - [Sound.xyz](https://www.sound.xyz/) (dead)
     - [Bombo](https://wearebombo.com/) - electronic music community blending NFT ticketing, social interaction, and a secure fan-to-fan marketplace
 - Writing & Publishing
     - [Paragraph](https://paragraph.com/) - decentralized publishing for writers
@@ -55,7 +50,7 @@ Cultural production and distribution is bottlenecked by centralized intermediari
 - Podcasts
     - [Pods](https://pods.media/) - tokenized podcast monetization
 
-**Research**
+## Resources
 
 - [BRI: Web3 and the Music Industry](https://www.blockchainresearchinstitute.org/project/web-3-and-the-music-industry/) (2022) - Explores blockchain’s potential for music rights, royalties, and fan engagement
 - Mac Budowski

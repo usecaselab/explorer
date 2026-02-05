@@ -1,19 +1,20 @@
-# Data
+---
+title: Data
+sector: Digital
+---
 
-# Problem
+## The Opportunity
 
 Data already trades through brokers, ad-tech exchanges, and bespoke deals between publishers and buyers (AI teams, marketers, hedge funds), but the market is opaque and one-sided. Buyers can’t reliably check quality, coverage, provenance, or freshness before paying; sellers lose control once data leaves, while intermediaries capture margin and mask license terms. Deals hinge on NDAs and custom contracts, making due diligence, privacy/sectoral compliance (often cross-border), and audits slow and costly; leakage and quiet reselling are common. With no portable licenses, usage metering, or enforceable royalties, most participants either over-share or don’t share at all—leaving valuable data underused.
 
-# Opportunities
+## Ideas
 
 - Personal data vaults with selective disclosure and monetization
 - Enterprise and scientific data marketplaces with programmable access and usage rights (licenses, metering, royalties, pay-per-use, revocation, automatic revenue splits to contributors)
 - Tokenized data assets and derivatives (e.g., streams, APIs, analytics outputs)
 - Decentralized fact-checking, oracles, and community knowledge games
 
-# Resources
-
-**Projects**
+## Projects
 
 - [Kled](https://www.kled.ai/) - data marketplace
 - [Olas.info](http://Olas.info) - protocol for curating accurate information, leveraging quadratic funding and prediction markets
@@ -28,9 +29,8 @@ Data already trades through brokers, ad-tech exchanges, and bespoke deals betwee
 - Origin Trail
 - [Umanitek](https://umanitek.ai/) - fake news, IP infringement, harmful content
 - [https://nvg8.io/](https://nvg8.io/) - earn from your data
-- [https://docs.ideamarket.io](https://docs.ideamarket.io/) (dead)
 
-**Research**
+## Resources
 
 - [A privacy-preserving statistics marketplace using local differential privacy and blockchain: An application to smart-grid measurements sharing](https://www.sciencedirect.com/science/article/pii/S2096720921000178) (2021)
 - [Verification and Validation for data marketplaces via a blockchain and smart contracts](https://www.sciencedirect.com/science/article/pii/S2096720922000410) (2022) - Proposes AI-driven, blockchain-based V&V model that ensures authenticity and governance of marketplace data, validated in smart city and construction case studies

@@ -1,28 +1,17 @@
-# Hardware & IoT
+---
+title: Hardware & IoT
+sector: Digital
+---
 
-# **Problem**
+## The Opportunity
 
 IoT networks—spanning smart wearables, homes, vehicles, factories, and cities—depend on centralized clouds and intermediaries for identity, access, and payments, creating privacy risks, data silos, and single points of failure. Business models for device coordination and resource sharing remain underdeveloped, with little transparency or programmability.
 
-# **Opportunities**
+## Ideas
 
-- Smart locks and property access governed by onchain rules and payments
-- Autonomous devices with wallets for machine-to-machine commerce
-- Incentives for sensor, mobility, and robotics data collection
-- Usage-based subscriptions and pay-per-use contracts tied directly to devices
-- Self-owning intelligent buildings, vehicles with decentralized ownership
-- Smart memberships and subscriptions -  access-controlled devices (gyms, co-working, cars) with automated payments, entry, and service management via AI agents [[1](https://x.com/l3olanza/status/1960799639692828952)]
-- Wearables & personal sensors: verifiable device identity and signed telemetry with consent-based sharing (to apps, clinicians, insurers), optional pay-for-data incentives or premium discounts
-- Robotics (from Shyam)
-    - Decentralized coordination of multi-agent robotic systems (e.g., swarm robotics)
-    - On-chain task marketplaces for robotic labor allocation
-    - Autonomous drones/robots interacting with smart contracts for payments and access control
-    - Provenance and audit trails for robotic decision-making using Ethereum
-    - Secure data sharing between IoT/robotic devices via Ethereum-based protocols
+- Wearables & personal sensors - verifiable device identity and signed telemetry with consent-based sharing (to apps, clinicians, insurers), optional pay-for-data incentives or premium discounts
 
-# Resources
-
-**Projects**
+## Projects
 
 - [Ethereum Reality Service](https://www.ers.to/) - linking physical chips to onchain identifiers; also relevant for product passport
 - [ERC-4519: Non-Fungible Tokens Tied to Physical Assets](https://eips.ethereum.org/EIPS/eip-4519)
@@ -48,7 +37,7 @@ IoT networks—spanning smart wearables, homes, vehicles, factories, and cities�
     - [Bosch Economy of Things](https://www.bosch.com/research/research-fields/digitalization-and-connectivity/economy-of-things/#latest-updates)
     - [ADEPT by IBM](https://www.postscapes.com/autonomous-connected-device-marketplaces-adept/)  “economy of things” (Paul Brody)
 
-**Research**
+## Resources
 
 - [Nick Szabo: Proplets: Devices for Controlling Property](https://nakamotoinstitute.org/library/proplets-devices-for-controlling-property/) (2001)
 - [BRI: Slock.it – Enabling IoT and the Universal Sharing Network](https://www.blockchainresearchinstitute.org/project/slock-it-enabling-iot-and-the-universal-sharing-network/) (2017) - Early vision for blockchain-enabled IoT sharing economy.
