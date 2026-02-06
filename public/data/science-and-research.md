@@ -9,12 +9,12 @@ Scientific research is strained by misaligned incentives and weak accountability
 
 ## Ideas
 
-- Credentials & impact certificates - Verifiable recognition of contributions, reproducibility outcomes and downstream impact (for example via [Hypercerts](https://www.hypercerts.org/)).
-- Crowdfunding and collective ownership of IP - Tokenized IP-NFTs (for example via Molecule, [Bio.xyz](http://Bio.xyz)) enable shared ownership of research outcomes.
-- Publishing reform - Open systems for publishing, peer review, and portable researcher reputation (for example ResearchHub).
-- Reusable datasets & provenance - Decentralized storage and provenance for research data to boost reuse and integrity (for example Seal Storage).
+- Credentials & impact certificates - Verifiable recognition of contributions, reproducibility outcomes and downstream impact.
+- IP-NFTs - Crowdfunding and collective ownership of IP.
+- Publishing reform - Open systems for publishing, peer review, and portable researcher reputation.
+- Reusable datasets & provenance - Decentralized storage and provenance for research data to boost reuse and integrity.
 - Clinical trials & milestone-based funding - Smart-contract payments tied to data sharing, milestones and auditing in trials.
-- Knowledge graphs & connected science - Decentralized knowledge graphs linking data, AI and researchers to reveal hidden connections (e.g. via [DeSci World](https://desci.world/) or [SciGraph](https://github.com/SciGraph/SciGraph)).
+- Knowledge graphs & connected science - Decentralized knowledge graphs linking data, AI and researchers to reveal hidden connections.
 - Prediction markets & crowdsourced innovation - Incentivized mechanisms for funding and discovering novel research directions.
 
 ## Projects
@@ -24,9 +24,10 @@ Scientific research is strained by misaligned incentives and weak accountability
 - [Microbiome DAO](https://www.microbiomedao.com/) - Community-driven research on the microbiome with ownership and governance for participants
 - [HairDAO](https://hairdao.xyz/) - Community-driven R&D on hair-loss therapies
 - [ResearchHub](https://www.researchhub.com/) - Incentivized publishing and peer review platform
-- [Hypercerts](https://www.hypercerts.org/) / [Recerts](https://www.recerts.org/) - Impact certificates and retroactive recognition of research contributions
+- [Recerts](https://www.recerts.org/) - Tokenized impact certificates for retroactive recognition of research contributions
 - [Seal Storage](https://sealstorage.io/solutions/research) - Decentralized storage and provenance platform for research datasets
 - [DeSci World](https://desci.world/) - project directory and community hub for DeSci
+- [SciGraph](https://github.com/SciGraph/SciGraph)
 
 ## Resources
 

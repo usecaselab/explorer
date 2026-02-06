@@ -18,14 +18,14 @@ Workplace productivity today is dominated by centralized SaaS providers who silo
 
 ## Projects
 
-- [Towns](https://www.towns.com/) - Community chat and coordination platform aiming at user-owned collaboration.
-- [Common Ground](https://www.commonground.cg/) - Onchain attestations, reputation tracking, community wallets for work contributions.
-- [Huddle](https://www.huddle01.com/) - Decentralized video conferencing infrastructure.
-- [Fileverse](https://fileverse.io/) - Document and file sharing with user-owned data emphasis.
+- [Towns](https://www.towns.com/) - Community chat and coordination platform aiming at user-owned collaboration
+- [Common Ground](https://www.commonground.cg/) - Onchain attestations, reputation tracking, community wallets for work contributions
+- [Huddle](https://www.huddle01.com/) - Decentralized video conferencing infrastructure
+- [Fileverse](https://fileverse.io/) - Document and file sharing with user-owned data emphasis
 - [Focustree](https://www.focustree.app/) - Gamified deep work
 - [Pomodoki](https://pomodoki.com/) - Gamified deep work
-- [Radicle](https://radicle.xyz/) - Peer-to-peer code collaboration and governance layer.
-- [Coordinape](https://co.coordinape.com/) - Tool for reputation and reward tracking within organizations.
+- [Radicle](https://radicle.xyz/) - Peer-to-peer code collaboration and governance layer
+- [Coordinape](https://co.coordinape.com/) - Tool for reputation and reward tracking within organizations
 
 ## Resources
 
