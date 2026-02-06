@@ -5,28 +5,28 @@ sector: Society
 
 ## The Opportunity
 
-Scientific research is strained by misaligned incentives and weak accountability. Funding institutions favor incremental rather than high-risk or interdisciplinary work. Peer review is often slow and inconsistent, the reproducibility crisis continues to erode confidence in published results, and many contributions like data generation, reviews or replication receive limited recognition. Clinical trials and applied R&D suffer from compliance burdens and fragmented data coordination. These systemic issues hamper innovation, reduce reward for critical tasks and make it difficult to coordinate large collaborative efforts efficiently.
+Scientific research is strained by misaligned incentives and weak accountability. Funding institutions favor incremental rather than high-risk or interdisciplinary work. Peer review is often slow and inconsistent, the reproducibility crisis continues to erode confidence in published results, and many contributions like data generation, reviews, or replication receive limited recognition. Clinical trials and applied R&D suffer from compliance burdens and fragmented data coordination. These systemic issues hamper innovation, reduce reward for critical tasks and make it difficult to coordinate large collaborative efforts efficiently.
 
 ## Ideas
 
-- Credentials & impact certificates - Verifiable recognition of contributions, reproducibility outcomes and downstream impact (for example via [Hypercerts](https://www.hypercerts.org/)).
-- Crowdfunding and collective ownership of IP - Tokenized IP-NFTs (for example via Molecule, [Bio.xyz](http://Bio.xyz)) enable shared ownership of research outcomes.
-- Publishing reform - Open systems for publishing, peer review, and portable researcher reputation (for example ResearchHub).
-- Reusable datasets & provenance - Decentralized storage and provenance for research data to boost reuse and integrity (for example Seal Storage).
-- Clinical trials & milestone-based funding - Smart-contract payments tied to data sharing, milestones and auditing in trials.
-- Knowledge graphs & connected science - Decentralized knowledge graphs linking data, AI and researchers to reveal hidden connections (e.g. via [DeSci World](https://desci.world/) or [SciGraph](https://github.com/SciGraph/SciGraph)).
-- Prediction markets & crowdsourced innovation - Incentivized mechanisms for funding and discovering novel research directions.
+- Credentials & impact certificates - Verifiable recognition of contributions, reproducibility outcomes and downstream impact (for example, via [Hypercerts](https://www.hypercerts.org/))
+- Crowdfunding and collective ownership of IP - Tokenized IP-NFTs (for example, via [Molecule](https://www.molecule.to) or [Bio.xyz](https://www.bio.xyz)) enable shared ownership of research outcomes
+- Publishing reform - Open systems for publishing, peer review, and portable researcher reputation (for example ResearchHub)
+- Reusable datasets & provenance - Decentralized storage and provenance for research data to boost reuse and integrity
+- Clinical trials & milestone-based funding - Smart-contract payments tied to data sharing, milestones and auditing in trials
+- Knowledge graphs & connected science - Decentralized knowledge graphs linking data, AI, and researchers to reveal hidden connections (e.g. via [DeSci World](https://desci.world/) or [SciGraph](https://github.com/SciGraph/SciGraph))
+- Prediction markets & crowdsourced innovation - Incentivized mechanisms for funding and discovering novel research directions
 
 ## Projects
 
 - [Molecule](https://molecule.xyz/) - Crowdfunded biopharma protocol with milestone-based governance
-- [Bio.xyz](http://Bio.xyz) - Tokenized IP platform for biotech research
+- [Bio.xyz](https://www.bio.xyz) - Tokenized IP platform for biotech research
 - [Microbiome DAO](https://www.microbiomedao.com/) - Community-driven research on the microbiome with ownership and governance for participants
 - [HairDAO](https://hairdao.xyz/) - Community-driven R&D on hair-loss therapies
 - [ResearchHub](https://www.researchhub.com/) - Incentivized publishing and peer review platform
 - [Hypercerts](https://www.hypercerts.org/) / [Recerts](https://www.recerts.org/) - Impact certificates and retroactive recognition of research contributions
 - [Seal Storage](https://sealstorage.io/solutions/research) - Decentralized storage and provenance platform for research datasets
-- [DeSci World](https://desci.world/) - project directory and community hub for DeSci
+- [DeSci World](https://desci.world/) - Project directory and community hub for DeSci
 
 ## Resources
 

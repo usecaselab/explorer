@@ -9,13 +9,13 @@ Mobilizing resources for aid and social support is often slow, opaque and costly
 
 ## Ideas
 
-- Transparent donation flows & grant disbursements - On-chain tracking of donor funds, real-time visibility into flow and allocation, reducing leakage and improving trust.
-- Direct cash-transfer programs - Use of digital wallets, crypto or tokenized transfers to reach vulnerable or unbanked populations with minimal intermediaries.
-- Impact certificates & tokenization - Verifiable records of outcomes (e.g., service delivery, participation) that support accountability and impact-reporting.
-- Identity & banking for displaced people - Portable identities and wallet access for refugees, migrant workers or displaced communities, enabling access to services and funding.
-- Programmable commitment pools / assurance contracts - Smart contracts that release funds only when pre-agreed milestones are met, enabling collaborative campaigns across organizations.
-- Decentralized coordination platforms for social-services actors - Infrastructure enabling NGOs, volunteers and communities to coordinate service delivery, funding and verification at scale.
-- UBI - 
+- Transparent donation flows & grant disbursements - Onchain tracking of donor funds, real-time visibility into flow and allocation, reducing leakage and improving trust
+- Direct cash-transfer programs - Use of digital wallets, crypto or tokenized transfers to reach vulnerable or unbanked populations with minimal intermediaries
+- Impact certificates & tokenization - Verifiable records of outcomes (e.g., service delivery, participation) that support accountability and impact-reporting
+- Identity & banking for displaced people - Portable identities and wallet access for refugees, migrant workers or displaced communities, enabling access to services and funding
+- Programmable commitment pools / assurance contracts - Smart contracts that release funds only when pre-agreed milestones are met, enabling collaborative campaigns across organizations
+- Decentralized coordination platforms for social-services actors - Infrastructure enabling NGOs, volunteers and communities to coordinate service delivery, funding and verification at scale
+- UBI - Direct-to-recipient distribution mechanisms that provided recurring, automated universal basic income payments, using decentralized identity and smart contracts to reduce adminsitrative overhead.
 
 ## Projects
 
@@ -26,13 +26,13 @@ Mobilizing resources for aid and social support is often slow, opaque and costly
 - [The Giving Block](https://thegivingblock.com/) - Platform facilitating crypto donations for nonprofits
 - [TEA](https://tea.xyz/) - Funding open-source social-impact projects
 - [Building Blocks by World Food Program](https://innovation.wfp.org/project/building-blocks) - Permissioned blockchain network supporting humanitarian aid distribution for displaced populations
-- [Stellar Aid Assist for Aid](https://stellar.org/use-cases/stellar-for-aid) - Use of blockchain for transparent aid distribution, e.g., [UNHCR](https://stellar.org/case-studies/unhcr), [Ukraine](https://www.wired.com/story/ukraine-crypto-refugee-aid) ([Coindesk](https://www.coindesk.com/sponsored-content/from-aid-to-efficiency-why-the-stellar-blockchain-is-the-future-of-government-spending))
+- [Stellar Aid Assist for Aid](https://stellar.org/use-cases/stellar-for-aid) - Use of blockchain for transparent aid distribution, e.g., [UNHCR](https://stellar.org/case-studies/unhcr), [Ukraine](https://www.wired.com/story/ukraine-crypto-refugee-aid) ([Coindesk coverage](https://www.coindesk.com/sponsored-content/from-aid-to-efficiency-why-the-stellar-blockchain-is-the-future-of-government-spending))
 - [Ukraine DAO](https://x.com/Ukraine_DAO) - NFT auction to raise funds
-- [Iran Unchained](https://x.com/UnchainIran)
-- [Umoja](https://thevalueprop.io/projects/umoja-labs)
-- [Health Heroes Program](https://thevalueprop.io/projects/health-heroes-program) - The Bolivarian Republic of Venezuela partnered with Circle, Airtm (a fintech company), and the US government to distribute $18 million USD in US-seized funds from the Maduro dictatorship to front-line medical workers.
-- [Crypto Council](https://cryptoforinnovation.org/how-are-web3-solutions-addressing-drought-in-kenya/) + [Mercy Corps](https://www.mercycorps.org/blog/anticipatory-cash-transfers-in-kenya) pilot with Diva, Fortune Credit, Shamba - climate insurance that automatically trigger anticipatory cash payments to impacted populations once the conditions for drought are sensed
-- [Unblocked Cash](https://thevalueprop.io/projects/unblocked-cash-project) - launched by Oxfam (a charity organization focused on alleviating global poverty) to help deliver aid with the use of e-voucher “tap-and-pay” cards linked to the blockchain. The first pilot — through a partnership with Sempo and ConsenSys — launched successfully in Vanuatu after Tropical Cyclone Harold.
+- [Iran Unchained](https://x.com/UnchainIran) - NGO focused on Iranian social movements using onchain tooling 
+- [Umoja](https://thevalueprop.io/projects/umoja-labs) - A platform to distribute cash assistance onchain for aid agenices and financial service providers
+- [Health Heroes Program](https://thevalueprop.io/projects/health-heroes-program) - The Bolivarian Republic of Venezuela partnered with Circle, Airtm (a fintech company), and the US government, to distribute $18 million USD in US-seized funds from the Maduro dictatorship to front-line medical workers
+- [Crypto Council](https://cryptoforinnovation.org/how-are-web3-solutions-addressing-drought-in-kenya/) + [Mercy Corps](https://www.mercycorps.org/blog/anticipatory-cash-transfers-in-kenya) pilot with Diva, Fortune Credit, Shamba - Climate insurance that automatically triggers anticipatory cash payments to impacted populations once the conditions for drought are sensed
+- [Unblocked Cash](https://thevalueprop.io/projects/unblocked-cash-project) - Launched by Oxfam (a charity organization focused on alleviating global poverty) to help deliver aid with the use of e-voucher “tap-and-pay” cards linked to the blockchain. The first pilot — through a partnership with Sempo and ConsenSys — launched successfully in Vanuatu after Tropical Cyclone Harold.
 
 ## Resources
 
