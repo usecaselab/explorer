@@ -9,31 +9,32 @@ Small and medium enterprises (SMEs) are underserved by traditional finance: cred
 
 ## Ideas
 
-- Trade credit clearing - netting obligations across SME networks
-- Commitment pooling - mutualized reserves and cooperative liquidity
-- Factoring - tokenized receivables and real-time invoice financing
-- Crowdfunding - open platforms for equity, tokens, and community capital
-- Crowdlending - peer-to-peer loans with transparent terms
-- Microloans - accessible, low-friction capital for underserved entrepreneurs
-- Credit unions - blockchain-based cooperative finance models
-- Equity tokenization - SMEs can issue tokenized shares, bypassing expensive IPOs and private placements ([source](https://enterpriseonchain.substack.com/p/tokenizations-30t-futureheres-what))
+- Trade credit clearing - Netting obligations across SME networks
+- Commitment pooling - Mutualized reserves and cooperative liquidity
+- Factoring - Tokenized receivables and real-time invoice financing
+- Crowdfunding - Open platforms for equity, tokens, and community capital
+- Crowdlending - Peer-to-peer loans with transparent terms
+- Microloans - Accessible, low-friction capital for underserved entrepreneurs
+- Credit unions - Blockchain-based cooperative finance models
+- Equity tokenization - SMEs can issue tokenized shares, bypassing expensive IPOs and private placements ([Source](https://enterpriseonchain.substack.com/p/tokenizations-30t-futureheres-what))
 
 ## Projects
 
 - Credit & Lending
-    - [3jane](https://www.3jane.xyz/) - credit infrastructure for Web3
-    - [Pact](https://pactfoundation.com/) - cooperative credit systems
-    - [EthicHub](https://www.ethichub.com/) - crowdlending to smallholder farmers
-    - [Kotanipay](https://kotanipay.com/) - microloans via mobile money rails
-    - World Credit mini-app - peer-to-peer microfinance
-    - [Haraka](https://haraka.xyz/) - microloans and alternative credit scoring
-    - [Union](https://union.finance/) - decentralized credit protocol
-    - [Topos](https://topos.one/) - global credit network (exploratory)
-    - [Cycles](https://cycles.money/) - trade credit clearing for SMEs
-    - [Grassroots Economics](https://www.grassrootseconomics.org/) - commitment pooling and community currencies
+    - [3jane](https://www.3jane.xyz/) - Credit infrastructure for Web3
+    - [Pact](https://pactfoundation.com/) - Cooperative credit systems
+    - [EthicHub](https://www.ethichub.com/) - Crowdlending to smallholder farmers
+    - [Kotanipay](https://kotanipay.com/) - Microloans via mobile money rails
+    - World Credit mini-app - Peer-to-peer microfinance
+    - [Haraka](https://haraka.xyz/) - Microloans and alternative credit scoring
+    - [Union](https://union.finance/) - Decentralized credit protocol
+    - [Topos](https://topos.one/) - Global credit network (exploratory)
+    - [Cycles](https://cycles.money/) - Trade credit clearing for SMEs
+    - [Grassroots Economics](https://www.grassrootseconomics.org/) - Commitment pooling and community currencies
+    - [Goldfinch Prime](https://goldfinch.finance/) - Tokenized private credit
     - [Jia](https://www.jia.xyz/) - SME loans with tokenized yield-sharing
-    - Goldfinch, Maple Finance - decentralized credit marketplaces
-    - [Filigreen](https://filigreen.org/) - community bank for DAOs (Josh Tan)
+    - [Maple Finance](https://maple.finance/app) - Decentralized credit marketplace
+    - [Filigreen](https://filigreen.org/) - Community bank for DAOs (Josh Tan)
 - Capital Formation
     - [Fairmint](https://www.fairmint.com/) - equity crowdfunding platform
     - [CrowdFi](https://crowdfi.withfabric.xyz/) - decentralized crowdfunding rails
@@ -41,11 +42,11 @@ Small and medium enterprises (SMEs) are underserved by traditional finance: cred
     - [Quadratic Accelerator](https://x.com/theqacc) - bonding curves plus quadratic funding
     - Syndicated investment: [Legion](https://legion.cc/), [Echo](https://echo.xyz/), [StationX](https://www.stationx.network/)
 - Tokenization
-    - Aktionariat AG, a Swiss fintech firm, **tokenized SME equity using Ethereum**, enabling direct investor participation ([source](https://enterpriseonchain.substack.com/p/tokenizations-30t-futureheres-what))
-    - [Street.app](http://Street.app) - partial equity tokenization
-    - [Superstate](https://superstate.com/) - tokenized shares
-    - [Ondo](https://app.ondo.finance/) -
+    - Aktionariat AG, a Swiss fintech firm - Tokenized SME equity using Ethereum, enabling direct investor participation ([Source](https://enterpriseonchain.substack.com/p/tokenizations-30t-futureheres-what))
+    - [Street.app](http://Street.app) - Partial equity tokenization
+    - [Superstate](https://superstate.com/) - Tokenized shares
+    - [Ondo](https://app.ondo.finance/) - Tokenized institutional real-world assets
 
 ## Resources
 
-- [Use case spotlight: Piloting the tokenisation of investment bonds on EBSI](https://ec.europa.eu/digital-building-blocks/sites/spaces/EBSI/pages/915931247/Use+case+spotlight+piloting+the+tokenisation+of+investment+bonds+on+EBSI) (2025) - EU pilot for tokenized bonds enabling cheaper SME financing
+- [Use case spotlight: Piloting the tokenisation of investment bonds on EBSI](https://ec.europa.eu/digital-building-blocks/sites/spaces/EBSI/pages/915931247/Use+case+spotlight+piloting+the+tokenisation+of+investment+bonds+on+EBSI) (2025) - EU pilot for using tokenized bonds to enable cheaper SME financing

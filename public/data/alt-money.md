@@ -5,7 +5,7 @@ sector: Finance
 
 ## The Opportunity
 
-Money underpins every exchange, yet the design space for monetary systems has been narrowly dominated by state fiat and bank-reserve backed money. Alternative forms — including local currencies, mutual credit systems, demurrage money or algorithmic units of account — have historically struggled to scale. Many communities, municipalities and networks desire currencies that reflect their values and incentives, but lack reliable platforms, protocols and governance frameworks to design, issue and circulate them. Innovators face the challenge of creating currencies that function as a viable **store of value**, **medium of exchange** and/or **unit of account**, while addressing liquidity, trust and adoption constraints.
+Money underpins every exchange, yet the design space for monetary systems has been narrowly dominated by state fiat and bank-reserve backed money. Alternative forms&mdash;including local currencies, mutual credit systems, demurrage money or algorithmic units of account&mdash;have historically struggled to scale. Many communities, municipalities and networks desire currencies that reflect their values and incentives, but lack reliable platforms, protocols and governance frameworks to design, issue, and circulate them. Innovators face the challenge of creating currencies that function as a viable **store of value**, **medium of exchange** and/or **unit of account**, while addressing liquidity, trust and adoption constraints.
 
 ## Ideas
 
@@ -19,22 +19,22 @@ Money underpins every exchange, yet the design space for monetary systems has be
 
 ## Projects
 
-- [Cycles](https://cycles.money/) - peer-to-peer electronic clearing system
-[BerkShares](https://www.politico.com/news/magazine/2022/08/04/crypto-goes-farm-to-table-00048309) - Community currency in the US supporting local commerce
+- [Cycles](https://cycles.money/) - Peer-to-peer electronic clearing system
+- [BerkShares](https://www.politico.com/news/magazine/2022/08/04/crypto-goes-farm-to-table-00048309) - Community currency in the US supporting local commerce
 - [Grassroots Economics](https://www.grassrootseconomics.org/) - Inclusion-currency networks in Kenya using alternative value systems
 - [CityCoins](https://www.citycoins.co/) - Civic-aligned tokens tied to municipalities and local incentives
 - [Circles](https://aboutcircles.com/) - Web-of-trust currency experiment using decentralized social networks
 - [Citizen Wallet](https://citizenwallet.xyz/) - Wallet infrastructure for community and civic currencies
-- [Eco](https://eco.org/) - Originally had a Hayek-inspired algo supply currency, but pivoted to payments
+- [Eco](https://eco.org/) - Originally had a Hayek-inspired algorithmic supply currency, but pivoted to payments
 - [Reserve](https://reserve.org/) - Asset-backed stablecoins and payments app
-- RAI ([Reflexer Finance](https://reflexer.finance/)) - Non-pegged rules-based stable-asset
+- RAI ([Reflexer Finance](https://reflexer.finance/)) - Non-pegged rules-based stable asset token
 - [Trustlines](https://archive.devcon.org/devcon-3/trustlines-network-open-protocol-for-decentralized-iou-based-currency-networks/?tab=YouTube&playlist=Devcon+3) - Peer currency network and open protocol for IOU-based systems
 
 ## Resources
 
-- [Egalitarian and Just Digital Currency Networks](https://arxiv.org/abs/2005.14631?utm_source=chatgpt.com) (2020) - Theoretical exploration of equitable currency issuance and community control
+- [Egalitarian and Just Digital Currency Networks](https://arxiv.org/abs/2005.14631) (2020) - Theoretical exploration of equitable currency issuance and community control
 - [From Community Currency to Crypto City Tokens: Potentials, Shortfalls and Future Outlooks of New Old Ideas](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5287466) (2023) - Analysis of local community currencies powered by blockchain
-- [Blockchain for local communities: an exploratory review of token economy aspects](https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1426802/full) (2024) - Review of token economy elements in community currency systems. ([Frontiers](https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1426802/full?utm_source=chatgpt.com))
+- [Blockchain for local communities: an exploratory review of token economy aspects](https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1426802/full) (2024) - Review of token economy elements in community currency systems ([Frontiers](https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1426802/full))
 - [What Determines Demand for Digital Community Currencies?](https://www.ipe-berlin.org/fileadmin/institut-ipe/Dokumente/Working_Papers/ipe_working_paper_209.pdf) (2023) - Study of adoption factors for digital community currencies
 - [Circulation of a digital community currency](https://www.nature.com/articles/s41598-023-33184-1) (2023) - Empirical network-analysis of the Sarafu digital currency in Kenya
-- [Monetary Commons](https://monetarycommons.com/) (2025) - “a trust fund for everyone” ([tweet + video](https://x.com/yanisvaroufakis/status/1976538948781400403))
+- [Monetary Commons](https://monetarycommons.com/) (2025) - “A trust fund for everyone” ([Tweet + Video](https://x.com/yanisvaroufakis/status/1976538948781400403))

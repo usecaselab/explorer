@@ -9,13 +9,13 @@ Education costs continue to rise faster than wages, with tuition and administrat
 
 Core workflows such as records, financial aid, billing, and compliance reporting remain trapped in PDFs and legacy portals, slowing automation and increasing audit friction. Credential verification between institutions and employers is costly and prone to fraud.
 
-Learners, meanwhile, lack portable, privacy-preserving credentials that can carry verified skills across programs and employers. New education providers—MOOCs, bootcamps, and alternative institutions—offer flexibility but vary widely in quality and recognition, so credentials often fail to reliably signal competence.
+Learners, meanwhile, lack portable, privacy-preserving credentials that can carry verified skills across programs and employers. New education providers&mdash;MOOCs, bootcamps, and alternative institutions&mdash;offer flexibility but vary widely in quality and recognition, so credentials often fail to reliably signal competence.
 
 ## Ideas
 
-- Onchain credentials - Tamper-proof, portable diplomas and micro-credentials issued by verified institutions.
-- Skill passports - Aggregated, verifiable records of learning achievements that contribute to a portable professional reputation.
-- Education finance - Transparent income-share agreements, programmable scholarships, and community-driven funding for education providers.
+- Onchain credentials - Tamper-proof, portable diplomas and micro-credentials issued by verified institutions
+- Skill passports - Aggregated, verifiable records of learning achievements that contribute to a portable professional reputation
+- Education finance - Transparent income-share agreements, programmable scholarships, and community-driven funding for education providers
 
 ## Projects
 
