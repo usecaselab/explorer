@@ -27,7 +27,6 @@ Global supply chains today are highly fragmented, largely paper-driven and prone
 - [Komgo](https://www.komgo.io/)
 - [Covantis](https://www.covantis.io/)
 - [Treum](https://consensys.net/treum/)
-- [CargoX](https://cargox.io/)
 - [Morpheus.Network](https://morpheus.network/)
 - [MineSpider](https://minespider.com/)
 - [Vakt](https://www.vakt.com/) - Shipping-logistics

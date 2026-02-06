@@ -1,6 +1,6 @@
 ---
 title: Gaming and Autonomous Worlds
-sector: Unknown
+sector: Digital
 ---
 
 ## The Opportunity
@@ -22,7 +22,7 @@ The broader concern is that many blockchain gaming efforts today lean speculativ
 ## Projects
 
 - [Klang Games](https://www.klang-games.com/seed) - Large-scale life simulation MMO exploring emergent economies
-- [EVE Online](Gaming%20and%20Autonomous%20Worlds%20285d34f360e4807195fde026e0f16c12.md) - Persistent, player-driven virtual economy and world
+- [EVE Online](https://www.eveonline.com/) - Persistent, player-driven virtual economy and world
 - [Dojo](https://dojoengine.org/framework) - Frameworks for building autonomous, onchain games
 - [Mud](https://mud.dev/) - Open-source engine for autonomous worlds
 - [Parallel](https://parallel.life/) - Sci-fi trading card game with tokenized assets and AI storyline experiments

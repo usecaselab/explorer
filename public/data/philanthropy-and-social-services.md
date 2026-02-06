@@ -13,7 +13,7 @@ Mobilizing resources for aid and social support is often slow, opaque and costly
 - Direct cash-transfer programs - Use of digital wallets, crypto or tokenized transfers to reach vulnerable or unbanked populations with minimal intermediaries.
 - Impact certificates & tokenization - Verifiable records of outcomes (e.g., service delivery, participation) that support accountability and impact-reporting.
 - Identity & banking for displaced people - Portable identities and wallet access for refugees, migrant workers or displaced communities, enabling access to services and funding.
-- Outcome-based funding - Smart contracts that release funds only when pre-defined metrics or are met.
+- Outcome-based funding - Smart contracts that release funds only when pre-defined metrics or milestones are met.
 - Decentralized coordination for social-services actors - Infrastructure enabling NGOs, volunteers and communities to coordinate service delivery, funding and verification.
 - Universal Basic Income - Mechanisms for distributing recurring, unconditional payments transparently and at scale.
 

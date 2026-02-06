@@ -10,7 +10,7 @@ Data already trades through brokers, ad-tech exchanges, and bespoke deals betwee
 ## Ideas
 
 - Personal data vaults - User-controlled data stores that allow granular consent, selective disclosure, and optional monetization without surrendering raw data.
-- Data markteplaces - Platforms where data access is governed by smart contracts, enabling licensing, metering, revocation, royalties, and automatic revenue splits.
+- Data marketplace - Platforms where data access is governed by smart contracts, enabling licensing, metering, revocation, royalties, and automatic revenue splits.
 - Tokenized data assets – Data exposed as onchain assets (streams, APIs, models, analytics outputs) that can be priced, combined, and traded like financial instruments.
 - Fact checking oracles – Incentivize truth discovery through cryptoeconomic incentives.
 

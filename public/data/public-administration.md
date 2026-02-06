@@ -27,7 +27,7 @@ Citizens often face duplicative verification processes, long wait times, paper-b
 - [Chicago Cook County](https://bitcoinmagazine.com/business/chicago-s-cook-county-to-test-bitcoin-blockchain-based-public-records-1475768860)
 - [Dubai Land Department](https://dubailand.gov.ae/en/news-media/dubai-land-department-achieves-a-technical-milestone-with-the-adoption-of-blockchain-technology-in-cooperation-with-smart-dubai-and-other-partners/#/)
 - [Onchain City](https://onchain.city/) - Government services; embassy, passport, licenses, visas, insurance
-- [California DMV puts 42 million car titles on blockchain to fight fraud](https://www.reuters.com/technology/california-dmv-puts-42-million-car-titles-blockchain-fight-fraud-2024-07-30/) (2023)
+- [California DMV puts 42 million car titles on blockchain to fight fraud](https://www.reuters.com/technology/california-dmv-puts-42-million-car-titles-blockchain-fight-fraud-2024-07-30/)
 
 ## Resources
 

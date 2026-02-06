@@ -16,7 +16,7 @@ Farmers and small processors operate on thin margins and slow payments, pre-fina
 - Cooperative and local marketplaces – Community-owned platforms that let producers sell directly and keep more economic value within local food systems.
 
 ## Projects
-    
+
 - [Justtoken](https://www.justoken.com/) - Tokenizing agricultural outputs (Agrotoken) and arable land (Landtoken)
 - [Farmsent](https://www.farmsent.io/) - Onchain marketplace improving farmer access to trade and capital
 - [EthicHub](https://www.ethichub.com/en) - Crowdlending platform connecting global lenders to small farmers

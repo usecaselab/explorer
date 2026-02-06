@@ -24,6 +24,6 @@ Global and sub-national governance suffers from fragmented frameworks, inconsist
 ## Resources
 
 - [Blockchain Technology as an Instrument for Global Governance](https://www.sciencespo.fr/public/chaire-numerique/wp-content/uploads/2020/09/Blockchain-Technology-as-an-Instrument-for-Global-Governance-P.-De-Filippi-1.pdf) (2021) - Blockchain could help build a more resilient and trustworthy international governance system through a distributed coordination infrastructure. This would allow governments, corporations, NGOs, and civil society organizations to collaborate on solving pressing global challenges in an interdependent world.
-- [The Potential of Smart Treaties](https://www.rand.org/pubs/commentary/2024/04/the-potential-of-smart-treaties.html) (2024)- Discusses programmable reserves + CBDCs applied to treaties
+- [The Potential of Smart Treaties](https://www.rand.org/pubs/commentary/2024/04/the-potential-of-smart-treaties.html) (2024) - Discusses programmable reserves + CBDCs applied to treaties
 - [Designing the Hybrid Cooperative: A Socio-Technical Architecture for Scalable, Global Coordination Using Blockchain](https://arxiv.org/abs/2509.13156) (2025)
 - [Smart treaties: A path to binding agreements in international relations?](https://arxiv.org/html/2503.21516v1) (2025) - Analyses feasibility and limits of smart contract-based treaties
