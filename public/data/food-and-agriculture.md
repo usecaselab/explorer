@@ -19,7 +19,6 @@ In the middle, grocers and restaurants juggle siloed POS, inventory, and supplie
 
 ## Projects
 
-- [SourceLink Concept 10.0](https://sourcelink.io/) - Food supply chain traceability system
 - [Justtoken](https://www.justoken.com/) - Tokenizing agricultural outputs (Agrotoken) and arable land (Landtoken)
 - [Farmsent](https://www.farmsent.io/) - Onchain marketplace improving farmer access to trade and capital
 - [EthicHub](https://www.ethichub.com/en) - Crowdlending platform connecting global lenders to small farmers

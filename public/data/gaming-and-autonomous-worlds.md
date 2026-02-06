@@ -1,6 +1,6 @@
 ---
 title: Gaming and Autonomous Worlds
-sector: Unknown
+sector: Digital
 ---
 
 ## The Opportunity
@@ -22,9 +22,9 @@ The broader concern is that many blockchain gaming efforts today lean speculativ
 ## Projects
 
 - [Klang Games](https://www.klang-games.com/seed) - Large-scale life simulation MMO exploring emergent economies
-- [EVE Online](https://www.eveonline.com/) - Example of persistent, player-driven virtual economy and world
-- Dark Forest & [AW Network](https://aw.network/) (0xPARC/Lattice/MUD) - Onchain game ecosystems pioneering composable world logic
-- [Dojo / Cartridge (Starknet)](https://dojoengine.org/framework) - Frameworks for building autonomous, onchain games
+- [EVE Online](https://www.eveonline.com/) - Persistent, player-driven virtual economy and world
+- [Dojo](https://dojoengine.org/framework) - Frameworks for building autonomous, onchain games
+- [Mud](https://mud.dev/) - Open-source engine for autonomous worlds
 - [Parallel](https://parallel.life/) - Sci-fi trading card game with tokenized assets and AI storyline experiments
 - [Sorare](https://sorare.com/) - Ethereum-based fantasy sports platform for verifiable digital collectibles
 - [Skyweaver](https://www.skyweaver.net/) - Trading card game with wallet-based ownership and open trade rails

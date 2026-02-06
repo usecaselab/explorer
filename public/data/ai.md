@@ -42,6 +42,7 @@ AI systems are increasingly powerful but remain opaque, centralized, and control
 
 ## Resources
 
-- [zkML: An optimizing compiler for ML in zero knowledge](https://arxiv.org/abs/2404.01174) (2024) - Explores efficient zero-knowledge proofs for machine learning models
-- [Decentralized AI: A Survey of Approaches and Technologies](https://arxiv.org/abs/2312.00754) (2024) - Comprehensive review of decentralized AI architectures
-- [AI Agents and Blockchain: A Survey](https://arxiv.org/abs/2402.10632) (2024) - Examines the intersection of autonomous agents and distributed ledger technology
+- [The promise and challenges of crypto + AI applications](https://vitalik.eth.limo/general/2024/01/30/cryptoai.html) (2024)
+- [The Internet of Agents](https://davidecrapis.notion.site/The-Internet-of-Agents-23aa09799b9c4620a1a287926bcfd6af) 2024
+- [The Rise of Onchain AI: Agents, Apps, and Commerce](https://paragraph.com/@cbventures/the-rise-of-onchain-ai-agents-apps-and-commerce) 2025
+- [AI needs blockchains — especially now](https://x.com/a16zcrypto/status/2019119378537832763) 2026

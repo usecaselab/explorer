@@ -9,13 +9,13 @@ Mobilizing resources for aid and social support is often slow, opaque and costly
 
 ## Ideas
 
-- Transparent donation flows & grant disbursements - Onchain tracking of donor funds, real-time visibility into flow and allocation, reducing leakage and improving trust
-- Direct cash-transfer programs - Use of digital wallets, crypto or tokenized transfers to reach vulnerable or unbanked populations with minimal intermediaries
-- Impact certificates & tokenization - Verifiable records of outcomes (e.g., service delivery, participation) that support accountability and impact-reporting
-- Identity & banking for displaced people - Portable identities and wallet access for refugees, migrant workers or displaced communities, enabling access to services and funding
-- Programmable commitment pools / assurance contracts - Smart contracts that release funds only when pre-agreed milestones are met, enabling collaborative campaigns across organizations
-- Decentralized coordination platforms for social-services actors - Infrastructure enabling NGOs, volunteers and communities to coordinate service delivery, funding and verification at scale
-- UBI - Direct-to-recipient distribution mechanisms that provided recurring, automated universal basic income payments, using decentralized identity and smart contracts to reduce adminsitrative overhead.
+- Transparent donation flows & grant disbursements - On-chain tracking of donor funds, real-time visibility into flow and allocation, reducing leakage and improving trust.
+- Direct cash-transfer programs - Use of digital wallets, crypto or tokenized transfers to reach vulnerable or unbanked populations with minimal intermediaries.
+- Impact certificates & tokenization - Verifiable records of outcomes (e.g., service delivery, participation) that support accountability and impact-reporting.
+- Identity & banking for displaced people - Portable identities and wallet access for refugees, migrant workers or displaced communities, enabling access to services and funding.
+- Outcome-based funding - Smart contracts that release funds only when pre-defined metrics or milestones are met.
+- Decentralized coordination for social-services actors - Infrastructure enabling NGOs, volunteers and communities to coordinate service delivery, funding and verification.
+- Universal Basic Income - Mechanisms for distributing recurring, unconditional payments transparently and at scale.
 
 ## Projects
 
