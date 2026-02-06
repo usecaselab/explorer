@@ -19,11 +19,13 @@ Civil society groups, environmental defenders, human-rights advocates, journalis
 
 ## Projects
 
-- [Labor DAO](https://www.thelabordao.com) - Perpetual, transparent revolving fund to finance and support worker organizing, strikes, legal defense, and labor campaigns
-- [ProofLeak](https://x.com/0xxDana/status/1934603312407420961) - Whistleblower app that uses Noir to generate a ZK proof attesting that a whistleblower's email address belongs to an organization using  a DKIM signature, ensuring credible disclosures while fully preserving the anonymity
+- [EN0VA](https://x.com/0xEN0VA) - Incentive-driven markets for collective action (hyperstition markets)
+- [Labor DAO](https://labordao.xyz/) - Decentralized organizing infrastructure for labor and communal coordination
+- ZK Whistleblower App, Dana Condrea
 
 ## Resources
 
+- [Blockchain: Can It Improve Human Rights And If So How? (2018)](https://rwi.lu.se/2018/02/12/blockchain-human-rights/) - RWI Podcast on early research exploring land titles, anti-corruption and other rights use cases.
 - [The Impact of Blockchains for Human Rights, Democracy, and the Rule of Law](https://rm.coe.int/report-on-blockchains-en/1680a8ffc0) (2022) - Examines use cases and limitations of blockchain in rights, identity and accountability contexts
 - [The Human Rights Risks and Opportunities in Blockchain](https://www.csis.org/analysis/human-rights-risks-and-opportunities-blockchain) (2021) - Identifies how blockchain intersects with rights domains including identity, supply chain, land, voting
-- [Preserving Whistleblower Anonymity Through Zero-Knowledge Proofs and Private Blockchain: A Secure Digital Evidence Management Framework](https://www.mdpi.com/2813-5288/3/2/7) (2025) - Allowing whistleblowers to submit verifiable digital evidence anonymously
+- [Preserving Whistleblower Anonymity Through Zero-Knowledge Proofs and Private Blockchain: A Secure Digital Evidence Management Framework](https://www.mdpi.com/2813-5288/3/2/7) (2025)

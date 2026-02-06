@@ -20,17 +20,18 @@ Retail and eCommerce workflows require stitching together product sourcing, inve
 
 ## Projects
 
-- [FreePay](https://freepaypos.org/) - Intermediary-free payment terminal for merchants accepting crypto and tokens
-- [Commerce Payments Protocol](https://shopify.engineering/commerce-payments-protocol) - by Shopify & Coinbase to bring the two-step "auth & capture" flow onchain for merchant payments
-- [Visa Intelligent Commerce](https://corporate.visa.com/en/products/intelligent-commerce.html) - Agent-shopping integration and tokenized commerce flows
-- [Spritz](https://x.com/spritzfinance) - Card and bill-pay leveraging crypto rails
-- [Blackbird](https://x.com/blackbird_xyz) - loyalty
-- [Hopscotch](https://hopscotch.trade/)
-- [Slice](https://slice.so/)
+- [FreePay](https://freepaypos.org/) - Intermediary-free payment terminal for merchants accepting crypto and tokens.
+- Commerce Payments Protocol (Shopify × Coinbase) - Stablecoin commerce payment rails.
+- Tempo (Stripe × Paradigm) - Payments layer-1 designed for commerce-native rails.
+- [Visa Intelligent Commerce](https://corporate.visa.com/en/products/intelligent-commerce.html) (with [Crossmint](https://www.crossmint.com/)) - Agent-shopping integration and tokenized commerce flows.
+- [Spritz](https://x.com/spritzfinance) - Card and bill-pay leveraging crypto rails.
+- Loyalty programs - [Blackbird](https://x.com/blackbird_xyz), [Hedera case studies](https://hedera.com/use-cases/consumer-engagement-loyalty) (Starbucks loyalty NFT), [OpenPasskey](https://www.openpasskey.com/) – enterprise loyalty tokenization.
+- Marketplaces for physical goods - [mass.market](http://mass.market), [Hopscotch](https://hopscotch.trade/), [Slice](https://slice.so/), [Boson](https://www.bosonprotocol.io/) – tokenized marketplace infrastructure.
+- Additional emerging projects exploring supply-chain provenance and onchain review/receipt attestations would round out the list.
 
 ## Resources
 
-- [Blockchain-Based Loyalty Management System](https://www.researchgate.net/publication/391596390_Blockchain-Based_Loyalty_Management_System) (2023) - Proposes a platform where multiple loyalty programs operate via blockchain
+- [Blockchain-Based Loyalty Management System](https://www.researchgate.net/publication/391596390_Blockchain-Based_Loyalty_Management_System) (2023) - Proposes a platform where multiple loyalty programs operate via blockchain.
 - [The effect of tokenized rewards on customer loyalty programs](https://www.sciencedirect.com/science/article/pii/S0160738324001282) (2024) - Empirical study showing tokenized rewards improve customer intent
-- [Blockchain Integration in Customer Loyalty Programs](https://research.cbs.dk/files/108047041/1850035_34697_Thesis_Paper.pdf) (2024) - Case study of grocery-sector loyalty program built with blockchain
-- [Blockchain Technologies in E-commerce: Social Shopping and Loyalty Program Applications](https://www.researchgate.net/publication/334371459_Blockchain_Technologies_in_E-commerce_Social_Shopping_and_Loyalty_Program_Applications) (2025) - Survey of blockchain use in ecommerce customer engagement
+- [Blockchain Integration in Customer Loyalty Programs](https://research.cbs.dk/files/108047041/1850035_34697_Thesis_Paper.pdf) (2024) - Case study of grocery-sector loyalty program built with blockchain.
+- [Blockchain Technologies in E-commerce: Social Shopping and Loyalty Program Applications](https://www.researchgate.net/publication/334371459_Blockchain_Technologies_in_E-commerce_Social_Shopping_and_Loyalty_Program_Applications) (2025) - Survey of blockchain use in ecommerce customer engagement.

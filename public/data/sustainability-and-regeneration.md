@@ -13,7 +13,7 @@ Many natural assets—such as water, forests and mineral resources—are extract
 - Credible measurement & verification - Using oracles, remote-sensing and blockchain logs to provide evidence-trails for environmental outcomes (e.g., carbon sequestration, restoration) with provenance.
 - Traceable supply & material flows for circularity - Tracking recycling, reuse, product-life-cycles and certification of materials in a transparent ledger.
 - Quality-tiered environmental assets - Differentiating asset classes by methodology, provenance, verification quality and governance, enabling transparency across markets.
-- Outcome-linked finance with milestones - Smart-contract-based release of funds or credits for independently verifiable events (e.g., reforestation, water-quality improvement).
+- Outcome-linked finance with milestones - Smart-contract-based release of funds or credits when independently verifiable events (e.g., reforestation, water-quality improvement) occur.
 
 ## Projects
 
@@ -29,5 +29,5 @@ Many natural assets—such as water, forests and mineral resources—are extract
 
 - [The Nexus between ReFi, Carbon, Fossil Energy and Clean Energy Assets](https://www.sciencedirect.com/science/article/abs/pii/S0140988324001646) (2024) - Empirical study on ReFi, carbon markets and return-connectedness
 - [Blockchain on Sustainable Environmental Measures: A Review](https://www.mdpi.com/2813-5288/2/3/16) (2024)
-- [Blockchain-Based Refurbishment Certification System for Enhancing the Circular Economy](https://www.sciencedirect.com/science/article/pii/S2096720923000477) (2024) - Research on lifecycle histories, refurbishment certificates and blockchain for circular economy
-- [Trust in ESG Reporting: The Intelligent Veri-Green Solution for Incentivized Verification](https://www.sciencedirect.com/science/article/pii/S2096720924000022) (2024) - Study of incentivised verification and ML-assisted verifier markets in ESG
+- [Blockchain-Based Refurbishment Certification System for Enhancing the Circular Economy](https://www.sciencedirect.com/science/article/pii/S2096720923000477) (2024) - Research on lifecycle histories, refurbishment certificates and blockchain for circular economy.
+- [Trust in ESG Reporting: The Intelligent Veri-Green Solution for Incentivized Verification](https://www.sciencedirect.com/science/article/pii/S2096720924000022) (2024) - Study of incentivised verification and ML-assisted verifier markets in ESG.
