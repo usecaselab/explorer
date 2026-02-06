@@ -9,29 +9,32 @@ Money underpins every exchange, yet the design space for monetary systems has be
 
 ## Ideas
 
-- Algorithmic monetary policy - Currencies whose supply and issuance rules are enforced directly by smart contracts (e.g., automatic demurrage fees, inflation-indexed issuance, or onchain revenue redistribution) instead of central banks or human discretion.
-- Community currencies - Place- or network-specific currencies used by defined communities (cities, cooperatives, regions) to keep spending local, incentivize participation, and fund shared goods rather than leaking value to external markets.
-- Mutual credit - Systems where money is created as reciprocal credit between participants, with balances emerging from trust, reputation, and settlement rules instead of pre-minted tokens or bank deposits.
-- Labor-backed money - Exchange systems where units represent time, skills, or completed work, allowing participants to trade services directly without relying on fiat pricing or external currencies.
-- Commodity-backed units - Monetary units redeemable for, or explicitly linked to, measurable physical resources (such as kWh of electricity, carbon units, or physical commodities), grounding value in real production capacity.
-- Indexed currencies - Currencies designed to maintain stable purchasing power by algorithmically tracking inflation metrics, commodity prices, or diversified economic indicators rather than pegging to a single fiat currency.
+- Algorithmic monetary policy - Supply rules embedded in code, exploring demurrage (negative interest), inflation-adjusted supply, or seigniorage-share models.
+- Community & local currencies - Network- or territory-based currencies (e.g., BerkShares, Grassroots Economics, CityCoins, Circles) that enable value capture and tailored incentives for local economies.
+- Credit-based money - Mutual credit networks or IOU systems where medium of exchange emerges from platform trust and reputation rather than bank money.
+- Commodity- or energy-backed units - Currencies tied to baskets of goods, energy production or reserves (e.g., energy-linked credits or asset-backed stable tokens).
+- Labor- and service-backed money - Time-banking, service-exchange systems where value is anchored in labor or trusted work rather than fiat.
+- Indexed or basket currencies - Units constructed to preserve purchasing power by tracking commodities or economic indicators.
+- Barter networks & swap-based systems - Peer networks where value circulates via alternative mediums of exchange enabled by protocol tools and tokenization.
 
 ## Projects
 
-- [Grassroots Economics](https://www.grassrootseconomics.org/) - Runs on-the-ground community currency networks in Kenya to support informal economies and local trade where cash is scarce
-- [CityCoins](https://www.citycoins.co/) - Tokens that let communities generate funding and incentives aligned with specific cities
-- [Circles](https://aboutcircles.com/) - A social currency where money is issued peer-to-peer based on trust relationships rather than a central issuer
-- [Citizen Wallet](https://citizenwallet.xyz/) - Open wallet infrastructure designed for managing, issuing, and using community tokens.
-- [Eco](https://eco.org/) - Experimented with a Hayek-inspired algorithmic currency
-- [Reserve](https://reserve.org/) - Platform for creating asset-backed stablecoins
-- [RAI](https://reflexer.finance) - Decentralized, non-pegged stable asset backed by ETH
-- [Trustlines](https://archive.devcon.org/devcon-3/trustlines-network-open-protocol-for-decentralized-iou-based-currency-networks/?tab=YouTube&playlist=Devcon+3) -  Protocol for mutual-credit money where balances emerge from bilateral IOUs
+- [Cycles](https://cycles.money/) - peer-to-peer electronic clearing system
+[BerkShares](https://www.politico.com/news/magazine/2022/08/04/crypto-goes-farm-to-table-00048309) - Community currency in the US supporting local commerce
+- [Grassroots Economics](https://www.grassrootseconomics.org/) - Inclusion-currency networks in Kenya using alternative value systems
+- [CityCoins](https://www.citycoins.co/) - Civic-aligned tokens tied to municipalities and local incentives
+- [Circles](https://aboutcircles.com/) - Web-of-trust currency experiment using decentralized social networks
+- [Citizen Wallet](https://citizenwallet.xyz/) - Wallet infrastructure for community and civic currencies
+- [Eco](https://eco.org/) - Originally had a Hayek-inspired algo supply currency, but pivoted to payments
+- [Reserve](https://reserve.org/) - Asset-backed stablecoins and payments app
+- RAI ([Reflexer Finance](https://reflexer.finance/)) - Non-pegged rules-based stable-asset
+- [Trustlines](https://archive.devcon.org/devcon-3/trustlines-network-open-protocol-for-decentralized-iou-based-currency-networks/?tab=YouTube&playlist=Devcon+3) - Peer currency network and open protocol for IOU-based systems
 
 ## Resources
 
-- [Egalitarian and Just Digital Currency Networks](https://arxiv.org/abs/2005.14631) (2020) - Theoretical exploration of equitable currency issuance and community control
+- [Egalitarian and Just Digital Currency Networks](https://arxiv.org/abs/2005.14631?utm_source=chatgpt.com) (2020) - Theoretical exploration of equitable currency issuance and community control
 - [From Community Currency to Crypto City Tokens: Potentials, Shortfalls and Future Outlooks of New Old Ideas](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5287466) (2023) - Analysis of local community currencies powered by blockchain
-- [Blockchain for local communities: an exploratory review of token economy aspects](https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1426802/full) (2024) - Review of token economy elements in community currency systems
+- [Blockchain for local communities: an exploratory review of token economy aspects](https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1426802/full) (2024) - Review of token economy elements in community currency systems. ([Frontiers](https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1426802/full?utm_source=chatgpt.com))
 - [What Determines Demand for Digital Community Currencies?](https://www.ipe-berlin.org/fileadmin/institut-ipe/Dokumente/Working_Papers/ipe_working_paper_209.pdf) (2023) - Study of adoption factors for digital community currencies
 - [Circulation of a digital community currency](https://www.nature.com/articles/s41598-023-33184-1) (2023) - Empirical network-analysis of the Sarafu digital currency in Kenya
-- [Monetary Commons](https://x.com/yanisvaroufakis/status/1976538948781400403) (2025) - universal, non-inflationary personal dividend
+- [Monetary Commons](https://monetarycommons.com/) (2025) - “a trust fund for everyone” ([tweet + video](https://x.com/yanisvaroufakis/status/1976538948781400403))

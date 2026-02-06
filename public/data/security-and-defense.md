@@ -18,6 +18,7 @@ National defence and critical infrastructure increasingly depend on digital syst
 
 ## Projects
 
+- [Human Protocol hCaptcha](https://www.humanprotocol.org/blog/how-does-hcaptcha-fit-into-human-protocol) - monetizes captchas through token rewards
 
 ## Resources
 

@@ -19,14 +19,18 @@ Citizens often face duplicative verification processes, long wait times, paper-b
 
 ## Projects
 
-- [Bhutan NDI](https://www.bhutanndi.com/) - National digital ID on Ethereum ([tweet)](https://x.com/AyaMiyagotchi/status/1977798764485361966)
-- [QuarkID](https://quarkid.org/) - SSI protocol for managing essential personal documents such as birth and marriage certificates, academic credentials, and proof of income, developed by the government of Buenos Aires for use in Argentina and other South American countries
-- [Palau Digital Residency Program](https://rns.id/) - offers global citizens the ability to have a legal Palau government-issued ID
-- [Vocdoni](https://vocdoni.io/) - Privacy-preserving digital elections
-- [LAC PropertyChain](https://blog.chromia.com/lac-propertychain-pilot-to-launch-on-chromia-in-q3/?ref=blog.chromaway.com)
-- [Chicago Cook County](https://bitcoinmagazine.com/business/chicago-s-cook-county-to-test-bitcoin-blockchain-based-public-records-1475768860)
-- [Dubai Land Department](https://dubailand.gov.ae/en/news-media/dubai-land-department-achieves-a-technical-milestone-with-the-adoption-of-blockchain-technology-in-cooperation-with-smart-dubai-and-other-partners/#/)
-- [Onchain City](https://onchain.city/) - Government services; embassy, passport, licenses, visas, insurance
+- Digital ID/SSI
+    - [Bhutan NDI](https://www.bhutanndi.com/) ([tweet)](https://x.com/AyaMiyagotchi/status/1977798764485361966)
+    - [QuarkID](https://quarkid.org/) - SSI protocol for managing essential personal documents such as birth and marriage certificates, academic credentials, and proof of income, developed by the government of Buenos Aires for use in Argentina and other South American countries
+    - [Palau Digital Residency Program](https://rns.id/) - offers global citizens the ability to have a legal Palau government-issued ID
+- Elections
+    - [Vocdoni](https://vocdoni.io/) - Elections infrastructure
+- Land registries
+    - India: [West Bengal](https://www.techcircle.in/2023/07/05/airchains-west-bengal-s-nkda-to-introduce-blockchain-based-land-ownership?utm_campaign=india-ethereum-ecosystem-overview&utm_medium=referral&utm_source=localethereum.beehiiv.com), [Telangana](https://www.blockchain.meity.gov.in/index.php/success-stories/13-blockchain-based-property-registration-management-system?utm_campaign=india-ethereum-ecosystem-overview&utm_medium=referral&utm_source=localethereum.beehiiv.com), [Andhra Pradesh](https://www.researchgate.net/publication/388826952_The_Applicability_of_Blockchain_Technology_in_Land_Registration_for_Developing_Economies_A_Case_Study_of_India?utm_campaign=india-ethereum-ecosystem-overview&utm_medium=referral&utm_source=localethereum.beehiiv.com)
+    - [LAC PropertyChain](https://blog.chromia.com/lac-propertychain-pilot-to-launch-on-chromia-in-q3/?ref=blog.chromaway.com)
+    - [Chicago Cook County](https://bitcoinmagazine.com/business/chicago-s-cook-county-to-test-bitcoin-blockchain-based-public-records-1475768860)
+    - [Dubai Land Department](https://dubailand.gov.ae/en/news-media/dubai-land-department-achieves-a-technical-milestone-with-the-adoption-of-blockchain-technology-in-cooperation-with-smart-dubai-and-other-partners/#/)
+- [Onchain City](https://onchain.city/) - Government services; embassy, passport, licenses, visas, insurance ([post](https://x.com/0xKimberly/status/1967598460221415433))
 - [California DMV puts 42 million car titles on blockchain to fight fraud](https://www.reuters.com/technology/california-dmv-puts-42-million-car-titles-blockchain-fight-fraud-2024-07-30/) (2023)
 
 ## Resources
@@ -34,3 +38,4 @@ Citizens often face duplicative verification processes, long wait times, paper-b
 - [BRI: Business Licensing](https://www.blockchainresearchinstitute.org/project/business-licensing-governance-for-government-blockchains/) (2018) - Identifies the benefits that blockchains can provide local authorities in accelerating the launch of new businesses, supporting entrepreneurs, and reinforcing innovation cycles
 - [BRI: India’s Land Registry on Blockchain](https://www.blockchainresearchinstitute.org/project/indias-land-registry-on-blockchain/) (2018) - UNDP in India to address property title disputes & land registry corruption
 - [Blockchain for decentralised rural development and governance](https://www.sciencedirect.com/science/article/pii/S2096720922000276) (2022) - DAOs at national and regional levels to enable transparent, participatory governance where citizens vote on development priorities, budgets, and planning decisions.
+- [Information Sharing in Land Registration Using Hyperledger Fabric Blockchain](https://www.mdpi.com/2813-5288/2/2/6) (2024)

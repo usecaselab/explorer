@@ -22,9 +22,9 @@ The broader concern is that many blockchain gaming efforts today lean speculativ
 ## Projects
 
 - [Klang Games](https://www.klang-games.com/seed) - Large-scale life simulation MMO exploring emergent economies
-- [EVE Online](Gaming%20and%20Autonomous%20Worlds%20285d34f360e4807195fde026e0f16c12.md) - Persistent, player-driven virtual economy and world
-- [Dojo](https://dojoengine.org/framework) - Frameworks for building autonomous, onchain games
-- [Mud](https://mud.dev/) - Open-source engine for autonomous worlds
+- [EVE Online](Gaming%20and%20Autonomous%20Worlds%20285d34f360e4807195fde026e0f16c12.md) - Example of persistent, player-driven virtual economy and world
+- Dark Forest & [AW Network](https://aw.network/) (0xPARC/Lattice/MUD) - Onchain game ecosystems pioneering composable world logic
+- [Dojo / Cartridge (Starknet)](https://dojoengine.org/framework) - Frameworks for building autonomous, onchain games
 - [Parallel](https://parallel.life/) - Sci-fi trading card game with tokenized assets and AI storyline experiments
 - [Sorare](https://sorare.com/) - Ethereum-based fantasy sports platform for verifiable digital collectibles
 - [Skyweaver](https://www.skyweaver.net/) - Trading card game with wallet-based ownership and open trade rails
@@ -33,7 +33,6 @@ The broader concern is that many blockchain gaming efforts today lean speculativ
 
 ## Resources
 
-- [AW Network](https://aw.network/)
-- [Autonomous Worlds](https://0xparc.org/blog/autonomous-worlds) (2022) - Conceptual framework by 0xPARC for onchain worlds as open, persistent systems
+- [Autonomous Worlds Essays](https://0xparc.org/blog/autonomous-worlds) - Conceptual framework by 0xPARC for onchain worlds as open, persistent systems
 - [Blockchain in Online Games and What Can Be Learned from It](https://www.researchgate.net/publication/378387237_Blockchain_in_Online_Games_and_What_Can_Be_Learned_from_It?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InB1YmxpY2F0aW9uIiwicGFnZSI6InB1YmxpY2F0aW9uIn19) (2023) - analysis of gaming + blockchain convergence
 - [Exploring Dimensions of Governance for Different Types of Blockchain Systems](https://www.sciencedirect.com/science/article/pii/S0890838925000381) (2025) - Insights into how blockchain systems enact governance, applicable to game worlds
