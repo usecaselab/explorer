@@ -25,7 +25,7 @@ AI systems are increasingly powerful but remain opaque, centralized, and control
     - [io.net](https://io.net/) - Decentralized GPU network for ML workloads
     - [Gensyn](https://www.gensyn.ai/) - Decentralized machine learning compute protocol
     - [Together AI](https://www.together.ai/) - Decentralized AI cloud
-- Agents
+- AI Agents & Infrastructure
     - [Virtuals Protocol](https://virtuals.io/) - AI agent creation and tokenization
     - [ai16z](https://ai16z.ai/) - AI-powered investment DAO
     - [Theoriq](https://www.theoriq.ai/) - AI agent coordination protocol

@@ -5,17 +5,17 @@ sector: Society
 
 ## The Opportunity
 
-Citizens often face duplicative verification processes, long wait times, paper-based records and limited transparency in how decisions are made. Cross-agency data exchange is inconsistent, making oversight and service delivery costly and error-prone. Corruption and inefficiency thrive where records can be altered or lost and where accountability mechanisms are weak.
+Citizens often face duplicative verification processes, long wait times, paper-based records, and limited transparency in how decisions are made. Cross-agency data exchange is inconsistent, making oversight and service delivery costly and error-prone. Corruption and inefficiency thrive where records can be altered or lost and where accountability mechanisms are weak.
 
 ## Ideas
 
-- Digital ID - A single, verified identity for citizens that can be used across government services.
-- Civil registries - Verifiable birth, death, marriage and residency records accessible across agencies.
-- Business registries - Incorporated-business, licensing and beneficial-ownership records with instant verification.
-- Land & vehicle titles - Ownership records with lien checks and immutable transfer histories.
-- Permitting & case management - Digital workflows for permits, applications and entitlements across agencies.
-- Participatory governance - E-voting, participatory budgeting, petitions and citizen consultation platforms anchored on ledger systems.
-- Digital public infrastructure (DPI) - Interoperable APIs and secure data-exchanges enabling cross-agency coordination.
+- Digital ID - A single, verified identity for citizens that can be used across government services
+- Civil registries - Verifiable birth, death, marriage and residency records accessible across agencies
+- Business registries - Incorporated-business, licensing and beneficial-ownership records with instant verification
+- Land & vehicle titles - Ownership records with lien checks and immutable transfer histories
+- Permitting & case management - Digital workflows for permits, applications and entitlements across agencies
+- Participatory governance - E-voting, participatory budgeting, petitions and citizen consultation platforms anchored on ledger systems
+- Digital public infrastructure (DPI) - Interoperable APIs and secure data-exchanges enabling cross-agency coordination
 
 ## Projects
 
@@ -33,4 +33,5 @@ Citizens often face duplicative verification processes, long wait times, paper-b
 
 - [BRI: Business Licensing](https://www.blockchainresearchinstitute.org/project/business-licensing-governance-for-government-blockchains/) (2018) - Identifies the benefits that blockchains can provide local authorities in accelerating the launch of new businesses, supporting entrepreneurs, and reinforcing innovation cycles
 - [BRI: India’s Land Registry on Blockchain](https://www.blockchainresearchinstitute.org/project/indias-land-registry-on-blockchain/) (2018) - UNDP in India to address property title disputes & land registry corruption
-- [Blockchain for decentralised rural development and governance](https://www.sciencedirect.com/science/article/pii/S2096720922000276) (2022) - DAOs at national and regional levels to enable transparent, participatory governance where citizens vote on development priorities, budgets, and planning decisions.
+- [Blockchain for decentralised rural development and governance](https://www.sciencedirect.com/science/article/pii/S2096720922000276) (2022) - DAOs at national and regional levels to enable transparent, participatory governance where citizens vote on development priorities, budgets, and planning decisions
+- [Information Sharing in Land Registration Using Hyperledger Fabric Blockchain](https://www.mdpi.com/2813-5288/2/2/6) (2024) - Study of blockchain's impact on land registration processes 

@@ -5,19 +5,19 @@ sector: Enterprise
 
 ## The Opportunity
 
-The movement of people and goods today depends on a patchwork of identifiers, registries and event data covering fleets, parts, service providers and agencies. Because these records are fragmented, coordination is slower, costs are higher, and gaps open up in safety, compliance and lifecycle management. As vehicles electrify, become software-defined and participate in new mobility ecosystems (shared fleets, autonomous operations), regulators increasingly require verifiable digital records—but the existing siloed systems are poorly suited to deliver them.
+The movement of people and goods today depends on a patchwork of identifiers, registries and event data covering fleets, parts, service providers and agencies. Because these records are fragmented, coordination is slower, costs are higher, and gaps open up in safety, compliance and lifecycle management. As vehicles electrify, become software-defined, and participate in new mobility ecosystems (e.g., shared fleets, autonomous operations), regulators increasingly require verifiable digital records&mdash;but the existing siloed systems are poorly suited to deliver them.
 
 With the rise of connected and autonomous vehicles, the requirement for audit trails (for safety, liability, and compliance) further magnifies the need for a unified digital trust layer.
 
 ## Ideas
 
-- Transit credentials - Self-sovereign identities for drivers, vehicles, and riders that work across operators, cities, and borders.
-- Mobility marketplaces - Peer-to-peer car sharing and mobility services coordinated by protocols.
-- Urban mobility data networks - Shared sensor and telematics data layers that support traffic optimization, and planning.
-- EV charging coordination - Interoperable systems for energy credit settlement across charging networks and grid participants.
-- Parts traceability and provenance – Real-time tracking of vehicle components across manufacture, installation, servicing, and recall to improve safety and compliance.
-- Digital vehicle passports - End-to-end, tamper-evident records covering manufacturing, ownership, maintenance, accidents, and recycling.
-- Automated logistics payments - Verifiable location and event proofs that trigger payments or contract execution in transport and supply chains.
+- Real-time traceability for vehicle parts - For example, the [OriginTrail](https://origintrail.io) solution for rail-fleet traceability via its Decentralized Knowledge Graph
+- Identity solutions for interoperable transit credentials - Self-sovereign identity (SSI) for transit across operators and countries. (e.g., research on blockchain-enabled identity management in public transportation), for example, [TCI Transportation](https://tcitransportation.com/blog/blockchain-technology-in-transportation-what-you-need-to-know/)
+- Decentralized car-sharing and mobility marketplaces - Peer-to-peer mobility services replacing centralized ride-hailing fleets
+- Open sensor and telematics data networks for urban mobility and traffic optimization - Shared data layers unlocking new business models 
+- Electric vehicle (EV) charging coordination and energy trading across heterogeneous participants - Clearinghouses for roaming, settlement and energy credits (see [research on EV charging market hubs](https://emerald.com))
+- Digital vehicle passports and lifecycle provenance - End-to-end records of manufacture, service, ownership, recycling (see [digital product passports (DPP) research](https://logisticsviewpoints.com/2024/09/04/how-blockchain-technology-powers-the-foundation-of-digital-product-passports/))
+- Proof of location and automated payments - For example, automatic demurrage payments in shipping or logistics flows
 
 ## Projects
 

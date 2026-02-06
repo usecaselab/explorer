@@ -11,13 +11,13 @@ The broader concern is that many blockchain gaming efforts today lean speculativ
 
 ## Ideas
 
-- Verifiable core loops - Onchain state and verifiable randomness ensure transparency in moves, scores, loot drops, and tournaments, with zk-proofs verifying off-chain elements without revealing secrets.
-- Player-owned assets & markets - Truly portable items/currency with minimal fees, rentals, AMM-driven markets, escrowed prize pools — shifting power from platforms to players.
-- UGC & mod royalties - Tokenized blueprints, maps or mods permit automatic revenue splits, cross-client recognition, and creator-driven extension of game logic.
-- Shared worlds - Composable “physics” contracts — terrain, crafting, combat logic — that multiple clients or shards can read/write, allowing persistent worlds that outlast any one operator.
-- Agent-native gameplay - Walleted NPCs and bots with budgets, onchain quests and verifiable completion proofs enable autonomous coordination of game worlds.
-- Esports & leagues - Transparent tournament brackets, provable anti-cheat attestations, instant rule-based payouts reduce overhead and disputes.
-- Games as coordination infrastructure - Onchain worlds could serve non-entertainment roles — governance simulations, public-goods funding mechanisms, training ecosystems for social cooperation or resource allocation.
+- Verifiable core loops - Onchain state and verifiable randomness ensure transparency in moves, scores, loot drops, and tournaments, with zk-proofs verifying off-chain elements without revealing secrets
+- Player-owned assets & markets - Truly portable items/currency with minimal fees, rentals, AMM-driven markets, escrowed prize pools&mdash;shifting power from platforms to players
+- UGC & mod royalties - Tokenized blueprints, maps or mods permit automatic revenue splits, cross-client recognition, and creator-driven extension of game logic
+- Shared worlds - Composable “physics” contracts&mdash;terrain, crafting, combat logic&mdash;that multiple clients or shards can read/write, allowing persistent worlds that outlast any one operator
+- Agent-native gameplay - Walleted NPCs and bots with budgets, onchain quests and verifiable completion proofs enable autonomous coordination of game worlds
+- Esports & leagues - Transparent tournament brackets, provable anti-cheat attestations, instant rule-based payouts reduce overhead and disputes
+- Games as coordination infrastructure - Onchain worlds could serve non-entertainment roles, like governance simulations, public-goods funding mechanisms, or training ecosystems for social cooperation or resource allocation
 
 ## Projects
 
@@ -28,12 +28,11 @@ The broader concern is that many blockchain gaming efforts today lean speculativ
 - [Parallel](https://parallel.life/) - Sci-fi trading card game with tokenized assets and AI storyline experiments
 - [Sorare](https://sorare.com/) - Ethereum-based fantasy sports platform for verifiable digital collectibles
 - [Skyweaver](https://www.skyweaver.net/) - Trading card game with wallet-based ownership and open trade rails
-- [Dark Forest Punk](https://dfpunk.xyz/) - decentralized MMO space conquest game built on Optimism with zkSNARKs using MUD
-- [Stadium](https://www.playstadium.gg/) - esports appchain
+- [Dark Forest Punk](https://dfpunk.xyz/) - Decentralized MMO space conquest game built on Optimism with zkSNARKs using MUD
+- [Stadium](https://www.playstadium.gg/) - E-sports appchain
 
 ## Resources
 
-- [AW Network](https://aw.network/)
-- [Autonomous Worlds](https://0xparc.org/blog/autonomous-worlds) (2022) - Conceptual framework by 0xPARC for onchain worlds as open, persistent systems
-- [Blockchain in Online Games and What Can Be Learned from It](https://www.researchgate.net/publication/378387237_Blockchain_in_Online_Games_and_What_Can_Be_Learned_from_It?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InB1YmxpY2F0aW9uIiwicGFnZSI6InB1YmxpY2F0aW9uIn19) (2023) - analysis of gaming + blockchain convergence
+- [Autonomous Worlds Essays](https://0xparc.org/blog/autonomous-worlds) - Conceptual framework by 0xPARC for onchain worlds as open, persistent systems
+- [Blockchain in Online Games and What Can Be Learned from It](https://www.researchgate.net/publication/378387237_Blockchain_in_Online_Games_and_What_Can_Be_Learned_from_It?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InB1YmxpY2F0aW9uIiwicGFnZSI6InB1YmxpY2F0aW9uIn19) (2023) - Analysis of gaming + blockchain convergence
 - [Exploring Dimensions of Governance for Different Types of Blockchain Systems](https://www.sciencedirect.com/science/article/pii/S0890838925000381) (2025) - Insights into how blockchain systems enact governance, applicable to game worlds
