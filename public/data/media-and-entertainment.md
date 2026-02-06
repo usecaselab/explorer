@@ -18,25 +18,21 @@ Cultural production and distribution is bottlenecked by centralized intermediari
 
 ## Projects
 
-- [Soneium](https://soneium.org/) - Sony’s L2 ([explainer article](https://enterpriseonchain.substack.com/p/sonys-entertainment-layer-2-explored))
-    - focused on royalty automation & creator-owned IP
-    - initial use cases: NFT loyalty for concerts; NFT-based digital tickets for Prime Video buys.
+- [Soneium](https://soneium.org/) - Sony’s L2 focused on royalty automation & creator-owned IP ([explainer article](https://enterpriseonchain.substack.com/p/sonys-entertainment-layer-2-explored))
 - Events & Ticketing
     - [Events by Unlock](https://app.unlock-protocol.com/event) - NFT-based event ticketing and memberships
     - [Guts Tickets](https://guts.tickets/)
     - [Tokenproof](https://tokenproof.xyz/) - token-gated ticketing and access for events
     - [Onopen](https://onopen.xyz/) - ticketing and memberships
     - [itm.studio](https://itm.studio/) - experiences
-    - [KYD Labs](https://kydlabs.com/) ([article](https://x.com/KYDLabs/status/1918753011603841426)) - concert ticketing and engagement
+    - [KYD Labs](https://kydlabs.com/) - concert ticketing and engagement ([article](https://x.com/KYDLabs/status/1918753011603841426))
 - Film
     - [Shibuya](https://www.shibuya.film/) - film crowdfunding and participatory production
     - [Film3](https://x.com/501cfilm3) - DAO-based film projects
 - Music
     - [Audius](https://audius.co/) - streaming
-    - [Viral.fun](http://viral.fun/) ([joey iny](https://x.com/joeyiny))
     - [Bolero](https://www.boleromusic.com/) - music rights investment and trading
     - [Royal](https://thevalueprop.io/projects/royal) - marketplace for investing in music royalties
-    - [Metalabel](https://www.metalabel.com/) ([Yancey Strickler](https://x.com/ystrickler)) - collaborative publishing platform (stopped using blockchain?)
     - [Bombo](https://wearebombo.com/) - electronic music community blending NFT ticketing, social interaction, and a secure fan-to-fan marketplace
 - Writing & Publishing
     - [Paragraph](https://paragraph.com/) - decentralized publishing for writers
@@ -53,6 +49,5 @@ Cultural production and distribution is bottlenecked by centralized intermediari
 ## Resources
 
 - [BRI: Web3 and the Music Industry](https://www.blockchainresearchinstitute.org/project/web-3-and-the-music-industry/) (2022) - Explores blockchain’s potential for music rights, royalties, and fan engagement
-- Mac Budowski
-    - [**IP Protocols Part I: Why the next MARVEL might start as an NFT collection](https://kanfa.macbudkowski.com/ip-protocols-part-1-1) (2023)**
-    - [**How exactly do music NFTs plan to change the music industry?](https://kanfa.macbudkowski.com/music-nfts) (2023)**
+- [IP Protocols Part I: Why the next MARVEL might start as an NFT collection](https://kanfa.macbudkowski.com/ip-protocols-part-1-1) (2023)
+- [How exactly do music NFTs plan to change the music industry?](https://kanfa.macbudkowski.com/music-nfts) (2023)

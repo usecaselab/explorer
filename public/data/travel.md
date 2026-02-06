@@ -9,12 +9,11 @@ Travel is held back by fragmented identity and compliance checks, siloed reserva
 
 ## Ideas
 
-- Interoperable reservations - Standard primitives for inventory, hold, book, change, cancel and refund across suppliers (see International Air Transport Association (IATA) NDC standard). ([IATA](https://www.iata.org/en/programs/airline-distribution/retailing/ndc/?utm_source=chatgpt.com))
-- Portable identity & reputation - Verifiable traveler/host credentials, age/KYC checks, reviews and safety attestations that can be shared with minimal data exposure (see International Civil Aviation Organization (ICAO) Digital Travel Credentials). ([ICAO](https://www.icao.int/Security/FAL/TRIP/Documents/High%20Level%20Guidance%20explaining%20ICAO%20DTC.pdf?utm_source=chatgpt.com))
-- Tokenized loyalty - Cross-brand accrual/redemption and perks that work across OTAs, airlines and hotels.
-- Parametric travel insurance - Oracle-triggered automatic payouts for delays, cancellations or lost baggage.
-- Inventory tokenization - Fractional or transferable entitlements (e.g., airline tickets, hotel rooms) unlocking resale, bundling or dynamic packaging.
-- Atomic booking - Booking an entire itinerary (flights, hotel, event) in a single transaction to eliminate partial booking risk and minimize “held” inventory time.
+- Interoperable reservations - Shared primitives for searching, holding, booking, changing, canceling, and refunding inventory across travel suppliers.
+- Portable traveler identity - Verifiable credentials for identity, eligibility, reviews, and safety checks that can be reused across platforms with minimal data sharing.
+- Tokenized loyalty - Transferable loyalty points and benefits that can be earned and redeemed across airlines, hotels, and travel marketplaces.
+- Parametric travel insurance - Automatic insurance payouts triggered by verifiable events such as delays, cancellations, or lost baggage.
+- Tokenized travel inventory - Onchain representations of tickets and reservations that enable resale, bundling, and dynamic packaging.
 
 ## Projects
 

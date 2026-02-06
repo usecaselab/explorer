@@ -11,13 +11,13 @@ With the rise of connected and autonomous vehicles, the requirement for audit tr
 
 ## Ideas
 
-- Real-time traceability for vehicle parts - For example, the OriginTrail solution for rail-fleet traceability via its Decentralized Knowledge Graph. ([origintrail.io](http://origintrail.io))
-- Identity solutions for interoperable transit credentials - Self-sovereign identity (SSI) for transit across operators and countries. (e.g., research on blockchain-enabled identity management in public transportation) ([TCI Transportation](https://tcitransportation.com/blog/blockchain-technology-in-transportation-what-you-need-to-know/?utm_source=chatgpt.com))
-- Decentralized car-sharing and mobility marketplaces - Peer-to-peer mobility services replacing centralized ride-hailing fleets. (see ARTICONF prototype) ([TCI Transportation](https://tcitransportation.com/blog/blockchain-technology-in-transportation-what-you-need-to-know/?utm_source=chatgpt.com))
-- Open sensor and telematics data networks for urban mobility and traffic optimization - Shared data layers unlocking new business models. ([TCI Transportation](https://tcitransportation.com/blog/blockchain-technology-in-transportation-what-you-need-to-know/?utm_source=chatgpt.com))
-- Electric vehicle (EV) charging coordination and energy trading across heterogeneous participants - Clearinghouses for roaming, settlement and energy credits. (see research on EV charging market hubs) ([emerald.com](http://emerald.com))
-- Digital vehicle passports and lifecycle provenance - End-to-end records of manufacture, service, ownership, recycling (see digital product passports (DPP) research). ([Logistics Viewpoints](https://logisticsviewpoints.com/2024/09/04/how-blockchain-technology-powers-the-foundation-of-digital-product-passports/?utm_source=chatgpt.com))
-- Proof of location and automated payments - e.g. automatic demurrage payments in shipping or logistics flows.
+- Transit credentials - Self-sovereign identities for drivers, vehicles, and riders that work across operators, cities, and borders.
+- Mobility marketplaces - Peer-to-peer car sharing and mobility services coordinated by protocols.
+- Urban mobility data networks - Shared sensor and telematics data layers that support traffic optimization, and planning.
+- EV charging coordination - Interoperable systems for energy credit settlement across charging networks and grid participants.
+- Parts traceability and provenance – Real-time tracking of vehicle components across manufacture, installation, servicing, and recall to improve safety and compliance.
+- Digital vehicle passports - End-to-end, tamper-evident records covering manufacturing, ownership, maintenance, accidents, and recycling.
+- Automated logistics payments - Verifiable location and event proofs that trigger payments or contract execution in transport and supply chains.
 
 ## Projects
 

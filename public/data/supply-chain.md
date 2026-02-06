@@ -23,26 +23,22 @@ Global supply chains today are highly fragmented, largely paper-driven and prone
 - [EY OpsChain Traceability](https://blockchain.ey.com/products/traceability) - Tokenized assets and inventory under privacy for more accurate forecasting and reduced administrative overhead
 - [EY Nightfall](https://polygon.technology/blog/introducing-polygon-nightfall-mainnet-decentralized-private-transactions-for-enterprise) - Private supply chain orchestration with traceability, provenance proofs and payments
 - [OriginTrail](https://origintrail.io/solutions/supply-chains) - Decentralized Knowledge Graph for verifiable, interoperable supply chain data
-- [Tilkal](https://www.tilkal.com/), [Komgo](https://www.komgo.io/), [Covantis](https://www.covantis.io/), [Treum](https://consensys.net/treum/), [CargoX](https://cargox.io/), [Morpheus.Network](https://morpheus.network/), [MineSpider](https://minespider.com/) - provenance, trade finance, logistics, and commodities.
+- [Tilkal](https://www.tilkal.com/)
+- [Komgo](https://www.komgo.io/)
+- [Covantis](https://www.covantis.io/)
+- [Treum](https://consensys.net/treum/)
+- [CargoX](https://cargox.io/)
+- [Morpheus.Network](https://morpheus.network/)
+- [MineSpider](https://minespider.com/)
 - [Vakt](https://www.vakt.com/) - Shipping-logistics
-- [CargoX](https://cargox.io/) - Blockchain document-flow for logistics and freight
-- [Heale](https://healelabs.com/) - unified logistics API; uses Opacity Network
-- [Simba](https://simbachain.com/) – DoD and Air Force pilots for defense supply chain security.
-    - [DoD case study](https://simbachain.com/case-study/department-of-defense/)
-    - [US Air Force case study](https://simbachain.com/case-study/u-s-air-force/)
-- [Maersk pilots](https://www.maersk.com/news/articles/2021/07/27/how-blockchain-technology-is-beefing-up) – blockchain for shipping logistics.
-- [Drug supply chain pilot](https://www.oracle.com/in/corporate/pressrelease/niti-aayog-oracle-pilot-real-drug-supply-chain-with-blockchain-iot-2018-09-28.html) – pharma verification with blockchain + IoT.
-- TradeLens - shipping blockchain co-developed by Maersk and IBM; aimed to be a neutral industry utility, but other shipping giants were uneasy about Maersk’s influence. “centralized control… and concerns over data privacy and neutrality” ultimately stymied TradeLens’s adoption ([source](https://enterpriseonchain.substack.com/p/why-businesses-are-pivoting-to-public))
+- [CargoX](https://cargox.io/) - Document-flow for logistics and freight
+- [Heale](https://healelabs.com/) - unified logistics API
+- [Simba](https://simbachain.com/) – Defense supply chain security
+- [Maersk pilots](https://www.maersk.com/news/articles/2021/07/27/how-blockchain-technology-is-beefing-up) – Shipping logistics
+- [Drug supply chain pilot](https://www.oracle.com/in/corporate/pressrelease/niti-aayog-oracle-pilot-real-drug-supply-chain-with-blockchain-iot-2018-09-28.html) – Pharma verification with blockchain + IoT
 
 ## Resources
 
-- [BRI: Introducing Asset Chains](https://www.blockchainresearchinstitute.org/project/introducing-asset-chains/) (2017) - frameworks for responsive, transparent supply chains with IoT integration
-- [BRI: Blockchain at Our Borders](https://www.blockchainresearchinstitute.org/project/blockchain-at-our-borders/) (2017) - blockchain for customs and cross-border flows
-- [BRI: Foxconn 4.0](https://www.blockchainresearchinstitute.org/project/foxconn-4-0/) (2017) - blockchain-enabled financing for multi-tier manufacturing suppliers
-- [BRI: Blockchain for Manufacturing 4.0](https://www.blockchainresearchinstitute.org/project/blockchain-the-emerging-platform-for-manufacturing-4-0/) (2018) - blockchain integrated with AI, IoT, and additive manufacturing
-- [BRI: Additive Manufacturing and Blockchain](https://www.blockchainresearchinstitute.org/project/additive-manufacturing-and-blockchain/) (2018) - provenance, reputation, royalty distribution in 3D printing
 - [Verifiable Manufacturing Using Blockchain](https://arxiv.org/pdf/2302.13353) (2021)
-- [Privacy-preserving Transparent SCM via Hyperledger Fabric](https://www.sciencedirect.com/science/article/pii/S2096720922000136) (2022) - permissioned blockchain for provenance and privacy
 - [Janus: Preventing Counterfeits in Pharma SCM](https://www.sciencedirect.com/science/article/pii/S2096720923000325) (2023) - blockchain + hologram tags for counterfeit resistance
 - [Systematic Review: Blockchain & Supply Chain Traceability](https://www.sciencedirect.com/science/article/pii/S2096720924000538) (2025) - ISM-based analysis of blockchain’s role in enhancing traceability
-- [Blockchain in Fashion SCM](https://www.sciencedirect.com/science/article/pii/S2096720924000794) (2025) - Hyperledger-based collaboration models for SMEs in fashion supply chains

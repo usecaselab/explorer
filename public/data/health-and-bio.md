@@ -9,31 +9,25 @@ Healthcare suffers from siloed data, opaque supply chains, and misaligned incent
 
 ## Ideas
 
-- Health record systems enabling secure, patient-owned data and cross-provider interoperability
-- Prescription and pharmaceutical marketplaces with counterfeit resistance and traceability
-- Fitness and wearables data exchanges rewarding patients for contributing insights
-- Attestation frameworks for medical testing, clinical trials, and peer review
-- Crowdsourced and token-incentivized clinical trials with AI-driven analysis
-- IP-NFTs for biotech discoveries and molecule ownership, enabling new R&D finance models
-- Insurance - automated claims, instant reimbursements, fraud prevention, and transparent coverage
+- Patient-owned health records – Systems that give patients direct control over their medical data while enabling secure sharing across providers.
+- Pharmaceutical traceability and marketplaces – End-to-end tracking of drugs to prevent counterfeits and enable transparent sourcing and distribution.
+- Wearables and health data exchanges – Platforms that let individuals share fitness and biometric data and receive compensation or benefits in return.
+- Medical attestations and verification – Frameworks for verifying test results, clinical trial data, and peer review outcomes with tamper-evident records.
+- Decentralized clinical trials – Crowdsourced, token-incentivized trials that use verifiable data collection and AI-assisted analysis.
+- Biotech IP tokenization – Onchain representations of molecules, patents, or research outputs to enable new financing and licensing models.
+- Programmable health insurance – Automated claims processing, fraud detection, and transparent coverage rules enforced by smart contracts.
 
 ## Projects
 
-- [Safe Health](https://safehealthsystems.com/) - Blockchain-based digital health solutions; Hedera-powered case study for secure healthcare data
 - [Maharashtra COVID-19 certificates](https://blockchain.meity.gov.in/index.php/maharashtra-govt-onboards-blockchain-tech-for-issuing-covid-19-test-certificates?utm_campaign=india-ethereum-ecosystem-overview&utm_medium=referral&utm_source=localethereum.beehiiv.com) - Government-issued onchain COVID-19 test certificates
 - [OriginTrail](https://origintrail.io/) - Decentralized Knowledge Graph for medical data, counterfeit prevention, and medicine traceability; case study with BSI and NGOs on AidTrust for donated medicines
 - [bio.xyz](https://www.bio.xyz/) – bio DAO launchpad
-- [Molecule](https://molecule.to/) - Marketplace for biopharma IP and research, enabling IP-NFTs and collaborative drug discovery.
-- [HairDAO](https://www.hairdao.xyz/) - biotech community targeting hair loss therapies.
-- [AminoChain](https://aminochain.io/) - community-owned and decentralized biobank streamlines biosample procurement, safeguards data, and accelerates ethical breakthroughs in healthcare.
+- [Molecule](https://molecule.to/) - Marketplace for biopharma IP and research, enabling IP-NFTs and collaborative drug discovery
+- [HairDAO](https://www.hairdao.xyz/) - biotech community targeting hair loss therapies
+- [AminoChain](https://aminochain.io/) - community-owned and decentralized biobank streamlines biosample procurement, safeguards data, and accelerates ethical breakthroughs in healthcare
 
 ## Resources
 
-- [BRI: Medical and Biopharma Research](https://www.blockchainresearchinstitute.org/project/medical-and-biopharma-research/) (2017) - Early exploration of blockchain for genetic and health data sharing
-- [BRI: Reinventing Healthcare on the Blockchain](https://www.blockchainresearchinstitute.org/project/reinventing-healthcare-on-the-blockchain/) (2018) - Advocates for patient-owned data models with monetization rights
-- [BRI: Reclaiming Medication – RemediChain](https://www.blockchainresearchinstitute.org/project/reclaiming-medication-remedichain/) (2020) - Case on blockchain database for safe redistribution of unused drugs
-- [BRI: Accessing Patient Health Records](https://www.blockchainresearchinstitute.org/project/accessing-patient-health-records-via-blockchain/) (2020) - Study of blockchain pilots for patient data in University Health Network
-- [BRI: Web3 in the Pharmaceutical Industry](https://www.blockchainresearchinstitute.org/project/web3-in-the-pharmaceutical-industry/) (2023) - Explores blockchain in drug discovery, trials, and pharma supply chains
 - [Blockchain and Healthcare: A Critical Analysis of Progress and Challenges in the Last Five Years](https://www.mdpi.com/2813-5288/1/2/6) (2023)
 - [The case of Hyperledger Fabric as a blockchain solution for healthcare applications](https://www.sciencedirect.com/science/article/pii/S2096720921000075) (2021) - Evaluates private blockchains for health data privacy, security, and compliance
 - [Part 2: Blockchain technology in health care](https://onlinelibrary.wiley.com/doi/abs/10.1111/ans.16455) (2020) - Reviews blockchain’s role in patient data sharing, telehealth, and pharma supply chains

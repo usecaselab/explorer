@@ -9,7 +9,7 @@ Real estate transactions require many intermediaries: brokers, title companies, 
 
 ## Ideas
 
-- On-chain title & escrow - Smart contracts replace paper registries and manual escrow flows, reducing settlement time and improving transparency. ([escrow example with bitcoin from trad escrow company](https://www.guaranty-escrow.com/real-estate-crypto-escrows))
+- On-chain title & escrow - Smart contracts replace paper registries and manual escrow flows, reducing settlement time and improving transparency.
 - Smart-contract leasing - Lease payments, deposits, renewals and dispute resolution run via code, eliminating many intermediaries.
 - Tokenized real-estate funds - Fractional access and transparent investor reporting allow smaller investors to participate in property markets.
 - On-chain mortgage & home-equity rails - Servicing and secondary markets become programmable, traceable and accessible.
@@ -19,9 +19,9 @@ Real estate transactions require many intermediaries: brokers, title companies, 
 
 - [Propy](https://propy.com/) - On-chain title and escrow platform recording property transfers via smart contracts
 - [Fabrica](https://fabrica.land/) - Purchase and hold land parcels as NFTs linked to real-world properties
-- [0xequity](https://www.0xequity.com/) - Real-estate investment rails on Base offering fractional access.
-- [Groma](https://www.groma.com/) - Tokenized REIT structure with transparent investor reporting.
-- [RealT](https://realt.co/) - Platform for fractional tokenized real-estate investing.
+- [0xequity](https://www.0xequity.com/) - Real-estate investment rails on Base offering fractional access
+- [Groma](https://www.groma.com/) - Tokenized REIT structure with transparent investor reporting
+- [RealT](https://realt.co/) - Platform for fractional tokenized real-estate investing
 - [VestaEquity](https://vestaequity.net/) - Tokenized home-equity lines and financing
 - [Blocksquare](https://blocksquare.io/) - Tokenization framework for real-estate assets
 

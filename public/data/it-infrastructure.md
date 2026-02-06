@@ -24,9 +24,11 @@ Provisioning and managing IT infrastructure—storage, compute, bandwidth, and c
 - [FOAM](https://foam.space/) - Decentralized geolocation and mapping
 - [Filecoin](https://filecoin.io/) - Decentralized storage network with cryptographic proofs
 - Akash, [io.net](http://io.net) - GPU/compute marketplaces - Decentralized high-performance compute
-- [Nym](https://nymtech.net/), [GnosisVPN](https://vpn.gnosis.eth.limo/), Sentinel - Decentralized VPN and bandwidth-sharing platforms
-- [Helium](https://www.helium.com/), [World Mobile](https://worldmobile.io/) - Community-powered telecom and connectivity infrastructure
-- [Peaq](https://www.peaq.network/) - DePIN infrastructure for resource coordination across domains
+- [Helium](https://www.helium.com/)
+- [World Mobile](https://worldmobile.io/)
+- [Nym](https://nymtech.net/)
+- [GnosisVPN](https://vpn.gnosis.eth.limo/)
+- [Peaq](https://www.peaq.network/)
 - [WeatherXM](https://weatherxm.com/) - weather station network
 - [GEODNET](https://geodnet.com/) - real-time positioning data network
 - [Kokio](https://www.kokio.app/) - onchain esim
@@ -36,5 +38,5 @@ Provisioning and managing IT infrastructure—storage, compute, bandwidth, and c
 - [BRI: Distributed Connectivity](https://www.blockchainresearchinstitute.org/project/distributed-connectivity/) (2017) - Early study of blockchain’s impact on telecom infrastructure.
 - [BRI: 5G Bypass](https://www.blockchainresearchinstitute.org/project/5g-bypass/) (2019) - Explores blockchain-enabled mesh networks as an alternative to incumbent telecoms.
 - [BRI: Blockchain Transformation in Telecommunications](https://www.blockchainresearchinstitute.org/project/blockchain-transformation-in-telecommunications/) (2021) - Surveys applications from cross-carrier settlements to identity and service provisioning.
-- [Reward Sharing for Mixnets](https://cryptoeconomicsystems.pubpub.org/pub/diaz-reward-sharing-mixnets/release/2?readingCollection=082fed82) (2022) - reward sharing scheme for incentivized network privacy infrastructures such as the Nym mixnet
+- [Reward Sharing for Mixnets](https://cryptoeconomicsystems.pubpub.org/pub/diaz-reward-sharing-mixnets/release/2?readingCollection=082fed82) (2022) - reward sharing scheme for incentivized network privacy infrastructures
 - [TRADE-5G: A blockchain-based transparent and secure resource exchange for 5G network slicing](https://www.sciencedirect.com/science/article/pii/S2096720924000599) (2025) - Introduces a blockchain marketplace for 5G resources that improves efficiency and security while enabling new revenue streams for providers.
