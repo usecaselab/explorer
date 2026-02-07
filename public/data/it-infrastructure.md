@@ -16,7 +16,7 @@ Provisioning and managing IT infrastructure&mdash;storage, compute, bandwidth, a
 - Inter-carrier settlement and provisioning - Shared ledgers for clearing, settlement, and coordination between networks and infrastructure providers
 - Real-time resource pricing - Pay-per-use and priority-access mechanisms for scarce resources like bandwidth, compute, or storage under contention
 
-## Projects
+## Examples
 
 - [Huddle01](https://huddle01.com/) - Decentralized video conferencing and streaming
 - [Livepeer](https://www.livepeer.org/) - Video transcoding and streaming marketplace

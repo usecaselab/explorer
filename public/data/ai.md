@@ -17,7 +17,7 @@ AI systems are increasingly powerful but remain opaque, centralized, and control
 - Compute marketplaces - Decentralized GPU networks for AI training and inference with verifiable computation
 - AI governance and alignment - Onchain mechanisms for community oversight, bounties for alignment research, and transparent model evaluation
 
-## Projects
+## Examples
 
 - Compute Networks
     - [Akash](https://akash.network/) - Decentralized cloud compute marketplace

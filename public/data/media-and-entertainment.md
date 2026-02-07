@@ -16,7 +16,7 @@ Cultural production and distribution is bottlenecked by centralized intermediari
 - Decentralized streaming and publishing - Censorship-resistant platforms for content distribution
 - Verifiable journalism - Provenance for media assets and claims, linked to fact-checking oracles
 
-## Projects
+## Examples
 
 - [Soneium](https://soneium.org/) - Sony’s L2 focused on royalty automation & creator-owned IP ([Explainer article](https://enterpriseonchain.substack.com/p/sonys-entertainment-layer-2-explored))
 - Events & Ticketing

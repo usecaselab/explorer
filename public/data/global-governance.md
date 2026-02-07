@@ -17,7 +17,7 @@ Global and sub-national governance suffers from fragmented frameworks, inconsist
 - Space governance & digital commons - Registries for orbital slots, debris, regional airspace or global digital resources
 - City/regional protocol networks - Shared modular policy frameworks adopted by cities and regions (e.g., climate accords, mobility pacts) that reference common data protocols
 
-## Projects
+## Examples
 
 
 

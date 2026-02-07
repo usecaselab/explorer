@@ -19,7 +19,7 @@ With the rise of connected and autonomous vehicles, the requirement for audit tr
 - Digital vehicle passports - End-to-end, tamper-evident records covering manufacturing, ownership, maintenance, accidents, and recycling
 - Automated logistics payments - Verifiable location and event proofs that trigger payments or contract execution in transport and supply chains
 
-## Projects
+## Examples
 
 - [DIMO](https://dimo.co/) - Vehicle data sharing network enabling fleet telemetry and provenance
 - [Rentality](https://rentality.io/) - Decentralized car-rental marketplace

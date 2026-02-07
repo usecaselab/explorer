@@ -15,7 +15,7 @@ Many natural assets&mdash;such as water, forests and mineral resources&mdash;are
 - Quality-tiered environmental assets - Differentiating asset classes by methodology, provenance, verification quality and governance, enabling transparency across markets
 - Outcome-linked finance with milestones - Smart-contract-based release of funds or credits when independently verifiable events occur (e.g., reforestation, water-quality improvement)
 
-## Projects
+## Examples
 
 - [Climate Action Data](https://climateactiondata.org/registries/) - Digital infrastructure connecting environmental registries, maximising transparency of carbon credits and minimising double-counting
 - [Regen Network](https://www.regen.network/) - Ecological state-machine and environmental-credit market based on onchain infrastructure

@@ -18,7 +18,7 @@ Small and medium enterprises (SMEs) are underserved by traditional finance: cred
 - Credit unions - Blockchain-based cooperative finance models
 - Equity tokenization - Issuing tokenized shares, bypassing expensive IPOs and private placements
 
-## Projects
+## Examples
 
 - [3jane](https://www.3jane.xyz/) - Credit infrastructure for Web3
 - [Pact](https://pactfoundation.com/) - Cooperative credit systems

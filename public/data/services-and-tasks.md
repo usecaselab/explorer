@@ -19,7 +19,7 @@ Trust between counterparties remains fragile: reviews are easily gamed, disputes
 - Task credentials - Cryptographic proofs of work, verified deliverable receipts, or NFT-based certificates that unlock access to higher-value opportunities
 - Decentralized arbitration systems - Mediation solutions for labor contracting arrangements that ensure efficient and fair dispute outcomes
 
-## Projects
+## Examples
 
 - [Human Protocol](https://humanprotocol.org/) - Framework for decentralized microtask coordination and reward distribution
 - [time.fun](http://time.fun/) - Tokenized marketplace for booking time-based services

@@ -21,7 +21,7 @@ At the same time, advances in AI create the potential for organizations that cou
 - Procurement - Smart contracts for purchase orders, RFQs, RFPs, vendor agreements, or automatic replenishment plans
 - AI CEOs - Once the firm’s core systems are tokenized and software-defined, AI can act as an organizational brain&mdash;analyzing complete data flows, simulating strategies, and executing decisions onchain
 
-## Projects
+## Examples
 
 - [Mezzanine](https://www.mezzanine.xyz/) - Modular, self-custody finance OS for companies providing payments, payroll, equity, accounting, and permissions in one programmable platform
 - [Splits Teams](https://splits.org/teams/) - Programmatic profit/revenue sharing and automated team payouts

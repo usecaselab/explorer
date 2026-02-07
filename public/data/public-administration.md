@@ -17,7 +17,7 @@ Citizens often face duplicative verification processes, long wait times, paper-b
 - Participatory governance - E-voting, participatory budgeting, petitions and citizen consultation platforms anchored on ledger systems
 - Digital public infrastructure (DPI) - Interoperable APIs and secure data-exchanges enabling cross-agency coordination
 
-## Projects
+## Examples
 
 - [Bhutan NDI](https://www.bhutanndi.com/) - The world's first national identity system based on Self-Sovereign Identity (SSI) technology, providing citizens with a secure digital wallet to manage their credentials and access services ([Learn more here](https://x.com/AyaMiyagotchi/status/1977798764485361966))
 - [QuarkID](https://quarkid.org/) - SSI protocol for managing essential personal documents such as birth and marriage certificates, academic credentials, and proof of income, developed by the government of Buenos Aires for use in Argentina and other South American countries

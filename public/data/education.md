@@ -17,7 +17,7 @@ Learners, meanwhile, lack portable, privacy-preserving credentials that can carr
 - Skill passports - Aggregated, verifiable records of learning achievements that contribute to a portable professional reputation
 - Education finance - Transparent income-share agreements, programmable scholarships, and community-driven funding for education providers
 
-## Projects
+## Examples
 
 - [BCdiploma](https://www.bcdiploma.com/) - Digital diplomas and verified micro-credentials
 - [Hyland Credentials](https://www.hyland.com/en/solutions/products/hyland-credentials) - Digital education and licensing credentials

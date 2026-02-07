@@ -16,7 +16,7 @@ Blockchain-based insurance research confirms that high transaction costs, trust 
 - Tokenized reserves & transparent solvency reporting - Onchain reserve tracking enables real-time visibility and better risk pricing
 - Tokenized policies for resale - Policies become tradable contracts, enabling secondary markets, swapping risk profiles and unlocking liquidity
 
-## Projects
+## Examples
 
 - [Ensuro](https://ensuro.co/) - Bridges DeFi capital into reinsurance
 - [Arbol](https://www.arbol.io/) - Parametric weather and risk insurance platform using smart contracts

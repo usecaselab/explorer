@@ -14,7 +14,7 @@ Digital advertising is dominated by centralized platforms that control audience 
 - Programmable ad spend - Direct funding of dapps or public goods via ad revenue
 - Tokenized loyalty and rewards - Integrating ad campaigns with consumer incentives
 
-## Projects
+## Examples
 
 - [The Miracle](https://www.themiracle.io/) - Target & activate crypto users
 - [DaisyPay](https://daisypay.app/) - Pays creators in stablecoins for zkTLS-verified social engagement, replacing intermediaries with direct brand-to-creator payments

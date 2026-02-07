@@ -17,7 +17,7 @@ Scientific research is strained by misaligned incentives and weak accountability
 - Knowledge graphs & connected science - Decentralized knowledge graphs linking data, AI, and researchers to reveal hidden connections
 - Prediction markets & crowdsourced innovation - Incentivized mechanisms for funding and discovering novel research directions
 
-## Projects
+## Examples
 
 - [Molecule](https://molecule.xyz/) - Crowdfunded biopharma protocol with milestone-based governance
 - [Bio.xyz](https://www.bio.xyz) - Tokenized IP platform for biotech research

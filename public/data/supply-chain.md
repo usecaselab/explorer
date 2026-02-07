@@ -18,7 +18,7 @@ Global supply chains today are highly fragmented, largely paper-driven, and pron
 - Open supply-chains - Enabling coordination among independent farmers, artisans and open-hardware producers outside corporate platforms
 - Electronic Bill of Lading - Replacing paper document of title with NFT-like digital representation of title and transfer rights
 
-## Projects
+## Examples
 
 - [EY OpsChain Traceability](https://blockchain.ey.com/products/traceability) - Tokenized assets and inventory under privacy for more accurate forecasting and reduced administrative overhead
 - [EY Nightfall](https://polygon.technology/blog/introducing-polygon-nightfall-mainnet-decentralized-private-transactions-for-enterprise) - Private supply chain orchestration with traceability, provenance proofs, and payments

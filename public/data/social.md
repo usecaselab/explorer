@@ -18,7 +18,7 @@ Today’s social platforms concentrate power in a small number of large companie
 - Credential/token-gated groups & curation mechanisms - For example, graduates of a specific university, attendee networks, token-curated registries (TCRs), staking games, curated communities
 - Crowdfunding & incentivizing real-world actions - Mechanisms to tie social participation to offline actions
 
-## Projects
+## Examples
 
 - [Farcaster](https://docs.farcaster.xyz/learn/) - A decentralized social graph protocol enabling user-owned identity and interoperable social apps
 - [Zora](https://zora.co/) - Onchain creator monetization and media-minting platform where creators issue tokens for content

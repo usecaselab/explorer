@@ -16,7 +16,7 @@ National defense and critical infrastructure increasingly depend on digital syst
 - Supply-chain provenance for defense hardware - Immutable tracking of parts, maintenance histories and provenance for weapons-systems and components
 - Decentralized decision-aid networks - Secure sharing and verification of AI-model updates, sensor-data cross-validation in multi-domain operations
 
-## Projects
+## Examples
 
 
 ## Resources

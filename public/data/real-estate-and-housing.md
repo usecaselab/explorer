@@ -15,7 +15,7 @@ Real estate transactions require many intermediaries, including brokers, title c
 - Onchain mortgage & home-equity rails - Servicing and secondary markets become programmable, traceable and accessible
 - Community ownership primitives - Co-ops and land trusts based on token-governance enable inclusive ownership and local alignment
 
-## Projects
+## Examples
 
 - [Propy](https://propy.com/) - Onchain title and escrow platform recording property transfers via smart contracts
 - [Fabrica](https://fabrica.land/) - Purchase and hold land parcels as NFTs linked to real-world properties

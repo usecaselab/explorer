@@ -17,7 +17,7 @@ Mobilizing resources for aid and social support is often slow, opaque and costly
 - Decentralized coordination for social-services actors - Infrastructure enabling NGOs, volunteers and communities to coordinate service delivery, funding and verification
 - UBI - Direct-to-recipient distribution mechanisms that provide recurring, automated universal basic income payments, using decentralized identity and smart contracts to reduce administrative overhead
 
-## Projects
+## Examples
 
 - [Endaoment](https://endaoment.org/) - Crypto-based donor-advised fund platform for charities
 - [Gitcoin](https://www.gitcoin.co/) - Web3 funding platform for public-goods, including social-impact projects

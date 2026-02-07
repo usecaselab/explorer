@@ -16,7 +16,7 @@ Money underpins every exchange, yet the design space for monetary systems has be
 - Commodity-backed units - Monetary units redeemable for, or explicitly linked to, measurable physical resources (such as kWh of electricity, carbon units, or physical commodities), grounding value in real production capacity
 - Indexed currencies - Currencies designed to maintain stable purchasing power by algorithmically tracking inflation metrics, commodity prices, or diversified economic indicators rather than pegging to a single fiat currency
 
-## Projects
+## Examples
 
 - [Grassroots Economics](https://www.grassrootseconomics.org/) - Runs on-the-ground community currency networks in Kenya to support informal economies and local trade where cash is scarce
 - [CityCoins](https://www.citycoins.co/) - Tokens that let communities generate funding and incentives aligned with specific cities

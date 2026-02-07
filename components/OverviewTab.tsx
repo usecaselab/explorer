@@ -67,11 +67,11 @@ const OverviewTab: React.FC<OverviewTabProps> = ({ data }) => {
         )}
       </section>
 
-      {/* Projects Section - Card/Grid View */}
+      {/* Examples Section - Card/Grid View */}
       <section>
         <div className="flex items-center gap-2 mb-6">
           <FolderGit2 className="w-6 h-6" />
-          <h3 className="text-2xl font-bold font-heading">Projects</h3>
+          <h3 className="text-2xl font-bold font-heading">Examples</h3>
           <span className="text-sm text-gray-500 ml-2 font-sans">Who has worked on this</span>
         </div>
 

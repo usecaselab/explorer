@@ -18,7 +18,7 @@ Retail and e-commerce workflows require stitching together product sourcing, inv
 - Autonomous auctions - Where goods can be priced and sold without an intermediary
 - Full Commerce Stack - Potential for integrating supply-chain provenance, dynamic pricing and loyalty token-flows in one unified commerce stack
 
-## Projects
+## Examples
 
 - [FreePay](https://freepaypos.org/) - Intermediary-free payment terminal for merchants accepting crypto
 - [Commerce Payments Protocol](https://shopify.engineering/commerce-payments-protocol) - by Shopify & Coinbase to bring the two-step "auth & capture" flow onchain for merchant payments

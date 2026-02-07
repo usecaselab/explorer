@@ -16,7 +16,7 @@ Intellectual property systems&mdash;covering patents, copyrights, and trademarks
 - Cross-industry interoperability - Enable IP licensing across IoT, media, healthcare, and scientific research
 - Proof of existence - Tamper-proof records such as lab books or drafts to strengthen "first to invention" claims
 
-## Projects
+## Examples
 
 - [license.rocks](https://license.rocks/) - IP licensing platform
 
