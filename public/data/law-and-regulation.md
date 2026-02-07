@@ -21,7 +21,7 @@ At the same time, private legal agreements&mdash;wills, contracts, trusts, and d
 - Dispute resolution - Decentralized arbitration and online dispute-resolution mechanisms (e.g., Kleros) to reduce litigation overhead
 - Ricardian & parametric contracts - Human-readable, machine-parsable agreements that can execute automatically or trigger based on measurable outcomes
 
-## Projects
+## Examples
 
 - [Kleros](https://kleros.io/) - Decentralized dispute-resolution protocol using juror staking and incentive alignment
 - [Sarcophagus](https://sarcophagus.io/) - “Dead-man’s switch” for time-locked inheritance and document release

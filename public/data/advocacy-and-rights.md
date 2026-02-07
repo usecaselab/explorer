@@ -17,7 +17,7 @@ Civil society groups, environmental defenders, human-rights advocates, journalis
 - Portable identity & credentials for NGOs, volunteers & journalists - Selective-disclosure credentials backed by onchain verification to manage trust while protecting privacy
 - Programmable rights & participatory governance tokens - Embedding rights-related commitments or governance frameworks into tokens or DAOs for accountability across actors
 
-## Projects
+## Examples
 
 - [Labor DAO](https://www.thelabordao.com) - Perpetual, transparent revolving fund to finance and support worker organizing, strikes, legal defense, and labor campaigns
 - [ProofLeak](https://x.com/0xxDana/status/1934603312407420961) - Whistleblower app that uses Noir to generate a ZK proof attesting that a whistleblower's email address belongs to an organization using a DKIM signature, ensuring credible disclosures while fully preserving anonymity

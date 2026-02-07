@@ -17,7 +17,7 @@ In the middle, grocers and restaurants juggle siloed POS, inventory, and supplie
 - Regenerative practice incentives - Reward mechanisms that compensate farmers for sustainable and regenerative agricultural behaviors
 - Cooperative and local marketplaces - Community-owned platforms that let producers sell directly and keep more economic value within local food systems
 
-## Projects
+## Examples
 
 - [Justtoken](https://www.justoken.com/) - Tokenizing agricultural outputs (Agrotoken) and arable land (Landtoken)
 - [Farmsent](https://www.farmsent.io/) - Onchain marketplace improving farmer access to trade and capital

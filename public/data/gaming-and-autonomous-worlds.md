@@ -19,7 +19,7 @@ The broader concern is that many blockchain gaming efforts today are speculative
 - Esports & leagues - Transparent tournament brackets, provable anti-cheat attestations, instant rule-based payouts reduce overhead and disputes
 - Games as coordination infrastructure - Onchain worlds could serve non-entertainment roles, like governance simulations, public-goods funding mechanisms, or training ecosystems for social cooperation or resource allocation
 
-## Projects
+## Examples
 
 - [Klang Games](https://www.klang-games.com/seed) - Large-scale life simulation MMO exploring emergent economies
 - [EVE Online](https://www.eveonline.com/) - Persistent, player-driven virtual economy and world

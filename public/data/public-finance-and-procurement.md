@@ -19,7 +19,7 @@ Government financial systems and procurement workflows often operate with fragme
 - Supplier certification, registration & audit trails - Shared digital passports for suppliers, transparent contract-award workflows and tamper-proof audit-logs
 - Requisition-to-pay ledger integration - Smart contracts bridging PO issuance, supplier delivery, inspection, invoice and payment in a unified chain
 
-## Projects
+## Examples
 
 - [BYC Ventures](https://byc.ventures/) - Pilot in the Philippines tracking government spending via ledger-anchored document hashing
 - U.S. Chamber of Commerce pilot - Department of Commerce hashed GDP data to enhance transparency of official statistics

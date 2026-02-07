@@ -16,7 +16,7 @@ Workplace productivity today is dominated by centralized SaaS providers who silo
 - Code collaboration & peer-governance - P2P versioning and funding for open source, with contributor credentials, governance tokens and transparent reward flows
 - Potential for “collaboration infrastructure” - Ethereum-based protocols could serve as a shared workflow layer across enterprises, enabling plug-and-play modules for documents, identity, governance and contributions
 
-## Projects
+## Examples
 
 - [Towns](https://www.towns.com/) - Community chat and coordination platform aiming at user-owned collaboration
 - [Common Ground](https://www.commonground.cg/) - Onchain attestations, reputation tracking, community wallets for work contributions

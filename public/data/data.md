@@ -15,7 +15,7 @@ Data already trades through brokers, ad-tech exchanges, and bespoke deals betwee
 - Fact checking oracles - Incentivize truth discovery through cryptoeconomic incentives
 - zkTLS-verified data - Users prove claims from existing web platforms&mdash;income, identity, activity&mdash;for use in onchain applications, without requiring platform permission or surrendering raw data
 
-## Projects
+## Examples
 
 - [Kled](https://www.kled.ai/) - Curated marketplace of licensed, rights-holder datasets (e.g., video, music, transcripts) for training AI models
 - [Olena](https://olena.xyz/) - Protocol for curating accurate information and peer review, leveraging quadratic funding and prediction markets

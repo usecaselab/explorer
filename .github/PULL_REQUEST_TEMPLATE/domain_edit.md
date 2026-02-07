@@ -32,7 +32,7 @@ A 3-4 sentence description of the use case opportunity and problems being solved
 - Idea name - Description of the idea and what it enables.
 - Another idea - Its description goes here.
 
-## Projects
+## Examples
 
 - [Project Name](https://url.com) - Brief description of the project.
 - [Another Project](https://url.com) - What this project does.
@@ -60,7 +60,7 @@ Each idea should be a single line:
 - Idea name - Description explaining what it enables or solves.
 ```
 
-### Projects Format
+### Examples Format
 
 Each project should link to the project and include a brief description:
 ```
