@@ -24,7 +24,7 @@ Small and medium enterprises (SMEs) are underserved by traditional finance: cred
 - [Pact](https://pactfoundation.com/) - Cooperative credit systems
 - [EthicHub](https://www.ethichub.com/) - Crowdlending to smallholder farmers
 - [Kotanipay](https://kotanipay.com/) - Microloans via mobile money rails
-- World Credit mini-app - Peer-to-peer microfinance
+- Credit mini-app on World - Leverages proof of personhood to issue microloans
 - [Haraka](https://haraka.xyz/) - Microloans and alternative credit scoring
 - [Union](https://union.finance/) - Decentralized credit protocol
 - [Topos](https://topos.one/) - Global credit network (exploratory)
@@ -43,6 +43,7 @@ Small and medium enterprises (SMEs) are underserved by traditional finance: cred
 - [Legion](https://legion.cc/) - Syndicated investment
 - [Echo](https://echo.xyz/) - Syndicated investment
 - [StationX](https://www.stationx.network/) - Syndicated investment
+- [Earnifi](https://goearnifi.com/) - Borrow against earned wages through zkTLS-verified paystubs
 
 ## Resources
 

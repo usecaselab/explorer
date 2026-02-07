@@ -17,7 +17,8 @@ Digital advertising is dominated by centralized platforms that control audience 
 ## Projects
 
 - [The Miracle](https://www.themiracle.io/) - Target & activate crypto users
-- [EarnOS](https://earnos.com/) - Ad platform integrating Web3 wallets and tokenized rewards
+- [DaisyPay](https://daisypay.app/) - Pays creators in stablecoins for zkTLS-verified social engagement, replacing intermediaries with direct brand-to-creator payments
+- [EarnOS](https://earnos.com/) - Privacy-preserving ad targeting where users prove actions (e.g., app usage, trading volume, fitness activity) to brands for rewards without exposing personal data
 - [MadHive](https://www.madhive.com/about-us) - Programmatic ad solutions with blockchain components
 - [EthereumAds](https://ethereumads.com/) - Lets website operators sell advertising space
 - [AdLedger](https://adledger.org/) - Blockchain consortium for advertising transparency

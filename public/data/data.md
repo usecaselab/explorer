@@ -13,6 +13,7 @@ Data already trades through brokers, ad-tech exchanges, and bespoke deals betwee
 - Data marketplace - Platforms where data access is governed by smart contracts, enabling licensing, metering, revocation, royalties, and automatic revenue splits
 - Tokenized data assets - Data exposed as onchain assets (e.g., streams, APIs, models, analytics outputs) that can be priced, combined, and traded like financial instruments
 - Fact checking oracles - Incentivize truth discovery through cryptoeconomic incentives
+- zkTLS-verified data - Users prove claims from existing web platforms&mdash;income, identity, activity&mdash;for use in onchain applications, without requiring platform permission or surrendering raw data
 
 ## Projects
 
@@ -23,6 +24,7 @@ Data already trades through brokers, ad-tech exchanges, and bespoke deals betwee
 - [Ocean Protocol](https://oceanprotocol.com/) - Decentralized data exchange protocol
 - [Origin Trail](https://www.origintrail.io/) - Decentralized knowledge graph for reliable AI
 - [Navigate](https://nvg8.io/) - Rewards users for contributing and licensing their data
+- [Opacity Network](https://www.opacitynetwork.com/) - zkTLS infrastructure that makes existing internet data verifiable and composable with crypto without requiring institutional permission
 
 ## Resources
 
