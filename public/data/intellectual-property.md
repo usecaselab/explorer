@@ -22,10 +22,6 @@ Intellectual property systems&mdash;covering patents, copyrights, and trademarks
 
 ## Resources
 
-- [BRI: How Blockchain is Transforming the Creative Industries](https://www.blockchainresearchinstitute.org/project/how-blockchain-is-transforming-the-creative-industries/) (2017) - Surveys blockchain's role in copyright management across creative sectors
-- [BRI: Patents and Blockchain Innovation](https://www.blockchainresearchinstitute.org/project/patents-and-blockchain-innovation/) (2018) - Fair compensation in patent licensing
-- [BRI: Certifying Copyright in Canada on the Blockchain](https://www.blockchainresearchinstitute.org/project/certifying-copyright-in-canada-on-the-blockchain/) (2019) - Explores how Canada's copyright office could use blockchain for copyright registration
-- [BRI: KODAKOne: Changing the Still Image Marketplace](https://www.blockchainresearchinstitute.org/project/kodakone-changing-the-still-image-marketplace-on-the-blockchain/) (2019) - Case study on blockchain licensing for photographers and challenges of copyright law
 - [BRI: Patents at the Trivergence](https://www.blockchainresearchinstitute.org/project/patents-at-the-trivergence/) (2022) - Explores blockchain, AI, and IoT convergence for patent innovation
 - [Digital assets rights management through smart legal contracts](https://www.sciencedirect.com/science/article/pii/S2096720923000179) (2023) - Proposes hybrid smart legal + smart contract approach for royalties and rights transfer
 - [Efficient copyright verification in a DApp](https://www.sciencedirect.com/science/article/pii/S2096720924000472) (2025) - Algorand-based system for decentralized copyright rights representation and verification

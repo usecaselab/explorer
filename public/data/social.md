@@ -16,11 +16,11 @@ Today’s social platforms concentrate power in a small number of large companie
 - Content provenance - Signed posts and media receipts to combat impersonation, fraud and deepfakes; for example, notarizing photos, videos, or hardware, signed with a hash onchain
 - Moderation & bot-detection mechanisms - Community notes, reputation-weighted signals, proof-of-humanity checks to reduce spam and manipulation
 - Credential/token-gated groups & curation mechanisms - For example, graduates of a specific university, attendee networks, token-curated registries (TCRs), staking games, curated communities
-- Crowdfunding & incentivizing real-world actions - Mechanisms to tie social participation to offline actions (e.g, [POIDH](https://poidh.xyz/) – proof of impact/delivery in human domains)
+- Crowdfunding & incentivizing real-world actions - Mechanisms to tie social participation to offline actions
 
 ## Projects
 
-- [Farcaster](https://docs.farcaster.xyz/learn/) - A decentralized social graph protocol enabling user-owned identity and interoperable social apps 
+- [Farcaster](https://docs.farcaster.xyz/learn/) - A decentralized social graph protocol enabling user-owned identity and interoperable social apps
 - [Zora](https://zora.co/) - Onchain creator monetization and media-minting platform where creators issue tokens for content
 - [Own](https://www.ownapp.co/) - Gamified short-form content social app
 - [Lens](https://lens.xyz/) - Decentralized social network that lets users own their profiles, content, and connections onchain
@@ -34,4 +34,4 @@ Today’s social platforms concentrate power in a small number of large companie
 - [Social Media on the Blockchain](https://www.blockchainresearchinstitute.org/project/social-media-on-the-blockchain/) (2018) - Case study on Akasha
 - [The Application of Blockchain in Social Media: A Systematic Literature Review](https://www.mdpi.com/2076-3417/12/13/6567) (2022) - How blockchain has been applied in social media, focusing on provenance, privacy and decentralization
 - [Posting Bot Detection on Blockchain-based Social Media Platform using Machine Learning Techniques](https://ojs.aaai.org/index.php/ICWSM/article/view/18062) (2022) - Focuses on bot detection in decentralized social platforms and feature engineering for classification
-- [AI Threats to Politics, Elections, and Democracy: A Blockchain-Based Deepfake Authenticity Verification Framework](https://www.mdpi.com/2813-5288/2/4/20) (2024) - Explores blockchain-based deepfake detection and verification 
+- [AI Threats to Politics, Elections, and Democracy: A Blockchain-Based Deepfake Authenticity Verification Framework](https://www.mdpi.com/2813-5288/2/4/20) (2024) - Explores blockchain-based deepfake detection and verification

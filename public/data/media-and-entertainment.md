@@ -18,22 +18,19 @@ Cultural production and distribution is bottlenecked by centralized intermediari
 
 ## Projects
 
-- [Soneium](https://soneium.org/) - Sony’s Layer-2 network ([Explainer article](https://enterpriseonchain.substack.com/p/sonys-entertainment-layer-2-explored))
-    - Focused on royalty automation & creator-owned IP
-    - Initial use cases: NFT loyalty for concerts, and  NFT-based digital tickets for Prime Video purchases
+- [Soneium](https://soneium.org/) - Sony’s L2 focused on royalty automation & creator-owned IP ([Explainer article](https://enterpriseonchain.substack.com/p/sonys-entertainment-layer-2-explored))
 - Events & Ticketing
     - [Events by Unlock](https://app.unlock-protocol.com/event) - NFT-based event ticketing and memberships
     - [Guts Tickets](https://guts.tickets/) - NFT ticketing platform 
     - [Tokenproof](https://tokenproof.xyz/) - Token-gated ticketing and access for events
     - [Onopen](https://onopen.xyz/) - Ticketing and memberships
     - [itm.studio](https://itm.studio/) - Experiences
-    - [KYD Labs](https://kydlabs.com/) ([Article](https://x.com/KYDLabs/status/1918753011603841426)) - Concert ticketing and engagement 
+    - [KYD Labs](https://kydlabs.com/) - Concert ticketing and engagement ([Article](https://x.com/KYDLabs/status/1918753011603841426))
 - Film
     - [Shibuya](https://www.shibuya.film/) - Film crowdfunding and participatory production
     - [Film3](https://x.com/501cfilm3) - DAO-based film projects
 - Music
     - [Audius](https://audius.co/) - Streaming
-    - [Viral.fun](http://viral.fun/) ([joey iny](https://x.com/joeyiny))
     - [Bolero](https://www.boleromusic.com/) - Music rights investment and trading
     - [Royal](https://thevalueprop.io/projects/royal) - Marketplace for investing in music royalties
     - [Bombo](https://wearebombo.com/) - Electronic music community blending NFT ticketing, social interaction, and a secure fan-to-fan marketplace

@@ -20,13 +20,13 @@ Retail and e-commerce workflows require stitching together product sourcing, inv
 
 ## Projects
 
-- [FreePay](https://freepaypos.org/) - Intermediary-free payment terminal for merchants accepting crypto and tokens
-- Commerce Payments Protocol (Shopify × Coinbase) - Stablecoin commerce payment rails
-- Tempo (Stripe × Paradigm) - Payments layer-1 designed for commerce-native rails
-- [Visa Intelligent Commerce](https://corporate.visa.com/en/products/intelligent-commerce.html) (with [Crossmint](https://www.crossmint.com/)) - Agent-shopping integration and tokenized commerce flows
+- [FreePay](https://freepaypos.org/) - Intermediary-free payment terminal for merchants accepting crypto
+- [Commerce Payments Protocol](https://shopify.engineering/commerce-payments-protocol) - by Shopify & Coinbase to bring the two-step "auth & capture" flow onchain for merchant payments
+- [Visa Intelligent Commerce](https://corporate.visa.com/en/products/intelligent-commerce.html) - Agent-shopping integration and tokenized commerce flows
 - [Spritz](https://x.com/spritzfinance) - Card and bill-pay leveraging crypto rails
-- Loyalty programs - [Blackbird](https://x.com/blackbird_xyz), [Hedera case studies](https://hedera.com/use-cases/consumer-engagement-loyalty), [OpenPasskey](https://www.openpasskey.com/) – Enterprise loyalty tokenization
-- Marketplaces for physical goods - [mass.market](http://mass.market), [Hopscotch](https://hopscotch.trade/), [Slice](https://slice.so/), [Boson](https://www.bosonprotocol.io/) – Tokenized marketplace infrastructure
+- [Blackbird](https://x.com/blackbird_xyz) - Restaurant loyalty system
+- [Hopscotch](https://hopscotch.trade/) - Facebook marketplace alternative that uses onchain escrow and encrypted messaging
+- [Slice](https://slice.so/) - Onchain commerce protocol that connect merchants and buyers without centralized intermediaries
 
 ## Resources
 

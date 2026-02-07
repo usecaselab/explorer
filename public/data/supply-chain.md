@@ -21,21 +21,19 @@ Global supply chains today are highly fragmented, largely paper-driven, and pron
 ## Projects
 
 - [EY OpsChain Traceability](https://blockchain.ey.com/products/traceability) - Tokenized assets and inventory under privacy for more accurate forecasting and reduced administrative overhead
-- [EY Nightfall](https://polygon.technology/blog/introducing-polygon-nightfall-mainnet-decentralized-private-transactions-for-enterprise) - Private supply chain orchestration with traceability, provenance proofs and payments
-- [OriginTrail](https://origintrail.io/solutions/supply-chains) - Decentralized Knowledge Graph for verifiable, interoperable supply chain data
+- [EY Nightfall](https://polygon.technology/blog/introducing-polygon-nightfall-mainnet-decentralized-private-transactions-for-enterprise) - Private supply chain orchestration with traceability, provenance proofs, and payments
+- [OriginTrail](https://origintrail.io/solutions/supply-chains) - Decentralized knowledge graph for verifiable, interoperable supply chain data
 - [Tilkal](https://www.tilkal.com/)
 - [Komgo](https://www.komgo.io/)
 - [Covantis](https://www.covantis.io/)
 - [Treum](https://consensys.net/treum/)
 - [Morpheus.Network](https://morpheus.network/)
 - [MineSpider](https://minespider.com/)
-- [Vakt](https://www.vakt.com/) - Shipping-logistics
 - [CargoX](https://cargox.io/) - Blockchain document flow for logistics and freight
 - [Heale](https://healelabs.com/) - Unified logistics API that uses Opacity Network
-- [Simba](https://simbachain.com/) – DoD and Air Force pilots for defense supply chain security
-    - [DoD case study](https://simbachain.com/case-study/department-of-defense/)
-    - [US Air Force case study](https://simbachain.com/case-study/u-s-air-force/)
-- [Maersk pilots](https://www.maersk.com/news/articles/2021/07/27/how-blockchain-technology-is-beefing-up) – Blockchain for shipping logistics
+- [Simba](https://simbachain.com/) – Defense supply chain security
+- [Vakt](https://www.vakt.com/) - Shipping logistics
+- [Maersk pilots](https://www.maersk.com/news/articles/2021/07/27/how-blockchain-technology-is-beefing-up) – Shipping logistics
 - [Drug supply chain pilot](https://www.oracle.com/in/corporate/pressrelease/niti-aayog-oracle-pilot-real-drug-supply-chain-with-blockchain-iot-2018-09-28.html) – Pharma verification with blockchain + IoT
 
 ## Resources
