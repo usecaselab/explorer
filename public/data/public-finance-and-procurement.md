@@ -12,7 +12,7 @@ Government financial systems and procurement workflows often operate with fragme
 - Crypto tax payment - Systems enabling citizens and businesses to pay taxes using cryptocurrencies, with onchain verification and automated reconciliation to streamline reporting and compliance
 - Tax records & settlement - Verifiable ledgers for income, sales and property taxes to reduce error, evasion and administrative friction
 - Transparent budget execution - Real-time tracking of allocations, expenditures and variances so citizens and auditors follow funds from appropriation to execution
-- Automated UBI, entitlements & subsidies - Smart-contract-based disbursements that condition payments on verifiable criteria
+- Entitlements & subsidies - Smart-contract-based disbursements that condition payments on verifiable criteria
 - Sovereign & municipal bonds tokenized - Transparent issuance, settlement and coupon-tracking of public debt onchain
 - Onchain sovereign wealth fund - Transparent governance and real-time tracking of national asset pools
 - Public procurement ledger & smart contracts - Immutable records of tenders, bids, contracts, deliveries and payments spanning the full procurement lifecycle

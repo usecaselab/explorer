@@ -19,19 +19,18 @@ Citizens often face duplicative verification processes, long wait times, paper-b
 
 ## Projects
 
-- [Bhutan NDI](https://www.bhutanndi.com/) - National digital ID on Ethereum ([tweet)](https://x.com/AyaMiyagotchi/status/1977798764485361966)
+ - [Bhutan NDI](https://www.bhutanndi.com/) - The world's first national identity system based on Self-Sovereign Identity (SSI) technology, providing citizens with a secure digital wallet to manage their credentials and access services ([Learn more here](https://x.com/AyaMiyagotchi/status/1977798764485361966))
 - [QuarkID](https://quarkid.org/) - SSI protocol for managing essential personal documents such as birth and marriage certificates, academic credentials, and proof of income, developed by the government of Buenos Aires for use in Argentina and other South American countries
-- [Palau Digital Residency Program](https://rns.id/) - offers global citizens the ability to have a legal Palau government-issued ID
+- [Palau Digital Residency Program](https://rns.id/) - Offers global citizens the ability to have a legal Palau government-issued ID
 - [Vocdoni](https://vocdoni.io/) - Privacy-preserving digital elections
 - [LAC PropertyChain](https://blog.chromia.com/lac-propertychain-pilot-to-launch-on-chromia-in-q3/?ref=blog.chromaway.com)
 - [Chicago Cook County](https://bitcoinmagazine.com/business/chicago-s-cook-county-to-test-bitcoin-blockchain-based-public-records-1475768860)
 - [Dubai Land Department](https://dubailand.gov.ae/en/news-media/dubai-land-department-achieves-a-technical-milestone-with-the-adoption-of-blockchain-technology-in-cooperation-with-smart-dubai-and-other-partners/#/)
 - [Onchain City](https://onchain.city/) - Government services; embassy, passport, licenses, visas, insurance
-- [California DMV puts 42 million car titles on blockchain to fight fraud](https://www.reuters.com/technology/california-dmv-puts-42-million-car-titles-blockchain-fight-fraud-2024-07-30/)
+- [California DMV puts 42 million car titles on blockchain to fight fraud](https://www.reuters.com/technology/california-dmv-puts-42-million-car-titles-blockchain-fight-fraud-2024-07-30/) - California's pilot program to use blockchain technology to fight fraud in vehicle title transfers
 
 ## Resources
 
 - [BRI: Business Licensing](https://www.blockchainresearchinstitute.org/project/business-licensing-governance-for-government-blockchains/) (2018) - Identifies the benefits that blockchains can provide local authorities in accelerating the launch of new businesses, supporting entrepreneurs, and reinforcing innovation cycles
 - [BRI: India’s Land Registry on Blockchain](https://www.blockchainresearchinstitute.org/project/indias-land-registry-on-blockchain/) (2018) - UNDP in India to address property title disputes & land registry corruption
 - [Blockchain for decentralised rural development and governance](https://www.sciencedirect.com/science/article/pii/S2096720922000276) (2022) - DAOs at national and regional levels to enable transparent, participatory governance where citizens vote on development priorities, budgets, and planning decisions
-- [Information Sharing in Land Registration Using Hyperledger Fabric Blockchain](https://www.mdpi.com/2813-5288/2/2/6) (2024) - Study of blockchain's impact on land registration processes 
