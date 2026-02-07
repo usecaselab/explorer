@@ -15,7 +15,7 @@ With the rise of connected and autonomous vehicles, the requirement for audit tr
 - Mobility marketplaces - Peer-to-peer car sharing and mobility services coordinated by protocols
 - Urban mobility data networks - Shared sensor and telematics data layers that support traffic optimization, and planning
 - EV charging coordination - Interoperable systems for energy credit settlement across charging networks and grid participants
-- Parts traceability and provenance – Real-time tracking of vehicle components across manufacture, installation, servicing, and recall to improve safety and compliance
+- Parts traceability and provenance - Real-time tracking of vehicle components across manufacture, installation, servicing, and recall to improve safety and compliance
 - Digital vehicle passports - End-to-end, tamper-evident records covering manufacturing, ownership, maintenance, accidents, and recycling
 - Automated logistics payments - Verifiable location and event proofs that trigger payments or contract execution in transport and supply chains
 

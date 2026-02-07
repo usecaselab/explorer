@@ -5,24 +5,24 @@ sector: Physical
 
 ## The Opportunity
 
-Farmers and small processors operate on thin margins and slow payments, pre-financing inputs without reliable ways to prove weights, grades, residues, or animal welfare at sale; lab results and inspections rarely stay attached to lots. Traceability breaks at handoffs, as lot IDs change, temperature data isn’t captured end-to-end, and records sit in PDFs and supplier portals. This complexity makes recalls, substitutions, and adulteration (e.g., diluted oils, mislabeled seafood) hard to resolve. 
+Farmers and small processors operate on thin margins and slow payments, pre-financing inputs without reliable ways to prove weights, grades, residues, or animal welfare at sale; lab results and inspections rarely stay attached to lots. Traceability breaks at handoffs, as lot IDs change, temperature data isn't captured end-to-end, and records sit in PDFs and supplier portals. This complexity makes recalls, substitutions, and adulteration (e.g., diluted oils, mislabeled seafood) hard to resolve.
 
 In the middle, grocers and restaurants juggle siloed POS, inventory, and supplier systems&mdash;leading to out-of-stocks, shrink, rebate, and chargeback disputes, and weak links between SKUs/menus and verified origin, allergens, or nutrition. Consumers face labels that are hard to verify and a shelf bias toward ultra-processed, low-cost products because there’s no consistent way to price, reward, and replenish for proven freshness and healthier composition.
 
 ## Ideas
 
-- Food provenance and traceability – Systems that track food from production to consumption to verify origin, safety, and authenticity
-- Tokenized agricultural assets – Onchain representations of crops, land, and livestock that enable financing, trading, and fractional ownership
-- Onchain farmer finance and insurance – Credit, microloans, and parametric insurance products tailored to farmers and triggered by verifiable data
-- Regenerative practice incentives – Reward mechanisms that compensate farmers for sustainable and regenerative agricultural behaviors
-- Cooperative and local marketplaces – Community-owned platforms that let producers sell directly and keep more economic value within local food systems
+- Food provenance and traceability - Systems that track food from production to consumption to verify origin, safety, and authenticity
+- Tokenized agricultural assets - Onchain representations of crops, land, and livestock that enable financing, trading, and fractional ownership
+- Onchain farmer finance and insurance - Credit, microloans, and parametric insurance products tailored to farmers and triggered by verifiable data
+- Regenerative practice incentives - Reward mechanisms that compensate farmers for sustainable and regenerative agricultural behaviors
+- Cooperative and local marketplaces - Community-owned platforms that let producers sell directly and keep more economic value within local food systems
 
 ## Projects
 
 - [Justtoken](https://www.justoken.com/) - Tokenizing agricultural outputs (Agrotoken) and arable land (Landtoken)
 - [Farmsent](https://www.farmsent.io/) - Onchain marketplace improving farmer access to trade and capital
 - [EthicHub](https://www.ethichub.com/en) - Crowdlending platform connecting global lenders to small farmers
-- [Maalexi](https://www.maalexi.ai/) - Wholesale trade for agri-products 
+- [Maalexi](https://www.maalexi.ai/) - Wholesale trade for agri-products
 - [Mercy Corps regenerative agriculture pilot](https://www.mercycorps.org/blog/pilot-adoption-regenerative-agriculture) - Loyalty rewards for sustainable fertilizer use
 - [Peach Tycoon](https://peachtycoon.com/) - Tokenizing peach trees, allowing farmers to sell future produce rights directly to consumers
 - [SourceLink](https://sourcelink.io/) - Food supply chain traceability system

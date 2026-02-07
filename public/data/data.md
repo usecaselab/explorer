@@ -5,14 +5,14 @@ sector: Digital
 
 ## The Opportunity
 
-Data already trades through brokers, ad-tech exchanges, and bespoke deals between publishers and buyers (i.e., AI teams, marketers, hedge funds), but the market is opaque and one-sided. Buyers can’t reliably check quality, coverage, provenance, or freshness before paying; sellers lose control once data leaves, while intermediaries capture margin and mask license terms. Deals hinge on NDAs and custom contracts, making due diligence, privacy and sectoral compliance (often cross-border), and audits slow and costly. Leakage and quiet reselling are common. With no portable licenses, usage metering, or enforceable royalties, most participants either over-share or don’t share at all,leaving valuable data underused.
+Data already trades through brokers, ad-tech exchanges, and bespoke deals between publishers and buyers (i.e., AI teams, marketers, hedge funds), but the market is opaque and one-sided. Buyers can’t reliably check quality, coverage, provenance, or freshness before paying; sellers lose control once data leaves, while intermediaries capture margin and mask license terms. Deals hinge on NDAs and custom contracts, making due diligence, privacy and sectoral compliance (often cross-border), and audits slow and costly. Leakage and quiet reselling are common. With no portable licenses, usage metering, or enforceable royalties, most participants either over-share or don't share at all, leaving valuable data underused.
 
 ## Ideas
 
 - Personal data vaults - User-controlled data stores that allow granular consent, selective disclosure, and optional monetization without surrendering raw data
 - Data marketplace - Platforms where data access is governed by smart contracts, enabling licensing, metering, revocation, royalties, and automatic revenue splits
-- Tokenized data assets – Data exposed as onchain assets (e.g., streams, APIs, models, analytics outputs) that can be priced, combined, and traded like financial instruments
-- Fact checking oracles – Incentivize truth discovery through cryptoeconomic incentives
+- Tokenized data assets - Data exposed as onchain assets (e.g., streams, APIs, models, analytics outputs) that can be priced, combined, and traded like financial instruments
+- Fact checking oracles - Incentivize truth discovery through cryptoeconomic incentives
 
 ## Projects
 

@@ -9,12 +9,12 @@ Provisioning and managing IT infrastructure&mdash;storage, compute, bandwidth, a
 
 ## Ideas
 
-- Decentralized compute marketplaces – On-demand markets for GPUs and high-performance compute that let providers sell capacity directly to users
-- Open connectivity infrastructure – Mesh networks, shared spectrum, and satellite links that reduce reliance on incumbent telecom operators
-- Decentralized VPNs and bandwidth sharing – Peer-to-peer networks where participants provide and consume bandwidth without centralized gateways
-- Token-incentivized data services – Streaming, video, sensor, and mapping services funded and operated through cryptoeconomic incentives rather than platform monopolies
-- Inter-carrier settlement and provisioning – Shared ledgers for clearing, settlement, and coordination between networks and infrastructure providers
-- Real-time resource pricing – Pay-per-use and priority-access mechanisms for scarce resources like bandwidth, compute, or storage under contention
+- Decentralized compute marketplaces - On-demand markets for GPUs and high-performance compute that let providers sell capacity directly to users
+- Open connectivity infrastructure - Mesh networks, shared spectrum, and satellite links that reduce reliance on incumbent telecom operators
+- Decentralized VPNs and bandwidth sharing - Peer-to-peer networks where participants provide and consume bandwidth without centralized gateways
+- Token-incentivized data services - Streaming, video, sensor, and mapping services funded and operated through cryptoeconomic incentives rather than platform monopolies
+- Inter-carrier settlement and provisioning - Shared ledgers for clearing, settlement, and coordination between networks and infrastructure providers
+- Real-time resource pricing - Pay-per-use and priority-access mechanisms for scarce resources like bandwidth, compute, or storage under contention
 
 ## Projects
 

@@ -10,10 +10,10 @@ Power systems are shifting to renewables and electrification (e.g., rooftop sola
 ## Ideas
 
 - Peer-to-peer energy markets - Local energy trading and microgrids that let participants buy, sell, and balance electricity directly with one another
-- Tokenized renewable financing – Onchain funding models for solar, storage, and community energy projects that track ownership, cash flows, and performance
-- Demand coordination – Incentive systems that reward households and businesses for shifting load, sharing energy, and smoothing demand peaks
-- Carbon and sustainability accounting – Digital measurement and tracking of emissions, renewable generation, and environmental impact tied to energy production
-- Distributed grid automation – Decentralized control systems for monitoring and coordinating grid assets to reduce outages and cyber-physical vulnerabilities
+- Tokenized renewable financing - Onchain funding models for solar, storage, and community energy projects that track ownership, cash flows, and performance
+- Demand coordination - Incentive systems that reward households and businesses for shifting load, sharing energy, and smoothing demand peaks
+- Carbon and sustainability accounting - Digital measurement and tracking of emissions, renewable generation, and environmental impact tied to energy production
+- Distributed grid automation - Decentralized control systems for monitoring and coordinating grid assets to reduce outages and cyber-physical vulnerabilities
 
 ## Projects
 
