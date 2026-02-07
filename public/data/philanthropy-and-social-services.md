@@ -15,7 +15,7 @@ Mobilizing resources for aid and social support is often slow, opaque and costly
 - Identity & banking for displaced people - Portable identities and wallet access for refugees, migrant workers or displaced communities, enabling access to services and funding
 - Outcome-based funding - Smart contracts that release funds only when pre-defined metrics or milestones are met
 - Decentralized coordination for social-services actors - Infrastructure enabling NGOs, volunteers and communities to coordinate service delivery, funding and verification
-- UBI - Direct-to-recipient distribution mechanisms that provided recurring, automated universal basic income payments, using decentralized identity and smart contracts to reduce adminsitrative overhead
+- UBI - Direct-to-recipient distribution mechanisms that provide recurring, automated universal basic income payments, using decentralized identity and smart contracts to reduce administrative overhead
 
 ## Projects
 
@@ -26,7 +26,7 @@ Mobilizing resources for aid and social support is often slow, opaque and costly
 - [The Giving Block](https://thegivingblock.com/) - Platform facilitating crypto donations for nonprofits
 - [TEA](https://tea.xyz/) - Funding open-source social-impact projects
 - [Ukraine DAO](https://x.com/Ukraine_DAO) - NFT auction to raise funds
-- [Iran Unchained](https://x.com/UnchainIran) - NGO focused on Iranian social movements using onchain tooling 
+- [Iran Unchained](https://x.com/UnchainIran) - NGO focused on Iranian social movements using onchain tooling
 
 ## Resources
 

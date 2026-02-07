@@ -26,7 +26,7 @@ Retail and e-commerce workflows require stitching together product sourcing, inv
 - [Spritz](https://x.com/spritzfinance) - Card and bill-pay leveraging crypto rails
 - [Blackbird](https://x.com/blackbird_xyz) - Restaurant loyalty system
 - [Hopscotch](https://hopscotch.trade/) - Facebook marketplace alternative that uses onchain escrow and encrypted messaging
-- [Slice](https://slice.so/) - Onchain commerce protocol that connect merchants and buyers without centralized intermediaries
+- [Slice](https://slice.so/) - Onchain commerce protocol that connects merchants and buyers without centralized intermediaries
 
 ## Resources
 

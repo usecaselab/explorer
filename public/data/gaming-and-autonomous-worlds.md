@@ -1,5 +1,5 @@
 ---
-title: Gaming and Autonomous Worlds
+title: Gaming & Autonomous Worlds
 sector: Digital
 ---
 
@@ -7,7 +7,7 @@ sector: Digital
 
 Most digital games today depend on closed servers and proprietary economies that restrict player control, transparency, and long-term viability. Items, progress, and in-game currencies can vanish when platforms change business models or shut down. Anti-cheat systems are opaque and often ineffective, and “open modding” rarely extends to real ownership, true creator monetization, or cross-platform interoperability. As AI-driven agents, community-run servers, and hybrid game worlds emerge, the traditional server-centric model struggles to support fairness, state sharing, and durable worlds beyond a single operator.
 
-The broader concern is that many blockchain gaming efforts today lean speculative or extractive (play-to-earn models) rather than delivering positive-sum outcomes or coordination-enhancing gameplay.
+The broader concern is that many blockchain gaming efforts today are speculative or extractive (play-to-earn models) rather than delivering positive-sum outcomes or coordination-enhancing gameplay.
 
 ## Ideas
 

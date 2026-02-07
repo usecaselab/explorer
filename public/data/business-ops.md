@@ -13,7 +13,7 @@ At the same time, advances in AI create the potential for organizations that cou
 
 - Cap Tables & Equity - Verifiable, onchain ownership records from day one (issuance, vesting, transfers)
 - Roles & Permissions - Programmable, wallet-based authority systems enforcing who can move funds or sign agreements; onchain identifiers to represent employees/members
-- Treasury Management - Stablecoin-based treasury with yield strategies, automated reporting, and compliance hooks.
+- Treasury Management - Stablecoin-based treasury with yield strategies, automated reporting, and compliance hooks
 - Payroll & Invoicing - Instant, programmable global payouts with automated tax/KYC reporting
 - Revenue & Profit Splits - Automated distributions to partners, employees, and investors tied to income events; tokenized revenue/profits; tokenize receivables/payables
 - Commercial Agreements - Legal smart contracts embedding milestones, royalties, licensing, rebates, volume discounts, performance incentives, warranties, expiries, dispute handling directly into execution logic
@@ -23,7 +23,7 @@ At the same time, advances in AI create the potential for organizations that cou
 
 ## Projects
 
-- [Mezzanine](https://www.mezzanine.xyz/) - Modular, self-custody finance OS for companies. Provides payments, payroll, equity, accounting, and permissions in one programmable platform.
+- [Mezzanine](https://www.mezzanine.xyz/) - Modular, self-custody finance OS for companies providing payments, payroll, equity, accounting, and permissions in one programmable platform
 - [Splits Teams](https://splits.org/teams/) - Programmatic profit/revenue sharing and automated team payouts
 - [Stackup](https://www.stackup.fi/) - Bank ↔ wallet bridge with batch payments, stablecoin yield, audit trails, and real-time cashflow controls
 - [Symfoni](https://medium.com/blockchangers/how-norway-is-using-ethereum-arbitrum-for-shareholder-management-500e59c586d3) - Worked with Norwegian business registry on a pilot exploring the use of Arbitrum to manage the captables of unlisted companies
@@ -37,8 +37,8 @@ At the same time, advances in AI create the potential for organizations that cou
 - [Wrappr](https://www.wrappr.wtf/) - Tokenized wrapper for DAOs and onchain organizations
 - [MetaLex](https://metalex.tech/) - Investment agreements, legal frameworks, and smart contracts for "cybernetic organizations"
 - [LexTek](https://lextek.eth.limo/) - Onchain legal automation templates
-- [Request Finance](https://www.request.finance/) - Accounts payable, accounts receivable, and accounting.
-- [Smart Invoice](https://www.smartinvoice.xyz/) - Invoicing, escrow, and arbitration.
+- [Request Finance](https://www.request.finance/) - Accounts payable, accounts receivable, and accounting
+- [Smart Invoice](https://www.smartinvoice.xyz/) - Invoicing, escrow, and arbitration
 
 ## Resources
 

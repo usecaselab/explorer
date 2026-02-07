@@ -5,7 +5,7 @@ sector: Consumer
 
 ## The Opportunity
 
-Cultural production and distribution is bottlenecked by centralized intermediaries (studios, labels, ticketing giants, streaming platforms) that capture outsized value while creators and fans face high costs, limited transparency, and restricted access. Piracy, fake tickets, opaque royalties, and inequitable revenue splits undermine trust and sustainability. 
+Cultural production and distribution is bottlenecked by centralized intermediaries (studios, labels, ticketing giants, streaming platforms) that capture outsized value while creators and fans face high costs, limited transparency, and restricted access. Piracy, fake tickets, opaque royalties, and inequitable revenue splits undermine trust and sustainability.
 
 ## Ideas
 
@@ -21,7 +21,7 @@ Cultural production and distribution is bottlenecked by centralized intermediari
 - [Soneium](https://soneium.org/) - Sony’s L2 focused on royalty automation & creator-owned IP ([Explainer article](https://enterpriseonchain.substack.com/p/sonys-entertainment-layer-2-explored))
 - Events & Ticketing
     - [Events by Unlock](https://app.unlock-protocol.com/event) - NFT-based event ticketing and memberships
-    - [Guts Tickets](https://guts.tickets/) - NFT ticketing platform 
+    - [Guts Tickets](https://guts.tickets/) - NFT ticketing platform
     - [Tokenproof](https://tokenproof.xyz/) - Token-gated ticketing and access for events
     - [Onopen](https://onopen.xyz/) - Ticketing and memberships
     - [itm.studio](https://itm.studio/) - Experiences
@@ -50,4 +50,4 @@ Cultural production and distribution is bottlenecked by centralized intermediari
 
 - [BRI: Web3 and the Music Industry](https://www.blockchainresearchinstitute.org/project/web-3-and-the-music-industry/) (2022) - Explores blockchain’s potential for music rights, royalties, and fan engagement
 - [IP Protocols Part I: Why the next MARVEL might start as an NFT collection](https://kanfa.macbudkowski.com/ip-protocols-part-1-1) (2023) - Essay on how blockbuster IP could use NFTs to create the world via fan engagement
-- [How exactly do music NFTs plan to change the music industry?](https://kanfa.macbudkowski.com/music-nfts) (2023) - Essay on how music NFTs could increase musician revenue and fan engagement 
+- [How exactly do music NFTs plan to change the music industry?](https://kanfa.macbudkowski.com/music-nfts) (2023) - Essay on how music NFTs could increase musician revenue and fan engagement

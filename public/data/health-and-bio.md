@@ -9,20 +9,20 @@ Healthcare suffers from siloed data, opaque supply chains, and misaligned incent
 
 ## Ideas
 
-- Patient-owned health records – Systems that give patients direct control over their medical data while enabling secure sharing across providers
-- Pharmaceutical traceability and marketplaces – End-to-end tracking of drugs to prevent counterfeits and enable transparent sourcing and distribution
-- Wearables and health data exchanges – Platforms that let individuals share fitness and biometric data and receive compensation or benefits in return
-- Medical attestations and verification – Frameworks for verifying test results, clinical trial data, and peer review outcomes with tamper-evident records
-- Decentralized clinical trials – Crowdsourced, token-incentivized trials that use verifiable data collection and AI-assisted analysis
-- Biotech IP tokenization – Onchain representations of molecules, patents, or research outputs to enable new financing and licensing models
-- Programmable health insurance – Automated claims processing, fraud detection, and transparent coverage rules enforced by smart contracts
+- Patient-owned health records - Systems that give patients direct control over their medical data while enabling secure sharing across providers
+- Pharmaceutical traceability and marketplaces - End-to-end tracking of drugs to prevent counterfeits and enable transparent sourcing and distribution
+- Wearables and health data exchanges - Platforms that let individuals share fitness and biometric data and receive compensation or benefits in return
+- Medical attestations and verification - Frameworks for verifying test results, clinical trial data, and peer review outcomes with tamper-evident records
+- Decentralized clinical trials - Crowdsourced, token-incentivized trials that use verifiable data collection and AI-assisted analysis
+- Biotech IP tokenization - Onchain representations of molecules, patents, or research outputs to enable new financing and licensing models
+- Programmable health insurance - Automated claims processing, fraud detection, and transparent coverage rules enforced by smart contracts
 
 ## Projects
 
 - [Maharashtra COVID-19 certificates](https://blockchain.meity.gov.in/index.php/maharashtra-govt-onboards-blockchain-tech-for-issuing-covid-19-test-certificates) - Government-issued onchain COVID-19 test certificates
 - [OriginTrail](https://origintrail.io/) - Decentralized Knowledge Graph for medical data, counterfeit prevention, and medicine traceability, with a case study with BSI and NGOs on AidTrust for donated medicines
 - [bio.xyz](https://www.bio.xyz/) – Biotech DAO launchpad
-- [Molecule](https://molecule.to/) - Marketplace for biopharma IP and research, enabling IP-NFTs and collaborative drug discovery   
+- [Molecule](https://molecule.to/) - Marketplace for biopharma IP and research, enabling IP-NFTs and collaborative drug discovery
 - [HairDAO](https://www.hairdao.xyz/) - Biotech community DAO for hair loss therapies
 - [AminoChain](https://aminochain.io/) - Community-owned and decentralized biobank that streamlines biosample procurement, safeguards data, and accelerates ethical breakthroughs in healthcare
 
@@ -35,7 +35,7 @@ Healthcare suffers from siloed data, opaque supply chains, and misaligned incent
 - [Care4U: Integrated healthcare systems based on blockchain](https://www.sciencedirect.com/science/article/pii/S209672092300026X) (2023) - Blockchain + IoMT system for secure home monitoring during COVID
 - [Hyperledger Fabric platform for healthcare trust relations](https://www.sciencedirect.com/science/article/pii/S2096720923000313) (2023) - Framework for verifiable professional credentials and patient authentication
 - [Privacy-preserving pathological data sharing](https://www.sciencedirect.com/science/article/pii/S2096720924000174) (2024) - Uses re-encryption techniques for secure multi-party pathology data exchange
-- [Decision Model to Design Trust-Focused and Blockchain-Based Health Data Management Applications](https://www.mdpi.com/2813-5288/2/2/5) (2024) - Decision model for designing trust-focused, blockchain-based health data management applications 
+- [Decision Model to Design Trust-Focused and Blockchain-Based Health Data Management Applications](https://www.mdpi.com/2813-5288/2/2/5) (2024) - Decision model for designing trust-focused, blockchain-based health data management applications
 - [SSI-MedRx: Fraud-resilient healthcare system](https://www.sciencedirect.com/science/article/pii/S2096720924000551) (2025) - Blockchain + SSI framework to combat billing fraud, opioid overprescription, and identity theft
 - [Blockchain-based Healthcare Information Exchange System](https://www.sciencedirect.com/science/article/pii/S2096720924000617) (2025) - Hybrid blockchain + ontology system enabling secure, cross-institutional patient data exchange
 - [Blockchain and InterPlanetary Framework for Decentralized and Secure Electronic Health Record Management](https://www.mdpi.com/2813-5288/3/4/12) (2025) - Blockchain + IPFS framework for decentralized and secure electronic health record management

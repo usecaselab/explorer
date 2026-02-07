@@ -33,4 +33,4 @@ Blockchain-based insurance research confirms that high transaction costs, trust 
 - [Transforming the Insurance Industry with Blockchain and Smart Contracts](https://oliverbodemer.medium.com/transforming-the-insurance-industry-with-blockchain-and-smart-contracts-enhancing-efficiency-1ede7958058c) (2023) - Scientific overview of use cases and technology challenges in insurance operations
 - [Blockchain in Insurance: Risks and Opportunities](https://www.mapfre.com/en/insights/innovation/blockchain-in-insurance-risks-and-opportunities/) (2023) - Report on how blockchain supports peer-to-peer risk-sharing and transparent claims
 - [Collaborative and Parametric Insurance on the Ethereum Blockchain](https://arxiv.org/abs/2412.05321) (2024) - Tokenized surpluses, voting and smart-contract insurance pools
-- [Consensys - Blockchain in Insurance](https://consensys.io/blockchain-use-cases/finance/insurance) - Overview of blockchain in insurance 
+- [Consensys - Blockchain in Insurance](https://consensys.io/blockchain-use-cases/finance/insurance) - Overview of blockchain in insurance

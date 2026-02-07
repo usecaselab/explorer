@@ -19,7 +19,7 @@ Digital advertising is dominated by centralized platforms that control audience 
 - [The Miracle](https://www.themiracle.io/) - Target & activate crypto users
 - [EarnOS](https://earnos.com/) - Ad platform integrating Web3 wallets and tokenized rewards
 - [MadHive](https://www.madhive.com/about-us) - Programmatic ad solutions with blockchain components
-- [EthereumAds](https://ethereumads.com/) - Lets web site operators sell advertising space
+- [EthereumAds](https://ethereumads.com/) - Lets website operators sell advertising space
 - [AdLedger](https://adledger.org/) - Blockchain consortium for advertising transparency
 - [Brave](https://brave.com/) - Pays users for their attention to advertisements and users can pay publishers to support them
 

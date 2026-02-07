@@ -33,11 +33,11 @@ Small and medium enterprises (SMEs) are underserved by traditional finance: cred
 - [Goldfinch Prime](https://goldfinch.finance/) - Tokenized private credit
 - [Jia](https://www.jia.xyz/) - SME loans with tokenized yield-sharing
 - [Maple Finance](https://maple.finance/app) - Decentralized credit marketplace
-- [Filigreen](https://filigreen.org/) - Community bank for DAOs (Josh Tan)
+- [Filigreen](https://filigreen.org/) - Community bank for DAOs
 - [Fairmint](https://www.fairmint.com/) - Equity crowdfunding platform
 - [CrowdFi](https://crowdfi.withfabric.xyz/) - Decentralized crowdfunding rails
 - [Quadratic Accelerator](https://x.com/theqacc) - Bonding curves plus quadratic funding
-- [Street.app](http://Street.app) - Partial equity tokenization
+- [Street.app](https://street.app) - Partial equity tokenization
 - [Superstate](https://superstate.com/) - Tokenized shares
 - [Ondo](https://app.ondo.finance/) - Tokenized institutional real-world assets
 - [Legion](https://legion.cc/) - Syndicated investment
