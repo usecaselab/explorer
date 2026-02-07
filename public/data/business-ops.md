@@ -39,6 +39,7 @@ At the same time, advances in AI create the potential for organizations that cou
 - [LexTek](https://lextek.eth.limo/) - Onchain legal automation templates
 - [Request Finance](https://www.request.finance/) - Accounts payable, accounts receivable, and accounting
 - [Smart Invoice](https://www.smartinvoice.xyz/) - Invoicing, escrow, and arbitration
+- [Loop Crypto](https://www.loopcrypto.xyz/) - Subscription billing, invoicing, and recurring payments
 
 ## Resources
 

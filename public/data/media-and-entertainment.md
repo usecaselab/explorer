@@ -25,7 +25,7 @@ Cultural production and distribution is bottlenecked by centralized intermediari
     - [Tokenproof](https://tokenproof.xyz/) - Token-gated ticketing and access for events
     - [Onopen](https://onopen.xyz/) - Ticketing and memberships
     - [itm.studio](https://itm.studio/) - Experiences
-    - [KYD Labs](https://kydlabs.com/) - Concert ticketing and engagement ([Article](https://x.com/KYDLabs/status/1918753011603841426))
+    - [KYD Labs](https://kydlabs.com/) - Ticketing platform where venues access USDC working capital without surrendering fan data, with a factoring protocol for investors to lend to venues and earn yield from ticket sales
 - Film
     - [Shibuya](https://www.shibuya.film/) - Film crowdfunding and participatory production
     - [Film3](https://x.com/501cfilm3) - DAO-based film projects
