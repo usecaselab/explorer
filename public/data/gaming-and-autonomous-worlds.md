@@ -1,6 +1,6 @@
 ---
-title: Gaming & Autonomous Worlds
-sector: Digital
+title: Gaming and Autonomous Worlds
+sector: Unknown
 ---
 
 ## The Opportunity

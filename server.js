@@ -103,15 +103,27 @@ function parseMarkdownFile(filePath, id) {
     if (header.startsWith('the opportunity')) {
       problemStatement = sectionContent.trim();
     } else if (header.startsWith('ideas')) {
-      // Parse ideas with format: - idea name - description
+      // Parse ideas with format: - idea name - description OR plain bullet points
       sectionContent.split('\n').forEach(line => {
-        // Match format: - idea name - description (use " - " as delimiter to handle hyphens in names)
-        const match = line.match(/^-\s+(.+?)\s+-\s+(.+)$/);
+        const trimmedLine = line.trim();
+        if (!trimmedLine || !trimmedLine.startsWith('-')) return;
+
+        // First try format: - idea name - description (use " - " as delimiter)
+        const match = trimmedLine.match(/^-\s+(.+?)\s+-\s+(.+)$/);
         if (match) {
           ideas.push({
             title: match[1].trim(),
             description: match[2].trim()
           });
+        } else {
+          // Fallback: plain bullet point without separator
+          const plainMatch = trimmedLine.match(/^-\s+(.+)$/);
+          if (plainMatch && plainMatch[1].trim()) {
+            ideas.push({
+              title: plainMatch[1].trim(),
+              description: ''
+            });
+          }
         }
       });
     } else if (header.startsWith('projects')) {
@@ -178,10 +190,11 @@ app.get('/api/categories', (req, res) => {
   for (const [category, domainTitles] of Object.entries(DOMAIN_CATEGORIES)) {
     categories[category] = domainTitles.map(title => {
       const usecase = usecases.find(uc => uc.title === title);
+      const problemStatement = usecase?.problemStatement || '';
       return {
         id: usecase?.id || title.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
         title: title,
-        problemStatement: usecase?.problemStatement?.substring(0, 200) + '...' || '',
+        problemStatement: problemStatement ? problemStatement.substring(0, 200) + '...' : '',
         ideasCount: usecase?.ideas?.length || 0,
         projectsCount: usecase?.projects?.length || 0,
         resourcesCount: usecase?.resources?.length || 0
