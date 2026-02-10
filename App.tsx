@@ -102,13 +102,6 @@ const HomeView: React.FC<HomeViewProps> = ({
 
         <div className="relative w-full flex flex-col items-center pt-12 md:pt-20 pb-10 px-4 overflow-visible">
 
-          {/* Logo */}
-          <div className="mb-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <a href="https://www.usecaselab.org/" target="_blank" rel="noopener noreferrer">
-              <Logo size="lg" showText />
-            </a>
-          </div>
-
           {/* Tagline */}
           <p className="text-xl md:text-2xl text-gray-800 font-bold max-w-2xl mx-auto leading-relaxed text-center mb-10 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
             Discover real-world Ethereum use cases across <span className="text-ethBlue">30+ domains</span>
@@ -198,13 +191,6 @@ const HomeView: React.FC<HomeViewProps> = ({
 
       {/* Directory Section */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-12 md:py-16">
-        <h2 className="text-center text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
-          Explore by Category
-        </h2>
-        <p className="text-center text-gray-500 mb-10 text-lg">
-          Click any domain to dive deeper
-        </p>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400">
           {Object.entries(DOMAIN_CATEGORIES).map(([category, items], idx) => {
             const config = categoryConfig[category] || { icon: "📁", gradient: "from-gray-500 to-gray-600", iconBg: "bg-gray-100", shadow: "shadow-gray-200" };
