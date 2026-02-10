@@ -1,5 +1,5 @@
 ---
-title: Retail & E-Commerce
+title: Retail & eCommerce
 sector: Consumer
 ---
 
