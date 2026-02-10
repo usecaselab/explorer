@@ -104,7 +104,9 @@ const HomeView: React.FC<HomeViewProps> = ({
 
           {/* Logo */}
           <div className="mb-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <Logo size="lg" showText />
+            <a href="https://www.usecaselab.org/" target="_blank" rel="noopener noreferrer">
+              <Logo size="lg" showText />
+            </a>
           </div>
 
           {/* Tagline */}
