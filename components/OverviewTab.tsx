@@ -121,7 +121,7 @@ const OverviewTab: React.FC<OverviewTabProps> = ({ data }) => {
         <ul className="space-y-4 pl-2">
           {data.resources.map((res, idx) => (
             <li key={idx} className="group">
-              <a href={res.link} className="flex flex-col gap-1 hover:translate-x-2 transition-transform">
+              <a href={res.link} target="_blank" rel="noopener noreferrer" className="flex flex-col gap-1 hover:translate-x-2 transition-transform">
                 <div className="font-bold text-blue-600 text-lg flex items-center gap-2 underline decoration-2 underline-offset-2 decoration-blue-200 group-hover:decoration-blue-600">
                   {res.title} {res.year && <span className="text-gray-500 no-underline text-base">({res.year})</span>}
                   <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
