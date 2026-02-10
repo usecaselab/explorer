@@ -96,7 +96,7 @@ export const parseDomainMarkdown = (markdown: string, existingData: DomainData):
     } else if (header.startsWith('ideas')) {
       // Parse ideas with format: - idea name - description
       allIdeas = [...allIdeas, ...parseIdeasBulletFormat(content)];
-    } else if (header.startsWith('projects')) {
+    } else if (header.startsWith('examples')) {
       // Parse projects with format: - [name](url) - description
       allProjects = [...allProjects, ...parseProjectsBulletFormat(content)];
     } else if (header.startsWith('resources')) {

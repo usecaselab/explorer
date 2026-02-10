@@ -14,7 +14,7 @@ IoT networks&mdash;spanning smart wearables, homes, vehicles, factories, and cit
 - Machine-to-machine payments - Autonomous payment rails that let devices pay each other for services like bandwidth, energy, compute, or maintenance in real time
 - Wearables & personal sensors - Verifiable device identity and signed telemetry with consent-based sharing (to apps, clinicians, insurers), optional pay-for-data incentives or premium discounts
 
-## Projects
+## Examples
 
 - [Ethereum Reality Service](https://www.ers.to/) - Linking physical chips to onchain identifiers
 - [ERC-4519: Non-Fungible Tokens Tied to Physical Assets](https://eips.ethereum.org/EIPS/eip-4519)

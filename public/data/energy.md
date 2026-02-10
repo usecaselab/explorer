@@ -15,7 +15,7 @@ Power systems are shifting to renewables and electrification (e.g., rooftop sola
 - Carbon and sustainability accounting - Digital measurement and tracking of emissions, renewable generation, and environmental impact tied to energy production
 - Distributed grid automation - Decentralized control systems for monitoring and coordinating grid assets to reduce outages and cyber-physical vulnerabilities
 
-## Projects
+## Examples
 
 - [Glow](https://glow.org/) - A decentralized protocol designed to subsidize the production of carbon-neutral solar energy by replacing traditional carbon credits with a system of economic incentives for solar farms
 - [Daylight](https://godaylight.com/) - A decentralized energy marketplace that allows individuals and businesses to buy and sell renewable energy directly from each other

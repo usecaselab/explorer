@@ -17,7 +17,7 @@ Healthcare suffers from siloed data, opaque supply chains, and misaligned incent
 - Biotech IP tokenization - Onchain representations of molecules, patents, or research outputs to enable new financing and licensing models
 - Programmable health insurance - Automated claims processing, fraud detection, and transparent coverage rules enforced by smart contracts
 
-## Projects
+## Examples
 
 - [Maharashtra COVID-19 certificates](https://blockchain.meity.gov.in/index.php/maharashtra-govt-onboards-blockchain-tech-for-issuing-covid-19-test-certificates) - Government-issued onchain COVID-19 test certificates
 - [OriginTrail](https://origintrail.io/) - Decentralized Knowledge Graph for medical data, counterfeit prevention, and medicine traceability, with a case study with BSI and NGOs on AidTrust for donated medicines

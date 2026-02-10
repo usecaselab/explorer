@@ -15,7 +15,7 @@ Travel is held back by fragmented identity and compliance checks, siloed reserva
 - Parametric travel insurance - Automatic insurance payouts triggered by verifiable events such as delays, cancellations, or lost baggage
 - Tokenized travel inventory - Onchain representations of tickets and reservations that enable resale, bundling, and dynamic packaging
 
-## Projects
+## Examples
 
 - [Dtravel](https://www.dtravel.com/) - DAO‑aligned vacation rentals with onchain payments
 - [Buk Protocol](https://bukprotocol.ai/) - Tokenized hotel inventory and bookings
