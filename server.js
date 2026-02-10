@@ -64,11 +64,32 @@ const DOMAIN_CATEGORIES = {
   ]
 };
 
+// Decode common HTML entities to their character equivalents
+function decodeHtmlEntities(text) {
+  const entities = {
+    '&mdash;': '\u2014',
+    '&ndash;': '\u2013',
+    '&amp;': '&',
+    '&lt;': '<',
+    '&gt;': '>',
+    '&quot;': '"',
+    '&#39;': "'",
+    '&apos;': "'",
+    '&hellip;': '\u2026',
+    '&lsquo;': '\u2018',
+    '&rsquo;': '\u2019',
+    '&ldquo;': '\u201C',
+    '&rdquo;': '\u201D',
+  };
+  return text.replace(/&(?:mdash|ndash|amp|lt|gt|quot|apos|hellip|lsquo|rsquo|ldquo|rdquo|#39);/g,
+    (match) => entities[match] || match);
+}
+
 function parseMarkdownFile(filePath, id) {
   const content = readFileSync(filePath, 'utf8');
   // Store raw markdown
   markdownContent[id] = content;
-  const text = content.replace(/\r\n/g, '\n');
+  const text = decodeHtmlEntities(content.replace(/\r\n/g, '\n'));
 
   // Parse YAML frontmatter
   let title = id;

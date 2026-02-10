@@ -58,11 +58,32 @@ export const renderMarkdownLinks = (text: string): (string | React.ReactElement)
   return parts.length > 0 ? parts : [text];
 };
 
+// Decode common HTML entities to their character equivalents
+const decodeHtmlEntities = (text: string): string => {
+  const entities: Record<string, string> = {
+    '&mdash;': '\u2014',
+    '&ndash;': '\u2013',
+    '&amp;': '&',
+    '&lt;': '<',
+    '&gt;': '>',
+    '&quot;': '"',
+    '&#39;': "'",
+    '&apos;': "'",
+    '&hellip;': '\u2026',
+    '&lsquo;': '\u2018',
+    '&rsquo;': '\u2019',
+    '&ldquo;': '\u201C',
+    '&rdquo;': '\u201D',
+  };
+  return text.replace(/&(?:mdash|ndash|amp|lt|gt|quot|apos|hellip|lsquo|rsquo|ldquo|rdquo|#39);/g,
+    (match) => entities[match] || match);
+};
+
 export const parseDomainMarkdown = (markdown: string, existingData: DomainData): DomainData => {
   const newData = { ...existingData };
 
-  // Normalize newlines
-  const text = markdown.replace(/\r\n/g, '\n');
+  // Normalize newlines and decode HTML entities
+  const text = decodeHtmlEntities(markdown.replace(/\r\n/g, '\n'));
 
   // Parse YAML frontmatter for title
   const frontmatterMatch = text.match(/^---\n([\s\S]*?)\n---/);
