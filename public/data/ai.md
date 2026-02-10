@@ -19,26 +19,15 @@ AI systems are increasingly powerful but remain opaque, centralized, and control
 
 ## Examples
 
-- Compute Networks
-    - [Akash](https://akash.network/) - Decentralized cloud compute marketplace
-    - [Render Network](https://rendernetwork.com/) - Distributed GPU rendering and compute
-    - [io.net](https://io.net/) - Decentralized GPU network for ML workloads
-    - [Gensyn](https://www.gensyn.ai/) - Decentralized machine learning compute protocol
-    - [Together AI](https://www.together.ai/) - Decentralized AI cloud
-- Agents
-    - [Virtuals Protocol](https://virtuals.io/) - AI agent creation and tokenization
-    - [ai16z](https://ai16z.ai/) - AI-powered investment DAO
-    - [Theoriq](https://www.theoriq.ai/) - AI agent coordination protocol
-    - [Autonolas](https://www.autonolas.network/) - Autonomous agent services
-    - [Fetch.ai](https://fetch.ai/) - Autonomous economic agents
-- Verifiable AI
-    - [Modulus Labs](https://www.modulus.xyz/) - ZK proofs for ML inference
-    - [EZKL](https://ezkl.xyz/) - Zero-knowledge proofs for neural networks
-    - [Giza](https://www.gizatech.xyz/) - Verifiable ML inference on Starknet
-- Data & Model Marketplaces
-    - [Ocean Protocol](https://oceanprotocol.com/) - Decentralized data marketplace
-    - [SingularityNET](https://singularitynet.io/) - AI service marketplace
-    - [Bittensor](https://bittensor.com/) - Decentralized machine learning network
+- [x402](https://www.x402.org/) - Uses the HTTP 402 status code to let servers charge for API calls or content via on-chain stablecoin payments, so AI agents and humans can pay per request without accounts or API keys
+- [ERC-8004](https://www.8004.org/) - Gives AI agents on-chain identity (as NFTs), reputation tracking, and task validation registries so they can discover and trust each other across organizations
+- [Virtuals](https://virtuals.io/) - Allows anyone to create an AI agent, tokenize it as an ERC-20, and let others co-own it and share in its revenue
+- [elizaOS](https://elizaos.ai/) - Framework for building AI agents that can autonomously post on Twitter, manage Discord/Telegram communities, trade on-chain, and interact with any API
+- [Theoriq](https://www.theoriq.ai/) - Lets AI agents team up as swarms to automatically manage DeFi positions, finding yield, rebalancing liquidity, and executing trades across protocols without human intervention
+- [Giza](https://www.gizatech.xyz/) - Lets smart contracts use ML models (like price predictors or risk engines) with cryptographic proof that the model actually ran correctly, so DeFi apps can trust AI outputs without trusting the operator
+- [Olas](https://olas.network/) - Protocol for building and running multi-agent autonomous services (oracles, keepers, AI bots) that are operated in a decentralized way by multiple independent operators
+- [EZKL](https://ezkl.xyz/) - Enables you to prove you ran a specific model on specific data
+- [Gensyn](https://www.gensyn.ai/) - Protocol for machine-learning computation that aggregates global computing resources into a single open network that can execute training and other ML workloads
 
 ## Resources
 
