@@ -3,6 +3,7 @@ import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { DOMAINS, DOMAIN_CATEGORIES } from './constants';
 import { DomainData } from './types';
 import { parseDomainMarkdown } from './utils';
+import lastUpdatedDates from 'virtual:last-updated';
 import UseCaseModal from './components/UseCaseModal';
 import SiteFooter from './components/SiteFooter';
 import Logo from './components/Logo';
@@ -103,7 +104,9 @@ const HomeView: React.FC<HomeViewProps> = ({
 
           {/* Logo */}
           <div className="mb-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <Logo size="lg" showText />
+            <a href="https://www.usecaselab.org/" target="_blank" rel="noopener noreferrer">
+              <Logo size="lg" showText />
+            </a>
           </div>
 
           {/* Tagline */}
@@ -385,7 +388,7 @@ const App: React.FC = () => {
 
       {/* Use Case Modal - Shows on top of home page */}
       {activeData && (
-        <UseCaseModal data={activeData} onClose={handleCloseModal} />
+        <UseCaseModal data={activeData} lastUpdated={lastUpdatedDates[activeData.id]} onClose={handleCloseModal} />
       )}
     </div>
   );

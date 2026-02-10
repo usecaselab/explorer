@@ -11,7 +11,9 @@ const SiteFooter: React.FC = () => {
 
                 {/* Brand */}
                 <div className="flex items-center gap-3">
-                    <Logo showText />
+                    <a href="https://www.usecaselab.org/" target="_blank" rel="noopener noreferrer">
+                        <Logo showText />
+                    </a>
                 </div>
 
                 {/* Socials */}

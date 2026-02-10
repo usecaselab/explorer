@@ -9,10 +9,11 @@ type Tab = 'overview' | 'bounties';
 
 interface UseCaseModalProps {
   data: DomainData;
+  lastUpdated?: string;
   onClose: () => void;
 }
 
-const UseCaseModal: React.FC<UseCaseModalProps> = ({ data, onClose }) => {
+const UseCaseModal: React.FC<UseCaseModalProps> = ({ data, lastUpdated, onClose }) => {
   const [activeTab, setActiveTab] = useState<Tab>('overview');
 
   // Close on escape key
@@ -94,7 +95,7 @@ const UseCaseModal: React.FC<UseCaseModalProps> = ({ data, onClose }) => {
           {activeTab === 'overview' && (
             <>
               <OverviewTab data={data} />
-              <PageFooter />
+              <PageFooter lastUpdated={lastUpdated} />
             </>
           )}
           {activeTab === 'bounties' && <BountiesTab bounties={data.bounties} />}

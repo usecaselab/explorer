@@ -22,7 +22,7 @@ Money underpins every exchange, yet the design space for monetary systems has be
 - [CityCoins](https://www.citycoins.co/) - Tokens that let communities generate funding and incentives aligned with specific cities
 - [Circles](https://aboutcircles.com/) - A social currency where money is issued peer-to-peer based on trust relationships rather than a central issuer
 - [Citizen Wallet](https://citizenwallet.xyz/) - Open wallet infrastructure designed for managing, issuing, and using community tokens
-- [Eco](https://eco.org/) - Experimented with a Hayek-inspired algorithmic currency
+- [Eco](https://www.cryptocompare.com/media/43936184/whitepaper.pdf) - A free-floating digital currency with independent monetary policy, using a two-token system to stabilize purchasing power and converge on a reliable unit of account
 - [Reserve](https://reserve.org/) - Platform for creating asset-backed stablecoins
 - [RAI](https://reflexer.finance) - Decentralized, non-pegged stable token backed by ETH
 - [Trustlines](https://archive.devcon.org/devcon-3/trustlines-network-open-protocol-for-decentralized-iou-based-currency-networks/?tab=YouTube&playlist=Devcon+3) - Protocol for mutual-credit money where balances emerge from bilateral IOUs
