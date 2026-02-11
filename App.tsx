@@ -100,7 +100,14 @@ const HomeView: React.FC<HomeViewProps> = ({
           />
         </div>
 
-        <div className="relative w-full flex flex-col items-center pt-12 md:pt-20 pb-10 px-4 overflow-visible">
+        {/* Logo - Top Left */}
+        <div className="relative z-30 max-w-7xl mx-auto w-full px-4 md:px-6 pt-4 md:pt-5 animate-in fade-in slide-in-from-bottom-4 duration-500">
+          <a href="https://www.usecaselab.org/" target="_blank" rel="noopener noreferrer" className="inline-block">
+            <Logo size="md" showText />
+          </a>
+        </div>
+
+        <div className="relative w-full flex flex-col items-center pt-6 md:pt-12 pb-10 px-4 overflow-visible">
 
           {/* Tagline */}
           <p className="text-xl md:text-2xl text-gray-800 font-bold max-w-2xl mx-auto leading-relaxed text-center mb-10 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">

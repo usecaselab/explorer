@@ -8,15 +8,6 @@ interface OverviewTabProps {
 }
 
 const OverviewTab: React.FC<OverviewTabProps> = ({ data }) => {
-  const getStatusInfo = (status: string) => {
-    const isActive = status === 'active' || status === 'beta';
-    return {
-        isActive,
-        // Active = Green Circle, Inactive = Red Square (rounded-none for sharp square)
-        indicatorClass: isActive ? 'bg-green-500 rounded-full' : 'bg-red-500 rounded-none',
-        label: isActive ? 'Active' : 'Inactive'
-    };
-  };
 
   return (
     <div className="space-y-10 animate-in fade-in duration-500">
@@ -78,7 +69,6 @@ const OverviewTab: React.FC<OverviewTabProps> = ({ data }) => {
         {data.projects.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {data.projects.map((project, idx) => {
-                    const statusInfo = getStatusInfo(project.status);
                     return (
                         <a 
                             key={idx} 
@@ -89,11 +79,6 @@ const OverviewTab: React.FC<OverviewTabProps> = ({ data }) => {
                         >
                             <div className="flex justify-between items-start">
                                 <h4 className="font-bold text-xl font-heading leading-tight group-hover:text-blue-600 transition-colors">{project.name}</h4>
-                                {/* Visual Status Indicator Only */}
-                                <div 
-                                    className={`w-3 h-3 ${statusInfo.indicatorClass} flex-shrink-0 mt-1.5`} 
-                                    title={statusInfo.label}
-                                />
                             </div>
                             <p className="text-gray-600 font-medium leading-snug flex-1">{renderMarkdownLinks(project.description)}</p>
                             {project.url && (
