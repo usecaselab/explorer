@@ -14,19 +14,19 @@ Retail and e-commerce workflows require stitching together product sourcing, inv
 - Verifiable reviews & receipts - Onchain attestations improve authenticity, support returns and reduce dispute risk
 - Physical goods marketplaces - Tokenized listings and escrowed settlement bring transparency to resale and secondary markets
 - Commerce identity - Reusable KYC and proof credentials reduce onboarding friction and fraud across merchants and marketplaces
-- Agent-driven commerce - Autonomous agents or bots executing shopping tasks, rebates or optimized purchasing flows with onchain coordination
-- Autonomous auctions - Where goods can be priced and sold without an intermediary
-- Full Commerce Stack - Potential for integrating supply-chain provenance, dynamic pricing and loyalty token-flows in one unified commerce stack
+- Agent-driven commerce - Autonomous agents executing shopping tasks, rebates or optimized purchasing flows with onchain negotiation, payments, and reputation
+- Full Commerce Stack - Potential for integrating supply-chain provenance, dynamic pricing and loyalty token-flows in one unified stack
 
 ## Examples
 
 - [FreePay](https://freepaypos.org/) - Intermediary-free payment terminal for merchants accepting crypto
 - [Commerce Payments Protocol](https://shopify.engineering/commerce-payments-protocol) - by Shopify & Coinbase to bring the two-step "auth & capture" flow onchain for merchant payments
 - [Visa Intelligent Commerce](https://corporate.visa.com/en/products/intelligent-commerce.html) - Agent-shopping integration and tokenized commerce flows
-- [Spritz](https://x.com/spritzfinance) - Card and bill-pay leveraging crypto rails
-- [Blackbird](https://x.com/blackbird_xyz) - Restaurant loyalty system
+- [Spritz](https://www.spritz.finance/) - Card and bill-pay leveraging crypto rails
+- [Blackbird](https://www.blackbird.xyz/) - Dining rewards
 - [Hopscotch](https://hopscotch.trade/) - Facebook marketplace alternative that uses onchain escrow and encrypted messaging
 - [Slice](https://slice.so/) - Onchain commerce protocol that connects merchants and buyers without centralized intermediaries
+- [Kettle](https://kettle.shop/) - Luxury watch marketplace with guaranteed authenticity
 
 ## Resources
 
