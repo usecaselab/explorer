@@ -21,7 +21,6 @@ Small and medium enterprises (SMEs) are underserved by traditional finance: cred
 ## Examples
 
 - [3jane](https://www.3jane.xyz/) - Credit infrastructure for Web3
-- [Pact](https://pactfoundation.com/) - Cooperative credit systems
 - [EthicHub](https://www.ethichub.com/) - Crowdlending to smallholder farmers
 - [Credit mini-app on World](https://world.org/ecosystem/app_ebdd8475db3238254fca5b25ccba266a) - Leverages proof of personhood to issue microloans
 - [Haraka](https://haraka.xyz/) - Microloans and alternative credit scoring
