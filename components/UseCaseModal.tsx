@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { DomainData } from '../types';
 import OverviewTab from './OverviewTab';
-import BountiesTab from './BountiesTab';
 import PageFooter from './PageFooter';
 import { X } from 'lucide-react';
-
-type Tab = 'overview' | 'bounties';
 
 interface UseCaseModalProps {
   data: DomainData;
@@ -14,7 +11,6 @@ interface UseCaseModalProps {
 }
 
 const UseCaseModal: React.FC<UseCaseModalProps> = ({ data, lastUpdated, onClose }) => {
-  const [activeTab, setActiveTab] = useState<Tab>('overview');
 
   // Close on escape key
   useEffect(() => {
@@ -65,40 +61,10 @@ const UseCaseModal: React.FC<UseCaseModalProps> = ({ data, lastUpdated, onClose 
           </button>
         </div>
 
-        {/* Tab Navigation */}
-        <div className="flex gap-6 px-6 md:px-8 border-b-2 border-dashed border-gray-200">
-          {['Overview', 'Bounties'].map((tab) => {
-            const tabKey = tab.toLowerCase() as Tab;
-            const isActive = activeTab === tabKey;
-            return (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tabKey)}
-                className={`
-                  pb-3 pt-4 px-1 font-heading font-bold text-lg transition-all relative whitespace-nowrap
-                  ${isActive
-                    ? 'text-ethBlue'
-                    : 'text-gray-400 hover:text-gray-600'}
-                `}
-              >
-                {tab}
-                {isActive && (
-                  <span className="absolute bottom-[-2px] left-0 w-full h-[3px] bg-ethBlue rounded-full" />
-                )}
-              </button>
-            );
-          })}
-        </div>
-
         {/* Content */}
         <div className="flex-1 overflow-y-auto p-6 md:p-8">
-          {activeTab === 'overview' && (
-            <>
-              <OverviewTab data={data} />
-              <PageFooter lastUpdated={lastUpdated} />
-            </>
-          )}
-          {activeTab === 'bounties' && <BountiesTab bounties={data.bounties} />}
+          <OverviewTab data={data} />
+          <PageFooter lastUpdated={lastUpdated} />
         </div>
       </div>
     </div>
