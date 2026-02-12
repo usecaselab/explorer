@@ -22,10 +22,8 @@ In the middle, grocers and restaurants juggle siloed POS, inventory, and supplie
 - [Justtoken](https://www.justoken.com/) - Tokenizing agricultural outputs (Agrotoken) and arable land (Landtoken)
 - [Farmsent](https://www.farmsent.io/) - Onchain marketplace improving farmer access to trade and capital
 - [EthicHub](https://www.ethichub.com/en) - Crowdlending platform connecting global lenders to small farmers
-- [Maalexi](https://www.maalexi.ai/) - Wholesale trade for agri-products
 - [Mercy Corps regenerative agriculture pilot](https://www.mercycorps.org/blog/pilot-adoption-regenerative-agriculture) - Loyalty rewards for sustainable fertilizer use
 - [Peach Tycoon](https://peachtycoon.com/) - Tokenizing peach trees, allowing farmers to sell future produce rights directly to consumers
-- [SourceLink](https://sourcelink.io/) - Food supply chain traceability system
 
 ## Resources
 

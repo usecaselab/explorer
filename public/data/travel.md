@@ -19,7 +19,6 @@ Travel is held back by fragmented identity and compliance checks, siloed reserva
 
 - [Dtravel](https://www.dtravel.com/) - DAO‑aligned vacation rentals with onchain payments
 - [Buk Protocol](https://bukprotocol.ai/) - Tokenized hotel inventory and bookings
-- [Travala](https://www.travala.com/) - Crypto‑enabled travel bookings across suppliers
 - [Sleap](https://sleap.io/) - Hotel booking with loyalty and cash‑back mechanics
 
 ## Resources

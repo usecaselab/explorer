@@ -24,8 +24,7 @@ At the same time, private legal agreements&mdash;wills, contracts, trusts, and d
 ## Examples
 
 - [Kleros](https://kleros.io/) - Decentralized dispute-resolution protocol using juror staking and incentive alignment
-- [Sarcophagus](https://sarcophagus.io/) - “Dead-man’s switch” for time-locked inheritance and document release
-- [Legalese](https://legalese.com/) - Smart-legal-agreement toolkit bridging human-readable text and executable code
+- [Sarcophagus](https://sarcophagus.io/) - "Dead-man's switch" for time-locked inheritance and document release
 
 ## Resources
 

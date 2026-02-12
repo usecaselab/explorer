@@ -17,11 +17,7 @@ Many natural assets&mdash;such as water, forests and mineral resources&mdash;are
 
 ## Examples
 
-- [Climate Action Data](https://climateactiondata.org/registries/) - Digital infrastructure connecting environmental registries, maximising transparency of carbon credits and minimising double-counting
-- [Regen Network](https://www.regen.network/) - Ecological state-machine and environmental-credit market based on onchain infrastructure
 - [Treeconomy](https://www.treeconomy.co/) - Carbon removal marketplace for forest-based solutions
-- [RecycleFarm](https://recyclefarm.org/) - Incentivised “recycle-to-earn” program for circular material flows
-- [Open Forest Protocol](https://www.openforestprotocol.org/) - MRV (Measurement, Reporting, Verification) for reforestation with onchain verification
 - [EY OpsChain ESG](https://blockchain.ey.com/products/esg) - Enterprise solution for supply chain traceability and ESG-data sharing
 - [Toucan](https://toucan.earth/) - Tokenized carbon credits
 

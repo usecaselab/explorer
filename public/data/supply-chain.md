@@ -33,8 +33,6 @@ Global supply chains today are highly fragmented, largely paper-driven, and pron
 - [Heale](https://healelabs.com/) - Unified logistics API that uses Opacity Network
 - [Simba](https://simbachain.com/) – Defense supply chain security
 - [Vakt](https://www.vakt.com/) - Shipping logistics
-- [Maersk pilots](https://www.maersk.com/news/articles/2021/07/27/how-blockchain-technology-is-beefing-up) – Shipping logistics
-- [Drug supply chain pilot](https://www.oracle.com/in/corporate/pressrelease/niti-aayog-oracle-pilot-real-drug-supply-chain-with-blockchain-iot-2018-09-28.html) – Pharma verification with blockchain + IoT
 
 ## Resources
 

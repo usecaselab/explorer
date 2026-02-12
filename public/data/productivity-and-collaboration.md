@@ -23,7 +23,6 @@ Workplace productivity today is dominated by centralized SaaS providers who silo
 - [Huddle](https://www.huddle01.com/) - Decentralized video conferencing infrastructure
 - [Fileverse](https://fileverse.io/) - Document and file sharing with user-owned data emphasis
 - [Focustree](https://www.focustree.app/) - Gamified deep work
-- [Pomodoki](https://pomodoki.com/) - Gamified deep work
 - [Radicle](https://radicle.xyz/) - Peer-to-peer code collaboration and governance layer
 - [Coordinape](https://co.coordinape.com/) - Tool for reputation and reward tracking within organizations
 

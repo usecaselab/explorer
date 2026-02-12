@@ -29,7 +29,6 @@ The broader concern is that many blockchain gaming efforts today are speculative
 - [Sorare](https://sorare.com/) - Fantasy sports platform for verifiable digital collectibles
 - [Skyweaver](https://www.skyweaver.net/) - Trading card game with wallet-based ownership and open trade rails
 - [Dark Forest Punk](https://dfpunk.xyz/) - Decentralized MMO space conquest game built on Optimism with zkSNARKs using MUD
-- [Stadium](https://www.playstadium.gg/) - E-sports appchain
 
 ## Resources
 

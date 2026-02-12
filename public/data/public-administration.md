@@ -23,11 +23,7 @@ Citizens often face duplicative verification processes, long wait times, paper-b
 - [QuarkID](https://quarkid.org/) - SSI protocol for managing essential personal documents such as birth and marriage certificates, academic credentials, and proof of income, developed by the government of Buenos Aires for use in Argentina and other South American countries
 - [Palau Digital Residency Program](https://rns.id/) - Offers global citizens the ability to have a legal Palau government-issued ID
 - [Vocdoni](https://vocdoni.io/) - Privacy-preserving digital elections
-- [LAC PropertyChain](https://blog.chromia.com/lac-propertychain-pilot-to-launch-on-chromia-in-q3/?ref=blog.chromaway.com)
-- [Chicago Cook County](https://bitcoinmagazine.com/business/chicago-s-cook-county-to-test-bitcoin-blockchain-based-public-records-1475768860)
-- [Dubai Land Department](https://dubailand.gov.ae/en/news-media/dubai-land-department-achieves-a-technical-milestone-with-the-adoption-of-blockchain-technology-in-cooperation-with-smart-dubai-and-other-partners/#/)
 - [Onchain City](https://onchain.city/) - Government services; embassy, passport, licenses, visas, insurance
-- [California DMV puts 42 million car titles on blockchain to fight fraud](https://www.reuters.com/technology/california-dmv-puts-42-million-car-titles-blockchain-fight-fraud-2024-07-30/) - California's pilot program to use blockchain technology to fight fraud in vehicle title transfers
 
 ## Resources
 
