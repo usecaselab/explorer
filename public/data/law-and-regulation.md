@@ -28,7 +28,6 @@ At the same time, private legal agreements&mdash;wills, contracts, trusts, and d
 
 ## Resources
 
-- [Can Blockchain Help with Gun Registries?](https://www.blockchainresearchinstitute.org/project/can-blockchain-help-with-gun-registries/) (2020) - Explores blockchain-based firearms provenance and privacy-preserving ownership checks
 - [Blockchain-Based Dispute Resolution: Insights and Challenges](https://www.mdpi.com/2073-4336/14/3/34) (2022) - Defines smart contracts and analyses Kleros as a blockchain-based ODR mechanism
 - [Benefits for the Bunker Industry in Adopting Blockchain Technology for Dispute Resolution](https://www.sciencedirect.com/science/article/pii/S2096720923000039) (2023) - Finds blockchain improves trust and documentation for quality disputes
 - [Applying Blockchain to the Modern Legal System: Kleros as a Decentralised Dispute-Resolution System](https://link.springer.com/article/10.1365/s43439-023-00086-x) (2023) - Evaluates fairness and integration pathways for blockchain-based arbitration

@@ -27,7 +27,6 @@ Mobilizing resources for aid and social support is often slow, opaque and costly
 - [Hypercerts](https://www.hypercerts.org/) - Tokenized certificates that represent the impact resulting from a discrete piece of work, such as a research contribution. Projects sell portions of their hypercerts to funders, thereby transferring shares of the impact claims to them.
 - [TEA](https://tea.xyz/) - Funding open-source social-impact projects
 - [Ukraine DAO](https://x.com/Ukraine_DAO) - NFT auction to raise funds
-- [Iran Unchained](https://x.com/UnchainIran) - NGO focused on Iranian social movements using onchain tooling
 
 ## Resources
 

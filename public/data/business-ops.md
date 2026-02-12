@@ -42,5 +42,3 @@ At the same time, advances in AI create the potential for organizations that cou
 - [Loop Crypto](https://www.loopcrypto.xyz/) - Subscription billing, invoicing, and recurring payments
 
 ## Resources
-
-- [Triple Entry Accounting](https://www.mdpi.com/1911-8074/17/2/76) (2024) - Triple-entry accounting extends double-entry bookkeeping by using cryptographically signed, shared receipts between parties, creating a tamper-resistant accounting layer that enables reliable inter-firm accounting, lower costs, and stronger governance

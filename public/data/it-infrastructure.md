@@ -31,9 +31,3 @@ Provisioning and managing IT infrastructure&mdash;storage, compute, bandwidth, a
 - [Kokio](https://www.kokio.app/) - Onchain e-SIM distributor
 
 ## Resources
-
-- [BRI: Distributed Connectivity](https://www.blockchainresearchinstitute.org/project/distributed-connectivity/) (2017) - Early study of blockchain’s impact on telecom infrastructure
-- [BRI: 5G Bypass](https://www.blockchainresearchinstitute.org/project/5g-bypass/) (2019) - Explores blockchain-enabled mesh networks as an alternative to incumbent telecoms
-- [BRI: Blockchain Transformation in Telecommunications](https://www.blockchainresearchinstitute.org/project/blockchain-transformation-in-telecommunications/) (2021) - Surveys applications from cross-carrier settlements to identity and service provisioning
-- [Reward Sharing for Mixnets](https://cryptoeconomicsystems.pubpub.org/pub/diaz-reward-sharing-mixnets/release/2?readingCollection=082fed82) (2022) - Reward sharing scheme for incentivized network privacy infrastructures
-- [TRADE-5G: A blockchain-based transparent and secure resource exchange for 5G network slicing](https://www.sciencedirect.com/science/article/pii/S2096720924000599) (2025) - Introduces a blockchain marketplace for 5G resources that improves efficiency and security while enabling new revenue streams for providers

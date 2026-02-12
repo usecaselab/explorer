@@ -25,8 +25,6 @@ IoT networks&mdash;spanning smart wearables, homes, vehicles, factories, and cit
 - [Yodl](https://yodl.me/) - Payment solution that’s experimented with [door locks](https://x.com/yodlpay/status/1919783204640457149/video/1) and [beer taps](https://x.com/yodlpay/status/1922643327100297508)
 - [PrismaX](https://prismax.ai/) - Decentralized autonomous robotics platform
 - [Auki Labs](https://www.aukilabs.com/) - Making the physical world accessible to AI
-- [DIMO](https://www.dimo.org/) - Vehicle data network enabling drivers to monetize connected car data
-- [4dsky](https://4dsky.com/)
 - [AirVolt](https://airvolt.io/) - Tokenized clean-air infra
 - [Slock.it](https://medium.com/slock-it-blog/slock-it-decentralizing-the-emerging-sharing-economy-cf19ce09b957) - Universal sharing economy
 

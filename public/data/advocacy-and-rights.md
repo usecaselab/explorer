@@ -19,9 +19,10 @@ Civil society groups, environmental defenders, human-rights advocates, journalis
 
 ## Examples
 
-- [Labor DAO](https://www.thelabordao.com) - Perpetual, transparent revolving fund to finance and support worker organizing, strikes, legal defense, and labor campaigns
 - [ProofLeak](https://x.com/0xxDana/status/1934603312407420961) - Whistleblower app that uses Noir to generate a ZK proof attesting that a whistleblower's email address belongs to an organization using a DKIM signature, ensuring credible disclosures while fully preserving anonymity
 - [ZkWhistle](https://ethglobal.com/showcase/zkwhistle-8dgya) - Hackathon project built for the NGO Transparency International chapter in Spain to use ZKPs to issue and verify whistleblower attestations
+- [JournoDAO](https://x.com/JournoDao) - Decentralized journalism collective
+- [ANSA](https://www.ansa.it/english/news/science_tecnology/2020/04/06/ansa-using-blockchain-to-help-readers_af820b4f-0947-439b-843e-52e114f53318.html) - Italian news agency fights fake news and enables readers to verify the origin of news stories by recording them onchain
 
 ## Resources
 

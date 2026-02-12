@@ -22,7 +22,6 @@ Real estate transactions require many intermediaries, including brokers, title c
 - [0xequity](https://www.0xequity.com/) - Real-estate investment rails on Base offering fractional access
 - [Groma](https://www.groma.com/) - Tokenized REIT structure with transparent investor reporting
 - [RealT](https://realt.co/) - Platform for fractional tokenized real-estate investing
-- [Blocksquare](https://blocksquare.io/) - Tokenization framework for real-estate assets
 
 ## Resources
 

@@ -29,13 +29,11 @@ export const DOMAINS: DomainData[] = [
   { id: 'real-estate-and-housing', title: 'Real Estate & Housing', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
   { id: 'retail-and-ecommerce', title: 'Retail & eCommerce', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
   { id: 'science-and-research', title: 'Science & Research', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
-  { id: 'security-and-defense', title: 'Security & Defense', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
   { id: 'services-and-tasks', title: 'Services & Tasks', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
   { id: 'social', title: 'Social', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
   { id: 'supply-chain', title: 'Supply Chain', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
   { id: 'sustainability-and-regeneration', title: 'Sustainability & Regeneration', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
-  { id: 'transport-and-logistics', title: 'Transport & Logistics', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] },
-  { id: 'travel', title: 'Travel', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] }
+  { id: 'transport-and-logistics', title: 'Transport & Logistics', problemStatement: "Loading...", ideas: [], projects: [], resources: [], discussion: [], funding: [], bounties: [] }
 ];
 
 export const DOMAIN_IDS = [
@@ -65,13 +63,11 @@ export const DOMAIN_IDS = [
   "Real Estate & Housing",
   "Retail & eCommerce",
   "Science & Research",
-  "Security & Defense",
   "Services & Tasks",
   "Social",
   "Supply Chain",
   "Sustainability & Regeneration",
-  "Transport & Logistics",
-  "Travel"
+  "Transport & Logistics"
 ];
 
 export const DOMAIN_CATEGORIES: Record<string, string[]> = {
@@ -82,7 +78,6 @@ export const DOMAIN_CATEGORIES: Record<string, string[]> = {
     "Law & Regulation",
     "Public Administration",
     "Philanthropy & Social Services",
-    "Security & Defense",
     "Science & Research"
   ],
   "Finance": [
@@ -94,7 +89,6 @@ export const DOMAIN_CATEGORIES: Record<string, string[]> = {
   "Consumer": [
     "Retail & eCommerce",
     "Services & Tasks",
-    "Travel",
     "Social",
     "Media & Entertainment",
     "Gaming & Autonomous Worlds"

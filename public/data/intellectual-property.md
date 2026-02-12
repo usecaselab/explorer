@@ -18,11 +18,8 @@ Intellectual property systems&mdash;covering patents, copyrights, and trademarks
 
 ## Examples
 
-- [license.rocks](https://license.rocks/) - IP licensing platform
-
 ## Resources
 
-- [BRI: Patents at the Trivergence](https://www.blockchainresearchinstitute.org/project/patents-at-the-trivergence/) (2022) - Explores blockchain, AI, and IoT convergence for patent innovation
 - [Digital assets rights management through smart legal contracts](https://www.sciencedirect.com/science/article/pii/S2096720923000179) (2023) - Proposes hybrid smart legal + smart contract approach for royalties and rights transfer
 - [Efficient copyright verification in a DApp](https://www.sciencedirect.com/science/article/pii/S2096720924000472) (2025) - Algorand-based system for decentralized copyright rights representation and verification
 

@@ -29,8 +29,5 @@ With the rise of connected and autonomous vehicles, the requirement for audit tr
 
 - [Blockchain-enabled decentralized identity management: The case of self-sovereign identity in public transportation](https://www.sciencedirect.com/science/article/pii/S2096720921000099) (2021) - Proposes SSI-based interoperable transit credentials across operators
 - [The ARTICONF approach to decentralized car-sharing](https://www.sciencedirect.com/science/article/pii/S2096720921000087) (2021) - Peer-to-peer car-sharing DApp prototype showing decentralization in mobility
-- [The Innovation Dilemma of Distributed Ledger Technology](https://www.blockchainresearchinstitute.org/project/the-innovation-dilemma-of-distributed-ledger-technology/) (2022) - Surveys automotive DLT use-cases such as vehicle-to-vehicle, digital vehicle passports, provenance and EV charging
-- [Implementation of blockchain technology in integrated IoT networks for constructing scalable ITS systems in India](https://www.sciencedirect.com/science/article/pii/S2096720924000010) (2024) - A blockchain–IoT ITS proof-of-concept covering urban mobility telematics
 - [Blockchain-enabled secure and authentic Nash equilibrium strategies for heterogeneous networked hub of electric vehicle charging stations](https://www.sciencedirect.com/science/article/pii/S2096720924000368) (2024) - Cross-chain EV-charging market hub research
 - [Blockchain Solutions for Logistic Management](https://www.mdpi.com/2813-5288/2/4/19) (2024)
-- [Integrating blockchain with digital product passports for managing reverse supply chain](https://www.sciencedirect.com/science/article/pii/S2212827125000368) (2025) - Explores integration of blockchain + DPPs for lifecycle traceability

@@ -11,23 +11,14 @@ Trust between counterparties remains fragile: reviews are easily gamed, disputes
 
 ## Ideas
 
-- AI-agent co-labor paradigms - Human and autonomous agent combinations (or agent-agent marketplaces) where agents execute standardized services and humans focus on high value orchestration and oversight
-- Agent-to-agent marketplaces - AI agents that post and fulfill micro-tasks with verifiable results
-- Specialized labor networks - Domain-specific marketplaces (e.g., therapy, tutoring, consulting, pair programming, creative services) with tokenized access, verified expertise, and direct settlement
-- Verifiable worker reputation - Portable attestations for skills, completion history, and ratings stored onchain or via verifiable credentials, enabling cross-platform portability
+- Worker reputation & credentials - Portable attestations for skills, work history, ratings, and task completions that workers own and carry across platforms
 - Programmable escrow - Smart contracts for milestone-based payments, dispute resolution, and refunds that minimize platform mediation
-- Task credentials - Cryptographic proofs of work, verified deliverable receipts, or NFT-based certificates that unlock access to higher-value opportunities
-- Decentralized arbitration systems - Mediation solutions for labor contracting arrangements that ensure efficient and fair dispute outcomes
+- Arbitration - Mediation solutions for labor contracting arrangements that ensure efficient and fair dispute outcomes
 
 ## Examples
 
 - [Human Protocol](https://humanprotocol.org/) - Framework for decentralized microtask coordination and reward distribution
-- [time.fun](http://time.fun/) - Tokenized marketplace for booking time-based services
 - [maldo](https://maldo.uy/) - Local skilled trade marketplace exploring blockchain-based labor exchange
 - [Icebreaker](https://icebreaker.xyz/) - Professional network and job marketplace emphasizing verifiable credentials
-- [TalentLayer](https://www.talentlayer.org/) - Cross-platform job listings and reputation portability
 
 ## Resources
-
-- [TSCS: A blockchain-based tokenized subtitling crowdsourcing system](https://www.sciencedirect.com/science/article/pii/S2096720923000076) (2023) - Proposes token incentives and NFT receipts for subtitling work using IPFS storage and programmable settlement
-- [Blockchain-based crowdsourcing for human intelligence tasks with dual fairness](https://www.sciencedirect.com/science/article/pii/S2096720924000265) (2024) - Introduces a majority-vote mechanism for truth discovery and fair task allocation without central authority

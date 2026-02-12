@@ -21,16 +21,15 @@ Scientific research is strained by misaligned incentives and weak accountability
 
 - [Molecule](https://molecule.xyz/) - Crowdfunded biopharma protocol with milestone-based governance
 - [Bio.xyz](https://www.bio.xyz) - Tokenized IP platform for biotech research
-- [Microbiome DAO](https://www.microbiomedao.com/) - Community-driven research on the microbiome with ownership and governance for participants
+- [Microbiome DAO](https://www.biome.to/) - Community-driven research on the microbiome with ownership and governance for participants
 - [HairDAO](https://hairdao.xyz/) - Community-driven R&D on hair-loss therapies
 - [ResearchHub](https://www.researchhub.com/) - Incentivized publishing and peer review platform
 - [Recerts](https://www.recerts.org/) - Tokenized impact certificates for retroactive recognition of research contributions
-- [DeSci World](https://desci.world/) - Project directory and community hub for DeSci
 
 ## Resources
 
-- [A blockchain of knowledge](https://www.sciencedirect.com/science/article/pii/S2096720920300051) (2020) - Explores token-incentives and staking for knowledge
 - [Verifiable Badging System for Scientific Data Reproducibility](https://www.sciencedirect.com/science/article/pii/S2096720921000105) (2021) - Layered approach to data sharing and proofs of research quality
 - [On the Use of Blockchain Technology to Improve the Reproducibility of Preclinical Research](https://www.scitepress.org/Papers/2023/118517/118517.pdf) (2023) - Examines blockchain for reproducibility in preclinical science
 - [Blockchain and Its Application in the Peer Review of Scientific Works](https://www.mdpi.com/2304-6775/12/4/40) (2024) - Systematic review of blockchain in peer review workflows
 - [The Use of Blockchain Technology in the Scientific Research Workflow](https://www.journals.sagepub.com/doi/10.3233/ISU-230225) (2023) - Survey of blockchain across the research workflow
+- [DeSci World](https://desci.world/) - Project directory and community hub for DeSci
