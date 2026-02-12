@@ -22,14 +22,10 @@ Provisioning and managing IT infrastructure&mdash;storage, compute, bandwidth, a
 - [Livepeer](https://www.livepeer.org/) - Video transcoding and streaming marketplace
 - [FOAM](https://foam.space/) - Decentralized geolocation and mapping
 - [Astral](https://www.astral.global/) - Verifiable location protocol
-- [Filecoin](https://filecoin.io/) - Decentralized storage network
-- [Akash](https://akash.network/) - GPU/compute marketplace
-- [io.net](http://io.net) - GPU/compute marketplace
-- [Nym](https://nymtech.net/) - Decentralized VPN
+- [EthStorage](https://ethstorage.io/) - Decentralized storage network
+- [Fluence](https://www.fluence.network/) - Decentralized compute marketplace
 - [GnosisVPN](https://vpn.gnosis.eth.limo/) - Decentralized VPN
-- [Helium](https://www.helium.com/) - Community-powered telecom and connectivity infrastructure
 - [World Mobile](https://worldmobile.io/) - Community-powered telecom and connectivity infrastructure
-- [Hivemapper](https://hivemapper.com/) - Token-incentivized mapping from dashcams
 - [WeatherXM](https://weatherxm.com/) - Weather station network
 - [GEODNET](https://geodnet.com/) - Real-time positioning data network
 - [Kokio](https://www.kokio.app/) - Onchain e-SIM distributor
