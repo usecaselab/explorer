@@ -24,7 +24,6 @@ Learners, meanwhile, lack portable, privacy-preserving credentials that can carr
 - [MIT Digital Diplomas](https://news.mit.edu/2017/mit-debuts-secure-digital-diploma-using-bitcoin-blockchain-technology-1017) - Early blockchain diploma pilot
 - [OpenCerts](https://www.opencerts.io/) - Verifiable document framework for educational credentials
 - [LegitDoc](https://legitdoc.com/) - Decentralized issuance and validation of certificates
-- [CBSE](https://cbse.certchain.nic.in/aboutcc) - India’s blockchain-backed academic certificate registry using Hyperledger Fabric and DigiLocker
 
 ## Resources
 

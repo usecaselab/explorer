@@ -25,7 +25,6 @@ Scientific research is strained by misaligned incentives and weak accountability
 - [HairDAO](https://hairdao.xyz/) - Community-driven R&D on hair-loss therapies
 - [ResearchHub](https://www.researchhub.com/) - Incentivized publishing and peer review platform
 - [Recerts](https://www.recerts.org/) - Tokenized impact certificates for retroactive recognition of research contributions
-- [Seal Storage](https://sealstorage.io/solutions/research) - Decentralized storage and provenance platform for research datasets
 - [DeSci World](https://desci.world/) - Project directory and community hub for DeSci
 
 ## Resources

@@ -22,7 +22,6 @@ Today’s social platforms concentrate power in a small number of large companie
 
 - [Farcaster](https://docs.farcaster.xyz/learn/) - A decentralized social graph protocol enabling user-owned identity and interoperable social apps
 - [Zora](https://zora.co/) - Onchain creator monetization and media-minting platform where creators issue tokens for content
-- [Own](https://www.ownapp.co/) - Gamified short-form content social app
 - [Lens](https://lens.xyz/) - Decentralized social network that lets users own their profiles, content, and connections onchain
 - [Unlock Protocol](https://unlock-protocol.com/) - Token-gated access tool for creators and communities
 - [Hypersub](https://hypersub.xyz/) - Subscription platform exploring tokenized creator monetization

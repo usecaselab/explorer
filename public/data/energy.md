@@ -22,7 +22,6 @@ Power systems are shifting to renewables and electrification (e.g., rooftop sola
 - [LiquidStar](https://x.com/liquidstar_io) - Solar-powered modular infrastructure units that provide electricity, connectivity, and computing in off-grid locations
 - [Arkeen](https://www.arkreen.com/) - Issues and tracks onchain certificates for verified renewable energy generation
 - [Helios](https://www.helios.eco/) - Financing for solar energy installation
-- [Combinder](https://www.combinder.io/) - Aggregates distributed energy devices into a virtual power plant for coordinated grid participation
 
 ## Resources
 

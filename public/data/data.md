@@ -17,7 +17,6 @@ Data already trades through brokers, ad-tech exchanges, and bespoke deals betwee
 
 ## Examples
 
-- [Kled](https://www.kled.ai/) - Curated marketplace of licensed, rights-holder datasets (e.g., video, music, transcripts) for training AI models
 - [Olena](https://olena.xyz/) - Protocol for curating accurate information and peer review, leveraging quadratic funding and prediction markets
 - [functionSPACE](https://www.functionspace.dev/) - Framework for building information markets
 - [Ethos](https://www.ethos.network/) - Onchain reputation system where people review/vouch and can be slashed to financially penalize bad actors
