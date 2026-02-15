@@ -19,6 +19,7 @@ Cultural production and distribution is bottlenecked by centralized intermediari
 ## Examples
 
 - [Soneium](https://soneium.org/) - Sony’s L2 focused on royalty automation & creator-owned IP ([Explainer article](https://enterpriseonchain.substack.com/p/sonys-entertainment-layer-2-explored))
+- [Hypersub](https://hypersub.xyz/) - Subscription platform exploring tokenized creator monetization
 - [Unlock](https://app.unlock-protocol.com) - NFT-based event ticketing and memberships
 - [Tokenproof](https://tokenproof.xyz/) - Token-gated ticketing and access for events
 - [Onopen](https://onopen.xyz/) - Ticketing and memberships

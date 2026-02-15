@@ -23,7 +23,6 @@ Today’s social platforms concentrate power in a small number of large companie
 - [Farcaster](https://docs.farcaster.xyz/learn/) - A decentralized social graph protocol enabling user-owned identity and interoperable social apps
 - [Zora](https://zora.co/) - Onchain creator monetization and media-minting platform where creators issue tokens for content
 - [Lens](https://lens.xyz/) - Decentralized social network that lets users own their profiles, content, and connections onchain
-- [Hypersub](https://hypersub.xyz/) - Subscription platform exploring tokenized creator monetization
 - [Minds](http://minds.com/) - Social network with token boosting and curation rewards for engagement
 - [Akasha](https://akasha.org/world/) - Early blockchain-based social network initiative exploring decentralized identity and community governance
 

@@ -43,4 +43,6 @@ Small and medium enterprises (SMEs) are underserved by traditional finance: cred
 
 ## Resources
 
-- [Use case spotlight: Piloting the tokenisation of investment bonds on EBSI](https://ec.europa.eu/digital-building-blocks/sites/spaces/EBSI/pages/915931247/Use+case+spotlight+piloting+the+tokenisation+of+investment+bonds+on+EBSI) (2025) - EU pilot for using tokenized bonds to enable cheaper SME financing
+- [A Blockchain-based Decentralized Peer-to-Peer Lending Framework for SMEs](https://dl.acm.org/doi/full/10.1145/3659154.3659188) (2023)
+- [Filling the SME credit gap: a systematic review of blockchain-based SME finance literature ](https://www.emerald.com/jts/article/11/2-3/45/256084/Filling-the-SME-credit-gap-a-systematic-review-of) (2023)
+- [How tokenization can accelerate financing of small and medium enterprises in Africa](https://www.brookings.edu/articles/how-tokenization-can-accelerate-financing-of-small-and-medium-enterprises-in-africa/) (2026)

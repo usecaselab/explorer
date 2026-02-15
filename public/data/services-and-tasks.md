@@ -18,7 +18,9 @@ Trust between counterparties remains fragile: reviews are easily gamed, disputes
 ## Examples
 
 - [Human Protocol](https://humanprotocol.org/) - Framework for decentralized microtask coordination and reward distribution
-- [maldo](https://maldo.uy/) - Local skilled trade marketplace exploring blockchain-based labor exchange
+- [Maldo](https://maldo.uy/) - Local skilled trade marketplace exploring blockchain-based labor exchange
 - [Icebreaker](https://icebreaker.xyz/) - Professional network and job marketplace emphasizing verifiable credentials
+- [Poidh](https://poidh.xyz/) - Bounty system that allows users to escrow funds for a task to be completed
 
 ## Resources
+- [The Gig Economy, Smart Contracts, and Disruption of Traditional Work Arrangements](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3270867) (2018)

@@ -19,11 +19,9 @@ Learners, meanwhile, lack portable, privacy-preserving credentials that can carr
 
 ## Examples
 
+- [OpenCerts](https://www.opencerts.io/) - Verifiable educational credentials
 - [BCdiploma](https://www.bcdiploma.com/) - Digital diplomas and verified micro-credentials
-- [Hyland Credentials](https://www.hyland.com/en/solutions/products/hyland-credentials) - Digital education and licensing credentials
-- [MIT Digital Diplomas](https://news.mit.edu/2017/mit-debuts-secure-digital-diploma-using-bitcoin-blockchain-technology-1017) - Early blockchain diploma pilot
-- [OpenCerts](https://www.opencerts.io/) - Verifiable document framework for educational credentials
-- [LegitDoc](https://legitdoc.com/) - Decentralized issuance and validation of certificates
+- [LegitDoc](https://legitdoc.com/) - Issuance and validation of certificates
 
 ## Resources
 
