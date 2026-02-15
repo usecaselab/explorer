@@ -21,7 +21,6 @@ Blockchain-based insurance research confirms that high transaction costs, trust 
 - [Ensuro](https://ensuro.co/) - Bridges DeFi capital into reinsurance
 - [Arbol](https://www.arbol.io/) - Parametric weather and risk insurance platform using smart contracts
 - [Etherisc](https://etherisc.com/) - Decentralized insurance protocol for parametric products and peer-to-peer risk pools
-- [Nayms](https://www.nayms.com/) - Platform for raising/trading insurance capital, writing risk and processing premiums and payouts
 - [Takadao](https://takadao.io/) - Shariah-compliant mutual protection model as an alternative insurance architecture
 - [Nexus Mutual](https://nexusmutual.io/) - Cover for smart contract risk
 - [Kleros Enterprise](https://docs.kleros.io/products/enterprise) - MetLife pilot for insurance claims

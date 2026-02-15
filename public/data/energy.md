@@ -19,9 +19,8 @@ Power systems are shifting to renewables and electrification (e.g., rooftop sola
 
 - [Glow](https://glow.org/) - A decentralized protocol designed to subsidize the production of carbon-neutral solar energy by replacing traditional carbon credits with a system of economic incentives for solar farms
 - [Daylight](https://godaylight.com/) - A decentralized energy marketplace that allows individuals and businesses to buy and sell renewable energy directly from each other
-- [LiquidStar](https://x.com/liquidstar_io) - Solar-powered modular infrastructure units that provide electricity, connectivity, and computing in off-grid locations
+- [LiquidStar](https://www.liquidstar.io/) - Solar-powered modular infrastructure units that provide electricity, connectivity, and computing in off-grid locations
 - [Arkeen](https://www.arkreen.com/) - Issues and tracks onchain certificates for verified renewable energy generation
-- [Helios](https://www.helios.eco/) - Financing for solar energy installation
 
 ## Resources
 
