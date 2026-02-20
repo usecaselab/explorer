@@ -257,6 +257,11 @@ const App: React.FC = () => {
       try {
         const res = await fetch('/data/ideas.json');
         const ideas: IdeaEntry[] = await res.json();
+        // Shuffle once per session so card order feels fresh
+        for (let i = ideas.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [ideas[i], ideas[j]] = [ideas[j], ideas[i]];
+        }
         setIdeaEntries(ideas);
       } catch (error) {
         console.error('Failed to load idea data', error);
