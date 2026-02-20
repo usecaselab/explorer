@@ -165,7 +165,7 @@ const HomeView: React.FC<HomeViewProps> = ({
               I'm Feeling Lucky
             </button>
             <a
-              href="https://github.com/usecaselab/explorer/issues/new?template=use-case-submission.md&title=%5BUse%20Case%5D%20"
+              href={`https://github.com/usecaselab/explorer/issues/new?title=${encodeURIComponent('[Use Case] ')}&body=${encodeURIComponent('## Use Case Title\n\n\n## Domain / Category\n\n\n## Problem Statement\n\n\n## Solution Sketch\n\n\n## Resources (optional)\n\n')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 sm:py-2.5 bg-white border-2 border-black rounded-xl font-normal text-markerBlack shadow-sketch-sm hover:shadow-sketch hover:-translate-y-0.5 transition-all active:translate-y-0 active:shadow-sketch-sm"

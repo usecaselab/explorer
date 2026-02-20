@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { IdeaEntry } from '../types';
 import { renderMarkdownLinks } from '../utils';
-import { X, AlertCircle, Lightbulb, BookOpen, Zap, ArrowRight, Link, Check } from 'lucide-react';
+import { X, AlertCircle, Lightbulb, BookOpen, Zap, ArrowRight, Link, Check, Pencil } from 'lucide-react';
 
 interface IdeaDetailModalProps {
   idea: IdeaEntry;
@@ -142,7 +142,7 @@ const IdeaDetailModal: React.FC<IdeaDetailModalProps> = ({ idea, onClose, allIde
             <section>
               <div className="flex items-center gap-2 mb-3">
                 <AlertCircle className="w-5 h-5 text-alertRed fill-current" />
-                <h3 className="text-2xl font-bold font-heading">The Problem</h3>
+                <h3 className="text-2xl font-bold font-heading">Problem</h3>
               </div>
               <div className="bg-white border-2 border-black p-6 rounded-2xl shadow-sketch relative">
                 <div className="absolute -top-3 left-6 w-20 h-4 bg-alertRed/30 -rotate-1 border border-transparent"></div>
@@ -225,6 +225,19 @@ const IdeaDetailModal: React.FC<IdeaDetailModalProps> = ({ idea, onClose, allIde
               </ul>
             </section>
           )}
+
+          {/* Improve this idea */}
+          <div className="flex justify-center pt-2">
+            <a
+              href={`https://github.com/usecaselab/explorer/issues/new?title=${encodeURIComponent(`[Improve] ${idea.title}`)}&body=${encodeURIComponent(`## Idea\n${idea.title} (${idea.domainTitle})\n\n## What's wrong or could be better?\n\n`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              <Pencil className="w-3.5 h-3.5" />
+              Improve this idea
+            </a>
+          </div>
 
           {/* Related Ideas */}
           {relatedIdeas.length > 0 && (
