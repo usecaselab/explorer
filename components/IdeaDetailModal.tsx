@@ -1,14 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { IdeaEntry } from '../types';
 import { renderMarkdownLinks } from '../utils';
-import { X, AlertCircle, Lightbulb, BookOpen, Zap } from 'lucide-react';
+import { X, AlertCircle, Lightbulb, BookOpen, Zap, ArrowRight, Link, Check } from 'lucide-react';
 
 interface IdeaDetailModalProps {
   idea: IdeaEntry;
   onClose: () => void;
+  allIdeas: IdeaEntry[];
+  onSelectIdea: (id: string) => void;
 }
 
-const IdeaDetailModal: React.FC<IdeaDetailModalProps> = ({ idea, onClose }) => {
+const IdeaDetailModal: React.FC<IdeaDetailModalProps> = ({ idea, onClose, allIdeas, onSelectIdea }) => {
+  const [copied, setCopied] = useState(false);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -24,8 +30,63 @@ const IdeaDetailModal: React.FC<IdeaDetailModalProps> = ({ idea, onClose }) => {
     };
   }, []);
 
+  // Auto-focus close button on mount
+  useEffect(() => {
+    closeButtonRef.current?.focus();
+  }, []);
+
+  // Focus trap
+  useEffect(() => {
+    const modal = modalRef.current;
+    if (!modal) return;
+
+    const handleTab = (e: KeyboardEvent) => {
+      if (e.key !== 'Tab') return;
+
+      const focusable = modal.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleTab);
+    return () => document.removeEventListener('keydown', handleTab);
+  }, [idea]);
+
+  const handleCopyLink = useCallback(() => {
+    navigator.clipboard.writeText(window.location.href);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }, []);
+
+  // Related ideas: same domain, exclude current, take first 3
+  const relatedIdeas = allIdeas
+    .filter(i => i.domainId === idea.domainId && i.id !== idea.id)
+    .slice(0, 3);
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="idea-modal-title"
+      ref={modalRef}
+    >
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
@@ -41,7 +102,7 @@ const IdeaDetailModal: React.FC<IdeaDetailModalProps> = ({ idea, onClose }) => {
             <span className="inline-block text-xs font-bold px-2.5 py-1 rounded-full bg-gray-100 text-gray-600 mb-3">
               {idea.domainTitle}
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold font-heading text-markerBlack leading-tight">
+            <h2 id="idea-modal-title" className="text-2xl md:text-4xl font-bold font-heading text-markerBlack leading-tight">
               {idea.title}
             </h2>
             {idea.targetUser && (
@@ -50,12 +111,27 @@ const IdeaDetailModal: React.FC<IdeaDetailModalProps> = ({ idea, onClose }) => {
               </p>
             )}
           </div>
-          <button
-            onClick={onClose}
-            className="p-2 hover:bg-gray-100 rounded-xl transition-colors border-2 border-transparent hover:border-black"
-          >
-            <X className="w-6 h-6 text-markerBlack" />
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handleCopyLink}
+              className="p-2 hover:bg-gray-100 rounded-xl transition-colors border-2 border-transparent hover:border-black"
+              aria-label="Copy link"
+            >
+              {copied ? (
+                <Check className="w-6 h-6 text-green-600" />
+              ) : (
+                <Link className="w-6 h-6 text-markerBlack" />
+              )}
+            </button>
+            <button
+              ref={closeButtonRef}
+              onClick={onClose}
+              className="p-2 hover:bg-gray-100 rounded-xl transition-colors border-2 border-transparent hover:border-black"
+              aria-label="Close"
+            >
+              <X className="w-6 h-6 text-markerBlack" />
+            </button>
+          </div>
         </div>
 
         {/* Content */}
@@ -147,6 +223,34 @@ const IdeaDetailModal: React.FC<IdeaDetailModalProps> = ({ idea, onClose }) => {
                   </li>
                 ))}
               </ul>
+            </section>
+          )}
+
+          {/* Related Ideas */}
+          {relatedIdeas.length > 0 && (
+            <section>
+              <div className="flex items-center gap-2 mb-4">
+                <ArrowRight className="w-5 h-5 text-ethBlue" />
+                <h3 className="text-2xl font-bold font-heading">Related Ideas</h3>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {relatedIdeas.map(related => (
+                  <button
+                    key={related.id}
+                    onClick={() => onSelectIdea(related.id)}
+                    className="text-left p-4 bg-gray-50 border-2 border-gray-200 rounded-xl hover:border-black hover:shadow-sketch-sm transition-all group"
+                  >
+                    <span className="font-bold font-heading text-markerBlack group-hover:text-ethBlue block leading-snug">
+                      {related.title}
+                    </span>
+                    {related.problem && (
+                      <p className="text-sm text-gray-500 mt-1 leading-relaxed">
+                        {related.problem.length > 60 ? related.problem.slice(0, 60) + '...' : related.problem}
+                      </p>
+                    )}
+                  </button>
+                ))}
+              </div>
             </section>
           )}
         </div>

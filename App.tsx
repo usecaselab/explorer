@@ -105,6 +105,10 @@ const HomeView: React.FC<HomeViewProps> = ({
                 }}
                 onFocus={() => setIsSearchFocused(true)}
                 onKeyDown={handleSearchKeyDown}
+                role="combobox"
+                aria-expanded={isSearchFocused && !!searchQuery}
+                aria-controls="search-results"
+                aria-activedescendant={selectedSearchIndex >= 0 && searchResults.length > 0 ? `search-result-${selectedSearchIndex}` : undefined}
                 className="outline-none text-base sm:text-lg w-full bg-transparent font-medium text-markerBlack placeholder-gray-400"
               />
               {searchQuery && (
@@ -118,9 +122,9 @@ const HomeView: React.FC<HomeViewProps> = ({
             {isSearchFocused && searchQuery && (
               <div className="absolute top-full left-0 right-0 mt-3 bg-white border-2 border-black rounded-2xl shadow-sketch overflow-hidden z-50 animate-in fade-in slide-in-from-top-2">
                 {searchResults.length > 0 ? (
-                  <ul>
+                  <ul id="search-results" role="listbox">
                     {searchResults.map((result, idx) => (
-                      <li key={result.id}>
+                      <li key={result.id} id={`search-result-${idx}`} role="option" aria-selected={idx === selectedSearchIndex}>
                         <button
                           onClick={() => handleSelectSearchResult(result.id)}
                           className={`w-full text-left px-5 py-4 border-b border-gray-100 last:border-0 transition-colors group ${
@@ -140,7 +144,7 @@ const HomeView: React.FC<HomeViewProps> = ({
                     ))}
                   </ul>
                 ) : (
-                  <div className="p-5 text-center text-gray-400 font-medium italic">
+                  <div className="p-5 text-center text-gray-400 font-medium italic" role="status">
                     No results found.
                   </div>
                 )}
@@ -406,6 +410,8 @@ const App: React.FC = () => {
         <IdeaDetailModal
           idea={activeIdea}
           onClose={handleCloseModal}
+          allIdeas={ideaEntries}
+          onSelectIdea={(id) => selectIdea(id)}
         />
       )}
     </div>
