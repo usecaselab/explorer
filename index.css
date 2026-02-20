@@ -1,8 +1,36 @@
-/* Mobile-first responsive styles */
+@import "tailwindcss";
+
+@theme {
+  --color-ethBlue: #627EEA;
+  --color-ethLightBlue: #ECF0F9;
+  --color-markerBlack: #2d2d2d;
+  --color-paper: #ffffff;
+  --color-alertRed: #FFCDCD;
+  --color-successGreen: #C9EFC7;
+  --color-pastelYellow: #FFF4C3;
+
+  --shadow-sketch: 3px 3px 0px 0px rgba(0,0,0,1);
+  --shadow-sketch-hover: 5px 5px 0px 0px rgba(0,0,0,1);
+  --shadow-sketch-sm: 2px 2px 0px 0px rgba(0,0,0,1);
+
+  --font-heading: 'IBM Plex Mono', monospace;
+}
 
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Base body styles */
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background-color: #fff;
+  color: #2d2d2d;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 /* Better touch targets on mobile */
@@ -13,12 +41,22 @@ html {
   }
 }
 
-/* Prevent horizontal scroll */
-body {
-  overflow-x: hidden;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
-/* Animation classes for Tailwind */
+/* Animation classes */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -68,7 +106,7 @@ input:focus-visible {
   outline-offset: 2px;
 }
 
-/* Hide decorative elements on small screens for cleaner mobile UX */
+/* Hide decorative elements on small screens */
 @media (max-width: 640px) {
   .decorative-element {
     display: none;

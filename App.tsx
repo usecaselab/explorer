@@ -1,27 +1,46 @@
 
-import React, { useState, useMemo, useRef, useEffect } from 'react';
-import { DOMAINS, DOMAIN_CATEGORIES } from './constants';
-import { DomainData } from './types';
-import { parseDomainMarkdown } from './utils';
-import lastUpdatedDates from 'virtual:last-updated';
-import UseCaseModal from './components/UseCaseModal';
+import React, { useState, useMemo, useRef, useEffect, useCallback } from 'react';
+import { IdeaEntry } from './types';
+import IdeaCard from './components/IdeaCard';
+import IdeaDetailModal from './components/IdeaDetailModal';
 import SiteFooter from './components/SiteFooter';
-import Logo from './components/Logo';
+import RoleSelector from './components/RoleSelector';
 import { Search, X } from 'lucide-react';
 
-// Home view for the landing state - Google-like search experience
+// Skeleton card placeholder shown while loading
+const SkeletonCard: React.FC = () => (
+  <div className="bg-white border-2 border-gray-200 rounded-xl p-5 shadow-sketch-sm flex flex-col gap-3 h-full animate-pulse">
+    <div className="h-5 bg-gray-200 rounded w-3/4" />
+    <div className="space-y-2 flex-1">
+      <div className="h-3 bg-gray-100 rounded w-full" />
+      <div className="h-3 bg-gray-100 rounded w-5/6" />
+    </div>
+    <div className="h-5 bg-gray-100 rounded-full w-20" />
+  </div>
+);
+
+// Home view — idea-centric browsing experience
 interface HomeViewProps {
+  ideaEntries: IdeaEntry[];
+  loading: boolean;
   searchQuery: string;
   setSearchQuery: (query: string) => void;
   isSearchFocused: boolean;
   setIsSearchFocused: (focused: boolean) => void;
-  searchResults: { id: string, title: string, type: string, detail: string }[];
-  handleSelectSearchResult: (domainId: string) => void;
+  searchResults: { id: string; title: string; domainTitle: string; detail: string }[];
+  handleSelectSearchResult: (ideaId: string) => void;
   searchContainerRef: React.RefObject<HTMLDivElement>;
-  onSelectDomain: (id: string) => void;
+  activeDomainFilter: string[] | null;
+  setActiveDomainFilter: (filter: string[] | null) => void;
+  ideaCounts: Record<string, number>;
+  onSelectIdea: (id: string) => void;
+  selectedSearchIndex: number;
+  setSelectedSearchIndex: (idx: number) => void;
 }
 
 const HomeView: React.FC<HomeViewProps> = ({
+  ideaEntries,
+  loading,
   searchQuery,
   setSearchQuery,
   isSearchFocused,
@@ -29,92 +48,46 @@ const HomeView: React.FC<HomeViewProps> = ({
   searchResults,
   handleSelectSearchResult,
   searchContainerRef,
-  onSelectDomain
+  activeDomainFilter,
+  setActiveDomainFilter,
+  ideaCounts,
+  onSelectIdea,
+  selectedSearchIndex,
+  setSelectedSearchIndex,
 }) => {
-  const normalize = (str: string) => str.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and');
-  const getDomainId = (domain: string) => {
-    const map: Record<string, string> = { 'Alternative Money': 'alt-money' };
-    return map[domain] || normalize(domain);
-  };
+  const filteredIdeas = useMemo(() => {
+    if (!activeDomainFilter) return ideaEntries;
+    return ideaEntries.filter(e => activeDomainFilter.includes(e.domainId));
+  }, [ideaEntries, activeDomainFilter]);
 
-  // Category config with icons and vibrant colors
-  const categoryConfig: Record<string, { icon: string, gradient: string, iconBg: string, shadow: string }> = {
-    "Society": { icon: "🏛️", gradient: "from-violet-500 to-purple-600", iconBg: "bg-violet-100", shadow: "shadow-violet-200" },
-    "Finance": { icon: "💰", gradient: "from-emerald-500 to-green-600", iconBg: "bg-emerald-100", shadow: "shadow-emerald-200" },
-    "Consumer": { icon: "🛒", gradient: "from-orange-500 to-amber-600", iconBg: "bg-orange-100", shadow: "shadow-orange-200" },
-    "Enterprise": { icon: "🏢", gradient: "from-blue-500 to-indigo-600", iconBg: "bg-blue-100", shadow: "shadow-blue-200" },
-    "Digital": { icon: "💻", gradient: "from-cyan-500 to-teal-600", iconBg: "bg-cyan-100", shadow: "shadow-cyan-200" },
-    "Physical": { icon: "🌍", gradient: "from-amber-500 to-yellow-600", iconBg: "bg-amber-100", shadow: "shadow-amber-200" }
+  const handleSearchKeyDown = (e: React.KeyboardEvent) => {
+    if (!searchResults.length) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setSelectedSearchIndex(Math.min(selectedSearchIndex + 1, searchResults.length - 1));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setSelectedSearchIndex(Math.max(selectedSearchIndex - 1, 0));
+    } else if (e.key === 'Enter' && selectedSearchIndex >= 0) {
+      e.preventDefault();
+      handleSelectSearchResult(searchResults[selectedSearchIndex].id);
+    }
   };
 
   return (
     <div className="flex-1 flex flex-col items-center justify-start min-h-screen relative overflow-hidden">
 
-      {/* Hero Section with decorated white background */}
+      {/* Hero Section */}
       <div className="relative z-20 w-full bg-white border-b-2 border-black">
-
-        {/* Decorative Elements */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {/* Large gradient blobs - visible on all screens */}
-          <div className="absolute -top-20 -left-20 w-48 md:w-72 h-48 md:h-72 bg-gradient-to-br from-violet-300/30 to-purple-400/20 rounded-full blur-3xl" />
-          <div className="absolute -top-10 -right-20 w-40 md:w-60 h-40 md:h-60 bg-gradient-to-bl from-amber-300/40 to-orange-400/20 rounded-full blur-3xl" />
-          <div className="absolute -bottom-20 left-1/3 w-60 md:w-80 h-32 md:h-40 bg-gradient-to-t from-cyan-200/30 to-blue-300/20 rounded-full blur-3xl" />
-
-          {/* Sketch-style decorative shapes - hidden on mobile for cleaner look */}
-          <div className="hidden md:block absolute top-16 left-[5%] w-12 h-12 border-2 border-violet-300 rounded-xl rotate-12 opacity-60" />
-          <div className="hidden md:block absolute top-28 left-[12%] w-6 h-6 bg-amber-400/40 rounded-full" />
-          <div className="hidden md:block absolute top-44 left-[3%] w-4 h-4 bg-emerald-400/50 rotate-45" />
-          <div className="hidden md:block absolute bottom-32 left-[8%] w-8 h-8 border-2 border-dashed border-cyan-400/50 rounded-full" />
-          <div className="hidden md:block absolute bottom-20 left-[15%] w-3 h-3 bg-violet-500/40 rounded-full" />
-          <div className="hidden md:block absolute bottom-40 left-[4%] w-5 h-5 border-2 border-orange-300 rotate-45 opacity-50" />
-
-          {/* Sketch-style decorative shapes - right side - hidden on mobile */}
-          <div className="hidden md:block absolute top-20 right-[6%] w-10 h-10 border-2 border-amber-400 rounded-lg -rotate-12 opacity-50" />
-          <div className="hidden md:block absolute top-36 right-[10%] w-5 h-5 bg-cyan-400/50 rounded-full" />
-          <div className="hidden md:block absolute top-48 right-[4%] w-6 h-6 border-2 border-dashed border-violet-400/60 rotate-12" />
-          <div className="hidden md:block absolute bottom-28 right-[7%] w-8 h-8 bg-gradient-to-br from-amber-300/40 to-orange-400/40 rounded-xl rotate-6" />
-          <div className="hidden md:block absolute bottom-44 right-[12%] w-4 h-4 bg-emerald-500/40 rounded-full" />
-          <div className="hidden md:block absolute bottom-16 right-[5%] w-3 h-3 border-2 border-cyan-500 rotate-45 opacity-60" />
-
-          {/* Ethereum diamond shapes - hidden on mobile */}
-          <svg className="hidden md:block absolute top-24 left-[18%] w-8 h-12 text-ethBlue/20" viewBox="0 0 24 36" fill="currentColor">
-            <path d="M12 0L0 18L12 24L24 18L12 0Z" />
-            <path d="M12 26L0 20L12 36L24 20L12 26Z" opacity="0.6" />
-          </svg>
-          <svg className="hidden md:block absolute bottom-36 right-[16%] w-6 h-9 text-violet-400/30 rotate-12" viewBox="0 0 24 36" fill="currentColor">
-            <path d="M12 0L0 18L12 24L24 18L12 0Z" />
-            <path d="M12 26L0 20L12 36L24 20L12 26Z" opacity="0.6" />
-          </svg>
-
-          {/* Floating lines/connectors - hidden on mobile */}
-          <div className="hidden md:block absolute top-32 left-[20%] w-16 h-0.5 bg-gradient-to-r from-transparent via-violet-300/40 to-transparent rotate-45" />
-          <div className="hidden md:block absolute bottom-28 right-[20%] w-20 h-0.5 bg-gradient-to-r from-transparent via-amber-400/40 to-transparent -rotate-12" />
-
-          {/* Dot pattern overlay */}
-          <div
-            className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage: `radial-gradient(circle, #627EEA 1.5px, transparent 1.5px)`,
-              backgroundSize: '32px 32px'
-            }}
-          />
-        </div>
-
-        {/* Logo - Top Left */}
-        <div className="relative z-30 max-w-7xl mx-auto w-full px-4 md:px-6 pt-4 md:pt-5 animate-in fade-in slide-in-from-bottom-4 duration-500">
-          <a href="https://www.usecaselab.org/" target="_blank" rel="noopener noreferrer" className="inline-block">
-            <Logo size="lg" showText />
-          </a>
-        </div>
-
-        <div className="relative w-full flex flex-col items-center pt-6 md:pt-12 pb-10 px-4 overflow-visible">
+        <div className="relative w-full flex flex-col items-center pt-10 md:pt-16 pb-10 px-4 overflow-visible">
 
           {/* Tagline */}
           <p className="text-xl md:text-2xl text-gray-800 font-normal max-w-2xl mx-auto leading-relaxed text-center mb-10 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
-            Discover real-world Ethereum use cases across <span className="text-ethBlue">30+ domains</span>
+            Explore <span className="text-ethBlue">{loading ? '' : `${ideaEntries.length}+`} ideas</span> for building real-world Ethereum use cases
           </p>
 
-          {/* Search Bar - Prominent and Centered */}
+          {/* Search Bar */}
           <div className="relative z-50 w-full max-w-2xl px-2 sm:px-0 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200" ref={searchContainerRef}>
             <div className={`
               flex items-center gap-2 sm:gap-3 border-2 border-black px-4 sm:px-5 py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-white transition-all
@@ -123,13 +96,15 @@ const HomeView: React.FC<HomeViewProps> = ({
               <Search className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 flex-shrink-0" />
               <input
                 type="text"
-                placeholder="Search use cases..."
+                placeholder="Search ideas..."
                 value={searchQuery}
                 onChange={(e) => {
                   setSearchQuery(e.target.value);
                   setIsSearchFocused(true);
+                  setSelectedSearchIndex(0);
                 }}
                 onFocus={() => setIsSearchFocused(true)}
+                onKeyDown={handleSearchKeyDown}
                 className="outline-none text-base sm:text-lg w-full bg-transparent font-medium text-markerBlack placeholder-gray-400"
               />
               {searchQuery && (
@@ -144,18 +119,20 @@ const HomeView: React.FC<HomeViewProps> = ({
               <div className="absolute top-full left-0 right-0 mt-3 bg-white border-2 border-black rounded-2xl shadow-sketch overflow-hidden z-50 animate-in fade-in slide-in-from-top-2">
                 {searchResults.length > 0 ? (
                   <ul>
-                    {searchResults.map((result) => (
+                    {searchResults.map((result, idx) => (
                       <li key={result.id}>
                         <button
                           onClick={() => handleSelectSearchResult(result.id)}
-                          className="w-full text-left px-5 py-4 hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-colors group"
+                          className={`w-full text-left px-5 py-4 border-b border-gray-100 last:border-0 transition-colors group ${
+                            idx === selectedSearchIndex ? 'bg-gray-50' : 'hover:bg-gray-50'
+                          }`}
                         >
                           <div className="flex justify-between items-start">
                             <span className="font-bold font-heading text-markerBlack group-hover:text-ethBlue text-lg">{result.title}</span>
-                            <span className="text-xs bg-gray-100 px-2 py-1 rounded-full text-gray-500">{result.type}</span>
+                            <span className="text-xs bg-gray-100 px-2 py-1 rounded-full text-gray-500">{result.domainTitle}</span>
                           </div>
                           <p className="text-sm text-gray-500 truncate mt-1">
-                            <span className="text-gray-400 mr-1">↳</span>
+                            <span className="text-gray-400 mr-1">&darr;</span>
                             {result.detail}
                           </p>
                         </button>
@@ -175,9 +152,9 @@ const HomeView: React.FC<HomeViewProps> = ({
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-6 w-full px-4 sm:px-0 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
             <button
               onClick={() => {
-                const allDomainIds = Object.values(DOMAIN_CATEGORIES).flat().map(d => getDomainId(d));
-                const randomId = allDomainIds[Math.floor(Math.random() * allDomainIds.length)];
-                onSelectDomain(randomId);
+                if (ideaEntries.length === 0) return;
+                const randomIdea = ideaEntries[Math.floor(Math.random() * ideaEntries.length)];
+                onSelectIdea(randomIdea.id);
               }}
               className="w-full sm:w-auto px-6 py-3 sm:py-2.5 bg-pastelYellow border-2 border-black rounded-xl font-normal text-markerBlack shadow-sketch-sm hover:shadow-sketch hover:-translate-y-0.5 transition-all active:translate-y-0 active:shadow-sketch-sm"
             >
@@ -193,84 +170,130 @@ const HomeView: React.FC<HomeViewProps> = ({
               Submit Use Case
             </a>
           </div>
+
+          {/* Role Selector */}
+          <RoleSelector
+            activeDomainFilter={activeDomainFilter}
+            setActiveDomainFilter={setActiveDomainFilter}
+            ideaCounts={ideaCounts}
+          />
+
         </div>
       </div>
 
-      {/* Directory Section */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400">
-          {Object.entries(DOMAIN_CATEGORIES).map(([category, items], idx) => {
-            const config = categoryConfig[category] || { icon: "📁", gradient: "from-gray-500 to-gray-600", iconBg: "bg-gray-100", shadow: "shadow-gray-200" };
-
-            return (
-              <div
-                key={category}
-                className={`group bg-white border-2 border-black rounded-2xl overflow-hidden shadow-sketch hover:shadow-sketch-hover hover:-translate-y-1 transition-all duration-300`}
+      {/* Domain Filter + Grid Section */}
+      <div className="relative z-10 w-full py-8 md:py-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="mb-6 flex items-center gap-3">
+            <span className="text-sm font-medium text-gray-500 whitespace-nowrap">
+              Showing {filteredIdeas.length} of {ideaEntries.length} ideas
+            </span>
+            {activeDomainFilter && (
+              <button
+                onClick={() => setActiveDomainFilter(null)}
+                className="text-sm font-bold text-ethBlue hover:underline"
               >
-                {/* Category Header with Gradient */}
-                <div className={`bg-gradient-to-r ${config.gradient} px-5 py-4 flex items-center gap-3`}>
-                  <div className={`w-10 h-10 ${config.iconBg} rounded-xl border-2 border-white/30 flex items-center justify-center text-xl shadow-sm`}>
-                    {config.icon}
-                  </div>
-                  <h3 className="font-bold font-heading text-xl text-white">{category}</h3>
-                  <span className="ml-auto text-white/80 text-sm font-medium">{items.length} domains</span>
-                </div>
-
-                {/* Domain Tags */}
-                <div className="p-4">
-                  <div className="flex flex-wrap gap-2">
-                    {items.map((domain) => (
-                      <button
-                        key={domain}
-                        onClick={() => onSelectDomain(getDomainId(domain))}
-                        className="text-base px-4 py-2 bg-gray-50 border-2 border-gray-200 rounded-lg text-gray-700 font-medium hover:border-black hover:bg-white hover:shadow-sketch-sm transition-all hover:-translate-y-0.5"
-                      >
-                        {domain}
-                      </button>
-                    ))}
-                  </div>
-                </div>
+                Clear filter
+              </button>
+            )}
+          </div>
+          {loading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {Array.from({ length: 12 }).map((_, i) => (
+                <SkeletonCard key={i} />
+              ))}
+            </div>
+          ) : (
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400">
+                {filteredIdeas.map(idea => (
+                  <IdeaCard key={idea.id} idea={idea} onClick={() => onSelectIdea(idea.id)} />
+                ))}
               </div>
-            );
-          })}
+              {filteredIdeas.length === 0 && (
+                <div className="p-12 text-center border-2 border-dashed border-gray-300 rounded-2xl text-gray-400 font-medium italic">
+                  No ideas found for this domain yet.
+                </div>
+              )}
+            </>
+          )}
         </div>
       </div>
     </div>
   );
 };
 
+// URL helpers
+const getIdeaFromUrl = (): string | null => {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('idea');
+};
+
+const setIdeaInUrl = (ideaId: string | null) => {
+  const url = new URL(window.location.href);
+  if (ideaId) {
+    url.searchParams.set('idea', ideaId);
+  } else {
+    url.searchParams.delete('idea');
+  }
+  window.history.pushState({}, '', url.toString());
+};
+
 const App: React.FC = () => {
-  const [domains, setDomains] = useState<DomainData[]>(DOMAINS);
-  const [activeDomainId, setActiveDomainId] = useState<string | null>(null);
+  const [ideaEntries, setIdeaEntries] = useState<IdeaEntry[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [activeIdeaId, setActiveIdeaId] = useState<string | null>(getIdeaFromUrl);
+  const [activeDomainFilter, setActiveDomainFilter] = useState<string[] | null>(null);
 
   // Search State
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const [selectedSearchIndex, setSelectedSearchIndex] = useState(0);
   const searchContainerRef = useRef<HTMLDivElement>(null);
 
-  // Fetch Markdown Data
+  // Fetch all ideas from single JSON file
   useEffect(() => {
-    const loadDomainData = async () => {
-        const updatedDomains = await Promise.all(DOMAINS.map(async (domain) => {
-            try {
-                const response = await fetch(`/data/${domain.id}.md`);
-                if (response.ok) {
-                    const text = await response.text();
-                    return parseDomainMarkdown(text, domain);
-                }
-            } catch (error) {
-                console.warn(`Failed to load markdown for ${domain.id}`, error);
-            }
-            return domain;
-        }));
-        setDomains(updatedDomains);
+    const load = async () => {
+      try {
+        const res = await fetch('/data/ideas.json');
+        const ideas: IdeaEntry[] = await res.json();
+        setIdeaEntries(ideas);
+      } catch (error) {
+        console.error('Failed to load idea data', error);
+      } finally {
+        setLoading(false);
+      }
     };
-
-    loadDomainData();
+    load();
   }, []);
 
-  const activeData = activeDomainId
-    ? (domains.find(d => d.id === activeDomainId) || domains[0])
+  // Sync active idea with URL
+  const selectIdea = useCallback((id: string | null) => {
+    setActiveIdeaId(id);
+    setIdeaInUrl(id);
+  }, []);
+
+  // Handle browser back/forward
+  useEffect(() => {
+    const handlePopState = () => {
+      setActiveIdeaId(getIdeaFromUrl());
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Idea counts per domain for RoleSelector
+  const ideaCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    ideaEntries.forEach(e => {
+      counts[e.domainId] = (counts[e.domainId] || 0) + 1;
+    });
+    return counts;
+  }, [ideaEntries]);
+
+  // Active idea data
+  const activeIdea = activeIdeaId
+    ? ideaEntries.find(e => e.id === activeIdeaId) || null
     : null;
 
   // Close search when clicking outside
@@ -284,90 +307,56 @@ const App: React.FC = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Autocomplete Search Logic
+  // Search across ideas
   const searchResults = useMemo(() => {
     if (!searchQuery.trim()) return [];
     const query = searchQuery.toLowerCase();
-    const results: { id: string, title: string, type: string, detail: string }[] = [];
+    const results: { id: string; title: string; domainTitle: string; detail: string }[] = [];
 
-    domains.forEach(d => {
-      let matchFound = false;
-      let type = '';
+    ideaEntries.forEach(idea => {
       let detail = '';
 
-      // 1. Title Match
-      if (d.title.toLowerCase().includes(query)) {
-        matchFound = true;
-        type = 'Domain';
-        detail = 'Go to page';
-      } 
-      // 2. Idea Match
-      else {
-        const idea = d.ideas.find(i => i.title.toLowerCase().includes(query) || i.description.toLowerCase().includes(query));
-        if (idea) {
-          matchFound = true;
-          type = 'Idea';
-          detail = idea.title;
-        }
-        // 3. Project Match
-        else {
-            const project = d.projects.find(p => p.name.toLowerCase().includes(query));
-            if (project) {
-                matchFound = true;
-                type = 'Project';
-                detail = project.name;
-            }
-             // 4. Problem Match
-             else if (d.problemStatement.toLowerCase().includes(query)) {
-                matchFound = true;
-                type = 'Context';
-                detail = 'Matches problem statement';
-             }
-        }
+      if (idea.title.toLowerCase().includes(query)) {
+        detail = idea.solutionSketch || idea.domainTitle;
+      } else if (idea.solutionSketch.toLowerCase().includes(query)) {
+        detail = idea.solutionSketch;
+      } else if (idea.domainTitle.toLowerCase().includes(query)) {
+        detail = idea.solutionSketch || 'Domain match';
+      } else if (idea.problem.toLowerCase().includes(query)) {
+        detail = 'Matches problem statement';
+      } else {
+        return;
       }
 
-      if (matchFound) {
-        results.push({
-            id: d.id,
-            title: d.title,
-            type,
-            detail
-        });
-      }
+      results.push({
+        id: idea.id,
+        title: idea.title,
+        domainTitle: idea.domainTitle,
+        detail: detail.length > 80 ? detail.slice(0, 80) + '...' : detail,
+      });
     });
 
-    return results.slice(0, 6);
-  }, [searchQuery, domains]);
+    return results.slice(0, 8);
+  }, [searchQuery, ideaEntries]);
 
-  const handleSelectSearchResult = (domainId: string) => {
-    setActiveDomainId(domainId);
+  const handleSelectSearchResult = (ideaId: string) => {
+    selectIdea(ideaId);
     setSearchQuery('');
     setIsSearchFocused(false);
+    setSelectedSearchIndex(0);
   };
 
-  // Handler for selecting a domain from anywhere
-  const handleSelectDomain = (id: string) => {
-    setActiveDomainId(id);
-  };
-
-  // Handler for closing the modal
   const handleCloseModal = () => {
-    setActiveDomainId(null);
+    selectIdea(null);
   };
 
   return (
     <div className="min-h-screen flex flex-col bg-white relative overflow-x-hidden text-markerBlack">
 
-      {/* Background Grid Pattern */}
-      <div className="fixed inset-0 pointer-events-none z-0 opacity-30"
-           style={{
-             backgroundImage: `linear-gradient(#627EEA 1px, transparent 1px), linear-gradient(90deg, #627EEA 1px, transparent 1px)`,
-             backgroundSize: '40px 40px'
-           }}
-      />
-
-      {/* Main Content Area - Always show home page */}
+      {/* Main Content */}
       <HomeView
+        ideaEntries={ideaEntries}
+        loading={loading}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         isSearchFocused={isSearchFocused}
@@ -375,13 +364,21 @@ const App: React.FC = () => {
         searchResults={searchResults}
         handleSelectSearchResult={handleSelectSearchResult}
         searchContainerRef={searchContainerRef}
-        onSelectDomain={handleSelectDomain}
+        activeDomainFilter={activeDomainFilter}
+        setActiveDomainFilter={setActiveDomainFilter}
+        ideaCounts={ideaCounts}
+        onSelectIdea={(id) => selectIdea(id)}
+        selectedSearchIndex={selectedSearchIndex}
+        setSelectedSearchIndex={setSelectedSearchIndex}
       />
       <SiteFooter />
 
-      {/* Use Case Modal - Shows on top of home page */}
-      {activeData && (
-        <UseCaseModal data={activeData} lastUpdated={lastUpdatedDates[activeData.id]} onClose={handleCloseModal} />
+      {/* Idea Detail Modal */}
+      {activeIdea && (
+        <IdeaDetailModal
+          idea={activeIdea}
+          onClose={handleCloseModal}
+        />
       )}
     </div>
   );
