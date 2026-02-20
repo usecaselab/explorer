@@ -1,6 +1,6 @@
 ---
 title: "Researcher credentials and peer review markets"
-domains: science, identity
+domains: science
 ---
 
 ## Problem

@@ -1,6 +1,6 @@
 ---
 title: "Parametric policies"
-domains: insurance, environment
+domains: insurance
 ---
 
 ## Problem

@@ -1,6 +1,6 @@
 ---
 title: "Decentralized insurance claims adjudication"
-domains: insurance, health
+domains: insurance
 ---
 
 ## Problem

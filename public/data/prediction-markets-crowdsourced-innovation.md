@@ -1,6 +1,6 @@
 ---
 title: "Prediction markets for scientific claims"
-domains: science, finance
+domains: science
 ---
 
 ## Problem

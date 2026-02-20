@@ -1,6 +1,6 @@
 ---
 title: "Prediction markets for forecasting"
-domains: finance
+domains: civil-society
 ---
 
 ## Problem

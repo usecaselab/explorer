@@ -1,6 +1,6 @@
 ---
 title: "Onchain mortgage & home-equity rails"
-domains: real-estate-and-housing
+domains: real-estate-and-housing, finance
 ---
 
 ## Problem

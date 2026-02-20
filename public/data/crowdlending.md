@@ -1,6 +1,6 @@
 ---
 title: "Credit scoring from verified off-chain financial history"
-domains: finance, identity
+domains: finance
 ---
 
 ## Problem
