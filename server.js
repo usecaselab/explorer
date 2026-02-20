@@ -17,51 +17,21 @@ let markdownContent = {}; // Store raw markdown by id
 
 // Domain categories mapping
 const DOMAIN_CATEGORIES = {
-  "Society": [
-    "Advocacy & Rights",
-    "Global Governance",
-    "Education",
-    "Law & Regulation",
-    "Public Administration",
-    "Philanthropy & Social Services",
-    "Security & Defense",
-    "Science & Research"
-  ],
-  "Finance": [
-    "Alternative Money",
-    "Credit & Capital Formation",
-    "Insurance",
-    "Public Finance & Procurement"
-  ],
-  "Consumer": [
-    "Retail & eCommerce",
-    "Services & Tasks",
-    "Travel",
-    "Social",
-    "Media & Entertainment",
-    "Gaming & Autonomous Worlds"
-  ],
-  "Enterprise": [
-    "Business Ops",
-    "Supply Chain",
-    "Transport & Logistics",
-    "Productivity & Collaboration",
-    "Intellectual Property",
-    "Marketing & Advertising"
-  ],
-  "Digital": [
-    "AI",
-    "Data",
-    "IT Infrastructure",
-    "Hardware & IoT"
-  ],
-  "Physical": [
-    "Energy",
-    "Food & Agriculture",
-    "Real Estate & Housing",
-    "Sustainability & Regeneration",
-    "Health & Bio"
-  ]
+  'ai': 'AI & Data',
+  'business-operations': 'Business Operations',
+  'civil-society': 'Civil Society',
+  'commerce': 'Commerce',
+  'environment': 'Environment',
+  'finance': 'Finance',
+  'food-and-agriculture': 'Food & Agriculture',
+  'government': 'Government',
+  'health': 'Health',
+  'identity': 'Identity & Credentials',
+  'logistics-and-trade': 'Supply Chain & Logistics',
+  'media': 'Media',
+  'real-estate-and-housing': 'Real Estate',
+  'science': 'Science',
+  'utilities': 'Energy & Utilities',
 };
 
 // Decode common HTML entities to their character equivalents

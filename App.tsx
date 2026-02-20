@@ -4,7 +4,7 @@ import { IdeaEntry } from './types';
 import IdeaCard from './components/IdeaCard';
 import IdeaDetailModal from './components/IdeaDetailModal';
 import SiteFooter from './components/SiteFooter';
-import RoleSelector, { ROLES } from './components/RoleSelector';
+import RoleSelector, { ROLES, domainLabel } from './components/RoleSelector';
 import { Search, X } from 'lucide-react';
 
 // Skeleton card placeholder shown while loading
@@ -27,11 +27,11 @@ interface HomeViewProps {
   setSearchQuery: (query: string) => void;
   isSearchFocused: boolean;
   setIsSearchFocused: (focused: boolean) => void;
-  searchResults: { id: string; title: string; domainTitle: string; detail: string }[];
+  searchResults: { id: string; title: string; domainLabel: string; detail: string }[];
   handleSelectSearchResult: (ideaId: string) => void;
   searchContainerRef: React.RefObject<HTMLDivElement>;
-  activeDomainFilter: string[] | null;
-  setActiveDomainFilter: (filter: string[] | null) => void;
+  activeDomainFilter: string | null;
+  setActiveDomainFilter: (filter: string | null) => void;
   ideaCounts: Record<string, number>;
   onSelectIdea: (id: string) => void;
   selectedSearchIndex: number;
@@ -57,7 +57,7 @@ const HomeView: React.FC<HomeViewProps> = ({
 }) => {
   const filteredIdeas = useMemo(() => {
     if (!activeDomainFilter) return ideaEntries;
-    return ideaEntries.filter(e => activeDomainFilter.includes(e.domainId));
+    return ideaEntries.filter(e => e.domains.includes(activeDomainFilter));
   }, [ideaEntries, activeDomainFilter]);
 
   const handleSearchKeyDown = (e: React.KeyboardEvent) => {
@@ -84,7 +84,7 @@ const HomeView: React.FC<HomeViewProps> = ({
 
           {/* Tagline */}
           <p className="text-xl md:text-2xl text-gray-800 font-normal max-w-2xl mx-auto leading-relaxed text-center mb-10 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
-            Explore <span className="text-ethBlue">{loading ? '' : `${ideaEntries.length}+`} ideas</span> for building real-world Ethereum use cases
+            <span className="text-ethBlue">{loading ? '' : `${ideaEntries.length}+`} ideas</span> for what to build on Ethereum
           </p>
 
           {/* Search Bar */}
@@ -133,7 +133,7 @@ const HomeView: React.FC<HomeViewProps> = ({
                         >
                           <div className="flex justify-between items-start">
                             <span className="font-bold font-heading text-markerBlack group-hover:text-ethBlue text-lg">{result.title}</span>
-                            <span className="text-xs bg-gray-100 px-2 py-1 rounded-full text-gray-500">{result.domainTitle}</span>
+                            <span className="text-xs bg-gray-100 px-2 py-1 rounded-full text-gray-500">{result.domainLabel}</span>
                           </div>
                           <p className="text-sm text-gray-500 truncate mt-1">
                             <span className="text-gray-400 mr-1">&darr;</span>
@@ -233,24 +233,22 @@ const getIdeaFromUrl = (): string | null => {
   return params.get('idea');
 };
 
-const getCategoryFromUrl = (): string[] | null => {
+const getCategoryFromUrl = (): string | null => {
   const params = new URLSearchParams(window.location.search);
   const slug = params.get('category');
   if (!slug) return null;
   const role = ROLES.find(r => r.slug === slug);
-  return role ? role.domains : null;
+  return role ? role.domain : null;
 };
 
-const setUrlParams = (ideaId: string | null, domains: string[] | null) => {
+const setUrlParams = (ideaId: string | null, domain: string | null) => {
   const url = new URL(window.location.href);
   if (ideaId) {
     url.searchParams.set('idea', ideaId);
   } else {
     url.searchParams.delete('idea');
   }
-  const role = domains ? ROLES.find(r =>
-    r.domains.length === domains.length && r.domains.every(d => domains.includes(d))
-  ) : null;
+  const role = domain ? ROLES.find(r => r.domain === domain) : null;
   if (role) {
     url.searchParams.set('category', role.slug);
   } else {
@@ -263,7 +261,7 @@ const App: React.FC = () => {
   const [ideaEntries, setIdeaEntries] = useState<IdeaEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeIdeaId, setActiveIdeaId] = useState<string | null>(getIdeaFromUrl);
-  const [activeDomainFilter, setActiveDomainFilterState] = useState<string[] | null>(getCategoryFromUrl);
+  const [activeDomainFilter, setActiveDomainFilterState] = useState<string | null>(getCategoryFromUrl);
 
   // Search State
   const [searchQuery, setSearchQuery] = useState('');
@@ -275,7 +273,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const load = async () => {
       try {
-        const res = await fetch('/data/ideas.json');
+        const res = await fetch('/ideas.json');
         const ideas: IdeaEntry[] = await res.json();
         // Shuffle once per session so card order feels fresh
         for (let i = ideas.length - 1; i > 0; i--) {
@@ -299,9 +297,9 @@ const App: React.FC = () => {
   }, [activeDomainFilter]);
 
   // Sync category filter with URL
-  const setActiveDomainFilter = useCallback((domains: string[] | null) => {
-    setActiveDomainFilterState(domains);
-    setUrlParams(activeIdeaId, domains);
+  const setActiveDomainFilter = useCallback((domain: string | null) => {
+    setActiveDomainFilterState(domain);
+    setUrlParams(activeIdeaId, domain);
   }, [activeIdeaId]);
 
   // Handle browser back/forward
@@ -318,7 +316,9 @@ const App: React.FC = () => {
   const ideaCounts = useMemo(() => {
     const counts: Record<string, number> = {};
     ideaEntries.forEach(e => {
-      counts[e.domainId] = (counts[e.domainId] || 0) + 1;
+      e.domains.forEach(d => {
+        counts[d] = (counts[d] || 0) + 1;
+      });
     });
     return counts;
   }, [ideaEntries]);
@@ -343,16 +343,17 @@ const App: React.FC = () => {
   const searchResults = useMemo(() => {
     if (!searchQuery.trim()) return [];
     const query = searchQuery.toLowerCase();
-    const results: { id: string; title: string; domainTitle: string; detail: string }[] = [];
+    const results: { id: string; title: string; domainLabel: string; detail: string }[] = [];
 
     ideaEntries.forEach(idea => {
       let detail = '';
+      const labels = idea.domains.map(domainLabel).join(', ');
 
       if (idea.title.toLowerCase().includes(query)) {
-        detail = idea.solutionSketch || idea.domainTitle;
+        detail = idea.solutionSketch || labels;
       } else if (idea.solutionSketch.toLowerCase().includes(query)) {
         detail = idea.solutionSketch;
-      } else if (idea.domainTitle.toLowerCase().includes(query)) {
+      } else if (labels.toLowerCase().includes(query)) {
         detail = idea.solutionSketch || 'Domain match';
       } else if (idea.problem.toLowerCase().includes(query)) {
         detail = 'Matches problem statement';
@@ -363,7 +364,7 @@ const App: React.FC = () => {
       results.push({
         id: idea.id,
         title: idea.title,
-        domainTitle: idea.domainTitle,
+        domainLabel: labels,
         detail: detail.length > 80 ? detail.slice(0, 80) + '...' : detail,
       });
     });

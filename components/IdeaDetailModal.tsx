@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { IdeaEntry } from '../types';
 import { renderMarkdownLinks } from '../utils';
+import { domainLabel } from './RoleSelector';
 import { X, AlertCircle, Lightbulb, BookOpen, Zap, ArrowRight, Link, Check, Pencil } from 'lucide-react';
 
 interface IdeaDetailModalProps {
@@ -74,9 +75,9 @@ const IdeaDetailModal: React.FC<IdeaDetailModalProps> = ({ idea, onClose, allIde
     setTimeout(() => setCopied(false), 2000);
   }, []);
 
-  // Related ideas: same domain, exclude current, take first 3
+  // Related ideas: share at least one domain, exclude current, take first 3
   const relatedIdeas = allIdeas
-    .filter(i => i.domainId === idea.domainId && i.id !== idea.id)
+    .filter(i => i.id !== idea.id && i.domains.some(d => idea.domains.includes(d)))
     .slice(0, 3);
 
   return (
@@ -99,17 +100,17 @@ const IdeaDetailModal: React.FC<IdeaDetailModalProps> = ({ idea, onClose, allIde
         {/* Header */}
         <div className="flex items-start justify-between p-6 md:p-8 pb-4 border-b border-gray-100">
           <div className="flex-1 pr-4">
-            <span className="inline-block text-xs font-bold px-2.5 py-1 rounded-full bg-gray-100 text-gray-600 mb-3">
-              {idea.domainTitle}
-            </span>
+            <div className="flex flex-wrap gap-1.5 mb-3">
+              {idea.domains.map(d => (
+                <span key={d} className="inline-block text-xs font-bold px-2.5 py-1 rounded-full bg-gray-100 text-gray-600">
+                  {domainLabel(d)}
+                </span>
+              ))}
+            </div>
             <h2 id="idea-modal-title" className="text-2xl md:text-4xl font-bold font-heading text-markerBlack leading-tight">
               {idea.title}
             </h2>
-            {idea.targetUser && (
-              <p className="text-sm text-gray-500 mt-2">
-                For: {idea.targetUser}
-              </p>
-            )}
+
           </div>
           <div className="flex items-center gap-2">
             <button
@@ -226,10 +227,37 @@ const IdeaDetailModal: React.FC<IdeaDetailModalProps> = ({ idea, onClose, allIde
             </section>
           )}
 
+          {/* Examples */}
+          {idea.examples && idea.examples.length > 0 && (
+            <section>
+              <div className="flex items-center gap-2 mb-4">
+                <BookOpen className="w-5 h-5" />
+                <h3 className="text-2xl font-bold font-heading">Examples</h3>
+              </div>
+              <ul className="space-y-3 pl-5 list-disc marker:text-gray-300">
+                {idea.examples.map((example, idx) => (
+                  <li key={idx} className="text-base leading-relaxed pl-1">
+                    <a
+                      href={example.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold text-blue-600 hover:underline"
+                    >
+                      {example.name}
+                    </a>
+                    {example.description && (
+                      <span className="text-gray-600"> - {renderMarkdownLinks(example.description)}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
           {/* Improve this idea */}
           <div className="flex justify-center pt-2">
             <a
-              href={`https://github.com/usecaselab/explorer/issues/new?title=${encodeURIComponent(`[Improve] ${idea.title}`)}&body=${encodeURIComponent(`## Idea\n${idea.title} (${idea.domainTitle})\n\n## What's wrong or could be better?\n\n`)}`}
+              href={`https://github.com/usecaselab/explorer/issues/new?title=${encodeURIComponent(`[Improve] ${idea.title}`)}&body=${encodeURIComponent(`## Idea\n${idea.title} (${idea.domains.map(domainLabel).join(', ')})\n\n## What's wrong or could be better?\n\n`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-gray-600 transition-colors"

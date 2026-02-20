@@ -9,9 +9,8 @@ export interface IdeaEntry {
   title: string;
   problem: string;
   solutionSketch: string;
-  targetUser: string;
   whyEthereum: string;
-  domainId: string;
-  domainTitle: string;
+  domains: string[];
   resources: Resource[];
+  examples?: Resource[];
 }

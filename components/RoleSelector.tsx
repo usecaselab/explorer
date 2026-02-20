@@ -2,37 +2,45 @@ import React from 'react';
 import {
   Heart, Landmark, Banknote, Truck, Film, Wheat, Scale,
   Microscope, Building2, ShoppingBag, Zap, Leaf, Cpu,
-  Briefcase, Fingerprint,
+  Briefcase, Fingerprint, Shield,
 } from 'lucide-react';
 
 export interface RoleDef {
   label: string;
   slug: string;
-  domains: string[];
+  domain: string;
   icon: React.FC<{ className?: string }>;
 }
 
 export const ROLES: RoleDef[] = [
-  { label: 'Healthcare', slug: 'healthcare', domains: ['health'], icon: Heart },
-  { label: 'Government & Public Sector', slug: 'government', domains: ['government'], icon: Landmark },
-  { label: 'Financial Services', slug: 'financial-services', domains: ['finance'], icon: Banknote },
-  { label: 'Supply Chain & Logistics', slug: 'supply-chain', domains: ['logistics-and-trade'], icon: Truck },
-  { label: 'Media & Entertainment', slug: 'media', domains: ['media'], icon: Film },
-  { label: 'Agriculture & Food', slug: 'agriculture', domains: ['food-and-agriculture'], icon: Wheat },
-  { label: 'Legal & Civil Society', slug: 'legal', domains: ['civil-society'], icon: Scale },
-  { label: 'Science & Research', slug: 'science', domains: ['science'], icon: Microscope },
-  { label: 'Real Estate', slug: 'real-estate', domains: ['real-estate-and-housing'], icon: Building2 },
-  { label: 'Retail & Commerce', slug: 'retail', domains: ['commerce'], icon: ShoppingBag },
-  { label: 'Energy & Utilities', slug: 'energy', domains: ['utilities'], icon: Zap },
-  { label: 'Environment', slug: 'environment', domains: ['environment'], icon: Leaf },
-  { label: 'AI & Data', slug: 'ai-data', domains: ['ai', 'data'], icon: Cpu },
-  { label: 'Business Operations', slug: 'business-operations', domains: ['business-operations'], icon: Briefcase },
-  { label: 'Identity & Credentials', slug: 'identity', domains: ['identity'], icon: Fingerprint },
+  { label: 'AI & Data', slug: 'ai-data', domain: 'ai', icon: Cpu },
+  { label: 'Business Operations', slug: 'business-operations', domain: 'business-operations', icon: Briefcase },
+  { label: 'Civil Society', slug: 'civil-society', domain: 'civil-society', icon: Scale },
+  { label: 'Commerce', slug: 'commerce', domain: 'commerce', icon: ShoppingBag },
+  { label: 'Energy & Utilities', slug: 'energy', domain: 'utilities', icon: Zap },
+  { label: 'Environment', slug: 'environment', domain: 'environment', icon: Leaf },
+  { label: 'Finance', slug: 'finance', domain: 'finance', icon: Banknote },
+  { label: 'Food & Agriculture', slug: 'food-agriculture', domain: 'food-and-agriculture', icon: Wheat },
+  { label: 'Government', slug: 'government', domain: 'government', icon: Landmark },
+  { label: 'Health', slug: 'health', domain: 'health', icon: Heart },
+  { label: 'Identity & Credentials', slug: 'identity', domain: 'identity', icon: Fingerprint },
+  { label: 'Insurance', slug: 'insurance', domain: 'insurance', icon: Shield },
+  { label: 'Media', slug: 'media', domain: 'media', icon: Film },
+  { label: 'Real Estate', slug: 'real-estate', domain: 'real-estate-and-housing', icon: Building2 },
+  { label: 'Science', slug: 'science', domain: 'science', icon: Microscope },
+  { label: 'Supply Chain & Logistics', slug: 'supply-chain', domain: 'logistics-and-trade', icon: Truck },
 ];
 
+const ROLE_BY_DOMAIN: Record<string, RoleDef> = {};
+ROLES.forEach(r => { ROLE_BY_DOMAIN[r.domain] = r; });
+
+export function domainLabel(domain: string): string {
+  return ROLE_BY_DOMAIN[domain]?.label ?? domain;
+}
+
 interface RoleSelectorProps {
-  activeDomainFilter: string[] | null;
-  setActiveDomainFilter: (filter: string[] | null) => void;
+  activeDomainFilter: string | null;
+  setActiveDomainFilter: (filter: string | null) => void;
   ideaCounts: Record<string, number>;
 }
 
@@ -41,31 +49,18 @@ const RoleSelector: React.FC<RoleSelectorProps> = ({
   setActiveDomainFilter,
   ideaCounts,
 }) => {
-  const isActive = (role: RoleDef) =>
-    activeDomainFilter !== null &&
-    role.domains.length === activeDomainFilter.length &&
-    role.domains.every(d => activeDomainFilter.includes(d));
-
-  const handleClick = (role: RoleDef) => {
-    if (isActive(role)) {
-      setActiveDomainFilter(null);
-    } else {
-      setActiveDomainFilter(role.domains);
-    }
-  };
-
   return (
     <div className="w-full max-w-5xl mx-auto mt-8 px-4 sm:px-0 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
       <p className="text-sm font-medium text-gray-500 mb-3 text-center">I'm interested in...</p>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
         {ROLES.map(role => {
-          const active = isActive(role);
-          const count = role.domains.reduce((sum, d) => sum + (ideaCounts[d] || 0), 0);
+          const active = activeDomainFilter === role.domain;
+          const count = ideaCounts[role.domain] || 0;
           const Icon = role.icon;
           return (
             <button
-              key={role.label}
-              onClick={() => handleClick(role)}
+              key={role.domain}
+              onClick={() => setActiveDomainFilter(active ? null : role.domain)}
               className={`flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl border-2 text-left text-sm font-medium transition-all ${
                 active
                   ? 'bg-black text-white border-black shadow-sketch-sm'

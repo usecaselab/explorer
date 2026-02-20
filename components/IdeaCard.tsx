@@ -1,5 +1,6 @@
 import React from 'react';
 import { IdeaEntry } from '../types';
+import { domainLabel } from './RoleSelector';
 
 interface IdeaCardProps {
   idea: IdeaEntry;
@@ -11,13 +12,13 @@ const DOMAIN_COLORS: Record<string, { bg: string; text: string }> = {
   'business-operations': { bg: 'bg-blue-100', text: 'text-blue-700' },
   'civil-society': { bg: 'bg-violet-100', text: 'text-violet-700' },
   'commerce': { bg: 'bg-orange-100', text: 'text-orange-700' },
-  'data': { bg: 'bg-cyan-100', text: 'text-cyan-700' },
   'environment': { bg: 'bg-amber-100', text: 'text-amber-700' },
   'finance': { bg: 'bg-emerald-100', text: 'text-emerald-700' },
   'food-and-agriculture': { bg: 'bg-amber-100', text: 'text-amber-700' },
   'government': { bg: 'bg-violet-100', text: 'text-violet-700' },
   'health': { bg: 'bg-amber-100', text: 'text-amber-700' },
   'identity': { bg: 'bg-violet-100', text: 'text-violet-700' },
+  'insurance': { bg: 'bg-teal-100', text: 'text-teal-700' },
   'logistics-and-trade': { bg: 'bg-blue-100', text: 'text-blue-700' },
   'media': { bg: 'bg-orange-100', text: 'text-orange-700' },
   'real-estate-and-housing': { bg: 'bg-amber-100', text: 'text-amber-700' },
@@ -28,7 +29,6 @@ const DOMAIN_COLORS: Record<string, { bg: string; text: string }> = {
 const DEFAULT_COLOR = { bg: 'bg-gray-100', text: 'text-gray-700' };
 
 const IdeaCard: React.FC<IdeaCardProps> = ({ idea, onClick }) => {
-  const color = DOMAIN_COLORS[idea.domainId] || DEFAULT_COLOR;
   const truncated = idea.problem.length > 120
     ? idea.problem.slice(0, 120) + '...'
     : idea.problem;
@@ -46,9 +46,16 @@ const IdeaCard: React.FC<IdeaCardProps> = ({ idea, onClick }) => {
           {truncated}
         </p>
       )}
-      <span className={`inline-block self-start text-xs font-bold px-2.5 py-1 rounded-full ${color.bg} ${color.text}`}>
-        {idea.domainTitle}
-      </span>
+      <div className="flex flex-wrap gap-1.5">
+        {idea.domains.map(d => {
+          const color = DOMAIN_COLORS[d] || DEFAULT_COLOR;
+          return (
+            <span key={d} className={`inline-block text-xs font-bold px-2.5 py-1 rounded-full ${color.bg} ${color.text}`}>
+              {domainLabel(d)}
+            </span>
+          );
+        })}
+      </div>
     </button>
   );
 };
