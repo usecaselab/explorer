@@ -5,28 +5,29 @@ import {
   Briefcase, Fingerprint,
 } from 'lucide-react';
 
-interface RoleDef {
+export interface RoleDef {
   label: string;
+  slug: string;
   domains: string[];
   icon: React.FC<{ className?: string }>;
 }
 
-const ROLES: RoleDef[] = [
-  { label: 'Healthcare', domains: ['health'], icon: Heart },
-  { label: 'Government & Public Sector', domains: ['government'], icon: Landmark },
-  { label: 'Financial Services', domains: ['finance'], icon: Banknote },
-  { label: 'Supply Chain & Logistics', domains: ['logistics-and-trade'], icon: Truck },
-  { label: 'Media & Entertainment', domains: ['media'], icon: Film },
-  { label: 'Agriculture & Food', domains: ['food-and-agriculture'], icon: Wheat },
-  { label: 'Legal & Civil Society', domains: ['civil-society'], icon: Scale },
-  { label: 'Science & Research', domains: ['science'], icon: Microscope },
-  { label: 'Real Estate', domains: ['real-estate-and-housing'], icon: Building2 },
-  { label: 'Retail & Commerce', domains: ['commerce'], icon: ShoppingBag },
-  { label: 'Energy & Utilities', domains: ['utilities'], icon: Zap },
-  { label: 'Environment', domains: ['environment'], icon: Leaf },
-  { label: 'AI & Data', domains: ['ai', 'data'], icon: Cpu },
-  { label: 'Business Operations', domains: ['business-operations'], icon: Briefcase },
-  { label: 'Identity & Credentials', domains: ['identity'], icon: Fingerprint },
+export const ROLES: RoleDef[] = [
+  { label: 'Healthcare', slug: 'healthcare', domains: ['health'], icon: Heart },
+  { label: 'Government & Public Sector', slug: 'government', domains: ['government'], icon: Landmark },
+  { label: 'Financial Services', slug: 'financial-services', domains: ['finance'], icon: Banknote },
+  { label: 'Supply Chain & Logistics', slug: 'supply-chain', domains: ['logistics-and-trade'], icon: Truck },
+  { label: 'Media & Entertainment', slug: 'media', domains: ['media'], icon: Film },
+  { label: 'Agriculture & Food', slug: 'agriculture', domains: ['food-and-agriculture'], icon: Wheat },
+  { label: 'Legal & Civil Society', slug: 'legal', domains: ['civil-society'], icon: Scale },
+  { label: 'Science & Research', slug: 'science', domains: ['science'], icon: Microscope },
+  { label: 'Real Estate', slug: 'real-estate', domains: ['real-estate-and-housing'], icon: Building2 },
+  { label: 'Retail & Commerce', slug: 'retail', domains: ['commerce'], icon: ShoppingBag },
+  { label: 'Energy & Utilities', slug: 'energy', domains: ['utilities'], icon: Zap },
+  { label: 'Environment', slug: 'environment', domains: ['environment'], icon: Leaf },
+  { label: 'AI & Data', slug: 'ai-data', domains: ['ai', 'data'], icon: Cpu },
+  { label: 'Business Operations', slug: 'business-operations', domains: ['business-operations'], icon: Briefcase },
+  { label: 'Identity & Credentials', slug: 'identity', domains: ['identity'], icon: Fingerprint },
 ];
 
 interface RoleSelectorProps {

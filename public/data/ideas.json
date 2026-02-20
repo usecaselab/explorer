@@ -1,6 +1,6 @@
 [
   {
-    "id": "advocacy-and-rights--portable-identity-credentials-for-ngos-volunteers-journalists",
+    "id": "portable-identity-credentials-for-ngos-volunteers-journalists",
     "title": "Portable identity & credentials for NGOs, volunteers & journalists",
     "problem": "NGO workers, volunteers, and journalists operating in hostile environments must repeatedly prove their affiliations to gain access and trust, yet sharing full identity documents puts them at risk of surveillance and retaliation.",
     "solutionSketch": "Selective-disclosure credentials backed by onchain verification to manage trust while protecting privacy",
@@ -47,7 +47,7 @@
     ]
   },
   {
-    "id": "advocacy-and-rights--tools-for-organized-labor-cross-jurisdictional-networks",
+    "id": "tools-for-organized-labor-cross-jurisdictional-networks",
     "title": "Tools for organized labor — cross-jurisdictional networks",
     "problem": "Workers organizing across borders have no portable way to carry union credentials, reputation, or benefits from one jurisdiction to another, fragmenting solidarity and weakening collective bargaining power.",
     "solutionSketch": "Portable credentials, shared reputation and tokenized reward systems for unions or organizing networks spanning borders",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "advocacy-and-rights--whistleblower-evidence-integrity-systems",
+    "id": "whistleblower-evidence-integrity-systems",
     "title": "Whistleblower & evidence-integrity systems",
     "problem": "Whistleblower testimonies and leaked evidence are vulnerable to tampering, metadata stripping, and retroactive denial, while existing submission channels routinely expose the identity of sources.",
     "solutionSketch": "Tamper-proof timestamping and storage of testimonies, photographs, or datasets with privacy-preserving disclosure",
@@ -91,7 +91,7 @@
     ]
   },
   {
-    "id": "ai--ai-agent-identity",
+    "id": "ai-agent-identity",
     "title": "Economic identity for AI agents",
     "problem": "Autonomous AI agents interact with services and execute transactions but have no standardized identity or wallet, making it impossible to attribute actions, manage permissions, hold assets, or hold agents accountable across organizations.",
     "solutionSketch": "Onchain identity and payment rails purpose-built for autonomous agents — enabling them to hold funds, pay for API calls, sign transactions, and build verifiable track records across platforms.",
@@ -143,7 +143,7 @@
     ]
   },
   {
-    "id": "ai--ai-output-provenance",
+    "id": "ai-output-provenance",
     "title": "AI output provenance",
     "problem": "AI-generated text, images, and video are indistinguishable from human-created content once shared, fueling deepfakes, misinformation, and plagiarism with no reliable chain of attribution back to the originating model.",
     "solutionSketch": "Watermarking, signing, and tracking AI-generated content to combat deepfakes and misinformation",
@@ -175,7 +175,7 @@
     ]
   },
   {
-    "id": "ai--model-and-dataset-marketplaces",
+    "id": "model-and-dataset-marketplaces",
     "title": "Model and dataset marketplaces",
     "problem": "AI models and training datasets are shared through ad-hoc channels with no enforceable licensing, usage metering, or royalty distribution, so creators lose control and revenue the moment they publish.",
     "solutionSketch": "Tokenized AI models and training datasets with programmable licensing, usage tracking, and royalty distribution",
@@ -212,7 +212,7 @@
     ]
   },
   {
-    "id": "ai--verifiable-ai-inference",
+    "id": "verifiable-ai-inference",
     "title": "Verifiable AI inference",
     "problem": "Users receiving AI-generated outputs have no way to independently verify which model, version, or weights produced a given result, making it impossible to hold providers accountable for hallucinations or manipulation.",
     "solutionSketch": "Onchain proofs that a specific model produced a specific output, enabling accountability and auditability",
@@ -244,7 +244,7 @@
     ]
   },
   {
-    "id": "alt-money--community-currencies",
+    "id": "community-currencies",
     "title": "Local & community currencies",
     "problem": "Local economies leak spending to global platforms and distant supply chains, and communities that want to circulate a local currency lack reliable infrastructure to issue, govern, and settle it at meaningful scale.",
     "solutionSketch": "Place- or network-specific currencies used by defined communities (cities, cooperatives, regions) to keep spending local, incentivize participation, and fund shared goods rather than leaking value to external markets",
@@ -301,7 +301,7 @@
     ]
   },
   {
-    "id": "business-ops--bookkeeping-accounting",
+    "id": "bookkeeping-accounting",
     "title": "Bookkeeping & Accounting",
     "problem": "Double-entry bookkeeping produces records that each party maintains independently, making audits slow and expensive because there is no shared, tamper-evident ledger that all counterparties can trust.",
     "solutionSketch": "Real-time, tamper-evident “triple-entry” ledgers providing auditable financial history",
@@ -333,7 +333,7 @@
     ]
   },
   {
-    "id": "business-ops--cap-tables-equity",
+    "id": "cap-tables-equity",
     "title": "Cap Tables & Equity",
     "problem": "Startup cap tables live in expensive, siloed platforms like Carta where ownership records can fall out of sync, transfers require manual legal work, and founders have no real-time, verifiable source of truth.",
     "solutionSketch": "Verifiable, onchain ownership records from day one (issuance, vesting, transfers)",
@@ -380,7 +380,7 @@
     ]
   },
   {
-    "id": "business-ops--commercial-agreements",
+    "id": "commercial-agreements",
     "title": "Commercial Agreements",
     "problem": "Business contracts are static PDFs disconnected from actual execution, so milestones, royalty calculations, volume discounts, and dispute resolution all require manual tracking and expensive legal intervention.",
     "solutionSketch": "Legal smart contracts embedding milestones, royalties, licensing, rebates, volume discounts, performance incentives, warranties, expiries, dispute handling directly into execution logic",
@@ -427,7 +427,7 @@
     ]
   },
   {
-    "id": "business-ops--payroll-invoicing",
+    "id": "payroll-invoicing",
     "title": "Payroll & Invoicing",
     "problem": "Cross-border payroll and contractor payments route through multiple intermediaries, taking days to settle with high fees, while tax reporting and compliance for global teams remain a manual reconciliation nightmare.",
     "solutionSketch": "Instant, programmable global payouts with automated tax/KYC reporting",
@@ -464,7 +464,7 @@
     ]
   },
   {
-    "id": "business-ops--procurement",
+    "id": "procurement",
     "title": "Procurement",
     "problem": "Purchase orders, vendor agreements, and replenishment workflows run through email chains and disconnected ERP modules, causing delays, duplicate orders, and disputes over terms that were never machine-readable.",
     "solutionSketch": "Smart contracts for purchase orders, RFQs, RFPs, vendor agreements, or automatic replenishment plans",
@@ -511,7 +511,7 @@
     ]
   },
   {
-    "id": "business-ops--revenue-profit-splits",
+    "id": "revenue-profit-splits",
     "title": "Revenue & Profit Splits",
     "problem": "Revenue sharing among partners, investors, and employees requires manual calculation and distribution each period, introducing delays, errors, and disputes that compound as organizations scale.",
     "solutionSketch": "Automated distributions to partners, employees, and investors tied to income events; tokenized revenue/profits; tokenize receivables/payables",
@@ -548,7 +548,7 @@
     ]
   },
   {
-    "id": "business-ops--roles-permissions",
+    "id": "roles-permissions",
     "title": "Roles & Permissions",
     "problem": "Employee and contractor permissions across company tools, bank accounts, and signing authorities are managed through disconnected admin panels, creating security gaps and making it impossible to enforce policies programmatically.",
     "solutionSketch": "Programmable, wallet-based authority systems enforcing who can move funds or sign agreements; onchain identifiers to represent employees/members",
@@ -610,7 +610,7 @@
     ]
   },
   {
-    "id": "business-ops--treasury-management",
+    "id": "treasury-management",
     "title": "Treasury Management",
     "problem": "Company treasuries sit in traditional bank accounts earning minimal yield, with no programmable controls for spend limits, automated reporting, or real-time visibility into cash positions across entities and currencies.",
     "solutionSketch": "Stablecoin-based treasury with yield strategies, automated reporting, and compliance hooks",
@@ -657,7 +657,7 @@
     ]
   },
   {
-    "id": "credit-and-capital-formation--commitment-pooling",
+    "id": "commitment-pooling",
     "title": "Cooperative lending and liquidity pools",
     "problem": "Small businesses, cooperatives, and credit unions lack mechanisms to pool reserves and share liquidity risk without expensive legacy banking infrastructure, forcing each member to maintain costly individual cash buffers.",
     "solutionSketch": "Blockchain-based cooperative finance that lets members pool capital, share liquidity, and access credit from one another — governed transparently and auditable by all participants.",
@@ -694,7 +694,7 @@
     ]
   },
   {
-    "id": "credit-and-capital-formation--crowdfunding",
+    "id": "crowdfunding",
     "title": "Community bonds for local infrastructure",
     "problem": "A neighborhood that wants to collectively fund a solar array, a community center, or a broadband network has no mechanism to issue bonds to local residents — municipal bond markets require expensive intermediaries and high minimums that exclude small projects and the residents who would benefit most from investing in their own community.",
     "solutionSketch": "Tokenized community bonds that let residents invest as little as $10 in specific local infrastructure projects, with coupon payments and principal automated via smart contract and project milestones verified before funds are released.",
@@ -756,7 +756,7 @@
     ]
   },
   {
-    "id": "credit-and-capital-formation--crowdlending",
+    "id": "crowdlending",
     "title": "Credit scoring from verified off-chain financial history",
     "problem": "Hundreds of millions of people are creditworthy — they pay rent on time, maintain savings, and run profitable small businesses — but are invisible to formal lenders because their financial history lives in bank apps, rental platforms, and payroll systems that lenders can't access without the borrower surrendering raw account credentials.",
     "solutionSketch": "zkTLS-based credit assessments where borrowers prove specific financial claims — 12 months of on-time rent payments, a salary above a threshold, a business revenue history — directly from source platforms without sharing login credentials, giving lenders verifiable underwriting data for borrowers who lack formal credit files.",
@@ -798,7 +798,7 @@
     ]
   },
   {
-    "id": "credit-and-capital-formation--equity-tokenization",
+    "id": "equity-tokenization",
     "title": "Equity tokenization",
     "problem": "Going public through an IPO costs millions in legal, banking, and compliance fees, effectively locking out small and mid-sized companies from accessing broad equity markets.",
     "solutionSketch": "Issuing tokenized shares, bypassing expensive IPOs and private placements",
@@ -845,7 +845,7 @@
     ]
   },
   {
-    "id": "credit-and-capital-formation--invoice-and-trade-finance",
+    "id": "invoice-and-trade-finance",
     "title": "Invoice financing and trade finance",
     "problem": "Small businesses and exporters wait 30-90 days for payment on legitimate invoices and receivables, while factoring intermediaries charge steep discount rates and trade finance lenders reject applications because documents are unverifiable PDFs prone to double-pledging.",
     "solutionSketch": "Tokenized invoices, receivables, and letters of credit that can be verified, sold, collateralized, or traded in real-time",
@@ -902,7 +902,7 @@
     ]
   },
   {
-    "id": "credit-and-capital-formation--trade-credit-clearing",
+    "id": "trade-credit-clearing",
     "title": "Trade credit clearing",
     "problem": "SMEs extend trade credit to each other in isolated bilateral relationships, missing opportunities to net circular obligations and free up working capital that is locked in receivables chains.",
     "solutionSketch": "Netting obligations across SME networks",
@@ -919,7 +919,7 @@
     ]
   },
   {
-    "id": "data--data-marketplace-and-tokenized-assets",
+    "id": "data-marketplace-and-tokenized-assets",
     "title": "Data marketplace and tokenized assets",
     "problem": "Data trades through opaque brokers and bespoke NDA-driven deals where buyers can't verify quality or provenance, while valuable datasets and analytics outputs have no standard way to be priced, composed, or traded like financial instruments.",
     "solutionSketch": "Platforms where data access is governed by smart contracts — enabling licensing, metering, revocation, royalties, and automatic revenue splits — with data exposed as onchain assets that can be priced, combined, and traded",
@@ -966,7 +966,7 @@
     ]
   },
   {
-    "id": "data--personal-data-vaults",
+    "id": "personal-data-vaults",
     "title": "Personal data vaults",
     "problem": "People's personal data is scattered across hundreds of apps and services that collect it without meaningful consent, offering no way for individuals to control access, revoke sharing, or capture value from their own information.",
     "solutionSketch": "User-controlled data stores that allow granular consent, selective disclosure, and optional monetization without surrendering raw data",
@@ -988,7 +988,7 @@
     ]
   },
   {
-    "id": "data--zktls-verified-data",
+    "id": "zktls-verified-data",
     "title": "zkTLS-verified data",
     "problem": "Users who want to prove claims about their income, identity, or activity from existing platforms must either share raw credentials or rely on platform-issued APIs that can be revoked at will.",
     "solutionSketch": "Users prove claims from existing web platforms—income, identity, activity—for use in onchain applications, without requiring platform permission or surrendering raw data",
@@ -1035,7 +1035,7 @@
     ]
   },
   {
-    "id": "education--education-finance",
+    "id": "education-finance",
     "title": "Education finance",
     "problem": "Student financing is opaque and rigid, with loan terms set by distant institutions, scholarship disbursement lacking accountability, and no programmable way to align education funding with actual learner outcomes.",
     "solutionSketch": "Transparent income-share agreements, programmable scholarships, and community-driven funding for education providers",
@@ -1052,7 +1052,7 @@
     ]
   },
   {
-    "id": "education--portable-credentials-and-skill-passports",
+    "id": "portable-credentials-and-skill-passports",
     "title": "Portable credentials and skill passports",
     "problem": "Academic credentials are issued as PDFs or locked in institutional databases, while skills acquired across bootcamps, MOOCs, employers, and universities exist in disconnected silos — forcing professionals to re-prove competencies every time they change jobs or programs.",
     "solutionSketch": "Tamper-proof, portable diplomas, micro-credentials, and aggregated skill records issued by verified institutions and employers that form a unified professional reputation",
@@ -1084,7 +1084,7 @@
     ]
   },
   {
-    "id": "energy--demand-coordination",
+    "id": "demand-coordination",
     "title": "Demand coordination",
     "problem": "Grid operators rely on blunt tools like time-of-use pricing to manage demand peaks, but households and businesses lack real-time, granular incentives to shift consumption in ways that actually relieve grid stress.",
     "solutionSketch": "Incentive systems that reward households and businesses for shifting load, sharing energy, and smoothing demand peaks",
@@ -1121,7 +1121,7 @@
     ]
   },
   {
-    "id": "energy--distributed-grid-automation",
+    "id": "distributed-grid-automation",
     "title": "Distributed grid automation",
     "problem": "As grids add billions of connected devices and distributed generation, centralized control systems become single points of failure with no common way to authenticate devices or maintain tamper-evident records of energy flows.",
     "solutionSketch": "Decentralized control systems for monitoring and coordinating grid assets to reduce outages and cyber-physical vulnerabilities",
@@ -1163,7 +1163,7 @@
     ]
   },
   {
-    "id": "energy--peer-to-peer-energy-markets",
+    "id": "peer-to-peer-energy-markets",
     "title": "Peer-to-peer energy markets",
     "problem": "Rooftop solar owners and other distributed generators have no direct way to sell surplus electricity to their neighbors, forced instead to feed it back to the grid at wholesale rates set by monopoly utilities.",
     "solutionSketch": "Local energy trading and microgrids that let participants buy, sell, and balance electricity directly with one another",
@@ -1195,7 +1195,7 @@
     ]
   },
   {
-    "id": "energy--tokenized-renewable-financing",
+    "id": "tokenized-renewable-financing",
     "title": "Tokenized renewable financing",
     "problem": "Small-scale renewable energy projects struggle to attract financing because ownership, cash flows, and performance data are not standardized or auditable, making it prohibitively hard to bundle many sites into investable instruments.",
     "solutionSketch": "Onchain funding models for solar, storage, and community energy projects that track ownership, cash flows, and performance",
@@ -1227,7 +1227,7 @@
     ]
   },
   {
-    "id": "food-and-agriculture--cooperative-and-local-marketplaces",
+    "id": "cooperative-and-local-marketplaces",
     "title": "Cooperative and local marketplaces",
     "problem": "Small producers selling through conventional distribution channels lose most of their margin to intermediaries, while consumers who want to buy local have no transparent, community-governed platform to connect with them directly.",
     "solutionSketch": "Community-owned platforms that let producers sell directly and keep more economic value within local food systems",
@@ -1269,7 +1269,7 @@
     ]
   },
   {
-    "id": "food-and-agriculture--food-provenance-and-traceability",
+    "id": "food-provenance-and-traceability",
     "title": "Food provenance and traceability",
     "problem": "When a food safety recall is issued, tracing contaminated product back to the source takes days or weeks because lot IDs change at every handoff between grower, packer, distributor, and retailer — each maintaining their own disconnected records — meaning contaminated product stays on shelves while investigators manually reconstruct the chain.",
     "solutionSketch": "A shared lot ID standard that persists immutably through every handoff in the supply chain — so when a retailer scans a product, they can trace it back to the specific farm field and harvest date in seconds, and a recall can be executed against a precise subset of product rather than pulling entire categories from shelves.",
@@ -1301,7 +1301,7 @@
     ]
   },
   {
-    "id": "food-and-agriculture--onchain-farmer-finance-and-insurance",
+    "id": "onchain-farmer-finance-and-insurance",
     "title": "Farmer finance and parametric insurance",
     "problem": "Smallholder farmers in climate-vulnerable regions need weather insurance but manual claims processing takes weeks, requires costly adjusters who can't economically serve small policies, and produces disputes that erode trust in the product. Traditional underwriters also reject farmers who lack formal production records, even when satellite and weather data could substitute.",
     "solutionSketch": "Parametric insurance products for farmers triggered automatically by satellite imagery and weather station data — when rainfall or temperature readings cross pre-agreed thresholds indicating crop loss, payouts execute without a claim form or adjuster, making it economically viable to serve smallholders at scale.",
@@ -1343,7 +1343,7 @@
     ]
   },
   {
-    "id": "food-and-agriculture--regenerative-practice-incentives",
+    "id": "regenerative-practice-incentives",
     "title": "Regenerative practice incentives",
     "problem": "Farmers who adopt soil-building, biodiversity-enhancing, or low-input practices absorb higher costs and risks with no reliable mechanism to measure, certify, and compensate them for the ecological value they create.",
     "solutionSketch": "Reward mechanisms that compensate farmers for sustainable and regenerative agricultural behaviors",
@@ -1380,7 +1380,7 @@
     ]
   },
   {
-    "id": "gaming-and-autonomous-worlds--esports-leagues",
+    "id": "esports-leagues",
     "title": "Esports & leagues",
     "problem": "Esports tournaments rely on centralized organizers for brackets, anti-cheat enforcement, and prize distribution, introducing disputes over fairness, delayed payouts, and opaque decision-making.",
     "solutionSketch": "Transparent tournament brackets, provable anti-cheat attestations, instant rule-based payouts reduce overhead and disputes",
@@ -1391,7 +1391,7 @@
     "resources": []
   },
   {
-    "id": "gaming-and-autonomous-worlds--player-owned-assets-markets",
+    "id": "player-owned-assets-markets",
     "title": "Player-owned in-game assets",
     "problem": "In-game items, currencies, and progress are locked inside proprietary platforms that can freeze accounts, change economies, or shut down entirely, leaving players with no real ownership of assets they earned or purchased.",
     "solutionSketch": "Truly portable items/currency with minimal fees, rentals, AMM-driven markets, escrowed prize pools—shifting power from platforms to players",
@@ -1418,7 +1418,7 @@
     ]
   },
   {
-    "id": "gaming-and-autonomous-worlds--ugc-mod-royalties",
+    "id": "ugc-mod-royalties",
     "title": "Creator royalties for game mods and user content",
     "problem": "Modders and content creators build maps, skins, and tools that drive player engagement, but receive no automatic compensation because platforms lack enforceable revenue-sharing mechanisms tied to actual usage.",
     "solutionSketch": "Tokenized blueprints, maps or mods permit automatic revenue splits, cross-client recognition, and creator-driven extension of game logic",
@@ -1450,7 +1450,7 @@
     ]
   },
   {
-    "id": "global-governance--city-regional-protocol-networks",
+    "id": "city-regional-protocol-networks",
     "title": "Verifiable city climate commitment tracking",
     "problem": "Coalitions like C40 Cities and the Global Covenant of Mayors have enrolled hundreds of cities in public emissions reduction pledges — but compliance tracking relies on self-reported data submitted to central secretariats, with no neutral mechanism for member cities or the public to verify whether commitments are being met or to detect when cities quietly abandon targets.",
     "solutionSketch": "A shared ledger where city governments record verified emissions data, policy milestones, and adaptation measures — with attestations from IoT sensor networks, third-party auditors, and satellite monitoring — creating a publicly auditable record that any city, funder, or citizen can inspect.",
@@ -1461,7 +1461,7 @@
     "resources": []
   },
   {
-    "id": "global-governance--common-pool-resource-management",
+    "id": "common-pool-resource-management",
     "title": "Common-pool resource management",
     "problem": "Emissions caps, fishing quotas, and biodiversity credits are tracked through incompatible national systems that cannot be independently verified, enabling widespread overuse of shared natural resources.",
     "solutionSketch": "Verifiable tracking of emissions, fishing quotas, biodiversity credits or water-basin usage across borders",
@@ -1472,7 +1472,7 @@
     "resources": []
   },
   {
-    "id": "hardware-and-iot--auditability-and-compliance-for-physical-systems",
+    "id": "auditability-and-compliance-for-physical-systems",
     "title": "Auditability and compliance for physical systems",
     "problem": "Physical systems in manufacturing, logistics, and infrastructure generate safety and maintenance data that is stored in mutable, disconnected databases, making regulatory audits unreliable and tampering undetectable.",
     "solutionSketch": "Tamper-evident logs linking physical events to digital records for safety, maintenance, and regulatory reporting",
@@ -1529,7 +1529,7 @@
     ]
   },
   {
-    "id": "hardware-and-iot--device-identity-and-authentication",
+    "id": "device-identity-and-authentication",
     "title": "Device identity and authentication",
     "problem": "IoT devices depend on centralized certificate authorities and cloud platforms for identity and authentication, creating single points of failure and making it difficult to securely onboard or transfer ownership of billions of connected devices.",
     "solutionSketch": "Cryptographic identities for hardware devices that enable secure onboarding, authorization, and lifecycle management without centralized registries",
@@ -1586,7 +1586,7 @@
     ]
   },
   {
-    "id": "hardware-and-iot--machine-to-machine-payments",
+    "id": "machine-to-machine-payments",
     "title": "Machine-to-machine payments",
     "problem": "Devices that could autonomously transact for energy, bandwidth, or compute have no lightweight payment rails designed for machine-scale microtransactions, forcing all inter-device commerce through human-operated intermediaries.",
     "solutionSketch": "Autonomous payment rails that let devices pay each other for services like bandwidth, energy, compute, or maintenance in real time",
@@ -1653,7 +1653,7 @@
     ]
   },
   {
-    "id": "health-and-bio--decentralized-clinical-trials",
+    "id": "decentralized-clinical-trials",
     "title": "Decentralized clinical trials",
     "problem": "Clinical trials cost billions and take years because participant recruitment, data collection, and verification are centralized through a handful of contract research organizations, while funding is disbursed upfront with weak enforcement of data-sharing requirements.",
     "solutionSketch": "Crowdsourced, token-incentivized trials with verifiable data collection, AI-assisted analysis, and smart-contract payments tied to data-sharing milestones and auditing",
@@ -1725,7 +1725,7 @@
     ]
   },
   {
-    "id": "health-and-bio--patient-owned-health-records",
+    "id": "patient-owned-health-records",
     "title": "Patient-controlled health records",
     "problem": "Medical records are siloed across hospitals, clinics, and insurers — leaving patients unable to access, control, or share their own health data when switching providers, seeking second opinions, or contributing to research. Test results, clinical findings, and peer-review outcomes are also easy to fabricate or alter without a tamper-evident infrastructure.",
     "solutionSketch": "Systems that give patients direct control over their medical data, enabling secure sharing across providers and verifiable attestation of test results and clinical findings.",
@@ -1802,7 +1802,7 @@
     ]
   },
   {
-    "id": "health-and-bio--pharmaceutical-traceability-and-marketplaces",
+    "id": "pharmaceutical-traceability-and-marketplaces",
     "title": "Pharmaceutical traceability and marketplaces",
     "problem": "Counterfeit drugs kill hundreds of thousands of people annually because pharmaceutical supply chains lack end-to-end verification from manufacturer to patient, making it impossible to confirm authenticity at the point of care.",
     "solutionSketch": "End-to-end tracking of drugs to prevent counterfeits and enable transparent sourcing and distribution",
@@ -1834,7 +1834,7 @@
     ]
   },
   {
-    "id": "health-and-bio--programmable-health-insurance",
+    "id": "programmable-health-insurance",
     "title": "Automated health insurance claims",
     "problem": "Insurance claims processing is manual, adversarial, and slow, with opaque coverage rules that leave patients waiting weeks for reimbursement while insurers spend heavily on administrative overhead and fraud investigation.",
     "solutionSketch": "Automated claims processing, fraud detection, and transparent coverage rules enforced by smart contracts",
@@ -1861,7 +1861,7 @@
     ]
   },
   {
-    "id": "health-and-bio--wearables-and-health-data-exchanges",
+    "id": "wearables-and-health-data-exchanges",
     "title": "Wearables and health data exchanges",
     "problem": "Wearable devices generate valuable biometric data that is locked inside proprietary platforms, giving individuals no way to share, monetize, or direct their own fitness and health information to researchers or insurers on their own terms.",
     "solutionSketch": "Platforms that let individuals share fitness and biometric data and receive compensation or benefits in return",
@@ -1913,7 +1913,7 @@
     ]
   },
   {
-    "id": "insurance--onchain-risk-pools-reinsurance-marketplaces",
+    "id": "onchain-risk-pools-reinsurance-marketplaces",
     "title": "Onchain risk pools & reinsurance marketplaces",
     "problem": "Reinsurance capital is locked behind opaque, relationship-driven markets accessible only to large institutional players, with high intermediation costs and no way for cedents or investors to independently audit counterparty exposure or track payout obligations in real time.",
     "solutionSketch": "A protocol enabling direct reinsurer participation in transparent risk pools — with tokenized risk tranches, automated payout distribution when loss events are verified, and onchain visibility into reserve levels and counterparty exposure that any participant can audit independently.",
@@ -1955,7 +1955,7 @@
     ]
   },
   {
-    "id": "insurance--parametric-policies",
+    "id": "parametric-policies",
     "title": "Parametric policies",
     "problem": "Traditional insurance claims require lengthy manual verification and adjudication, delaying payouts for weeks or months after weather events, flight cancellations, or cargo losses when policyholders need funds most.",
     "solutionSketch": "Smart-contract triggered claims (weather, flight delay, cargo) eliminate long verification loops",
@@ -1997,7 +1997,7 @@
     ]
   },
   {
-    "id": "insurance--tokenized-policies-for-resale",
+    "id": "tokenized-policies-for-resale",
     "title": "Tokenized policies for resale",
     "problem": "Insurance policies are illiquid, non-transferable instruments that policyholders cannot sell, swap, or restructure if their risk profile changes, trapping capital and limiting flexibility.",
     "solutionSketch": "Policies become tradable contracts, enabling secondary markets, swapping risk profiles and unlocking liquidity",
@@ -2034,7 +2034,7 @@
     ]
   },
   {
-    "id": "insurance--tokenized-reserves-transparent-solvency-reporting",
+    "id": "tokenized-reserves-transparent-solvency-reporting",
     "title": "Tokenized reserves & transparent solvency reporting",
     "problem": "Policyholders and regulators cannot independently verify whether insurers hold adequate reserves, relying instead on periodic, self-reported financial statements that may lag reality by months.",
     "solutionSketch": "Onchain reserve tracking enables real-time visibility and better risk pricing",
@@ -2071,7 +2071,7 @@
     ]
   },
   {
-    "id": "intellectual-property--onchain-copyright-registration",
+    "id": "onchain-copyright-registration",
     "title": "Onchain copyright registration",
     "problem": "Proving when a creative work was created or who owns it requires navigating slow, expensive government registries that vary by jurisdiction, leaving creators vulnerable to disputes over ownership and unauthorized use.",
     "solutionSketch": "Immutable, timestamped proof of creation and ownership for creative works, enabling instant verification of copyright claims across jurisdictions",
@@ -2082,7 +2082,7 @@
     "resources": []
   },
   {
-    "id": "intellectual-property--onchain-patent-registration",
+    "id": "onchain-patent-registration",
     "title": "Onchain patent registration and prior art",
     "problem": "Inventors lack a tamper-proof way to timestamp lab notebooks, drafts, and experimental data, weakening their ability to establish priority in patent disputes. Formal patent registration is slow, expensive, and jurisdiction-dependent.",
     "solutionSketch": "Tamper-proof timestamping and registration for inventions, research data, and prior art — strengthening first-to-invent claims and enabling verifiable patent records",
@@ -2093,7 +2093,7 @@
     "resources": []
   },
   {
-    "id": "intellectual-property--smart-contracts-for-usage-based-automated-licensing-and-royalty-payments",
+    "id": "smart-contracts-for-usage-based-automated-licensing-and-royalty-payments",
     "title": "Automated royalty payments and licensing",
     "problem": "Royalty payments for patents, music, and other IP are calculated manually through opaque intermediaries, resulting in delayed, inaccurate, or missing compensation. Multi-party licensing agreements involve layers of legal negotiation and manual tracking.",
     "solutionSketch": "Smart contracts that meter actual usage and automatically distribute royalties to all rights holders — eliminating intermediary opacity and payment delays for both individual creators and collective licensing arrangements.",
@@ -2110,7 +2110,7 @@
     ]
   },
   {
-    "id": "intellectual-property--tokenized-ip-assets",
+    "id": "tokenized-ip-assets",
     "title": "Tokenized IP assets and IP-NFTs",
     "problem": "Intellectual property rights are indivisible and illiquid, making it nearly impossible for small investors to participate in IP financing, for researchers to crowdfund early-stage IP, or for inventors to unlock the dormant value of their portfolios.",
     "solutionSketch": "Fractional ownership, crowdfunding, financing, and trading of intellectual property rights through IP-NFTs and tokenized IP instruments",
@@ -2137,7 +2137,7 @@
     ]
   },
   {
-    "id": "law-and-regulation--compliance-proofs",
+    "id": "compliance-proofs",
     "title": "Privacy-preserving compliance proofs",
     "problem": "Proving regulatory compliance today requires disclosing sensitive business or personal data to auditors and regulators, creating privacy risks. Inspection and enforcement records are also scattered across agency databases with no tamper-evident chain of custody.",
     "solutionSketch": "Zero-knowledge mechanisms (such as ZK-KYC and selective disclosure) that let regulated entities prove compliance without revealing underlying sensitive data, backed by tamper-evident audit logs.",
@@ -2169,7 +2169,7 @@
     ]
   },
   {
-    "id": "law-and-regulation--dispute-resolution",
+    "id": "dispute-resolution",
     "title": "Dispute resolution and arbitration",
     "problem": "Resolving disputes — from commercial and civil matters to freelance contract disagreements — requires expensive, slow litigation or arbitrary platform support teams, pricing out individuals and small businesses from meaningful access to justice.",
     "solutionSketch": "Decentralized arbitration and online dispute-resolution mechanisms (e.g., Kleros) that reduce litigation overhead and provide transparent, fair outcomes for disputes of all sizes",
@@ -2216,7 +2216,7 @@
     ]
   },
   {
-    "id": "law-and-regulation--gun-ownership-provenance-registries",
+    "id": "gun-ownership-provenance-registries",
     "title": "Gun-ownership & provenance registries",
     "problem": "Gun ownership records are either nonexistent, fragmented across jurisdictions, or stored in systems that cannot balance public-safety traceability with the privacy rights of lawful owners.",
     "solutionSketch": "Encrypted, privacy-preserving registries to enable lawful ownership and traceability",
@@ -2238,7 +2238,7 @@
     ]
   },
   {
-    "id": "law-and-regulation--policy-as-code",
+    "id": "policy-as-code",
     "title": "Policy-as-code",
     "problem": "Statutes and regulations are published as natural-language prose that requires expensive legal interpretation, making it impossible to automatically test whether a system or process is compliant before deployment.",
     "solutionSketch": "Machine-readable statutes, licensing rules and regulations with testable logic for compliance",
@@ -2255,7 +2255,7 @@
     ]
   },
   {
-    "id": "law-and-regulation--smart-wills-inheritance",
+    "id": "smart-wills-inheritance",
     "title": "Automated wills and estate execution",
     "problem": "Estate execution depends on manual probate processes that take months or years, while trust administration requires fiduciaries to manually manage distributions and reporting across jurisdictions, with beneficiaries having limited visibility.",
     "solutionSketch": "Time-locked, oracle-triggered estate execution and programmable trust administration with transparent record-keeping — assets transfer automatically when verifiable conditions are met.",
@@ -2282,7 +2282,7 @@
     ]
   },
   {
-    "id": "marketing-and-advertising--ad-networks",
+    "id": "ad-networks",
     "title": "Verifiable ad delivery and influencer metrics",
     "problem": "Ad networks report impressions and clicks using their own unauditable metrics, enabling widespread fraud. Brands also pay influencers based on self-reported or platform-reported reach and engagement that is trivially inflated through bots and fake followers.",
     "solutionSketch": "Transparent impression tracking and verifiable reach metrics — with optional zero-knowledge proofs for audience size — so advertisers can independently confirm that spend reached real human audiences.",
@@ -2293,7 +2293,7 @@
     "resources": []
   },
   {
-    "id": "marketing-and-advertising--tokenized-loyalty-and-rewards",
+    "id": "tokenized-loyalty-and-rewards",
     "title": "Loyalty points as liquid, transferable assets",
     "problem": "Frequent flyers and hotel loyalty members collectively hold an estimated $500 billion in unredeemed points — but those points expire silently, can't be combined across programs, can't be sold, and can be devalued unilaterally by the issuing company overnight with no recourse for holders.",
     "solutionSketch": "Tokenized loyalty points that are transferable between programs, sellable on secondary markets, and governed by transparent, immutable issuance and expiry rules — so holders have real property rights over value they've earned.",
@@ -2325,7 +2325,7 @@
     ]
   },
   {
-    "id": "media-and-entertainment--crowdfunded-media",
+    "id": "crowdfunded-media",
     "title": "Fan-funded media with governance rights",
     "problem": "Independent filmmakers, musicians, and journalists must either sign away creative control or run crowdfunding campaigns on platforms that offer backers no governance rights, transparent fund allocation, or financial upside in the work's success.",
     "solutionSketch": "Onchain funding and governance for films, music, and journalism — where backers hold tokens that represent both financial participation and voting rights over creative decisions.",
@@ -2382,7 +2382,7 @@
     ]
   },
   {
-    "id": "media-and-entertainment--decentralized-streaming-and-publishing",
+    "id": "decentralized-streaming-and-publishing",
     "title": "Instant music sync licensing",
     "problem": "A filmmaker, YouTuber, or advertiser who wants to license a song for their production must either navigate months-long negotiations with major labels — who often decline small requests entirely — or use generic royalty-free music, because there's no scalable way for independent artists to make their catalog licensable at standardized rates.",
     "solutionSketch": "A licensing registry where artists pre-set terms and prices for different use types — YouTube video, short film, TV ad, podcast — so any buyer can instantly purchase a sync license with automatic payment to all rights holders, without negotiation or a licensing intermediary.",
@@ -2414,7 +2414,7 @@
     ]
   },
   {
-    "id": "media-and-entertainment--nft-based-ticketing",
+    "id": "nft-based-ticketing",
     "title": "Verifiable event tickets with resale rights",
     "problem": "Event ticketing is plagued by scalper bots, counterfeit tickets, and opaque resale markets where venues and artists lose control over pricing and capture none of the secondary-market value.",
     "solutionSketch": "Verifiable, resalable access to events, concerts, and festivals",
@@ -2446,7 +2446,7 @@
     ]
   },
   {
-    "id": "media-and-entertainment--royalty-tracking-and-payouts",
+    "id": "royalty-tracking-and-payouts",
     "title": "Royalty tracking and payouts",
     "problem": "Royalty distribution in music, film, and publishing passes through layers of opaque intermediaries who delay payments, misattribute rights, and make it nearly impossible for creators to audit what they are owed.",
     "solutionSketch": "Smart contracts for transparent rights management",
@@ -2468,7 +2468,7 @@
     ]
   },
   {
-    "id": "philanthropy-and-social-services--direct-cash-transfer-programs",
+    "id": "direct-cash-transfer-programs",
     "title": "Direct cash-transfer programs",
     "problem": "Billions of people without bank accounts cannot receive aid efficiently because traditional transfer systems depend on banking infrastructure and charge high fees through multiple intermediaries.",
     "solutionSketch": "Use of digital wallets, crypto or tokenized transfers to reach vulnerable or unbanked populations with minimal intermediaries",
@@ -2520,7 +2520,7 @@
     ]
   },
   {
-    "id": "philanthropy-and-social-services--identity-banking-for-displaced-people",
+    "id": "identity-banking-for-displaced-people",
     "title": "Identity & banking for displaced people",
     "problem": "Refugees and migrants often lose access to identity documents and financial services simultaneously, locking them out of aid programs and economic participation in host countries.",
     "solutionSketch": "Portable identities and wallet access for refugees, migrant workers or displaced communities, enabling access to services and funding",
@@ -2547,7 +2547,7 @@
     ]
   },
   {
-    "id": "philanthropy-and-social-services--impact-certificates",
+    "id": "impact-certificates",
     "title": "Impact certificates and attestations",
     "problem": "Funders and the public lack verifiable proof that grant-funded programs delivered promised outcomes, while environmental violations, labor abuses, and human-rights claims are documented in formats easily falsified or suppressed.",
     "solutionSketch": "Immutable, verifiable records of outcomes — from social-program delivery to environmental impact to human-rights evidence — that support accountability, impact reporting, and civil-society advocacy",
@@ -2624,7 +2624,7 @@
     ]
   },
   {
-    "id": "philanthropy-and-social-services--outcome-based-funding",
+    "id": "outcome-based-funding",
     "title": "Outcome-based funding and aid coordination",
     "problem": "Large social service contracts — for housing, job placement, addiction recovery — are paid upfront with no enforceable link between disbursement and delivery. Funders have no programmatic way to verify that contracted metrics like bed occupancy, assessment completions, or housing placements were actually achieved before releasing the next payment tranche.",
     "solutionSketch": "Smart contracts that release payments to service providers only when verified metrics are independently confirmed — turning outcome-based contracting from a legal aspiration into a structural property of how funds flow, combined with shared infrastructure for coordinating NGOs working on the same population.",
@@ -2691,7 +2691,7 @@
     ]
   },
   {
-    "id": "philanthropy-and-social-services--transparent-fund-flows",
+    "id": "transparent-fund-flows",
     "title": "Transparent fund flows",
     "problem": "Charitable donations, advocacy grants, and international aid flow through opaque intermediary chains where funds are lost to corruption, misallocation, or administrative overhead, with donors and beneficiaries unable to verify whether money reached its intended recipients.",
     "solutionSketch": "Onchain tracking of donor funds, grants, and aid disbursements with real-time visibility, audit logs, and verifiable milestones — covering philanthropic, advocacy, and international aid contexts",
@@ -2773,7 +2773,7 @@
     ]
   },
   {
-    "id": "philanthropy-and-social-services--ubi",
+    "id": "ubi",
     "title": "UBI",
     "problem": "Administering recurring cash payments to large populations requires heavy bureaucratic overhead for identity verification, eligibility checks, and distribution, making universal basic income programs expensive to operate and slow to scale.",
     "solutionSketch": "Direct-to-recipient distribution mechanisms that provide recurring, automated universal basic income payments, using decentralized identity and smart contracts to reduce administrative overhead",
@@ -2825,7 +2825,7 @@
     ]
   },
   {
-    "id": "productivity-and-collaboration--code-collaboration-peer-governance",
+    "id": "code-collaboration-peer-governance",
     "title": "Code collaboration & peer-governance",
     "problem": "Open-source contributors build critical infrastructure but have no portable record of their contributions, and funding decisions are made by a small number of gatekeepers disconnected from the people doing the work.",
     "solutionSketch": "P2P versioning and funding for open source, with contributor credentials, governance tokens and transparent reward flows",
@@ -2842,7 +2842,7 @@
     ]
   },
   {
-    "id": "public-administration--business-registries",
+    "id": "business-registries",
     "title": "Business registries",
     "problem": "Verifying a company's registration, licensing status, or beneficial ownership requires navigating multiple disconnected databases, creating delays for regulators, banks, and counterparties.",
     "solutionSketch": "Incorporated-business, licensing and beneficial-ownership records with instant verification",
@@ -2869,7 +2869,7 @@
     ]
   },
   {
-    "id": "public-administration--digital-id",
+    "id": "digital-id",
     "title": "Unified digital citizen identity",
     "problem": "Citizens must re-verify identity separately for every government agency they interact with, while birth, death, marriage, and residency records sit in siloed paper-based systems that are vulnerable to loss and inconsistency across jurisdictions.",
     "solutionSketch": "A single, verifiable citizen identity that works across government services and agencies, with civil registry records stored in a tamper-evident, interoperable format.",
@@ -2921,7 +2921,7 @@
     ]
   },
   {
-    "id": "public-administration--land-titles",
+    "id": "land-titles",
     "title": "Land titles",
     "problem": "Property ownership records are fragmented across county offices and paper files, making title searches slow, lien verification unreliable, and transfer histories easy to tamper with.",
     "solutionSketch": "Immutable land ownership records with lien checks and transparent transfer histories",
@@ -2943,7 +2943,7 @@
     ]
   },
   {
-    "id": "public-administration--participatory-governance",
+    "id": "participatory-governance",
     "title": "Participatory governance",
     "problem": "Citizen participation in budgeting, voting, and policy feedback is limited to infrequent, low-trust mechanisms that provide no auditable proof that inputs were counted or acted upon.",
     "solutionSketch": "E-voting, participatory budgeting, petitions and citizen consultation platforms anchored on ledger systems",
@@ -2980,7 +2980,7 @@
     ]
   },
   {
-    "id": "public-administration--permitting-case-management",
+    "id": "permitting-case-management",
     "title": "Permitting & case management",
     "problem": "Permit applications — for water connections, construction, business licenses — pass through multiple agencies via disconnected workflows where records are mutable, approvals are opaque, and the process is vulnerable to favoritism and corruption. Applicants have no independent way to verify that their application was assessed on its merits.",
     "solutionSketch": "Immutable, publicly auditable records of permit applications, approvals, fee payments, and decision rationale — with community oversight built in — so that every step of the permitting process is verifiable and deviations from standard procedure are detectable.",
@@ -3012,7 +3012,7 @@
     ]
   },
   {
-    "id": "public-finance-and-procurement--conditional-entitlement-disbursements",
+    "id": "conditional-entitlement-disbursements",
     "title": "Conditional entitlement disbursements",
     "problem": "Benefit and subsidy payments rely on manual eligibility checks that are slow, error-prone, and vulnerable to fraud, with no programmatic link between verified conditions and fund release.",
     "solutionSketch": "Subsidy and benefit payments that execute automatically against verifiable eligibility criteria",
@@ -3023,7 +3023,7 @@
     "resources": []
   },
   {
-    "id": "public-finance-and-procurement--public-procurement-lifecycle",
+    "id": "public-procurement-lifecycle",
     "title": "Public procurement lifecycle",
     "problem": "Government procurement processes are rife with opaque bid evaluations, paper-based contract trails, and limited public visibility, creating fertile ground for favoritism and corruption.",
     "solutionSketch": "Transparent record of tenders, bids, evaluations, awards, supplier credentials, deliveries, and payments spanning the full procurement cycle to reduce corruption and enable public audit",
@@ -3045,7 +3045,7 @@
     ]
   },
   {
-    "id": "public-finance-and-procurement--tokenized-sovereign-municipal-bonds",
+    "id": "tokenized-sovereign-municipal-bonds",
     "title": "Tokenized sovereign & municipal bonds",
     "problem": "Issuing and settling government debt involves layers of intermediaries, T+2 or longer settlement windows, and high minimum denominations that exclude smaller investors from participating.",
     "solutionSketch": "Onchain issuance, settlement, and coupon tracking of public debt instruments, enabling faster settlement, lower costs, and broader investor access",
@@ -3062,7 +3062,7 @@
     ]
   },
   {
-    "id": "public-finance-and-procurement--transparent-budget-execution",
+    "id": "transparent-budget-execution",
     "title": "Transparent budget execution",
     "problem": "Public funds flow through opaque, fragmented ledgers between appropriation and expenditure, making it nearly impossible for citizens or auditors to trace how tax revenue is actually spent.",
     "solutionSketch": "Real-time tracking of public funds from appropriation to expenditure",
@@ -3079,7 +3079,7 @@
     ]
   },
   {
-    "id": "real-estate-and-housing--community-ownership-primitives",
+    "id": "community-ownership-primitives",
     "title": "Community ownership primitives",
     "problem": "Co-ops and community land trusts rely on cumbersome legal structures and manual governance processes that make shared ownership difficult to establish, scale, or transfer.",
     "solutionSketch": "Co-ops and land trusts based on token-governance enable inclusive ownership and local alignment",
@@ -3121,7 +3121,7 @@
     ]
   },
   {
-    "id": "real-estate-and-housing--onchain-mortgage-home-equity-rails",
+    "id": "onchain-mortgage-home-equity-rails",
     "title": "Onchain mortgage & home-equity rails",
     "problem": "Mortgage servicing and secondary market trading depend on legacy systems with slow reconciliation, making loan transfers error-prone and limiting borrower access to competitive terms.",
     "solutionSketch": "Servicing and secondary markets become programmable, traceable and accessible",
@@ -3143,7 +3143,7 @@
     ]
   },
   {
-    "id": "real-estate-and-housing--onchain-title-escrow",
+    "id": "onchain-title-escrow",
     "title": "Onchain title & escrow",
     "problem": "Real estate closings take 30-60 days and require title companies, notaries, and attorneys to manually verify ownership chains in paper registries, adding thousands of dollars in fees to every transaction.",
     "solutionSketch": "Smart contracts replace paper registries and manual escrow flows, reducing settlement time and improving transparency",
@@ -3170,7 +3170,7 @@
     ]
   },
   {
-    "id": "real-estate-and-housing--smart-contract-leasing",
+    "id": "smart-contract-leasing",
     "title": "Smart-contract leasing",
     "problem": "Lease management involves manual rent collection, opaque deposit handling, and paper-based renewals that create disputes between landlords and tenants with no neutral enforcement mechanism.",
     "solutionSketch": "Lease payments, deposits, renewals and dispute resolution run via code, eliminating many intermediaries",
@@ -3192,7 +3192,7 @@
     ]
   },
   {
-    "id": "retail-and-ecommerce--agent-driven-commerce",
+    "id": "agent-driven-commerce",
     "title": "Agent-driven commerce",
     "problem": "AI shopping agents have no standardized way to hold funds, execute payments, or build verifiable transaction histories, preventing autonomous purchasing from working reliably across merchants.",
     "solutionSketch": "Autonomous agents executing shopping tasks, rebates or optimized purchasing flows with onchain negotiation, payments, and reputation",
@@ -3229,7 +3229,7 @@
     ]
   },
   {
-    "id": "retail-and-ecommerce--onchain-merchant-payments",
+    "id": "onchain-merchant-payments",
     "title": "Onchain merchant payments",
     "problem": "Merchants pay 2-3% of every transaction to card networks and processors, wait days for settlement, and have no programmable control over refund logic or payment conditions.",
     "solutionSketch": "Lower fees, instant settlement and programmable refunds reduce payment-rail friction",
@@ -3261,7 +3261,7 @@
     ]
   },
   {
-    "id": "retail-and-ecommerce--physical-goods-marketplaces",
+    "id": "physical-goods-marketplaces",
     "title": "Physical goods marketplaces",
     "problem": "Peer-to-peer resale of physical goods suffers from rampant fraud because there is no trustworthy way to verify item authenticity or enforce payment-on-delivery without a costly intermediary.",
     "solutionSketch": "Tokenized listings and escrowed settlement bring transparency to resale and secondary markets",
@@ -3293,7 +3293,7 @@
     ]
   },
   {
-    "id": "retail-and-ecommerce--verifiable-reviews-receipts",
+    "id": "verifiable-reviews-receipts",
     "title": "Verifiable reviews & receipts",
     "problem": "Product reviews are easily faked and purchase receipts are siloed within individual retailers, giving consumers no reliable way to verify that a reviewer actually bought the product.",
     "solutionSketch": "Onchain attestations improve authenticity, support returns and reduce dispute risk",
@@ -3325,7 +3325,7 @@
     ]
   },
   {
-    "id": "science-and-research--credentials-impact-certificates",
+    "id": "credentials-impact-certificates",
     "title": "Credentials & impact certificates",
     "problem": "Researchers who generate datasets, perform reviews, or replicate studies receive little formal credit, because academic recognition systems only reward first-author publications.",
     "solutionSketch": "Verifiable recognition of contributions, reproducibility outcomes and downstream impact",
@@ -3357,7 +3357,7 @@
     ]
   },
   {
-    "id": "science-and-research--knowledge-graphs-connected-science",
+    "id": "knowledge-graphs-connected-science",
     "title": "Knowledge graphs & connected science",
     "problem": "Scientific knowledge is fragmented across millions of papers, databases, and disciplines with no interoperable layer connecting related findings, making cross-domain discovery largely accidental.",
     "solutionSketch": "Decentralized knowledge graphs linking data, AI, and researchers to reveal hidden connections",
@@ -3414,7 +3414,7 @@
     ]
   },
   {
-    "id": "science-and-research--prediction-markets-crowdsourced-innovation",
+    "id": "prediction-markets-crowdsourced-innovation",
     "title": "Prediction markets for scientific claims",
     "problem": "Research funding committees allocate billions based on grant applications reviewed by small expert panels, with no mechanism to aggregate what the broader scientific community actually believes about which hypotheses are likely to replicate, which drugs will fail trials, or which research directions will prove fruitful — leaving funding systematically biased toward incremental work from established labs.",
     "solutionSketch": "Open prediction markets where researchers stake tokens on the outcomes of specific scientific claims — will this trial replicate, will this drug hit its primary endpoint — with payouts flowing to those who were right. Market prices surface collective scientific belief in real time, and accumulated winnings serve as a credibility signal for funding allocation.",
@@ -3446,7 +3446,7 @@
     ]
   },
   {
-    "id": "science-and-research--publishing-reform",
+    "id": "publishing-reform",
     "title": "Peer review as a paid, verifiable service",
     "problem": "Peer reviewers — typically senior researchers — perform skilled intellectual labor for free on behalf of journals that charge institutions thousands of dollars per year to access the resulting publications, while reviews disappear after use and reviewers have no portable record of their contribution to the scientific process.",
     "solutionSketch": "A market for peer review where journals and preprint servers post review requests, qualified reviewers bid to assess submissions, payment executes automatically on acceptance of a review, and completed reviews become part of a reviewer's verifiable public track record — regardless of which journal commissioned them.",
@@ -3503,7 +3503,7 @@
     ]
   },
   {
-    "id": "science-and-research--reusable-datasets-provenance",
+    "id": "reusable-datasets-provenance",
     "title": "Reusable datasets & provenance",
     "problem": "Research datasets are scattered across institutional servers with inconsistent metadata, making it difficult to verify provenance, reproduce findings, or build on prior work.",
     "solutionSketch": "Decentralized storage and provenance for research data to boost reuse and integrity",
@@ -3530,7 +3530,7 @@
     ]
   },
   {
-    "id": "services-and-tasks--programmable-escrow",
+    "id": "programmable-escrow",
     "title": "Programmable escrow",
     "problem": "Payment disputes between service providers and clients are resolved by platform operators with opaque rules, and milestone-based payments require manual verification that both parties can contest.",
     "solutionSketch": "Smart contracts for milestone-based payments, dispute resolution, and refunds that minimize platform mediation",
@@ -3552,7 +3552,7 @@
     ]
   },
   {
-    "id": "services-and-tasks--worker-reputation-credentials",
+    "id": "worker-reputation-credentials",
     "title": "Worker reputation & credentials",
     "problem": "Freelancers and gig workers lose their ratings, reviews, and work history every time they switch platforms, forcing them to rebuild credibility from scratch with each new marketplace.",
     "solutionSketch": "Portable attestations for skills, work history, ratings, and task completions that workers own and carry across platforms",
@@ -3584,7 +3584,7 @@
     ]
   },
   {
-    "id": "social--content-provenance",
+    "id": "content-provenance",
     "title": "Content provenance and authenticity",
     "problem": "There is no widespread mechanism to verify who actually created a post, photo, video, or news article, making impersonation trivial, deepfake attribution impossible to contest, and misinformation indistinguishable from authenticated reporting.",
     "solutionSketch": "Signed posts, media receipts, and provenance chains to combat impersonation, deepfakes, and misinformation — covering social media, journalism, and user-generated content",
@@ -3621,7 +3621,7 @@
     ]
   },
   {
-    "id": "social--creator-monetization-and-tokenization",
+    "id": "creator-monetization-and-tokenization",
     "title": "Creator monetization and tokenization",
     "problem": "Platform revenue-sharing models take 30-50% of creator earnings, change terms unilaterally, and delay payouts, while creators have no native way to offer tiered access or token-based benefits independent of platform control.",
     "solutionSketch": "Subscriptions, tipping, revenue splits, micro-payments, gated access, and token-based community benefits embedded in creator-owned platforms",
@@ -3653,7 +3653,7 @@
     ]
   },
   {
-    "id": "social--moderation-bot-detection-mechanisms",
+    "id": "moderation-bot-detection-mechanisms",
     "title": "Moderation & bot-detection mechanisms",
     "problem": "Social feeds are flooded with spam, bots, and coordinated manipulation because platforms rely on centralized moderation that cannot scale and lacks any proof that accounts represent real humans.",
     "solutionSketch": "Community notes, reputation-weighted signals, proof-of-humanity checks to reduce spam and manipulation",
@@ -3680,7 +3680,7 @@
     ]
   },
   {
-    "id": "social--portable-social-identity",
+    "id": "portable-social-identity",
     "title": "Portable social identity and reputation",
     "problem": "Users who build audiences on one social platform lose everything if they switch apps or get de-platformed. Follower counts and engagement metrics are also easily manipulated and impossible to verify independently.",
     "solutionSketch": "Onchain handles, profiles, and social graphs that work across multiple apps — combined with verifiable attestations for engagement and community participation that users own and carry with them.",
@@ -3722,7 +3722,7 @@
     ]
   },
   {
-    "id": "supply-chain--customs-compliance",
+    "id": "customs-compliance",
     "title": "Customs & compliance",
     "problem": "Cross-border shipments are delayed at customs because clearance documents are exchanged via email and fax between agencies that have no shared, real-time view of compliance status.",
     "solutionSketch": "Shared ledgers for real-time clearance, tariff mechanics and document exchange between jurisdictions",
@@ -3739,7 +3739,7 @@
     ]
   },
   {
-    "id": "supply-chain--delivery-triggered-payments",
+    "id": "delivery-triggered-payments",
     "title": "Delivery-triggered automated payments",
     "problem": "Suppliers and freight carriers wait weeks for payment after goods are delivered because reconciliation between shipping documents, invoices, and proof of delivery is manual, while carriers lack verifiable proof-of-location or proof-of-condition to trigger automatic settlement.",
     "solutionSketch": "Conditional release of funds tied to oracle-verified delivery events, proof-of-location, and proof-of-condition, automating settlement for both goods delivery and freight logistics",
@@ -3761,7 +3761,7 @@
     ]
   },
   {
-    "id": "supply-chain--electronic-bill-of-lading",
+    "id": "electronic-bill-of-lading",
     "title": "Electronic Bill of Lading",
     "problem": "The bill of lading, the single most important document in international shipping, still circulates as a paper original that must be physically couriered between parties, causing delays and fraud risk.",
     "solutionSketch": "Replacing paper document of title with NFT-like digital representation of title and transfer rights",
@@ -3783,7 +3783,7 @@
     ]
   },
   {
-    "id": "supply-chain--inventory-management",
+    "id": "inventory-management",
     "title": "Inventory management",
     "problem": "Warehouse inventory records diverge from reality because tracking systems across suppliers, warehouses, and retailers are disconnected, making financing against inventory unreliable.",
     "solutionSketch": "Tokenized SKUs and warehouse receipts that permit programmatic tracking, financing and movement of goods",
@@ -3805,7 +3805,7 @@
     ]
   },
   {
-    "id": "supply-chain--open-supply-chains",
+    "id": "open-supply-chains",
     "title": "Open supply-chains",
     "problem": "Independent farmers and artisans are excluded from global markets because supply-chain coordination tools are built for large corporations and require expensive integrations they cannot afford.",
     "solutionSketch": "Enabling coordination among independent farmers, artisans and open-hardware producers outside corporate platforms",
@@ -3837,7 +3837,7 @@
     ]
   },
   {
-    "id": "supply-chain--traceability-certification",
+    "id": "traceability-certification",
     "title": "Product certification and circular supply chains",
     "problem": "Product origin and certification claims rely on paper trails that can be forged at any handoff, while secondhand buyers have no trustworthy way to verify repair history, authenticity, or remaining lifecycle value.",
     "solutionSketch": "Append-only product provenance and certification records that track origin, ownership changes, condition, and end-of-life — supporting both first-sale authenticity claims and circular economy resale.",
@@ -3874,7 +3874,7 @@
     ]
   },
   {
-    "id": "sustainability-and-regeneration--environmental-measurement-and-verification",
+    "id": "environmental-measurement-and-verification",
     "title": "Environmental measurement and verification",
     "problem": "Environmental claims — RECs, carbon intensity labels, green hydrogen certifications, corporate ESG reports — rely on self-reported data with infrequent third-party audits, enabling double-counting, greenwashing, and eroding trust in sustainability markets.",
     "solutionSketch": "Using oracles, remote sensing, IoT devices, and blockchain logs to provide continuous, independently verifiable evidence trails for environmental outcomes including emissions, renewable generation, carbon sequestration, and restoration",
@@ -3936,7 +3936,7 @@
     ]
   },
   {
-    "id": "sustainability-and-regeneration--quality-tiered-environmental-assets",
+    "id": "quality-tiered-environmental-assets",
     "title": "Transparent carbon and biodiversity credit markets",
     "problem": "Carbon credits and biodiversity offsets are traded as undifferentiated commodities despite vast differences in methodology and verification rigor, allowing low-quality credits to crowd out legitimate ones. Forests, watersheds, and biodiversity also lack liquid market representations.",
     "solutionSketch": "Differentiated environmental asset classes with onchain provenance, methodology metadata, and verification quality — enabling transparent pricing of ecological assets and markets that reward genuine impact.",
@@ -3973,7 +3973,7 @@
     ]
   },
   {
-    "id": "sustainability-and-regeneration--traceable-supply-material-flows-for-circularity",
+    "id": "traceable-supply-material-flows-for-circularity",
     "title": "Traceable supply & material flows for circularity",
     "problem": "Recycled and reused materials lose their provenance once they re-enter supply chains, making circular-economy claims unverifiable and undermining regulatory and consumer confidence.",
     "solutionSketch": "Tracking recycling, reuse, product-life-cycles and certification of materials in a transparent ledger",
@@ -3995,7 +3995,7 @@
     ]
   },
   {
-    "id": "transport-and-logistics--digital-vehicle-passports",
+    "id": "digital-vehicle-passports",
     "title": "Digital vehicle passports",
     "problem": "A vehicle's full history — manufacturing specs, ownership transfers, lien status, accident damage, and maintenance — is scattered across dealer records, insurance databases, and government registries that do not communicate, making title fraud and odometer rollback easy.",
     "solutionSketch": "End-to-end, tamper-evident records covering manufacturing, ownership, liens, maintenance, accidents, and recycling — serving as both lifecycle passport and verifiable title",
@@ -4012,7 +4012,7 @@
     ]
   },
   {
-    "id": "transport-and-logistics--ev-charging-coordination",
+    "id": "ev-charging-coordination",
     "title": "EV charging coordination",
     "problem": "EV drivers face incompatible charging networks with separate accounts and payment systems, and grid operators have no interoperable way to settle energy credits across providers.",
     "solutionSketch": "Interoperable systems for energy credit settlement across charging networks and grid participants",
@@ -4039,7 +4039,7 @@
     ]
   },
   {
-    "id": "transport-and-logistics--mobility-marketplaces",
+    "id": "mobility-marketplaces",
     "title": "Spot freight market for trucking",
     "problem": "Freight brokers sit between shippers who need loads moved and carriers who have trucks available, taking 15–20% margins on every transaction in exchange for making the match — a spread that exists almost entirely because the broker holds the relationship and information asymmetry, not because they add logistical value that a transparent protocol couldn't replace.",
     "solutionSketch": "An open spot freight marketplace where shippers post loads with specifications and payment terms, carriers bid directly, payment is escrowed onchain and released automatically upon verified delivery, and both parties build a public reputation from their transaction history — cutting out the broker layer on transactions that don't require physical coordination.",
@@ -4071,7 +4071,7 @@
     ]
   },
   {
-    "id": "transport-and-logistics--transit-credentials",
+    "id": "transit-credentials",
     "title": "Transit credentials",
     "problem": "Drivers, vehicles, and riders must carry separate credentials for every operator, city, and country they pass through, because identity systems in transport are siloed and non-interoperable.",
     "solutionSketch": "Self-sovereign identities for drivers, vehicles, and riders that work across operators, cities, and borders",
@@ -4098,7 +4098,7 @@
     ]
   },
   {
-    "id": "transport-and-logistics--urban-mobility-data-networks",
+    "id": "urban-mobility-data-networks",
     "title": "Urban mobility data networks",
     "problem": "Traffic sensors and vehicle telematics data are locked inside proprietary systems owned by individual operators, preventing cities from building a unified real-time picture of mobility patterns.",
     "solutionSketch": "Shared sensor and telematics data layers that support traffic optimization, and planning",
@@ -4125,7 +4125,7 @@
     ]
   },
   {
-    "id": "finance--prediction-markets",
+    "id": "prediction-markets",
     "title": "Prediction markets for forecasting",
     "problem": "Governments, businesses, and researchers rely on polls, surveys, and expert panels to forecast elections, policy outcomes, and economic events — mechanisms with no accountability for being wrong and no way to aggregate the dispersed knowledge held by the people closest to the situation.",
     "solutionSketch": "Open markets where participants buy and sell positions on the outcome of real-world events, with payouts executing automatically when oracle-verified results are confirmed — turning forecasting into a mechanism that rewards accuracy and aggregates distributed knowledge.",
@@ -4136,7 +4136,7 @@
     "resources": []
   },
   {
-    "id": "finance--remittances",
+    "id": "remittances",
     "title": "Migrant worker remittances",
     "problem": "A Kenyan nurse working in London sending $200 home loses $12–20 to Western Union and correspondent bank fees — more than the entire daily wage of the family member receiving it — while the transfer takes 1–3 days and requires both parties to have access to physical agents.",
     "solutionSketch": "Stablecoin transfers that move value internationally in minutes at near-zero marginal cost, with recipients cashing out through local mobile money networks or holding value in digital wallets without needing a bank account.",
@@ -4147,7 +4147,7 @@
     "resources": []
   },
   {
-    "id": "government--voting-systems",
+    "id": "voting-systems",
     "title": "End-to-end verifiable voting",
     "problem": "Paper ballots are manually counted by fallible humans in processes that are hard to audit at scale, while existing e-voting systems ask voters to simply trust that a proprietary black box counted their vote correctly — with no way for individual voters to verify their ballot was included without the system's operator confirming it.",
     "solutionSketch": "Voting infrastructure using zero-knowledge proofs that lets each voter verify their individual ballot was included in the final tally, while keeping votes secret and making the overall count auditable by any independent observer without requiring trust in any single party.",
@@ -4158,7 +4158,7 @@
     "resources": []
   },
   {
-    "id": "government--beneficial-ownership",
+    "id": "beneficial-ownership",
     "title": "Shell company and beneficial ownership registries",
     "problem": "The true owners of companies, real estate, and assets can be hidden behind layers of anonymous shell companies across multiple jurisdictions — a structural feature exploited for money laundering, sanctions evasion, and tax fraud — while existing beneficial ownership registries rely on self-reporting with no verification mechanism.",
     "solutionSketch": "Cryptographically attested beneficial ownership records that chain legal entities to verified ultimate owners across jurisdictions, allowing regulators and financial institutions to verify real ownership without relying on self-filed declarations.",
@@ -4169,7 +4169,7 @@
     "resources": []
   },
   {
-    "id": "identity--proof-of-personhood",
+    "id": "proof-of-personhood",
     "title": "Proof of personhood",
     "problem": "Any digital system that gives one vote, one reward, or one allocation per person is immediately gamed by whoever can create the most fake accounts — airdrops get drained by bots, votes get bought in bulk, and social platforms are flooded by coordinated inauthentic behavior — because there is no cheap, privacy-preserving way to prove an account belongs to a unique real human.",
     "solutionSketch": "Systems that establish a cryptographic guarantee that an account belongs to a unique living person — without revealing who that person is — enabling sybil-resistant token distributions, one-person-one-vote governance, and spam-free social platforms.",
@@ -4180,7 +4180,7 @@
     "resources": []
   },
   {
-    "id": "identity--age-verification",
+    "id": "age-verification",
     "title": "Age and eligibility proofs without identity disclosure",
     "problem": "A teenager trying to prove they're 18 to access a website, or a doctor proving they hold a medical license to prescribe remotely, must hand over their full government ID — exposing date of birth, address, and ID number to a third party who only needed a yes/no answer — creating surveillance infrastructure and breach risk for a simple eligibility check.",
     "solutionSketch": "Zero-knowledge proofs that let individuals demonstrate they meet a threshold — over 18, licensed physician, accredited investor — without revealing the underlying document, name, or any other personal attribute beyond the specific claim being verified.",
@@ -4191,7 +4191,7 @@
     "resources": []
   },
   {
-    "id": "science--pre-registration-and-results",
+    "id": "pre-registration-and-results",
     "title": "Clinical trial pre-registration and results registry",
     "problem": "Pharmaceutical companies register clinical trials, then selectively publish only the results that support their drug — a practice called outcome reporting bias that systematically distorts the medical evidence base and leads doctors to prescribe treatments that don't work or cause harm, because negative results simply disappear.",
     "solutionSketch": "An immutable registry where trial protocols and primary endpoints are cryptographically committed before a trial begins — making it publicly provable whether published results match what was pre-registered and impossible to quietly bury unfavorable outcomes.",
@@ -4202,7 +4202,7 @@
     "resources": []
   },
   {
-    "id": "real-estate-and-housing--affordable-housing-covenants",
+    "id": "affordable-housing-covenants",
     "title": "Affordable housing covenant enforcement",
     "problem": "Affordable housing deed restrictions — requiring units to remain below market rate for 30, 50, or 99 years — are written into paper legal documents that must be manually checked at every ownership transfer, and routinely slip through conveyancing processes, effectively converting affordable units to market rate with no enforcement mechanism.",
     "solutionSketch": "Affordability restrictions encoded directly into property tokens that enforce covenants automatically at the point of transfer or rental — making it structurally impossible to sell or rent above the allowed price without the covenant being triggered.",
@@ -4213,7 +4213,7 @@
     "resources": []
   },
   {
-    "id": "civil-society--disaster-relief-coordination",
+    "id": "disaster-relief-coordination",
     "title": "Disaster relief fund tracking",
     "problem": "After a major disaster, dozens of NGOs, government agencies, and informal groups respond simultaneously with no shared view of who has received what — aid duplicates in accessible areas while remote communities receive nothing, and donors have no way to verify whether the funds they gave reached affected people rather than being absorbed by overhead.",
     "solutionSketch": "Shared infrastructure for real-time tracking of aid disbursements, supply distribution, and beneficiary verification across all responding organizations — with donors able to trace contributions from receipt to final delivery to verified individuals.",
@@ -4224,7 +4224,7 @@
     "resources": []
   },
   {
-    "id": "logistics-and-trade--letters-of-credit",
+    "id": "letters-of-credit",
     "title": "Digital letters of credit",
     "problem": "A letter of credit — the bank guarantee that an importer will pay an exporter on delivery — still requires physical paper documents to be couriered between banks across countries, a process that takes 5–10 days and costs $500–1500 per transaction for what is fundamentally a message saying 'we guarantee payment if these conditions are met.'",
     "solutionSketch": "Smart contract-based letters of credit that issue, transfer, and settle digitally — releasing payment to the exporter automatically when shipping documents and delivery conditions are cryptographically verified, without physical document exchange.",
@@ -4235,7 +4235,7 @@
     "resources": []
   },
   {
-    "id": "utilities--water-rights-markets",
+    "id": "water-rights-markets",
     "title": "Water rights trading and usage verification",
     "problem": "In drought-prone regions, water rights are traded in informal bilateral markets with no price transparency, while actual usage is monitored by infrequent physical inspections that miss illegal diversions — creating a tragedy of the commons where overuse is profitable and nearly undetectable until aquifers are depleted.",
     "solutionSketch": "Tokenized water rights tradeable on transparent markets, with IoT-verified usage continuously recorded onchain — creating a real-time allocation registry where overuse is immediately visible and rights can be transferred without paper title processes.",
@@ -4246,7 +4246,7 @@
     "resources": []
   },
   {
-    "id": "utilities--broadband-infrastructure-incentives",
+    "id": "broadband-infrastructure-incentives",
     "title": "Community broadband infrastructure financing",
     "problem": "Rural and underserved communities lack broadband because incumbent telecoms won't build where returns are uncertain, while community-owned networks and municipal ISPs can't access the upfront capital needed to deploy infrastructure — leaving residents dependent on monopoly providers or no connectivity at all.",
     "solutionSketch": "Tokenized financing for community broadband infrastructure — letting local residents, municipalities, and impact investors co-fund deployment and receive proportional returns from subscription revenues, with usage and revenue data transparently reported onchain.",
@@ -4257,7 +4257,7 @@
     "resources": []
   },
   {
-    "id": "environment--biodiversity-credits",
+    "id": "biodiversity-credits",
     "title": "Verifiable biodiversity credits",
     "problem": "Corporations making 'nature-positive' commitments buy biodiversity credits from projects measured by inconsistent methodologies and audited infrequently — a market where a credit representing habitat that was degraded a year after issuance looks identical to one representing thriving ecosystem, enabling systematic greenwashing with no accountability.",
     "solutionSketch": "Biodiversity credits with continuous verification using satellite imagery, acoustic monitoring, and IoT sensors — with ecological outcomes recorded immutably onchain and credits automatically flagged or invalidated if verified habitat outcomes reverse.",
@@ -4268,7 +4268,7 @@
     "resources": []
   },
   {
-    "id": "ai--training-data-rights",
+    "id": "training-data-rights",
     "title": "Creator rights and compensation for AI training data",
     "problem": "AI models are trained on billions of creative works scraped from the internet without consent or compensation — writers, artists, and photographers whose work shaped these models have no mechanism to verify whether their work was included, no ability to opt out retroactively, and no way to claim revenue from models that directly replicate their style or content.",
     "solutionSketch": "Cryptographic provenance records for training datasets that allow creators to register their work, verify inclusion in training corpora, and receive automatic compensation from model operators under programmable licensing terms set at registration.",
@@ -4279,7 +4279,7 @@
     "resources": []
   },
   {
-    "id": "ai--agent-to-agent-commerce",
+    "id": "agent-to-agent-commerce",
     "title": "Agent-to-agent commerce protocols",
     "problem": "As specialized AI agents proliferate — one agent managing calendars, another researching suppliers, another executing trades — they need to hire, pay, and contract with each other autonomously, but there is no standard protocol for agents from different organizations to discover services, agree terms, and settle payments without routing every transaction through a human approval loop.",
     "solutionSketch": "Open protocols for AI agents to publish capabilities, negotiate service terms, and settle micropayments autonomously — creating a machine-to-machine service economy where agents from any organization can transact with each other as fluidly as APIs call each other today.",
@@ -4290,7 +4290,7 @@
     "resources": []
   },
   {
-    "id": "media--journalist-source-protection",
+    "id": "journalist-source-protection",
     "title": "Cryptographic source protection for journalists",
     "problem": "A government whistleblower who wants to leak to a journalist faces a dilemma: submitting documents anonymously makes the story hard to verify and easy to dismiss, while providing proof of their insider status — job title, department, access level — makes them identifiable and exposes them to prosecution.",
     "solutionSketch": "Zero-knowledge systems where sources prove their organizational affiliation — that they work at a specific agency or hold a specific clearance level — without revealing their identity, generating a cryptographic attestation that journalists can publish to establish credibility without burning the source.",
@@ -4301,7 +4301,7 @@
     "resources": []
   },
   {
-    "id": "food-and-agriculture--harvest-pre-financing",
+    "id": "harvest-pre-financing",
     "title": "Harvest pre-financing for smallholder farmers",
     "problem": "A subsistence farmer who needs $300 to buy seeds and fertilizer at planting time has no collateral for a bank loan and no trading history with formal lenders — so they borrow from local moneylenders at 60–100% annual interest rates, or go without inputs and accept a lower yield, trapping them in a cycle where they can never accumulate enough surplus to escape the next season's dependency.",
     "solutionSketch": "Pre-harvest financing backed by tokenized future crop receipts — letting farmers collateralize their standing crop against verified planting data, weather feeds, and historical yield records, with repayment automatically deducted from the proceeds when the harvest is sold.",
@@ -4312,7 +4312,7 @@
     "resources": []
   },
   {
-    "id": "health--drug-counterfeiting",
+    "id": "drug-counterfeiting",
     "title": "Last-mile drug authentication",
     "problem": "A patient in a Nigerian pharmacy buying antimalarials has no way to verify the drug isn't one of the estimated 1-in-10 medicines in sub-Saharan Africa that are substandard or falsified — counterfeit drugs that contain no active ingredient, the wrong dose, or toxic substitutes kill an estimated 250,000 children annually, and the pharmacist dispensing them often has no way to verify authenticity either.",
     "solutionSketch": "Per-unit authentication at the point of dispensing — each package carries a scannable identifier linked to an immutable onchain record of its journey from manufacturer to shelf, allowing any pharmacist or patient with a smartphone to verify an unbroken chain of custody.",
@@ -4323,7 +4323,7 @@
     "resources": []
   },
   {
-    "id": "health--mental-health-data-portability",
+    "id": "mental-health-data-portability",
     "title": "Mental health treatment continuity",
     "problem": "A patient switching therapists or moving to a new city must reconstruct their entire psychiatric history from memory — what medications worked, what dosages caused side effects, previous diagnoses and treatment plans — because mental health records are kept in individual clinician notes with no standard format and no patient-controlled way to transfer them.",
     "solutionSketch": "Patient-controlled mental health records in a standardized, portable format — letting individuals share specific treatment history with new providers while retaining granular control over which details are disclosed and to whom.",
@@ -4334,7 +4334,7 @@
     "resources": []
   },
   {
-    "id": "commerce--creator-storefronts",
+    "id": "creator-storefronts",
     "title": "Direct creator storefronts with programmable revenue splits",
     "problem": "A musician selling merchandise, a Substack writer selling a course, and an artist selling prints each route payments through 2–4 intermediary platforms that take 10–30% combined, add delays before creators can access funds, and give the creator no way to automatically share revenue with collaborators, producers, or the fans who helped grow their audience.",
     "solutionSketch": "Direct storefronts where revenue splits among collaborators, co-creators, and communities execute automatically at the moment of purchase — with instant settlement, programmable royalty flows, and no platform intermediary taking a cut of every transaction.",
@@ -4345,7 +4345,7 @@
     "resources": []
   },
   {
-    "id": "science--reagent-and-material-provenance",
+    "id": "reagent-and-material-provenance",
     "title": "Research reagent and material provenance",
     "problem": "Scientific experiments that can't be replicated are often later traced to undisclosed variations in reagents, cell lines, or materials — a batch of antibodies that performed differently from what was published, a cell line that had been unknowingly contaminated — but there's no standard way to record or share the provenance of physical research materials that would let other labs understand what they're actually working with.",
     "solutionSketch": "Immutable provenance records for biological materials, reagents, and research tools — tracking origin, handling history, quality control results, and cross-references to experiments that used each lot — so that replication failures can be traced to their source.",
@@ -4356,7 +4356,7 @@
     "resources": []
   },
   {
-    "id": "government--air-quality-enforcement",
+    "id": "air-quality-enforcement",
     "title": "Automated air quality enforcement",
     "problem": "Cities set air quality thresholds in policy but enforce them manually — when pollution sensors exceed legal limits, triggering traffic restrictions, industrial shutdowns, or emergency funding requires human decisions that are slow, inconsistent, and politically influenced, meaning enforcement reliably lags the pollution events it's supposed to prevent.",
     "solutionSketch": "Smart contracts that monitor certified air quality sensor feeds and automatically execute pre-agreed responses when thresholds are breached — issuing traffic restrictions, releasing emergency health funding, or triggering fines against identified polluters — without requiring human sign-off at each enforcement step.",
@@ -4367,7 +4367,7 @@
     "resources": []
   },
   {
-    "id": "government--community-space-permissioning",
+    "id": "community-space-permissioning",
     "title": "Community space allocation and revenue sharing",
     "problem": "Cities allocate shared spaces — parks, community halls, public plazas — through manual booking systems that have no mechanism to reward responsible users, price spaces dynamically to manage demand, or direct revenue back into the neighborhood rather than into a central municipal budget.",
     "solutionSketch": "Token-based booking systems where usage history and community reputation reduce access costs, pricing adjusts to demand, and revenue from commercial bookings flows automatically into a community treasury governed by local residents rather than city hall.",
@@ -4378,7 +4378,7 @@
     "resources": []
   },
   {
-    "id": "finance--decentralized-claims-adjudication",
+    "id": "decentralized-claims-adjudication",
     "title": "Decentralized insurance claims adjudication",
     "problem": "Insurance companies face hundreds of disputed claims monthly that don't fit automated processing rules — ambiguous coverage questions, contested damage assessments, conflicting evidence — and route them through traditional arbitration that takes 7–10 days, costs hundreds of dollars per case, and produces outcomes neither party finds credible.",
     "solutionSketch": "Specialized juror pools that evaluate disputed insurance claims using standardized evidence packages and structured deliberation protocols — with jurors staking tokens on their verdicts, outcomes determined by stake-weighted consensus, and payment executing automatically once adjudication is complete.",

@@ -4,7 +4,7 @@ import { IdeaEntry } from './types';
 import IdeaCard from './components/IdeaCard';
 import IdeaDetailModal from './components/IdeaDetailModal';
 import SiteFooter from './components/SiteFooter';
-import RoleSelector from './components/RoleSelector';
+import RoleSelector, { ROLES } from './components/RoleSelector';
 import { Search, X } from 'lucide-react';
 
 // Skeleton card placeholder shown while loading
@@ -229,12 +229,28 @@ const getIdeaFromUrl = (): string | null => {
   return params.get('idea');
 };
 
-const setIdeaInUrl = (ideaId: string | null) => {
+const getCategoryFromUrl = (): string[] | null => {
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('category');
+  if (!slug) return null;
+  const role = ROLES.find(r => r.slug === slug);
+  return role ? role.domains : null;
+};
+
+const setUrlParams = (ideaId: string | null, domains: string[] | null) => {
   const url = new URL(window.location.href);
   if (ideaId) {
     url.searchParams.set('idea', ideaId);
   } else {
     url.searchParams.delete('idea');
+  }
+  const role = domains ? ROLES.find(r =>
+    r.domains.length === domains.length && r.domains.every(d => domains.includes(d))
+  ) : null;
+  if (role) {
+    url.searchParams.set('category', role.slug);
+  } else {
+    url.searchParams.delete('category');
   }
   window.history.pushState({}, '', url.toString());
 };
@@ -243,7 +259,7 @@ const App: React.FC = () => {
   const [ideaEntries, setIdeaEntries] = useState<IdeaEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeIdeaId, setActiveIdeaId] = useState<string | null>(getIdeaFromUrl);
-  const [activeDomainFilter, setActiveDomainFilter] = useState<string[] | null>(null);
+  const [activeDomainFilter, setActiveDomainFilterState] = useState<string[] | null>(getCategoryFromUrl);
 
   // Search State
   const [searchQuery, setSearchQuery] = useState('');
@@ -275,13 +291,20 @@ const App: React.FC = () => {
   // Sync active idea with URL
   const selectIdea = useCallback((id: string | null) => {
     setActiveIdeaId(id);
-    setIdeaInUrl(id);
-  }, []);
+    setUrlParams(id, activeDomainFilter);
+  }, [activeDomainFilter]);
+
+  // Sync category filter with URL
+  const setActiveDomainFilter = useCallback((domains: string[] | null) => {
+    setActiveDomainFilterState(domains);
+    setUrlParams(activeIdeaId, domains);
+  }, [activeIdeaId]);
 
   // Handle browser back/forward
   useEffect(() => {
     const handlePopState = () => {
       setActiveIdeaId(getIdeaFromUrl());
+      setActiveDomainFilterState(getCategoryFromUrl());
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
