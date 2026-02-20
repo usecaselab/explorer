@@ -1,16 +1,16 @@
 ---
-title: "Community space allocation and revenue sharing"
+title: "Transparent community space revenue and allocation"
 domains: government, civil-society
 ---
 
 ## Problem
 
-Cities allocate shared spaces — parks, community halls, public plazas — through manual booking systems that have no mechanism to reward responsible users, price spaces dynamically to manage demand, or direct revenue back into the neighborhood rather than into a central municipal budget.
+Revenue from commercial use of public spaces — parks, plazas, community halls — flows into general municipal budgets where residents can't see how much their neighborhood's spaces generated or how those funds were spent. Allocation decisions happen in opaque committee processes with no audit trail, and community groups that maintain or improve a space have no formal mechanism to influence how it's governed.
 
 ## Solution
 
-Token-based booking systems where usage history and community reputation reduce access costs, pricing adjusts to demand, and revenue from commercial bookings flows automatically into a community treasury governed by local residents rather than city hall.
+A transparent treasury for each community space where commercial booking revenue is publicly tracked and spending decisions are made through participatory governance by verified local residents — creating a direct feedback loop between a space's economic activity and its neighborhood's investment priorities.
 
 ## Why Ethereum
 
-Composability: reputation, booking history, and treasury governance live on a shared layer — any community space in the network can read a user's track record and any resident can participate in treasury governance without a separate account for each venue.
+Verifiability: every booking payment and treasury disbursement is publicly auditable — residents can see exactly how much revenue their neighborhood's spaces generate and whether spending decisions reflect community priorities.

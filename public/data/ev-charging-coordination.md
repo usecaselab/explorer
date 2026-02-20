@@ -1,19 +1,19 @@
 ---
-title: "EV charging coordination"
+title: "Cross-network EV charging roaming settlement"
 domains: utilities
 ---
 
 ## Problem
 
-EV drivers face incompatible charging networks with separate accounts and payment systems, and grid operators have no interoperable way to settle energy credits across providers.
+When an EV driver charges on a network other than their home provider, the roaming transaction passes through bilateral settlement agreements between the charge point operator (CPO) and the eMobility service provider (eMSP) — each pair requiring a custom integration. In Europe alone there are 500+ CPOs and dozens of eMSPs, and the bilateral model means most roaming pairs simply don't exist, leaving drivers unable to charge on large portions of the network without creating new accounts.
 
 ## Solution
 
-Interoperable systems for energy credit settlement across charging networks and grid participants
+A shared settlement layer where any CPO and any eMSP can clear roaming transactions without bilateral agreements — using standardized session records (kWh delivered, time, location, tariff) that both parties confirm onchain, with payment executing automatically at session close.
 
 ## Why Ethereum
 
-Composability: interoperable energy credit settlement on a shared layer means EV drivers use any network and grid credits flow between providers — without bilateral integration agreements.
+Composability: a shared settlement layer means any CPO-eMSP pair can transact without a pre-negotiated bilateral integration — roaming coverage expands from bilateral partnerships to the entire network by default.
 
 ## Resources
 

@@ -1,19 +1,19 @@
 ---
-title: "Community ownership primitives"
+title: "Community ownership coordination for co-ops and land trusts"
 domains: real-estate-and-housing, civil-society
 ---
 
 ## Problem
 
-Co-ops and community land trusts rely on cumbersome legal structures and manual governance processes that make shared ownership difficult to establish, scale, or transfer.
+Community land trusts and housing cooperatives are structured as 501(c)(3)s or limited equity co-ops with governance rules buried in paper bylaws that members rarely read, share transfers processed through manual legal work, and financial reporting that requires expensive annual audits — overhead that scales linearly with the number of units and makes it prohibitively expensive to operate community-owned housing at anything beyond neighborhood scale.
 
 ## Solution
 
-Co-ops and land trusts based on token-governance enable inclusive ownership and local alignment
+A governance and ownership coordination layer that sits on top of existing legal entities — automating membership transfers within the constraints of the ground lease or co-op agreement, making governance votes and financial reporting verifiable to members in real time, and reducing the per-unit administrative overhead that currently limits CLT and co-op scale.
 
 ## Why Ethereum
 
-Enforcement: ownership rules, transfer restrictions, and governance votes are encoded in smart contracts — no need for manual legal administration or expensive fiduciaries to run shared ownership structures.
+Enforcement: membership transfers, governance votes, and financial distributions execute within rules encoded once in the smart contract — reducing per-unit administrative cost without requiring the organization to abandon its existing legal structure or tax-exempt status.
 
 ## Resources
 

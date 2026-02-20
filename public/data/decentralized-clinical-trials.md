@@ -1,19 +1,19 @@
 ---
-title: "Decentralized clinical trials"
+title: "Tamper-evident data integrity for decentralized clinical trials"
 domains: health, science
 ---
 
 ## Problem
 
-Clinical trials cost billions and take years because participant recruitment, data collection, and verification are centralized through a handful of contract research organizations, while funding is disbursed upfront with weak enforcement of data-sharing requirements.
+Decentralized clinical trials (DCTs) — where patients participate from home using wearables, ePRO apps, and telemedicine — are growing rapidly but face a data integrity challenge that traditional site-based trials don't: when data is collected on patient devices across hundreds of locations rather than at monitored investigator sites, sponsors and regulators have weaker assurance that electronic source data hasn't been altered, that consent was properly obtained, or that the chain of custody from device to database is intact. FDA's 2023 DCT guidance specifically calls out electronic source data integrity as a key concern.
 
 ## Solution
 
-Crowdsourced, token-incentivized trials with verifiable data collection, AI-assisted analysis, and smart-contract payments tied to data-sharing milestones and auditing
+Cryptographic attestation of clinical trial data at the point of collection — patient-reported outcomes, wearable sensor readings, and eConsent signatures are hashed and timestamped on an immutable ledger at the moment of capture, creating an audit trail that satisfies 21 CFR Part 11 requirements and gives monitors, sponsors, and regulators confidence in source data integrity without requiring physical site visits.
 
 ## Why Ethereum
 
-Enforcement: funding disbursements to trial participants and data providers execute automatically when verified contributions are confirmed — reducing overhead and aligning incentives around data quality.
+Verifiability: trial data is cryptographically committed at the point of collection — monitors and regulators can verify source data integrity without physical site visits, satisfying the data provenance requirements that make regulators hesitant to approve decentralized trial designs.
 
 ## Resources
 

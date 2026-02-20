@@ -1,19 +1,19 @@
 ---
-title: "Distributed grid automation"
+title: "Grid-edge device coordination and tamper-evident event logging"
 domains: utilities
 ---
 
 ## Problem
 
-As grids add billions of connected devices and distributed generation, centralized control systems become single points of failure with no common way to authenticate devices or maintain tamper-evident records of energy flows.
+Distribution utilities adding thousands of DERs, smart inverters, and storage systems to the grid edge have no unified view of device state or energy flows below the substation level — SCADA systems designed for centralized generation don't extend to the grid edge, and the growing attack surface of connected devices makes it critical to maintain tamper-evident records of device commands and state changes for NERC CIP compliance and incident forensics.
 
 ## Solution
 
-Decentralized control systems for monitoring and coordinating grid assets to reduce outages and cyber-physical vulnerabilities
+An append-only event log for grid-edge device actions — recording commands, state changes, and energy flow measurements with cryptographic attestation — giving distribution operators and regulators a tamper-evident audit trail at the grid edge where SCADA visibility currently ends.
 
 ## Why Ethereum
 
-Verifiability: tamper-evident logs of device actions and energy flows create an auditable record that regulators and operators can verify independently, reducing single points of failure in centralized control systems.
+Verifiability: device actions and energy flow data are cryptographically logged — giving distribution operators an audit trail below the substation level that SCADA systems don't provide, and making unauthorized device commands forensically detectable.
 
 ## Resources
 

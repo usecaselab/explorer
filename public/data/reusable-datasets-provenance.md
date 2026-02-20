@@ -1,19 +1,19 @@
 ---
-title: "Reusable datasets & provenance"
+title: "Verifiable dataset provenance and reuse tracking for research"
 domains: science
 ---
 
 ## Problem
 
-Research datasets are scattered across institutional servers with inconsistent metadata, making it difficult to verify provenance, reproduce findings, or build on prior work.
+Researchers who create high-quality datasets — curating, cleaning, and annotating data that takes months of work — receive almost no academic credit when other researchers use their data, because there's no reliable mechanism to track dataset reuse across papers and institutions. Simultaneously, researchers who want to build on prior work often can't verify whether a dataset has been altered since publication or confirm they're working with the same version that produced the original findings.
 
 ## Solution
 
-Decentralized storage and provenance for research data to boost reuse and integrity
+A registry where published datasets are cryptographically fingerprinted at the time of deposit, with every subsequent access and citation recorded — so dataset creators receive verifiable credit proportional to actual reuse, and downstream researchers can confirm they're working with an unaltered version of the original data.
 
 ## Why Ethereum
 
-Verifiability: dataset provenance is cryptographically recorded — anyone can verify that data hasn't been altered since publication, and citations trace back to immutable originals.
+Verifiability: cryptographic fingerprints prove dataset integrity since publication, and onchain access records create an unfalsifiable citation trail — dataset creators get credit for actual reuse and downstream researchers can confirm data hasn't been tampered with.
 
 ## Resources
 

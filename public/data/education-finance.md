@@ -1,19 +1,19 @@
 ---
-title: "Education finance"
+title: "Milestone-verified scholarship and grant disbursement"
 domains: finance, civil-society
 ---
 
 ## Problem
 
-Student financing is opaque and rigid, with loan terms set by distant institutions, scholarship disbursement lacking accountability, and no programmable way to align education funding with actual learner outcomes.
+Education grants and scholarships from foundations, governments, and endowments are disbursed upfront with minimal accountability for outcomes — a foundation funding 200 scholarships across 50 institutions has no programmatic way to verify that recipients maintained enrollment, completed required coursework, or met GPA thresholds before the next tranche is released, relying instead on self-reported status updates from institutions that have financial incentive to retain enrolled students regardless of progress.
 
 ## Solution
 
-Transparent income-share agreements, programmable scholarships, and community-driven funding for education providers
+Smart contract-governed scholarship funds that release tuition payments in tranches tied to institution-attested milestones — enrollment verification, credit completion, GPA maintenance — with transparent reporting to funders on aggregate outcomes across their entire portfolio.
 
 ## Why Ethereum
 
-Enforcement: income-share agreements and scholarship disbursements execute automatically when verifiable conditions are met — no intermediary needed to monitor compliance or release funds.
+Enforcement: disbursements release automatically when institutions attest to milestone completion — funders get programmatic accountability across hundreds of recipients without manual status tracking, and institutions can't draw down funds for students who aren't progressing.
 
 ## Resources
 

@@ -1,19 +1,19 @@
 ---
-title: "Tokenized reserves & transparent solvency reporting"
+title: "Real-time reserve attestation for insurance solvency"
 domains: insurance
 ---
 
 ## Problem
 
-Policyholders and regulators cannot independently verify whether insurers hold adequate reserves, relying instead on periodic, self-reported financial statements that may lag reality by months.
+Insurance regulators assess solvency through quarterly statutory filings that lag reality by months — in the interval between filings, an insurer's reserve position can deteriorate significantly without policyholders or regulators having visibility. The 2023 FIA surplus note controversy showed that even sophisticated state regulators can be caught off guard by rapid reserve changes between reporting periods.
 
 ## Solution
 
-Onchain reserve tracking enables real-time visibility and better risk pricing
+Onchain attestation of reserve assets that supplements existing statutory reporting — letting regulators and reinsurers see real-time reserve positions between quarterly filings, without replacing the existing RBC framework or requiring insurers to move actual reserve assets onto a blockchain.
 
 ## Why Ethereum
 
-Verifiability: reserve balances are visible on a public ledger in real time — policyholders and regulators don't have to wait for quarterly self-reported statements to assess solvency.
+Verifiability: reserve attestations are cryptographically signed and continuously updated — regulators and reinsurers get intra-quarter visibility into reserve adequacy rather than waiting for the next statutory filing to detect deterioration.
 
 ## Resources
 

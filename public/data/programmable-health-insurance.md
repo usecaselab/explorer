@@ -1,19 +1,19 @@
 ---
-title: "Automated health insurance claims"
+title: "Parametric health benefits for high-frequency, low-complexity claims"
 domains: insurance, health
 ---
 
 ## Problem
 
-Insurance claims processing is manual, adversarial, and slow, with opaque coverage rules that leave patients waiting weeks for reimbursement while insurers spend heavily on administrative overhead and fraud investigation.
+Routine health insurance claims for standardized events — hospital admission per-diem, specific diagnosis payouts, preventive care visit reimbursements — go through the same weeks-long adjudication pipeline as complex claims, despite having simple, verifiable trigger conditions. For hospital indemnity products specifically, the policyholder is hospitalized and clearly eligible, yet the insurer still requires a claims form, documentation review, and manual approval before paying — adding administrative cost to a product whose entire value proposition is fast cash during a health crisis.
 
 ## Solution
 
-Automated claims processing, fraud detection, and transparent coverage rules enforced by smart contracts
+Parametric health benefit products where payouts trigger automatically when a standardized medical event is attested — hospital admission confirmed by the facility, specific ICD-10 diagnosis code recorded, preventive visit logged — executing payment within hours rather than weeks for claim types that don't require utilization review or medical necessity determination.
 
 ## Why Ethereum
 
-Enforcement: coverage rules are encoded in smart contracts and claims execute automatically when medical events are attested — removing the adversarial manual review process that delays payouts.
+Enforcement: payouts execute automatically when attested medical events match pre-defined trigger conditions — eliminating the manual claims process for product types where the trigger is binary and verifiable, while leaving complex claims to traditional adjudication.
 
 ## Resources
 

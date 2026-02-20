@@ -1,19 +1,19 @@
 ---
-title: "Inventory management"
-domains: logistics-and-trade
+title: "Cross-party inventory verification and inventory-backed lending"
+domains: logistics-and-trade, finance
 ---
 
 ## Problem
 
-Warehouse inventory records diverge from reality because tracking systems across suppliers, warehouses, and retailers are disconnected, making financing against inventory unreliable.
+Lenders offering inventory financing have no independent way to verify that pledged inventory actually exists, hasn't been double-pledged to another lender, and matches the borrower's representations — a $600B+ market plagued by warehouse receipt fraud (e.g., the Qingdao metals scandal where the same copper and aluminum were pledged to multiple banks simultaneously). The underlying issue is that inventory records across warehouses, suppliers, and retailers are maintained in disconnected systems with no shared source of truth.
 
 ## Solution
 
-Tokenized SKUs and warehouse receipts that permit programmatic tracking, financing and movement of goods
+Tokenized warehouse receipts linked to verified physical inventory — with each receipt representing a specific lot in a specific warehouse, ownership transferable onchain, and double-pledging detectable by any lender checking the ledger before extending credit.
 
 ## Why Ethereum
 
-Verifiability: tokenized inventory creates a single verified record across the supply chain — lenders can confirm collateral exists and hasn't been double-pledged without manual inspection.
+Verifiability: tokenized warehouse receipts create a single ownership record that any lender can independently verify — double-pledging becomes structurally impossible because the same receipt can't be transferred to two parties simultaneously.
 
 ## Resources
 

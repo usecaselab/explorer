@@ -1,19 +1,19 @@
 ---
-title: "Demand coordination"
+title: "DER aggregation and behind-the-meter market participation"
 domains: utilities
 ---
 
 ## Problem
 
-Grid operators rely on blunt tools like time-of-use pricing to manage demand peaks, but households and businesses lack real-time, granular incentives to shift consumption in ways that actually relieve grid stress.
+FERC Order 2222 requires ISOs/RTOs to let distributed energy resources — residential batteries, smart thermostats, EV chargers, water heaters — participate in wholesale energy markets through aggregators. But the settlement infrastructure doesn't exist: aggregators have no scalable way to meter, verify, and compensate individual behind-the-meter assets for the load flexibility they provide, because each device is on a different protocol and the minimum transaction size in wholesale markets makes sub-kWh contributions uneconomic to settle individually.
 
 ## Solution
 
-Incentive systems that reward households and businesses for shifting load, sharing energy, and smoothing demand peaks
+A settlement layer for DER aggregation that meters individual device contributions, verifies demand reductions against smart meter baselines, and distributes compensation to device owners automatically — making it economically viable for aggregators to orchestrate millions of small assets into wholesale market participation.
 
 ## Why Ethereum
 
-Enforcement: incentive payments for load shifting execute automatically when smart meters report demand reductions — no utility needs to manually process claims or issue credits.
+Enforcement: compensation for individual device contributions executes automatically when metered demand reductions are confirmed — enabling aggregators to settle millions of micro-transactions that would be uneconomic through traditional payment infrastructure.
 
 ## Resources
 
