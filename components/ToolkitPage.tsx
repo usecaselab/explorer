@@ -40,7 +40,7 @@ const TOOLS = [
   {
     title: 'Use Case Lab Community',
     description: 'Connect with builders, researchers, and product thinkers advancing human-centered Ethereum adoption. Share ideas, find collaborators, get feedback on your project.',
-    url: 'https://www.usecaselab.org/',
+    url: 'https://docs.google.com/forms/d/e/1FAIpQLScuPwPvOyMrMeCuGs-lENYm3WlFXl3Pvu2eEJPqN61Kn1DCFg/viewform',
     icon: Users,
     color: '#059669',
     shape: 'sphere' as const,
