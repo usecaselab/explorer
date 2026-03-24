@@ -71,3 +71,16 @@ export interface DomainData {
   bounties: Bounty[];
   updates?: Update[];
 }
+
+export interface ShowcaseProject {
+  id: string;
+  title: string;
+  tagline: string;
+  description: string;
+  tags: string[];
+  shape: string;
+  color: string;
+  url?: string;
+  github?: string;
+  status: 'active' | 'beta' | 'coming-soon';
+}

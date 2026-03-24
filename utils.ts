@@ -1,5 +1,41 @@
-import { DomainData, Idea, Project, Resource, Bounty } from './types';
+import { DomainData, Idea, Project, Resource, Bounty, ShowcaseProject } from './types';
 import React from 'react';
+
+export const parseProjectMarkdown = (markdown: string, id: string): ShowcaseProject => {
+  const frontmatterMatch = markdown.match(/^---\n([\s\S]*?)\n---/);
+  let title = id;
+  let tagline = '';
+  let tags: string[] = [];
+  let shape = 'icosahedron';
+  let color = '#000000';
+  let url: string | undefined;
+  let github: string | undefined;
+  let status: 'active' | 'beta' | 'coming-soon' = 'active';
+
+  if (frontmatterMatch) {
+    const fm = frontmatterMatch[1];
+    const get = (key: string) => {
+      const m = fm.match(new RegExp(`^${key}:\\s*(.+)$`, 'm'));
+      return m ? m[1].trim().replace(/^["']|["']$/g, '') : undefined;
+    };
+    title = get('title') || id;
+    tagline = get('tagline') || '';
+    const tagsStr = get('tags');
+    if (tagsStr) tags = tagsStr.split(',').map(t => t.trim()).filter(Boolean);
+    shape = get('shape') || 'icosahedron';
+    color = get('color') || '#000000';
+    url = get('url');
+    github = get('github');
+    const s = get('status');
+    if (s && ['active', 'beta', 'coming-soon'].includes(s)) {
+      status = s as 'active' | 'beta' | 'coming-soon';
+    }
+  }
+
+  const description = markdown.replace(/^---[\s\S]*?---\n*/, '').trim();
+
+  return { id, title, tagline, description, tags, shape, color, url, github, status };
+};
 
 // Render text with markdown formatting (links, bold, italic) as React elements
 export const renderMarkdownLinks = (text: string): (string | React.ReactElement)[] => {
