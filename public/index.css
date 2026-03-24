@@ -5,11 +5,12 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Better touch targets on mobile */
+/* Better touch targets on mobile — only standalone interactive elements */
 @media (max-width: 768px) {
-  button, a {
+  nav button,
+  nav a,
+  .touch-target {
     min-height: 44px;
-    min-width: 44px;
   }
 }
 
