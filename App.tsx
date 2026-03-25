@@ -186,7 +186,7 @@ const App: React.FC = () => {
           {/* Hero */}
           <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20 md:pt-32 pb-6 sm:pb-8 text-center">
             <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight max-w-3xl mx-auto">
-              +122 ideas to<br />
+              122+ ideas to<br />
               <span className="text-gray-400">build on ethereum</span>
             </h1>
             <CurlInstall />
@@ -199,8 +199,8 @@ const App: React.FC = () => {
       {/* Footer */}
       <footer className="mt-auto w-full max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 border-t border-gray-100">
         <div className="flex items-center justify-between text-sm text-gray-400">
-          <span className="font-heading">Use Case Lab</span>
-          <span>Ethereum Foundation</span>
+          <a href="https://usecaselab.org" target="_blank" rel="noopener noreferrer" className="font-heading hover:text-gray-600 transition-colors">Use Case Lab</a>
+          <a href="https://ethereum.foundation" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors">Ethereum Foundation</a>
         </div>
       </footer>
     </div>
