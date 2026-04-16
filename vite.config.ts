@@ -55,6 +55,31 @@ export default defineConfig(({ mode }) => {
       resolve: {
         alias: {
           '@': path.resolve(__dirname, '.'),
+          // react-aria subpath aliases — Vite 6 strict exports compat for @privy-io/react-auth
+          'react-aria/FocusScope': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/FocusScope.js'),
+          'react-aria/FocusRing': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/FocusRing.js'),
+          'react-aria/useFocusRing': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/useFocusRing.js'),
+          'react-aria/useFocusable': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/useFocusable.js'),
+          'react-aria/Focusable': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/Focusable.js'),
+          'react-aria/private/focus/FocusScope': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/private/focus/FocusScope.js'),
+          'react-aria/private/focus/useHasTabbableChild': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/private/focus/useHasTabbableChild.js'),
+          'react-aria/private/focus/virtualFocus': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/private/focus/virtualFocus.js'),
+          'react-aria/private/utils/isFocusable': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/private/utils/isFocusable.js'),
+          'react-aria/private/interactions/useFocusable': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/private/interactions/useFocusable.js'),
+          'react-aria/private/interactions/focusSafely': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/private/interactions/focusSafely.js'),
+          'react-aria/Pressable': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/Pressable.js'),
+          'react-aria/useFocus': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/useFocus.js'),
+          'react-aria/useFocusVisible': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/useFocusVisible.js'),
+          'react-aria/useFocusWithin': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/useFocusWithin.js'),
+          'react-aria/useHover': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/useHover.js'),
+          'react-aria/useInteractOutside': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/useInteractOutside.js'),
+          'react-aria/useKeyboard': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/useKeyboard.js'),
+          'react-aria/useLongPress': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/useLongPress.js'),
+          'react-aria/useMove': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/useMove.js'),
+          'react-aria/usePress': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/usePress.js'),
+          'react-aria/private/interactions/PressResponder': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/private/interactions/PressResponder.js'),
+          'react-aria/private/interactions/useFocusVisible': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/private/interactions/useFocusVisible.js'),
+          'react-aria/private/interactions/useScrollWheel': path.resolve(__dirname, 'node_modules/react-aria/dist/exports/private/interactions/useScrollWheel.js'),
         }
       },
       build: {
@@ -62,6 +87,8 @@ export default defineConfig(({ mode }) => {
           output: {
             manualChunks: {
               three: ['three', '@react-three/fiber', '@react-three/drei'],
+              privy: ['@privy-io/react-auth'],
+              viem: ['viem'],
             }
           }
         }
