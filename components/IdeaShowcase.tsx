@@ -104,9 +104,10 @@ export { getDomainConfig, DOMAIN_CONFIG, parseIdeaMarkdown }
 
 interface IdeaShowcaseProps {
   onSelect: (idea: IdeaEntry, allIdeas: IdeaEntry[]) => void
+  searchQuery?: string
 }
 
-export default function IdeaShowcase({ onSelect }: IdeaShowcaseProps) {
+export default function IdeaShowcase({ onSelect, searchQuery = '' }: IdeaShowcaseProps) {
   const [ideas, setIdeas] = useState<IdeaEntry[]>([])
   const [loading, setLoading] = useState(true)
   const [activeCategory, setActiveCategory] = useState('all')
@@ -144,12 +145,21 @@ export default function IdeaShowcase({ onSelect }: IdeaShowcaseProps) {
   const PAGE_SIZE = 20
   const [page, setPage] = useState(0)
 
-  useEffect(() => { setPage(0) }, [activeCategory])
+  useEffect(() => { setPage(0) }, [activeCategory, searchQuery])
 
   const filtered = useMemo(() => {
-    if (activeCategory === 'all') return ideas
-    return ideas.filter(idea => idea.domains.includes(activeCategory))
-  }, [ideas, activeCategory])
+    const q = searchQuery.trim().toLowerCase()
+    return ideas.filter(idea => {
+      if (activeCategory !== 'all' && !idea.domains.includes(activeCategory)) return false
+      if (!q) return true
+      return (
+        idea.title.toLowerCase().includes(q) ||
+        idea.problem.toLowerCase().includes(q) ||
+        idea.solutionSketch.toLowerCase().includes(q) ||
+        idea.domains.some(d => (DOMAIN_CONFIG[d]?.label || d).toLowerCase().includes(q))
+      )
+    })
+  }, [ideas, activeCategory, searchQuery])
 
   const visible = filtered.slice(0, (page + 1) * PAGE_SIZE)
   const hasMore = visible.length < filtered.length
@@ -176,7 +186,7 @@ export default function IdeaShowcase({ onSelect }: IdeaShowcaseProps) {
             return (
               <button
                 key={cat.id}
-                onClick={() => setActiveCategory(cat.id)}
+                onClick={() => setActiveCategory(isActive ? 'all' : cat.id)}
                 className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
                   isActive
                     ? 'bg-black text-white shadow-sm'
