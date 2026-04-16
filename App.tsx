@@ -2,11 +2,16 @@ import React, { useState, useEffect, useCallback } from 'react';
 import IdeaShowcase, { getDomainConfig, parseIdeaMarkdown } from './components/IdeaShowcase';
 import IdeaPage, { IdeaEntry } from './components/IdeaPage';
 import ToolkitPage from './components/ToolkitPage';
-import { Wrench, Plus, Search } from 'lucide-react';
+import BountyPage from './components/BountyPage';
+import WalletButton from './components/WalletButton';
+import { Wrench, Plus, Search, Coins } from 'lucide-react';
 
-function parseRoute(): { page: 'home' } | { page: 'idea'; ideaId: string } | { page: 'toolkit' } {
+type Page = 'home' | 'idea' | 'toolkit' | 'bounties';
+
+function parseRoute(): { page: Page } | { page: 'idea'; ideaId: string } {
   const path = window.location.pathname;
   if (path === '/toolkit') return { page: 'toolkit' };
+  if (path === '/bounties') return { page: 'bounties' };
   const match = path.match(/^\/idea\/([^/]+)$/);
   if (match) return { page: 'idea', ideaId: match[1] };
   return { page: 'home' };
@@ -26,7 +31,6 @@ const App: React.FC = () => {
     return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
-  // Navigate to an idea
   const navigateToIdea = useCallback((idea: IdeaEntry, ideas: IdeaEntry[]) => {
     window.history.pushState(null, '', `/idea/${idea.id}`);
     setAllIdeas(ideas);
@@ -35,18 +39,23 @@ const App: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Navigate home
   const navigateHome = useCallback(() => {
     window.history.pushState(null, '', '/');
     setActiveIdea(null);
     setRoute({ page: 'home' });
   }, []);
 
-  // Navigate to toolkit
   const navigateToolkit = useCallback(() => {
     window.history.pushState(null, '', '/toolkit');
     setActiveIdea(null);
     setRoute({ page: 'toolkit' });
+    window.scrollTo(0, 0);
+  }, []);
+
+  const navigateBounties = useCallback(() => {
+    window.history.pushState(null, '', '/bounties');
+    setActiveIdea(null);
+    setRoute({ page: 'bounties' });
     window.scrollTo(0, 0);
   }, []);
 
@@ -57,15 +66,13 @@ const App: React.FC = () => {
       return;
     }
 
-    // Check if we already have this idea loaded
-    const existing = allIdeas.find(i => i.id === route.ideaId);
+    const existing = allIdeas.find(i => i.id === (route as { page: 'idea'; ideaId: string }).ideaId);
     if (existing) {
       setActiveIdea(existing);
       window.scrollTo(0, 0);
       return;
     }
 
-    // Direct URL load — fetch the idea and all ideas
     const load = async () => {
       setLoading(true);
       try {
@@ -84,12 +91,12 @@ const App: React.FC = () => {
         const valid = loaded.filter(Boolean) as IdeaEntry[];
         setAllIdeas(valid);
 
-        const target = valid.find(i => i.id === route.ideaId);
+        const ideaId = (route as { page: 'idea'; ideaId: string }).ideaId;
+        const target = valid.find(i => i.id === ideaId);
         if (target) {
           setActiveIdea(target);
           window.scrollTo(0, 0);
         } else {
-          // Idea not found — go home
           window.history.replaceState(null, '', '/');
           setRoute({ page: 'home' });
         }
@@ -111,19 +118,23 @@ const App: React.FC = () => {
     <div className="min-h-screen flex flex-col bg-white text-black">
       {/* Header */}
       <header className="w-full max-w-7xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8 flex items-center justify-between">
-        <button
-          onClick={navigateHome}
-          className="hover:opacity-70 transition-opacity"
-        >
+        <button onClick={navigateHome} className="hover:opacity-70 transition-opacity">
           <img src="/initiative.svg" alt="Use Case Lab" className="h-7 sm:h-8" />
         </button>
-        <nav className="flex items-center gap-3 sm:gap-6">
+        <nav className="flex items-center gap-2 sm:gap-4">
+          <button
+            onClick={navigateBounties}
+            className="text-xs sm:text-sm text-gray-500 hover:text-black transition-colors flex items-center gap-1"
+          >
+            <Coins className="w-3 h-3" /> Bounties
+          </button>
           <button
             onClick={navigateToolkit}
             className="text-xs sm:text-sm text-gray-500 hover:text-black transition-colors flex items-center gap-1"
           >
             <Wrench className="w-3 h-3" /> Toolkit
           </button>
+          <WalletButton onBountyClick={navigateBounties} />
           <a
             href={`https://github.com/usecaselab/explorer/issues/new?template=use-case-submission.md&title=${encodeURIComponent('[Use Case] ')}&body=${encodeURIComponent(`## Idea\n\n\n## Problem it solves\n\n\n## Relevant domains\n\n\n## Links or references\n\n`)}`}
             target="_blank"
@@ -140,6 +151,11 @@ const App: React.FC = () => {
         <div className="flex items-center justify-center py-32">
           <div className="w-6 h-6 border-2 border-black border-t-transparent rounded-full animate-spin" />
         </div>
+      ) : route.page === 'bounties' ? (
+        <BountyPage
+          onBack={navigateHome}
+          onSelectIdea={(idea) => navigateToIdea(idea, allIdeas.length ? allIdeas : [idea])}
+        />
       ) : route.page === 'toolkit' ? (
         <ToolkitPage onBack={navigateHome} />
       ) : showIdea ? (
