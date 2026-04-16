@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import IdeaShowcase, { getDomainConfig, parseIdeaMarkdown } from './components/IdeaShowcase';
 import IdeaPage, { IdeaEntry } from './components/IdeaPage';
 import ToolkitPage from './components/ToolkitPage';
-import { Wrench, Copy, Check, Plus } from 'lucide-react';
+import { Wrench, Plus, Search } from 'lucide-react';
 
 function parseRoute(): { page: 'home' } | { page: 'idea'; ideaId: string } | { page: 'toolkit' } {
   const path = window.location.pathname;
@@ -12,36 +12,12 @@ function parseRoute(): { page: 'home' } | { page: 'idea'; ideaId: string } | { p
   return { page: 'home' };
 }
 
-const INSTALL_CMD = 'curl -sL usecaselab.org/skill.md';
-
-function CurlInstall() {
-  const [copied, setCopied] = useState(false);
-  const handleCopy = useCallback(() => {
-    navigator.clipboard.writeText(INSTALL_CMD);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  }, []);
-
-  return (
-    <div className="mt-6 sm:mt-8 max-w-xl mx-auto">
-      <button
-        onClick={handleCopy}
-        className="w-full flex items-center gap-2 bg-gray-100 text-gray-500 rounded-xl px-4 py-3 font-mono text-xs sm:text-sm hover:bg-gray-200 transition-colors group"
-      >
-        <span className="text-gray-400 select-none">$</span>
-        <code className="flex-1 text-left truncate text-gray-600">{INSTALL_CMD}</code>
-        {copied ? <Check className="w-4 h-4 text-green-500 flex-shrink-0" /> : <Copy className="w-4 h-4 text-gray-400 group-hover:text-gray-600 flex-shrink-0 transition-colors" />}
-      </button>
-      <p className="text-xs text-gray-400 mt-2">Claude Code skill — explore ideas from your terminal</p>
-    </div>
-  );
-}
-
 const App: React.FC = () => {
   const [route, setRoute] = useState(parseRoute);
   const [allIdeas, setAllIdeas] = useState<IdeaEntry[]>([]);
   const [activeIdea, setActiveIdea] = useState<IdeaEntry | null>(null);
   const [loading, setLoading] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   // Listen for browser back/forward
   useEffect(() => {
@@ -182,10 +158,21 @@ const App: React.FC = () => {
               122+ ideas to<br />
               <span className="text-gray-400">build on ethereum</span>
             </h1>
-            <CurlInstall />
+            <div className="mt-6 sm:mt-8 max-w-xl mx-auto">
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search ideas..."
+                  className="w-full pl-11 pr-4 py-3 bg-gray-100 rounded-xl text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black/10 focus:bg-gray-50 transition-colors"
+                />
+              </div>
+            </div>
           </section>
 
-          <IdeaShowcase onSelect={navigateToIdea} />
+          <IdeaShowcase onSelect={navigateToIdea} searchQuery={searchQuery} />
         </>
       )}
 
