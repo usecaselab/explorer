@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import IdeaShowcase, { getDomainConfig, parseIdeaMarkdown } from './components/IdeaShowcase';
 import IdeaPage, { IdeaEntry } from './components/IdeaPage';
 import ToolkitPage from './components/ToolkitPage';
-import { ArrowUpRight, Wrench, Copy, Check } from 'lucide-react';
+import { Wrench, Copy, Check, Plus } from 'lucide-react';
 
 function parseRoute(): { page: 'home' } | { page: 'idea'; ideaId: string } | { page: 'toolkit' } {
   const path = window.location.pathname;
@@ -149,20 +149,13 @@ const App: React.FC = () => {
             <Wrench className="w-3 h-3" /> Toolkit
           </button>
           <a
-            href="https://www.usecaselab.org/"
+            href={`https://github.com/usecaselab/explorer/issues/new?template=use-case-submission.md&title=${encodeURIComponent('[Use Case] ')}&body=${encodeURIComponent(`## Idea\n\n\n## Problem it solves\n\n\n## Relevant domains\n\n\n## Links or references\n\n`)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs sm:text-sm text-gray-500 hover:text-black transition-colors flex items-center gap-1"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 bg-black text-white text-xs sm:text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors"
           >
-            About <ArrowUpRight className="w-3 h-3" />
-          </a>
-          <a
-            href="https://github.com/usecaselab"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden sm:flex text-sm text-gray-500 hover:text-black transition-colors items-center gap-1"
-          >
-            GitHub <ArrowUpRight className="w-3 h-3" />
+            <Plus className="w-3.5 h-3.5" />
+            Submit an Idea
           </a>
         </nav>
       </header>

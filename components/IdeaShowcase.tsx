@@ -78,7 +78,6 @@ function parseIdeaMarkdown(content: string, id: string): IdeaEntry {
     whyEthereum: parseSection(body, 'Why Ethereum'),
     domains: (meta.domains || '').split(',').map(d => d.trim()).filter(Boolean),
     resources: parseLinks(body, 'Resources'),
-    examples: parseLinks(body, 'Examples'),
   }
 }
 
