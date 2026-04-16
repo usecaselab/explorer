@@ -18,7 +18,6 @@ export interface IdeaEntry {
   whyEthereum: string
   domains: string[]
   resources: IdeaResource[]
-  examples?: IdeaResource[]
 }
 
 function domainLabel(d: string): string {
@@ -156,38 +155,6 @@ export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onS
               <p className="text-lg text-gray-700 leading-relaxed">
                 {renderMarkdownLinks(whyExplanation)}
               </p>
-            </div>
-          </section>
-        )}
-
-        {/* Examples */}
-        {idea.examples && idea.examples.length > 0 && (
-          <section>
-            <h2 className="font-heading text-sm font-bold uppercase tracking-widest text-gray-400 mb-6">
-              Who's Building
-            </h2>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {idea.examples.map((example, idx) => (
-                <a
-                  key={idx}
-                  href={example.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group p-4 sm:p-5 rounded-xl border border-gray-100 hover:border-gray-200 transition-colors"
-                >
-                  <div className="flex items-start justify-between gap-2">
-                    <h3 className="font-heading text-sm font-bold text-black">
-                      {example.name}
-                    </h3>
-                    <ExternalLink className="w-3.5 h-3.5 text-gray-300 group-hover:text-black transition-colors flex-shrink-0 mt-0.5" />
-                  </div>
-                  {example.description && (
-                    <p className="text-sm text-gray-500 leading-relaxed mt-1.5">
-                      {renderMarkdownLinks(example.description)}
-                    </p>
-                  )}
-                </a>
-              ))}
             </div>
           </section>
         )}
