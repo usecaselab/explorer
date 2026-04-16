@@ -23,6 +23,7 @@ const App: React.FC = () => {
   const [activeIdea, setActiveIdea] = useState<IdeaEntry | null>(null);
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [bountySearch, setBountySearch] = useState('');
 
   // Listen for browser back/forward
   useEffect(() => {
@@ -52,9 +53,10 @@ const App: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const navigateBounties = useCallback(() => {
+  const navigateBounties = useCallback((search?: string) => {
     window.history.pushState(null, '', '/bounties');
     setActiveIdea(null);
+    setBountySearch(search ?? '');
     setRoute({ page: 'bounties' });
     window.scrollTo(0, 0);
   }, []);
@@ -123,7 +125,7 @@ const App: React.FC = () => {
         </button>
         <nav className="flex items-center gap-2 sm:gap-4">
           <button
-            onClick={navigateBounties}
+            onClick={() => navigateBounties()}
             className="text-xs sm:text-sm text-gray-500 hover:text-black transition-colors flex items-center gap-1"
           >
             <Coins className="w-3 h-3" /> Bounties
@@ -134,7 +136,7 @@ const App: React.FC = () => {
           >
             <Wrench className="w-3 h-3" /> Toolkit
           </button>
-          <WalletButton onBountyClick={navigateBounties} />
+          <WalletButton />
           <a
             href={`https://github.com/usecaselab/explorer/issues/new?template=use-case-submission.md&title=${encodeURIComponent('[Use Case] ')}&body=${encodeURIComponent(`## Idea\n\n\n## Problem it solves\n\n\n## Relevant domains\n\n\n## Links or references\n\n`)}`}
             target="_blank"
@@ -155,6 +157,7 @@ const App: React.FC = () => {
         <BountyPage
           onBack={navigateHome}
           onSelectIdea={(idea) => navigateToIdea(idea, allIdeas.length ? allIdeas : [idea])}
+          initialSearch={bountySearch}
         />
       ) : route.page === 'toolkit' ? (
         <ToolkitPage onBack={navigateHome} />
@@ -165,6 +168,7 @@ const App: React.FC = () => {
           onBack={navigateHome}
           allIdeas={allIdeas}
           onSelectIdea={(idea) => navigateToIdea(idea, allIdeas)}
+          onFundBounty={(title) => navigateBounties(title)}
         />
       ) : (
         <>

@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import { ArrowLeft, ExternalLink, Link, Check, Pencil, Wrench } from 'lucide-react'
+import { ArrowLeft, ExternalLink, Link, Check, Pencil, Wrench, Coins } from 'lucide-react'
 import { renderMarkdownLinks } from '../utils'
 import Shape3D from './Shape3D'
 import { getDomainConfig, DOMAIN_CONFIG } from './IdeaShowcase'
@@ -30,9 +30,10 @@ interface IdeaPageProps {
   onBack: () => void
   allIdeas?: IdeaEntry[]
   onSelectIdea?: (idea: IdeaEntry) => void
+  onFundBounty?: (ideaTitle: string) => void
 }
 
-export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onSelectIdea }: IdeaPageProps) {
+export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onSelectIdea, onFundBounty }: IdeaPageProps) {
   const [copied, setCopied] = useState(false)
 
   const handleCopyLink = useCallback(() => {
@@ -186,6 +187,23 @@ export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onS
                 </a>
               ))}
             </div>
+          </section>
+        )}
+
+        {/* Fund Bounty CTA */}
+        {onFundBounty && (
+          <section className="p-5 sm:p-6 rounded-2xl border border-emerald-100 bg-emerald-50/40 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <h3 className="font-heading font-bold text-base text-black mb-1">Help fund this bounty</h3>
+              <p className="text-sm text-gray-500">Vote with your $UseCaseLab holdings to direct fees toward building this idea.</p>
+            </div>
+            <button
+              onClick={() => onFundBounty(idea.title)}
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-black text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors shrink-0"
+            >
+              <Coins className="w-3.5 h-3.5" />
+              Help Fund this Idea
+            </button>
           </section>
         )}
 
