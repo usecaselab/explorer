@@ -105,9 +105,10 @@ export { getDomainConfig, DOMAIN_CONFIG, parseIdeaMarkdown }
 interface IdeaShowcaseProps {
   onSelect: (idea: IdeaEntry, allIdeas: IdeaEntry[]) => void
   searchQuery?: string
+  onClearSearch?: () => void
 }
 
-export default function IdeaShowcase({ onSelect, searchQuery = '' }: IdeaShowcaseProps) {
+export default function IdeaShowcase({ onSelect, searchQuery = '', onClearSearch }: IdeaShowcaseProps) {
   const [ideas, setIdeas] = useState<IdeaEntry[]>([])
   const [loading, setLoading] = useState(true)
   const [activeCategory, setActiveCategory] = useState('all')
@@ -249,9 +250,82 @@ export default function IdeaShowcase({ onSelect, searchQuery = '' }: IdeaShowcas
 
       {hasMore && <ScrollTrigger onVisible={() => setPage(p => p + 1)} />}
 
-      {filtered.length === 0 && (
+      {filtered.length === 0 && ideas.length > 0 && (() => {
+        const hasSearch = searchQuery.trim().length > 0
+        const hasFilter = activeCategory !== 'all'
+        const activeLabel = hasFilter
+          ? (DOMAIN_CONFIG[activeCategory]?.label || activeCategory)
+          : ''
+        const suggestions = ideas.slice(0, 3)
+
+        return (
+          <div className="text-center py-12 sm:py-16">
+            <p className="font-heading text-xl sm:text-2xl font-bold text-black mb-2">
+              {hasSearch
+                ? <>No ideas match &ldquo;<span className="text-gray-500">{searchQuery.trim()}</span>&rdquo;</>
+                : 'No ideas match this filter'}
+            </p>
+            {(hasSearch || hasFilter) && (
+              <p className="text-sm text-gray-400 mb-6">
+                {hasSearch && hasFilter
+                  ? <>Filtered by <span className="text-gray-600">{activeLabel}</span>. Try broadening your search or clearing the filter.</>
+                  : hasFilter
+                    ? <>Filtered by <span className="text-gray-600">{activeLabel}</span>.</>
+                    : 'Try a different search term or browse by category.'}
+              </p>
+            )}
+            <div className="flex items-center justify-center gap-2 flex-wrap mb-10">
+              {hasSearch && onClearSearch && (
+                <button
+                  onClick={onClearSearch}
+                  className="px-4 py-2 bg-black text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors"
+                >
+                  Clear search
+                </button>
+              )}
+              {hasFilter && (
+                <button
+                  onClick={() => setActiveCategory('all')}
+                  className="px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors"
+                >
+                  Clear filter
+                </button>
+              )}
+            </div>
+
+            {suggestions.length > 0 && (
+              <div className="max-w-3xl mx-auto">
+                <p className="text-xs font-medium text-gray-400 uppercase tracking-wide mb-4">
+                  Or explore these
+                </p>
+                <div className="grid gap-3 grid-cols-1 sm:grid-cols-3 text-left">
+                  {suggestions.map(idea => {
+                    const conf = getDomainConfig(idea.domains)
+                    return (
+                      <button
+                        key={idea.id}
+                        onClick={() => onSelect(idea, ideas)}
+                        className="group flex items-center gap-3 rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all p-3 text-left"
+                      >
+                        <div className="w-12 h-12 flex-shrink-0 bg-gray-50/50 rounded-lg overflow-hidden">
+                          <Shape3D shape={conf.shape} color={conf.color} />
+                        </div>
+                        <span className="font-heading text-sm font-bold text-black leading-snug line-clamp-2">
+                          {idea.title}
+                        </span>
+                      </button>
+                    )
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+        )
+      })()}
+
+      {filtered.length === 0 && ideas.length === 0 && (
         <p className="text-center text-gray-400 text-lg py-12">
-          No ideas in this category yet.
+          No ideas available.
         </p>
       )}
     </section>

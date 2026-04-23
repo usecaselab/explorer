@@ -172,7 +172,11 @@ const App: React.FC = () => {
             </div>
           </section>
 
-          <IdeaShowcase onSelect={navigateToIdea} searchQuery={searchQuery} />
+          <IdeaShowcase
+            onSelect={navigateToIdea}
+            searchQuery={searchQuery}
+            onClearSearch={() => setSearchQuery('')}
+          />
         </>
       )}
 
