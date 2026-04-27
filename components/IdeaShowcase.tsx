@@ -1,7 +1,10 @@
 import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react'
-import { Sparkles } from 'lucide-react'
+import { Sparkles, TrendingUp } from 'lucide-react'
 import type { IdeaEntry, ExploredProject } from './IdeaPage'
 import Shape3D, { ShapeType } from './Shape3D'
+import VoteButton from './VoteButton'
+import { fetchIdeasBulkState } from '../lib/api'
+import { useSession } from '../lib/auth-client'
 
 // 16 PR domains, each with its own color and shape
 const DOMAIN_CONFIG: Record<string, { label: string; color: string; shape: ShapeType }> = {
@@ -113,6 +116,28 @@ export default function IdeaShowcase({ onSelect, searchQuery = '' }: IdeaShowcas
   const [ideas, setIdeas] = useState<IdeaEntry[]>([])
   const [loading, setLoading] = useState(true)
   const [activeCategory, setActiveCategory] = useState('all')
+  const [sortByVotes, setSortByVotes] = useState(false)
+  const [voteCounts, setVoteCounts] = useState<Record<string, number>>({})
+  const [myVotes, setMyVotes] = useState<Set<string>>(new Set())
+  const { data: session } = useSession()
+
+  useEffect(() => {
+    let cancelled = false
+    fetchIdeasBulkState()
+      .then((s) => {
+        if (cancelled) return
+        const counts: Record<string, number> = {}
+        for (const id of Object.keys(s.counts)) counts[id] = s.counts[id].votes
+        setVoteCounts(counts)
+        setMyVotes(new Set(s.myVotes))
+      })
+      .catch(() => {
+        // soft-fail — grid still works without vote state
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [session?.user?.id])
 
   useEffect(() => {
     const load = async () => {
@@ -159,7 +184,7 @@ export default function IdeaShowcase({ onSelect, searchQuery = '' }: IdeaShowcas
 
   const filtered = useMemo(() => {
     const q = searchQuery.trim().toLowerCase()
-    return ideas.filter(idea => {
+    const list = ideas.filter(idea => {
       if (activeCategory === 'explored') {
         if (!idea.explored || idea.explored.length === 0) return false
       } else if (activeCategory !== 'all' && !idea.domains.includes(activeCategory)) {
@@ -173,7 +198,13 @@ export default function IdeaShowcase({ onSelect, searchQuery = '' }: IdeaShowcas
         idea.domains.some(d => (DOMAIN_CONFIG[d]?.label || d).toLowerCase().includes(q))
       )
     })
-  }, [ideas, activeCategory, searchQuery])
+    if (sortByVotes) {
+      return [...list].sort(
+        (a, b) => (voteCounts[b.id] || 0) - (voteCounts[a.id] || 0)
+      )
+    }
+    return list
+  }, [ideas, activeCategory, searchQuery, sortByVotes, voteCounts])
 
   const visible = filtered.slice(0, (page + 1) * PAGE_SIZE)
   const hasMore = visible.length < filtered.length
@@ -191,6 +222,17 @@ export default function IdeaShowcase({ onSelect, searchQuery = '' }: IdeaShowcas
       {/* Category Filter */}
       <div className="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0 pb-2 mb-8 sm:mb-12">
         <div className="flex sm:flex-wrap sm:justify-center gap-1.5 sm:gap-2 min-w-max sm:min-w-0">
+          <button
+            onClick={() => setSortByVotes((v) => !v)}
+            className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
+              sortByVotes
+                ? 'bg-black text-white shadow-sm'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            }`}
+          >
+            <TrendingUp className="w-3 h-3 flex-shrink-0" />
+            Most voted
+          </button>
           {CATEGORIES.map(cat => {
             const isActive = activeCategory === cat.id
             const count = cat.id === 'all'
@@ -229,44 +271,67 @@ export default function IdeaShowcase({ onSelect, searchQuery = '' }: IdeaShowcas
       <div className="grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {visible.map(idea => {
           const conf = getDomainConfig(idea.domains)
+          const votes = voteCounts[idea.id] || 0
+          const voted = myVotes.has(idea.id)
           return (
-            <button
+            <div
               key={idea.id}
-              onClick={() => onSelect(idea, ideas)}
-              className="group text-left flex flex-row sm:flex-col rounded-xl border border-gray-100 hover:border-gray-200 transition-all hover:shadow-sm overflow-hidden"
+              className="group relative rounded-xl border border-gray-100 hover:border-gray-200 transition-all hover:shadow-sm overflow-hidden"
             >
-              <div className="relative w-24 h-24 sm:w-full sm:aspect-[4/3] sm:h-auto bg-gray-50/50 flex-shrink-0">
-                <Shape3D shape={conf.shape} color={conf.color} />
-                {idea.explored && idea.explored.length > 0 && (
-                  <span className="absolute top-2 right-2 inline-flex items-center gap-0.5 text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
-                    <Sparkles className="w-2.5 h-2.5" />
-                    <span className="hidden sm:inline">Explored</span>
-                  </span>
-                )}
-              </div>
-              <div className="p-3 sm:p-4 flex flex-col justify-center min-w-0">
-                <h3 className="font-heading text-sm font-bold text-black leading-snug mb-1">
-                  {idea.title}
-                </h3>
-                <p className="text-xs text-gray-400 leading-relaxed line-clamp-2 mb-2">
-                  {idea.problem}
-                </p>
-                <div className="flex flex-wrap gap-1">
-                  {idea.domains.map(d => {
-                    const dc = DOMAIN_CONFIG[d]
-                    return (
-                      <span
-                        key={d}
-                        className="text-[10px] font-medium px-2 py-0.5 rounded-full"
-                        style={{ backgroundColor: `${dc?.color || '#666'}15`, color: dc?.color || '#666' }}
-                      >
-                        {dc?.label || d}
-                      </span>
-                    )
-                  })}
+              <button
+                onClick={() => onSelect(idea, ideas)}
+                className="text-left flex flex-row sm:flex-col w-full"
+              >
+                <div className="relative w-24 h-24 sm:w-full sm:aspect-[4/3] sm:h-auto bg-gray-50/50 flex-shrink-0">
+                  <Shape3D shape={conf.shape} color={conf.color} />
+                  {idea.explored && idea.explored.length > 0 && (
+                    <span className="absolute top-2 right-2 inline-flex items-center gap-0.5 text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+                      <Sparkles className="w-2.5 h-2.5" />
+                      <span className="hidden sm:inline">Explored</span>
+                    </span>
+                  )}
                 </div>
+                <div className="p-3 sm:p-4 flex flex-col justify-center min-w-0 pr-12 sm:pr-3">
+                  <h3 className="font-heading text-sm font-bold text-black leading-snug mb-1">
+                    {idea.title}
+                  </h3>
+                  <p className="text-xs text-gray-400 leading-relaxed line-clamp-2 mb-2">
+                    {idea.problem}
+                  </p>
+                  <div className="flex flex-wrap gap-1">
+                    {idea.domains.map(d => {
+                      const dc = DOMAIN_CONFIG[d]
+                      return (
+                        <span
+                          key={d}
+                          className="text-[10px] font-medium px-2 py-0.5 rounded-full"
+                          style={{ backgroundColor: `${dc?.color || '#666'}15`, color: dc?.color || '#666' }}
+                        >
+                          {dc?.label || d}
+                        </span>
+                      )
+                    })}
+                  </div>
+                </div>
+              </button>
+              <div className="absolute bottom-2 right-2 z-10">
+                <VoteButton
+                  ideaId={idea.id}
+                  votes={votes}
+                  voted={voted}
+                  size="sm"
+                  onChange={(next) => {
+                    setVoteCounts((prev) => ({ ...prev, [idea.id]: next.votes }))
+                    setMyVotes((prev) => {
+                      const copy = new Set(prev)
+                      if (next.voted) copy.add(idea.id)
+                      else copy.delete(idea.id)
+                      return copy
+                    })
+                  }}
+                />
               </div>
-            </button>
+            </div>
           )
         })}
       </div>

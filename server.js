@@ -5,6 +5,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { toNodeHandler, fromNodeHeaders } from 'better-auth/node';
 import { auth } from './server/auth.js';
+import ideasRouter from './server/routes/ideas.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -39,6 +40,8 @@ app.get('/api/me', async (req, res) => {
   if (!session) return res.json({ user: null });
   res.json({ user: session.user });
 });
+
+app.use('/api', ideasRouter);
 
 // Parse markdown files on startup
 let usecases = [];

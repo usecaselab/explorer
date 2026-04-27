@@ -1,8 +1,14 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { ArrowLeft, ExternalLink, Link, Check, Pencil, Wrench, Sparkles } from 'lucide-react'
 import { renderMarkdownLinks } from '../utils'
 import Shape3D from './Shape3D'
 import { getDomainConfig, DOMAIN_CONFIG } from './IdeaShowcase'
+import VoteButton from './VoteButton'
+import WorkingOnButton from './WorkingOnButton'
+import BuildersList from './BuildersList'
+import { fetchIdeaState } from '../lib/api'
+import type { Builder } from '../lib/api'
+import { useSession } from '../lib/auth-client'
 
 interface IdeaResource {
   name: string
@@ -42,6 +48,29 @@ interface IdeaPageProps {
 
 export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onSelectIdea }: IdeaPageProps) {
   const [copied, setCopied] = useState(false)
+  const [votes, setVotes] = useState(0)
+  const [voted, setVoted] = useState(false)
+  const [builders, setBuilders] = useState<Builder[]>([])
+  const [myWorking, setMyWorking] = useState<Builder | null>(null)
+  const { data: session } = useSession()
+
+  useEffect(() => {
+    let cancelled = false
+    fetchIdeaState(idea.id)
+      .then((s) => {
+        if (cancelled) return
+        setVotes(s.votes)
+        setVoted(s.myVote)
+        setBuilders(s.builders)
+        setMyWorking(s.myWorking)
+      })
+      .catch(() => {
+        // soft-fail; the page still renders without community state
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [idea.id, session?.user?.id])
 
   const handleCopyLink = useCallback(() => {
     navigator.clipboard.writeText(window.location.href)
@@ -122,6 +151,28 @@ export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onS
           <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold leading-tight tracking-tight text-black">
             {idea.title}
           </h1>
+          <div className="flex flex-wrap items-center gap-2 mt-5">
+            <VoteButton
+              ideaId={idea.id}
+              votes={votes}
+              voted={voted}
+              onChange={(next) => {
+                setVotes(next.votes)
+                setVoted(next.voted)
+              }}
+            />
+            <WorkingOnButton
+              ideaId={idea.id}
+              myWorking={myWorking}
+              onChange={(next) => {
+                setBuilders(next)
+                const me = session?.user?.id
+                  ? next.find((b) => b.userId === session.user.id) || null
+                  : null
+                setMyWorking(me)
+              }}
+            />
+          </div>
         </div>
       </div>
 
@@ -172,6 +223,9 @@ export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onS
             </div>
           </section>
         )}
+
+        {/* Builders */}
+        <BuildersList builders={builders} />
 
         {/* Explored By */}
         {idea.explored && idea.explored.length > 0 && (
