@@ -69,15 +69,23 @@ const App: React.FC = () => {
     const load = async () => {
       setLoading(true);
       try {
-        const manifestRes = await fetch('/data/ideas/manifest.json');
+        const [manifestRes, exploredRes] = await Promise.all([
+          fetch('/data/ideas/manifest.json'),
+          fetch('/data/explored.json'),
+        ]);
         const manifest: string[] = await manifestRes.json();
+        const exploredMap: Record<string, any[]> = exploredRes.ok ? await exploredRes.json() : {};
 
         const loaded = await Promise.all(
           manifest.map(async (filename) => {
             const response = await fetch(`/data/ideas/${filename}`);
             if (!response.ok) return null;
             const text = await response.text();
-            return parseIdeaMarkdown(text, filename.replace('.md', ''));
+            const idea = parseIdeaMarkdown(text, filename.replace('.md', ''));
+            if (exploredMap[idea.id]) {
+              idea.explored = exploredMap[idea.id];
+            }
+            return idea;
           })
         );
 

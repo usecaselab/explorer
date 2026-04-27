@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import { ArrowLeft, ExternalLink, Link, Check, Pencil, Wrench } from 'lucide-react'
+import { ArrowLeft, ExternalLink, Link, Check, Pencil, Wrench, Sparkles } from 'lucide-react'
 import { renderMarkdownLinks } from '../utils'
 import Shape3D from './Shape3D'
 import { getDomainConfig, DOMAIN_CONFIG } from './IdeaShowcase'
@@ -7,6 +7,13 @@ import { getDomainConfig, DOMAIN_CONFIG } from './IdeaShowcase'
 interface IdeaResource {
   name: string
   url: string
+  description: string
+}
+
+export interface ExploredProject {
+  name: string
+  builder?: string
+  url?: string
   description: string
 }
 
@@ -18,6 +25,7 @@ export interface IdeaEntry {
   whyEthereum: string
   domains: string[]
   resources: IdeaResource[]
+  explored?: ExploredProject[]
 }
 
 function domainLabel(d: string): string {
@@ -92,6 +100,12 @@ export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onS
         </div>
         <div className="flex-1 pt-1">
           <div className="flex flex-wrap gap-1.5 mb-3">
+            {idea.explored && idea.explored.length > 0 && (
+              <span className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+                <Sparkles className="w-3 h-3" />
+                Explored
+              </span>
+            )}
             {idea.domains.map(d => {
               const dc = DOMAIN_CONFIG[d]
               return (
@@ -155,6 +169,60 @@ export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onS
               <p className="text-lg text-gray-700 leading-relaxed">
                 {renderMarkdownLinks(whyExplanation)}
               </p>
+            </div>
+          </section>
+        )}
+
+        {/* Explored By */}
+        {idea.explored && idea.explored.length > 0 && (
+          <section>
+            <h2 className="font-heading text-sm font-bold uppercase tracking-widest text-gray-400 mb-6 flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-amber-500" />
+              Explored by the Community
+            </h2>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {idea.explored.map((project, idx) => {
+                const inner = (
+                  <>
+                    <div className="flex items-start justify-between gap-2">
+                      <h3 className="font-heading text-sm font-bold text-black">
+                        {project.name}
+                      </h3>
+                      {project.url && (
+                        <ExternalLink className="w-3.5 h-3.5 text-gray-300 group-hover:text-black transition-colors flex-shrink-0 mt-0.5" />
+                      )}
+                    </div>
+                    {project.builder && (
+                      <p className="text-xs text-amber-600 font-medium mt-1">
+                        Built by {project.builder}
+                      </p>
+                    )}
+                    {project.description && (
+                      <p className="text-sm text-gray-500 leading-relaxed mt-1.5">
+                        {project.description}
+                      </p>
+                    )}
+                  </>
+                )
+                return project.url ? (
+                  <a
+                    key={idx}
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group p-4 sm:p-5 rounded-xl border border-amber-100 bg-amber-50/30 hover:border-amber-200 transition-colors"
+                  >
+                    {inner}
+                  </a>
+                ) : (
+                  <div
+                    key={idx}
+                    className="group p-4 sm:p-5 rounded-xl border border-amber-100 bg-amber-50/30"
+                  >
+                    {inner}
+                  </div>
+                )
+              })}
             </div>
           </section>
         )}

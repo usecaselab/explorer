@@ -1,5 +1,5 @@
-import React, { useRef, useState, useMemo, useEffect } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
+import React, { useRef, useState, useMemo, useEffect, useCallback } from 'react'
+import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Float, MeshDistortMaterial, Environment } from '@react-three/drei'
 import * as THREE from 'three'
 
@@ -15,7 +15,7 @@ interface ShapeProps {
 function ShapeGeometry({ type }: { type: ShapeType }) {
   switch (type) {
     case 'torusKnot':
-      return <torusKnotGeometry args={[0.8, 0.25, 128, 32]} />
+      return <torusKnotGeometry args={[0.8, 0.25, 64, 16]} />
     case 'icosahedron':
       return <icosahedronGeometry args={[1.1, 0]} />
     case 'octahedron':
@@ -23,11 +23,11 @@ function ShapeGeometry({ type }: { type: ShapeType }) {
     case 'dodecahedron':
       return <dodecahedronGeometry args={[1, 0]} />
     case 'torus':
-      return <torusGeometry args={[0.8, 0.35, 32, 64]} />
+      return <torusGeometry args={[0.8, 0.35, 16, 32]} />
     case 'cone':
       return <coneGeometry args={[0.9, 1.5, 4]} />
     case 'sphere':
-      return <sphereGeometry args={[1.1, 32, 32]} />
+      return <sphereGeometry args={[1.1, 16, 16]} />
     case 'box':
       return <boxGeometry args={[1.4, 1.4, 1.4]} />
     default:
@@ -35,7 +35,27 @@ function ShapeGeometry({ type }: { type: ShapeType }) {
   }
 }
 
-function AnimatedShape({ shape, color }: ShapeProps) {
+// Pauses the render loop when not in view
+function FrameControl({ active }: { active: boolean }) {
+  const { invalidate, gl } = useThree()
+  const prev = useRef(active)
+
+  useEffect(() => {
+    if (active && !prev.current) {
+      invalidate()
+    }
+    prev.current = active
+  }, [active, invalidate])
+
+  useFrame(() => {
+    if (!active) return
+    invalidate()
+  })
+
+  return null
+}
+
+function AnimatedShape({ shape, color, active }: ShapeProps & { active: boolean }) {
   const meshRef = useRef<THREE.Mesh>(null!)
   const wireRef = useRef<THREE.Mesh>(null!)
   const [hovered, setHovered] = useState(false)
@@ -43,6 +63,8 @@ function AnimatedShape({ shape, color }: ShapeProps) {
   const wireVec3 = useMemo(() => new THREE.Vector3(), [])
 
   useFrame((_, delta) => {
+    if (!active && !hovered) return
+
     const targetScale = hovered ? 1.15 : 1
     const wireTargetScale = hovered ? 1.22 : 1.06
 
@@ -98,13 +120,17 @@ function AnimatedShape({ shape, color }: ShapeProps) {
 
 export default function Shape3D({ shape, color }: ShapeProps) {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [visible, setVisible] = useState(false)
+  const [loaded, setLoaded] = useState(false)
+  const [inView, setInView] = useState(false)
 
   useEffect(() => {
     const el = containerRef.current
     if (!el) return
     const observer = new IntersectionObserver(
-      ([entry]) => setVisible(entry.isIntersecting),
+      ([entry]) => {
+        setInView(entry.isIntersecting)
+        if (entry.isIntersecting) setLoaded(true)
+      },
       { rootMargin: '300px' }
     )
     observer.observe(el)
@@ -113,18 +139,20 @@ export default function Shape3D({ shape, color }: ShapeProps) {
 
   return (
     <div ref={containerRef} style={{ width: '100%', height: '100%' }}>
-      {visible && (
+      {loaded && (
         <Canvas
           camera={{ position: [0, 0, 4], fov: 45 }}
           dpr={[1, 1.5]}
-          gl={{ antialias: true, alpha: true }}
+          gl={{ antialias: true, alpha: true, powerPreference: 'low-power' }}
           style={{ background: 'transparent' }}
+          frameloop="demand"
         >
           <ambientLight intensity={0.5} />
           <directionalLight position={[5, 5, 5]} intensity={1.2} />
           <pointLight position={[-4, -2, 3]} intensity={0.4} color="#6366f1" />
           <pointLight position={[4, 2, -3]} intensity={0.3} color="#f59e0b" />
-          <AnimatedShape shape={shape} color={color} />
+          <FrameControl active={inView} />
+          <AnimatedShape shape={shape} color={color} active={inView} />
           <Environment preset="city" />
         </Canvas>
       )}

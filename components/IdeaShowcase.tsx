@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react'
-import type { IdeaEntry } from './IdeaPage'
+import { Sparkles } from 'lucide-react'
+import type { IdeaEntry, ExploredProject } from './IdeaPage'
 import Shape3D, { ShapeType } from './Shape3D'
 
 // 16 PR domains, each with its own color and shape
@@ -24,6 +25,7 @@ const DOMAIN_CONFIG: Record<string, { label: string; color: string; shape: Shape
 
 const CATEGORIES = [
   { id: 'all', label: 'All' },
+  { id: 'explored', label: 'Explored' },
   ...Object.entries(DOMAIN_CONFIG).map(([id, cfg]) => ({ id, label: cfg.label })),
 ]
 
@@ -115,15 +117,23 @@ export default function IdeaShowcase({ onSelect, searchQuery = '' }: IdeaShowcas
   useEffect(() => {
     const load = async () => {
       try {
-        const res = await fetch('/data/ideas/manifest.json')
-        const manifest: string[] = await res.json()
+        const [manifestRes, exploredRes] = await Promise.all([
+          fetch('/data/ideas/manifest.json'),
+          fetch('/data/explored.json'),
+        ])
+        const manifest: string[] = await manifestRes.json()
+        const exploredMap: Record<string, ExploredProject[]> = exploredRes.ok ? await exploredRes.json() : {}
 
         const loaded = await Promise.all(
           manifest.map(async (filename) => {
             const response = await fetch(`/data/ideas/${filename}`)
             if (!response.ok) return null
             const text = await response.text()
-            return parseIdeaMarkdown(text, filename.replace('.md', ''))
+            const idea = parseIdeaMarkdown(text, filename.replace('.md', ''))
+            if (exploredMap[idea.id]) {
+              idea.explored = exploredMap[idea.id]
+            }
+            return idea
           })
         )
 
@@ -150,7 +160,11 @@ export default function IdeaShowcase({ onSelect, searchQuery = '' }: IdeaShowcas
   const filtered = useMemo(() => {
     const q = searchQuery.trim().toLowerCase()
     return ideas.filter(idea => {
-      if (activeCategory !== 'all' && !idea.domains.includes(activeCategory)) return false
+      if (activeCategory === 'explored') {
+        if (!idea.explored || idea.explored.length === 0) return false
+      } else if (activeCategory !== 'all' && !idea.domains.includes(activeCategory)) {
+        return false
+      }
       if (!q) return true
       return (
         idea.title.toLowerCase().includes(q) ||
@@ -181,6 +195,8 @@ export default function IdeaShowcase({ onSelect, searchQuery = '' }: IdeaShowcas
             const isActive = activeCategory === cat.id
             const count = cat.id === 'all'
               ? ideas.length
+              : cat.id === 'explored'
+              ? ideas.filter(i => i.explored && i.explored.length > 0).length
               : ideas.filter(i => i.domains.includes(cat.id)).length
             const conf = DOMAIN_CONFIG[cat.id]
             return (
@@ -193,12 +209,14 @@ export default function IdeaShowcase({ onSelect, searchQuery = '' }: IdeaShowcas
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
               >
-                {conf && (
+                {cat.id === 'explored' ? (
+                  <Sparkles className={`w-3 h-3 flex-shrink-0 ${isActive ? 'text-white' : 'text-amber-500'}`} />
+                ) : conf ? (
                   <span
                     className="w-2 h-2 rounded-full flex-shrink-0"
                     style={{ backgroundColor: isActive ? '#fff' : conf.color }}
                   />
-                )}
+                ) : null}
                 {cat.label}
                 <span className={`text-xs ${isActive ? 'text-gray-400' : 'text-gray-400'}`}>{count}</span>
               </button>
@@ -217,8 +235,14 @@ export default function IdeaShowcase({ onSelect, searchQuery = '' }: IdeaShowcas
               onClick={() => onSelect(idea, ideas)}
               className="group text-left flex flex-row sm:flex-col rounded-xl border border-gray-100 hover:border-gray-200 transition-all hover:shadow-sm overflow-hidden"
             >
-              <div className="w-24 h-24 sm:w-full sm:aspect-[4/3] sm:h-auto bg-gray-50/50 flex-shrink-0">
+              <div className="relative w-24 h-24 sm:w-full sm:aspect-[4/3] sm:h-auto bg-gray-50/50 flex-shrink-0">
                 <Shape3D shape={conf.shape} color={conf.color} />
+                {idea.explored && idea.explored.length > 0 && (
+                  <span className="absolute top-2 right-2 inline-flex items-center gap-0.5 text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+                    <Sparkles className="w-2.5 h-2.5" />
+                    <span className="hidden sm:inline">Explored</span>
+                  </span>
+                )}
               </div>
               <div className="p-3 sm:p-4 flex flex-col justify-center min-w-0">
                 <h3 className="font-heading text-sm font-bold text-black leading-snug mb-1">
