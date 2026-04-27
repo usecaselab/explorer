@@ -73,8 +73,26 @@ CREATE TABLE IF NOT EXISTS working (
   PRIMARY KEY (ideaId, userId)
 );
 
+CREATE TABLE IF NOT EXISTS submissions (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  problem TEXT NOT NULL,
+  solutionSketch TEXT NOT NULL,
+  whyEthereum TEXT NOT NULL,
+  domains TEXT NOT NULL,
+  resources TEXT NOT NULL,
+  submitterId TEXT NOT NULL REFERENCES user(id) ON DELETE CASCADE,
+  status TEXT NOT NULL CHECK (status IN ('pending','approved','rejected')),
+  rejectionReason TEXT,
+  paymentTxHash TEXT,
+  createdAt INTEGER NOT NULL,
+  updatedAt INTEGER NOT NULL
+);
+
 CREATE INDEX IF NOT EXISTS idx_votes_idea ON votes(ideaId);
 CREATE INDEX IF NOT EXISTS idx_working_idea ON working(ideaId);
+CREATE INDEX IF NOT EXISTS idx_submissions_status ON submissions(status);
+CREATE INDEX IF NOT EXISTS idx_submissions_submitter ON submissions(submitterId);
 `;
 
 db.exec(SCHEMA);

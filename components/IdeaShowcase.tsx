@@ -3,7 +3,7 @@ import { Sparkles, TrendingUp } from 'lucide-react'
 import type { IdeaEntry, ExploredProject } from './IdeaPage'
 import Shape3D, { ShapeType } from './Shape3D'
 import VoteButton from './VoteButton'
-import { fetchIdeasBulkState } from '../lib/api'
+import { fetchIdeasBulkState, fetchApprovedSubmissions } from '../lib/api'
 import { useSession } from '../lib/auth-client'
 
 // 16 PR domains, each with its own color and shape
@@ -142,9 +142,10 @@ export default function IdeaShowcase({ onSelect, searchQuery = '' }: IdeaShowcas
   useEffect(() => {
     const load = async () => {
       try {
-        const [manifestRes, exploredRes] = await Promise.all([
+        const [manifestRes, exploredRes, approvedSubmissions] = await Promise.all([
           fetch('/data/ideas/manifest.json'),
           fetch('/data/explored.json'),
+          fetchApprovedSubmissions().catch(() => []),
         ])
         const manifest: string[] = await manifestRes.json()
         const exploredMap: Record<string, ExploredProject[]> = exploredRes.ok ? await exploredRes.json() : {}
@@ -162,7 +163,17 @@ export default function IdeaShowcase({ onSelect, searchQuery = '' }: IdeaShowcas
           })
         )
 
-        const valid = loaded.filter(Boolean) as IdeaEntry[]
+        const fromMarkdown = loaded.filter(Boolean) as IdeaEntry[]
+        const fromDb: IdeaEntry[] = approvedSubmissions.map((s) => ({
+          id: s.id,
+          title: s.title,
+          problem: s.problem,
+          solutionSketch: s.solutionSketch,
+          whyEthereum: s.whyEthereum,
+          domains: s.domains,
+          resources: s.resources,
+        }))
+        const valid = [...fromMarkdown, ...fromDb]
         for (let i = valid.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [valid[i], valid[j]] = [valid[j], valid[i]]

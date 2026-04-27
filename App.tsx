@@ -1,13 +1,21 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import IdeaShowcase, { getDomainConfig, parseIdeaMarkdown } from './components/IdeaShowcase';
 import IdeaPage, { IdeaEntry } from './components/IdeaPage';
+import { fetchApprovedSubmissions } from './lib/api';
 import ToolkitPage from './components/ToolkitPage';
 import SignInButton from './components/SignInButton';
+import SubmitIdeaModal from './components/SubmitIdeaModal';
+import AdminPage from './components/AdminPage';
 import { Wrench, Plus, Search } from 'lucide-react';
 
-function parseRoute(): { page: 'home' } | { page: 'idea'; ideaId: string } | { page: 'toolkit' } {
+function parseRoute():
+  | { page: 'home' }
+  | { page: 'idea'; ideaId: string }
+  | { page: 'toolkit' }
+  | { page: 'admin' } {
   const path = window.location.pathname;
   if (path === '/toolkit') return { page: 'toolkit' };
+  if (path === '/admin') return { page: 'admin' };
   const match = path.match(/^\/idea\/([^/]+)$/);
   if (match) return { page: 'idea', ideaId: match[1] };
   return { page: 'home' };
@@ -19,6 +27,7 @@ const App: React.FC = () => {
   const [activeIdea, setActiveIdea] = useState<IdeaEntry | null>(null);
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [submitOpen, setSubmitOpen] = useState(false);
 
   // Listen for browser back/forward
   useEffect(() => {
@@ -70,9 +79,10 @@ const App: React.FC = () => {
     const load = async () => {
       setLoading(true);
       try {
-        const [manifestRes, exploredRes] = await Promise.all([
+        const [manifestRes, exploredRes, approvedSubmissions] = await Promise.all([
           fetch('/data/ideas/manifest.json'),
           fetch('/data/explored.json'),
+          fetchApprovedSubmissions().catch(() => []),
         ]);
         const manifest: string[] = await manifestRes.json();
         const exploredMap: Record<string, any[]> = exploredRes.ok ? await exploredRes.json() : {};
@@ -90,7 +100,17 @@ const App: React.FC = () => {
           })
         );
 
-        const valid = loaded.filter(Boolean) as IdeaEntry[];
+        const fromMarkdown = loaded.filter(Boolean) as IdeaEntry[];
+        const fromDb: IdeaEntry[] = approvedSubmissions.map((s) => ({
+          id: s.id,
+          title: s.title,
+          problem: s.problem,
+          solutionSketch: s.solutionSketch,
+          whyEthereum: s.whyEthereum,
+          domains: s.domains,
+          resources: s.resources,
+        }));
+        const valid = [...fromMarkdown, ...fromDb];
         setAllIdeas(valid);
 
         const target = valid.find(i => i.id === route.ideaId);
@@ -133,15 +153,13 @@ const App: React.FC = () => {
           >
             <Wrench className="w-3 h-3" /> Toolkit
           </button>
-          <a
-            href={`https://github.com/usecaselab/explorer/issues/new?template=use-case-submission.md&title=${encodeURIComponent('[Use Case] ')}&body=${encodeURIComponent(`## Idea\n\n\n## Problem it solves\n\n\n## Relevant domains\n\n\n## Links or references\n\n`)}`}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => setSubmitOpen(true)}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 bg-black text-white text-xs sm:text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors"
           >
             <Plus className="w-3.5 h-3.5" />
             Submit an Idea
-          </a>
+          </button>
           <SignInButton />
         </nav>
       </header>
@@ -152,6 +170,8 @@ const App: React.FC = () => {
         </div>
       ) : route.page === 'toolkit' ? (
         <ToolkitPage onBack={navigateHome} />
+      ) : route.page === 'admin' ? (
+        <AdminPage onBack={navigateHome} />
       ) : showIdea ? (
         <IdeaPage
           idea={activeIdea}
@@ -193,6 +213,8 @@ const App: React.FC = () => {
           <a href="https://ethereum.foundation" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors">Ethereum Foundation</a>
         </div>
       </footer>
+
+      <SubmitIdeaModal open={submitOpen} onClose={() => setSubmitOpen(false)} />
     </div>
   );
 };

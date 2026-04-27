@@ -77,3 +77,74 @@ export async function unsetWorking(ideaId: string) {
   });
   return res.json();
 }
+
+export interface SubmissionDraft {
+  title: string;
+  problem: string;
+  solutionSketch: string;
+  whyEthereum: string;
+  domains: string[];
+  resources?: { name: string; url: string; description?: string }[];
+}
+
+export interface SubmissionRow {
+  id: string;
+  title: string;
+  problem: string;
+  solutionSketch: string;
+  whyEthereum: string;
+  domains: string[];
+  resources: { name: string; url: string; description?: string }[];
+  status: 'pending' | 'approved' | 'rejected';
+  submittedBy?: string;
+  rejectionReason?: string | null;
+  submitter?: { id: string; name: string; email: string };
+  createdAt?: number;
+  updatedAt?: number;
+}
+
+export async function submitIdea(draft: SubmissionDraft) {
+  const res = await call('/api/submissions', {
+    method: 'POST',
+    headers: json,
+    body: JSON.stringify(draft),
+  });
+  return res.json() as Promise<{ id: string; status: 'pending' }>;
+}
+
+export async function fetchMySubmissions(): Promise<SubmissionRow[]> {
+  const res = await call('/api/submissions/mine');
+  return res.json();
+}
+
+export async function fetchApprovedSubmissions(): Promise<SubmissionRow[]> {
+  const res = await call('/api/submissions/approved');
+  return res.json();
+}
+
+export async function fetchPendingSubmissions(): Promise<SubmissionRow[]> {
+  const res = await call('/api/admin/submissions');
+  return res.json();
+}
+
+export async function approveSubmission(id: string) {
+  const res = await call(`/api/admin/submissions/${encodeURIComponent(id)}/approve`, {
+    method: 'POST',
+  });
+  return res.json();
+}
+
+export async function rejectSubmission(id: string, reason: string) {
+  const res = await call(`/api/admin/submissions/${encodeURIComponent(id)}/reject`, {
+    method: 'POST',
+    headers: json,
+    body: JSON.stringify({ reason }),
+  });
+  return res.json();
+}
+
+export async function fetchIsAdmin(): Promise<boolean> {
+  const res = await call('/api/admin/me');
+  const data = await res.json();
+  return !!data.isAdmin;
+}
