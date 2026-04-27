@@ -89,10 +89,40 @@ CREATE TABLE IF NOT EXISTS submissions (
   updatedAt INTEGER NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS edits (
+  id TEXT PRIMARY KEY,
+  ideaId TEXT NOT NULL,
+  title TEXT,
+  problem TEXT,
+  solutionSketch TEXT,
+  whyEthereum TEXT,
+  domains TEXT,
+  resources TEXT,
+  submitterId TEXT NOT NULL REFERENCES user(id) ON DELETE CASCADE,
+  status TEXT NOT NULL CHECK (status IN ('pending','approved','rejected')),
+  rejectionReason TEXT,
+  createdAt INTEGER NOT NULL,
+  updatedAt INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS idea_overrides (
+  ideaId TEXT PRIMARY KEY,
+  title TEXT,
+  problem TEXT,
+  solutionSketch TEXT,
+  whyEthereum TEXT,
+  domains TEXT,
+  resources TEXT,
+  approvedAt INTEGER NOT NULL,
+  approvedBy TEXT
+);
+
 CREATE INDEX IF NOT EXISTS idx_votes_idea ON votes(ideaId);
 CREATE INDEX IF NOT EXISTS idx_working_idea ON working(ideaId);
 CREATE INDEX IF NOT EXISTS idx_submissions_status ON submissions(status);
 CREATE INDEX IF NOT EXISTS idx_submissions_submitter ON submissions(submitterId);
+CREATE INDEX IF NOT EXISTS idx_edits_status ON edits(status);
+CREATE INDEX IF NOT EXISTS idx_edits_idea ON edits(ideaId);
 `;
 
 db.exec(SCHEMA);

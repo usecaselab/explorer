@@ -1,13 +1,23 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { LogIn, LogOut } from 'lucide-react';
+import { LogIn, LogOut, Shield } from 'lucide-react';
 import { useSession, signOut } from '../lib/auth-client';
+import { fetchIsAdmin } from '../lib/api';
 import SignInModal from './SignInModal';
 
 export default function SignInButton() {
   const { data: session, isPending } = useSession();
   const [modalOpen, setModalOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!session) {
+      setIsAdmin(false);
+      return;
+    }
+    fetchIsAdmin().then(setIsAdmin).catch(() => setIsAdmin(false));
+  }, [session?.user?.id]);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -77,6 +87,21 @@ export default function SignInButton() {
             </div>
             <div className="text-xs text-gray-500 truncate">{user.email}</div>
           </div>
+          {isAdmin && (
+            <a
+              href="/admin"
+              onClick={(e) => {
+                e.preventDefault();
+                window.history.pushState(null, '', '/admin');
+                window.dispatchEvent(new PopStateEvent('popstate'));
+                setMenuOpen(false);
+              }}
+              className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 flex items-center gap-2"
+            >
+              <Shield className="w-3.5 h-3.5" />
+              Admin
+            </a>
+          )}
           <button
             onClick={async () => {
               await signOut();

@@ -148,3 +148,99 @@ export async function fetchIsAdmin(): Promise<boolean> {
   const data = await res.json();
   return !!data.isAdmin;
 }
+
+export async function fetchRejectedSubmissions(): Promise<SubmissionRow[]> {
+  const res = await call('/api/admin/submissions/rejected');
+  return res.json();
+}
+
+export async function restoreSubmission(id: string) {
+  const res = await call(`/api/admin/submissions/${encodeURIComponent(id)}/restore`, {
+    method: 'POST',
+  });
+  return res.json();
+}
+
+// --- Edits ---
+export interface EditDraft {
+  ideaId: string;
+  title?: string;
+  problem?: string;
+  solutionSketch?: string;
+  whyEthereum?: string;
+  domains?: string[];
+  resources?: { name: string; url: string; description?: string }[];
+}
+
+export interface EditRow {
+  id: string;
+  ideaId: string;
+  title: string | null;
+  problem: string | null;
+  solutionSketch: string | null;
+  whyEthereum: string | null;
+  domains: string[] | null;
+  resources: { name: string; url: string; description?: string }[] | null;
+  status: 'pending' | 'approved' | 'rejected';
+  rejectionReason: string | null;
+  submitter: { id: string; name: string; email: string };
+  createdAt: number;
+  updatedAt: number;
+}
+
+export interface IdeaOverride {
+  ideaId: string;
+  title?: string | null;
+  problem?: string | null;
+  solutionSketch?: string | null;
+  whyEthereum?: string | null;
+  domains?: string[];
+  resources?: { name: string; url: string; description?: string }[];
+}
+
+export async function submitEdit(draft: EditDraft) {
+  const res = await call('/api/edits', {
+    method: 'POST',
+    headers: json,
+    body: JSON.stringify(draft),
+  });
+  return res.json() as Promise<{ id: string; status: 'pending' }>;
+}
+
+export async function fetchOverrides(): Promise<Record<string, IdeaOverride>> {
+  const res = await call('/api/edits/overrides');
+  return res.json();
+}
+
+export async function fetchPendingEdits(): Promise<EditRow[]> {
+  const res = await call('/api/admin/edits');
+  return res.json();
+}
+
+export async function fetchRejectedEdits(): Promise<EditRow[]> {
+  const res = await call('/api/admin/edits/rejected');
+  return res.json();
+}
+
+export async function approveEdit(id: string) {
+  const res = await call(`/api/admin/edits/${encodeURIComponent(id)}/approve`, {
+    method: 'POST',
+  });
+  return res.json();
+}
+
+export async function rejectEdit(id: string, reason: string) {
+  const res = await call(`/api/admin/edits/${encodeURIComponent(id)}/reject`, {
+    method: 'POST',
+    headers: json,
+    body: JSON.stringify({ reason }),
+  });
+  return res.json();
+}
+
+export async function restoreEdit(id: string) {
+  const res = await call(`/api/admin/edits/${encodeURIComponent(id)}/restore`, {
+    method: 'POST',
+  });
+  return res.json();
+}

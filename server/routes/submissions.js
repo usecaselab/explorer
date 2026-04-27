@@ -35,6 +35,11 @@ const getPending = db.prepare(`
   FROM submissions s JOIN user u ON u.id = s.submitterId
   WHERE s.status = 'pending' ORDER BY s.createdAt ASC
 `);
+const getRejected = db.prepare(`
+  SELECT s.*, u.name AS submitterName, u.email AS submitterEmail
+  FROM submissions s JOIN user u ON u.id = s.submitterId
+  WHERE s.status = 'rejected' ORDER BY s.updatedAt DESC
+`);
 const getApproved = db.prepare(`
   SELECT * FROM submissions WHERE status = 'approved' ORDER BY createdAt ASC
 `);
@@ -43,6 +48,9 @@ const setApproved = db.prepare(`
 `);
 const setRejected = db.prepare(`
   UPDATE submissions SET status = 'rejected', rejectionReason = ?, updatedAt = ? WHERE id = ? AND status = 'pending'
+`);
+const setRestored = db.prepare(`
+  UPDATE submissions SET status = 'pending', rejectionReason = NULL, updatedAt = ? WHERE id = ? AND status = 'rejected'
 `);
 
 function slugify(s) {
@@ -195,6 +203,28 @@ router.post('/admin/submissions/:id/reject', async (req, res, next) => {
     const reason = (req.body?.reason || '').toString().slice(0, 500);
     const result = setRejected.run(reason, Date.now(), req.params.id);
     if (result.changes === 0) return res.status(409).json({ error: 'Not pending' });
+    res.json({ ok: true });
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.get('/admin/submissions/rejected', async (req, res, next) => {
+  try {
+    const user = await getUser(req);
+    if (!isAdmin(user)) return res.status(404).end();
+    res.json(getRejected.all().map(rowToAdminView));
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.post('/admin/submissions/:id/restore', async (req, res, next) => {
+  try {
+    const user = await getUser(req);
+    if (!isAdmin(user)) return res.status(404).end();
+    const result = setRestored.run(Date.now(), req.params.id);
+    if (result.changes === 0) return res.status(409).json({ error: 'Not rejected' });
     res.json({ ok: true });
   } catch (err) {
     next(err);

@@ -6,6 +6,7 @@ import { getDomainConfig, DOMAIN_CONFIG } from './IdeaShowcase'
 import VoteButton from './VoteButton'
 import WorkingOnButton from './WorkingOnButton'
 import BuildersList from './BuildersList'
+import EditIdeaModal from './EditIdeaModal'
 import { fetchIdeaState } from '../lib/api'
 import type { Builder } from '../lib/api'
 import { useSession } from '../lib/auth-client'
@@ -48,6 +49,7 @@ interface IdeaPageProps {
 
 export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onSelectIdea }: IdeaPageProps) {
   const [copied, setCopied] = useState(false)
+  const [editOpen, setEditOpen] = useState(false)
   const [votes, setVotes] = useState(0)
   const [voted, setVoted] = useState(false)
   const [builders, setBuilders] = useState<Builder[]>([])
@@ -331,15 +333,13 @@ export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onS
               <Wrench className="w-3.5 h-3.5" />
               View Toolkit
             </a>
-            <a
-              href={`https://github.com/usecaselab/explorer/issues/new?title=${encodeURIComponent(`[Improve] ${idea.title}`)}&body=${encodeURIComponent(`## Idea\n${idea.title} (${idea.domains.map(domainLabel).join(', ')})\n\n## What's wrong or could be better?\n\n`)}`}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => setEditOpen(true)}
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-black text-sm font-medium rounded-lg border border-gray-200 hover:border-gray-300 transition-colors"
             >
               <Pencil className="w-3.5 h-3.5" />
               Improve this idea
-            </a>
+            </button>
           </div>
         </section>
 
@@ -390,6 +390,8 @@ export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onS
           </section>
         )}
       </div>
+
+      <EditIdeaModal idea={idea} open={editOpen} onClose={() => setEditOpen(false)} />
     </div>
   )
 }

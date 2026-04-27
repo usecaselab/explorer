@@ -7,6 +7,7 @@ import { toNodeHandler, fromNodeHeaders } from 'better-auth/node';
 import { auth } from './server/auth.js';
 import ideasRouter from './server/routes/ideas.js';
 import submissionsRouter from './server/routes/submissions.js';
+import editsRouter from './server/routes/edits.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -44,6 +45,7 @@ app.get('/api/me', async (req, res) => {
 
 app.use('/api', ideasRouter);
 app.use('/api', submissionsRouter);
+app.use('/api', editsRouter);
 
 // Parse markdown files on startup
 let usecases = [];

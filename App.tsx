@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import IdeaShowcase, { getDomainConfig, parseIdeaMarkdown } from './components/IdeaShowcase';
 import IdeaPage, { IdeaEntry } from './components/IdeaPage';
-import { fetchApprovedSubmissions } from './lib/api';
+import { fetchApprovedSubmissions, fetchOverrides } from './lib/api';
 import ToolkitPage from './components/ToolkitPage';
 import SignInButton from './components/SignInButton';
 import SubmitIdeaModal from './components/SubmitIdeaModal';
@@ -19,6 +19,29 @@ function parseRoute():
   const match = path.match(/^\/idea\/([^/]+)$/);
   if (match) return { page: 'idea', ideaId: match[1] };
   return { page: 'home' };
+}
+
+function applyOverride(
+  idea: IdeaEntry,
+  override?: {
+    title?: string | null;
+    problem?: string | null;
+    solutionSketch?: string | null;
+    whyEthereum?: string | null;
+    domains?: string[];
+    resources?: { name: string; url: string; description?: string }[];
+  }
+): IdeaEntry {
+  if (!override) return idea;
+  return {
+    ...idea,
+    title: override.title || idea.title,
+    problem: override.problem || idea.problem,
+    solutionSketch: override.solutionSketch || idea.solutionSketch,
+    whyEthereum: override.whyEthereum || idea.whyEthereum,
+    domains: override.domains || idea.domains,
+    resources: override.resources || idea.resources,
+  };
 }
 
 const App: React.FC = () => {
@@ -79,10 +102,11 @@ const App: React.FC = () => {
     const load = async () => {
       setLoading(true);
       try {
-        const [manifestRes, exploredRes, approvedSubmissions] = await Promise.all([
+        const [manifestRes, exploredRes, approvedSubmissions, overrides] = await Promise.all([
           fetch('/data/ideas/manifest.json'),
           fetch('/data/explored.json'),
           fetchApprovedSubmissions().catch(() => []),
+          fetchOverrides().catch(() => ({} as Record<string, any>)),
         ]);
         const manifest: string[] = await manifestRes.json();
         const exploredMap: Record<string, any[]> = exploredRes.ok ? await exploredRes.json() : {};
@@ -100,7 +124,7 @@ const App: React.FC = () => {
           })
         );
 
-        const fromMarkdown = loaded.filter(Boolean) as IdeaEntry[];
+        const fromMarkdown = (loaded.filter(Boolean) as IdeaEntry[]).map((i) => applyOverride(i, overrides[i.id]));
         const fromDb: IdeaEntry[] = approvedSubmissions.map((s) => ({
           id: s.id,
           title: s.title,

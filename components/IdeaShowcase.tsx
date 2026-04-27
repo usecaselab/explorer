@@ -3,8 +3,21 @@ import { Sparkles, TrendingUp } from 'lucide-react'
 import type { IdeaEntry, ExploredProject } from './IdeaPage'
 import Shape3D, { ShapeType } from './Shape3D'
 import VoteButton from './VoteButton'
-import { fetchIdeasBulkState, fetchApprovedSubmissions } from '../lib/api'
+import { fetchIdeasBulkState, fetchApprovedSubmissions, fetchOverrides } from '../lib/api'
 import { useSession } from '../lib/auth-client'
+
+function applyOverride(idea: IdeaEntry, override: any): IdeaEntry {
+  if (!override) return idea
+  return {
+    ...idea,
+    title: override.title || idea.title,
+    problem: override.problem || idea.problem,
+    solutionSketch: override.solutionSketch || idea.solutionSketch,
+    whyEthereum: override.whyEthereum || idea.whyEthereum,
+    domains: override.domains || idea.domains,
+    resources: override.resources || idea.resources,
+  }
+}
 
 // 16 PR domains, each with its own color and shape
 const DOMAIN_CONFIG: Record<string, { label: string; color: string; shape: ShapeType }> = {
@@ -142,10 +155,11 @@ export default function IdeaShowcase({ onSelect, searchQuery = '' }: IdeaShowcas
   useEffect(() => {
     const load = async () => {
       try {
-        const [manifestRes, exploredRes, approvedSubmissions] = await Promise.all([
+        const [manifestRes, exploredRes, approvedSubmissions, overrides] = await Promise.all([
           fetch('/data/ideas/manifest.json'),
           fetch('/data/explored.json'),
           fetchApprovedSubmissions().catch(() => []),
+          fetchOverrides().catch(() => ({} as Record<string, any>)),
         ])
         const manifest: string[] = await manifestRes.json()
         const exploredMap: Record<string, ExploredProject[]> = exploredRes.ok ? await exploredRes.json() : {}
@@ -163,7 +177,7 @@ export default function IdeaShowcase({ onSelect, searchQuery = '' }: IdeaShowcas
           })
         )
 
-        const fromMarkdown = loaded.filter(Boolean) as IdeaEntry[]
+        const fromMarkdown = (loaded.filter(Boolean) as IdeaEntry[]).map((i) => applyOverride(i, overrides[i.id]))
         const fromDb: IdeaEntry[] = approvedSubmissions.map((s) => ({
           id: s.id,
           title: s.title,
