@@ -3,13 +3,42 @@ import cors from 'cors';
 import { readFileSync, readdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { toNodeHandler, fromNodeHeaders } from 'better-auth/node';
+import { auth } from './server/auth.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.BETTER_AUTH_URL || 'http://localhost:3000',
+    credentials: true,
+  })
+);
+
+// Better Auth handler must be mounted BEFORE express.json() since it parses bodies itself
+app.all('/api/auth/*splat', toNodeHandler(auth));
+
 app.use(express.json());
+
+async function requireAuth(req, res, next) {
+  const session = await auth.api.getSession({
+    headers: fromNodeHeaders(req.headers),
+  });
+  if (!session) return res.status(401).json({ error: 'Unauthenticated' });
+  req.user = session.user;
+  req.session = session.session;
+  next();
+}
+
+app.get('/api/me', async (req, res) => {
+  const session = await auth.api.getSession({
+    headers: fromNodeHeaders(req.headers),
+  });
+  if (!session) return res.json({ user: null });
+  res.json({ user: session.user });
+});
 
 // Parse markdown files on startup
 let usecases = [];

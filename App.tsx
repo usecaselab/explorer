@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import IdeaShowcase, { getDomainConfig, parseIdeaMarkdown } from './components/IdeaShowcase';
 import IdeaPage, { IdeaEntry } from './components/IdeaPage';
 import ToolkitPage from './components/ToolkitPage';
+import SignInButton from './components/SignInButton';
 import { Wrench, Plus, Search } from 'lucide-react';
 
 function parseRoute(): { page: 'home' } | { page: 'idea'; ideaId: string } | { page: 'toolkit' } {
@@ -141,6 +142,7 @@ const App: React.FC = () => {
             <Plus className="w-3.5 h-3.5" />
             Submit an Idea
           </a>
+          <SignInButton />
         </nav>
       </header>
 
