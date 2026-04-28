@@ -6,7 +6,8 @@ import ToolkitPage from './components/ToolkitPage';
 import SignInButton from './components/SignInButton';
 import SubmitIdeaModal from './components/SubmitIdeaModal';
 import AdminPage from './components/AdminPage';
-import { Wrench, Plus, Search } from 'lucide-react';
+import LogoMarquee from './components/LogoMarquee';
+import { Wrench, Plus, Search, Info } from 'lucide-react';
 import { useSession } from './lib/auth-client';
 import { consumePending, type SubmitIdeaDraft, type EditIdeaDraft } from './lib/pending-action';
 
@@ -125,6 +126,7 @@ const App: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
+
   // Handle direct URL load or back/forward to an idea
   useEffect(() => {
     if (route.page !== 'idea') {
@@ -213,6 +215,12 @@ const App: React.FC = () => {
           <img src="/initiative.svg" alt="Use Case Lab" className="h-7 sm:h-8" />
         </button>
         <nav className="flex items-center gap-3 sm:gap-6">
+          <a
+            href="/about/"
+            className="text-xs sm:text-sm text-gray-500 hover:text-black transition-colors flex items-center gap-1"
+          >
+            <Info className="w-3 h-3" /> About
+          </a>
           <button
             onClick={navigateToolkit}
             className="text-xs sm:text-sm text-gray-500 hover:text-black transition-colors flex items-center gap-1"
@@ -271,7 +279,14 @@ const App: React.FC = () => {
             </div>
           </section>
 
-          <IdeaShowcase onSelect={navigateToIdea} searchQuery={searchQuery} refreshNonce={refreshNonce} />
+          <LogoMarquee />
+
+          <IdeaShowcase
+            onSelect={navigateToIdea}
+            searchQuery={searchQuery}
+            refreshNonce={refreshNonce}
+            onClearSearch={() => setSearchQuery('')}
+          />
         </>
       )}
 
