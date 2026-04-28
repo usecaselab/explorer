@@ -1,16 +1,50 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import IdeaShowcase, { getDomainConfig, parseIdeaMarkdown } from './components/IdeaShowcase';
 import IdeaPage, { IdeaEntry } from './components/IdeaPage';
+import { fetchApprovedSubmissions, fetchOverrides, vote, setWorking } from './lib/api';
 import ToolkitPage from './components/ToolkitPage';
+import SignInButton from './components/SignInButton';
+import SubmitIdeaModal from './components/SubmitIdeaModal';
+import AdminPage from './components/AdminPage';
 import LogoMarquee from './components/LogoMarquee';
 import { Wrench, Plus, Search, Info } from 'lucide-react';
+import { useSession } from './lib/auth-client';
+import { consumePending, type SubmitIdeaDraft, type EditIdeaDraft } from './lib/pending-action';
 
-function parseRoute(): { page: 'home' } | { page: 'idea'; ideaId: string } | { page: 'toolkit' } {
+function parseRoute():
+  | { page: 'home' }
+  | { page: 'idea'; ideaId: string }
+  | { page: 'toolkit' }
+  | { page: 'admin' } {
   const path = window.location.pathname;
   if (path === '/toolkit') return { page: 'toolkit' };
+  if (path === '/admin') return { page: 'admin' };
   const match = path.match(/^\/idea\/([^/]+)$/);
   if (match) return { page: 'idea', ideaId: match[1] };
   return { page: 'home' };
+}
+
+function applyOverride(
+  idea: IdeaEntry,
+  override?: {
+    title?: string | null;
+    problem?: string | null;
+    solutionSketch?: string | null;
+    whyEthereum?: string | null;
+    domains?: string[];
+    resources?: { name: string; url: string; description?: string }[];
+  }
+): IdeaEntry {
+  if (!override) return idea;
+  return {
+    ...idea,
+    title: override.title || idea.title,
+    problem: override.problem || idea.problem,
+    solutionSketch: override.solutionSketch || idea.solutionSketch,
+    whyEthereum: override.whyEthereum || idea.whyEthereum,
+    domains: override.domains || idea.domains,
+    resources: override.resources || idea.resources,
+  };
 }
 
 const App: React.FC = () => {
@@ -19,6 +53,47 @@ const App: React.FC = () => {
   const [activeIdea, setActiveIdea] = useState<IdeaEntry | null>(null);
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [submitOpen, setSubmitOpen] = useState(false);
+  const [submitInitialDraft, setSubmitInitialDraft] = useState<SubmitIdeaDraft | null>(null);
+  const [pendingEdit, setPendingEdit] = useState<{ ideaId: string; draft: EditIdeaDraft } | null>(null);
+  const [refreshNonce, setRefreshNonce] = useState(0);
+  const { data: session } = useSession();
+  const replayedRef = useRef(false);
+
+  // Replay any pending action stashed before the OAuth round-trip.
+  useEffect(() => {
+    if (!session || replayedRef.current) return;
+    const action = consumePending();
+    if (!action) {
+      replayedRef.current = true;
+      return;
+    }
+    replayedRef.current = true;
+
+    (async () => {
+      try {
+        switch (action.type) {
+          case 'vote':
+            await vote(action.ideaId);
+            setRefreshNonce((n) => n + 1);
+            break;
+          case 'working-on':
+            await setWorking(action.ideaId, { url: action.url, note: action.note });
+            setRefreshNonce((n) => n + 1);
+            break;
+          case 'submit-idea':
+            setSubmitInitialDraft(action.draft);
+            setSubmitOpen(true);
+            break;
+          case 'edit-idea':
+            setPendingEdit({ ideaId: action.ideaId, draft: action.draft });
+            break;
+        }
+      } catch (err) {
+        console.warn('Pending action replay failed', err);
+      }
+    })();
+  }, [session]);
 
   // Listen for browser back/forward
   useEffect(() => {
@@ -71,19 +146,39 @@ const App: React.FC = () => {
     const load = async () => {
       setLoading(true);
       try {
-        const manifestRes = await fetch('/data/ideas/manifest.json');
+        const [manifestRes, exploredRes, approvedSubmissions, overrides] = await Promise.all([
+          fetch('/data/ideas/manifest.json'),
+          fetch('/data/explored.json'),
+          fetchApprovedSubmissions().catch(() => []),
+          fetchOverrides().catch(() => ({} as Record<string, any>)),
+        ]);
         const manifest: string[] = await manifestRes.json();
+        const exploredMap: Record<string, any[]> = exploredRes.ok ? await exploredRes.json() : {};
 
         const loaded = await Promise.all(
           manifest.map(async (filename) => {
             const response = await fetch(`/data/ideas/${filename}`);
             if (!response.ok) return null;
             const text = await response.text();
-            return parseIdeaMarkdown(text, filename.replace('.md', ''));
+            const idea = parseIdeaMarkdown(text, filename.replace('.md', ''));
+            if (exploredMap[idea.id]) {
+              idea.explored = exploredMap[idea.id];
+            }
+            return idea;
           })
         );
 
-        const valid = loaded.filter(Boolean) as IdeaEntry[];
+        const fromMarkdown = (loaded.filter(Boolean) as IdeaEntry[]).map((i) => applyOverride(i, overrides[i.id]));
+        const fromDb: IdeaEntry[] = approvedSubmissions.map((s) => ({
+          id: s.id,
+          title: s.title,
+          problem: s.problem,
+          solutionSketch: s.solutionSketch,
+          whyEthereum: s.whyEthereum,
+          domains: s.domains,
+          resources: s.resources,
+        }));
+        const valid = [...fromMarkdown, ...fromDb];
         setAllIdeas(valid);
 
         const target = valid.find(i => i.id === route.ideaId);
@@ -132,15 +227,14 @@ const App: React.FC = () => {
           >
             <Wrench className="w-3 h-3" /> Toolkit
           </button>
-          <a
-            href={`https://github.com/usecaselab/explorer/issues/new?template=use-case-submission.md&title=${encodeURIComponent('[Use Case] ')}&body=${encodeURIComponent(`## Idea\n\n\n## Problem it solves\n\n\n## Relevant domains\n\n\n## Links or references\n\n`)}`}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => setSubmitOpen(true)}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 bg-black text-white text-xs sm:text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors"
           >
             <Plus className="w-3.5 h-3.5" />
             Submit an Idea
-          </a>
+          </button>
+          <SignInButton />
         </nav>
       </header>
 
@@ -150,6 +244,8 @@ const App: React.FC = () => {
         </div>
       ) : route.page === 'toolkit' ? (
         <ToolkitPage onBack={navigateHome} />
+      ) : route.page === 'admin' ? (
+        <AdminPage onBack={navigateHome} />
       ) : showIdea ? (
         <IdeaPage
           idea={activeIdea}
@@ -157,6 +253,9 @@ const App: React.FC = () => {
           onBack={navigateHome}
           allIdeas={allIdeas}
           onSelectIdea={(idea) => navigateToIdea(idea, allIdeas)}
+          refreshNonce={refreshNonce}
+          pendingEdit={pendingEdit && pendingEdit.ideaId === activeIdea.id ? pendingEdit.draft : null}
+          onPendingEditConsumed={() => setPendingEdit(null)}
         />
       ) : (
         <>
@@ -185,6 +284,7 @@ const App: React.FC = () => {
           <IdeaShowcase
             onSelect={navigateToIdea}
             searchQuery={searchQuery}
+            refreshNonce={refreshNonce}
             onClearSearch={() => setSearchQuery('')}
           />
         </>
@@ -197,6 +297,15 @@ const App: React.FC = () => {
           <a href="https://ethereum.foundation" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors">Ethereum Foundation</a>
         </div>
       </footer>
+
+      <SubmitIdeaModal
+        open={submitOpen}
+        onClose={() => {
+          setSubmitOpen(false);
+          setTimeout(() => setSubmitInitialDraft(null), 300);
+        }}
+        initialDraft={submitInitialDraft}
+      />
     </div>
   );
 };

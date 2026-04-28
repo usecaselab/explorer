@@ -77,6 +77,13 @@ export default defineConfig(({ mode }) => {
       server: {
         port: 3000,
         host: '0.0.0.0',
+        allowedHosts: ['.ngrok-free.app', '.ngrok.io', '.ngrok.app'],
+        proxy: {
+          '/api': {
+            target: 'http://localhost:3001',
+            changeOrigin: true,
+          },
+        },
       },
       plugins: [staticMirrorsPlugin(), react(), lastUpdatedPlugin()],
       define: {

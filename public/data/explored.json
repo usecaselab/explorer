@@ -1,0 +1,100 @@
+{
+  "zktls-verified-data": [
+    {
+      "name": "THASSA",
+      "builder": "PJ",
+      "url": "https://github.com/pjol/THASSA",
+      "description": "Infrastructure for ZkTLS-verified LLM oracles to provide structured data updates onchain"
+    }
+  ],
+  "prediction-markets": [
+    {
+      "name": "Precog",
+      "builder": "Petra",
+      "description": "Low liquidity prediction markets with any token"
+    }
+  ],
+  "community-space-permissioning": [
+    {
+      "name": "TowerDAO",
+      "description": "A coordination platform for physical spaces using visual floor representations to manage resources and bounties"
+    }
+  ],
+  "portable-social-identity": [
+    {
+      "name": "Frontier Atlas",
+      "builder": "Wenjie",
+      "url": "https://frontier-atlas.vercel.app/",
+      "description": "An interactive social members directory for the Frontier Tower innovation commons"
+    }
+  ],
+  "agent-to-agent-commerce": [
+    {
+      "name": "Commons Coordination Layer",
+      "builder": "Ian Lee",
+      "description": "AI-powered router to match member requests with available tools and experts across floors"
+    },
+    {
+      "name": "MavuClaw",
+      "builder": "Angelo Kalaw",
+      "description": "An AI agent marketplace connecting agents and human workers for micro-tasks with stablecoin settlement"
+    }
+  ],
+  "tokenized-ip-assets": [
+    {
+      "name": "MakerKit",
+      "builder": "wu1wu",
+      "description": "A hardware IP marketplace that makes designs forkable and enforces 80/20 royalty splits through smart contracts"
+    }
+  ],
+  "programmable-health-insurance": [
+    {
+      "name": "Healpass",
+      "builder": "Kait Meery",
+      "description": "Health insurance platform"
+    }
+  ],
+  "quality-tiered-environmental-assets": [
+    {
+      "name": "Nexxa Terra",
+      "builder": "Ruben Omar Hernandez",
+      "url": "https://nexxaterra.com/",
+      "description": "Environmental credits platform"
+    }
+  ],
+  "smart-contracts-for-usage-based-automated-licensing-and-royalty-payments": [
+    {
+      "name": "RecordPool",
+      "builder": "David",
+      "url": "https://github.com/sabotensf/ethereum-unblock",
+      "description": "A phygital music rights platform using NFC-tagged vinyl records to automate royalty distribution"
+    }
+  ],
+  "commercial-agreements": [
+    {
+      "name": "Aetrna",
+      "builder": "hx",
+      "description": "Onchain document signing solution"
+    }
+  ],
+  "content-provenance": [
+    {
+      "name": "Verifiable Claims Agent",
+      "description": "A tool for challenging social media assertions with financial conviction"
+    }
+  ],
+  "player-owned-assets-markets": [
+    {
+      "name": "WoG",
+      "builder": "Kareem",
+      "url": "https://github.com/DasilvaKareem/wog-mmorpg",
+      "description": "An agentic MMORPG"
+    }
+  ],
+  "creator-storefronts": [
+    {
+      "name": "APK Platform",
+      "description": "A blockchain-integrated app store focused on maximizing developer commissions through trustless settlement"
+    }
+  ]
+}
