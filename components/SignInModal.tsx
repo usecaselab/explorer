@@ -19,47 +19,47 @@ export default function SignInModal({ open, onClose }: SignInModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4"
+      className="fixed inset-0 z-[60] flex items-end sm:items-center justify-center bg-black/40 sm:p-4"
       onClick={onClose}
     >
       <div
-        className="w-full max-w-sm rounded-2xl bg-white p-6 shadow-xl"
+        className="w-full max-w-sm bg-white rounded-t-2xl sm:rounded-2xl p-6 sm:p-7 shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-start justify-between mb-5">
+        <div className="flex items-start justify-between mb-5 gap-3">
           <div>
-            <h2 className="font-heading text-xl font-bold text-black">Sign in</h2>
+            <h2 className="font-heading text-xl font-bold text-black">Sign in to continue</h2>
             <p className="text-sm text-gray-500 mt-1">
-              Vote on ideas, claim builds, and submit your own.
+              One last step — pick how to sign in.
             </p>
           </div>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-black transition-colors"
+            className="-m-2 p-2 text-gray-400 hover:text-black active:text-black transition-colors flex-shrink-0"
             aria-label="Close"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-2.5">
           <button
             onClick={() => handle('google')}
-            className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-xl border border-gray-200 hover:border-gray-400 transition-colors text-sm font-medium text-black"
+            className="w-full flex items-center justify-center gap-3 px-4 py-3.5 rounded-xl border border-gray-200 hover:border-gray-400 active:border-gray-400 transition-colors text-sm font-medium text-black"
           >
             <GoogleIcon />
             Continue with Google
           </button>
           <button
             onClick={() => handle('github')}
-            className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-xl bg-black text-white hover:bg-gray-800 transition-colors text-sm font-medium"
+            className="w-full flex items-center justify-center gap-3 px-4 py-3.5 rounded-xl bg-black text-white hover:bg-gray-800 active:bg-gray-800 transition-colors text-sm font-medium"
           >
             <GithubIcon />
             Continue with GitHub
           </button>
           <button
             onClick={() => handle('twitter')}
-            className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-xl border border-gray-200 hover:border-gray-400 transition-colors text-sm font-medium text-black"
+            className="w-full flex items-center justify-center gap-3 px-4 py-3.5 rounded-xl border border-gray-200 hover:border-gray-400 active:border-gray-400 transition-colors text-sm font-medium text-black"
           >
             <XIcon />
             Continue with X

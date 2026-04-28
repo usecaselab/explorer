@@ -1,12 +1,14 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import IdeaShowcase, { getDomainConfig, parseIdeaMarkdown } from './components/IdeaShowcase';
 import IdeaPage, { IdeaEntry } from './components/IdeaPage';
-import { fetchApprovedSubmissions, fetchOverrides } from './lib/api';
+import { fetchApprovedSubmissions, fetchOverrides, vote, setWorking } from './lib/api';
 import ToolkitPage from './components/ToolkitPage';
 import SignInButton from './components/SignInButton';
 import SubmitIdeaModal from './components/SubmitIdeaModal';
 import AdminPage from './components/AdminPage';
 import { Wrench, Plus, Search } from 'lucide-react';
+import { useSession } from './lib/auth-client';
+import { consumePending, type SubmitIdeaDraft, type EditIdeaDraft } from './lib/pending-action';
 
 function parseRoute():
   | { page: 'home' }
@@ -51,6 +53,46 @@ const App: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [submitOpen, setSubmitOpen] = useState(false);
+  const [submitInitialDraft, setSubmitInitialDraft] = useState<SubmitIdeaDraft | null>(null);
+  const [pendingEdit, setPendingEdit] = useState<{ ideaId: string; draft: EditIdeaDraft } | null>(null);
+  const [refreshNonce, setRefreshNonce] = useState(0);
+  const { data: session } = useSession();
+  const replayedRef = useRef(false);
+
+  // Replay any pending action stashed before the OAuth round-trip.
+  useEffect(() => {
+    if (!session || replayedRef.current) return;
+    const action = consumePending();
+    if (!action) {
+      replayedRef.current = true;
+      return;
+    }
+    replayedRef.current = true;
+
+    (async () => {
+      try {
+        switch (action.type) {
+          case 'vote':
+            await vote(action.ideaId);
+            setRefreshNonce((n) => n + 1);
+            break;
+          case 'working-on':
+            await setWorking(action.ideaId, { url: action.url, note: action.note });
+            setRefreshNonce((n) => n + 1);
+            break;
+          case 'submit-idea':
+            setSubmitInitialDraft(action.draft);
+            setSubmitOpen(true);
+            break;
+          case 'edit-idea':
+            setPendingEdit({ ideaId: action.ideaId, draft: action.draft });
+            break;
+        }
+      } catch (err) {
+        console.warn('Pending action replay failed', err);
+      }
+    })();
+  }, [session]);
 
   // Listen for browser back/forward
   useEffect(() => {
@@ -203,6 +245,9 @@ const App: React.FC = () => {
           onBack={navigateHome}
           allIdeas={allIdeas}
           onSelectIdea={(idea) => navigateToIdea(idea, allIdeas)}
+          refreshNonce={refreshNonce}
+          pendingEdit={pendingEdit && pendingEdit.ideaId === activeIdea.id ? pendingEdit.draft : null}
+          onPendingEditConsumed={() => setPendingEdit(null)}
         />
       ) : (
         <>
@@ -226,7 +271,7 @@ const App: React.FC = () => {
             </div>
           </section>
 
-          <IdeaShowcase onSelect={navigateToIdea} searchQuery={searchQuery} />
+          <IdeaShowcase onSelect={navigateToIdea} searchQuery={searchQuery} refreshNonce={refreshNonce} />
         </>
       )}
 
@@ -238,7 +283,14 @@ const App: React.FC = () => {
         </div>
       </footer>
 
-      <SubmitIdeaModal open={submitOpen} onClose={() => setSubmitOpen(false)} />
+      <SubmitIdeaModal
+        open={submitOpen}
+        onClose={() => {
+          setSubmitOpen(false);
+          setTimeout(() => setSubmitInitialDraft(null), 300);
+        }}
+        initialDraft={submitInitialDraft}
+      />
     </div>
   );
 };

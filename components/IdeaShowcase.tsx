@@ -123,9 +123,10 @@ export { getDomainConfig, DOMAIN_CONFIG, parseIdeaMarkdown }
 interface IdeaShowcaseProps {
   onSelect: (idea: IdeaEntry, allIdeas: IdeaEntry[]) => void
   searchQuery?: string
+  refreshNonce?: number
 }
 
-export default function IdeaShowcase({ onSelect, searchQuery = '' }: IdeaShowcaseProps) {
+export default function IdeaShowcase({ onSelect, searchQuery = '', refreshNonce = 0 }: IdeaShowcaseProps) {
   const [ideas, setIdeas] = useState<IdeaEntry[]>([])
   const [loading, setLoading] = useState(true)
   const [activeCategory, setActiveCategory] = useState('all')
@@ -150,7 +151,7 @@ export default function IdeaShowcase({ onSelect, searchQuery = '' }: IdeaShowcas
     return () => {
       cancelled = true
     }
-  }, [session?.user?.id])
+  }, [session?.user?.id, refreshNonce])
 
   useEffect(() => {
     const load = async () => {

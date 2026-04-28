@@ -1,12 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { LogIn, LogOut, Shield } from 'lucide-react';
+import { LogOut, Shield } from 'lucide-react';
 import { useSession, signOut } from '../lib/auth-client';
 import { fetchIsAdmin } from '../lib/api';
-import SignInModal from './SignInModal';
 
 export default function SignInButton() {
   const { data: session, isPending } = useSession();
-  const [modalOpen, setModalOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -30,24 +28,8 @@ export default function SignInButton() {
     return () => document.removeEventListener('mousedown', onClick);
   }, [menuOpen]);
 
-  if (isPending) {
-    return <div className="w-9 h-9 rounded-full bg-gray-100 animate-pulse" />;
-  }
-
-  if (!session) {
-    return (
-      <>
-        <button
-          onClick={() => setModalOpen(true)}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors"
-        >
-          <LogIn className="w-4 h-4" />
-          Sign in
-        </button>
-        <SignInModal open={modalOpen} onClose={() => setModalOpen(false)} />
-      </>
-    );
-  }
+  // Sign-in is invoked at the moment of action, not from the header.
+  if (isPending || !session) return null;
 
   const user = session.user;
   const initials = (user.name || user.email || '?')

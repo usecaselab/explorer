@@ -10,6 +10,7 @@ import EditIdeaModal from './EditIdeaModal'
 import { fetchIdeaState } from '../lib/api'
 import type { Builder } from '../lib/api'
 import { useSession } from '../lib/auth-client'
+import type { EditIdeaDraft } from '../lib/pending-action'
 
 interface IdeaResource {
   name: string
@@ -45,11 +46,15 @@ interface IdeaPageProps {
   onBack: () => void
   allIdeas?: IdeaEntry[]
   onSelectIdea?: (idea: IdeaEntry) => void
+  refreshNonce?: number
+  pendingEdit?: EditIdeaDraft | null
+  onPendingEditConsumed?: () => void
 }
 
-export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onSelectIdea }: IdeaPageProps) {
+export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onSelectIdea, refreshNonce = 0, pendingEdit, onPendingEditConsumed }: IdeaPageProps) {
   const [copied, setCopied] = useState(false)
   const [editOpen, setEditOpen] = useState(false)
+  const [editInitialDraft, setEditInitialDraft] = useState<EditIdeaDraft | null>(null)
   const [votes, setVotes] = useState(0)
   const [voted, setVoted] = useState(false)
   const [builders, setBuilders] = useState<Builder[]>([])
@@ -72,7 +77,15 @@ export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onS
     return () => {
       cancelled = true
     }
-  }, [idea.id, session?.user?.id])
+  }, [idea.id, session?.user?.id, refreshNonce])
+
+  // Replay an Improve-this-idea draft handed back after the OAuth round-trip.
+  useEffect(() => {
+    if (!pendingEdit) return
+    setEditInitialDraft(pendingEdit)
+    setEditOpen(true)
+    onPendingEditConsumed?.()
+  }, [pendingEdit, onPendingEditConsumed])
 
   const handleCopyLink = useCallback(() => {
     navigator.clipboard.writeText(window.location.href)
@@ -391,7 +404,15 @@ export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onS
         )}
       </div>
 
-      <EditIdeaModal idea={idea} open={editOpen} onClose={() => setEditOpen(false)} />
+      <EditIdeaModal
+        idea={idea}
+        open={editOpen}
+        onClose={() => {
+          setEditOpen(false)
+          setTimeout(() => setEditInitialDraft(null), 300)
+        }}
+        initialDraft={editInitialDraft}
+      />
     </div>
   )
 }

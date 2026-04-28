@@ -1,13 +1,15 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { X, Loader2, Check } from 'lucide-react';
 import { useSession } from '../lib/auth-client';
 import { submitIdea } from '../lib/api';
 import { DOMAIN_CONFIG } from './IdeaShowcase';
+import { setPending, type SubmitIdeaDraft } from '../lib/pending-action';
 import SignInModal from './SignInModal';
 
 interface SubmitIdeaModalProps {
   open: boolean;
   onClose: () => void;
+  initialDraft?: SubmitIdeaDraft | null;
 }
 
 const DOMAIN_OPTIONS = Object.entries(DOMAIN_CONFIG).map(([id, cfg]) => ({
@@ -16,7 +18,7 @@ const DOMAIN_OPTIONS = Object.entries(DOMAIN_CONFIG).map(([id, cfg]) => ({
   color: cfg.color,
 }));
 
-export default function SubmitIdeaModal({ open, onClose }: SubmitIdeaModalProps) {
+export default function SubmitIdeaModal({ open, onClose, initialDraft }: SubmitIdeaModalProps) {
   const { data: session } = useSession();
   const [title, setTitle] = useState('');
   const [problem, setProblem] = useState('');
@@ -28,6 +30,19 @@ export default function SubmitIdeaModal({ open, onClose }: SubmitIdeaModalProps)
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [signInOpen, setSignInOpen] = useState(false);
+
+  // Restore an in-flight draft handed back after the OAuth round-trip.
+  useEffect(() => {
+    if (!initialDraft || !open) return;
+    setTitle(initialDraft.title);
+    setProblem(initialDraft.problem);
+    setSolution(initialDraft.solution);
+    setWhy(initialDraft.why);
+    setDomains(initialDraft.domains);
+    setResourceUrl(initialDraft.resourceUrl);
+    setResourceLabel(initialDraft.resourceLabel);
+  }, [initialDraft, open]);
 
   const reset = useCallback(() => {
     setTitle('');
@@ -67,6 +82,24 @@ export default function SubmitIdeaModal({ open, onClose }: SubmitIdeaModalProps)
         setError('Pick at least one domain.');
         return;
       }
+
+      if (!session) {
+        setPending({
+          type: 'submit-idea',
+          draft: {
+            title: title.trim(),
+            problem: problem.trim(),
+            solution: solution.trim(),
+            why: why.trim(),
+            domains,
+            resourceUrl: resourceUrl.trim(),
+            resourceLabel: resourceLabel.trim(),
+          },
+        });
+        setSignInOpen(true);
+        return;
+      }
+
       setBusy(true);
       try {
         const resources = resourceUrl.trim()
@@ -92,14 +125,10 @@ export default function SubmitIdeaModal({ open, onClose }: SubmitIdeaModalProps)
         setBusy(false);
       }
     },
-    [busy, title, problem, solution, why, domains, resourceUrl, resourceLabel]
+    [busy, title, problem, solution, why, domains, resourceUrl, resourceLabel, session]
   );
 
   if (!open) return null;
-
-  if (!session) {
-    return <SignInModal open={true} onClose={handleClose} />;
-  }
 
   if (submitted) {
     return (
@@ -123,7 +152,7 @@ export default function SubmitIdeaModal({ open, onClose }: SubmitIdeaModalProps)
           </p>
           <button
             onClick={handleClose}
-            className="px-5 py-2 rounded-lg bg-black text-white text-sm font-medium hover:bg-gray-800"
+            className="px-5 py-2.5 rounded-lg bg-black text-white text-sm font-medium hover:bg-gray-800 active:bg-gray-800"
           >
             Done
           </button>
@@ -133,144 +162,147 @@ export default function SubmitIdeaModal({ open, onClose }: SubmitIdeaModalProps)
   }
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-start justify-center bg-black/40 p-4 overflow-y-auto"
-      onClick={handleClose}
-    >
-      <form
-        onSubmit={submit}
-        onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-lg rounded-2xl bg-white p-6 shadow-xl my-8"
+    <>
+      <div
+        className="fixed inset-0 z-50 flex items-start justify-center bg-black/40 sm:p-4 overflow-y-auto"
+        onClick={handleClose}
       >
-        <div className="flex items-start justify-between mb-5">
-          <div>
-            <h2 className="font-heading text-xl font-bold text-black">
-              Submit an idea
-            </h2>
-            <p className="text-sm text-gray-500 mt-1">
-              Goes to a review queue. Approved ideas land in the explorer.
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={handleClose}
-            className="text-gray-400 hover:text-black transition-colors"
-            aria-label="Close"
-          >
-            <X className="w-5 h-5" />
-          </button>
-        </div>
-
-        <Field label="Title" hint={`${title.length}/120`}>
-          <input
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            maxLength={120}
-            required
-            placeholder="Verifiable energy credits"
-            className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-black"
-          />
-        </Field>
-
-        <Field label="Problem" hint={`${problem.length}/2000`}>
-          <textarea
-            value={problem}
-            onChange={(e) => setProblem(e.target.value)}
-            maxLength={2000}
-            required
-            rows={3}
-            placeholder="What's broken or missing?"
-            className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-black resize-none"
-          />
-        </Field>
-
-        <Field label="Solution sketch" hint={`${solution.length}/2000`}>
-          <textarea
-            value={solution}
-            onChange={(e) => setSolution(e.target.value)}
-            maxLength={2000}
-            required
-            rows={3}
-            placeholder="How would you solve it?"
-            className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-black resize-none"
-          />
-        </Field>
-
-        <Field label="Why Ethereum" hint={`${why.length}/2000`}>
-          <textarea
-            value={why}
-            onChange={(e) => setWhy(e.target.value)}
-            maxLength={2000}
-            required
-            rows={2}
-            placeholder="What does Ethereum bring? (verifiability, composability, enforcement)"
-            className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-black resize-none"
-          />
-        </Field>
-
-        <div className="mb-4">
-          <label className="block text-xs font-medium text-gray-600 mb-2">
-            Domains <span className="text-gray-400">(pick up to 4)</span>
-          </label>
-          <div className="flex flex-wrap gap-1.5">
-            {DOMAIN_OPTIONS.map((d) => {
-              const active = domains.includes(d.id);
-              return (
-                <button
-                  key={d.id}
-                  type="button"
-                  onClick={() => toggleDomain(d.id)}
-                  className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium transition-colors ${
-                    active
-                      ? 'bg-black text-white'
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                  }`}
-                >
-                  <span
-                    className="w-1.5 h-1.5 rounded-full"
-                    style={{ backgroundColor: active ? '#fff' : d.color }}
-                  />
-                  {d.label}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        <Field label="Reference link (optional)">
-          <div className="flex gap-2">
-            <input
-              value={resourceLabel}
-              onChange={(e) => setResourceLabel(e.target.value)}
-              placeholder="Label"
-              className="w-1/3 px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-black"
-            />
-            <input
-              type="url"
-              value={resourceUrl}
-              onChange={(e) => setResourceUrl(e.target.value)}
-              placeholder="https://"
-              className="flex-1 px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-black"
-            />
-          </div>
-        </Field>
-
-        {error && (
-          <div className="mb-3 p-3 rounded-lg bg-red-50 text-red-700 text-sm">
-            {error}
-          </div>
-        )}
-
-        <button
-          type="submit"
-          disabled={busy}
-          className="w-full px-4 py-3 rounded-lg bg-black text-white text-sm font-medium hover:bg-gray-800 disabled:opacity-50 flex items-center justify-center gap-2"
+        <form
+          onSubmit={submit}
+          onClick={(e) => e.stopPropagation()}
+          className="w-full max-w-2xl bg-white rounded-t-2xl sm:rounded-2xl p-5 sm:p-8 shadow-xl sm:my-8"
         >
-          {busy && <Loader2 className="w-4 h-4 animate-spin" />}
-          {busy ? 'Submitting…' : 'Submit for review'}
-        </button>
-      </form>
-    </div>
+          <div className="flex items-start justify-between mb-6 gap-3">
+            <div>
+              <h2 className="font-heading text-xl sm:text-2xl font-bold text-black">
+                Submit an idea
+              </h2>
+              <p className="text-sm text-gray-500 mt-1">
+                Goes to a review queue. Approved ideas land in the explorer.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={handleClose}
+              className="-m-2 p-2 text-gray-400 hover:text-black active:text-black transition-colors flex-shrink-0"
+              aria-label="Close"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+
+          <Field label="Title" hint={`${title.length}/120`}>
+            <input
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              maxLength={120}
+              required
+              placeholder="Verifiable energy credits"
+              className="w-full px-4 py-3 rounded-lg border border-gray-200 text-base focus:outline-none focus:border-black"
+            />
+          </Field>
+
+          <Field label="Problem" hint={`${problem.length}/2000`}>
+            <textarea
+              value={problem}
+              onChange={(e) => setProblem(e.target.value)}
+              maxLength={2000}
+              required
+              rows={5}
+              placeholder="What's broken or missing?"
+              className="w-full px-4 py-3 rounded-lg border border-gray-200 text-base focus:outline-none focus:border-black resize-none"
+            />
+          </Field>
+
+          <Field label="Solution sketch" hint={`${solution.length}/2000`}>
+            <textarea
+              value={solution}
+              onChange={(e) => setSolution(e.target.value)}
+              maxLength={2000}
+              required
+              rows={5}
+              placeholder="How would you solve it?"
+              className="w-full px-4 py-3 rounded-lg border border-gray-200 text-base focus:outline-none focus:border-black resize-none"
+            />
+          </Field>
+
+          <Field label="Why Ethereum" hint={`${why.length}/2000`}>
+            <textarea
+              value={why}
+              onChange={(e) => setWhy(e.target.value)}
+              maxLength={2000}
+              required
+              rows={4}
+              placeholder="What does Ethereum bring? (verifiability, composability, enforcement)"
+              className="w-full px-4 py-3 rounded-lg border border-gray-200 text-base focus:outline-none focus:border-black resize-none"
+            />
+          </Field>
+
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Domains <span className="text-gray-400 font-normal">(pick up to 4)</span>
+            </label>
+            <div className="flex flex-wrap gap-2">
+              {DOMAIN_OPTIONS.map((d) => {
+                const active = domains.includes(d.id);
+                return (
+                  <button
+                    key={d.id}
+                    type="button"
+                    onClick={() => toggleDomain(d.id)}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+                      active
+                        ? 'bg-black text-white'
+                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200 active:bg-gray-200'
+                    }`}
+                  >
+                    <span
+                      className="w-1.5 h-1.5 rounded-full"
+                      style={{ backgroundColor: active ? '#fff' : d.color }}
+                    />
+                    {d.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <Field label="Reference link (optional)">
+            <div className="flex flex-col sm:flex-row gap-2">
+              <input
+                value={resourceLabel}
+                onChange={(e) => setResourceLabel(e.target.value)}
+                placeholder="Label"
+                className="w-full sm:w-1/3 px-4 py-3 rounded-lg border border-gray-200 text-base focus:outline-none focus:border-black"
+              />
+              <input
+                type="url"
+                value={resourceUrl}
+                onChange={(e) => setResourceUrl(e.target.value)}
+                placeholder="https://"
+                className="flex-1 px-4 py-3 rounded-lg border border-gray-200 text-base focus:outline-none focus:border-black"
+              />
+            </div>
+          </Field>
+
+          {error && (
+            <div className="mb-4 p-3 rounded-lg bg-red-50 text-red-700 text-sm">
+              {error}
+            </div>
+          )}
+
+          <button
+            type="submit"
+            disabled={busy}
+            className="w-full px-4 py-3.5 rounded-lg bg-black text-white text-base font-medium hover:bg-gray-800 active:bg-gray-800 disabled:opacity-50 flex items-center justify-center gap-2"
+          >
+            {busy && <Loader2 className="w-4 h-4 animate-spin" />}
+            {busy ? 'Submitting…' : session ? 'Submit for review' : 'Sign in & submit'}
+          </button>
+        </form>
+      </div>
+      <SignInModal open={signInOpen} onClose={() => setSignInOpen(false)} />
+    </>
   );
 }
 
@@ -284,10 +316,10 @@ function Field({
   children: React.ReactNode;
 }) {
   return (
-    <div className="mb-4">
-      <div className="flex items-center justify-between mb-1">
-        <label className="text-xs font-medium text-gray-600">{label}</label>
-        {hint && <span className="text-[11px] text-gray-400">{hint}</span>}
+    <div className="mb-6">
+      <div className="flex items-center justify-between mb-1.5">
+        <label className="text-sm font-medium text-gray-700">{label}</label>
+        {hint && <span className="text-xs text-gray-400">{hint}</span>}
       </div>
       {children}
     </div>

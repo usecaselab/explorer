@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { ArrowUp } from 'lucide-react';
 import { useSession } from '../lib/auth-client';
 import { vote, unvote } from '../lib/api';
+import { setPending } from '../lib/pending-action';
 import SignInModal from './SignInModal';
 
 interface VoteButtonProps {
@@ -28,6 +29,7 @@ export default function VoteButton({
       e.stopPropagation();
       e.preventDefault();
       if (!session) {
+        setPending({ type: 'vote', ideaId });
         setSignInOpen(true);
         return;
       }
