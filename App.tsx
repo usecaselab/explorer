@@ -2,7 +2,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import IdeaShowcase, { getDomainConfig, parseIdeaMarkdown } from './components/IdeaShowcase';
 import IdeaPage, { IdeaEntry } from './components/IdeaPage';
 import ToolkitPage from './components/ToolkitPage';
-import { Wrench, Plus, Search } from 'lucide-react';
+import LogoMarquee from './components/LogoMarquee';
+import { Wrench, Plus, Search, Info } from 'lucide-react';
 
 function parseRoute(): { page: 'home' } | { page: 'idea'; ideaId: string } | { page: 'toolkit' } {
   const path = window.location.pathname;
@@ -49,6 +50,7 @@ const App: React.FC = () => {
     setRoute({ page: 'toolkit' });
     window.scrollTo(0, 0);
   }, []);
+
 
   // Handle direct URL load or back/forward to an idea
   useEffect(() => {
@@ -118,6 +120,12 @@ const App: React.FC = () => {
           <img src="/initiative.svg" alt="Use Case Lab" className="h-7 sm:h-8" />
         </button>
         <nav className="flex items-center gap-3 sm:gap-6">
+          <a
+            href="/about/"
+            className="text-xs sm:text-sm text-gray-500 hover:text-black transition-colors flex items-center gap-1"
+          >
+            <Info className="w-3 h-3" /> About
+          </a>
           <button
             onClick={navigateToolkit}
             className="text-xs sm:text-sm text-gray-500 hover:text-black transition-colors flex items-center gap-1"
@@ -171,6 +179,8 @@ const App: React.FC = () => {
               </div>
             </div>
           </section>
+
+          <LogoMarquee />
 
           <IdeaShowcase
             onSelect={navigateToIdea}

@@ -4,6 +4,37 @@ import { execSync } from 'child_process';
 import { defineConfig, loadEnv, Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 
+function staticMirrorsPlugin(): Plugin {
+  // Top-level public/ folders that contain a mirrored static site (index.html).
+  // The Vite dev server otherwise intercepts HTML routes and serves the React shell.
+  const mirroredRoots = ['about', 'verifiable-cities'];
+  return {
+    name: 'static-mirrors',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        if (!req.url) return next();
+        const urlPath = req.url.split('?')[0].split('#')[0];
+        const firstSegment = urlPath.split('/')[1];
+        if (!mirroredRoots.includes(firstSegment)) return next();
+        // Skip asset/file requests — Vite's static serving handles them
+        if (urlPath.includes('.')) return next();
+        const filePath = path.resolve(__dirname, 'public', '.' + urlPath, 'index.html');
+        if (fs.existsSync(filePath)) {
+          if (!urlPath.endsWith('/')) {
+            res.writeHead(301, { Location: urlPath + '/' });
+            res.end();
+            return;
+          }
+          res.setHeader('Content-Type', 'text/html; charset=utf-8');
+          res.end(fs.readFileSync(filePath));
+          return;
+        }
+        next();
+      });
+    },
+  };
+}
+
 function lastUpdatedPlugin(): Plugin {
   const virtualModuleId = 'virtual:last-updated';
   const resolvedVirtualModuleId = '\0' + virtualModuleId;
@@ -47,7 +78,7 @@ export default defineConfig(({ mode }) => {
         port: 3000,
         host: '0.0.0.0',
       },
-      plugins: [react(), lastUpdatedPlugin()],
+      plugins: [staticMirrorsPlugin(), react(), lastUpdatedPlugin()],
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
         'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
