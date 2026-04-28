@@ -182,7 +182,11 @@ const App: React.FC = () => {
 
           <LogoMarquee />
 
-          <IdeaShowcase onSelect={navigateToIdea} searchQuery={searchQuery} />
+          <IdeaShowcase
+            onSelect={navigateToIdea}
+            searchQuery={searchQuery}
+            onClearSearch={() => setSearchQuery('')}
+          />
         </>
       )}
 

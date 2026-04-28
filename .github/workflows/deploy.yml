@@ -51,3 +51,15 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  deploy-coolify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Coolify deployment
+        run: |
+          response=$(curl -s -o /tmp/body -w "%{http_code}" \
+            -H "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}" \
+            "https://coolify.pblvrt.com/api/v1/deploy?uuid=ncg4ssc0kso8s4cw4kg80wgc&force=false")
+          echo "HTTP $response"
+          cat /tmp/body
+          test "$response" = "200"
