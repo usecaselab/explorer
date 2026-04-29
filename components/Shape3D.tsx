@@ -120,26 +120,34 @@ function AnimatedShape({ shape, color, active }: ShapeProps & { active: boolean 
 
 export default function Shape3D({ shape, color }: ShapeProps) {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [loaded, setLoaded] = useState(false)
   const [inView, setInView] = useState(false)
 
   useEffect(() => {
     const el = containerRef.current
     if (!el) return
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        setInView(entry.isIntersecting)
-        if (entry.isIntersecting) setLoaded(true)
-      },
-      { rootMargin: '300px' }
+      ([entry]) => setInView(entry.isIntersecting),
+      // Tight margin keeps the simultaneous Canvas count below the browser's
+      // WebGL context cap (~16 in Chrome, ~8 in Safari). Otherwise older
+      // canvases get their context lost and render as the broken-image icon.
+      { rootMargin: '150px' }
     )
     observer.observe(el)
     return () => observer.disconnect()
   }, [])
 
   return (
-    <div ref={containerRef} style={{ width: '100%', height: '100%' }}>
-      {loaded && (
+    <div
+      ref={containerRef}
+      style={{
+        width: '100%',
+        height: '100%',
+        // Soft placeholder color so cards still feel "alive" while the canvas
+        // is unmounted (offscreen).
+        background: inView ? 'transparent' : `${color}10`,
+      }}
+    >
+      {inView && (
         <Canvas
           camera={{ position: [0, 0, 4], fov: 45 }}
           dpr={[1, 1.5]}
