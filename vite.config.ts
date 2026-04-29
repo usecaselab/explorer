@@ -83,6 +83,10 @@ export default defineConfig(({ mode }) => {
             target: 'http://localhost:3001',
             changeOrigin: true,
           },
+          '/llms.txt': {
+            target: 'http://localhost:3001',
+            changeOrigin: true,
+          },
         },
       },
       plugins: [staticMirrorsPlugin(), react(), lastUpdatedPlugin()],

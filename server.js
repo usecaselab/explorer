@@ -82,6 +82,66 @@ app.get('/api/ideas', (req, res) => {
   res.json([...curated, ...submitted]);
 });
 
+// GET /llms.txt — single plain-text dump of every idea, designed to paste
+// into an LLM context. Convention: https://llmstxt.org
+app.get('/llms.txt', (req, res) => {
+  const ideas = [
+    ...listAllIdeas.all().map(rowToIdea),
+    ...listApprovedSubmissions.all().map(rowToIdea),
+  ].sort((a, b) => a.title.localeCompare(b.title));
+
+  const baseUrl = process.env.BETTER_AUTH_URL || 'https://explorer.usecaselab.org';
+  const lines = [];
+  lines.push('# Use Case Lab — Ethereum Use Cases');
+  lines.push('');
+  lines.push(`Source: ${baseUrl}`);
+  lines.push(`Submit a new idea: ${baseUrl}/?submit=1`);
+  lines.push(`Total ideas: ${ideas.length}`);
+  lines.push('');
+  lines.push('Each idea below is curated by the Use Case Lab or contributed by the community. Use this document as a single context dump for any LLM — search, brainstorm, cite, or build from it.');
+  lines.push('');
+  lines.push('---');
+  lines.push('');
+
+  for (const idea of ideas) {
+    lines.push(`## ${idea.title}`);
+    lines.push('');
+    lines.push(`URL: ${baseUrl}/idea/${idea.id}`);
+    lines.push(`Author: ${idea.author}`);
+    if (idea.domains?.length) lines.push(`Domains: ${idea.domains.join(', ')}`);
+    lines.push('');
+    if (idea.problem) {
+      lines.push('### Problem');
+      lines.push(idea.problem.trim());
+      lines.push('');
+    }
+    if (idea.solutionSketch) {
+      lines.push('### Solution');
+      lines.push(idea.solutionSketch.trim());
+      lines.push('');
+    }
+    if (idea.whyEthereum) {
+      lines.push('### Why Ethereum');
+      lines.push(idea.whyEthereum.trim());
+      lines.push('');
+    }
+    if (idea.resources?.length) {
+      lines.push('### Resources');
+      for (const r of idea.resources) {
+        const desc = r.description ? ` — ${r.description}` : '';
+        lines.push(`- [${r.name}](${r.url})${desc}`);
+      }
+      lines.push('');
+    }
+    lines.push('---');
+    lines.push('');
+  }
+
+  res.set('Content-Type', 'text/plain; charset=utf-8');
+  res.set('Cache-Control', 'public, max-age=300');
+  res.send(lines.join('\n'));
+});
+
 // Parse markdown files on startup
 let usecases = [];
 let markdownContent = {}; // Store raw markdown by id
