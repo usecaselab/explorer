@@ -1,4 +1,5 @@
 import React from 'react';
+import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import { signIn } from '../lib/auth-client';
 
@@ -17,7 +18,7 @@ export default function SignInModal({ open, onClose }: SignInModalProps) {
     });
   };
 
-  return (
+  return createPortal(
     <div
       className="fixed inset-0 z-[60] flex items-end sm:items-center justify-center bg-black/40 sm:p-4"
       onClick={onClose}
@@ -64,7 +65,8 @@ export default function SignInModal({ open, onClose }: SignInModalProps) {
           We only store your name, email, and avatar.
         </p>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
