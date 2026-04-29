@@ -5,9 +5,13 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { toNodeHandler, fromNodeHeaders } from 'better-auth/node';
 import { auth } from './server/auth.js';
+import { db } from './server/db.js';
+import { seedCuratedIdeas } from './server/seed-ideas.js';
 import ideasRouter from './server/routes/ideas.js';
 import submissionsRouter from './server/routes/submissions.js';
 import editsRouter from './server/routes/edits.js';
+
+seedCuratedIdeas();
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -46,6 +50,37 @@ app.get('/api/me', async (req, res) => {
 app.use('/api', ideasRouter);
 app.use('/api', submissionsRouter);
 app.use('/api', editsRouter);
+
+const listAllIdeas = db.prepare(
+  `SELECT id, title, problem, solutionSketch, whyEthereum, domains, resources, author, createdAt FROM ideas`
+);
+const listApprovedSubmissions = db.prepare(
+  `SELECT s.id, s.title, s.problem, s.solutionSketch, s.whyEthereum, s.domains, s.resources, u.name AS author, s.createdAt
+     FROM submissions s
+     JOIN user u ON u.id = s.submitterId
+     WHERE s.status = 'approved'`
+);
+
+function rowToIdea(row) {
+  return {
+    id: row.id,
+    title: row.title,
+    problem: row.problem,
+    solutionSketch: row.solutionSketch,
+    whyEthereum: row.whyEthereum,
+    domains: JSON.parse(row.domains),
+    resources: JSON.parse(row.resources),
+    author: row.author,
+    createdAt: row.createdAt,
+  };
+}
+
+// GET /api/ideas - Canonical idea feed (curated + approved submissions, each with author)
+app.get('/api/ideas', (req, res) => {
+  const curated = listAllIdeas.all().map(rowToIdea);
+  const submitted = listApprovedSubmissions.all().map(rowToIdea);
+  res.json([...curated, ...submitted]);
+});
 
 // Parse markdown files on startup
 let usecases = [];

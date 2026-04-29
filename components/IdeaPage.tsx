@@ -33,6 +33,8 @@ export interface IdeaEntry {
   whyEthereum: string
   domains: string[]
   resources: IdeaResource[]
+  author?: string
+  createdAt?: number
   explored?: ExploredProject[]
 }
 
@@ -166,6 +168,11 @@ export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onS
           <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold leading-tight tracking-tight text-black">
             {idea.title}
           </h1>
+          {idea.author && (
+            <p className="mt-2 text-sm text-gray-500">
+              by <span className="text-gray-700 font-medium">{idea.author}</span>
+            </p>
+          )}
           <div className="flex flex-wrap items-center gap-2 mt-5">
             <VoteButton
               ideaId={idea.id}
@@ -346,13 +353,6 @@ export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onS
               <Wrench className="w-3.5 h-3.5" />
               View Toolkit
             </a>
-            <button
-              onClick={() => setEditOpen(true)}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-black text-sm font-medium rounded-lg border border-gray-200 hover:border-gray-300 transition-colors"
-            >
-              <Pencil className="w-3.5 h-3.5" />
-              Improve this idea
-            </button>
           </div>
         </section>
 

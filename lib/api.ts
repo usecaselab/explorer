@@ -122,6 +122,23 @@ export async function fetchApprovedSubmissions(): Promise<SubmissionRow[]> {
   return res.json();
 }
 
+export interface IdeaRow {
+  id: string;
+  title: string;
+  problem: string;
+  solutionSketch: string;
+  whyEthereum: string;
+  domains: string[];
+  resources: { name: string; url: string; description?: string }[];
+  author: string;
+  createdAt: number;
+}
+
+export async function fetchAllIdeas(): Promise<IdeaRow[]> {
+  const res = await call('/api/ideas');
+  return res.json();
+}
+
 export async function fetchPendingSubmissions(): Promise<SubmissionRow[]> {
   const res = await call('/api/admin/submissions');
   return res.json();

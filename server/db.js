@@ -117,6 +117,20 @@ CREATE TABLE IF NOT EXISTS idea_overrides (
   approvedBy TEXT
 );
 
+CREATE TABLE IF NOT EXISTS ideas (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  problem TEXT NOT NULL,
+  solutionSketch TEXT NOT NULL,
+  whyEthereum TEXT NOT NULL,
+  domains TEXT NOT NULL,
+  resources TEXT NOT NULL,
+  author TEXT NOT NULL DEFAULT 'Use Case Lab',
+  submitterId TEXT REFERENCES user(id) ON DELETE SET NULL,
+  createdAt INTEGER NOT NULL,
+  updatedAt INTEGER NOT NULL
+);
+
 CREATE INDEX IF NOT EXISTS idx_votes_idea ON votes(ideaId);
 CREATE INDEX IF NOT EXISTS idx_working_idea ON working(ideaId);
 CREATE INDEX IF NOT EXISTS idx_submissions_status ON submissions(status);
