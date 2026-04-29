@@ -1,6 +1,6 @@
-import React, { useRef, useState, useMemo, useEffect, useCallback } from 'react'
+import React, { useRef, useState, useMemo, useEffect } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { Float, MeshDistortMaterial, Environment } from '@react-three/drei'
+import { Float, MeshDistortMaterial } from '@react-three/drei'
 import * as THREE from 'three'
 
 export type ShapeType =
@@ -98,8 +98,8 @@ function AnimatedShape({ shape, color, active }: ShapeProps & { active: boolean 
           <ShapeGeometry type={shape} />
           <MeshDistortMaterial
             color={color}
-            roughness={0.1}
-            metalness={0.9}
+            roughness={0.35}
+            metalness={0.5}
             distort={hovered ? 0.4 : 0.15}
             speed={hovered ? 5 : 2}
           />
@@ -118,50 +118,101 @@ function AnimatedShape({ shape, color, active }: ShapeProps & { active: boolean 
   )
 }
 
+// 2D silhouette for each shape — used as a placeholder so the card always shows
+// something while the Canvas is unmounted or about to mount. Cheap CSS only.
+function ShapeSilhouette({ shape, color }: ShapeProps) {
+  const base: React.CSSProperties = {
+    width: '54%',
+    aspectRatio: '1 / 1',
+    background: color,
+    opacity: 0.9,
+    boxShadow: `0 12px 32px ${color}40, inset -8px -10px 24px rgba(0,0,0,0.18), inset 8px 8px 18px rgba(255,255,255,0.18)`,
+  }
+  let style: React.CSSProperties = base
+  switch (shape) {
+    case 'sphere':
+    case 'icosahedron':
+    case 'dodecahedron':
+      style = { ...base, borderRadius: '50%' }
+      break
+    case 'box':
+      style = { ...base, borderRadius: '14%' }
+      break
+    case 'torus':
+    case 'torusKnot':
+      style = { ...base, borderRadius: '50%', boxShadow: `${base.boxShadow}, inset 0 0 0 14px rgba(255,255,255,0.18)` }
+      break
+    case 'cone':
+      style = { ...base, clipPath: 'polygon(50% 0, 100% 100%, 0 100%)' }
+      break
+    case 'octahedron':
+      style = { ...base, clipPath: 'polygon(50% 0, 100% 50%, 50% 100%, 0 50%)' }
+      break
+  }
+  return (
+    <div
+      style={{
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <div style={style} />
+    </div>
+  )
+}
+
 export default function Shape3D({ shape, color }: ShapeProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [inView, setInView] = useState(false)
+  // mounted lags inView so quick scroll-throughs don't thrash WebGL contexts.
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     const el = containerRef.current
     if (!el) return
     const observer = new IntersectionObserver(
       ([entry]) => setInView(entry.isIntersecting),
-      // Tight margin keeps the simultaneous Canvas count below the browser's
-      // WebGL context cap (~16 in Chrome, ~8 in Safari). Otherwise older
-      // canvases get their context lost and render as the broken-image icon.
       { rootMargin: '150px' }
     )
     observer.observe(el)
     return () => observer.disconnect()
   }, [])
 
+  // Debounce: mount after a short dwell, unmount after a longer grace.
+  // Browsers cap WebGL contexts (~16 Chrome / ~8 Safari) so we have to
+  // unmount eventually, but not on every scroll twitch.
+  useEffect(() => {
+    if (inView) {
+      const t = setTimeout(() => setMounted(true), 80)
+      return () => clearTimeout(t)
+    }
+    const t = setTimeout(() => setMounted(false), 600)
+    return () => clearTimeout(t)
+  }, [inView])
+
   return (
-    <div
-      ref={containerRef}
-      style={{
-        width: '100%',
-        height: '100%',
-        // Soft placeholder color so cards still feel "alive" while the canvas
-        // is unmounted (offscreen).
-        background: inView ? 'transparent' : `${color}10`,
-      }}
-    >
-      {inView && (
+    <div ref={containerRef} style={{ width: '100%', height: '100%', position: 'relative' }}>
+      {/* Always-rendered silhouette underneath; canvas paints over once ready. */}
+      <div style={{ position: 'absolute', inset: 0 }}>
+        <ShapeSilhouette shape={shape} color={color} />
+      </div>
+      {mounted && (
         <Canvas
           camera={{ position: [0, 0, 4], fov: 45 }}
           dpr={[1, 1.5]}
           gl={{ antialias: true, alpha: true, powerPreference: 'low-power' }}
-          style={{ background: 'transparent' }}
+          style={{ background: 'transparent', position: 'absolute', inset: 0 }}
           frameloop="demand"
         >
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[5, 5, 5]} intensity={1.2} />
-          <pointLight position={[-4, -2, 3]} intensity={0.4} color="#6366f1" />
-          <pointLight position={[4, 2, -3]} intensity={0.3} color="#f59e0b" />
+          <ambientLight intensity={0.7} />
+          <directionalLight position={[5, 5, 5]} intensity={1.4} />
+          <pointLight position={[-4, -2, 3]} intensity={0.5} color="#6366f1" />
+          <pointLight position={[4, 2, -3]} intensity={0.4} color="#f59e0b" />
           <FrameControl active={inView} />
           <AnimatedShape shape={shape} color={color} active={inView} />
-          <Environment preset="city" />
         </Canvas>
       )}
     </div>
