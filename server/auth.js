@@ -10,20 +10,14 @@ if (process.env.GITHUB_CLIENT_ID && process.env.GITHUB_CLIENT_SECRET) {
   };
 }
 
-if (process.env.TWITTER_CLIENT_ID && process.env.TWITTER_CLIENT_SECRET) {
-  socialProviders.twitter = {
-    clientId: process.env.TWITTER_CLIENT_ID,
-    clientSecret: process.env.TWITTER_CLIENT_SECRET,
-    // X requires apps to enable "Request email from users" (with privacy/ToS URLs)
-    // to grant the users.email scope. Skip it; Better Auth falls back to username.
-    disableDefaultScope: true,
-    scope: ['users.read', 'tweet.read', 'offline.access'],
-  };
-}
+// X / Twitter sign-in is intentionally disabled. The Free tier's /2/users/me
+// endpoint returns 403 client-not-enrolled in practice even when the app is in
+// a Project, and the reliable fix is the $200/mo Basic tier. Re-enable later
+// if the tier is acquired.
 
 if (Object.keys(socialProviders).length === 0) {
   console.warn(
-    '⚠ No social providers configured. Set GITHUB_CLIENT_ID/SECRET or TWITTER_CLIENT_ID/SECRET to enable sign-in.'
+    '⚠ No social providers configured. Set GITHUB_CLIENT_ID/SECRET to enable sign-in.'
   );
 }
 
