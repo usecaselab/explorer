@@ -5,6 +5,7 @@ import { submitEdit } from '../lib/api';
 import type { IdeaEntry } from './IdeaPage';
 import { DOMAIN_CONFIG } from './IdeaShowcase';
 import { setPending, type EditIdeaDraft } from '../lib/pending-action';
+import { useEscapeKey } from '../lib/useEscapeKey';
 import SignInModal from './SignInModal';
 
 interface EditIdeaModalProps {
@@ -58,6 +59,8 @@ export default function EditIdeaModal({ idea, open, onClose, initialDraft }: Edi
       setTimeout(reset, 300);
     }
   }, [busy, onClose, reset]);
+
+  useEscapeKey(open, handleClose);
 
   const toggleDomain = (id: string) => {
     setDomains((prev) =>

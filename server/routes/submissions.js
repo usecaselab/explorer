@@ -23,8 +23,8 @@ async function getUser(req) {
 }
 
 const insertSubmission = db.prepare(`
-  INSERT INTO submissions (id, title, problem, solutionSketch, whyEthereum, domains, resources, submitterId, status, paymentTxHash, createdAt, updatedAt)
-  VALUES (@id, @title, @problem, @solutionSketch, @whyEthereum, @domains, @resources, @submitterId, 'pending', @paymentTxHash, @now, @now)
+  INSERT INTO submissions (id, title, problem, solutionSketch, whyEthereum, domains, submitterId, status, paymentTxHash, createdAt, updatedAt)
+  VALUES (@id, @title, @problem, @solutionSketch, @whyEthereum, @domains, @submitterId, 'pending', @paymentTxHash, @now, @now)
 `);
 const getSubmission = db.prepare(`SELECT * FROM submissions WHERE id = ?`);
 const getMySubmissions = db.prepare(`
@@ -75,7 +75,6 @@ function rowToIdea(row) {
     solutionSketch: row.solutionSketch,
     whyEthereum: row.whyEthereum,
     domains: JSON.parse(row.domains),
-    resources: JSON.parse(row.resources),
     status: row.status,
     submittedBy: row.submitterId,
   };
@@ -130,7 +129,6 @@ router.post('/submissions', async (req, res, next) => {
       solutionSketch,
       whyEthereum,
       domains,
-      resources,
     } = req.body || {};
 
     if (typeof title !== 'string' || title.length < 4 || title.length > 120) {
@@ -148,9 +146,6 @@ router.post('/submissions', async (req, res, next) => {
     if (!Array.isArray(domains) || domains.length === 0 || domains.length > 4) {
       return res.status(400).json({ error: 'domains must be 1-4 items' });
     }
-    if (resources !== undefined && !Array.isArray(resources)) {
-      return res.status(400).json({ error: 'resources must be an array' });
-    }
 
     const id = newId(title);
     const now = Date.now();
@@ -161,7 +156,6 @@ router.post('/submissions', async (req, res, next) => {
       solutionSketch: solutionSketch.trim(),
       whyEthereum: whyEthereum.trim(),
       domains: JSON.stringify(domains),
-      resources: JSON.stringify(resources || []),
       submitterId: user.id,
       paymentTxHash: null,
       now,

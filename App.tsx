@@ -31,7 +31,6 @@ function applyOverride(
     solutionSketch?: string | null;
     whyEthereum?: string | null;
     domains?: string[];
-    resources?: { name: string; url: string; description?: string }[];
   }
 ): IdeaEntry {
   if (!override) return idea;
@@ -42,7 +41,6 @@ function applyOverride(
     solutionSketch: override.solutionSketch || idea.solutionSketch,
     whyEthereum: override.whyEthereum || idea.whyEthereum,
     domains: override.domains || idea.domains,
-    resources: override.resources || idea.resources,
   };
 }
 
@@ -157,12 +155,10 @@ const App: React.FC = () => {
     const load = async () => {
       setLoading(true);
       try {
-        const [allIdeas, exploredRes, overrides] = await Promise.all([
+        const [allIdeas, overrides] = await Promise.all([
           fetchAllIdeas(),
-          fetch('/data/explored.json'),
           fetchOverrides().catch(() => ({} as Record<string, any>)),
         ]);
-        const exploredMap: Record<string, any[]> = exploredRes.ok ? await exploredRes.json() : {};
 
         const valid: IdeaEntry[] = allIdeas.map((row) => {
           const idea: IdeaEntry = {
@@ -172,11 +168,9 @@ const App: React.FC = () => {
             solutionSketch: row.solutionSketch,
             whyEthereum: row.whyEthereum,
             domains: row.domains,
-            resources: row.resources.map((r) => ({ ...r, description: r.description ?? '' })),
             author: row.author,
             createdAt: row.createdAt,
           };
-          if (exploredMap[idea.id]) idea.explored = exploredMap[idea.id];
           return applyOverride(idea, overrides[idea.id]);
         });
         setAllIdeas(valid);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react'
 import { Sparkles, TrendingUp, Clock, ChevronDown } from 'lucide-react'
-import type { IdeaEntry, ExploredProject } from './IdeaPage'
+import type { IdeaEntry } from './IdeaPage'
 import Shape3D, { ShapeType } from './Shape3D'
 import VoteButton from './VoteButton'
 import { fetchIdeasBulkState, fetchAllIdeas, fetchOverrides } from '../lib/api'
@@ -15,7 +15,6 @@ function applyOverride(idea: IdeaEntry, override: any): IdeaEntry {
     solutionSketch: override.solutionSketch || idea.solutionSketch,
     whyEthereum: override.whyEthereum || idea.whyEthereum,
     domains: override.domains || idea.domains,
-    resources: override.resources || idea.resources,
   }
 }
 
@@ -89,7 +88,6 @@ function parseIdeaMarkdown(content: string, id: string): IdeaEntry {
     solutionSketch: parseSection(body, 'Solution'),
     whyEthereum: parseSection(body, 'Why Ethereum'),
     domains: (meta.domains || '').split(',').map(d => d.trim()).filter(Boolean),
-    resources: parseLinks(body, 'Resources'),
   }
 }
 
@@ -163,12 +161,10 @@ export default function IdeaShowcase({
   useEffect(() => {
     const load = async () => {
       try {
-        const [allIdeas, exploredRes, overrides] = await Promise.all([
+        const [allIdeas, overrides] = await Promise.all([
           fetchAllIdeas(),
-          fetch('/data/explored.json'),
           fetchOverrides().catch(() => ({} as Record<string, any>)),
         ])
-        const exploredMap: Record<string, ExploredProject[]> = exploredRes.ok ? await exploredRes.json() : {}
 
         const valid: IdeaEntry[] = allIdeas.map((row) => {
           const idea: IdeaEntry = {
@@ -178,11 +174,9 @@ export default function IdeaShowcase({
             solutionSketch: row.solutionSketch,
             whyEthereum: row.whyEthereum,
             domains: row.domains,
-            resources: row.resources.map((r) => ({ ...r, description: r.description ?? '' })),
             author: row.author,
             createdAt: row.createdAt,
           }
-          if (exploredMap[idea.id]) idea.explored = exploredMap[idea.id]
           return applyOverride(idea, overrides[idea.id])
         })
 
@@ -306,9 +300,15 @@ export default function IdeaShowcase({
               key={idea.id}
               className="group relative rounded-xl border border-gray-100 hover:border-gray-200 transition-all hover:shadow-sm overflow-hidden"
             >
-              <button
-                onClick={() => onSelect(idea, ideas)}
-                className="text-left flex flex-row sm:flex-col w-full"
+              <a
+                href={`/idea/${idea.id}`}
+                onClick={(e) => {
+                  // Let the browser handle modified clicks (cmd-click → new tab, etc.)
+                  if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+                  e.preventDefault()
+                  onSelect(idea, ideas)
+                }}
+                className="text-left flex flex-row sm:flex-col w-full no-underline text-inherit"
               >
                 <div className="relative w-24 h-24 sm:w-full sm:aspect-[4/3] sm:h-auto bg-gray-50/50 flex-shrink-0">
                   <Shape3D shape={conf.shape} color={conf.color} />
@@ -341,7 +341,7 @@ export default function IdeaShowcase({
                     })}
                   </div>
                 </div>
-              </button>
+              </a>
               <div className="absolute bottom-2 right-2 z-10">
                 <VoteButton
                   ideaId={idea.id}
@@ -418,10 +418,15 @@ export default function IdeaShowcase({
                   {suggestions.map(idea => {
                     const conf = getDomainConfig(idea.domains)
                     return (
-                      <button
+                      <a
                         key={idea.id}
-                        onClick={() => onSelect(idea, ideas)}
-                        className="group flex items-center gap-3 rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all p-3 text-left"
+                        href={`/idea/${idea.id}`}
+                        onClick={(e) => {
+                          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+                          e.preventDefault()
+                          onSelect(idea, ideas)
+                        }}
+                        className="group flex items-center gap-3 rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all p-3 text-left no-underline text-inherit"
                       >
                         <div className="w-12 h-12 flex-shrink-0 bg-gray-50/50 rounded-lg overflow-hidden">
                           <Shape3D shape={conf.shape} color={conf.color} />
@@ -429,7 +434,7 @@ export default function IdeaShowcase({
                         <span className="font-heading text-sm font-bold text-black leading-snug line-clamp-2">
                           {idea.title}
                         </span>
-                      </button>
+                      </a>
                     )
                   })}
                 </div>

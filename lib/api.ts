@@ -4,6 +4,7 @@ export interface Builder {
   image: string | null;
   url: string | null;
   note: string | null;
+  socialUrl: string | null;
   createdAt: number;
 }
 
@@ -84,7 +85,6 @@ export interface SubmissionDraft {
   solutionSketch: string;
   whyEthereum: string;
   domains: string[];
-  resources?: { name: string; url: string; description?: string }[];
 }
 
 export interface SubmissionRow {
@@ -94,7 +94,6 @@ export interface SubmissionRow {
   solutionSketch: string;
   whyEthereum: string;
   domains: string[];
-  resources: { name: string; url: string; description?: string }[];
   status: 'pending' | 'approved' | 'rejected';
   submittedBy?: string;
   rejectionReason?: string | null;
@@ -129,7 +128,6 @@ export interface IdeaRow {
   solutionSketch: string;
   whyEthereum: string;
   domains: string[];
-  resources: { name: string; url: string; description?: string }[];
   author: string;
   createdAt: number;
 }
@@ -186,7 +184,6 @@ export interface EditDraft {
   solutionSketch?: string;
   whyEthereum?: string;
   domains?: string[];
-  resources?: { name: string; url: string; description?: string }[];
 }
 
 export interface EditRow {
@@ -197,7 +194,6 @@ export interface EditRow {
   solutionSketch: string | null;
   whyEthereum: string | null;
   domains: string[] | null;
-  resources: { name: string; url: string; description?: string }[] | null;
   status: 'pending' | 'approved' | 'rejected';
   rejectionReason: string | null;
   submitter: { id: string; name: string; email: string };
@@ -212,7 +208,6 @@ export interface IdeaOverride {
   solutionSketch?: string | null;
   whyEthereum?: string | null;
   domains?: string[];
-  resources?: { name: string; url: string; description?: string }[];
 }
 
 export async function submitEdit(draft: EditDraft) {

@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react'
-import { ArrowLeft, ExternalLink, Link, Check, Pencil, Wrench, Sparkles } from 'lucide-react'
+import { ArrowLeft, ArrowRight, ExternalLink, Link, Check, Wrench } from 'lucide-react'
 import { renderMarkdownLinks } from '../utils'
 import Shape3D from './Shape3D'
 import { getDomainConfig, DOMAIN_CONFIG } from './IdeaShowcase'
@@ -12,19 +12,6 @@ import type { Builder } from '../lib/api'
 import { useSession } from '../lib/auth-client'
 import type { EditIdeaDraft } from '../lib/pending-action'
 
-interface IdeaResource {
-  name: string
-  url: string
-  description: string
-}
-
-export interface ExploredProject {
-  name: string
-  builder?: string
-  url?: string
-  description: string
-}
-
 export interface IdeaEntry {
   id: string
   title: string
@@ -32,10 +19,8 @@ export interface IdeaEntry {
   solutionSketch: string
   whyEthereum: string
   domains: string[]
-  resources: IdeaResource[]
   author?: string
   createdAt?: number
-  explored?: ExploredProject[]
 }
 
 function domainLabel(d: string): string {
@@ -95,10 +80,28 @@ export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onS
     setTimeout(() => setCopied(false), 2000)
   }, [])
 
-  // Related ideas: share at least one domain, exclude current, take first 3
-  const relatedIdeas = allIdeas
-    .filter(i => i.id !== idea.id && i.domains.some(d => idea.domains.includes(d)))
-    .slice(0, 4)
+  // Prev/next navigation through the current allIdeas list.
+  const currentIdx = allIdeas.findIndex(i => i.id === idea.id)
+  const prevIdea = currentIdx > 0 ? allIdeas[currentIdx - 1] : null
+  const nextIdea = currentIdx >= 0 && currentIdx < allIdeas.length - 1 ? allIdeas[currentIdx + 1] : null
+
+  useEffect(() => {
+    if (!onSelectIdea) return
+    const handler = (e: KeyboardEvent) => {
+      // Ignore when user is typing in inputs/textareas/contentEditable.
+      const t = e.target as HTMLElement | null
+      if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return
+      if (e.key === 'ArrowLeft' && prevIdea) {
+        e.preventDefault()
+        onSelectIdea(prevIdea)
+      } else if (e.key === 'ArrowRight' && nextIdea) {
+        e.preventDefault()
+        onSelectIdea(nextIdea)
+      }
+    }
+    document.addEventListener('keydown', handler)
+    return () => document.removeEventListener('keydown', handler)
+  }, [onSelectIdea, prevIdea?.id, nextIdea?.id])
 
   // Parse capability badge from Why Ethereum text
   const capabilityMatch = idea.whyEthereum?.match(/^(Verifiability|Composability|Enforcement):\s*/)
@@ -146,12 +149,6 @@ export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onS
         </div>
         <div className="flex-1 pt-1">
           <div className="flex flex-wrap gap-1.5 mb-3">
-            {idea.explored && idea.explored.length > 0 && (
-              <span className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
-                <Sparkles className="w-3 h-3" />
-                Explored
-              </span>
-            )}
             {idea.domains.map(d => {
               const dc = DOMAIN_CONFIG[d]
               return (
@@ -249,90 +246,6 @@ export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onS
         {/* Builders */}
         <BuildersList builders={builders} />
 
-        {/* Explored By */}
-        {idea.explored && idea.explored.length > 0 && (
-          <section>
-            <h2 className="font-heading text-sm font-bold uppercase tracking-widest text-gray-400 mb-6 flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-amber-500" />
-              Explored by the Community
-            </h2>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {idea.explored.map((project, idx) => {
-                const inner = (
-                  <>
-                    <div className="flex items-start justify-between gap-2">
-                      <h3 className="font-heading text-sm font-bold text-black">
-                        {project.name}
-                      </h3>
-                      {project.url && (
-                        <ExternalLink className="w-3.5 h-3.5 text-gray-300 group-hover:text-black transition-colors flex-shrink-0 mt-0.5" />
-                      )}
-                    </div>
-                    {project.builder && (
-                      <p className="text-xs text-amber-600 font-medium mt-1">
-                        Built by {project.builder}
-                      </p>
-                    )}
-                    {project.description && (
-                      <p className="text-sm text-gray-500 leading-relaxed mt-1.5">
-                        {project.description}
-                      </p>
-                    )}
-                  </>
-                )
-                return project.url ? (
-                  <a
-                    key={idx}
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group p-4 sm:p-5 rounded-xl border border-amber-100 bg-amber-50/30 hover:border-amber-200 transition-colors"
-                  >
-                    {inner}
-                  </a>
-                ) : (
-                  <div
-                    key={idx}
-                    className="group p-4 sm:p-5 rounded-xl border border-amber-100 bg-amber-50/30"
-                  >
-                    {inner}
-                  </div>
-                )
-              })}
-            </div>
-          </section>
-        )}
-
-        {/* Resources */}
-        {idea.resources.length > 0 && (
-          <section>
-            <h2 className="font-heading text-sm font-bold uppercase tracking-widest text-gray-400 mb-6">
-              Resources
-            </h2>
-            <div className="space-y-2">
-              {idea.resources.map((resource, idx) => (
-                <a
-                  key={idx}
-                  href={resource.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-start gap-3 group p-3 sm:p-4 rounded-xl hover:bg-gray-50 transition-colors"
-                >
-                  <div className="flex-1 min-w-0">
-                    <span className="font-medium text-sm text-black group-hover:text-gray-700">
-                      {resource.name}
-                    </span>
-                    {resource.description && (
-                      <p className="text-xs text-gray-400 mt-0.5 line-clamp-1">{renderMarkdownLinks(resource.description)}</p>
-                    )}
-                  </div>
-                  <ExternalLink className="w-3.5 h-3.5 text-gray-300 group-hover:text-gray-500 flex-shrink-0 mt-0.5" />
-                </a>
-              ))}
-            </div>
-          </section>
-        )}
-
         {/* Toolkit CTA */}
         <section className="p-6 sm:p-8 rounded-2xl bg-gray-50 border border-gray-100">
           <h2 className="font-heading text-sm font-bold uppercase tracking-widest text-gray-400 mb-3">
@@ -356,51 +269,53 @@ export default function IdeaPage({ idea, accentColor, onBack, allIdeas = [], onS
           </div>
         </section>
 
-        {/* Related Ideas */}
-        {relatedIdeas.length > 0 && onSelectIdea && (
-          <section>
-            <h2 className="font-heading text-sm font-bold uppercase tracking-widest text-gray-400 mb-6">
-              Related Ideas
-            </h2>
-            <div className="grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-              {relatedIdeas.map(related => {
-                const relConf = getDomainConfig(related.domains)
-                return (
-                  <button
-                    key={related.id}
-                    onClick={() => onSelectIdea(related)}
-                    className="group text-left flex flex-row sm:flex-col rounded-xl border border-gray-100 hover:border-gray-200 transition-all hover:shadow-sm overflow-hidden"
-                  >
-                    <div className="w-24 h-24 sm:w-full sm:aspect-[4/3] sm:h-auto bg-gray-50/50 flex-shrink-0">
-                      <Shape3D shape={relConf.shape} color={relConf.color} />
-                    </div>
-                    <div className="p-3 sm:p-4 flex flex-col justify-center min-w-0">
-                      <h3 className="font-heading text-sm font-bold text-black leading-snug mb-1">
-                        {related.title}
-                      </h3>
-                      <p className="text-xs text-gray-400 leading-relaxed line-clamp-2 mb-2">
-                        {related.problem}
-                      </p>
-                      <div className="flex flex-wrap gap-1">
-                        {related.domains.map(d => {
-                          const dc = DOMAIN_CONFIG[d]
-                          return (
-                            <span
-                              key={d}
-                              className="text-[10px] font-medium px-2 py-0.5 rounded-full"
-                              style={{ backgroundColor: `${dc?.color || '#666'}15`, color: dc?.color || '#666' }}
-                            >
-                              {dc?.label || d}
-                            </span>
-                          )
-                        })}
-                      </div>
-                    </div>
-                  </button>
-                )
-              })}
-            </div>
-          </section>
+        {/* Prev / Next navigation */}
+        {onSelectIdea && (prevIdea || nextIdea) && (
+          <nav
+            aria-label="Idea navigation"
+            className="grid gap-3 sm:gap-4 grid-cols-2 pt-6 border-t border-gray-100"
+          >
+            {prevIdea ? (
+              <a
+                href={`/idea/${prevIdea.id}`}
+                onClick={(e) => {
+                  if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+                  e.preventDefault()
+                  onSelectIdea(prevIdea)
+                }}
+                className="group flex flex-col rounded-xl border border-gray-100 hover:border-gray-300 transition-colors p-4 sm:p-5 no-underline text-inherit"
+              >
+                <span className="text-xs uppercase tracking-widest text-gray-400 inline-flex items-center gap-1">
+                  <ArrowLeft className="w-3 h-3" /> Previous
+                </span>
+                <span className="font-heading text-sm sm:text-base font-bold text-black leading-snug mt-2 line-clamp-2">
+                  {prevIdea.title}
+                </span>
+              </a>
+            ) : (
+              <div />
+            )}
+            {nextIdea ? (
+              <a
+                href={`/idea/${nextIdea.id}`}
+                onClick={(e) => {
+                  if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+                  e.preventDefault()
+                  onSelectIdea(nextIdea)
+                }}
+                className="group flex flex-col items-end text-right rounded-xl border border-gray-100 hover:border-gray-300 transition-colors p-4 sm:p-5 no-underline text-inherit"
+              >
+                <span className="text-xs uppercase tracking-widest text-gray-400 inline-flex items-center gap-1">
+                  Next <ArrowRight className="w-3 h-3" />
+                </span>
+                <span className="font-heading text-sm sm:text-base font-bold text-black leading-snug mt-2 line-clamp-2">
+                  {nextIdea.title}
+                </span>
+              </a>
+            ) : (
+              <div />
+            )}
+          </nav>
         )}
       </div>
 

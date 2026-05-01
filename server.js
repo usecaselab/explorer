@@ -52,10 +52,10 @@ app.use('/api', submissionsRouter);
 app.use('/api', editsRouter);
 
 const listAllIdeas = db.prepare(
-  `SELECT id, title, problem, solutionSketch, whyEthereum, domains, resources, author, createdAt FROM ideas`
+  `SELECT id, title, problem, solutionSketch, whyEthereum, domains, author, createdAt FROM ideas`
 );
 const listApprovedSubmissions = db.prepare(
-  `SELECT s.id, s.title, s.problem, s.solutionSketch, s.whyEthereum, s.domains, s.resources, u.name AS author, s.createdAt
+  `SELECT s.id, s.title, s.problem, s.solutionSketch, s.whyEthereum, s.domains, u.name AS author, s.createdAt
      FROM submissions s
      JOIN user u ON u.id = s.submitterId
      WHERE s.status = 'approved'`
@@ -69,7 +69,6 @@ function rowToIdea(row) {
     solutionSketch: row.solutionSketch,
     whyEthereum: row.whyEthereum,
     domains: JSON.parse(row.domains),
-    resources: JSON.parse(row.resources),
     author: row.author,
     createdAt: row.createdAt,
   };
@@ -123,14 +122,6 @@ app.get('/llms.txt', (req, res) => {
     if (idea.whyEthereum) {
       lines.push('### Why Ethereum');
       lines.push(idea.whyEthereum.trim());
-      lines.push('');
-    }
-    if (idea.resources?.length) {
-      lines.push('### Resources');
-      for (const r of idea.resources) {
-        const desc = r.description ? ` — ${r.description}` : '';
-        lines.push(`- [${r.name}](${r.url})${desc}`);
-      }
       lines.push('');
     }
     lines.push('---');

@@ -2,6 +2,7 @@ import React from 'react';
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import { signIn } from '../lib/auth-client';
+import { useEscapeKey } from '../lib/useEscapeKey';
 
 interface SignInModalProps {
   open: boolean;
@@ -9,6 +10,7 @@ interface SignInModalProps {
 }
 
 export default function SignInModal({ open, onClose }: SignInModalProps) {
+  useEscapeKey(open, onClose);
   if (!open) return null;
 
   const handle = (provider: 'github' | 'twitter') => {

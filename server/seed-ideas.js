@@ -29,17 +29,6 @@ function parseSection(body, heading) {
   return m ? m[1].trim() : '';
 }
 
-function parseLinks(body, heading) {
-  const raw = parseSection(body, heading);
-  if (!raw) return [];
-  const links = [];
-  for (const line of raw.split('\n')) {
-    const m = line.match(/^- \[([^\]]+)\]\(([^)]+)\)(?:\s*-\s*(.*))?$/);
-    if (m) links.push({ name: m[1], url: m[2], description: m[3] || '' });
-  }
-  return links;
-}
-
 function parseIdeaMarkdown(content, id) {
   const { meta, body } = parseFrontmatter(content);
   return {
@@ -49,14 +38,13 @@ function parseIdeaMarkdown(content, id) {
     solutionSketch: parseSection(body, 'Solution'),
     whyEthereum: parseSection(body, 'Why Ethereum'),
     domains: (meta.domains || '').split(',').map((d) => d.trim()).filter(Boolean),
-    resources: parseLinks(body, 'Resources'),
   };
 }
 
 const insertIdea = db.prepare(
   `INSERT OR IGNORE INTO ideas
-     (id, title, problem, solutionSketch, whyEthereum, domains, resources, author, submitterId, createdAt, updatedAt)
-   VALUES (?, ?, ?, ?, ?, ?, ?, ?, NULL, ?, ?)`
+     (id, title, problem, solutionSketch, whyEthereum, domains, author, submitterId, createdAt, updatedAt)
+   VALUES (?, ?, ?, ?, ?, ?, ?, NULL, ?, ?)`
 );
 
 // Backfill createdAt from file mtime for any seeded rows that still have a uniform timestamp.
@@ -108,7 +96,6 @@ export function seedCuratedIdeas() {
         idea.solutionSketch,
         idea.whyEthereum,
         JSON.stringify(idea.domains),
-        JSON.stringify(idea.resources),
         'Use Case Lab',
         mtimeMs,
         mtimeMs
