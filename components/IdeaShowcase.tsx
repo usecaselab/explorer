@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react'
-import { Sparkles, TrendingUp } from 'lucide-react'
-import type { IdeaEntry, ExploredProject } from './IdeaPage'
+import { Sparkles, TrendingUp, Clock, ChevronDown } from 'lucide-react'
+import type { IdeaEntry } from './IdeaPage'
 import Shape3D, { ShapeType } from './Shape3D'
 import VoteButton from './VoteButton'
-import { fetchIdeasBulkState, fetchApprovedSubmissions, fetchOverrides } from '../lib/api'
+import { fetchIdeasBulkState, fetchAllIdeas, fetchOverrides } from '../lib/api'
 import { useSession } from '../lib/auth-client'
 
 function applyOverride(idea: IdeaEntry, override: any): IdeaEntry {
@@ -15,7 +15,6 @@ function applyOverride(idea: IdeaEntry, override: any): IdeaEntry {
     solutionSketch: override.solutionSketch || idea.solutionSketch,
     whyEthereum: override.whyEthereum || idea.whyEthereum,
     domains: override.domains || idea.domains,
-    resources: override.resources || idea.resources,
   }
 }
 
@@ -38,12 +37,6 @@ const DOMAIN_CONFIG: Record<string, { label: string; color: string; shape: Shape
   'science':               { label: 'Science',               color: '#7E22CE', shape: 'icosahedron' },
   'utilities':             { label: 'Utilities',             color: '#14B8A6', shape: 'torus' },
 }
-
-const CATEGORIES = [
-  { id: 'all', label: 'All' },
-  { id: 'explored', label: 'Explored' },
-  ...Object.entries(DOMAIN_CONFIG).map(([id, cfg]) => ({ id, label: cfg.label })),
-]
 
 function getDomainConfig(domains: string[]) {
   for (const d of domains) {
@@ -95,7 +88,6 @@ function parseIdeaMarkdown(content: string, id: string): IdeaEntry {
     solutionSketch: parseSection(body, 'Solution'),
     whyEthereum: parseSection(body, 'Why Ethereum'),
     domains: (meta.domains || '').split(',').map(d => d.trim()).filter(Boolean),
-    resources: parseLinks(body, 'Resources'),
   }
 }
 
@@ -136,8 +128,10 @@ export default function IdeaShowcase({
   const [ideas, setIdeas] = useState<IdeaEntry[]>([])
   const [loading, setLoading] = useState(true)
   const [activeCategory, setActiveCategory] = useState('all')
-  const [sortByVotes, setSortByVotes] = useState(false)
+  const [sortMode, setSortMode] = useState<'default' | 'votes' | 'latest'>('default')
+  const [onlyBuilding, setOnlyBuilding] = useState(false)
   const [voteCounts, setVoteCounts] = useState<Record<string, number>>({})
+  const [builderCounts, setBuilderCounts] = useState<Record<string, number>>({})
   const [myVotes, setMyVotes] = useState<Set<string>>(new Set())
   const { data: session } = useSession()
 
@@ -146,9 +140,14 @@ export default function IdeaShowcase({
     fetchIdeasBulkState()
       .then((s) => {
         if (cancelled) return
-        const counts: Record<string, number> = {}
-        for (const id of Object.keys(s.counts)) counts[id] = s.counts[id].votes
-        setVoteCounts(counts)
+        const vCounts: Record<string, number> = {}
+        const bCounts: Record<string, number> = {}
+        for (const id of Object.keys(s.counts)) {
+          vCounts[id] = s.counts[id].votes
+          bCounts[id] = s.counts[id].builders
+        }
+        setVoteCounts(vCounts)
+        setBuilderCounts(bCounts)
         setMyVotes(new Set(s.myVotes))
       })
       .catch(() => {
@@ -162,39 +161,25 @@ export default function IdeaShowcase({
   useEffect(() => {
     const load = async () => {
       try {
-        const [manifestRes, exploredRes, approvedSubmissions, overrides] = await Promise.all([
-          fetch('/data/ideas/manifest.json'),
-          fetch('/data/explored.json'),
-          fetchApprovedSubmissions().catch(() => []),
+        const [allIdeas, overrides] = await Promise.all([
+          fetchAllIdeas(),
           fetchOverrides().catch(() => ({} as Record<string, any>)),
         ])
-        const manifest: string[] = await manifestRes.json()
-        const exploredMap: Record<string, ExploredProject[]> = exploredRes.ok ? await exploredRes.json() : {}
 
-        const loaded = await Promise.all(
-          manifest.map(async (filename) => {
-            const response = await fetch(`/data/ideas/${filename}`)
-            if (!response.ok) return null
-            const text = await response.text()
-            const idea = parseIdeaMarkdown(text, filename.replace('.md', ''))
-            if (exploredMap[idea.id]) {
-              idea.explored = exploredMap[idea.id]
-            }
-            return idea
-          })
-        )
+        const valid: IdeaEntry[] = allIdeas.map((row) => {
+          const idea: IdeaEntry = {
+            id: row.id,
+            title: row.title,
+            problem: row.problem,
+            solutionSketch: row.solutionSketch,
+            whyEthereum: row.whyEthereum,
+            domains: row.domains,
+            author: row.author,
+            createdAt: row.createdAt,
+          }
+          return applyOverride(idea, overrides[idea.id])
+        })
 
-        const fromMarkdown = (loaded.filter(Boolean) as IdeaEntry[]).map((i) => applyOverride(i, overrides[i.id]))
-        const fromDb: IdeaEntry[] = approvedSubmissions.map((s) => ({
-          id: s.id,
-          title: s.title,
-          problem: s.problem,
-          solutionSketch: s.solutionSketch,
-          whyEthereum: s.whyEthereum,
-          domains: s.domains,
-          resources: s.resources,
-        }))
-        const valid = [...fromMarkdown, ...fromDb]
         for (let i = valid.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [valid[i], valid[j]] = [valid[j], valid[i]]
@@ -217,11 +202,8 @@ export default function IdeaShowcase({
   const filtered = useMemo(() => {
     const q = searchQuery.trim().toLowerCase()
     const list = ideas.filter(idea => {
-      if (activeCategory === 'explored') {
-        if (!idea.explored || idea.explored.length === 0) return false
-      } else if (activeCategory !== 'all' && !idea.domains.includes(activeCategory)) {
-        return false
-      }
+      if (activeCategory !== 'all' && !idea.domains.includes(activeCategory)) return false
+      if (onlyBuilding && (builderCounts[idea.id] || 0) === 0) return false
       if (!q) return true
       return (
         idea.title.toLowerCase().includes(q) ||
@@ -230,13 +212,18 @@ export default function IdeaShowcase({
         idea.domains.some(d => (DOMAIN_CONFIG[d]?.label || d).toLowerCase().includes(q))
       )
     })
-    if (sortByVotes) {
+    if (sortMode === 'votes') {
       return [...list].sort(
         (a, b) => (voteCounts[b.id] || 0) - (voteCounts[a.id] || 0)
       )
     }
+    if (sortMode === 'latest') {
+      return [...list].sort(
+        (a, b) => (b.createdAt || 0) - (a.createdAt || 0)
+      )
+    }
     return list
-  }, [ideas, activeCategory, searchQuery, sortByVotes, voteCounts])
+  }, [ideas, activeCategory, onlyBuilding, searchQuery, sortMode, voteCounts, builderCounts])
 
   const visible = filtered.slice(0, (page + 1) * PAGE_SIZE)
   const hasMore = visible.length < filtered.length
@@ -251,51 +238,54 @@ export default function IdeaShowcase({
 
   return (
     <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
-      {/* Category Filter */}
-      <div className="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0 pb-2 mb-8 sm:mb-12">
-        <div className="flex sm:flex-wrap sm:justify-center gap-1.5 sm:gap-2 min-w-max sm:min-w-0">
-          <button
-            onClick={() => setSortByVotes((v) => !v)}
-            className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
-              sortByVotes
-                ? 'bg-black text-white shadow-sm'
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-            }`}
+      {/* Sort + filter toolbar */}
+      <div className="flex flex-wrap items-center gap-2 mb-8 sm:mb-12">
+        <button
+          onClick={() => setSortMode(sortMode === 'latest' ? 'default' : 'latest')}
+          className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
+            sortMode === 'latest'
+              ? 'bg-black text-white shadow-sm'
+              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+          }`}
+        >
+          <Clock className="w-3 h-3 flex-shrink-0" />
+          Latest
+        </button>
+        <button
+          onClick={() => setSortMode(sortMode === 'votes' ? 'default' : 'votes')}
+          className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
+            sortMode === 'votes'
+              ? 'bg-black text-white shadow-sm'
+              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+          }`}
+        >
+          <TrendingUp className="w-3 h-3 flex-shrink-0" />
+          Most voted
+        </button>
+        <button
+          onClick={() => setOnlyBuilding((b) => !b)}
+          className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
+            onlyBuilding
+              ? 'bg-black text-white shadow-sm'
+              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+          }`}
+        >
+          <Sparkles className={`w-3 h-3 flex-shrink-0 ${onlyBuilding ? 'text-white' : 'text-amber-500'}`} />
+          Building
+        </button>
+
+        <div className="relative ml-auto">
+          <select
+            value={activeCategory}
+            onChange={(e) => setActiveCategory(e.target.value)}
+            className="appearance-none pl-4 pr-9 py-1.5 sm:py-2 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs sm:text-sm font-medium focus:outline-none cursor-pointer"
           >
-            <TrendingUp className="w-3 h-3 flex-shrink-0" />
-            Most voted
-          </button>
-          {CATEGORIES.map(cat => {
-            const isActive = activeCategory === cat.id
-            const count = cat.id === 'all'
-              ? ideas.length
-              : cat.id === 'explored'
-              ? ideas.filter(i => i.explored && i.explored.length > 0).length
-              : ideas.filter(i => i.domains.includes(cat.id)).length
-            const conf = DOMAIN_CONFIG[cat.id]
-            return (
-              <button
-                key={cat.id}
-                onClick={() => setActiveCategory(isActive ? 'all' : cat.id)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
-                  isActive
-                    ? 'bg-black text-white shadow-sm'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
-              >
-                {cat.id === 'explored' ? (
-                  <Sparkles className={`w-3 h-3 flex-shrink-0 ${isActive ? 'text-white' : 'text-amber-500'}`} />
-                ) : conf ? (
-                  <span
-                    className="w-2 h-2 rounded-full flex-shrink-0"
-                    style={{ backgroundColor: isActive ? '#fff' : conf.color }}
-                  />
-                ) : null}
-                {cat.label}
-                <span className={`text-xs ${isActive ? 'text-gray-400' : 'text-gray-400'}`}>{count}</span>
-              </button>
-            )
-          })}
+            <option value="all">All domains</option>
+            {Object.entries(DOMAIN_CONFIG).map(([id, cfg]) => (
+              <option key={id} value={id}>{cfg.label}</option>
+            ))}
+          </select>
+          <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-500 pointer-events-none" />
         </div>
       </div>
 
@@ -310,16 +300,22 @@ export default function IdeaShowcase({
               key={idea.id}
               className="group relative rounded-xl border border-gray-100 hover:border-gray-200 transition-all hover:shadow-sm overflow-hidden"
             >
-              <button
-                onClick={() => onSelect(idea, ideas)}
-                className="text-left flex flex-row sm:flex-col w-full"
+              <a
+                href={`/idea/${idea.id}`}
+                onClick={(e) => {
+                  // Let the browser handle modified clicks (cmd-click → new tab, etc.)
+                  if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+                  e.preventDefault()
+                  onSelect(idea, ideas)
+                }}
+                className="text-left flex flex-row sm:flex-col w-full no-underline text-inherit"
               >
                 <div className="relative w-24 h-24 sm:w-full sm:aspect-[4/3] sm:h-auto bg-gray-50/50 flex-shrink-0">
                   <Shape3D shape={conf.shape} color={conf.color} />
-                  {idea.explored && idea.explored.length > 0 && (
+                  {(builderCounts[idea.id] || 0) > 0 && (
                     <span className="absolute top-2 right-2 inline-flex items-center gap-0.5 text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
                       <Sparkles className="w-2.5 h-2.5" />
-                      <span className="hidden sm:inline">Explored</span>
+                      <span className="hidden sm:inline">Building</span>
                     </span>
                   )}
                 </div>
@@ -345,7 +341,7 @@ export default function IdeaShowcase({
                     })}
                   </div>
                 </div>
-              </button>
+              </a>
               <div className="absolute bottom-2 right-2 z-10">
                 <VoteButton
                   ideaId={idea.id}
@@ -422,10 +418,15 @@ export default function IdeaShowcase({
                   {suggestions.map(idea => {
                     const conf = getDomainConfig(idea.domains)
                     return (
-                      <button
+                      <a
                         key={idea.id}
-                        onClick={() => onSelect(idea, ideas)}
-                        className="group flex items-center gap-3 rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all p-3 text-left"
+                        href={`/idea/${idea.id}`}
+                        onClick={(e) => {
+                          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+                          e.preventDefault()
+                          onSelect(idea, ideas)
+                        }}
+                        className="group flex items-center gap-3 rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all p-3 text-left no-underline text-inherit"
                       >
                         <div className="w-12 h-12 flex-shrink-0 bg-gray-50/50 rounded-lg overflow-hidden">
                           <Shape3D shape={conf.shape} color={conf.color} />
@@ -433,7 +434,7 @@ export default function IdeaShowcase({
                         <span className="font-heading text-sm font-bold text-black leading-snug line-clamp-2">
                           {idea.title}
                         </span>
-                      </button>
+                      </a>
                     )
                   })}
                 </div>

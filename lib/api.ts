@@ -4,6 +4,7 @@ export interface Builder {
   image: string | null;
   url: string | null;
   note: string | null;
+  socialUrl: string | null;
   createdAt: number;
 }
 
@@ -84,7 +85,6 @@ export interface SubmissionDraft {
   solutionSketch: string;
   whyEthereum: string;
   domains: string[];
-  resources?: { name: string; url: string; description?: string }[];
 }
 
 export interface SubmissionRow {
@@ -94,7 +94,6 @@ export interface SubmissionRow {
   solutionSketch: string;
   whyEthereum: string;
   domains: string[];
-  resources: { name: string; url: string; description?: string }[];
   status: 'pending' | 'approved' | 'rejected';
   submittedBy?: string;
   rejectionReason?: string | null;
@@ -119,6 +118,22 @@ export async function fetchMySubmissions(): Promise<SubmissionRow[]> {
 
 export async function fetchApprovedSubmissions(): Promise<SubmissionRow[]> {
   const res = await call('/api/submissions/approved');
+  return res.json();
+}
+
+export interface IdeaRow {
+  id: string;
+  title: string;
+  problem: string;
+  solutionSketch: string;
+  whyEthereum: string;
+  domains: string[];
+  author: string;
+  createdAt: number;
+}
+
+export async function fetchAllIdeas(): Promise<IdeaRow[]> {
+  const res = await call('/api/ideas');
   return res.json();
 }
 
@@ -169,7 +184,6 @@ export interface EditDraft {
   solutionSketch?: string;
   whyEthereum?: string;
   domains?: string[];
-  resources?: { name: string; url: string; description?: string }[];
 }
 
 export interface EditRow {
@@ -180,7 +194,6 @@ export interface EditRow {
   solutionSketch: string | null;
   whyEthereum: string | null;
   domains: string[] | null;
-  resources: { name: string; url: string; description?: string }[] | null;
   status: 'pending' | 'approved' | 'rejected';
   rejectionReason: string | null;
   submitter: { id: string; name: string; email: string };
@@ -195,7 +208,6 @@ export interface IdeaOverride {
   solutionSketch?: string | null;
   whyEthereum?: string | null;
   domains?: string[];
-  resources?: { name: string; url: string; description?: string }[];
 }
 
 export async function submitEdit(draft: EditDraft) {

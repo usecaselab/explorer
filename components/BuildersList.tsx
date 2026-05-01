@@ -17,55 +17,63 @@ export default function BuildersList({ builders }: BuildersListProps) {
       </h2>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {builders.map((b) => {
-          const inner = (
-            <>
-              <div className="flex items-center gap-3">
-                {b.image ? (
-                  <img
-                    src={b.image}
-                    alt={b.name}
-                    className="w-9 h-9 rounded-full flex-shrink-0"
-                  />
-                ) : (
-                  <div className="w-9 h-9 rounded-full bg-gray-100 text-gray-600 text-xs font-bold flex items-center justify-center flex-shrink-0">
-                    {(b.name || '?').slice(0, 1).toUpperCase()}
-                  </div>
-                )}
-                <div className="flex-1 min-w-0">
-                  <div className="text-sm font-semibold text-black truncate">
-                    {b.name}
-                  </div>
-                  <div className="text-xs text-gray-500">
-                    {timeAgo(b.createdAt)}
-                  </div>
+          const Avatar = b.image ? (
+            <img src={b.image} alt={b.name} className="w-9 h-9 rounded-full flex-shrink-0" />
+          ) : (
+            <div className="w-9 h-9 rounded-full bg-gray-100 text-gray-600 text-xs font-bold flex items-center justify-center flex-shrink-0">
+              {(b.name || '?').slice(0, 1).toUpperCase()}
+            </div>
+          );
+
+          const NameAndAvatar = b.socialUrl ? (
+            <a
+              href={b.socialUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 min-w-0 flex-1 group/name"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {Avatar}
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-semibold text-black truncate group-hover/name:underline">
+                  {b.name}
                 </div>
+                <div className="text-xs text-gray-500">{timeAgo(b.createdAt)}</div>
+              </div>
+            </a>
+          ) : (
+            <div className="flex items-center gap-3 min-w-0 flex-1">
+              {Avatar}
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-semibold text-black truncate">{b.name}</div>
+                <div className="text-xs text-gray-500">{timeAgo(b.createdAt)}</div>
+              </div>
+            </div>
+          );
+
+          return (
+            <div
+              key={b.userId}
+              className="group p-4 rounded-xl border border-gray-100 hover:border-gray-300 transition-colors"
+            >
+              <div className="flex items-center gap-3">
+                {NameAndAvatar}
                 {b.url && (
-                  <ExternalLink className="w-3.5 h-3.5 text-gray-300 group-hover:text-black transition-colors flex-shrink-0" />
+                  <a
+                    href={b.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-gray-500 hover:text-black inline-flex items-center gap-1 flex-shrink-0"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Work
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
                 )}
               </div>
               {b.note && (
-                <p className="text-sm text-gray-600 leading-relaxed mt-2.5">
-                  {b.note}
-                </p>
+                <p className="text-sm text-gray-600 leading-relaxed mt-2.5">{b.note}</p>
               )}
-            </>
-          );
-          return b.url ? (
-            <a
-              key={b.userId}
-              href={b.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group p-4 rounded-xl border border-gray-100 hover:border-gray-300 transition-colors"
-            >
-              {inner}
-            </a>
-          ) : (
-            <div
-              key={b.userId}
-              className="group p-4 rounded-xl border border-gray-100"
-            >
-              {inner}
             </div>
           );
         })}

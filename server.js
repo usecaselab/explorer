@@ -5,9 +5,13 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { toNodeHandler, fromNodeHeaders } from 'better-auth/node';
 import { auth } from './server/auth.js';
+import { db } from './server/db.js';
+import { seedCuratedIdeas } from './server/seed-ideas.js';
 import ideasRouter from './server/routes/ideas.js';
 import submissionsRouter from './server/routes/submissions.js';
 import editsRouter from './server/routes/edits.js';
+
+seedCuratedIdeas();
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -46,6 +50,88 @@ app.get('/api/me', async (req, res) => {
 app.use('/api', ideasRouter);
 app.use('/api', submissionsRouter);
 app.use('/api', editsRouter);
+
+const listAllIdeas = db.prepare(
+  `SELECT id, title, problem, solutionSketch, whyEthereum, domains, author, createdAt FROM ideas`
+);
+const listApprovedSubmissions = db.prepare(
+  `SELECT s.id, s.title, s.problem, s.solutionSketch, s.whyEthereum, s.domains, u.name AS author, s.createdAt
+     FROM submissions s
+     JOIN user u ON u.id = s.submitterId
+     WHERE s.status = 'approved'`
+);
+
+function rowToIdea(row) {
+  return {
+    id: row.id,
+    title: row.title,
+    problem: row.problem,
+    solutionSketch: row.solutionSketch,
+    whyEthereum: row.whyEthereum,
+    domains: JSON.parse(row.domains),
+    author: row.author,
+    createdAt: row.createdAt,
+  };
+}
+
+// GET /api/ideas - Canonical idea feed (curated + approved submissions, each with author)
+app.get('/api/ideas', (req, res) => {
+  const curated = listAllIdeas.all().map(rowToIdea);
+  const submitted = listApprovedSubmissions.all().map(rowToIdea);
+  res.json([...curated, ...submitted]);
+});
+
+// GET /llms.txt — single plain-text dump of every idea, designed to paste
+// into an LLM context. Convention: https://llmstxt.org
+app.get('/llms.txt', (req, res) => {
+  const ideas = [
+    ...listAllIdeas.all().map(rowToIdea),
+    ...listApprovedSubmissions.all().map(rowToIdea),
+  ].sort((a, b) => a.title.localeCompare(b.title));
+
+  const baseUrl = process.env.BETTER_AUTH_URL || 'https://explorer.usecaselab.org';
+  const lines = [];
+  lines.push('# Use Case Lab — Ethereum Use Cases');
+  lines.push('');
+  lines.push(`Source: ${baseUrl}`);
+  lines.push(`Submit a new idea: ${baseUrl}/?submit=1`);
+  lines.push(`Total ideas: ${ideas.length}`);
+  lines.push('');
+  lines.push('Each idea below is curated by the Use Case Lab or contributed by the community. Use this document as a single context dump for any LLM — search, brainstorm, cite, or build from it.');
+  lines.push('');
+  lines.push('---');
+  lines.push('');
+
+  for (const idea of ideas) {
+    lines.push(`## ${idea.title}`);
+    lines.push('');
+    lines.push(`URL: ${baseUrl}/idea/${idea.id}`);
+    lines.push(`Author: ${idea.author}`);
+    if (idea.domains?.length) lines.push(`Domains: ${idea.domains.join(', ')}`);
+    lines.push('');
+    if (idea.problem) {
+      lines.push('### Problem');
+      lines.push(idea.problem.trim());
+      lines.push('');
+    }
+    if (idea.solutionSketch) {
+      lines.push('### Solution');
+      lines.push(idea.solutionSketch.trim());
+      lines.push('');
+    }
+    if (idea.whyEthereum) {
+      lines.push('### Why Ethereum');
+      lines.push(idea.whyEthereum.trim());
+      lines.push('');
+    }
+    lines.push('---');
+    lines.push('');
+  }
+
+  res.set('Content-Type', 'text/plain; charset=utf-8');
+  res.set('Cache-Control', 'public, max-age=300');
+  res.send(lines.join('\n'));
+});
 
 // Parse markdown files on startup
 let usecases = [];

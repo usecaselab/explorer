@@ -1,0 +1,94 @@
+/* Site-wide header for /about/* — mirrors App.tsx so the static subsite feels like the same product. */
+.ucl-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  pointer-events: none;
+}
+.ucl-header-inner {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: auto;
+}
+@media (min-width: 640px) {
+  .ucl-header-inner { padding: 2rem 1.5rem 0; }
+}
+.ucl-header-logo {
+  display: inline-flex;
+  transition: opacity .2s;
+}
+.ucl-header-logo:hover { opacity: .7; }
+.ucl-header-logo img {
+  height: 1.75rem;
+  width: auto;
+  display: block;
+}
+@media (min-width: 640px) {
+  .ucl-header-logo img { height: 2rem; }
+}
+.ucl-header-nav {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@media (min-width: 640px) {
+  .ucl-header-nav { gap: 1.5rem; }
+}
+.ucl-header-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+  font-size: .75rem;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color .2s;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}
+@media (min-width: 640px) {
+  .ucl-header-link { font-size: .875rem; }
+}
+.ucl-header-link:hover,
+.ucl-header-link[aria-current="page"] { color: #000; }
+.ucl-header-link svg {
+  width: .75rem;
+  height: .75rem;
+  flex-shrink: 0;
+}
+.ucl-header-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: .375rem;
+  background: #000;
+  color: #fff;
+  font-size: .75rem;
+  font-weight: 500;
+  padding: .375rem .75rem;
+  border-radius: .5rem;
+  text-decoration: none;
+  transition: background-color .2s;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@media (min-width: 640px) {
+  .ucl-header-cta {
+    font-size: .875rem;
+    padding: .5rem 1rem;
+  }
+}
+.ucl-header-cta:hover { background: #1f2937; }
+.ucl-header-cta svg {
+  width: .875rem;
+  height: .875rem;
+  flex-shrink: 0;
+}
+</content>
+</invoke>

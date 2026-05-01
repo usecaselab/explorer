@@ -4,6 +4,7 @@ import { useSession } from '../lib/auth-client';
 import { submitIdea } from '../lib/api';
 import { DOMAIN_CONFIG } from './IdeaShowcase';
 import { setPending, type SubmitIdeaDraft } from '../lib/pending-action';
+import { useEscapeKey } from '../lib/useEscapeKey';
 import SignInModal from './SignInModal';
 
 interface SubmitIdeaModalProps {
@@ -25,8 +26,6 @@ export default function SubmitIdeaModal({ open, onClose, initialDraft }: SubmitI
   const [solution, setSolution] = useState('');
   const [why, setWhy] = useState('');
   const [domains, setDomains] = useState<string[]>([]);
-  const [resourceUrl, setResourceUrl] = useState('');
-  const [resourceLabel, setResourceLabel] = useState('');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
@@ -51,8 +50,6 @@ export default function SubmitIdeaModal({ open, onClose, initialDraft }: SubmitI
     setSolution(initialDraft.solution);
     setWhy(initialDraft.why);
     setDomains(initialDraft.domains);
-    setResourceUrl(initialDraft.resourceUrl);
-    setResourceLabel(initialDraft.resourceLabel);
   }, [initialDraft, open]);
 
   const reset = useCallback(() => {
@@ -61,8 +58,6 @@ export default function SubmitIdeaModal({ open, onClose, initialDraft }: SubmitI
     setSolution('');
     setWhy('');
     setDomains([]);
-    setResourceUrl('');
-    setResourceLabel('');
     setError(null);
     setSubmitted(false);
   }, []);
@@ -73,6 +68,8 @@ export default function SubmitIdeaModal({ open, onClose, initialDraft }: SubmitI
       setTimeout(reset, 300);
     }
   }, [busy, onClose, reset]);
+
+  useEscapeKey(open, handleClose);
 
   const toggleDomain = (id: string) => {
     setDomains((prev) =>
@@ -103,8 +100,6 @@ export default function SubmitIdeaModal({ open, onClose, initialDraft }: SubmitI
             solution: solution.trim(),
             why: why.trim(),
             domains,
-            resourceUrl: resourceUrl.trim(),
-            resourceLabel: resourceLabel.trim(),
           },
         });
         setSignInOpen(true);
@@ -113,21 +108,12 @@ export default function SubmitIdeaModal({ open, onClose, initialDraft }: SubmitI
 
       setBusy(true);
       try {
-        const resources = resourceUrl.trim()
-          ? [
-              {
-                name: resourceLabel.trim() || 'Reference',
-                url: resourceUrl.trim(),
-              },
-            ]
-          : [];
         await submitIdea({
           title: title.trim(),
           problem: problem.trim(),
           solutionSketch: solution.trim(),
           whyEthereum: why.trim(),
           domains,
-          resources,
         });
         setSubmitted(true);
       } catch (err: any) {
@@ -136,7 +122,7 @@ export default function SubmitIdeaModal({ open, onClose, initialDraft }: SubmitI
         setBusy(false);
       }
     },
-    [busy, title, problem, solution, why, domains, resourceUrl, resourceLabel, session]
+    [busy, title, problem, solution, why, domains, session]
   );
 
   if (!open) return null;
@@ -294,29 +280,6 @@ export default function SubmitIdeaModal({ open, onClose, initialDraft }: SubmitI
                   </button>
                 );
               })}
-            </div>
-          </Section>
-
-          <Divider />
-
-          <Section
-            heading="Got a link?"
-            hint="Optional. A reference, related project, or research paper."
-          >
-            <div className="space-y-2">
-              <input
-                value={resourceLabel}
-                onChange={(e) => setResourceLabel(e.target.value)}
-                placeholder="Label"
-                className="w-full px-5 py-3.5 rounded-xl border border-gray-200 text-base focus:outline-none focus:border-black"
-              />
-              <input
-                type="url"
-                value={resourceUrl}
-                onChange={(e) => setResourceUrl(e.target.value)}
-                placeholder="https://"
-                className="w-full px-5 py-3.5 rounded-xl border border-gray-200 text-base focus:outline-none focus:border-black"
-              />
             </div>
           </Section>
 

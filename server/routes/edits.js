@@ -23,8 +23,8 @@ async function getUser(req) {
 }
 
 const insertEdit = db.prepare(`
-  INSERT INTO edits (id, ideaId, title, problem, solutionSketch, whyEthereum, domains, resources, submitterId, status, createdAt, updatedAt)
-  VALUES (@id, @ideaId, @title, @problem, @solutionSketch, @whyEthereum, @domains, @resources, @submitterId, 'pending', @now, @now)
+  INSERT INTO edits (id, ideaId, title, problem, solutionSketch, whyEthereum, domains, submitterId, status, createdAt, updatedAt)
+  VALUES (@id, @ideaId, @title, @problem, @solutionSketch, @whyEthereum, @domains, @submitterId, 'pending', @now, @now)
 `);
 const getPendingEdits = db.prepare(`
   SELECT e.*, u.name AS submitterName, u.email AS submitterEmail
@@ -47,15 +47,14 @@ const setEditRestored = db.prepare(`
   UPDATE edits SET status = 'pending', rejectionReason = NULL, updatedAt = ? WHERE id = ? AND status = 'rejected'
 `);
 const upsertOverride = db.prepare(`
-  INSERT INTO idea_overrides (ideaId, title, problem, solutionSketch, whyEthereum, domains, resources, approvedAt, approvedBy)
-  VALUES (@ideaId, @title, @problem, @solutionSketch, @whyEthereum, @domains, @resources, @approvedAt, @approvedBy)
+  INSERT INTO idea_overrides (ideaId, title, problem, solutionSketch, whyEthereum, domains, approvedAt, approvedBy)
+  VALUES (@ideaId, @title, @problem, @solutionSketch, @whyEthereum, @domains, @approvedAt, @approvedBy)
   ON CONFLICT(ideaId) DO UPDATE SET
     title = excluded.title,
     problem = excluded.problem,
     solutionSketch = excluded.solutionSketch,
     whyEthereum = excluded.whyEthereum,
     domains = excluded.domains,
-    resources = excluded.resources,
     approvedAt = excluded.approvedAt,
     approvedBy = excluded.approvedBy
 `);
@@ -67,7 +66,6 @@ const updateSubmissionFields = db.prepare(`
       solutionSketch = COALESCE(?, solutionSketch),
       whyEthereum = COALESCE(?, whyEthereum),
       domains = COALESCE(?, domains),
-      resources = COALESCE(?, resources),
       updatedAt = ?
   WHERE id = ?
 `);
@@ -86,7 +84,6 @@ function rowToEditView(row) {
     solutionSketch: row.solutionSketch,
     whyEthereum: row.whyEthereum,
     domains: row.domains ? JSON.parse(row.domains) : null,
-    resources: row.resources ? JSON.parse(row.resources) : null,
     status: row.status,
     rejectionReason: row.rejectionReason || null,
     submitter: {
@@ -107,7 +104,6 @@ function rowToOverride(row) {
     solutionSketch: row.solutionSketch,
     whyEthereum: row.whyEthereum,
     domains: row.domains ? JSON.parse(row.domains) : undefined,
-    resources: row.resources ? JSON.parse(row.resources) : undefined,
   };
 }
 
@@ -131,7 +127,6 @@ router.post('/edits', async (req, res, next) => {
       solutionSketch,
       whyEthereum,
       domains,
-      resources,
     } = req.body || {};
 
     if (typeof ideaId !== 'string' || !ideaId.length) {
@@ -157,9 +152,6 @@ router.post('/edits', async (req, res, next) => {
     ) {
       return res.status(400).json({ error: 'domains must be 1-4 items' });
     }
-    if (resources !== undefined && resources !== null && !Array.isArray(resources)) {
-      return res.status(400).json({ error: 'resources must be an array' });
-    }
 
     const id = newId();
     const now = Date.now();
@@ -171,7 +163,6 @@ router.post('/edits', async (req, res, next) => {
       solutionSketch: solutionSketch?.trim() || null,
       whyEthereum: whyEthereum?.trim() || null,
       domains: domains ? JSON.stringify(domains) : null,
-      resources: resources ? JSON.stringify(resources) : null,
       submitterId: user.id,
       now,
     });
@@ -223,7 +214,6 @@ router.post('/admin/edits/:id/approve', async (req, res, next) => {
         row.solutionSketch,
         row.whyEthereum,
         row.domains,
-        row.resources,
         now,
         row.ideaId
       );
@@ -235,7 +225,6 @@ router.post('/admin/edits/:id/approve', async (req, res, next) => {
         solutionSketch: row.solutionSketch,
         whyEthereum: row.whyEthereum,
         domains: row.domains,
-        resources: row.resources,
         approvedAt: now,
         approvedBy: user.id,
       });

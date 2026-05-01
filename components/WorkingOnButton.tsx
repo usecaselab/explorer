@@ -114,7 +114,7 @@ export default function WorkingOnButton({
                   {isBuilding ? 'Update your work' : "I'm building this"}
                 </h2>
                 <p className="text-sm text-gray-500 mt-1">
-                  Optional — paste a link to your repo, demo, or notes.
+                  Tell others your angle. Add a link to your repo, demo, or notes if you have one.
                 </p>
               </div>
               <button
@@ -128,22 +128,12 @@ export default function WorkingOnButton({
             </div>
 
             <label className="block text-sm font-medium text-gray-700 mb-1.5">
-              Link (optional)
-            </label>
-            <input
-              type="url"
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
-              placeholder="https://github.com/you/your-repo"
-              className="w-full px-3.5 py-2.5 rounded-lg border border-gray-200 text-base focus:outline-none focus:border-black mb-4"
-            />
-
-            <label className="block text-sm font-medium text-gray-700 mb-1.5">
-              Note (optional)
+              Note
             </label>
             <textarea
               value={note}
               onChange={(e) => setNote(e.target.value)}
+              required
               placeholder="What's your angle?"
               maxLength={500}
               rows={3}
@@ -152,6 +142,17 @@ export default function WorkingOnButton({
             <div className="text-xs text-gray-400 text-right mt-1">
               {note.length}/500
             </div>
+
+            <label className="block text-sm font-medium text-gray-700 mt-4 mb-1.5">
+              Link <span className="text-gray-400 font-normal">(optional)</span>
+            </label>
+            <input
+              type="url"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+              placeholder="https://github.com/you/your-repo"
+              className="w-full px-3.5 py-2.5 rounded-lg border border-gray-200 text-base focus:outline-none focus:border-black"
+            />
 
             <div className="flex items-center justify-between gap-3 mt-5">
               {isBuilding ? (

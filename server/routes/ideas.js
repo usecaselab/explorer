@@ -27,12 +27,14 @@ const myVotesAll = db.prepare(
   `SELECT ideaId FROM votes WHERE userId = ?`
 );
 const buildersByIdea = db.prepare(
-  `SELECT w.ideaId, w.userId, w.url, w.note, w.createdAt, u.name, u.image, u.email
+  `SELECT w.ideaId, w.userId, w.url, w.note, w.createdAt, u.name, u.image, u.email,
+          (SELECT a.providerId FROM account a WHERE a.userId = u.id ORDER BY a.createdAt ASC LIMIT 1) AS providerId
    FROM working w JOIN user u ON u.id = w.userId
    ORDER BY w.createdAt DESC`
 );
 const buildersForIdea = db.prepare(
-  `SELECT w.userId, w.url, w.note, w.createdAt, u.name, u.image, u.email
+  `SELECT w.userId, w.url, w.note, w.createdAt, u.name, u.image, u.email,
+          (SELECT a.providerId FROM account a WHERE a.userId = u.id ORDER BY a.createdAt ASC LIMIT 1) AS providerId
    FROM working w JOIN user u ON u.id = w.userId
    WHERE w.ideaId = ?
    ORDER BY w.createdAt DESC`
@@ -64,6 +66,13 @@ function requireUser(handler) {
   };
 }
 
+function deriveSocialUrl(providerId, name) {
+  if (!name || /\s/.test(name)) return null;
+  if (providerId === 'github') return `https://github.com/${encodeURIComponent(name)}`;
+  if (providerId === 'twitter') return `https://x.com/${encodeURIComponent(name)}`;
+  return null;
+}
+
 function publicBuilder(row) {
   return {
     userId: row.userId,
@@ -71,6 +80,7 @@ function publicBuilder(row) {
     image: row.image,
     url: row.url || null,
     note: row.note || null,
+    socialUrl: deriveSocialUrl(row.providerId, row.name),
     createdAt: row.createdAt,
   };
 }

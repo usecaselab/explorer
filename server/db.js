@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS submissions (
   solutionSketch TEXT NOT NULL,
   whyEthereum TEXT NOT NULL,
   domains TEXT NOT NULL,
-  resources TEXT NOT NULL,
+  resources TEXT NOT NULL DEFAULT '[]',
   submitterId TEXT NOT NULL REFERENCES user(id) ON DELETE CASCADE,
   status TEXT NOT NULL CHECK (status IN ('pending','approved','rejected')),
   rejectionReason TEXT,
@@ -115,6 +115,20 @@ CREATE TABLE IF NOT EXISTS idea_overrides (
   resources TEXT,
   approvedAt INTEGER NOT NULL,
   approvedBy TEXT
+);
+
+CREATE TABLE IF NOT EXISTS ideas (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  problem TEXT NOT NULL,
+  solutionSketch TEXT NOT NULL,
+  whyEthereum TEXT NOT NULL,
+  domains TEXT NOT NULL,
+  resources TEXT NOT NULL DEFAULT '[]',
+  author TEXT NOT NULL DEFAULT 'Use Case Lab',
+  submitterId TEXT REFERENCES user(id) ON DELETE SET NULL,
+  createdAt INTEGER NOT NULL,
+  updatedAt INTEGER NOT NULL
 );
 
 CREATE INDEX IF NOT EXISTS idx_votes_idea ON votes(ideaId);

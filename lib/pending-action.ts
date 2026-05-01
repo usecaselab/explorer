@@ -7,8 +7,6 @@ export interface SubmitIdeaDraft {
   solution: string;
   why: string;
   domains: string[];
-  resourceUrl: string;
-  resourceLabel: string;
 }
 
 export interface EditIdeaDraft {

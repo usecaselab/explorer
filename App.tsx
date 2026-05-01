@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import IdeaShowcase, { getDomainConfig, parseIdeaMarkdown } from './components/IdeaShowcase';
+import IdeaShowcase, { getDomainConfig } from './components/IdeaShowcase';
 import IdeaPage, { IdeaEntry } from './components/IdeaPage';
-import { fetchApprovedSubmissions, fetchOverrides, vote, setWorking } from './lib/api';
+import { fetchAllIdeas, fetchOverrides, vote, setWorking } from './lib/api';
 import ToolkitPage from './components/ToolkitPage';
 import SignInButton from './components/SignInButton';
 import SubmitIdeaModal from './components/SubmitIdeaModal';
 import AdminPage from './components/AdminPage';
-import LogoMarquee from './components/LogoMarquee';
 import { Wrench, Plus, Search, Info } from 'lucide-react';
 import { useSession } from './lib/auth-client';
 import { consumePending, type SubmitIdeaDraft, type EditIdeaDraft } from './lib/pending-action';
@@ -32,7 +31,6 @@ function applyOverride(
     solutionSketch?: string | null;
     whyEthereum?: string | null;
     domains?: string[];
-    resources?: { name: string; url: string; description?: string }[];
   }
 ): IdeaEntry {
   if (!override) return idea;
@@ -43,7 +41,6 @@ function applyOverride(
     solutionSketch: override.solutionSketch || idea.solutionSketch,
     whyEthereum: override.whyEthereum || idea.whyEthereum,
     domains: override.domains || idea.domains,
-    resources: override.resources || idea.resources,
   };
 }
 
@@ -102,6 +99,18 @@ const App: React.FC = () => {
     return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
+  // Open the submit modal when arriving from outside via /?submit=1
+  // (used by the static /about/ subsite which can't open the modal directly).
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('submit') === '1') {
+      setSubmitOpen(true);
+      params.delete('submit');
+      const qs = params.toString();
+      window.history.replaceState(null, '', window.location.pathname + (qs ? `?${qs}` : ''));
+    }
+  }, []);
+
   // Navigate to an idea
   const navigateToIdea = useCallback((idea: IdeaEntry, ideas: IdeaEntry[]) => {
     window.history.pushState(null, '', `/idea/${idea.id}`);
@@ -146,39 +155,24 @@ const App: React.FC = () => {
     const load = async () => {
       setLoading(true);
       try {
-        const [manifestRes, exploredRes, approvedSubmissions, overrides] = await Promise.all([
-          fetch('/data/ideas/manifest.json'),
-          fetch('/data/explored.json'),
-          fetchApprovedSubmissions().catch(() => []),
+        const [allIdeas, overrides] = await Promise.all([
+          fetchAllIdeas(),
           fetchOverrides().catch(() => ({} as Record<string, any>)),
         ]);
-        const manifest: string[] = await manifestRes.json();
-        const exploredMap: Record<string, any[]> = exploredRes.ok ? await exploredRes.json() : {};
 
-        const loaded = await Promise.all(
-          manifest.map(async (filename) => {
-            const response = await fetch(`/data/ideas/${filename}`);
-            if (!response.ok) return null;
-            const text = await response.text();
-            const idea = parseIdeaMarkdown(text, filename.replace('.md', ''));
-            if (exploredMap[idea.id]) {
-              idea.explored = exploredMap[idea.id];
-            }
-            return idea;
-          })
-        );
-
-        const fromMarkdown = (loaded.filter(Boolean) as IdeaEntry[]).map((i) => applyOverride(i, overrides[i.id]));
-        const fromDb: IdeaEntry[] = approvedSubmissions.map((s) => ({
-          id: s.id,
-          title: s.title,
-          problem: s.problem,
-          solutionSketch: s.solutionSketch,
-          whyEthereum: s.whyEthereum,
-          domains: s.domains,
-          resources: s.resources,
-        }));
-        const valid = [...fromMarkdown, ...fromDb];
+        const valid: IdeaEntry[] = allIdeas.map((row) => {
+          const idea: IdeaEntry = {
+            id: row.id,
+            title: row.title,
+            problem: row.problem,
+            solutionSketch: row.solutionSketch,
+            whyEthereum: row.whyEthereum,
+            domains: row.domains,
+            author: row.author,
+            createdAt: row.createdAt,
+          };
+          return applyOverride(idea, overrides[idea.id]);
+        });
         setAllIdeas(valid);
 
         const target = valid.find(i => i.id === route.ideaId);
@@ -278,8 +272,6 @@ const App: React.FC = () => {
               </div>
             </div>
           </section>
-
-          <LogoMarquee />
 
           <IdeaShowcase
             onSelect={navigateToIdea}
