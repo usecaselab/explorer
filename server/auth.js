@@ -14,6 +14,10 @@ if (process.env.TWITTER_CLIENT_ID && process.env.TWITTER_CLIENT_SECRET) {
   socialProviders.twitter = {
     clientId: process.env.TWITTER_CLIENT_ID,
     clientSecret: process.env.TWITTER_CLIENT_SECRET,
+    // X requires apps to enable "Request email from users" (with privacy/ToS URLs)
+    // to grant the users.email scope. Skip it; Better Auth falls back to username.
+    disableDefaultScope: true,
+    scope: ['users.read', 'tweet.read', 'offline.access'],
   };
 }
 
