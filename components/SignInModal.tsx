@@ -13,7 +13,7 @@ export default function SignInModal({ open, onClose }: SignInModalProps) {
   useEscapeKey(open, onClose);
   if (!open) return null;
 
-  const handle = (provider: 'github' | 'twitter') => {
+  const handle = (provider: 'github') => {
     signIn.social({
       provider,
       callbackURL: window.location.href,
@@ -53,13 +53,6 @@ export default function SignInModal({ open, onClose }: SignInModalProps) {
             <GithubIcon />
             Continue with GitHub
           </button>
-          <button
-            onClick={() => handle('twitter')}
-            className="w-full flex items-center justify-center gap-3 px-4 py-3.5 rounded-xl border border-gray-200 hover:border-gray-400 active:border-gray-400 transition-colors text-sm font-medium text-black"
-          >
-            <XIcon />
-            Continue with X
-          </button>
         </div>
 
         <p className="text-[11px] text-gray-400 text-center mt-5 leading-relaxed">
@@ -80,10 +73,3 @@ function GithubIcon() {
   );
 }
 
-function XIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
-  );
-}
