@@ -21,10 +21,30 @@ if (Object.keys(socialProviders).length === 0) {
   );
 }
 
+// Allow sign-in flows from the apex, www, and the legacy explorer subdomain so
+// any of the three URLs work end-to-end.
+const baseURL = process.env.BETTER_AUTH_URL || 'http://localhost:3000';
+const trustedOrigins = [baseURL];
+if (baseURL.includes('usecaselab.org')) {
+  trustedOrigins.push(
+    'https://usecaselab.org',
+    'https://www.usecaselab.org',
+    'https://explorer.usecaselab.org'
+  );
+}
+
 export const auth = betterAuth({
   database: db,
-  baseURL: process.env.BETTER_AUTH_URL || 'http://localhost:3000',
+  baseURL,
   secret: process.env.BETTER_AUTH_SECRET || 'dev-secret-change-me',
   socialProviders,
-  trustedOrigins: [process.env.BETTER_AUTH_URL || 'http://localhost:3000'],
+  trustedOrigins: Array.from(new Set(trustedOrigins)),
+  advanced: {
+    // Sign in once on usecaselab.org and the cookie is valid on www and
+    // explorer subdomains too.
+    crossSubDomainCookies: {
+      enabled: baseURL.includes('usecaselab.org'),
+      domain: '.usecaselab.org',
+    },
+  },
 });
