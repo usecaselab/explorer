@@ -9,11 +9,10 @@ interface SidebarProps {
   onNavigateHome: () => void
   onNavigateRFPs: () => void
   onNavigateToolkit: () => void
+  onOpenContact: () => void
 }
 
-const CONTACT_URL = 'https://forms.gle/7Mrh3ZSL1scRw15j7'
-
-export default function Sidebar({ current, onNavigateHome, onNavigateRFPs, onNavigateToolkit }: SidebarProps) {
+export default function Sidebar({ current, onNavigateHome, onNavigateRFPs, onNavigateToolkit, onOpenContact }: SidebarProps) {
   const items: {
     label: string
     icon: React.ComponentType<{ className?: string }>
@@ -43,7 +42,7 @@ export default function Sidebar({ current, onNavigateHome, onNavigateRFPs, onNav
       label: 'Contact',
       icon: Mail,
       active: false,
-      href: CONTACT_URL,
+      onClick: onOpenContact,
     },
   ]
 

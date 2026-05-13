@@ -4,6 +4,7 @@ import IdeaPage, { IdeaEntry } from './components/IdeaPage';
 import { fetchAllIdeas } from './lib/api';
 import ToolkitPage from './components/ToolkitPage';
 import SubmitIdeaModal from './components/SubmitIdeaModal';
+import ContactModal from './components/ContactModal';
 import Sidebar from './components/Sidebar';
 import MobileNav from './components/MobileNav';
 import RFPsPage from './components/RFPsPage';
@@ -37,6 +38,7 @@ const App: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [submitOpen, setSubmitOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [totalIdeas, setTotalIdeas] = useState<number | null>(null);
   const [searchFocused, setSearchFocused] = useState(false);
@@ -279,6 +281,7 @@ const App: React.FC = () => {
         onNavigateHome={navigateHome}
         onNavigateRFPs={navigateRFPs}
         onNavigateToolkit={navigateToolkit}
+        onOpenContact={() => setContactOpen(true)}
       />
 
       <div className="flex-1 min-w-0 flex flex-col md:pl-8 lg:pl-16">
@@ -395,6 +398,7 @@ const App: React.FC = () => {
       </div>
 
       <SubmitIdeaModal open={submitOpen} onClose={() => setSubmitOpen(false)} />
+      <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
       <MobileNav
         open={mobileNavOpen}
         current={sidebarRoute}
@@ -402,6 +406,7 @@ const App: React.FC = () => {
         onNavigateHome={navigateHome}
         onNavigateRFPs={navigateRFPs}
         onNavigateToolkit={navigateToolkit}
+        onOpenContact={() => setContactOpen(true)}
       />
     </div>
   );

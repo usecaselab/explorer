@@ -3,8 +3,6 @@ import { X, Lightbulb, FileText, Wrench, Mail } from 'lucide-react'
 import type { RouteName } from './Sidebar'
 import ThemeToggle from './ThemeToggle'
 
-const CONTACT_URL = 'https://forms.gle/7Mrh3ZSL1scRw15j7'
-
 interface MobileNavProps {
   open: boolean
   current: RouteName
@@ -12,6 +10,7 @@ interface MobileNavProps {
   onNavigateHome: () => void
   onNavigateRFPs: () => void
   onNavigateToolkit: () => void
+  onOpenContact: () => void
 }
 
 export default function MobileNav({
@@ -21,6 +20,7 @@ export default function MobileNav({
   onNavigateHome,
   onNavigateRFPs,
   onNavigateToolkit,
+  onOpenContact,
 }: MobileNavProps) {
   // Lock body scroll and bind Escape while open.
   useEffect(() => {
@@ -73,7 +73,7 @@ export default function MobileNav({
       label: 'Contact',
       icon: Mail,
       active: false,
-      href: CONTACT_URL,
+      onClick: handle(onOpenContact),
     },
   ]
 
