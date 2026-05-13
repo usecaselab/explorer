@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import { execSync } from 'child_process';
-import { defineConfig, loadEnv, Plugin } from 'vite';
+import { defineConfig, Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 
 function staticMirrorsPlugin(): Plugin {
@@ -16,7 +16,6 @@ function staticMirrorsPlugin(): Plugin {
         const urlPath = req.url.split('?')[0].split('#')[0];
         const firstSegment = urlPath.split('/')[1];
         if (!mirroredRoots.includes(firstSegment)) return next();
-        // Skip asset/file requests — Vite's static serving handles them
         if (urlPath.includes('.')) return next();
         const filePath = path.resolve(__dirname, 'public', '.' + urlPath, 'index.html');
         if (fs.existsSync(filePath)) {
@@ -48,7 +47,12 @@ function lastUpdatedPlugin(): Plugin {
       if (id !== resolvedVirtualModuleId) return;
 
       const dataDir = path.resolve(__dirname, 'public/data');
-      const files = fs.readdirSync(dataDir).filter(f => f.endsWith('.md'));
+      let files: string[] = [];
+      try {
+        files = fs.readdirSync(dataDir).filter((f) => f.endsWith('.md'));
+      } catch {
+        // dir may not exist if data layout changes
+      }
       const dates: Record<string, string> = {};
 
       for (const file of files) {
@@ -66,47 +70,30 @@ function lastUpdatedPlugin(): Plugin {
       }
 
       return `export default ${JSON.stringify(dates)};`;
-    }
+    },
   };
 }
 
-export default defineConfig(({ mode }) => {
-    const env = loadEnv(mode, '.', '');
-    return {
-      base: '/',
-      server: {
-        port: 3000,
-        host: '0.0.0.0',
-        allowedHosts: ['.ngrok-free.app', '.ngrok.io', '.ngrok.app'],
-        proxy: {
-          '/api': {
-            target: 'http://localhost:3001',
-            changeOrigin: true,
-          },
-          '/llms.txt': {
-            target: 'http://localhost:3001',
-            changeOrigin: true,
-          },
+export default defineConfig({
+  base: '/',
+  server: {
+    port: 3000,
+    host: '0.0.0.0',
+    allowedHosts: ['.ngrok-free.app', '.ngrok.io', '.ngrok.app'],
+  },
+  plugins: [staticMirrorsPlugin(), react(), lastUpdatedPlugin()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, '.'),
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          three: ['three', '@react-three/fiber', '@react-three/drei'],
         },
       },
-      plugins: [staticMirrorsPlugin(), react(), lastUpdatedPlugin()],
-      define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
-      },
-      resolve: {
-        alias: {
-          '@': path.resolve(__dirname, '.'),
-        }
-      },
-      build: {
-        rollupOptions: {
-          output: {
-            manualChunks: {
-              three: ['three', '@react-three/fiber', '@react-three/drei'],
-            }
-          }
-        }
-      }
-    };
+    },
+  },
 });

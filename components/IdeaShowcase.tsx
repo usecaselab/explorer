@@ -1,22 +1,7 @@
-import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react'
-import { Sparkles, TrendingUp, Clock, ChevronDown } from 'lucide-react'
+import React, { useEffect, useState, useMemo, useRef } from 'react'
 import type { IdeaEntry } from './IdeaPage'
 import Shape3D, { ShapeType } from './Shape3D'
-import VoteButton from './VoteButton'
-import { fetchIdeasBulkState, fetchAllIdeas, fetchOverrides } from '../lib/api'
-import { useSession } from '../lib/auth-client'
-
-function applyOverride(idea: IdeaEntry, override: any): IdeaEntry {
-  if (!override) return idea
-  return {
-    ...idea,
-    title: override.title || idea.title,
-    problem: override.problem || idea.problem,
-    solutionSketch: override.solutionSketch || idea.solutionSketch,
-    whyEthereum: override.whyEthereum || idea.whyEthereum,
-    domains: override.domains || idea.domains,
-  }
-}
+import { fetchAllIdeas } from '../lib/api'
 
 // 16 PR domains, each with its own color and shape
 const DOMAIN_CONFIG: Record<string, { label: string; color: string; shape: ShapeType }> = {
@@ -45,52 +30,6 @@ function getDomainConfig(domains: string[]) {
   return DOMAIN_CONFIG['ai']
 }
 
-function parseFrontmatter(content: string) {
-  const match = content.match(/^---\n([\s\S]*?)\n---\n/)
-  if (!match) return { meta: {} as Record<string, string>, body: content }
-  const meta: Record<string, string> = {}
-  for (const line of match[1].split('\n')) {
-    const idx = line.indexOf(':')
-    if (idx === -1) continue
-    const key = line.slice(0, idx).trim()
-    let val = line.slice(idx + 1).trim()
-    if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
-      val = val.slice(1, -1)
-    }
-    meta[key] = val
-  }
-  return { meta, body: content.slice(match[0].length) }
-}
-
-function parseSection(body: string, heading: string): string {
-  const regex = new RegExp(`## ${heading}\\s*\\n([\\s\\S]*?)(?=\\n## |$)`)
-  const match = body.match(regex)
-  return match ? match[1].trim() : ''
-}
-
-function parseLinks(body: string, heading: string) {
-  const raw = parseSection(body, heading)
-  if (!raw) return []
-  const links: { name: string; url: string; description: string }[] = []
-  for (const line of raw.split('\n')) {
-    const m = line.match(/^- \[([^\]]+)\]\(([^)]+)\)(?:\s*-\s*(.*))?$/)
-    if (m) links.push({ name: m[1], url: m[2], description: m[3] || '' })
-  }
-  return links
-}
-
-function parseIdeaMarkdown(content: string, id: string): IdeaEntry {
-  const { meta, body } = parseFrontmatter(content)
-  return {
-    id,
-    title: meta.title || id,
-    problem: parseSection(body, 'Problem'),
-    solutionSketch: parseSection(body, 'Solution'),
-    whyEthereum: parseSection(body, 'Why Ethereum'),
-    domains: (meta.domains || '').split(',').map(d => d.trim()).filter(Boolean),
-  }
-}
-
 function ScrollTrigger({ onVisible }: { onVisible: () => void }) {
   const ref = useRef<HTMLDivElement>(null)
   const cb = useRef(onVisible)
@@ -110,88 +49,47 @@ function ScrollTrigger({ onVisible }: { onVisible: () => void }) {
   return <div ref={ref} className="h-1" />
 }
 
-export { getDomainConfig, DOMAIN_CONFIG, parseIdeaMarkdown }
+export { getDomainConfig, DOMAIN_CONFIG }
 
 interface IdeaShowcaseProps {
   onSelect: (idea: IdeaEntry, allIdeas: IdeaEntry[]) => void
   searchQuery?: string
-  refreshNonce?: number
   onClearSearch?: () => void
 }
 
 export default function IdeaShowcase({
   onSelect,
   searchQuery = '',
-  refreshNonce = 0,
   onClearSearch,
 }: IdeaShowcaseProps) {
   const [ideas, setIdeas] = useState<IdeaEntry[]>([])
   const [loading, setLoading] = useState(true)
   const [activeCategory, setActiveCategory] = useState('all')
-  const [sortMode, setSortMode] = useState<'default' | 'votes' | 'latest'>('default')
-  const [onlyBuilding, setOnlyBuilding] = useState(false)
-  const [voteCounts, setVoteCounts] = useState<Record<string, number>>({})
-  const [builderCounts, setBuilderCounts] = useState<Record<string, number>>({})
-  const [myVotes, setMyVotes] = useState<Set<string>>(new Set())
-  const { data: session } = useSession()
 
   useEffect(() => {
-    let cancelled = false
-    fetchIdeasBulkState()
-      .then((s) => {
-        if (cancelled) return
-        const vCounts: Record<string, number> = {}
-        const bCounts: Record<string, number> = {}
-        for (const id of Object.keys(s.counts)) {
-          vCounts[id] = s.counts[id].votes
-          bCounts[id] = s.counts[id].builders
-        }
-        setVoteCounts(vCounts)
-        setBuilderCounts(bCounts)
-        setMyVotes(new Set(s.myVotes))
-      })
-      .catch(() => {
-        // soft-fail — grid still works without vote state
-      })
-    return () => {
-      cancelled = true
-    }
-  }, [session?.user?.id, refreshNonce])
-
-  useEffect(() => {
-    const load = async () => {
-      try {
-        const [allIdeas, overrides] = await Promise.all([
-          fetchAllIdeas(),
-          fetchOverrides().catch(() => ({} as Record<string, any>)),
-        ])
-
-        const valid: IdeaEntry[] = allIdeas.map((row) => {
-          const idea: IdeaEntry = {
-            id: row.id,
-            title: row.title,
-            problem: row.problem,
-            solutionSketch: row.solutionSketch,
-            whyEthereum: row.whyEthereum,
-            domains: row.domains,
-            author: row.author,
-            createdAt: row.createdAt,
-          }
-          return applyOverride(idea, overrides[idea.id])
-        })
-
+    fetchAllIdeas()
+      .then((rows) => {
+        const valid: IdeaEntry[] = rows.map((row) => ({
+          id: row.id,
+          title: row.title,
+          problem: row.problem,
+          solutionSketch: row.solutionSketch,
+          whyEthereum: row.whyEthereum,
+          domains: row.domains,
+          author: row.author,
+          createdAt: row.createdAt,
+        }))
+        // Stable shuffle: only on initial load, to vary the home page.
         for (let i = valid.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [valid[i], valid[j]] = [valid[j], valid[i]]
         }
         setIdeas(valid)
-      } catch (err) {
+      })
+      .catch((err) => {
         console.warn('Failed to load ideas', err)
-      } finally {
-        setLoading(false)
-      }
-    }
-    load()
+      })
+      .finally(() => setLoading(false))
   }, [])
 
   const PAGE_SIZE = 20
@@ -201,9 +99,8 @@ export default function IdeaShowcase({
 
   const filtered = useMemo(() => {
     const q = searchQuery.trim().toLowerCase()
-    const list = ideas.filter(idea => {
+    return ideas.filter(idea => {
       if (activeCategory !== 'all' && !idea.domains.includes(activeCategory)) return false
-      if (onlyBuilding && (builderCounts[idea.id] || 0) === 0) return false
       if (!q) return true
       return (
         idea.title.toLowerCase().includes(q) ||
@@ -212,18 +109,7 @@ export default function IdeaShowcase({
         idea.domains.some(d => (DOMAIN_CONFIG[d]?.label || d).toLowerCase().includes(q))
       )
     })
-    if (sortMode === 'votes') {
-      return [...list].sort(
-        (a, b) => (voteCounts[b.id] || 0) - (voteCounts[a.id] || 0)
-      )
-    }
-    if (sortMode === 'latest') {
-      return [...list].sort(
-        (a, b) => (b.createdAt || 0) - (a.createdAt || 0)
-      )
-    }
-    return list
-  }, [ideas, activeCategory, onlyBuilding, searchQuery, sortMode, voteCounts, builderCounts])
+  }, [ideas, activeCategory, searchQuery])
 
   const visible = filtered.slice(0, (page + 1) * PAGE_SIZE)
   const hasMore = visible.length < filtered.length
@@ -231,99 +117,71 @@ export default function IdeaShowcase({
   if (loading) {
     return (
       <div className="flex items-center justify-center py-32">
-        <div className="w-6 h-6 border-2 border-black border-t-transparent rounded-full animate-spin" />
+        <div className="w-6 h-6 border-2 border-black dark:border-white border-t-transparent dark:border-t-transparent rounded-full animate-spin" />
       </div>
     )
   }
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
-      {/* Sort + filter toolbar */}
+    <section className="w-full max-w-6xl px-4 sm:px-6 pb-8 sm:pb-12 md:pb-16">
       <div className="flex flex-wrap items-center gap-2 mb-8 sm:mb-12">
         <button
-          onClick={() => setSortMode(sortMode === 'latest' ? 'default' : 'latest')}
-          className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
-            sortMode === 'latest'
-              ? 'bg-black text-white shadow-sm'
-              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+          onClick={() => setActiveCategory('all')}
+          className={`px-3.5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
+            activeCategory === 'all'
+              ? 'bg-black text-white dark:bg-white dark:text-black'
+              : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-neutral-900 dark:text-gray-400 dark:hover:bg-neutral-800'
           }`}
         >
-          <Clock className="w-3 h-3 flex-shrink-0" />
-          Latest
+          All
         </button>
-        <button
-          onClick={() => setSortMode(sortMode === 'votes' ? 'default' : 'votes')}
-          className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
-            sortMode === 'votes'
-              ? 'bg-black text-white shadow-sm'
-              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-          }`}
-        >
-          <TrendingUp className="w-3 h-3 flex-shrink-0" />
-          Most voted
-        </button>
-        <button
-          onClick={() => setOnlyBuilding((b) => !b)}
-          className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
-            onlyBuilding
-              ? 'bg-black text-white shadow-sm'
-              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-          }`}
-        >
-          <Sparkles className={`w-3 h-3 flex-shrink-0 ${onlyBuilding ? 'text-white' : 'text-amber-500'}`} />
-          Building
-        </button>
-
-        <div className="relative ml-auto">
-          <select
-            value={activeCategory}
-            onChange={(e) => setActiveCategory(e.target.value)}
-            className="appearance-none pl-4 pr-9 py-1.5 sm:py-2 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs sm:text-sm font-medium focus:outline-none cursor-pointer"
-          >
-            <option value="all">All domains</option>
-            {Object.entries(DOMAIN_CONFIG).map(([id, cfg]) => (
-              <option key={id} value={id}>{cfg.label}</option>
-            ))}
-          </select>
-          <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-500 pointer-events-none" />
-        </div>
+        {Object.entries(DOMAIN_CONFIG).map(([id, cfg]) => {
+          const active = activeCategory === id
+          return (
+            <button
+              key={id}
+              onClick={() => setActiveCategory(active ? 'all' : id)}
+              className={`flex items-center gap-1.5 px-3.5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
+                active
+                  ? 'bg-black text-white dark:bg-white dark:text-black'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-neutral-900 dark:text-gray-400 dark:hover:bg-neutral-800'
+              }`}
+            >
+              <span
+                className="w-1.5 h-1.5 rounded-full"
+                style={{ backgroundColor: active ? 'currentColor' : cfg.color }}
+              />
+              {cfg.label}
+            </button>
+          )
+        })}
       </div>
 
-      {/* Grid */}
       <div className="grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {visible.map(idea => {
           const conf = getDomainConfig(idea.domains)
-          const votes = voteCounts[idea.id] || 0
-          const voted = myVotes.has(idea.id)
           return (
             <div
               key={idea.id}
-              className="group relative rounded-xl border border-gray-100 hover:border-gray-200 transition-all hover:shadow-sm overflow-hidden"
+              className="group relative rounded-xl border border-gray-100 dark:border-gray-900 hover:border-gray-200 dark:hover:border-gray-800 transition-all hover:shadow-sm overflow-hidden"
             >
               <a
                 href={`/idea/${idea.id}`}
                 onClick={(e) => {
-                  // Let the browser handle modified clicks (cmd-click → new tab, etc.)
                   if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
                   e.preventDefault()
                   onSelect(idea, ideas)
                 }}
                 className="text-left flex flex-row sm:flex-col w-full no-underline text-inherit"
               >
-                <div className="relative w-24 h-24 sm:w-full sm:aspect-[4/3] sm:h-auto bg-gray-50/50 flex-shrink-0">
+                <div className="relative w-24 h-24 sm:w-full sm:aspect-[4/3] sm:h-auto bg-gray-50/50 dark:bg-neutral-900/50 flex-shrink-0">
                   <Shape3D shape={conf.shape} color={conf.color} />
-                  {(builderCounts[idea.id] || 0) > 0 && (
-                    <span className="absolute top-2 right-2 inline-flex items-center gap-0.5 text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
-                      <Sparkles className="w-2.5 h-2.5" />
-                      <span className="hidden sm:inline">Building</span>
-                    </span>
-                  )}
                 </div>
-                <div className="p-3 sm:p-4 flex flex-col justify-center min-w-0 pr-12 sm:pr-3">
-                  <h3 className="font-heading text-sm font-bold text-black leading-snug mb-1">
+                <div className="p-3 sm:p-4 flex flex-col justify-center min-w-0">
+                  <h3 className="font-heading text-sm font-bold text-black dark:text-white leading-snug mb-1">
                     {idea.title}
                   </h3>
-                  <p className="text-xs text-gray-400 leading-relaxed line-clamp-2 mb-2">
+                  <p className="text-xs text-gray-400 dark:text-gray-500 leading-relaxed line-clamp-2 mb-2">
                     {idea.problem}
                   </p>
                   <div className="flex flex-wrap gap-1">
@@ -342,23 +200,6 @@ export default function IdeaShowcase({
                   </div>
                 </div>
               </a>
-              <div className="absolute bottom-2 right-2 z-10">
-                <VoteButton
-                  ideaId={idea.id}
-                  votes={votes}
-                  voted={voted}
-                  size="sm"
-                  onChange={(next) => {
-                    setVoteCounts((prev) => ({ ...prev, [idea.id]: next.votes }))
-                    setMyVotes((prev) => {
-                      const copy = new Set(prev)
-                      if (next.voted) copy.add(idea.id)
-                      else copy.delete(idea.id)
-                      return copy
-                    })
-                  }}
-                />
-              </div>
             </div>
           )
         })}
@@ -376,17 +217,17 @@ export default function IdeaShowcase({
 
         return (
           <div className="text-center py-12 sm:py-16">
-            <p className="font-heading text-xl sm:text-2xl font-bold text-black mb-2">
+            <p className="font-heading text-xl sm:text-2xl font-bold text-black dark:text-white mb-2">
               {hasSearch
-                ? <>No ideas match &ldquo;<span className="text-gray-500">{searchQuery.trim()}</span>&rdquo;</>
+                ? <>No ideas match &ldquo;<span className="text-gray-500 dark:text-gray-400">{searchQuery.trim()}</span>&rdquo;</>
                 : 'No ideas match this filter'}
             </p>
             {(hasSearch || hasFilter) && (
-              <p className="text-sm text-gray-400 mb-6">
+              <p className="text-sm text-gray-400 dark:text-gray-500 mb-6">
                 {hasSearch && hasFilter
-                  ? <>Filtered by <span className="text-gray-600">{activeLabel}</span>. Try broadening your search or clearing the filter.</>
+                  ? <>Filtered by <span className="text-gray-600 dark:text-gray-300">{activeLabel}</span>. Try broadening your search or clearing the filter.</>
                   : hasFilter
-                    ? <>Filtered by <span className="text-gray-600">{activeLabel}</span>.</>
+                    ? <>Filtered by <span className="text-gray-600 dark:text-gray-300">{activeLabel}</span>.</>
                     : 'Try a different search term or browse by category.'}
               </p>
             )}
@@ -394,7 +235,7 @@ export default function IdeaShowcase({
               {hasSearch && onClearSearch && (
                 <button
                   onClick={onClearSearch}
-                  className="px-4 py-2 bg-black text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors"
+                  className="px-4 py-2 bg-black text-white dark:bg-white dark:text-black text-sm font-medium rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
                 >
                   Clear search
                 </button>
@@ -402,7 +243,7 @@ export default function IdeaShowcase({
               {hasFilter && (
                 <button
                   onClick={() => setActiveCategory('all')}
-                  className="px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors"
+                  className="px-4 py-2 bg-gray-100 text-gray-700 dark:bg-neutral-900 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-neutral-800 transition-colors"
                 >
                   Clear filter
                 </button>
@@ -411,7 +252,7 @@ export default function IdeaShowcase({
 
             {suggestions.length > 0 && (
               <div className="max-w-3xl mx-auto">
-                <p className="text-xs font-medium text-gray-400 uppercase tracking-wide mb-4">
+                <p className="text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-wide mb-4">
                   Or explore these
                 </p>
                 <div className="grid gap-3 grid-cols-1 sm:grid-cols-3 text-left">
@@ -426,12 +267,12 @@ export default function IdeaShowcase({
                           e.preventDefault()
                           onSelect(idea, ideas)
                         }}
-                        className="group flex items-center gap-3 rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all p-3 text-left no-underline text-inherit"
+                        className="group flex items-center gap-3 rounded-xl border border-gray-100 dark:border-gray-900 hover:border-gray-200 dark:hover:border-gray-800 hover:shadow-sm transition-all p-3 text-left no-underline text-inherit"
                       >
-                        <div className="w-12 h-12 flex-shrink-0 bg-gray-50/50 rounded-lg overflow-hidden">
+                        <div className="w-12 h-12 flex-shrink-0 bg-gray-50/50 dark:bg-neutral-900/50 rounded-lg overflow-hidden">
                           <Shape3D shape={conf.shape} color={conf.color} />
                         </div>
-                        <span className="font-heading text-sm font-bold text-black leading-snug line-clamp-2">
+                        <span className="font-heading text-sm font-bold text-black dark:text-white leading-snug line-clamp-2">
                           {idea.title}
                         </span>
                       </a>
@@ -445,7 +286,7 @@ export default function IdeaShowcase({
       })()}
 
       {filtered.length === 0 && ideas.length === 0 && (
-        <p className="text-center text-gray-400 text-lg py-12">
+        <p className="text-center text-gray-400 dark:text-gray-500 text-lg py-12">
           No ideas available.
         </p>
       )}

@@ -2,132 +2,92 @@
 
 # Use Case Lab
 
-**Discover real-world Ethereum use cases across 30+ domains**
+**A curated index of real-world Ethereum use cases.**
 
-[Live Demo](https://usecaselab.eth.limo) · [Submit a Use Case](https://github.com/usecaselab/explorer/issues/new?template=use-case-submission.md&title=%5BUse%20Case%5D%20) · [Report Bug](https://github.com/usecaselab/explorer/issues)
+[Live site](https://usecaselab.org) · [Browse all ideas](public/data/ideas) · [Add a new idea](https://github.com/usecaselab/explorer/new/main?filename=public%2Fdata%2Fideas%2Fnew-idea.md)
 
 </div>
 
 ---
 
-## About
+## Want to contribute an idea?
 
-Use Case Lab is an interactive compendium of real-world Ethereum use cases, organized across 30+ domains including Finance, Healthcare, Supply Chain, Gaming, and more. Built by the Ethereum Foundation to help developers, entrepreneurs, and researchers discover how blockchain technology is solving real problems across industries.
+Use Case Lab is a curated index. Every idea here is a markdown file in [`public/data/ideas/`](public/data/ideas) — you contribute by opening a pull request that adds or edits one.
 
-### Features
+The fastest path is to click **Add Idea** on [the live site](https://usecaselab.org). The form will pre-fill a new file on GitHub — you fill it out, click "Propose new file," and a PR opens automatically. We review it, suggest edits if needed, and merge.
 
-- **Search** - Find use cases, projects, and ideas across all domains
-- **Explore by Category** - Browse 6 major categories: Society, Finance, Consumer, Enterprise, Digital, and Physical
-- **Domain Deep-Dives** - Detailed overviews with problem statements, existing projects, and resources
-- **Bounties** - Discover funding opportunities and open challenges
-- **Community Submissions** - Submit your own use cases via GitHub
+You can also skip the form and add the file directly in the repo:
 
-## Getting Started
+1. Create `public/data/ideas/<your-slug>.md`
+2. Use the format below
+3. Open a PR
 
-### Prerequisites
+## How to write a good idea
 
-- [Node.js](https://nodejs.org/) (v18 or higher)
-- npm or yarn
+Each idea is short (3 sections, ~200–800 words total). Treat it as a one-pager for someone who could build it — enough to spark a project, not a spec.
 
-### Installation
+```markdown
+---
+title: "A short, punchy title"
+domains: commerce, finance
+---
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/usecaselab/explorer.git
-   cd explorer
-   ```
+## Problem
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+What's broken or missing today. Be specific about *who* this hurts and
+*why* the gap exists. Avoid hand-waving ("crypto could fix X"); name the
+concrete failure.
 
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
+## Solution
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+A sketch of how you'd address it. The shape of the thing, not full
+specs. One or two paragraphs at most.
 
-### Build for Production
+## Why Ethereum
+
+What does Ethereum bring that nothing else can? Verifiability,
+composability, neutrality, enforcement, censorship-resistance —
+pick the one that's load-bearing for *this* idea and explain it.
+Lead with a single-word capability and a colon for a color chip:
+"Verifiability: …", "Composability: …", or "Enforcement: …".
+```
+
+### Guidelines we look for in reviews
+
+- **Real problem.** The Problem section should describe a situation that exists today, not a hypothetical. If it could be solved with a normal database, say so and explain why a normal database isn't enough.
+- **Specific, not generic.** "Tokenize X" or "decentralize Y" without saying *what changes for whom* won't get merged. Pick a concrete user and walk through what they experience.
+- **Why Ethereum, honestly.** If the answer to "why Ethereum?" is "because crypto," skip it. The strongest ideas use one of Ethereum's actual primitives (verifiability, composability, neutrality, programmable enforcement) in a way that's hard to substitute.
+- **Reasonable scope.** One idea per file. If you're describing a whole platform with five sub-products, split it up — or pitch the single most interesting piece.
+- **Domain IDs match.** The `domains:` frontmatter values must match the IDs in [`components/IdeaShowcase.tsx`](components/IdeaShowcase.tsx) (the `DOMAIN_CONFIG` keys). Currently: `ai`, `business-operations`, `civil-society`, `commerce`, `environment`, `finance`, `food-and-agriculture`, `government`, `health`, `identity`, `insurance`, `logistics-and-trade`, `media`, `real-estate-and-housing`, `science`, `utilities`. Pick 1–4.
+
+We're not strict about prose style — write like you would in a doc to a colleague. Clear and direct beats clever.
+
+## Editing an existing idea
+
+Every idea page has an **Edit** button that opens that file on GitHub. Click it, make your change, propose the edit, and the same PR flow applies. Typos, broken links, sharper framings — all welcome.
+
+## How it gets onto the site
+
+```
+public/data/ideas/*.md  ──build─→  public/ideas.json  ──fetch─→  React SPA
+```
+
+When your PR merges into `main`, GitHub Actions rebuilds the site and your idea is live in a couple of minutes. There's no separate review step or moderation queue — merge is the publish.
+
+## Running the site locally (only if you're touching code)
 
 ```bash
-npm run build
-npm run preview
+pnpm install
+pnpm dev          # http://localhost:3000
+pnpm build        # outputs static dist/
 ```
 
-## Project Structure
+No env vars. No backend. No database. Everything is read from the markdown files at build time.
 
-```
-├── App.tsx                 # Main application component
-├── index.html              # HTML entry point with SEO meta tags
-├── index.tsx               # React entry point
-├── constants.ts            # Domain categories and initial data
-├── types.ts                # TypeScript type definitions
-├── utils.ts                # Utility functions
-├── components/
-│   ├── DomainSidebar.tsx   # Category navigation sidebar
-│   ├── OverviewTab.tsx     # Domain overview content
-│   ├── BountiesTab.tsx     # Bounties and funding opportunities
-│   ├── Logo.tsx            # Application logo
-│   ├── PageFooter.tsx      # Page metadata footer
-│   └── SiteFooter.tsx      # Site-wide footer
-└── public/
-    └── data/               # Domain markdown files
-        ├── ai.md
-        ├── education.md
-        ├── energy.md
-        └── ...
-```
+## Tech stack
 
-## Contributing
-
-We welcome contributions! Here's how you can help:
-
-### Submit a Use Case
-
-1. Click the "Submit Use Case" button on the homepage, or
-2. [Open a new issue](https://github.com/usecaselab/explorer/issues/new?template=use-case-submission.md&title=%5BUse%20Case%5D%20) with your use case details
-
-### Contribute Code
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### Add or Update Domain Content
-
-Domain content is stored as Markdown files in `/public/data/`. Each file follows a structured format with sections for:
-- Problem Statement
-- Ideas
-- Projects
-- Resources
-- Bounties
-
-## Tech Stack
-
-- **Framework**: [React](https://react.dev/) 19
-- **Build Tool**: [Vite](https://vitejs.dev/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Language**: TypeScript
+React 19 · Vite 6 · TypeScript · Tailwind (CDN) · Three.js / R3F · Lucide icons. Hosted on GitHub Pages.
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
-
-## Links
-
-- **Website**: [usecaselab.eth.limo](https://usecaselab.eth.limo)
-- **GitHub**: [github.com/usecaselab/explorer](https://github.com/usecaselab/explorer)
-- **Ethereum Foundation**: [ethereum.org](https://ethereum.org)
-
----
-
-<div align="center">
-
-Built with ❤️ by the [Ethereum Foundation](https://ethereum.org)
-
-</div>
+MIT.

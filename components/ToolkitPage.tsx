@@ -1,22 +1,16 @@
 import React, { useState, useCallback } from 'react'
-import { ArrowLeft, ArrowUpRight, GitBranch, GraduationCap, Users, Terminal, Palette, Copy, Check } from 'lucide-react'
-import Shape3D from './Shape3D'
-
-interface ToolkitPageProps {
-  onBack: () => void
-}
+import { ArrowUpRight, GitBranch, GraduationCap, Terminal, Palette, Copy, Check } from 'lucide-react'
 
 const TOOLS = [
   {
-    title: 'Explorer Skill',
-    description: 'A Claude Code skill that gives AI deep knowledge of 122 Ethereum use cases. Search by keyword or domain, brainstorm product ideas, and research what\'s being built — all from your terminal.',
-    url: '/explorer.skill',
+    title: 'Usecase Skill',
+    description: 'A Claude Code skill that grounds your work in the Use Case Lab — ~120 curated Ethereum use cases across 16 domains. Ask Claude what\'s been tried in a domain, find adjacent work to your idea, or check whether your framing overlaps with what already exists.',
+    url: '/usecase.md',
     icon: Terminal,
     color: '#0891B2',
-    shape: 'icosahedron' as const,
-    tags: ['Claude Code', 'AI', 'Research'],
+    tags: ['Claude Code', 'Research', 'Grounding'],
     cta: 'Download skill',
-    installCmd: 'curl -sL usecaselab.org/skill.md',
+    installCmd: 'curl -sL usecaselab.org/usecase.md',
   },
   {
     title: 'Crops Design',
@@ -24,7 +18,6 @@ const TOOLS = [
     url: 'https://www.cropsdesign.com/',
     icon: Palette,
     color: '#F97316',
-    shape: 'dodecahedron' as const,
     tags: ['Design', 'Branding', 'Product Design'],
     cta: 'Visit Crops',
   },
@@ -34,29 +27,17 @@ const TOOLS = [
     url: 'https://ethskills.com/',
     icon: GraduationCap,
     color: '#7C3AED',
-    shape: 'torusKnot' as const,
     tags: ['Solidity', 'DeFi', 'ERC Standards', 'Learning'],
     cta: 'Explore skills',
   },
   {
     title: 'Nexth',
     description: 'Full-stack Ethereum starter kit. Next.js, wagmi, viem, RainbowKit — everything wired up so you can start building immediately instead of configuring.',
-    url: 'https://github.com/usecaselab/nexth',
+    url: 'https://github.com/wslyvh/nexth',
     icon: GitBranch,
     color: '#2563EB',
-    shape: 'box' as const,
     tags: ['Next.js', 'wagmi', 'viem', 'Starter Kit'],
     cta: 'View on GitHub',
-  },
-  {
-    title: 'Use Case Lab Community',
-    description: 'Connect with builders, researchers, and product thinkers advancing human-centered Ethereum adoption. Share ideas, find collaborators, get feedback on your project.',
-    url: 'https://docs.google.com/forms/d/e/1FAIpQLScuPwPvOyMrMeCuGs-lENYm3WlFXl3Pvu2eEJPqN61Kn1DCFg/viewform',
-    icon: Users,
-    color: '#059669',
-    shape: 'sphere' as const,
-    tags: ['Community', 'Collaboration', 'Support'],
-    cta: 'Join the community',
   },
 ]
 
@@ -71,87 +52,96 @@ function InstallCommand({ command }: { command: string }) {
   return (
     <button
       onClick={handleCopy}
-      className="w-full flex items-center gap-2 bg-gray-100 text-gray-500 rounded-xl px-4 py-3 font-mono text-xs hover:bg-gray-200 transition-colors"
+      className="w-full flex items-center gap-2 bg-gray-50 text-gray-500 dark:bg-neutral-900 dark:text-gray-400 rounded-lg px-3 py-2 font-mono text-xs hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors border border-gray-100 dark:border-gray-800"
     >
-      <span className="text-gray-400 select-none">$</span>
-      <code className="flex-1 text-left truncate text-gray-600">{command}</code>
-      {copied ? <Check className="w-4 h-4 text-green-500 flex-shrink-0" /> : <Copy className="w-4 h-4 text-gray-400 flex-shrink-0" />}
+      <span className="text-gray-400 dark:text-gray-500 select-none">$</span>
+      <code className="flex-1 text-left truncate text-gray-600 dark:text-gray-300">{command}</code>
+      {copied ? <Check className="w-3.5 h-3.5 text-green-500 flex-shrink-0" /> : <Copy className="w-3.5 h-3.5 text-gray-400 dark:text-gray-500 flex-shrink-0" />}
     </button>
   )
 }
 
-export default function ToolkitPage({ onBack }: ToolkitPageProps) {
+export default function ToolkitPage() {
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
-      {/* Back */}
-      <button
-        onClick={onBack}
-        className="flex items-center gap-2 text-sm text-gray-400 hover:text-black transition-colors mb-8 sm:mb-12"
-      >
-        <ArrowLeft className="w-4 h-4" />
-        Back
-      </button>
-
-      {/* Hero */}
-      <div className="mb-10 sm:mb-16">
-        <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-black">
-          Use Case Lab Toolkit
+    <section className="w-full max-w-6xl px-4 sm:px-6 pt-4 sm:pt-6 pb-8 sm:pb-12 md:pb-16">
+      {/* Hero — same shape as RFPs */}
+      <div className="mb-8 sm:mb-12">
+        <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-black dark:text-white">
+          Toolkit<br />
+          <span className="text-gray-400 dark:text-gray-600">to ship ideas</span>
         </h1>
-        <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-500 max-w-2xl leading-relaxed">
-          Everything you need to go from idea to working Ethereum product. Starter code, knowledge, community, and AI-powered research.
-        </p>
       </div>
 
-      {/* Tool Cards */}
-      <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        {TOOLS.map(tool => {
+      {/* Tool rows — icon-led horizontal cards, distinct from idea grids and RFP wireframes */}
+      <div className="flex flex-col gap-3 sm:gap-4">
+        {TOOLS.map((tool) => {
           const Icon = tool.icon
-          return (
-            <div
-              key={tool.title}
-              className="flex flex-col rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all duration-300 ease-out overflow-hidden group"
-            >
-              <div className="hidden sm:block aspect-[4/3] w-full bg-gray-50/50">
-                <Shape3D shape={tool.shape} color={tool.color} />
+          const isExternal = tool.url.startsWith('http')
+          const hasInstall = 'installCmd' in tool && Boolean(tool.installCmd)
+          // If the tool has an install command, the whole card is informational —
+          // only the InstallCommand button itself is clickable.
+          const cardClass = hasInstall
+            ? 'flex flex-col sm:flex-row gap-4 sm:gap-6 rounded-2xl border border-gray-100 dark:border-gray-900 p-5 sm:p-6'
+            : 'group flex flex-col sm:flex-row gap-4 sm:gap-6 rounded-2xl border border-gray-100 dark:border-gray-900 hover:border-gray-300 dark:hover:border-gray-700 hover:bg-gray-50/50 dark:hover:bg-neutral-900/50 transition-all p-5 sm:p-6 no-underline text-inherit'
+
+          const Inner = (
+            <>
+              {/* Icon badge */}
+              <div
+                className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center flex-shrink-0"
+                style={{ backgroundColor: `${tool.color}12`, color: tool.color }}
+              >
+                <Icon className="w-6 h-6 sm:w-7 sm:h-7" />
               </div>
-              <div className="p-4 sm:p-5 flex flex-col flex-1">
-                <div className="flex items-center gap-2.5 mb-2">
-                  <Icon className="w-4 h-4 flex-shrink-0" style={{ color: tool.color }} />
-                  <h2 className="font-heading text-base font-bold text-black">
+
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between gap-3 mb-2">
+                  <h2 className="font-heading text-lg sm:text-xl font-bold text-black dark:text-white leading-tight">
                     {tool.title}
                   </h2>
+                  {!hasInstall && (
+                    <ArrowUpRight className="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-black dark:group-hover:text-white transition-colors flex-shrink-0" />
+                  )}
                 </div>
-                <p className="text-sm text-gray-500 leading-relaxed mb-4 flex-1">
+                <p className="text-sm sm:text-[15px] text-gray-500 dark:text-gray-400 leading-relaxed mb-3">
                   {tool.description}
                 </p>
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {tool.tags.map(tag => (
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {tool.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-[10px] font-medium px-2 py-0.5 rounded-full"
-                      style={{ backgroundColor: `${tool.color}15`, color: tool.color }}
+                      className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 dark:bg-neutral-900 dark:text-gray-400"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-                {'installCmd' in tool && tool.installCmd ? (
-                  <InstallCommand command={tool.installCmd} />
-                ) : (
-                  <a
-                    href={tool.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-black text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors"
-                  >
-                    {tool.cta} <ArrowUpRight className="w-3.5 h-3.5" />
-                  </a>
-                )}
+                {hasInstall && <InstallCommand command={tool.installCmd!} />}
               </div>
-            </div>
+            </>
+          )
+
+          if (hasInstall) {
+            return (
+              <div key={tool.title} className={cardClass}>
+                {Inner}
+              </div>
+            )
+          }
+
+          return (
+            <a
+              key={tool.title}
+              href={tool.url}
+              target={isExternal ? '_blank' : undefined}
+              rel={isExternal ? 'noopener noreferrer' : undefined}
+              className={cardClass}
+            >
+              {Inner}
+            </a>
           )
         })}
       </div>
-    </div>
+    </section>
   )
 }

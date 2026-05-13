@@ -44,37 +44,61 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="mobile-web-app-capable" content="yes" />
 
+    <!-- Set the dark class before React mounts to avoid a flash of light mode. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && prefers)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+      :root {
+        --body-bg: #ffffff;
+        --body-text: #2d2d2d;
+        --scrollbar-track: #f1f1f1;
+        --scrollbar-thumb: #888;
+        --scrollbar-thumb-hover: #555;
+      }
+      .dark {
+        --body-bg: #0a0a0a;
+        --body-text: #e5e5e5;
+        --scrollbar-track: #171717;
+        --scrollbar-thumb: #404040;
+        --scrollbar-thumb-hover: #525252;
+        color-scheme: dark;
+      }
       body {
         font-family: 'Source Sans 3', sans-serif;
-        background-color: #fff;
-        color: #2d2d2d;
+        background-color: var(--body-bg);
+        color: var(--body-text);
       }
       h1, h2, h3, h4, h5, h6, .font-heading {
         font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
         letter-spacing: -0.01em;
       }
-      /* Custom scrollbar to match the sketch vibe */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #f1f1f1;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #555;
+      /* Custom scrollbar */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+      ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-thumb-hover); }
+      /* Submit wizard step transitions */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(6px); }
+        to   { opacity: 1; transform: translateY(0); }
       }
     </style>
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             fontFamily: {

@@ -7,9 +7,12 @@ export type ShapeType =
   | 'torusKnot' | 'icosahedron' | 'octahedron' | 'dodecahedron'
   | 'torus' | 'cone' | 'sphere' | 'box'
 
+export type ShapeVariant = 'solid' | 'wireframe'
+
 interface ShapeProps {
   shape: ShapeType
   color: string
+  variant?: ShapeVariant
 }
 
 function ShapeGeometry({ type }: { type: ShapeType }) {
@@ -55,12 +58,13 @@ function FrameControl({ active }: { active: boolean }) {
   return null
 }
 
-function AnimatedShape({ shape, color, active }: ShapeProps & { active: boolean }) {
+function AnimatedShape({ shape, color, variant = 'solid', active }: ShapeProps & { active: boolean }) {
   const meshRef = useRef<THREE.Mesh>(null!)
   const wireRef = useRef<THREE.Mesh>(null!)
   const [hovered, setHovered] = useState(false)
   const vec3 = useMemo(() => new THREE.Vector3(), [])
   const wireVec3 = useMemo(() => new THREE.Vector3(), [])
+  const isWireframe = variant === 'wireframe'
 
   useFrame((_, delta) => {
     if (!active && !hovered) return
@@ -71,14 +75,15 @@ function AnimatedShape({ shape, color, active }: ShapeProps & { active: boolean 
     vec3.set(targetScale, targetScale, targetScale)
     wireVec3.set(wireTargetScale, wireTargetScale, wireTargetScale)
 
-    meshRef.current.scale.lerp(vec3, 0.08)
+    if (meshRef.current) meshRef.current.scale.lerp(vec3, 0.08)
     wireRef.current.scale.lerp(wireVec3, 0.08)
 
     const rotSpeed = hovered ? 0.8 : 0.2
-    meshRef.current.rotation.x += delta * rotSpeed * 0.7
-    meshRef.current.rotation.y += delta * rotSpeed
+    const drivenRef = meshRef.current ?? wireRef.current
+    drivenRef.rotation.x += delta * rotSpeed * 0.7
+    drivenRef.rotation.y += delta * rotSpeed
 
-    wireRef.current.rotation.copy(meshRef.current.rotation)
+    if (meshRef.current) wireRef.current.rotation.copy(meshRef.current.rotation)
   })
 
   return (
@@ -94,23 +99,25 @@ function AnimatedShape({ shape, color, active }: ShapeProps & { active: boolean 
           document.body.style.cursor = 'auto'
         }}
       >
-        <mesh ref={meshRef}>
-          <ShapeGeometry type={shape} />
-          <MeshDistortMaterial
-            color={color}
-            roughness={0.1}
-            metalness={0.9}
-            distort={hovered ? 0.4 : 0.15}
-            speed={hovered ? 5 : 2}
-          />
-        </mesh>
+        {!isWireframe && (
+          <mesh ref={meshRef}>
+            <ShapeGeometry type={shape} />
+            <MeshDistortMaterial
+              color={color}
+              roughness={0.1}
+              metalness={0.9}
+              distort={hovered ? 0.4 : 0.15}
+              speed={hovered ? 5 : 2}
+            />
+          </mesh>
+        )}
         <mesh ref={wireRef}>
           <ShapeGeometry type={shape} />
           <meshBasicMaterial
             wireframe
             color={color}
             transparent
-            opacity={hovered ? 0.5 : 0.12}
+            opacity={isWireframe ? (hovered ? 0.95 : 0.7) : (hovered ? 0.5 : 0.12)}
           />
         </mesh>
       </group>
@@ -118,7 +125,7 @@ function AnimatedShape({ shape, color, active }: ShapeProps & { active: boolean 
   )
 }
 
-export default function Shape3D({ shape, color }: ShapeProps) {
+export default function Shape3D({ shape, color, variant = 'solid' }: ShapeProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [inView, setInView] = useState(false)
 
@@ -160,7 +167,7 @@ export default function Shape3D({ shape, color }: ShapeProps) {
           <pointLight position={[-4, -2, 3]} intensity={0.4} color="#6366f1" />
           <pointLight position={[4, 2, -3]} intensity={0.3} color="#f59e0b" />
           <FrameControl active={inView} />
-          <AnimatedShape shape={shape} color={color} active={inView} />
+          <AnimatedShape shape={shape} color={color} variant={variant} active={inView} />
           <Environment preset="city" />
         </Canvas>
       )}
