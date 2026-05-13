@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect, useMemo, useRef } from 'react';
-import { X, ExternalLink } from 'lucide-react';
+import { ChevronLeft, ExternalLink } from 'lucide-react';
 import { DOMAIN_CONFIG } from './IdeaShowcase';
 import { useEscapeKey } from '../lib/useEscapeKey';
 
@@ -101,10 +101,10 @@ export default function SubmitIdeaModal({ open, onClose }: SubmitIdeaModalProps)
   // Per-field validity drives both progress indicator and submit button state.
   const fieldStatus = useMemo(
     () => ({
-      title: title.trim().length >= 4,
-      problem: problem.trim().length >= 10,
-      solution: solution.trim().length >= 10,
-      why: why.trim().length >= 10,
+      title: title.trim().length > 0,
+      problem: problem.trim().length > 0,
+      solution: solution.trim().length > 0,
+      why: why.trim().length > 0,
       domains: domains.length > 0,
     }),
     [title, problem, solution, why, domains]
@@ -133,44 +133,37 @@ export default function SubmitIdeaModal({ open, onClose }: SubmitIdeaModalProps)
 
   return (
     <div className="fixed inset-0 z-50 bg-white dark:bg-neutral-950 text-black dark:text-neutral-100 overflow-y-auto flex flex-col">
-      {/* Sticky top: close */}
-      <div className="sticky top-0 z-10 bg-white/90 dark:bg-neutral-950/90 backdrop-blur border-b border-gray-100 dark:border-gray-900">
-        <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 py-3">
+      {/* Form */}
+      <form id="submit-idea-form" onSubmit={submit} className="flex-1 w-full max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+        <header className="mb-10 flex items-center gap-3 sm:gap-4">
           <button
             type="button"
             onClick={handleClose}
-            aria-label="Close"
-            className="-m-2 p-2 inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-black dark:hover:text-white transition-colors"
+            aria-label="Back"
+            className="flex-shrink-0 inline-flex items-center justify-center px-3 py-2 rounded-lg bg-gray-100 dark:bg-neutral-900 hover:bg-gray-200 dark:hover:bg-neutral-800 text-gray-700 dark:text-gray-300 transition-colors"
           >
-            <X className="w-4 h-4" />
-            Close
+            <ChevronLeft className="w-4 h-4" />
           </button>
-        </div>
-      </div>
-
-      {/* Form */}
-      <form id="submit-idea-form" onSubmit={submit} className="flex-1 w-full max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <header className="mb-10">
           <h1 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight">
             Submit an idea
           </h1>
         </header>
 
         <div className="space-y-8 sm:space-y-10">
-          <Field label="Title" hint="Short and punchy. Specific beats clever.">
+          <Field>
             <input
               ref={titleRef}
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               maxLength={120}
-              placeholder="e.g. Verifiable ad delivery and influencer metrics"
+              placeholder="Short and specific title"
               className="w-full font-heading text-xl sm:text-2xl font-bold tracking-tight bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 placeholder:font-normal focus:outline-none border-b border-gray-200 dark:border-gray-800 focus:border-black dark:focus:border-white pb-3"
             />
             <Counter current={title.length} max={120} />
           </Field>
 
-          <Field label="Domains" hint={`Pick up to 4. ${domains.length}/4 selected.`}>
+          <Field label="Domains">
             <div className="flex flex-wrap gap-2">
               {DOMAIN_OPTIONS.map((d) => {
                 const active = domains.includes(d.id);
@@ -196,33 +189,32 @@ export default function SubmitIdeaModal({ open, onClose }: SubmitIdeaModalProps)
             </div>
           </Field>
 
-          <Field label="Problem" hint="What's broken today? Name the concrete failure.">
+          <Field label="Problem">
             <ProseTextarea
               value={problem}
               onChange={setProblem}
               maxLength={2000}
-              placeholder="Today this is missing or doesn't work because…"
+              rows={4}
+              placeholder="What's broken today? Name the concrete failure or trusted intermediary that this replaces."
             />
           </Field>
 
-          <Field label="Solution" hint="Sketch the shape — not full specs. A paragraph or two.">
+          <Field label="Solution">
             <ProseTextarea
               value={solution}
               onChange={setSolution}
               maxLength={2000}
-              placeholder="The idea is to…"
+              rows={4}
+              placeholder="Sketch out how you would use Ethereum to solve this problem"
             />
           </Field>
 
-          <Field
-            label="Why Ethereum"
-            hint="Verifiability, composability, neutrality, enforcement — which one is load-bearing?"
-          >
+          <Field label="Why Ethereum">
             <ProseTextarea
               value={why}
               onChange={setWhy}
               maxLength={2000}
-              placeholder="This needs Ethereum because…"
+              placeholder="Why not do this on a centralized platform"
             />
           </Field>
         </div>
@@ -237,8 +229,7 @@ export default function SubmitIdeaModal({ open, onClose }: SubmitIdeaModalProps)
             disabled={!allDone}
             className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-lg bg-black text-white dark:bg-white dark:text-black text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-200 disabled:opacity-30 disabled:pointer-events-none transition-colors"
           >
-            <span className="hidden sm:inline">Open pull request</span>
-            <span className="sm:hidden">Submit</span>
+            <span>Open PR</span>
             <ExternalLink className="w-4 h-4" />
           </button>
         </div>
@@ -252,20 +243,24 @@ function Field({
   hint,
   children,
 }: {
-  label: string;
+  label?: string;
   hint?: string;
   children: React.ReactNode;
 }) {
   return (
     <section>
-      <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-0.5 mb-3">
-        <h2 className="font-heading text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">
-          {label}
-        </h2>
-        {hint && (
-          <span className="text-xs text-gray-400 dark:text-gray-500">{hint}</span>
-        )}
-      </div>
+      {(label || hint) && (
+        <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-0.5 mb-3">
+          {label && (
+            <h2 className="font-heading text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">
+              {label}
+            </h2>
+          )}
+          {hint && (
+            <span className="text-xs text-gray-400 dark:text-gray-500">{hint}</span>
+          )}
+        </div>
+      )}
       {children}
     </section>
   );
@@ -276,19 +271,26 @@ function ProseTextarea({
   onChange,
   maxLength,
   placeholder,
+  rows = 3,
 }: {
   value: string;
   onChange: (v: string) => void;
   maxLength: number;
   placeholder?: string;
+  rows?: number;
 }) {
   const ref = useRef<HTMLTextAreaElement>(null);
-  // Auto-grow: resize to fit content on every change.
+  const minHeightRef = useRef(0);
+  // Auto-grow: resize to fit content on every change, but never below the
+  // natural rows-3 height so empty textareas don't collapse.
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
     el.style.height = 'auto';
-    el.style.height = `${el.scrollHeight}px`;
+    if (minHeightRef.current === 0) {
+      minHeightRef.current = el.clientHeight;
+    }
+    el.style.height = `${Math.max(el.scrollHeight, minHeightRef.current)}px`;
   }, [value]);
   return (
     <div>
@@ -297,7 +299,7 @@ function ProseTextarea({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         maxLength={maxLength}
-        rows={3}
+        rows={rows}
         placeholder={placeholder}
         className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-800 text-base leading-relaxed bg-transparent placeholder:text-gray-400 dark:placeholder:text-gray-600 focus:outline-none focus:border-black dark:focus:border-white resize-none overflow-hidden"
       />

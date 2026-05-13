@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import { ExternalLink, Check, Copy, Github, X } from 'lucide-react'
+import { ExternalLink, Check, Copy, Github, ChevronLeft } from 'lucide-react'
 import { renderMarkdownLinks } from '../utils'
 import Shape3D from './Shape3D'
 import { getDomainConfig, DOMAIN_CONFIG } from './IdeaShowcase'
@@ -83,17 +83,14 @@ export default function IdeaPage({ idea, accentColor, onBack }: IdeaPageProps) {
   const conf = getDomainConfig(idea.domains)
 
   return (
-    <div className="w-full max-w-6xl px-4 sm:px-6 py-6 sm:py-8">
-      {/* Close */}
-      <div className="mb-8 sm:mb-12">
-        <button
-          onClick={onBack}
-          aria-label="Close"
-          className="-ml-2 p-2 text-gray-400 hover:text-black hover:bg-gray-50 dark:hover:text-white dark:hover:bg-neutral-900 rounded-lg transition-colors"
-        >
-          <X className="w-5 h-5" />
-        </button>
-      </div>
+    <div className="w-full max-w-6xl px-4 sm:px-6 pt-3 sm:pt-4 pb-6 sm:pb-8">
+      <button
+        onClick={onBack}
+        aria-label="Back"
+        className="mb-3 sm:mb-4 inline-flex items-center justify-center px-3 py-2 rounded-lg bg-gray-100 dark:bg-neutral-900 hover:bg-gray-200 dark:hover:bg-neutral-800 text-gray-700 dark:text-gray-300 transition-colors"
+      >
+        <ChevronLeft className="w-4 h-4" />
+      </button>
 
       {/* Hero + content as one flex row: shape on the left, everything else
           (title and content sections) in the right column so they share the
@@ -101,7 +98,7 @@ export default function IdeaPage({ idea, accentColor, onBack }: IdeaPageProps) {
           block and the right-aligned Edit button don't sprawl wider than
           the body prose. */}
       <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
-        <div className="w-full md:w-48 aspect-square rounded-2xl overflow-hidden bg-gray-50/50 dark:bg-neutral-900/50 flex-shrink-0">
+        <div className="hidden md:block w-48 aspect-square rounded-2xl overflow-hidden bg-gray-50/50 dark:bg-neutral-900/50 flex-shrink-0">
           <Shape3D shape={conf.shape} color={conf.color} />
         </div>
         <div className="flex-1 min-w-0 w-full pt-1">

@@ -1,10 +1,5 @@
 /* Mobile-first responsive styles */
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
 /* Better touch targets on mobile — only standalone interactive elements */
 @media (max-width: 768px) {
   nav button,

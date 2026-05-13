@@ -123,39 +123,14 @@ export default function IdeaShowcase({
   }
 
   return (
-    <section className="w-full max-w-6xl px-4 sm:px-6 pb-8 sm:pb-12 md:pb-16">
-      <div className="flex flex-wrap items-center gap-2 mb-8 sm:mb-12">
-        <button
-          onClick={() => setActiveCategory('all')}
-          className={`px-3.5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
-            activeCategory === 'all'
-              ? 'bg-black text-white dark:bg-white dark:text-black'
-              : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-neutral-900 dark:text-gray-400 dark:hover:bg-neutral-800'
-          }`}
-        >
-          All
-        </button>
-        {Object.entries(DOMAIN_CONFIG).map(([id, cfg]) => {
-          const active = activeCategory === id
-          return (
-            <button
-              key={id}
-              onClick={() => setActiveCategory(active ? 'all' : id)}
-              className={`flex items-center gap-1.5 px-3.5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
-                active
-                  ? 'bg-black text-white dark:bg-white dark:text-black'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-neutral-900 dark:text-gray-400 dark:hover:bg-neutral-800'
-              }`}
-            >
-              <span
-                className="w-1.5 h-1.5 rounded-full"
-                style={{ backgroundColor: active ? 'currentColor' : cfg.color }}
-              />
-              {cfg.label}
-            </button>
-          )
-        })}
-      </div>
+    // min-h-screen guarantees enough scrollable area below the cards so the
+    // user can always scroll far enough to bring the sticky category row up
+    // against the search bar — even when the filtered list is short.
+    <section className="w-full max-w-6xl px-4 sm:px-6 pb-8 sm:pb-12 md:pb-16 min-h-screen">
+      <CategoryCarousel
+        activeCategory={activeCategory}
+        onSelect={(id) => setActiveCategory(activeCategory === id ? 'all' : id)}
+      />
 
       <div className="grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {visible.map(idea => {
@@ -291,5 +266,159 @@ export default function IdeaShowcase({
         </p>
       )}
     </section>
+  )
+}
+
+function CategoryCarousel({
+  activeCategory,
+  onSelect,
+}: {
+  activeCategory: string
+  onSelect: (id: string) => void
+}) {
+  const scrollRef = useRef<HTMLDivElement>(null)
+  // Until this timestamp, autoscroll is paused. Set to Infinity while a
+  // pointer/finger is down; set to (now + grace) on release so iOS momentum
+  // scrolling can complete before we touch scrollLeft again.
+  const pauseUntilRef = useRef(0)
+  // Independent pause that stays in effect for as long as the user has a
+  // category selected. Survives hover/touch release.
+  const categoryLockedRef = useRef(activeCategory !== 'all')
+  categoryLockedRef.current = activeCategory !== 'all'
+  // Set true on mouseup if the user dragged past the threshold; the
+  // immediately-following click is then swallowed in onClickCapture so
+  // dragging never accidentally selects a chip.
+  const suppressClickRef = useRef(false)
+  const entries = Object.entries(DOMAIN_CONFIG)
+
+  useEffect(() => {
+    const el = scrollRef.current
+    if (!el) return
+    if (typeof window !== 'undefined' &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    let raf = 0
+    let last = performance.now()
+    let pos = el.scrollLeft
+    const SPEED = 30 // px per second
+
+    const tick = (now: number) => {
+      const dt = (now - last) / 1000
+      last = now
+      if (categoryLockedRef.current || now < pauseUntilRef.current) {
+        // Track user/momentum-driven position so resume picks up here.
+        pos = el.scrollLeft
+      } else if (el.scrollWidth > el.clientWidth) {
+        const half = el.scrollWidth / 2
+        pos += SPEED * dt
+        if (half > 0 && pos >= half) pos -= half
+        el.scrollLeft = pos
+      }
+      raf = requestAnimationFrame(tick)
+    }
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
+  }, [])
+
+  const holdPause = () => { pauseUntilRef.current = Number.POSITIVE_INFINITY }
+  const releaseDesktop = () => { pauseUntilRef.current = performance.now() + 500 }
+  // Long grace on touch release so iOS momentum scroll can finish without us
+  // overwriting scrollLeft mid-fling.
+  const releaseTouch = () => { pauseUntilRef.current = performance.now() + 2500 }
+  const onWheel = () => {
+    if (pauseUntilRef.current === Number.POSITIVE_INFINITY) return
+    pauseUntilRef.current = performance.now() + 1500
+  }
+
+  // Click-and-drag horizontal scroll on desktop. Attaches mousemove/mouseup
+  // to window so the drag survives the cursor leaving the scroller.
+  const onMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.button !== 0) return
+    const el = scrollRef.current
+    if (!el) return
+    const startX = e.clientX
+    const startScroll = el.scrollLeft
+    let moved = false
+
+    holdPause()
+    el.style.cursor = 'grabbing'
+    document.body.style.userSelect = 'none'
+
+    const onMove = (ev: MouseEvent) => {
+      const dx = ev.clientX - startX
+      if (Math.abs(dx) > 3) moved = true
+      el.scrollLeft = startScroll - dx
+    }
+
+    const onUp = () => {
+      window.removeEventListener('mousemove', onMove)
+      window.removeEventListener('mouseup', onUp)
+      el.style.cursor = ''
+      document.body.style.userSelect = ''
+      if (moved) {
+        // The synchronous click that the browser fires after this mouseup
+        // would otherwise toggle a chip. Suppress it once.
+        suppressClickRef.current = true
+        setTimeout(() => { suppressClickRef.current = false }, 0)
+      }
+      releaseDesktop()
+    }
+
+    window.addEventListener('mousemove', onMove)
+    window.addEventListener('mouseup', onUp)
+  }
+
+  const onClickCapture = (e: React.MouseEvent) => {
+    if (suppressClickRef.current) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
+  }
+
+  return (
+    <div
+      className="sticky z-10 -mx-4 sm:-mx-6 mb-8 sm:mb-12 bg-white dark:bg-neutral-950 border-b border-gray-100 dark:border-gray-900"
+      style={{ top: 'var(--sticky-header-h, 80px)' }}
+    >
+      <div className="relative">
+      <div
+        ref={scrollRef}
+        className="flex items-center gap-2 overflow-x-auto py-3 cursor-grab [&::-webkit-scrollbar]:hidden [scrollbar-width:none] touch-pan-x overscroll-x-contain"
+        onMouseEnter={holdPause}
+        onMouseLeave={releaseDesktop}
+        onMouseDown={onMouseDown}
+        onClickCapture={onClickCapture}
+        onTouchStart={holdPause}
+        onTouchEnd={releaseTouch}
+        onTouchCancel={releaseTouch}
+        onWheel={onWheel}
+      >
+        {/* Duplicate the list so we can seamlessly wrap scrollLeft at the
+            halfway mark for a continuous carousel. */}
+        {[...entries, ...entries].map(([id, cfg], i) => {
+          const active = activeCategory === id
+          return (
+            <button
+              key={`${id}-${i}`}
+              onClick={() => onSelect(id)}
+              className={`flex items-center gap-1.5 px-3.5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors whitespace-nowrap flex-shrink-0 ${
+                active
+                  ? 'bg-black text-white dark:bg-white dark:text-black'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-neutral-900 dark:text-gray-400 dark:hover:bg-neutral-800'
+              }`}
+            >
+              <span
+                className="w-1.5 h-1.5 rounded-full"
+                style={{ backgroundColor: active ? 'currentColor' : cfg.color }}
+              />
+              {cfg.label}
+            </button>
+          )
+        })}
+      </div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-16 bg-gradient-to-r from-white dark:from-neutral-950 to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-16 bg-gradient-to-l from-white dark:from-neutral-950 to-transparent z-10" />
+      </div>
+    </div>
   )
 }

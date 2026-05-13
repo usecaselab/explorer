@@ -1,5 +1,5 @@
 import React from 'react'
-import { X } from 'lucide-react'
+import { ChevronLeft } from 'lucide-react'
 import Shape3D from './Shape3D'
 import { useEscapeKey } from '../lib/useEscapeKey'
 import type { RFP } from '../lib/rfps'
@@ -13,22 +13,21 @@ export default function RFPPage({ rfp, onBack }: RFPPageProps) {
   useEscapeKey(true, onBack)
 
   return (
-    <div className="w-full max-w-6xl px-4 sm:px-6 py-6 sm:py-8">
-      {/* Close */}
-      <div className="mb-8 sm:mb-12">
-        <button
-          onClick={onBack}
-          aria-label="Close"
-          className="-ml-2 p-2 text-gray-400 hover:text-black hover:bg-gray-50 dark:hover:text-white dark:hover:bg-neutral-900 rounded-lg transition-colors"
-        >
-          <X className="w-5 h-5" />
-        </button>
-      </div>
+    <div className="relative w-full max-w-6xl px-4 sm:px-6 py-6 sm:py-8">
+      {/* Back: above the hero on mobile (no sidebar margin to use); absolute
+          into the left margin between sidebar and content on md+. */}
+      <button
+        onClick={onBack}
+        aria-label="Back"
+        className="mb-6 md:mb-0 md:absolute md:top-8 md:-left-4 lg:-left-12 inline-flex items-center justify-center px-3 py-2 rounded-lg bg-gray-100 dark:bg-neutral-900 hover:bg-gray-200 dark:hover:bg-neutral-800 text-gray-700 dark:text-gray-300 transition-colors"
+      >
+        <ChevronLeft className="w-4 h-4" />
+      </button>
 
       {/* Hero */}
       <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start mb-12 sm:mb-16">
         <div
-          className="w-full md:w-56 aspect-square rounded-2xl overflow-hidden flex-shrink-0"
+          className="hidden md:block w-56 aspect-square rounded-2xl overflow-hidden flex-shrink-0"
           style={{ backgroundColor: `${rfp.color}14` }}
         >
           <Shape3D shape={rfp.shape} color={rfp.color} variant="wireframe" />
