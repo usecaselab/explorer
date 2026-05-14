@@ -30,7 +30,7 @@ export default function RFPPage({ rfp, onBack }: RFPPageProps) {
           className="hidden md:block w-56 aspect-square rounded-2xl overflow-hidden flex-shrink-0"
           style={{ backgroundColor: `${rfp.color}14` }}
         >
-          <Shape3D shape={rfp.shape} color={rfp.color} variant="wireframe" />
+          <Shape3D shape={rfp.shape} color={rfp.color} />
         </div>
         <div className="flex-1 pt-1">
           <span

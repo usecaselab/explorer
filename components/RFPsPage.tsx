@@ -35,7 +35,7 @@ export default function RFPsPage({ onSelect }: RFPsPageProps) {
             style={{ backgroundColor: `${rfp.color}0a` }}
           >
             <div className="aspect-[16/9] w-full bg-gray-50/30 dark:bg-neutral-900/30">
-              <Shape3D shape={rfp.shape} color={rfp.color} variant="wireframe" />
+              <Shape3D shape={rfp.shape} color={rfp.color} />
             </div>
             <div className="p-5 sm:p-6">
               <h2 className="font-heading text-lg sm:text-xl font-bold text-black dark:text-white leading-snug mb-3">

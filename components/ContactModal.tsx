@@ -37,7 +37,10 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-label="Contact">
-      <div className="absolute inset-0 bg-black/40 dark:bg-black/70" onClick={handleClose} />
+      {/* Backdrop is intentionally non-interactive: only the X button or
+          the Escape key closes the modal, so a stray click outside doesn't
+          throw away an in-progress message. */}
+      <div className="absolute inset-0 bg-black/40 dark:bg-black/70" />
       <div className="relative w-full max-w-md bg-white dark:bg-neutral-950 text-black dark:text-neutral-100 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-800 max-h-[calc(100vh-2rem)] flex flex-col overflow-hidden">
         {state.succeeded ? (
           <div className="px-6 py-10 sm:px-8 sm:py-12 flex flex-col items-center text-center">
@@ -60,16 +63,16 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
           </div>
         ) : (
           <>
-            <div className="flex items-center justify-between px-5 sm:px-6 pt-5 pb-3 border-b border-gray-100 dark:border-gray-900">
-              <h1 className="font-heading text-lg font-bold tracking-tight">Contact</h1>
+            <div className="flex items-center gap-3 px-5 sm:px-6 pt-5 pb-3 border-b border-gray-100 dark:border-gray-900">
               <button
                 type="button"
                 onClick={handleClose}
                 aria-label="Close"
-                className="-mr-2 p-2 text-gray-400 hover:text-black dark:text-gray-500 dark:hover:text-white transition-colors"
+                className="-ml-2 p-2 text-gray-400 hover:text-black dark:text-gray-500 dark:hover:text-white transition-colors"
               >
                 <X className="w-4 h-4" />
               </button>
+              <h1 className="font-heading text-lg font-bold tracking-tight">Contact</h1>
             </div>
 
             <form

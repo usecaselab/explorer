@@ -7,6 +7,7 @@ import SubmitIdeaModal from './components/SubmitIdeaModal';
 import ContactModal from './components/ContactModal';
 import Sidebar from './components/Sidebar';
 import MobileNav from './components/MobileNav';
+
 import RFPsPage from './components/RFPsPage';
 import RFPPage from './components/RFPPage';
 import { findRFP, type RFP } from './lib/rfps';
@@ -22,7 +23,7 @@ type Route =
 function parseRoute(): Route {
   const path = window.location.pathname;
   if (path === '/toolkit') return { page: 'toolkit' };
-  if (path === '/rfps') return { page: 'rfps' };
+  if (path === '/rfp') return { page: 'rfps' };
   const rfpMatch = path.match(/^\/rfp\/([^/]+)$/);
   if (rfpMatch) return { page: 'rfp', rfpId: rfpMatch[1] };
   const ideaMatch = path.match(/^\/idea\/([^/]+)$/);
@@ -154,7 +155,7 @@ const App: React.FC = () => {
   }, []);
 
   const navigateRFPs = useCallback(() => {
-    window.history.pushState(null, '', '/rfps');
+    window.history.pushState(null, '', '/rfp');
     setActiveIdea(null);
     setActiveRFP(null);
     setRoute({ page: 'rfps' });
@@ -167,7 +168,7 @@ const App: React.FC = () => {
   }, []);
 
   const navigateBackToRFPs = useCallback(() => {
-    window.history.pushState(null, '', '/rfps');
+    window.history.pushState(null, '', '/rfp');
     setActiveRFP(null);
     setRoute({ page: 'rfps' });
   }, []);
@@ -267,7 +268,7 @@ const App: React.FC = () => {
     if (found) {
       setActiveRFP(found);
     } else {
-      window.history.replaceState(null, '', '/rfps');
+      window.history.replaceState(null, '', '/rfp');
       setRoute({ page: 'rfps' });
     }
   }, [route]);

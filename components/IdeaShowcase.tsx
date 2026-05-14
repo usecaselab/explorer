@@ -1,26 +1,26 @@
 import React, { useEffect, useState, useMemo, useRef } from 'react'
 import type { IdeaEntry } from './IdeaPage'
-import Shape3D, { ShapeType } from './Shape3D'
+import Shape2D, { type ShapeType } from './Shape2D'
 import { fetchAllIdeas } from '../lib/api'
 
 // 16 PR domains, each with its own color and shape
 const DOMAIN_CONFIG: Record<string, { label: string; color: string; shape: ShapeType }> = {
   'ai':                    { label: 'AI',                    color: '#0891B2', shape: 'icosahedron' },
-  'business-operations':   { label: 'Business Ops',          color: '#2563EB', shape: 'box' },
-  'civil-society':         { label: 'Civil Society',         color: '#7C3AED', shape: 'torusKnot' },
+  'business-operations':   { label: 'Business Ops',          color: '#2563EB', shape: 'stellaOctangula' },
+  'civil-society':         { label: 'Civil Society',         color: '#7C3AED', shape: 'mobius' },
   'commerce':              { label: 'Commerce',              color: '#F97316', shape: 'sphere' },
-  'environment':           { label: 'Environment',           color: '#65A30D', shape: 'dodecahedron' },
-  'finance':               { label: 'Finance',               color: '#059669', shape: 'octahedron' },
-  'food-and-agriculture':  { label: 'Food & Agriculture',    color: '#84CC16', shape: 'dodecahedron' },
-  'government':            { label: 'Government',            color: '#8B5CF6', shape: 'torusKnot' },
+  'environment':           { label: 'Environment',           color: '#15803D', shape: 'dodecahedron' },
+  'finance':               { label: 'Finance',               color: '#059669', shape: 'ziggurat' },
+  'food-and-agriculture':  { label: 'Food & Agriculture',    color: '#84CC16', shape: 'capsule' },
+  'government':            { label: 'Government',            color: '#6B21A8', shape: 'hyperbolicParaboloid' },
   'health':                { label: 'Health',                color: '#DC2626', shape: 'torus' },
-  'identity':              { label: 'Identity',              color: '#A855F7', shape: 'cone' },
-  'insurance':             { label: 'Insurance',             color: '#34D399', shape: 'octahedron' },
-  'logistics-and-trade':   { label: 'Logistics & Trade',     color: '#3B82F6', shape: 'box' },
-  'media':                 { label: 'Media',                 color: '#EC4899', shape: 'sphere' },
-  'real-estate-and-housing': { label: 'Real Estate',         color: '#CA8A04', shape: 'cone' },
-  'science':               { label: 'Science',               color: '#7E22CE', shape: 'icosahedron' },
-  'utilities':             { label: 'Utilities',             color: '#14B8A6', shape: 'torus' },
+  'identity':              { label: 'Identity',              color: '#F43F5E', shape: 'cone' },
+  'insurance':             { label: 'Insurance',             color: '#475569', shape: 'antiprism' },
+  'logistics-and-trade':   { label: 'Logistics & Trade',     color: '#B45309', shape: 'cylinder' },
+  'media':                 { label: 'Media',                 color: '#EC4899', shape: 'ring' },
+  'real-estate-and-housing': { label: 'Real Estate',         color: '#CA8A04', shape: 'latheDiamond' },
+  'science':               { label: 'Science',               color: '#4F46E5', shape: 'lattice' },
+  'utilities':             { label: 'Utilities',             color: '#14B8A6', shape: 'tubeHelix' },
 }
 
 function getDomainConfig(domains: string[]) {
@@ -65,6 +65,10 @@ export default function IdeaShowcase({
   const [ideas, setIdeas] = useState<IdeaEntry[]>([])
   const [loading, setLoading] = useState(true)
   const [activeCategory, setActiveCategory] = useState('all')
+  // Tracks which card the cursor is over. One state at the parent (rather
+  // than per-card) so 122 cards don't each hold their own useState — the
+  // map already rebuilds on each render anyway.
+  const [hoveredId, setHoveredId] = useState<string | null>(null)
 
   useEffect(() => {
     fetchAllIdeas()
@@ -147,10 +151,18 @@ export default function IdeaShowcase({
                   e.preventDefault()
                   onSelect(idea, ideas)
                 }}
+                onMouseEnter={() => setHoveredId(idea.id)}
+                onMouseLeave={() => setHoveredId(null)}
                 className="text-left flex flex-row sm:flex-col w-full no-underline text-inherit"
               >
                 <div className="relative w-24 h-24 sm:w-full sm:aspect-[4/3] sm:h-auto bg-gray-50/50 dark:bg-neutral-900/50 flex-shrink-0">
-                  <Shape3D shape={conf.shape} color={conf.color} />
+                  <Shape2D
+                    shape={conf.shape}
+                    color={conf.color}
+                    hovered={hoveredId === idea.id}
+                    seed={idea.id}
+                    autoRotate
+                  />
                 </div>
                 <div className="p-3 sm:p-4 flex flex-col justify-center min-w-0">
                   <h3 className="font-heading text-sm font-bold text-black dark:text-white leading-snug mb-1">
@@ -242,10 +254,18 @@ export default function IdeaShowcase({
                           e.preventDefault()
                           onSelect(idea, ideas)
                         }}
+                        onMouseEnter={() => setHoveredId(idea.id)}
+                        onMouseLeave={() => setHoveredId(null)}
                         className="group flex items-center gap-3 rounded-xl border border-gray-100 dark:border-gray-900 hover:border-gray-200 dark:hover:border-gray-800 hover:shadow-sm transition-all p-3 text-left no-underline text-inherit"
                       >
                         <div className="w-12 h-12 flex-shrink-0 bg-gray-50/50 dark:bg-neutral-900/50 rounded-lg overflow-hidden">
-                          <Shape3D shape={conf.shape} color={conf.color} />
+                          <Shape2D
+                            shape={conf.shape}
+                            color={conf.color}
+                            hovered={hoveredId === idea.id}
+                            seed={idea.id}
+                            autoRotate
+                          />
                         </div>
                         <span className="font-heading text-sm font-bold text-black dark:text-white leading-snug line-clamp-2">
                           {idea.title}
@@ -416,8 +436,8 @@ function CategoryCarousel({
           )
         })}
       </div>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-16 bg-gradient-to-r from-white dark:from-neutral-950 to-transparent z-10" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-16 bg-gradient-to-l from-white dark:from-neutral-950 to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-4 sm:w-6 bg-gradient-to-r from-white dark:from-neutral-950 to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-4 sm:w-6 bg-gradient-to-l from-white dark:from-neutral-950 to-transparent z-10" />
       </div>
     </div>
   )

@@ -20,6 +20,7 @@ const TOOLS = [
     color: '#F97316',
     tags: ['Design', 'Branding', 'Product Design'],
     cta: 'Visit Crops',
+    author: { handle: '@sodofi_', url: 'https://x.com/sodofi_' },
   },
   {
     title: 'EthSkills',
@@ -29,6 +30,7 @@ const TOOLS = [
     color: '#7C3AED',
     tags: ['Solidity', 'DeFi', 'ERC Standards', 'Learning'],
     cta: 'Explore skills',
+    author: { handle: '@austingriffith', url: 'https://x.com/austingriffith' },
   },
   {
     title: 'Nexth',
@@ -38,6 +40,7 @@ const TOOLS = [
     color: '#2563EB',
     tags: ['Next.js', 'wagmi', 'viem', 'Starter Kit'],
     cta: 'View on GitHub',
+    author: { handle: '@wslyvh', url: 'https://x.com/wslyvh' },
   },
 ]
 
@@ -95,7 +98,7 @@ export default function ToolkitPage() {
               </div>
 
               <div className="flex-1 min-w-0">
-                <div className="flex items-center justify-between gap-3 mb-2">
+                <div className="flex items-center justify-between gap-3 mb-1">
                   <h2 className="font-heading text-lg sm:text-xl font-bold text-black dark:text-white leading-tight">
                     {tool.title}
                   </h2>
@@ -103,6 +106,30 @@ export default function ToolkitPage() {
                     <ArrowUpRight className="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-black dark:group-hover:text-white transition-colors flex-shrink-0" />
                   )}
                 </div>
+                {'author' in tool && tool.author && (
+                  <div className="text-xs text-gray-400 dark:text-gray-500 mb-2">
+                    by{' '}
+                    <span
+                      role="link"
+                      tabIndex={0}
+                      onClick={(e) => {
+                        e.preventDefault()
+                        e.stopPropagation()
+                        window.open(tool.author!.url, '_blank', 'noopener,noreferrer')
+                      }}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault()
+                          e.stopPropagation()
+                          window.open(tool.author!.url, '_blank', 'noopener,noreferrer')
+                        }
+                      }}
+                      className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white cursor-pointer underline-offset-2 hover:underline"
+                    >
+                      {tool.author.handle}
+                    </span>
+                  </div>
+                )}
                 <p className="text-sm sm:text-[15px] text-gray-500 dark:text-gray-400 leading-relaxed mb-3">
                   {tool.description}
                 </p>

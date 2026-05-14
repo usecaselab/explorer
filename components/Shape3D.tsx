@@ -1,11 +1,13 @@
 import React, { useRef, useState, useMemo, useEffect, useCallback } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { Float, MeshDistortMaterial, Environment } from '@react-three/drei'
+import { MeshDistortMaterial, Environment } from '@react-three/drei'
 import * as THREE from 'three'
 
 export type ShapeType =
   | 'torusKnot' | 'icosahedron' | 'octahedron' | 'dodecahedron'
   | 'torus' | 'cone' | 'sphere' | 'box'
+  | 'tetrahedron' | 'torusKnotPentagonal' | 'torusKnotComplex'
+  | 'torusKnotQuatrefoil' | 'torusKnotQuintic' | 'torusKnotWoven'
 
 export type ShapeVariant = 'solid' | 'wireframe'
 
@@ -33,6 +35,18 @@ function ShapeGeometry({ type }: { type: ShapeType }) {
       return <sphereGeometry args={[1.1, 16, 16]} />
     case 'box':
       return <boxGeometry args={[1.4, 1.4, 1.4]} />
+    case 'tetrahedron':
+      return <tetrahedronGeometry args={[1.2, 0]} />
+    case 'torusKnotPentagonal':
+      return <torusKnotGeometry args={[0.7, 0.22, 96, 16, 2, 5]} />
+    case 'torusKnotComplex':
+      return <torusKnotGeometry args={[0.7, 0.18, 128, 16, 3, 7]} />
+    case 'torusKnotQuatrefoil':
+      return <torusKnotGeometry args={[0.7, 0.22, 96, 16, 3, 4]} />
+    case 'torusKnotQuintic':
+      return <torusKnotGeometry args={[0.7, 0.20, 120, 16, 3, 5]} />
+    case 'torusKnotWoven':
+      return <torusKnotGeometry args={[0.7, 0.18, 144, 16, 4, 5]} />
     default:
       return <icosahedronGeometry args={[1.1, 0]} />
   }
@@ -78,50 +92,48 @@ function AnimatedShape({ shape, color, variant = 'solid', active }: ShapeProps &
     if (meshRef.current) meshRef.current.scale.lerp(vec3, 0.08)
     wireRef.current.scale.lerp(wireVec3, 0.08)
 
-    const rotSpeed = hovered ? 0.8 : 0.2
+    // Y-axis only: rotates "horizontally" like a globe on a turntable, no
+    // random-axis tumble.
+    const rotSpeed = hovered ? 0.8 : 0.3
     const drivenRef = meshRef.current ?? wireRef.current
-    drivenRef.rotation.x += delta * rotSpeed * 0.7
     drivenRef.rotation.y += delta * rotSpeed
-
     if (meshRef.current) wireRef.current.rotation.copy(meshRef.current.rotation)
   })
 
   return (
-    <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.6}>
-      <group
-        onPointerOver={(e) => {
-          e.stopPropagation()
-          setHovered(true)
-          document.body.style.cursor = 'pointer'
-        }}
-        onPointerOut={() => {
-          setHovered(false)
-          document.body.style.cursor = 'auto'
-        }}
-      >
-        {!isWireframe && (
-          <mesh ref={meshRef}>
-            <ShapeGeometry type={shape} />
-            <MeshDistortMaterial
-              color={color}
-              roughness={0.1}
-              metalness={0.9}
-              distort={hovered ? 0.4 : 0.15}
-              speed={hovered ? 5 : 2}
-            />
-          </mesh>
-        )}
-        <mesh ref={wireRef}>
+    <group
+      onPointerOver={(e) => {
+        e.stopPropagation()
+        setHovered(true)
+        document.body.style.cursor = 'pointer'
+      }}
+      onPointerOut={() => {
+        setHovered(false)
+        document.body.style.cursor = 'auto'
+      }}
+    >
+      {!isWireframe && (
+        <mesh ref={meshRef}>
           <ShapeGeometry type={shape} />
-          <meshBasicMaterial
-            wireframe
+          <MeshDistortMaterial
             color={color}
-            transparent
-            opacity={isWireframe ? (hovered ? 0.95 : 0.7) : (hovered ? 0.5 : 0.12)}
+            roughness={0.1}
+            metalness={0.9}
+            distort={hovered ? 0.4 : 0.15}
+            speed={hovered ? 5 : 2}
           />
         </mesh>
-      </group>
-    </Float>
+      )}
+      <mesh ref={wireRef}>
+        <ShapeGeometry type={shape} />
+        <meshBasicMaterial
+          wireframe
+          color={color}
+          transparent
+          opacity={isWireframe ? (hovered ? 0.95 : 0.7) : (hovered ? 0.5 : 0.12)}
+        />
+      </mesh>
+    </group>
   )
 }
 

@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import { ExternalLink, Check, Copy, Github, ChevronLeft } from 'lucide-react'
 import { renderMarkdownLinks } from '../utils'
-import Shape3D from './Shape3D'
+import Shape2D from './Shape2D'
 import { getDomainConfig, DOMAIN_CONFIG } from './IdeaShowcase'
 import { useEscapeKey } from '../lib/useEscapeKey'
 
@@ -99,7 +99,7 @@ export default function IdeaPage({ idea, accentColor, onBack }: IdeaPageProps) {
           the body prose. */}
       <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
         <div className="hidden md:block w-48 aspect-square rounded-2xl overflow-hidden bg-gray-50/50 dark:bg-neutral-900/50 flex-shrink-0">
-          <Shape3D shape={conf.shape} color={conf.color} />
+          <Shape2D shape={conf.shape} color={conf.color} seed={idea.id} autoRotate />
         </div>
         <div className="flex-1 min-w-0 w-full pt-1">
           <div className="flex flex-wrap gap-1.5 mb-3">

@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect, useMemo, useRef } from 'react';
-import { ChevronLeft, ExternalLink } from 'lucide-react';
+import { X, ExternalLink } from 'lucide-react';
 import { DOMAIN_CONFIG } from './IdeaShowcase';
 import { useEscapeKey } from '../lib/useEscapeKey';
 
@@ -94,7 +94,7 @@ export default function SubmitIdeaModal({ open, onClose }: SubmitIdeaModalProps)
 
   const toggleDomain = (id: string) => {
     setDomains((prev) =>
-      prev.includes(id) ? prev.filter((d) => d !== id) : prev.length < 4 ? [...prev, id] : prev
+      prev.includes(id) ? prev.filter((d) => d !== id) : prev.length < 2 ? [...prev, id] : prev
     );
   };
 
@@ -132,24 +132,38 @@ export default function SubmitIdeaModal({ open, onClose }: SubmitIdeaModalProps)
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-white dark:bg-neutral-950 text-black dark:text-neutral-100 overflow-y-auto flex flex-col">
-      {/* Form */}
-      <form id="submit-idea-form" onSubmit={submit} className="flex-1 w-full max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
-        <header className="mb-10 flex items-center gap-3 sm:gap-4">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Submit an idea"
+    >
+      {/* Backdrop — non-interactive; only X or Escape closes (matches the
+          contact modal so a stray click doesn't throw away an in-progress
+          draft). */}
+      <div className="absolute inset-0 bg-black/40 dark:bg-black/70" />
+      <div className="relative w-full max-w-2xl bg-white dark:bg-neutral-950 text-black dark:text-neutral-100 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-800 max-h-[calc(100vh-2rem)] flex flex-col overflow-hidden">
+        {/* Header */}
+        <div className="flex items-center gap-3 px-5 sm:px-6 pt-5 pb-3 border-b border-gray-100 dark:border-gray-900">
           <button
             type="button"
             onClick={handleClose}
-            aria-label="Back"
-            className="flex-shrink-0 inline-flex items-center justify-center px-3 py-2 rounded-lg bg-gray-100 dark:bg-neutral-900 hover:bg-gray-200 dark:hover:bg-neutral-800 text-gray-700 dark:text-gray-300 transition-colors"
+            aria-label="Close"
+            className="-ml-2 p-2 text-gray-400 hover:text-black dark:text-gray-500 dark:hover:text-white transition-colors"
           >
-            <ChevronLeft className="w-4 h-4" />
+            <X className="w-4 h-4" />
           </button>
-          <h1 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight">
+          <h1 className="font-heading text-lg font-bold tracking-tight">
             Submit an idea
           </h1>
-        </header>
+        </div>
 
-        <div className="space-y-8 sm:space-y-10">
+        {/* Scrollable form body */}
+        <form
+          id="submit-idea-form"
+          onSubmit={submit}
+          className="flex-1 overflow-y-auto px-5 sm:px-6 py-5 space-y-6"
+        >
           <Field>
             <input
               ref={titleRef}
@@ -158,13 +172,13 @@ export default function SubmitIdeaModal({ open, onClose }: SubmitIdeaModalProps)
               onChange={(e) => setTitle(e.target.value)}
               maxLength={120}
               placeholder="Short and specific title"
-              className="w-full font-heading text-xl sm:text-2xl font-bold tracking-tight bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 placeholder:font-normal focus:outline-none border-b border-gray-200 dark:border-gray-800 focus:border-black dark:focus:border-white pb-3"
+              className="w-full font-heading text-lg sm:text-xl font-bold tracking-tight bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 placeholder:font-normal focus:outline-none border-b border-gray-200 dark:border-gray-800 focus:border-black dark:focus:border-white pb-2"
             />
             <Counter current={title.length} max={120} />
           </Field>
 
-          <Field label="Domains">
-            <div className="flex flex-wrap gap-2">
+          <Field label="Domains" hint="up to 2">
+            <div className="flex flex-wrap gap-1.5">
               {DOMAIN_OPTIONS.map((d) => {
                 const active = domains.includes(d.id);
                 return (
@@ -172,7 +186,7 @@ export default function SubmitIdeaModal({ open, onClose }: SubmitIdeaModalProps)
                     key={d.id}
                     type="button"
                     onClick={() => toggleDomain(d.id)}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+                    className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium transition-colors ${
                       active
                         ? 'bg-black text-white dark:bg-white dark:text-black'
                         : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-neutral-900 dark:text-gray-300 dark:hover:bg-neutral-800'
@@ -194,7 +208,7 @@ export default function SubmitIdeaModal({ open, onClose }: SubmitIdeaModalProps)
               value={problem}
               onChange={setProblem}
               maxLength={2000}
-              rows={4}
+              rows={3}
               placeholder="What's broken today? Name the concrete failure or trusted intermediary that this replaces."
             />
           </Field>
@@ -204,7 +218,7 @@ export default function SubmitIdeaModal({ open, onClose }: SubmitIdeaModalProps)
               value={solution}
               onChange={setSolution}
               maxLength={2000}
-              rows={4}
+              rows={3}
               placeholder="Sketch out how you would use Ethereum to solve this problem"
             />
           </Field>
@@ -214,20 +228,19 @@ export default function SubmitIdeaModal({ open, onClose }: SubmitIdeaModalProps)
               value={why}
               onChange={setWhy}
               maxLength={2000}
+              rows={3}
               placeholder="Why not do this on a centralized platform"
             />
           </Field>
-        </div>
-      </form>
+        </form>
 
-      {/* Sticky footer with submit */}
-      <div className="sticky bottom-0 bg-white/95 dark:bg-neutral-950/95 backdrop-blur border-t border-gray-100 dark:border-gray-900">
-        <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-end gap-3">
+        {/* Footer */}
+        <div className="px-5 sm:px-6 py-3 border-t border-gray-100 dark:border-gray-900 flex items-center justify-end">
           <button
             type="submit"
             form="submit-idea-form"
             disabled={!allDone}
-            className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-lg bg-black text-white dark:bg-white dark:text-black text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-200 disabled:opacity-30 disabled:pointer-events-none transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-black text-white dark:bg-white dark:text-black text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-200 disabled:opacity-30 disabled:pointer-events-none transition-colors"
           >
             <span>Open PR</span>
             <ExternalLink className="w-4 h-4" />
