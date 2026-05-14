@@ -50,13 +50,7 @@ export default function RFPPage({ rfp, onBack }: RFPPageProps) {
 
       {/* Placeholder body */}
       <div className="rounded-2xl border border-dashed border-gray-200 bg-gray-50/50 dark:border-gray-800 dark:bg-neutral-900/50 p-8 sm:p-12 text-center">
-        <p className="text-sm text-gray-400 dark:text-gray-500 font-medium uppercase tracking-widest mb-3">Coming soon</p>
-        <h2 className="font-heading text-xl sm:text-2xl font-bold text-black dark:text-white mb-3">
-          Full RFP content lands here
-        </h2>
-        <p className="text-sm text-gray-500 dark:text-gray-400 max-w-md mx-auto leading-relaxed">
-          Problem framing, the questions we're asking, criteria for proposals, and how to get in touch.
-        </p>
+        <p className="text-lg sm:text-xl text-gray-400 dark:text-gray-500 font-medium uppercase tracking-widest">Coming soon</p>
       </div>
     </div>
   )

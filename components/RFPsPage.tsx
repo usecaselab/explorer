@@ -15,8 +15,8 @@ export default function RFPsPage({ onSelect }: RFPsPageProps) {
           Requests<br />
           <span className="text-gray-400 dark:text-gray-600">for proposals</span>
         </h1>
-        <p className="mt-4 text-base sm:text-lg text-gray-500 dark:text-gray-400 max-w-2xl leading-relaxed">
-          Open invitations for serious inquiry into new real-world domains.
+        <p className="mt-4 text-base sm:text-lg text-gray-500 dark:text-gray-400 leading-relaxed">
+          An open call for solutions to real-world coordination problems that preserve end user sovereignty.
         </p>
       </div>
 
