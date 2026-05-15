@@ -5,17 +5,12 @@ domains: civil-society
 
 ## Problem
 
-Many valuable outcomes — a new open standard getting adopted, a local currency achieving network effects, a civic technology deployed across a city — require enough people to act simultaneously that no individual will move first. Traditional crowdfunding pools money for single projects but can't coordinate the distributed, multi-actor contributions needed for an ecosystem to tip. Prediction markets aggregate beliefs about what will happen but don't actively create the conditions for it.
+Many valuable outcomes require enough people to act at once that no individual will move first. A new protocol reaching adoption, a local currency achieving network effects, a civic technology deployed across a city: each needs distributed, multi-actor commitment. Traditional crowdfunding pools money for a single project but cannot coordinate that kind of contribution, and prediction markets aggregate beliefs about what will happen without creating the conditions for it.
 
 ## Solution
 
-Markets designed not just to predict outcomes but to manifest them — where buying YES stakes participants financially in making a prediction true, and where public prices function as Schelling points that coordinate action around shared futures. As more participants buy YES, the rising price signals growing collective commitment, rewarding early believers who do the hard coordination work more than late arrivals. Applications include bootstrapping open-source ecosystems, accelerating civic tech adoption, and creating self-fulfilling network effects for new standards. Note: Vitalik Buterin has flagged meaningful manipulation risks — specifically the 'hitman problem' where actors profit from causing bad outcomes, and whale concentration enabling engineered rather than emergent coordination.
+Markets designed to coordinate an outcome rather than only forecast it. Buying YES stakes a participant financially in making the prediction come true, and the public price acts as a Schelling point: as more people buy YES, the rising price signals growing collective commitment and rewards the early believers who do the hard coordination work over late arrivals. The aim is to help an ecosystem tip, such as a new protocol reaching adoption or a civic technology getting deployed widely. Vitalik Buterin has flagged real manipulation risks here, including a 'hitman problem' where actors profit from causing bad outcomes and whale concentration that engineers a result rather than letting it emerge.
 
 ## Why Ethereum
 
-Composability: hyperstition markets can compose with attestation systems, identity layers, and impact certificates so that demonstrated contributions — not just financial bets — are verifiable and rewarded. Enforcement: payouts to early believers execute automatically when resolution conditions are met, without a platform operator deciding who contributed enough.
-
-## Resources
-
-- [EN0VA](https://en0va.xyz/hyperstition) - Collective imagination and memetics platform
-- [Hyperstitions](https://www.hyperstitions.com) - Coordination engine turning prediction markets into mechanisms for manifesting shared futures
+A hyperstition market run by one company would leave that operator deciding who counts as a contributor, when the market resolves, and whether early believers actually get paid, which undercuts the coordination the market is meant to create. Running it onchain keeps the prices, the resolution rules, and the payouts outside any operator's hands, where participants can verify them and connect the market to other attestation systems without asking permission.

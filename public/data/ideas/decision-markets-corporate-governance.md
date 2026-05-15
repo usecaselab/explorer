@@ -13,12 +13,4 @@ Conditional prediction markets tied to company-specific metrics — share price,
 
 ## Why Ethereum
 
-Enforcement: conditional markets execute and settle via smart contract, making the link between market signal and organizational decision a protocol property rather than management discretion. Composability: the same decision market infrastructure can be referenced by any organization's governance without rebuilding from scratch.
-
-## Resources
-
-- [Butter](https://butter.markets/) - Decision markets for onchain governance
-
-## Examples
-
-- [Aragon](https://aragon.org/) - Organizational governance and operations toolkit
+If the decision market runs on infrastructure that management controls, the people whose power the mechanism is meant to check can pause it, adjust how trades settle, or ignore a signal they dislike, which returns the decision to politics and seniority. Building it onchain keeps the market's rules and the link between its signal and the outcome verifiable by every participant, outside any single executive's reach.

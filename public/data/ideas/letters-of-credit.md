@@ -1,5 +1,5 @@
 ---
-title: "Digital letters of credit"
+title: "Letters of credit"
 domains: logistics-and-trade
 ---
 
@@ -13,4 +13,4 @@ Smart contract-based letters of credit that issue, transfer, and settle digitall
 
 ## Why Ethereum
 
-Enforcement: payment releases automatically when verifiable conditions are met cryptographically — the 5–10 day physical document courier process collapses to minutes because the document and the payment obligation are the same object.
+A digital letter-of-credit network owned by one bank or consortium would let those operators decide who can issue and clear, and route every trade through infrastructure they control and price. Running letters of credit onchain keeps the guarantee and its conditions outside any single institution's hands, so any bank can participate and counterparties can verify the terms themselves rather than trusting a courier and an intermediary.

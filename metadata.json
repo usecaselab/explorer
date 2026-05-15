@@ -1,5 +1,5 @@
 {
-  "name": "Use Case Explorer",
-  "description": "An interactive explorer for Ethereum ecosystem use cases, matching the style of the Use Case Lab.",
+  "name": "Use Case Lab",
+  "description": "A curated index of real-world Ethereum use cases.",
   "requestFramePermissions": []
 }

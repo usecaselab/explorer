@@ -11,10 +11,8 @@ People with deep contextual expertise — a music fan who spots an unsigned arti
 
 Private prediction markets where a sponsor (a label, VC, hiring firm) provides liquidity against outcomes like 'will we sign Artist X?' — but keeps prices visible only to themselves during an opportunity window of roughly two weeks. Anyone can create a market for any opportunity and stake their conviction. As scouts buy YES and drive prices up, the sponsor sees a rising private signal and investigates. If they act and the outcome resolves positively, the scout is paid automatically. After the window closes, positions become public. Designed by Dave White and Matt Liston (Paradigm, August 2025).
 
+Source: [Opportunity Markets, Paradigm 2025](https://www.paradigm.xyz/2025/08/opportunity-markets)
+
 ## Why Ethereum
 
-Enforcement: scout payouts execute automatically via smart contract when resolution conditions are met, removing the need for sponsors to manually evaluate and honor claims. Verifiability: while prices are private during the opportunity window, all trades become publicly auditable afterward, creating reputational accountability for sponsors who might otherwise exploit their information asymmetry.
-
-## Resources
-
-- [Opportunity Markets](https://www.paradigm.xyz/2025/08/opportunity-markets) - Dave White and Matt Liston's original design for private prediction markets that pay scouts
+If the sponsor ran the market on its own system, it would control the prices, the resolution, and the payout, and an outside scout would have no way to know their signal was used or their stake honored. Running it onchain keeps payouts bound to the resolution rule and makes the trades auditable once the window closes, so a sponsor cannot quietly exploit information a scout surfaced.

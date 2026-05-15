@@ -13,9 +13,4 @@ Replacing paper document of title with NFT-like digital representation of title 
 
 ## Why Ethereum
 
-Enforcement: title and transfer rights execute onchain — the document of title is the asset itself, eliminating the physical courier step and the fraud it enables.
-
-## Resources
-
-- [CargoX](https://cargox.io/) - Blockchain document flow for logistics and freight
-- [Integrating blockchain with digital product passports for managing reverse supply chain](https://www.sciencedirect.com/science/article/pii/S2212827125000368) - Explores integration of blockchain + DPPs for lifecycle traceability
+An electronic bill of lading run on one provider's platform makes that company the registry of who holds title, able to set access terms, see every trade, or freeze a transfer, and the whole trade lane depends on it staying available. Building it on neutral rails keeps the document of title as an asset the holder controls directly, transferable and verifiable without any single operator's permission.

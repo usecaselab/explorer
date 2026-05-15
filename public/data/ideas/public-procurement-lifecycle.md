@@ -13,9 +13,4 @@ Transparent record of tenders, bids, evaluations, awards, supplier credentials, 
 
 ## Why Ethereum
 
-Verifiability: the full procurement record — bids, evaluations, awards, and payments — is publicly auditable on a shared ledger, making favoritism and corruption detectable rather than just alleged.
-
-## Resources
-
-- [WEF: Exploring Blockchain Technology for Government Transparency: Blockchain-Based Public Procurement to Reduce Corruption](https://www3.weforum.org/docs/WEF_Blockchain_Government_Transparency_Report_Supplementary%20Research.pdf) - Investigates procurement corruption and ledger-based remedies
-- [Existing and Potential Use Cases for Blockchain in Public Procurement](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4293311) - Evaluates the state of blockchain in EU procurement systems
+When the procurement record is held by the same agency awarding the contracts, the office with the most to gain from favoritism is also the one that controls what the public gets to see. Recording the full lifecycle onchain keeps bids, evaluations, and payments outside that agency's editing power, so citizens and auditors can check the process without asking permission.

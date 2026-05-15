@@ -13,4 +13,4 @@ Pre-harvest financing backed by tokenized future crop receipts — letting farme
 
 ## Why Ethereum
 
-Enforcement: repayment executes automatically from harvest sale proceeds when the crop is sold — lenders can extend credit against verifiable onchain collateral rather than paper promises, and farmers don't need to make a separate manual repayment.
+When financing runs through a single lender or platform, that operator sets the terms, holds the records, and can cut a farmer off or change the rules with no recourse, much as local moneylenders already do. Running the crop receipts and repayment onchain lets any lender extend credit against the same verifiable collateral, and the loan terms stay legible to the farmer instead of locked inside one provider's system.

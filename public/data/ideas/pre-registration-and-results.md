@@ -9,8 +9,8 @@ Pharmaceutical companies register clinical trials, then selectively publish only
 
 ## Solution
 
-An immutable registry where trial protocols and primary endpoints are cryptographically committed before a trial begins — making it publicly provable whether published results match what was pre-registered and impossible to quietly bury unfavorable outcomes.
+A registry where trial protocols and primary endpoints are cryptographically committed before a trial begins — making it publicly provable whether published results match what was pre-registered and impossible to quietly bury unfavorable outcomes.
 
 ## Why Ethereum
 
-Verifiability: cryptographic timestamps prove exactly what was pre-registered and when — selective reporting becomes publicly detectable rather than just ethically discouraged, because the original commitment cannot be altered retroactively.
+A registry run by an industry body or a single institution can quietly let sponsors amend protocols or delay results, since the same parties that benefit from burying outcomes influence the registrar. Committing protocols onchain fixes the original record where no sponsor or operator can revise it, so anyone can check published results against what was promised.

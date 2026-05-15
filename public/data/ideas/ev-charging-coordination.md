@@ -9,14 +9,8 @@ When an EV driver charges on a network other than their home provider, the roami
 
 ## Solution
 
-A shared settlement layer where any CPO and any eMSP can clear roaming transactions without bilateral agreements — using standardized session records (kWh delivered, time, location, tariff) that both parties confirm onchain, with payment executing automatically at session close.
+A neutral settlement layer where any CPO and any eMSP can clear roaming transactions without bilateral agreements — using standardized session records (kWh delivered, time, location, tariff) that both parties confirm onchain, with payment executing automatically at session close.
 
 ## Why Ethereum
 
-Composability: a shared settlement layer means any CPO-eMSP pair can transact without a pre-negotiated bilateral integration — roaming coverage expands from bilateral partnerships to the entire network by default.
-
-## Resources
-
-- [DIMO](https://dimo.co/) - Vehicle data sharing network enabling fleet telemetry and provenance
-- [Blockchain-enabled secure and authentic Nash equilibrium strategies for heterogeneous networked hub of electric vehicle charging stations](https://www.sciencedirect.com/science/article/pii/S2096720924000368) - Cross-chain EV-charging market hub research
-- [Blockchain-enabled decentralized identity management: The case of self-sovereign identity in public transportation](https://www.sciencedirect.com/science/article/pii/S2096720921000099) - Proposes SSI-based interoperable transit credentials across operators
+If a single clearinghouse owned the roaming layer, it would decide which operators get to connect and could price its position as the chokepoint every charging session passes through. Settling sessions on neutral rails lets any operator and any provider clear with each other directly, and the rules of settlement are inspectable by all of them rather than set by one company.

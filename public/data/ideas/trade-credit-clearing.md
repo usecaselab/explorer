@@ -13,8 +13,4 @@ Netting obligations across SME networks
 
 ## Why Ethereum
 
-Composability: receivables across a network can be atomically netted in a single transaction — something impossible to coordinate bilaterally but trivial when all obligations live on a shared ledger.
-
-## Resources
-
-- [Cycles](https://cycles.money/) - Peer-to-peer trade credit clearing system
+A clearing operator that sees every firm's receivables holds a detailed map of who owes whom, and it can prioritize certain members, set the fees, or exclude competitors from the netting. Running the obligations onchain keeps the record out of any single firm's hands, so SMEs can net circular debt without handing a private intermediary leverage over their cash flow.

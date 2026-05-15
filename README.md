@@ -45,18 +45,17 @@ specs. One or two paragraphs at most.
 
 ## Why Ethereum
 
-What does Ethereum bring that nothing else can? Verifiability,
-composability, neutrality, enforcement, censorship-resistance —
-pick the one that's load-bearing for *this* idea and explain it.
-Lead with a single-word capability and a colon for a color chip:
-"Verifiability: …", "Composability: …", or "Enforcement: …".
+A plain one or two sentence sovereignty analysis of the idea.
+Explain how a centralized version would fail the user (who
+holds the power, where the chokepoint or conflict of interest
+sits) and what building on open, neutral rails changes.
 ```
 
 ### Guidelines we look for in reviews
 
 - **Real problem.** The Problem section should describe a situation that exists today, not a hypothetical. If it could be solved with a normal database, say so and explain why a normal database isn't enough.
 - **Specific, not generic.** "Tokenize X" or "decentralize Y" without saying *what changes for whom* won't get merged. Pick a concrete user and walk through what they experience.
-- **Why Ethereum, honestly.** If the answer to "why Ethereum?" is "because crypto," skip it. The strongest ideas use one of Ethereum's actual primitives (verifiability, composability, neutrality, programmable enforcement) in a way that's hard to substitute.
+- **Why Ethereum, honestly.** The strongest ideas need Ethereum's actual properties (censorship resistance, open source, privacy, security, credible neutrality) in a way a centralized platform can't substitute.
 - **Reasonable scope.** One idea per file. If you're describing a whole platform with five sub-products, split it up — or pitch the single most interesting piece.
 - **Domain IDs match.** The `domains:` frontmatter values must match the IDs in [`components/IdeaShowcase.tsx`](components/IdeaShowcase.tsx) (the `DOMAIN_CONFIG` keys). Currently: `ai`, `business-operations`, `civil-society`, `commerce`, `environment`, `finance`, `food-and-agriculture`, `government`, `health`, `identity`, `insurance`, `logistics-and-trade`, `media`, `real-estate-and-housing`, `science`, `utilities`. Pick 1–4.
 

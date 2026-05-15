@@ -13,4 +13,4 @@ Affordability restrictions encoded directly into property tokens that enforce co
 
 ## Why Ethereum
 
-Enforcement: affordability rules are baked into the asset itself and execute at every transfer — covenant compliance becomes a property of the token, not a legal obligation that requires someone to notice and litigate a violation.
+When a covenant lives only in paper records, enforcement depends on whichever office happens to review a transfer, and an owner with an incentive to convert the unit can count on the check being missed. Encoding the restriction into the asset onchain means the rule travels with the property and stays verifiable by tenants and the public rather than sitting with a registry that has to notice a violation.

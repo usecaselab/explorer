@@ -1,5 +1,5 @@
 ---
-title: "Delivery-triggered automated payments"
+title: "Delivery-triggered payments"
 domains: logistics-and-trade
 ---
 
@@ -13,9 +13,4 @@ Conditional release of funds tied to oracle-verified delivery events, proof-of-l
 
 ## Why Ethereum
 
-Enforcement: payment releases automatically when oracle-verified delivery events are confirmed — carriers and suppliers get paid the moment delivery is proven, not weeks later after manual reconciliation.
-
-## Resources
-
-- [OriginTrail](https://origintrail.io/solutions/supply-chains) - Decentralized knowledge graph for verifiable, interoperable supply chain data
-- [Verifiable Manufacturing Using Blockchain](https://arxiv.org/pdf/2302.13353)
+When a buyer or a platform controls the system that decides when delivery counts as proven, the party that owes money also controls the trigger for paying it, and carriers wait while reconciliation drags. Building settlement onchain keeps the release conditions and the delivery record verifiable by both sides, so payment follows agreed proof rather than the payer's discretion.

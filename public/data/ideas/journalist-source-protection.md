@@ -1,5 +1,5 @@
 ---
-title: "Cryptographic source protection for journalists"
+title: "Source protection for journalists"
 domains: media, civil-society
 ---
 
@@ -13,4 +13,4 @@ Zero-knowledge systems where sources prove their organizational affiliation — 
 
 ## Why Ethereum
 
-Verifiability: zero-knowledge proofs confirm a source's credentials cryptographically — the journalist can publish verifiable proof that a source held a specific role without the proof containing any information that identifies who the source is.
+A verification service run by a company would hold records linking sources to the credentials they proved, a single place that can be subpoenaed, breached, or pressured to expose a whistleblower. Building this with zero-knowledge proofs onchain lets a source prove their role without that link existing anywhere, so a journalist can publish credible proof and nothing about the source's identity is stored for anyone to compel.

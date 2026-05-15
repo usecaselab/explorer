@@ -13,9 +13,4 @@ A governance layer that separates the question of values (decided democratically
 
 ## Why Ethereum
 
-Enforcement: the link between market outcome and policy adoption executes automatically, removing the possibility of political override after the market has spoken. Verifiability: welfare metric measurement and market prices are publicly auditable, making it impossible to quietly override the market signal without detection.
-
-## Resources
-
-- [Futarchy: Vote Values, But Bet Beliefs](https://mason.gmu.edu/~rhanson/futarchy.html) - Robin Hanson's original proposal
-- [An Introduction to Futarchy](https://blog.ethereum.org/2014/08/21/introduction-futarchy) - Vitalik Buterin's introduction to futarchy on the Ethereum blog
+If the market that decides policy ran on government-controlled infrastructure, the officials being judged could pause trading, exclude participants, or quietly discard a signal that went against them. Running the markets onchain keeps the prices and the welfare metric outside the control of the people they constrain, where any citizen can audit them and the mechanism keeps running without anyone's permission.

@@ -13,12 +13,4 @@ Policies become tradable contracts, enabling secondary markets, swapping risk pr
 
 ## Why Ethereum
 
-Composability: tokenized policies trade on open markets and can be bundled, split, or collateralized — unlocking liquidity that paper policies permanently forfeit.
-
-## Resources
-
-- [Arbol](https://www.arbol.io/) - Parametric weather and risk insurance platform using smart contracts
-- [Nexus Mutual](https://nexusmutual.io/) - Cover for smart contract risk
-- [Etherisc](https://etherisc.com/) - Decentralized insurance protocol for parametric products and peer-to-peer risk pools
-- [Collaborative and Parametric Insurance on the Ethereum Blockchain](https://arxiv.org/abs/2412.05321) - Tokenized surpluses, voting and smart-contract insurance pools
-- [Token-Based Insurance Solutions on Blockchain](https://arxiv.org/abs/2109.07902) - Framework comparing token-based insurance models, underwriting mechanics, and capital flows on blockchain
+An insurer that keeps policies non-transferable benefits directly from the trapped capital, and a resale market it operates lets it decide who may sell and at what terms. Representing policies onchain moves the contract and its transfer rights out of the issuer's exclusive control, so a policyholder can sell or restructure coverage without the carrier's permission.

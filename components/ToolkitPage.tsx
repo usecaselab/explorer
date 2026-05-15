@@ -3,14 +3,14 @@ import { ArrowUpRight, GitBranch, GraduationCap, Terminal, Palette, Copy, Check 
 
 const TOOLS = [
   {
-    title: 'Usecase Skill',
+    title: 'Use Case Lab Skill',
     description: 'A Claude Code skill that grounds your work in the Use Case Lab — ~120 curated Ethereum use cases across 16 domains. Ask Claude what\'s been tried in a domain, find adjacent work to your idea, or check whether your framing overlaps with what already exists.',
-    url: '/usecase.md',
+    url: '/SKILL.md',
     icon: Terminal,
     color: '#0891B2',
     tags: ['Claude Code', 'Research', 'Grounding'],
     cta: 'Download skill',
-    installCmd: 'curl -sL usecaselab.org/usecase.md',
+    installCmd: 'curl -sL usecaselab.org/SKILL.md',
   },
   {
     title: 'Crops Design',

@@ -68,18 +68,6 @@ export default function IdeaPage({ idea, accentColor, onBack }: IdeaPageProps) {
     setTimeout(() => setStolen(false), 2000)
   }, [idea])
 
-  const capabilityMatch = idea.whyEthereum?.match(/^(Verifiability|Composability|Enforcement):\s*/)
-  const capability = capabilityMatch ? capabilityMatch[1] : null
-  const whyExplanation = capabilityMatch
-    ? idea.whyEthereum.slice(capabilityMatch[0].length)
-    : idea.whyEthereum
-
-  const badgeColors: Record<string, string> = {
-    Verifiability: 'bg-blue-50 text-blue-600',
-    Composability: 'bg-purple-50 text-purple-600',
-    Enforcement: 'bg-green-50 text-green-600',
-  }
-
   const conf = getDomainConfig(idea.domains)
 
   return (
@@ -127,7 +115,7 @@ export default function IdeaPage({ idea, accentColor, onBack }: IdeaPageProps) {
                 <h2 className="font-heading text-sm font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-4">
                   Problem
                 </h2>
-                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line">
                   {renderMarkdownLinks(idea.problem)}
                 </p>
               </section>
@@ -139,7 +127,7 @@ export default function IdeaPage({ idea, accentColor, onBack }: IdeaPageProps) {
                 <h2 className="font-heading text-sm font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-4">
                   Solution Sketch
                 </h2>
-                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line">
                   {renderMarkdownLinks(idea.solutionSketch)}
                 </p>
               </section>
@@ -155,13 +143,8 @@ export default function IdeaPage({ idea, accentColor, onBack }: IdeaPageProps) {
                   className="p-5 sm:p-6 rounded-xl border border-gray-100 dark:border-gray-800"
                   style={{ backgroundColor: `${accentColor}14` }}
                 >
-                  {capability && (
-                    <span className={`inline-block text-xs font-bold px-2.5 py-1 rounded-full mb-3 ${badgeColors[capability]}`}>
-                      {capability}
-                    </span>
-                  )}
-                  <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                    {renderMarkdownLinks(whyExplanation)}
+                  <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line">
+                    {renderMarkdownLinks(idea.whyEthereum)}
                   </p>
                 </div>
               </section>

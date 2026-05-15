@@ -7,7 +7,7 @@ import react from '@vitejs/plugin-react';
 function staticMirrorsPlugin(): Plugin {
   // Top-level public/ folders that contain a mirrored static site (index.html).
   // The Vite dev server otherwise intercepts HTML routes and serves the React shell.
-  const mirroredRoots = ['about', 'verifiable-cities'];
+  const mirroredRoots = ['verifiable-cities'];
   return {
     name: 'static-mirrors',
     configureServer(server) {

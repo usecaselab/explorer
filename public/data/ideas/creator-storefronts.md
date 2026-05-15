@@ -13,4 +13,4 @@ Direct storefronts where revenue splits among collaborators, co-creators, and co
 
 ## Why Ethereum
 
-Enforcement: revenue sharing terms execute automatically at the moment of sale — collaborators receive their share instantly without waiting for a platform to calculate and remit, and no party can unilaterally change the split.
+When a storefront platform sits between a creator and their buyers, it sets the fees, holds the funds before releasing them, and can suspend the account or change the split at will. Building onchain keeps the storefront's payment logic and revenue terms in the creator's hands, where collaborators are paid by rules no operator can quietly rewrite.

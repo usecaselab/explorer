@@ -9,19 +9,8 @@ Wearable devices generate valuable biometric data that is locked inside propriet
 
 ## Solution
 
-Platforms that let individuals share fitness and biometric data and receive compensation or benefits in return
+A standard for wearable biometric data, such as continuous glucose readings, sleep stages, or heart-rate variability, where the individual holds custody and grants time-bounded access to specific buyers. Each reading is signed at the device, so a researcher or insurer can trust it has not been altered after capture. Payment for access settles to the individual rather than to the wearable platform, and access ends automatically when the agreed window or condition closes.
 
 ## Why Ethereum
 
-Composability: individuals connect their data to any research program or insurance product that accepts the standard — no platform lock-in, and users capture value from their own data.
-
-## Resources
-
-- [OriginTrail](https://origintrail.io/) - Decentralized Knowledge Graph for medical data, counterfeit prevention, and medicine traceability, with a case study with BSI and NGOs on AidTrust for donated medicines
-- [AminoChain](https://aminochain.io/) - Community-owned and decentralized biobank that streamlines biosample procurement, safeguards data, and accelerates ethical breakthroughs in healthcare
-- [Privacy-preserving pathological data sharing](https://www.sciencedirect.com/science/article/pii/S2096720924000174) - Uses re-encryption techniques for secure multi-party pathology data exchange
-- [Blockchain-based Healthcare Information Exchange System](https://www.sciencedirect.com/science/article/pii/S2096720924000617) - Hybrid blockchain + ontology system enabling secure, cross-institutional patient data exchange
-- [The case of Hyperledger Fabric as a blockchain solution for healthcare applications](https://www.sciencedirect.com/science/article/pii/S2096720921000075) - Evaluates private blockchains for health data privacy, security, and compliance
-- [Part 2: Blockchain technology in health care](https://onlinelibrary.wiley.com/doi/abs/10.1111/ans.16455) - Reviews blockchain’s role in patient data sharing, telehealth, and pharma supply chains
-- [Decision Model to Design Trust-Focused and Blockchain-Based Health Data Management Applications](https://www.mdpi.com/2813-5288/2/2/5) - Decision model for designing trust-focused, blockchain-based health data management applications
-- [Hyperledger Fabric platform for healthcare trust relations](https://www.sciencedirect.com/science/article/pii/S2096720923000313) - Framework for verifiable professional credentials and patient authentication
+When biometric data sits inside a wearable company's platform, that company decides who buys it and keeps the value while the individual carries the breach risk. Giving people custody of their own health data onchain lets them direct it to a researcher or insurer on their own terms and capture what it is worth.

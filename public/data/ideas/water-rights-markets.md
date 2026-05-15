@@ -13,4 +13,4 @@ Tokenized water rights tradeable on transparent markets, with IoT-verified usage
 
 ## Why Ethereum
 
-Verifiability: actual water usage attested by IoT sensors is recorded immutably — illegal diversions become publicly detectable as deviations from onchain allocations, rather than discovered only when downstream users notice reduced flow.
+If one agency or company runs the allocation registry, large water users can pressure it to overlook diversions or keep trades quiet, leaving downstream users with no independent view. Recording allocations and metered usage onchain lets every rights holder see the same picture, so overuse is visible to the people it harms.

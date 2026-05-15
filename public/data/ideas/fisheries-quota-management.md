@@ -9,8 +9,8 @@ Regional fisheries management organizations (RFMOs) allocate catch quotas across
 
 ## Solution
 
-A shared catch accounting ledger across RFMOs and port states where landing declarations, VMS positions, and observer reports are recorded against vessel-level quota allocations — making overfishing and quota-hopping detectable across jurisdictional boundaries without relying on bilateral data-sharing requests that take weeks.
+An onchain catch register across RFMOs and port states where landing declarations, VMS positions, and observer reports are recorded against vessel-level quota allocations — making overfishing and quota-hopping detectable across jurisdictional boundaries without relying on bilateral data-sharing requests that take weeks.
 
 ## Why Ethereum
 
-Verifiability: catch events from multiple jurisdictions are recorded on a neutral shared ledger — overfishing by a vessel quota-hopping across RFMOs becomes publicly detectable rather than hidden in incompatible national reporting systems.
+If one nation or body hosted the catch register, it would be positioned to delay or soften records that implicate its own fleets, and other members would have no way to see what was changed. Recording catch data on neutral rails keeps it outside any single member's control, so quota-hopping and overfishing stay visible across borders to everyone watching.

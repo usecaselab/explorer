@@ -13,4 +13,4 @@ Stablecoin transfers that move value internationally in minutes at near-zero mar
 
 ## Why Ethereum
 
-Composability: stablecoins settle on a shared global layer without correspondent banking infrastructure — sender and recipient transact directly regardless of jurisdiction, with no intermediary banks extracting spread on each hop.
+Sending money through Western Union and correspondent banks means a chain of intermediaries that each take a cut, can delay the transfer, and can decline to serve a sender or recipient at all. Moving value onchain lets the two parties transact directly across borders, with the funds staying under their control rather than passing through gatekeepers who price and police every hop.

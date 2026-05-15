@@ -107,17 +107,6 @@ const App: React.FC = () => {
     return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
-  // Open the submit modal when arriving via /?submit=1 (used by /about/ subsite).
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('submit') === '1') {
-      setSubmitOpen(true);
-      params.delete('submit');
-      const qs = params.toString();
-      window.history.replaceState(null, '', window.location.pathname + (qs ? `?${qs}` : ''));
-    }
-  }, []);
-
   const navigateToIdea = useCallback((idea: IdeaEntry, ideas: IdeaEntry[]) => {
     if (route.page === 'home') {
       savedHomeScrollRef.current = window.scrollY;

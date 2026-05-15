@@ -13,4 +13,4 @@ Tokenized impact certificates that represent verified outcomes — issued when a
 
 ## Why Ethereum
 
-Composability: impact certificates issued on a shared layer can be purchased by any retroactive funder — the same verified outcome can attract capital from government pay-for-success programs, foundation impact investments, and corporate ESG budgets without the program needing separate reporting relationships with each.
+If impact certificates lived on a platform owned by one funder or registry, that operator could decide which outcomes count and which funders are allowed to buy in, recreating the gatekeeping the model is meant to remove. Issuing them onchain keeps the certificates outside any single funder's control, so the same verified outcome can attract capital from many sources and anyone can check what a certificate represents.

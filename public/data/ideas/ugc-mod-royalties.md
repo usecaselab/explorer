@@ -13,11 +13,4 @@ Tokenized blueprints, maps or mods permit automatic revenue splits, cross-client
 
 ## Why Ethereum
 
-Enforcement: royalty shares for content creators execute automatically when their assets are used or sold — no platform needs to implement a custom revenue-sharing system.
-
-## Resources
-
-- [Parallel](https://parallel.life/) - Sci-fi trading card game with tokenized assets and AI storyline experiments
-- [EVE Online](https://www.eveonline.com/) - Persistent, player-driven virtual economy and world
-- [Skyweaver](https://www.skyweaver.net/) - Trading card game with wallet-based ownership and open trade rails
-- [Dark Forest Punk](https://dfpunk.xyz/) - Decentralized MMO space conquest game built on Optimism with zkSNARKs using MUD
+When a game platform decides whether and how modders get paid, the company that profits from their work also sets the payout rules and can change or withhold them at will. Putting the royalty logic onchain ties creator splits to actual usage in a way no single platform controls, so compensation does not depend on a publisher choosing to honor it.

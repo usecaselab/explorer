@@ -9,12 +9,8 @@ A vehicle's full history — manufacturing specs, ownership transfers, lien stat
 
 ## Solution
 
-End-to-end, tamper-evident records covering manufacturing, ownership, liens, maintenance, accidents, and recycling — serving as both lifecycle passport and verifiable title
+End-to-end records covering manufacturing, ownership, liens, maintenance, accidents, and recycling — serving as both lifecycle passport and verifiable title
 
 ## Why Ethereum
 
-Verifiability: a vehicle's full lifecycle — manufacturing, ownership, maintenance, accidents — is recorded as an immutable chain, making title fraud and odometer rollback publicly detectable.
-
-## Resources
-
-- [DIMO](https://dimo.co/) - Vehicle data sharing network enabling fleet telemetry and provenance
+A vehicle history service run by one company controls which records are shown, can be pressured to omit damage a dealer wants hidden, and leaves a buyer trusting a database they cannot inspect. Recording the lifecycle onchain keeps the chain of ownership and maintenance verifiable by anyone, so title fraud and odometer rollback show up against a record no single operator can quietly edit.

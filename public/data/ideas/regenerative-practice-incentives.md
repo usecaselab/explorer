@@ -13,12 +13,4 @@ Reward mechanisms that compensate farmers for sustainable and regenerative agric
 
 ## Why Ethereum
 
-Verifiability: practice adoption and ecological outcomes can be attested on-chain using satellite imagery, IoT data, and third-party audits — creating a payment trail that funders can verify independently.
-
-## Resources
-
-- [Mercy Corps regenerative agriculture pilot](https://www.mercycorps.org/blog/pilot-adoption-regenerative-agriculture) - Loyalty rewards for sustainable fertilizer use
-- [Justtoken](https://www.justoken.com/) - Tokenizing agricultural outputs (Agrotoken) and arable land (Landtoken)
-- [EthicHub](https://www.ethichub.com/en) - Crowdlending platform connecting global lenders to small farmers
-- [Peach Tycoon](https://peachtycoon.com/) - Tokenizing peach trees, allowing farmers to sell future produce rights directly to consumers
-- [Farmsent](https://www.farmsent.io/) - Onchain marketplace improving farmer access to trade and capital
+When a single program operator records which practices were adopted and decides who gets paid, farmers depend on that intermediary's bookkeeping and funders cannot tell whether the money reached genuine impact. Recording adoption and outcomes onchain creates a payment trail that funders can verify directly and that no intermediary can revise to favor itself.

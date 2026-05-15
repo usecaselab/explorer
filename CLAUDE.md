@@ -46,7 +46,7 @@ If you add new top-level routes or restructure the main content area, preserve t
 
 ### Static sub-sites under `public/`
 
-`public/about/` and `public/verifiable-cities/` are self-contained static sites (each with its own `index.html`). `vite.config.ts`'s `staticMirrorsPlugin` intercepts dev-server requests for those paths so Vite doesn't fall through to the SPA shell. If you add more sub-sites, add their top-level folder name to `mirroredRoots`.
+`public/verifiable-cities/` is a self-contained static site (its own `index.html` and `assets/`). `vite.config.ts`'s `staticMirrorsPlugin` intercepts dev-server requests for that path so Vite doesn't fall through to the SPA shell. If you add more sub-sites, add their top-level folder name to `mirroredRoots`.
 
 ## What is intentionally NOT here
 

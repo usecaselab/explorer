@@ -13,4 +13,4 @@ Cryptographically attested business registration and beneficial ownership record
 
 ## Why Ethereum
 
-Verifiability: ownership attestations are cryptographically signed and immutable across jurisdictions — false filings become detectable and cross-border verification happens on a shared neutral ledger rather than through slow bilateral regulatory cooperation.
+Ownership registries today sit inside individual governments, so verification across borders depends on slow cooperation and a registry can be pressured to obscure who really controls an asset. A neutral onchain register lets banks, regulators, and counterparties check signed ownership attestations directly, without trusting any one jurisdiction to keep its records honest or to share them.

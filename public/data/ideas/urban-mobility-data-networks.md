@@ -9,14 +9,8 @@ Traffic sensors and vehicle telematics data are locked inside proprietary system
 
 ## Solution
 
-Shared sensor and telematics data layers that support traffic optimization, and planning
+Cross-operator sensor and telematics data layers that support traffic optimization, and planning
 
 ## Why Ethereum
 
-Composability: sensor and telematics data shared on an open layer is accessible to any city service without proprietary integrations — enabling coordinated traffic management across operators.
-
-## Resources
-
-- [DIMO](https://dimo.co/) - Vehicle data sharing network enabling fleet telemetry and provenance
-- [The ARTICONF approach to decentralized car-sharing](https://www.sciencedirect.com/science/article/pii/S2096720921000087) - Peer-to-peer car-sharing DApp prototype showing decentralization in mobility
-- [Blockchain-enabled secure and authentic Nash equilibrium strategies for heterogeneous networked hub of electric vehicle charging stations](https://www.sciencedirect.com/science/article/pii/S2096720924000368) - Cross-chain EV-charging market hub research
+When each operator keeps its sensor and telematics data in a proprietary system, every operator holds a chokepoint over the city's view of its own streets and can charge for access or withhold it. Sharing mobility data onchain keeps it readable by any city service without bilateral integrations, so coordinated planning does not hinge on each vendor's cooperation.
