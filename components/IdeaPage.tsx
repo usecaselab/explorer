@@ -17,6 +17,7 @@ export interface IdeaEntry {
   domains: string[]
   author?: string
   createdAt?: string | number
+  updatedAt?: string | number
 }
 
 function domainLabel(d: string): string {
@@ -25,6 +26,12 @@ function domainLabel(d: string): string {
 
 function editOnGithubUrl(id: string): string {
   return `https://github.com/${REPO}/edit/${BRANCH}/public/data/ideas/${id}.md`
+}
+
+function formatDate(value: string | number): string {
+  const d = new Date(value)
+  if (Number.isNaN(d.getTime())) return ''
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
 }
 
 function ideaAsMarkdown(idea: IdeaEntry): string {
@@ -90,19 +97,29 @@ export default function IdeaPage({ idea, accentColor, onBack }: IdeaPageProps) {
           <Shape2D shape={conf.shape} color={conf.color} seed={idea.id} autoRotate />
         </div>
         <div className="flex-1 min-w-0 w-full pt-1">
-          <div className="flex flex-wrap gap-1.5 mb-3">
-            {idea.domains.map(d => {
-              const dc = DOMAIN_CONFIG[d]
-              return (
-                <span
-                  key={d}
-                  className="text-xs font-medium px-2.5 py-1 rounded-full"
-                  style={{ backgroundColor: `${dc?.color || '#666'}15`, color: dc?.color || '#666' }}
-                >
-                  {dc?.label || domainLabel(d)}
-                </span>
-              )
-            })}
+          <div className="flex items-start justify-between gap-3 mb-3">
+            <div className="flex flex-wrap gap-1.5">
+              {idea.domains.map(d => {
+                const dc = DOMAIN_CONFIG[d]
+                return (
+                  <span
+                    key={d}
+                    className="text-xs font-medium px-2.5 py-1 rounded-full"
+                    style={{ backgroundColor: `${dc?.color || '#666'}15`, color: dc?.color || '#666' }}
+                  >
+                    {dc?.label || domainLabel(d)}
+                  </span>
+                )
+              })}
+            </div>
+            <button
+              onClick={handleSteal}
+              aria-label={stolen ? 'Copied' : 'Copy idea as markdown'}
+              title={stolen ? 'Copied' : 'Copy idea as markdown'}
+              className="flex-shrink-0 p-2 -mr-2 -mt-1 text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-900 transition-colors"
+            >
+              {stolen ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+            </button>
           </div>
           <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold leading-tight tracking-tight text-black dark:text-white">
             {idea.title}
@@ -150,24 +167,13 @@ export default function IdeaPage({ idea, accentColor, onBack }: IdeaPageProps) {
               </section>
             )}
 
-            {/* Primary CTAs */}
-            <section className="flex flex-wrap gap-3 pt-2">
-              <button
-                onClick={handleSteal}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-black text-white dark:bg-white dark:text-black text-sm font-medium rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
-              >
-                {stolen ? (
-                  <>
-                    <Check className="w-3.5 h-3.5" />
-                    Copied
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-3.5 h-3.5" />
-                    Steal this idea
-                  </>
-                )}
-              </button>
+            {/* Footer: last-edited stamp on the left, Edit CTA on the right */}
+            <section className="flex flex-wrap items-center gap-3 pt-2">
+              {idea.updatedAt && (
+                <span className="text-xs text-gray-400 dark:text-gray-500">
+                  Last edited {formatDate(idea.updatedAt)}
+                </span>
+              )}
               <a
                 href={editOnGithubUrl(idea.id)}
                 target="_blank"

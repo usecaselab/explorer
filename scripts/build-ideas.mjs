@@ -44,12 +44,24 @@ function gitCreatedAt(filePath) {
   }
 }
 
+function gitUpdatedAt(filePath) {
+  try {
+    const out = execSync(`git log -1 --format=%aI -- "${filePath}"`, {
+      encoding: 'utf-8',
+    }).trim();
+    return out || null;
+  } catch {
+    return null;
+  }
+}
+
 function buildOne(filename) {
   const id = filename.replace(/\.md$/, '');
   const filePath = join(IDEAS_DIR, filename);
   const content = readFileSync(filePath, 'utf-8');
   const { meta, body } = parseFrontmatter(content);
   const createdAt = gitCreatedAt(filePath) || new Date(statSync(filePath).mtimeMs).toISOString();
+  const updatedAt = gitUpdatedAt(filePath) || createdAt;
   return {
     id,
     title: meta.title || id,
@@ -59,6 +71,7 @@ function buildOne(filename) {
     whyEthereum: parseSection(body, 'Why Ethereum'),
     author: meta.author || 'Use Case Lab',
     createdAt,
+    updatedAt,
   };
 }
 

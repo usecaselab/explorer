@@ -7,6 +7,7 @@ export interface Idea {
   whyEthereum: string;
   author: string;
   createdAt: string;
+  updatedAt: string;
 }
 
 let cache: Idea[] | null = null;

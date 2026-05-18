@@ -226,6 +226,7 @@ const App: React.FC = () => {
           domains: row.domains,
           author: row.author,
           createdAt: row.createdAt,
+          updatedAt: row.updatedAt,
         }));
         setAllIdeas(valid);
         const target = valid.find((i) => i.id === route.ideaId);
@@ -274,7 +275,7 @@ const App: React.FC = () => {
         onOpenContact={() => setContactOpen(true)}
       />
 
-      <div className="flex-1 min-w-0 flex flex-col md:pl-8 lg:pl-16">
+      <div className="flex-1 min-w-0 flex flex-col md:pl-[clamp(1rem,4vw,4rem)]">
         {/* Top bar: persistent search across all pages. Add Idea CTA shows on
             the ideas page only. Mobile stacks logo/menu above search/add.
             Sticky so the search bar stays available while scrolling. */}
