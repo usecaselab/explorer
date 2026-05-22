@@ -8,7 +8,7 @@ interface RFPsPageProps {
 
 export default function RFPsPage({ onSelect }: RFPsPageProps) {
   return (
-    <section className="w-full max-w-6xl px-4 sm:px-6 pt-4 sm:pt-6 pb-8 sm:pb-12 md:pb-16">
+    <section className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 pt-4 sm:pt-6 pb-8 sm:pb-12 md:pb-16">
       {/* Hero */}
       <div className="mb-8 sm:mb-12">
         <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-black dark:text-white">

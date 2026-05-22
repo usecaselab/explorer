@@ -40,20 +40,6 @@
     "updatedAt": "2026-05-15T12:17:13-05:00"
   },
   {
-    "id": "agent-device-identity",
-    "title": "Economic identity for agents and devices",
-    "domains": [
-      "identity",
-      "ai"
-    ],
-    "problem": "Autonomous AI agents and IoT devices act in the world. They call services, make purchases, and increasingly hire and pay each other, but they have no standardized identity, wallet, or payment rails. There is no portable way to attribute an agent's actions, manage its permissions, let it hold assets, or settle machine-scale payments without routing every transaction through a human-operated intermediary. IoT devices hit the same wall at the infrastructure level, depending on centralized certificate authorities for identity, which creates single points of failure and makes ownership transfer cumbersome.",
-    "solutionSketch": "Onchain identity and payment rails purpose-built for autonomous agents and devices. An agent can hold funds, sign transactions, publish what it can do, discover and contract with other agents, and build a verifiable track record across platforms, without human approval loops or a central registry. The same primitives let an agent from any organization transact with another as fluidly as APIs call each other today.",
-    "whyEthereum": "If agents and devices depend on a central registry or certificate authority for identity, that operator can revoke an agent, freeze its funds, or watch everything it does, and ownership becomes hard to move without the provider's cooperation. The same is true of agent commerce routed through one company's network, where that operator decides which agents may transact and on what terms. Settling identity and payments onchain lets an agent hold its own assets, carry them across applications, and discover and pay other agents on equal footing, with permissions the owner sets rather than an intermediary.",
-    "author": "Use Case Lab",
-    "createdAt": "2026-05-15T12:17:13-05:00",
-    "updatedAt": "2026-05-15T12:17:13-05:00"
-  },
-  {
     "id": "agricultural-subsidy-disbursement",
     "title": "Agricultural subsidy disbursement",
     "domains": [
@@ -89,19 +75,6 @@
     "problem": "AI models and training datasets are passed through ad-hoc channels with no enforceable licensing, usage metering, or royalty distribution — so creators lose control the moment they publish. The problem runs deeper for the creative workers whose output trained these models: writers, artists, and photographers have no mechanism to verify whether their work was included in a training corpus, no ability to opt out retroactively, and no way to claim revenue from models that directly replicate their style.",
     "solutionSketch": "Tokenized AI models and training datasets with programmable licensing terms set at registration — enabling usage metering, automatic royalty distribution to all rights holders, and cryptographic provenance records that let creators verify inclusion in training corpora and receive proportional compensation without relying on AI companies to voluntarily disclose what they trained on.",
     "whyEthereum": "If a marketplace ran on one company's platform, that operator would report usage on its own systems and decide what creators are owed, leaving the same disclosure gap that lets AI companies stay quiet about what they trained on. Putting licensing and provenance onchain keeps the usage record outside any operator's control, so creators can verify whether their work was used and claim compensation without depending on a platform to be honest.",
-    "author": "Use Case Lab",
-    "createdAt": "2026-05-15T12:17:13-05:00",
-    "updatedAt": "2026-05-15T12:17:13-05:00"
-  },
-  {
-    "id": "aviation-maintenance-records",
-    "title": "Maintenance records for aviation MRO",
-    "domains": [
-      "logistics-and-trade"
-    ],
-    "problem": "Airlines and MRO providers maintain aircraft maintenance records across disconnected paper logbooks and legacy systems, making FAA/EASA audit preparation weeks of manual work and leaving no reliable way to detect falsified inspection signoffs — a safety failure that has contributed to multiple airworthiness directives and enforcement actions.",
-    "solutionSketch": "Per-component maintenance logs that record every inspection, part replacement, and airworthiness directive compliance event — giving regulators a continuous audit trail rather than sampling paper records during periodic inspections.",
-    "whyEthereum": "When maintenance records sit in systems the airline or MRO controls, the party with a commercial reason to cut corners is also the one who can quietly edit the logbook, and regulators only catch it by sampling. Writing each event onchain where no operator can rewrite it lets the regulator and the public read the same history the MRO recorded, so a falsified signoff stays visible afterward.",
     "author": "Use Case Lab",
     "createdAt": "2026-05-15T12:17:13-05:00",
     "updatedAt": "2026-05-15T12:17:13-05:00"
@@ -200,6 +173,20 @@
     "author": "Use Case Lab",
     "createdAt": "2026-05-15T12:17:13-05:00",
     "updatedAt": "2026-05-15T12:17:13-05:00"
+  },
+  {
+    "id": "commercial-use-licensing",
+    "title": "Commercial-use licensing for open source",
+    "domains": [
+      "business-operations",
+      "finance"
+    ],
+    "problem": "A maintainer is fine with their library being free for individuals, students, and research, and would prefer commercial users that integrate it into paid products to pay a license fee. The current options are bad: keep the license fully permissive and watch a vendor charge six figures for a hosted version of the work, relicense to AGPL and accept a fight with every commercial user, or move to a source-available license and accept the cost of policing it. None of these scale to a single maintainer with a day job.",
+    "solutionSketch": "A dual-licensing model where commercial use is gated by an onchain license token. The maintainer publishes the terms, commercial users acquire the token by paying a fee that flows directly to the project's address, and the build or runtime checks the presence of a valid license tied to the user's identity. Compliance is cheaper than litigation, the maintainer does not need a legal department, and individual or non-commercial use stays untouched.",
+    "whyEthereum": "License enforcement at the scale of an indie maintainer fails because the cost of detecting non-compliance and the cost of pursuing it are both higher than the license fee. Issuing license tokens onchain, with a public price and a verifiable record of who holds one, shifts the work from enforcement to verification: any party in the supply chain can check whether a commercial deployment holds a current license, and the maintainer collects the fee without negotiating individually with each vendor.",
+    "author": "Use Case Lab",
+    "createdAt": "2026-05-19T19:48:58.806Z",
+    "updatedAt": "2026-05-19T19:48:58.806Z"
   },
   {
     "id": "community-currencies",
@@ -338,6 +325,19 @@
     "updatedAt": "2026-05-15T12:17:13-05:00"
   },
   {
+    "id": "curation-markets",
+    "title": "Curation markets",
+    "domains": [
+      "media"
+    ],
+    "problem": "Deciding what deserves attention, which research is worth reading, which products are worth buying, which emerging work is worth following, is done for free by people who carry the cost of being early and wrong and capture none of the value when they turn out to be right. The systems that aggregate those judgments are platform recommender engines that rank by undisclosed rules, or review and ratings systems that are cheap to game because a fake recommendation costs the recommender nothing. The people best placed to surface quality have no economic stake in their own accuracy.",
+    "solutionSketch": "Curation markets let a person stake reputation or capital on a recommendation, earn a share when the pick is later borne out, and lose stake when it is not. Smart contracts settle payouts against a measurable outcome agreed in advance, such as audience growth, sales, citations, or downstream curation, and each curator builds a public track record tied to their address. The same primitive covers prediction markets on whether a piece of work will succeed and reputation-weighted feeds where curators with the strongest history surface higher. Because a wrong call costs the curator real stake, the signal is harder to fake than a free rating.",
+    "whyEthereum": "A curation market works only if the payout rules cannot be quietly rewritten by whoever hosts it, and only if a curator can carry their track record with them when a better venue appears. Settling stakes, attribution, and payouts onchain makes the incentive structure legible to everyone taking part and keeps each curator's history portable across whatever discovery surfaces emerge. A platform-owned recommender can be switched off or retuned without notice; an open curation market keeps running as long as its contracts and its participants do.",
+    "author": "Use Case Lab",
+    "createdAt": "2026-05-21T19:39:16.826Z",
+    "updatedAt": "2026-05-21T19:39:16.826Z"
+  },
+  {
     "id": "customs-records",
     "title": "Customs records across borders",
     "domains": [
@@ -416,6 +416,20 @@
     "author": "Use Case Lab",
     "createdAt": "2026-03-24T21:02:07Z",
     "updatedAt": "2026-05-15T11:51:56-05:00"
+  },
+  {
+    "id": "dependency-graph-funding",
+    "title": "Dependency-graph funding",
+    "domains": [
+      "business-operations",
+      "civil-society"
+    ],
+    "problem": "A maintainer whose library is depended on by thousands of downstream projects sees none of the economic value those projects generate. When a downstream company sponsors a project, the money stops at the top-level library and rarely reaches the upstream dependencies that project quietly relies on. The deepest layers of the stack, the cryptography libraries and parsers and build tools, are also the most under-resourced, because gratitude does not propagate down the import graph the way usage does.",
+    "solutionSketch": "Funding contracts that fan an incoming sponsorship or revenue share across the dependency tree, weighted by usage proofs derived from package manifests and build artifacts. A downstream project receiving a grant or commercial revenue routes a configurable portion through the contract, which splits it among direct and transitive dependencies according to a rule the project's maintainers publish. Support reaches the layers it should without each upstream maintainer having to chase it manually.",
+    "whyEthereum": "Routing money through a dependency graph requires every participant to agree on the same set of weights and the same set of recipient addresses, and to be confident that the routing logic cannot be quietly altered between deposit and payout. Settling the splits onchain, against a usage graph anyone can audit, lets a downstream maintainer commit to funding upstream work in a way her sponsors and her dependencies can both verify, without putting a foundation in the middle to mediate the relationship.",
+    "author": "Use Case Lab",
+    "createdAt": "2026-05-21T19:39:20.136Z",
+    "updatedAt": "2026-05-21T19:39:20.136Z"
   },
   {
     "id": "digital-product-passports",
@@ -602,20 +616,6 @@
     "updatedAt": "2026-05-15T12:17:13-05:00"
   },
   {
-    "id": "fisheries-quota-management",
-    "title": "Cross-jurisdictional fisheries quota tracking",
-    "domains": [
-      "environment",
-      "government"
-    ],
-    "problem": "Regional fisheries management organizations (RFMOs) allocate catch quotas across member states, but enforcement depends on self-reported landing declarations and port state inspections that cover a fraction of actual landings. Vessels quota-hop between jurisdictions, and IUU (illegal, unreported, unregulated) fishing accounts for up to 26 million tonnes annually — partly because no RFMO can see another's allocation and catch data in real time.",
-    "solutionSketch": "An onchain catch register across RFMOs and port states where landing declarations, VMS positions, and observer reports are recorded against vessel-level quota allocations — making overfishing and quota-hopping detectable across jurisdictional boundaries without relying on bilateral data-sharing requests that take weeks.",
-    "whyEthereum": "If one nation or body hosted the catch register, it would be positioned to delay or soften records that implicate its own fleets, and other members would have no way to see what was changed. Recording catch data on neutral rails keeps it outside any single member's control, so quota-hopping and overfishing stay visible across borders to everyone watching.",
-    "author": "Use Case Lab",
-    "createdAt": "2026-03-24T21:02:07Z",
-    "updatedAt": "2026-05-15T11:51:56-05:00"
-  },
-  {
     "id": "food-provenance-and-traceability",
     "title": "Food provenance and traceability",
     "domains": [
@@ -654,19 +654,6 @@
     "author": "Use Case Lab",
     "createdAt": "2026-03-24T21:02:07Z",
     "updatedAt": "2026-05-15T11:51:56-05:00"
-  },
-  {
-    "id": "grid-edge-event-log",
-    "title": "Event log for grid edge devices",
-    "domains": [
-      "utilities"
-    ],
-    "problem": "Distribution utilities are adding thousands of distributed energy resources, smart inverters, and storage systems at the edge of the grid, but they have no reliable record of what those devices did. The monitoring systems built for large centralized power plants do not reach the grid edge, and as the number of connected devices grows, so does the need for a trustworthy log of every command and state change for security investigations and regulatory oversight.",
-    "solutionSketch": "An append-only event log for grid edge devices that records commands, state changes, and energy-flow measurements with cryptographic attestation as they happen. It gives distribution operators and regulators a complete audit trail for the part of the grid where current monitoring stops, and a record an attacker cannot quietly edit to cover their tracks.",
-    "whyEthereum": "If the event log lives on a system the utility or a vendor controls, the same party responsible for grid edge devices also controls the record of what those devices did, and an attacker who reaches that system can erase their own tracks. Recording the log onchain keeps device commands and state changes where regulators and forensics can verify them against a history no single operator can rewrite.",
-    "author": "Use Case Lab",
-    "createdAt": "2026-05-15T12:17:13-05:00",
-    "updatedAt": "2026-05-15T12:17:13-05:00"
   },
   {
     "id": "harvest-pre-financing",
@@ -1223,19 +1210,6 @@
     "updatedAt": "2026-05-15T12:17:13-05:00"
   },
   {
-    "id": "remittances",
-    "title": "Migrant worker remittances",
-    "domains": [
-      "civil-society"
-    ],
-    "problem": "A Kenyan nurse working in London sending $200 home loses $12–20 to Western Union and correspondent bank fees — more than the entire daily wage of the family member receiving it — while the transfer takes 1–3 days and requires both parties to have access to physical agents.",
-    "solutionSketch": "Stablecoin transfers that move value internationally in minutes at near-zero marginal cost, with recipients cashing out through local mobile money networks or holding value in digital wallets without needing a bank account.",
-    "whyEthereum": "Sending money through Western Union and correspondent banks means a chain of intermediaries that each take a cut, can delay the transfer, and can decline to serve a sender or recipient at all. Moving value onchain lets the two parties transact directly across borders, with the funds staying under their control rather than passing through gatekeepers who price and police every hop.",
-    "author": "Use Case Lab",
-    "createdAt": "2026-03-24T21:02:07Z",
-    "updatedAt": "2026-05-15T11:51:56-05:00"
-  },
-  {
     "id": "renewable-project-financing",
     "title": "Renewable project financing",
     "domains": [
@@ -1246,19 +1220,6 @@
     "problem": "Small-scale renewable energy projects struggle to attract financing because ownership, cash flows, and performance data are not standardized or auditable, making it prohibitively hard to bundle many sites into investable instruments.",
     "solutionSketch": "Onchain funding models for solar, storage, and community energy projects that track ownership, cash flows, and performance",
     "whyEthereum": "When a financing platform holds the ownership records and reports the performance data, investors depend on that operator's books and it can favor its own deals or fold and strand the projects. Recording ownership, cash flows, and generation data onchain keeps them auditable by anyone, so small projects can be bundled and financed without trusting a single intermediary's accounting.",
-    "author": "Use Case Lab",
-    "createdAt": "2026-05-15T12:17:13-05:00",
-    "updatedAt": "2026-05-15T12:17:13-05:00"
-  },
-  {
-    "id": "reserve-attestation",
-    "title": "Real-time reserve attestation for insurance solvency",
-    "domains": [
-      "insurance"
-    ],
-    "problem": "Insurance regulators assess solvency through quarterly statutory filings that lag reality by months — in the interval between filings, an insurer's reserve position can deteriorate significantly without policyholders or regulators having visibility. The 2023 FIA surplus note controversy showed that even sophisticated state regulators can be caught off guard by rapid reserve changes between reporting periods.",
-    "solutionSketch": "Onchain attestation of reserve assets that supplements existing statutory reporting — letting regulators and reinsurers see real-time reserve positions between quarterly filings, without replacing the existing RBC framework or requiring insurers to move actual reserve assets onto a blockchain.",
-    "whyEthereum": "When an insurer reports its own reserves on its own schedule, it controls what regulators and policyholders see and when, so deterioration stays hidden until the next filing. Publishing signed attestations onchain puts reserve positions where regulators and reinsurers can check them continuously and independently, rather than waiting on the party whose solvency is in question.",
     "author": "Use Case Lab",
     "createdAt": "2026-05-15T12:17:13-05:00",
     "updatedAt": "2026-05-15T12:17:13-05:00"
@@ -1418,19 +1379,6 @@
     "problem": "Modders and content creators build maps, skins, and tools that drive player engagement, but receive no automatic compensation because platforms lack enforceable revenue-sharing mechanisms tied to actual usage.",
     "solutionSketch": "Tokenized blueprints, maps or mods permit automatic revenue splits, cross-client recognition, and creator-driven extension of game logic",
     "whyEthereum": "When a game platform decides whether and how modders get paid, the company that profits from their work also sets the payout rules and can change or withhold them at will. Putting the royalty logic onchain ties creator splits to actual usage in a way no single platform controls, so compensation does not depend on a publisher choosing to honor it.",
-    "author": "Use Case Lab",
-    "createdAt": "2026-03-24T21:02:07Z",
-    "updatedAt": "2026-05-15T11:51:56-05:00"
-  },
-  {
-    "id": "urban-mobility-data-networks",
-    "title": "Urban mobility data networks",
-    "domains": [
-      "logistics-and-trade"
-    ],
-    "problem": "Traffic sensors and vehicle telematics data are locked inside proprietary systems owned by individual operators, preventing cities from building a unified real-time picture of mobility patterns.",
-    "solutionSketch": "Cross-operator sensor and telematics data layers that support traffic optimization, and planning",
-    "whyEthereum": "When each operator keeps its sensor and telematics data in a proprietary system, every operator holds a chokepoint over the city's view of its own streets and can charge for access or withhold it. Sharing mobility data onchain keeps it readable by any city service without bilateral integrations, so coordinated planning does not hinge on each vendor's cooperation.",
     "author": "Use Case Lab",
     "createdAt": "2026-03-24T21:02:07Z",
     "updatedAt": "2026-05-15T11:51:56-05:00"

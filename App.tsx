@@ -1,95 +1,102 @@
 import React, { useState, useEffect, useLayoutEffect, useCallback, useRef } from 'react';
-import IdeaShowcase, { getDomainConfig } from './components/IdeaShowcase';
+import PersonaLanding from './components/PersonaLanding';
+import PersonaPage from './components/PersonaPage';
 import IdeaPage, { IdeaEntry } from './components/IdeaPage';
-import { fetchAllIdeas } from './lib/api';
-import ToolkitPage from './components/ToolkitPage';
+import IdeaShowcase, { getDomainConfig } from './components/IdeaShowcase';
+import GraphView from './components/GraphView';
+import { fetchAllIdeas, fetchAllPersonas, type Persona, type Idea } from './lib/api';
 import SubmitIdeaModal from './components/SubmitIdeaModal';
 import ContactModal from './components/ContactModal';
-import Sidebar from './components/Sidebar';
-import MobileNav from './components/MobileNav';
+import ThemeToggle from './components/ThemeToggle';
 
 import RFPsPage from './components/RFPsPage';
 import RFPPage from './components/RFPPage';
 import { findRFP, type RFP } from './lib/rfps';
-import { Menu, Plus, Search } from 'lucide-react';
+import { Search, X } from 'lucide-react';
+
+type LandingView = 'home' | 'ideas' | 'graph';
 
 type Route =
   | { page: 'home' }
+  | { page: 'ideas' }
+  | { page: 'graph' }
+  | { page: 'persona'; personaId: string }
   | { page: 'idea'; ideaId: string }
-  | { page: 'toolkit' }
   | { page: 'rfps' }
   | { page: 'rfp'; rfpId: string };
 
 function parseRoute(): Route {
   const path = window.location.pathname;
-  if (path === '/toolkit') return { page: 'toolkit' };
+  if (path === '/ideas') return { page: 'ideas' };
+  if (path === '/graph') return { page: 'graph' };
   if (path === '/rfp') return { page: 'rfps' };
   const rfpMatch = path.match(/^\/rfp\/([^/]+)$/);
   if (rfpMatch) return { page: 'rfp', rfpId: rfpMatch[1] };
+  const personaMatch = path.match(/^\/persona\/([^/]+)$/);
+  if (personaMatch) return { page: 'persona', personaId: personaMatch[1] };
   const ideaMatch = path.match(/^\/idea\/([^/]+)$/);
   if (ideaMatch) return { page: 'idea', ideaId: ideaMatch[1] };
   return { page: 'home' };
 }
 
+const VIEW_PATH: Record<LandingView, string> = { home: '/', ideas: '/ideas', graph: '/graph' };
+const VIEWS: { id: LandingView; label: string }[] = [
+  { id: 'home', label: 'Personas' },
+  { id: 'ideas', label: 'Ideas' },
+  { id: 'graph', label: 'Graph' },
+];
+
 const App: React.FC = () => {
   const [route, setRoute] = useState<Route>(parseRoute);
-  const [allIdeas, setAllIdeas] = useState<IdeaEntry[]>([]);
+  const [allIdeas, setAllIdeas] = useState<Idea[]>([]);
+  const [allPersonas, setAllPersonas] = useState<Persona[]>([]);
   const [activeIdea, setActiveIdea] = useState<IdeaEntry | null>(null);
+  const [activePersona, setActivePersona] = useState<Persona | null>(null);
   const [activeRFP, setActiveRFP] = useState<RFP | null>(null);
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [searchFocused, setSearchFocused] = useState(false);
   const [submitOpen, setSubmitOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  const [totalIdeas, setTotalIdeas] = useState<number | null>(null);
-  const [searchFocused, setSearchFocused] = useState(false);
-  const searchRef = useRef<HTMLInputElement>(null);
   const headerRef = useRef<HTMLElement>(null);
-  // Saved window.scrollY when leaving the home page for an idea; restored on
-  // return so the user lands where they were.
-  const savedHomeScrollRef = useRef<number | null>(null);
-  // Tracks whether the current idea page was reached via in-app navigation
-  // (vs. a deep link / refresh). Determines whether back uses history.back().
+  const searchRef = useRef<HTMLInputElement>(null);
+  const savedLandingScrollRef = useRef<number | null>(null);
   const cameFromInternalRef = useRef(false);
 
+  const landingViewRef = useRef<LandingView>('home');
+  if (route.page === 'home' || route.page === 'ideas' || route.page === 'graph') {
+    landingViewRef.current = route.page;
+  }
+  const landingView = landingViewRef.current;
+
   useEffect(() => {
-    fetchAllIdeas()
-      .then((rows) => setTotalIdeas(rows.length))
-      .catch(() => {});
+    fetchAllIdeas().then(setAllIdeas).catch(() => {});
+    fetchAllPersonas().then(setAllPersonas).catch(() => {});
   }, []);
 
-  // Firefox restores scroll position on pushState. Disable browser restoration
-  // and reset ourselves on every route change.
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
     }
   }, []);
 
-  // useLayoutEffect runs synchronously after DOM mutations but before paint,
-  // so the scroll position is set before the user sees the new route — no
-  // visible scroll/jump between the old and new positions.
+  const isLanding = (p: Route['page']) => p === 'home' || p === 'ideas' || p === 'graph';
+
   useLayoutEffect(() => {
-    if (route.page === 'home' && savedHomeScrollRef.current != null) {
-      const y = savedHomeScrollRef.current;
-      savedHomeScrollRef.current = null;
+    if (isLanding(route.page) && savedLandingScrollRef.current != null) {
+      const y = savedLandingScrollRef.current;
+      savedLandingScrollRef.current = null;
       window.scrollTo(0, y);
     } else {
       window.scrollTo(0, 0);
     }
   }, [route]);
 
-  // Publish the sticky header height as a CSS variable so child sticky
-  // elements (e.g. the category carousel) can pin directly beneath it
-  // without hardcoding a per-breakpoint offset.
   useEffect(() => {
     const el = headerRef.current;
     if (!el) return;
     const update = () => {
-      document.documentElement.style.setProperty(
-        '--sticky-header-h',
-        `${el.offsetHeight}px`
-      );
+      document.documentElement.style.setProperty('--sticky-header-h', `${el.offsetHeight}px`);
     };
     update();
     const ro = new ResizeObserver(update);
@@ -97,38 +104,44 @@ const App: React.FC = () => {
     return () => ro.disconnect();
   }, []);
 
-  // Global "/" shortcut state — wired further down once navigateHome is defined.
-  const pendingSearchFocusRef = useRef(false);
-
-  // Browser back/forward
   useEffect(() => {
     const onPopState = () => setRoute(parseRoute());
     window.addEventListener('popstate', onPopState);
     return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
-  const navigateToIdea = useCallback((idea: IdeaEntry, ideas: IdeaEntry[]) => {
-    if (route.page === 'home') {
-      savedHomeScrollRef.current = window.scrollY;
-    }
+  const navigateView = useCallback((view: LandingView) => {
+    window.history.pushState(null, '', VIEW_PATH[view]);
+    setActiveIdea(null);
+    setActivePersona(null);
+    setActiveRFP(null);
+    setRoute({ page: view });
+  }, []);
+
+  const navigateHome = useCallback(() => navigateView('home'), [navigateView]);
+
+  const navigateToPersona = useCallback((persona: Persona) => {
+    if (isLanding(route.page)) savedLandingScrollRef.current = window.scrollY;
+    cameFromInternalRef.current = true;
+    window.history.pushState(null, '', `/persona/${persona.id}`);
+    setActivePersona(persona);
+    setRoute({ page: 'persona', personaId: persona.id });
+  }, [route.page]);
+
+  const navigateToPersonaById = useCallback((personaId: string) => {
+    const found = allPersonas.find((p) => p.id === personaId);
+    if (found) navigateToPersona(found);
+  }, [allPersonas, navigateToPersona]);
+
+  const navigateToIdea = useCallback((idea: IdeaEntry) => {
+    if (isLanding(route.page)) savedLandingScrollRef.current = window.scrollY;
     cameFromInternalRef.current = true;
     window.history.pushState(null, '', `/idea/${idea.id}`);
-    setAllIdeas(ideas);
     setActiveIdea(idea);
     setRoute({ page: 'idea', ideaId: idea.id });
   }, [route.page]);
 
-  const navigateHome = useCallback(() => {
-    window.history.pushState(null, '', '/');
-    setActiveIdea(null);
-    setActiveRFP(null);
-    setRoute({ page: 'home' });
-  }, []);
-
-  // Back from idea: if the user arrived via in-app nav, prefer browser back
-  // so we don't pile a redundant '/' onto the history stack. Otherwise (deep
-  // link), push a new home entry.
-  const handleBackFromIdea = useCallback(() => {
+  const handleBack = useCallback(() => {
     if (cameFromInternalRef.current) {
       window.history.back();
     } else {
@@ -136,16 +149,10 @@ const App: React.FC = () => {
     }
   }, [navigateHome]);
 
-  const navigateToolkit = useCallback(() => {
-    window.history.pushState(null, '', '/toolkit');
-    setActiveIdea(null);
-    setActiveRFP(null);
-    setRoute({ page: 'toolkit' });
-  }, []);
-
   const navigateRFPs = useCallback(() => {
     window.history.pushState(null, '', '/rfp');
     setActiveIdea(null);
+    setActivePersona(null);
     setActiveRFP(null);
     setRoute({ page: 'rfps' });
   }, []);
@@ -162,90 +169,69 @@ const App: React.FC = () => {
     setRoute({ page: 'rfps' });
   }, []);
 
-  // When the user types into the search bar from a non-home page, jump them
-  // home so the filtered results render.
-  const handleSearchChange = useCallback(
-    (value: string) => {
-      setSearchQuery(value);
-      if (value && route.page !== 'home') navigateHome();
-    },
-    [route.page, navigateHome]
-  );
+  // Search acts on whichever view is showing. From a detail page, bounce to
+  // the last landing view so the query has something to act on.
+  const handleSearchChange = useCallback((value: string) => {
+    setSearchQuery(value);
+    if (value && !isLanding(route.page)) navigateView(landingView);
+  }, [route.page, landingView, navigateView]);
 
-  // Global "/" shortcut: focus search on the ideas page; navigate home first if elsewhere.
+  // Global "/" shortcut focuses search.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== '/') return;
       const t = e.target as HTMLElement | null;
       if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
       e.preventDefault();
-      if (route.page === 'home') {
-        searchRef.current?.focus();
-        searchRef.current?.select();
-      } else {
-        pendingSearchFocusRef.current = true;
-        navigateHome();
-      }
+      searchRef.current?.focus();
+      searchRef.current?.select();
     };
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [route.page, navigateHome]);
+  }, []);
 
+  // Direct URL load or back/forward to a persona
   useEffect(() => {
-    if (route.page === 'home' && pendingSearchFocusRef.current) {
-      pendingSearchFocusRef.current = false;
-      requestAnimationFrame(() => {
-        searchRef.current?.focus();
-        searchRef.current?.select();
-      });
+    if (route.page !== 'persona') return;
+    const existing = allPersonas.find((p) => p.id === route.personaId);
+    if (existing) {
+      setActivePersona(existing);
+      return;
     }
-  }, [route]);
+    if (allPersonas.length === 0) return;
+    window.history.replaceState(null, '', '/');
+    setRoute({ page: 'home' });
+  }, [route, allPersonas]);
 
   // Direct URL load or back/forward to an idea
   useEffect(() => {
-    if (route.page !== 'idea') {
-      setActiveIdea(null);
+    if (route.page !== 'idea') return;
+    const ideaRow = allIdeas.find((i) => i.id === route.ideaId);
+    if (ideaRow) {
+      setActiveIdea({
+        id: ideaRow.id,
+        title: ideaRow.title,
+        problem: ideaRow.problem,
+        solutionSketch: ideaRow.solutionSketch,
+        whyEthereum: ideaRow.whyEthereum,
+        domains: ideaRow.domains,
+        author: ideaRow.author,
+        createdAt: ideaRow.createdAt,
+        updatedAt: ideaRow.updatedAt,
+      });
       return;
     }
-    const existing = allIdeas.find((i) => i.id === route.ideaId);
-    if (existing) {
-      setActiveIdea(existing);
-      return;
-    }
-
-    const load = async () => {
+    if (allIdeas.length === 0) {
       setLoading(true);
-      try {
-        const rows = await fetchAllIdeas();
-        const valid: IdeaEntry[] = rows.map((row) => ({
-          id: row.id,
-          title: row.title,
-          problem: row.problem,
-          solutionSketch: row.solutionSketch,
-          whyEthereum: row.whyEthereum,
-          domains: row.domains,
-          author: row.author,
-          createdAt: row.createdAt,
-          updatedAt: row.updatedAt,
-        }));
-        setAllIdeas(valid);
-        const target = valid.find((i) => i.id === route.ideaId);
-        if (target) {
-          setActiveIdea(target);
-        } else {
-          window.history.replaceState(null, '', '/');
-          setRoute({ page: 'home' });
-        }
-      } catch (err) {
-        console.warn('Failed to load idea', err);
-        window.history.replaceState(null, '', '/');
-        setRoute({ page: 'home' });
-      } finally {
-        setLoading(false);
-      }
-    };
+      return;
+    }
+    setLoading(false);
+    window.history.replaceState(null, '', '/');
+    setRoute({ page: 'home' });
+  }, [route, allIdeas]);
 
-    load();
+  useEffect(() => {
+    if (route.page === 'idea' && allIdeas.length > 0) setLoading(false);
   }, [route, allIdeas]);
 
   // Direct URL load or back/forward to an RFP
@@ -263,48 +249,50 @@ const App: React.FC = () => {
     }
   }, [route]);
 
-  const sidebarRoute = route.page;
+  const showLandingWrapper = isLanding(route.page) || route.page === 'persona' || route.page === 'idea';
+  const activeView: LandingView | null = isLanding(route.page)
+    ? (route.page as LandingView)
+    : route.page === 'persona' || route.page === 'idea'
+      ? landingView
+      : null;
+
+  const renderToggle = () => (
+    <div className="inline-flex items-center gap-1 p-1 rounded-lg bg-gray-100 dark:bg-neutral-900">
+      {VIEWS.map((v) => (
+        <button
+          key={v.id}
+          onClick={() => navigateView(v.id)}
+          className={`px-2.5 sm:px-3.5 py-1.5 rounded-md text-xs sm:text-sm font-medium transition-colors ${
+            activeView === v.id
+              ? 'bg-white dark:bg-neutral-800 text-black dark:text-white shadow-sm'
+              : 'text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white'
+          }`}
+        >
+          {v.label}
+        </button>
+      ))}
+    </div>
+  );
 
   return (
-    <div className="min-h-screen flex bg-white text-black dark:bg-neutral-950 dark:text-neutral-100">
-      <Sidebar
-        current={sidebarRoute}
-        onNavigateHome={navigateHome}
-        onNavigateRFPs={navigateRFPs}
-        onNavigateToolkit={navigateToolkit}
-        onOpenContact={() => setContactOpen(true)}
-      />
-
-      <div className="flex-1 min-w-0 flex flex-col md:pl-[clamp(1rem,4vw,4rem)]">
-        {/* Top bar: persistent search across all pages. Add Idea CTA shows on
-            the ideas page only. Mobile stacks logo/menu above search/add.
-            Sticky so the search bar stays available while scrolling. */}
+    <div className="min-h-screen flex flex-col bg-white text-black dark:bg-neutral-950 dark:text-neutral-100">
+      <div className="w-full flex flex-col flex-1 min-w-0">
         <header
           ref={headerRef}
-          className="sticky top-0 z-20 w-full max-w-6xl px-4 sm:px-6 pt-6 sm:pt-8 pb-3 sm:pb-4 bg-white dark:bg-neutral-950 border-b border-gray-100 dark:border-gray-900"
+          className="sticky top-0 z-20 w-full px-4 sm:px-6 pt-5 sm:pt-6 pb-3 sm:pb-4 bg-white dark:bg-neutral-950 border-b border-gray-100 dark:border-gray-900"
         >
-          {/* Mobile-only top row: logo left, hamburger right */}
-          <div className="md:hidden flex items-center justify-between mb-5">
+          <div className="flex items-center gap-3 sm:gap-4">
             <button
               onClick={navigateHome}
-              className="hover:opacity-70 transition-opacity"
               aria-label="Home"
+              className="flex-shrink-0 hover:opacity-70 transition-opacity"
             >
               <img src="/initiative.svg" alt="Use Case Lab" className="h-7 dark:invert" />
             </button>
-            <button
-              onClick={() => setMobileNavOpen(true)}
-              className="p-2 -mr-2 text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white"
-              aria-label="Open menu"
-            >
-              <Menu className="w-5 h-5" />
-            </button>
-          </div>
+            <div className="hidden sm:block">{renderToggle()}</div>
 
-          {/* Search + Add Idea row */}
-          <div className="flex items-center gap-2 sm:gap-3 md:gap-6">
-            {route.page === 'home' || route.page === 'idea' ? (
-              <div className="flex-1 max-w-md relative min-w-0">
+            <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
+              <div className="relative w-36 sm:w-56 md:w-72">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 dark:text-gray-500 pointer-events-none" />
                 <input
                   ref={searchRef}
@@ -313,52 +301,87 @@ const App: React.FC = () => {
                   onChange={(e) => handleSearchChange(e.target.value)}
                   onFocus={() => setSearchFocused(true)}
                   onBlur={() => setSearchFocused(false)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Escape' && searchQuery) {
+                      e.preventDefault();
+                      setSearchQuery('');
+                    }
+                  }}
                   placeholder="Search ideas..."
                   aria-label="Search ideas"
-                  className="w-full pl-9 pr-3 md:pr-10 py-2 bg-gray-100 dark:bg-neutral-900 rounded-lg text-sm text-gray-800 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black/10 dark:focus:ring-white/10 focus:bg-gray-50 dark:focus:bg-neutral-900 transition-colors"
+                  className={`w-full pl-9 py-2 bg-gray-100 dark:bg-neutral-900 rounded-lg text-sm text-gray-800 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black/10 dark:focus:ring-white/10 transition-colors ${searchQuery ? 'pr-9' : 'pr-3 md:pr-9'}`}
                 />
-                {!searchFocused && !searchQuery && (
+                {searchQuery ? (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSearchQuery('');
+                      searchRef.current?.focus();
+                    }}
+                    aria-label="Clear search"
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 p-0.5 rounded text-gray-400 dark:text-gray-500 hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                ) : (!searchFocused && (
                   <kbd className="hidden md:flex absolute right-3 top-1/2 -translate-y-1/2 text-[11px] font-mono text-gray-400 dark:text-gray-500 border border-gray-200 dark:border-gray-700 rounded px-1.5 py-0.5 pointer-events-none select-none">
                     /
                   </kbd>
-                )}
+                ))}
               </div>
-            ) : (
-              // Spacer keeps the desktop header height consistent across pages
-              // (so heroes align). Collapses to nothing on mobile.
-              <div className="hidden md:block flex-1 max-w-md h-9" aria-hidden="true" />
-            )}
-            {(route.page === 'home' || route.page === 'idea') && (
-              <button
-                onClick={() => setSubmitOpen(true)}
-                className="md:ml-auto inline-flex items-center gap-1.5 px-3 py-2 sm:px-4 bg-black text-white dark:bg-white dark:text-black text-xs sm:text-sm font-medium rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors flex-shrink-0"
-                aria-label="Add idea"
-              >
-                <Plus className="w-3.5 h-3.5" />
-                <span>Add Idea</span>
-              </button>
-            )}
+              <ThemeToggle className="p-2 flex-shrink-0" />
+            </div>
           </div>
+
+          <div className="sm:hidden mt-3">{renderToggle()}</div>
         </header>
 
-        {/* Keep the home (showcase) DOM mounted while viewing an idea so
-            scroll position, active category, and pagination survive the
-            round trip. Hidden when on idea route; fully removed elsewhere. */}
-        {(route.page === 'home' || route.page === 'idea') && (
-          <div className={route.page === 'idea' ? 'hidden' : ''}>
-            <section className="w-full max-w-6xl px-4 sm:px-6 pt-4 sm:pt-6 pb-4 sm:pb-6">
-              <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-black dark:text-white">
-                {totalIdeas !== null ? `${Math.floor(totalIdeas / 10) * 10}+` : '120+'} ideas to<br />
-                <span className="text-gray-400 dark:text-gray-600">build on ethereum</span>
-              </h1>
-            </section>
-
-            <IdeaShowcase
-              onSelect={navigateToIdea}
-              searchQuery={searchQuery}
-              onClearSearch={() => setSearchQuery('')}
-            />
+        {/* Landing: personas / ideas / graph. Kept mounted (hidden) while a
+            detail page is open so view state survives the round trip. */}
+        {showLandingWrapper && (
+          <div
+            className={
+              !isLanding(route.page)
+                ? 'hidden'
+                : landingView === 'graph'
+                  ? 'flex flex-col flex-1'
+                  : 'flex flex-col flex-1 pt-6 sm:pt-8'
+            }
+          >
+            {landingView === 'home' && (
+              <PersonaLanding
+                onSelect={navigateToPersona}
+                searchQuery={searchQuery}
+                ideas={allIdeas}
+              />
+            )}
+            {landingView === 'ideas' && (
+              <IdeaShowcase
+                onSelect={(idea) => navigateToIdea(idea)}
+                searchQuery={searchQuery}
+                onClearSearch={() => setSearchQuery('')}
+              />
+            )}
+            {landingView === 'graph' && (
+              <GraphView
+                personas={allPersonas}
+                ideas={allIdeas}
+                searchQuery={searchQuery}
+                onSelectPersona={navigateToPersonaById}
+                onSelectIdea={navigateToIdea}
+              />
+            )}
           </div>
+        )}
+
+        {route.page === 'persona' && activePersona && (
+          <PersonaPage
+            persona={activePersona}
+            ideas={allIdeas}
+            onBack={handleBack}
+            onSelectIdea={navigateToIdea}
+            onSelectPersona={navigateToPersonaById}
+          />
         )}
 
         {route.page === 'idea' && (
@@ -370,35 +393,44 @@ const App: React.FC = () => {
             <IdeaPage
               idea={activeIdea}
               accentColor={getDomainConfig(activeIdea.domains).color}
-              onBack={handleBackFromIdea}
+              onBack={handleBack}
+              onSelectPersona={navigateToPersonaById}
             />
           )
         )}
 
-        {route.page === 'toolkit' && <ToolkitPage />}
         {route.page === 'rfps' && <RFPsPage onSelect={navigateToRFP} />}
         {route.page === 'rfp' && activeRFP && (
           <RFPPage rfp={activeRFP} onBack={navigateBackToRFPs} />
         )}
 
-        <footer className="mt-auto w-full max-w-6xl px-4 sm:px-6 py-6 sm:py-8 border-t border-gray-100 dark:border-gray-900">
-          <div className="flex items-center justify-end text-sm text-gray-400 dark:text-gray-500">
-            <a href="https://ethereum.foundation" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors">Ethereum Foundation</a>
+        <footer className="mt-auto w-full px-4 sm:px-6 py-6 sm:py-8 border-t border-gray-100 dark:border-gray-900">
+          <div className="flex items-center justify-between gap-4 text-sm text-gray-400 dark:text-gray-500">
+            <div className="flex items-center gap-4 sm:gap-5">
+              <button onClick={() => setSubmitOpen(true)} className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+                Add Idea
+              </button>
+              <button onClick={navigateRFPs} className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+                RFPs
+              </button>
+              <button onClick={() => setContactOpen(true)} className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+                Contact
+              </button>
+            </div>
+            <a
+              href="https://ethereum.foundation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+            >
+              Ethereum Foundation
+            </a>
           </div>
         </footer>
       </div>
 
       <SubmitIdeaModal open={submitOpen} onClose={() => setSubmitOpen(false)} />
       <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
-      <MobileNav
-        open={mobileNavOpen}
-        current={sidebarRoute}
-        onClose={() => setMobileNavOpen(false)}
-        onNavigateHome={navigateHome}
-        onNavigateRFPs={navigateRFPs}
-        onNavigateToolkit={navigateToolkit}
-        onOpenContact={() => setContactOpen(true)}
-      />
     </div>
   );
 };

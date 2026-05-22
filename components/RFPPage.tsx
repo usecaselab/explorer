@@ -13,7 +13,7 @@ export default function RFPPage({ rfp, onBack }: RFPPageProps) {
   useEscapeKey(true, onBack)
 
   return (
-    <div className="relative w-full max-w-6xl px-4 sm:px-6 py-6 sm:py-8">
+    <div className="relative w-full max-w-[1800px] mx-auto px-4 sm:px-6 py-6 sm:py-8">
       {/* Back: above the hero on mobile (no sidebar margin to use); absolute
           into the left margin between sidebar and content on md+. */}
       <button

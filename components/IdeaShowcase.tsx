@@ -129,14 +129,14 @@ export default function IdeaShowcase({
   return (
     // min-h-screen guarantees enough scrollable area below the cards so the
     // user can always scroll far enough to bring the sticky category row up
-    // against the search bar — even when the filtered list is short.
-    <section className="w-full max-w-6xl px-4 sm:px-6 pb-8 sm:pb-12 md:pb-16 min-h-screen">
+    // against the header — even when the filtered list is short.
+    <section className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 pb-8 sm:pb-12 md:pb-16 min-h-screen">
       <CategoryCarousel
         activeCategory={activeCategory}
         onSelect={(id) => setActiveCategory(activeCategory === id ? 'all' : id)}
       />
 
-      <div className="grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
         {visible.map(idea => {
           const conf = getDomainConfig(idea.domains)
           return (
@@ -258,7 +258,7 @@ export default function IdeaShowcase({
                         onMouseLeave={() => setHoveredId(null)}
                         className="group flex items-center gap-3 rounded-xl border border-gray-100 dark:border-gray-900 hover:border-gray-200 dark:hover:border-gray-800 hover:shadow-sm transition-all p-3 text-left no-underline text-inherit"
                       >
-                        <div className="w-12 h-12 flex-shrink-0 bg-gray-50/50 dark:bg-neutral-900/50 rounded-lg overflow-hidden">
+                        <div className="relative w-12 h-12 flex-shrink-0 bg-gray-50/50 dark:bg-neutral-900/50 rounded-lg overflow-hidden">
                           <Shape2D
                             shape={conf.shape}
                             color={conf.color}
