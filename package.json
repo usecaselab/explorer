@@ -7,7 +7,8 @@
     "build:ideas": "node scripts/build-ideas.mjs",
     "dev": "node scripts/build-ideas.mjs && vite",
     "build": "node scripts/build-ideas.mjs && vite build && cp dist/index.html dist/404.html",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",
@@ -19,6 +20,7 @@
     "three": "^0.183.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.60.0",
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",
     "js-yaml": "^4.1.1",

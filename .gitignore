@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Playwright
+test-results
+playwright-report
+.playwright
+
 # Local env
 .env
 .env.local

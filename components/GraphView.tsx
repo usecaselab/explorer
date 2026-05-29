@@ -131,7 +131,12 @@ export default function GraphView({
   const containerRef = useRef<HTMLDivElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
   const [size, setSize] = useState({ w: 0, h: 0 })
+  // `hover` is mouse-only; `pinned` is the touch/keyboard selection. The graph
+  // highlights whichever is set — `active` below merges them.
   const [hover, setHover] = useState<Hover>(null)
+  const [pinned, setPinned] = useState<Hover>(null)
+  const [focusedPersona, setFocusedPersona] = useState<string | null>(null)
+  const active: Hover = hover ?? pinned
   const [view, setView] = useState({ x: 0, y: 0, k: 1 })
   const viewRef = useRef(view)
   viewRef.current = view
@@ -139,6 +144,10 @@ export default function GraphView({
   // pan state
   const dragRef = useRef<{ sx: number; sy: number; ox: number; oy: number; moved: boolean } | null>(null)
   const suppressClickRef = useRef(false)
+  // Active pointers (mouse/touch/pen unified). Two = pinch-zoom.
+  const pointersRef = useRef<Map<number, { x: number; y: number }>>(new Map())
+  const pinchRef = useRef<{ startDist: number; startK: number; wx: number; wy: number } | null>(null)
+  const lastPointerTypeRef = useRef<string>('mouse')
 
   // Measure the container.
   useEffect(() => {
@@ -201,22 +210,71 @@ export default function GraphView({
     [ideas, q, searchActive]
   )
 
-  // Nodes connected to the hovered node.
+  // Nodes connected to the active (hovered/pinned/focused) node.
   const activeIdeas = useMemo(() => {
-    if (!hover || !layout) return null
-    if (hover.type === 'persona') return new Set(layout.personaToIdeas[hover.id] || [])
-    return new Set([hover.id])
-  }, [hover, layout])
+    if (!active || !layout) return null
+    if (active.type === 'persona') return new Set(layout.personaToIdeas[active.id] || [])
+    return new Set([active.id])
+  }, [active, layout])
   const activePersonas = useMemo(() => {
-    if (!hover || !layout) return null
-    if (hover.type === 'idea') return new Set(layout.ideaToPersonas[hover.id] || [])
-    return new Set([hover.id])
-  }, [hover, layout])
+    if (!active || !layout) return null
+    if (active.type === 'idea') return new Set(layout.ideaToPersonas[active.id] || [])
+    return new Set([active.id])
+  }, [active, layout])
 
-  const onMouseDown = (e: React.MouseEvent) => {
-    dragRef.current = { sx: e.clientX, sy: e.clientY, ox: view.x, oy: view.y, moved: false }
+  // Zoom toward a point in svg-local coordinates, keeping that point fixed.
+  const zoomAt = (factor: number, px: number, py: number) => {
+    const v = viewRef.current
+    const k = Math.min(4, Math.max(0.5, v.k * factor))
+    const wx = (px - v.x) / v.k
+    const wy = (py - v.y) / v.k
+    setView({ k, x: px - wx * k, y: py - wy * k })
   }
-  const onMouseMove = (e: React.MouseEvent) => {
+  const zoomBy = (factor: number) => zoomAt(factor, size.w / 2, size.h / 2)
+  const resetView = () => setView({ x: 0, y: 0, k: 1 })
+
+  // Unified pointer handling: one pointer pans, two pinch-zoom. Covers mouse,
+  // touch and pen, so there is no separate touch code path.
+  const onPointerDown = (e: React.PointerEvent) => {
+    lastPointerTypeRef.current = e.pointerType
+    pointersRef.current.set(e.pointerId, { x: e.clientX, y: e.clientY })
+    const n = pointersRef.current.size
+    if (n === 2) {
+      const svg = svgRef.current
+      if (!svg) return
+      const [a, b] = [...pointersRef.current.values()]
+      const rect = svg.getBoundingClientRect()
+      const mx = (a.x + b.x) / 2 - rect.left
+      const my = (a.y + b.y) / 2 - rect.top
+      const v = viewRef.current
+      pinchRef.current = {
+        startDist: Math.hypot(a.x - b.x, a.y - b.y) || 1,
+        startK: v.k,
+        wx: (mx - v.x) / v.k,
+        wy: (my - v.y) / v.k,
+      }
+      dragRef.current = null // a second finger cancels any in-flight pan
+    } else if (n === 1) {
+      const v = viewRef.current
+      dragRef.current = { sx: e.clientX, sy: e.clientY, ox: v.x, oy: v.y, moved: false }
+    }
+  }
+  const onPointerMove = (e: React.PointerEvent) => {
+    if (!pointersRef.current.has(e.pointerId)) return
+    pointersRef.current.set(e.pointerId, { x: e.clientX, y: e.clientY })
+    if (pinchRef.current && pointersRef.current.size >= 2) {
+      const svg = svgRef.current
+      if (!svg) return
+      const [a, b] = [...pointersRef.current.values()]
+      const rect = svg.getBoundingClientRect()
+      const mx = (a.x + b.x) / 2 - rect.left
+      const my = (a.y + b.y) / 2 - rect.top
+      const dist = Math.hypot(a.x - b.x, a.y - b.y)
+      const p = pinchRef.current
+      const k = Math.min(4, Math.max(0.5, p.startK * (dist / p.startDist)))
+      setView({ k, x: mx - p.wx * k, y: my - p.wy * k })
+      return
+    }
     const d = dragRef.current
     if (!d) return
     const dx = e.clientX - d.sx
@@ -224,14 +282,75 @@ export default function GraphView({
     if (!d.moved && Math.hypot(dx, dy) > 4) d.moved = true
     if (d.moved) setView((v) => ({ ...v, x: d.ox + dx, y: d.oy + dy }))
   }
-  const endDrag = () => {
+  const onPointerUp = (e: React.PointerEvent) => {
+    const wasTap = !!dragRef.current && !dragRef.current.moved
     if (dragRef.current?.moved) {
       suppressClickRef.current = true
       setTimeout(() => {
         suppressClickRef.current = false
       }, 0)
     }
-    dragRef.current = null
+    // A tap on empty canvas clears the pinned (touch) selection.
+    if (wasTap && e.pointerType !== 'mouse' && e.target === svgRef.current) setPinned(null)
+    pointersRef.current.delete(e.pointerId)
+    if (pointersRef.current.size < 2) pinchRef.current = null
+    if (pointersRef.current.size === 1) {
+      // Lifting one finger of a pinch: hand the remaining finger to pan.
+      const [pt] = [...pointersRef.current.values()]
+      const v = viewRef.current
+      dragRef.current = { sx: pt.x, sy: pt.y, ox: v.x, oy: v.y, moved: true }
+    } else if (pointersRef.current.size === 0) {
+      dragRef.current = null
+    }
+  }
+
+  // Touch/pen tap is two-stage: first tap pins (highlights connections), a
+  // second tap on the same node activates it. Mouse clicks activate directly.
+  const activate = (sel: Exclude<Hover, null>, run: () => void) => {
+    if (suppressClickRef.current) return
+    if (lastPointerTypeRef.current === 'mouse') {
+      run()
+      return
+    }
+    if (pinned && pinned.type === sel.type && pinned.id === sel.id) run()
+    else setPinned(sel)
+  }
+
+  // Keyboard control of the canvas: arrows pan, +/- zoom, 0 resets, Esc clears.
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    const step = 60
+    switch (e.key) {
+      case 'ArrowLeft':
+        setView((v) => ({ ...v, x: v.x + step }))
+        break
+      case 'ArrowRight':
+        setView((v) => ({ ...v, x: v.x - step }))
+        break
+      case 'ArrowUp':
+        setView((v) => ({ ...v, y: v.y + step }))
+        break
+      case 'ArrowDown':
+        setView((v) => ({ ...v, y: v.y - step }))
+        break
+      case '+':
+      case '=':
+        zoomBy(1.2)
+        break
+      case '-':
+      case '_':
+        zoomBy(1 / 1.2)
+        break
+      case '0':
+        resetView()
+        break
+      case 'Escape':
+        setHover(null)
+        setPinned(null)
+        break
+      default:
+        return
+    }
+    e.preventDefault()
   }
 
   // Render the container unconditionally — even before data arrives — so its
@@ -241,7 +360,7 @@ export default function GraphView({
   const dataLoading = personas.length === 0 || ideas.length === 0
 
   const isHighlightedEdge = (pid: string, iid: string) =>
-    hover != null && (hover.type === 'persona' ? hover.id === pid : hover.id === iid)
+    active != null && (active.type === 'persona' ? active.id === pid : active.id === iid)
 
   return (
     <section className="w-full flex-1 flex flex-col">
@@ -253,15 +372,19 @@ export default function GraphView({
           ref={svgRef}
           width="100%"
           height="100%"
-          className="absolute inset-0 select-none"
+          tabIndex={0}
+          role="application"
+          aria-label="Persona and idea graph. Drag to pan, scroll or pinch to zoom. Arrow keys pan, plus and minus zoom, 0 resets."
+          className="absolute inset-0 select-none touch-none focus:outline-none"
           style={{ cursor: dragRef.current?.moved ? 'grabbing' : 'grab' }}
-          onMouseDown={onMouseDown}
-          onMouseMove={onMouseMove}
-          onMouseUp={endDrag}
-          onMouseLeave={() => {
-            endDrag()
-            setHover(null)
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+          onPointerCancel={onPointerUp}
+          onPointerLeave={(e) => {
+            if (e.pointerType === 'mouse') setHover(null)
           }}
+          onKeyDown={onKeyDown}
         >
           {layout && (
             <g transform={`translate(${view.x} ${view.y}) scale(${view.k})`}>
@@ -280,7 +403,7 @@ export default function GraphView({
                     y2={b.y}
                     stroke="#94a3b8"
                     strokeWidth={1}
-                    opacity={hover ? 0.05 : 0.16}
+                    opacity={active ? 0.05 : 0.16}
                   />
                 )
               })}
@@ -308,43 +431,48 @@ export default function GraphView({
               {ideas.map((idea) => {
                 const pos = layout.ideaPos[idea.id]
                 if (!pos) return null
-                const isHovered = hover?.type === 'idea' && hover.id === idea.id
+                const isActive = active?.type === 'idea' && active.id === idea.id
                 const isMatch = !!matchedIdeas?.has(idea.id)
-                const emphasized = isHovered || isMatch
+                const emphasized = isActive || isMatch
                 const dim = activeIdeas
                   ? !activeIdeas.has(idea.id)
                   : searchActive
                     ? !isMatch
                     : false
                 const showLabel =
-                  isHovered ||
+                  isActive ||
                   isMatch ||
-                  (hover?.type === 'persona' && !!activeIdeas?.has(idea.id))
+                  (active?.type === 'persona' && !!activeIdeas?.has(idea.id))
                 const side = emphasized ? 17 : 12
                 const lw = idea.title.length * 6.5 + 16
+                const openIdea = () => {
+                  const row = ideaById.get(idea.id)
+                  if (row) {
+                    onSelectIdea({
+                      id: row.id,
+                      title: row.title,
+                      problem: row.problem,
+                      solutionSketch: row.solutionSketch,
+                      whyEthereum: row.whyEthereum,
+                      domains: row.domains,
+                      author: row.author,
+                      createdAt: row.createdAt,
+                      updatedAt: row.updatedAt,
+                    })
+                  }
+                }
                 return (
                   <g
                     key={idea.id}
                     style={{ cursor: 'pointer' }}
-                    onMouseEnter={() => setHover({ type: 'idea', id: idea.id })}
-                    onMouseLeave={() => setHover(null)}
-                    onClick={() => {
-                      if (suppressClickRef.current) return
-                      const row = ideaById.get(idea.id)
-                      if (row) {
-                        onSelectIdea({
-                          id: row.id,
-                          title: row.title,
-                          problem: row.problem,
-                          solutionSketch: row.solutionSketch,
-                          whyEthereum: row.whyEthereum,
-                          domains: row.domains,
-                          author: row.author,
-                          createdAt: row.createdAt,
-                          updatedAt: row.updatedAt,
-                        })
-                      }
+                    onPointerEnter={(e) => {
+                      if (e.pointerType === 'mouse' && !dragRef.current?.moved)
+                        setHover({ type: 'idea', id: idea.id })
                     }}
+                    onPointerLeave={(e) => {
+                      if (e.pointerType === 'mouse') setHover(null)
+                    }}
+                    onClick={() => activate({ type: 'idea', id: idea.id }, openIdea)}
                   >
                     <circle cx={pos.x} cy={pos.y} r={19} fill="transparent" pointerEvents="all" />
                     <rect
@@ -389,9 +517,10 @@ export default function GraphView({
                 if (!pos) return null
                 const color = personaColor(p.id)
                 const Icon = personaIcon(p.id)
-                const isHovered = hover?.type === 'persona' && hover.id === p.id
+                const isActive = active?.type === 'persona' && active.id === p.id
                 const isMatch = !!matchedPersonas?.has(p.id)
-                const emphasized = isHovered || isMatch
+                const emphasized = isActive || isMatch
+                const isFocused = focusedPersona === p.id
                 const dim = activePersonas
                   ? !activePersonas.has(p.id)
                   : searchActive
@@ -402,14 +531,46 @@ export default function GraphView({
                 return (
                   <g
                     key={p.id}
-                    style={{ cursor: 'pointer' }}
-                    onMouseEnter={() => setHover({ type: 'persona', id: p.id })}
-                    onMouseLeave={() => setHover(null)}
-                    onClick={() => {
-                      if (!suppressClickRef.current) onSelectPersona(p.id)
+                    tabIndex={0}
+                    role="button"
+                    aria-label={`Persona: ${p.name}. Activate to open, or hold focus to highlight connected ideas.`}
+                    style={{ cursor: 'pointer', outline: 'none' }}
+                    onPointerEnter={(e) => {
+                      if (e.pointerType === 'mouse' && !dragRef.current?.moved)
+                        setHover({ type: 'persona', id: p.id })
                     }}
+                    onPointerLeave={(e) => {
+                      if (e.pointerType === 'mouse') setHover(null)
+                    }}
+                    onFocus={() => {
+                      setFocusedPersona(p.id)
+                      setHover({ type: 'persona', id: p.id })
+                    }}
+                    onBlur={() => {
+                      setFocusedPersona((cur) => (cur === p.id ? null : cur))
+                      setHover((cur) => (cur?.type === 'persona' && cur.id === p.id ? null : cur))
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        e.stopPropagation()
+                        onSelectPersona(p.id)
+                      }
+                    }}
+                    onClick={() => activate({ type: 'persona', id: p.id }, () => onSelectPersona(p.id))}
                   >
                     <circle cx={pos.x} cy={pos.y} r={r + 10} fill="transparent" pointerEvents="all" />
+                    {isFocused && (
+                      <circle
+                        cx={pos.x}
+                        cy={pos.y}
+                        r={r + 5}
+                        fill="none"
+                        stroke={color}
+                        strokeWidth={2.5}
+                        opacity={0.9}
+                      />
+                    )}
                     <g opacity={dim ? 0.22 : 1} style={{ pointerEvents: 'none' }}>
                       <circle cx={pos.x} cy={pos.y} r={r} fill={color} />
                       <Icon
