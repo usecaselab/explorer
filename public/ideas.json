@@ -5,6 +5,9 @@
     "domains": [
       "commerce"
     ],
+    "desires": [
+      "creator/paid-for-value-i-drive"
+    ],
     "problem": "Ad networks report impressions and clicks using their own unauditable metrics, enabling widespread fraud. Brands also pay influencers based on self-reported or platform-reported reach and engagement that is trivially inflated through bots and fake followers.",
     "solutionSketch": "Transparent impression tracking and verifiable reach metrics — with optional zero-knowledge proofs for audience size — so advertisers can independently confirm that spend reached real human audiences.",
     "whyEthereum": "Ad fraud persists because the ad network reports on its own delivery, and any auditor it hires can be acquired or pressured by the platform it is supposed to check. Recording delivery onchain that no participant controls gives advertisers a measurement they can verify independently and prevents the network from revising the numbers afterward.",
@@ -19,6 +22,10 @@
       "real-estate-and-housing",
       "government"
     ],
+    "desires": [
+      "civic-participant/enforce-the-rules-already-on-the-books",
+      "community-organizer/enforce-the-rules-already-on-the-books"
+    ],
     "problem": "Affordable housing deed restrictions — requiring units to remain below market rate for 30, 50, or 99 years — are written into paper legal documents that must be manually checked at every ownership transfer, and routinely slip through conveyancing processes, effectively converting affordable units to market rate with no enforcement mechanism.",
     "solutionSketch": "Affordability restrictions encoded directly into property tokens that enforce covenants automatically at the point of transfer or rental — making it structurally impossible to sell or rent above the allowed price without the covenant being triggered.",
     "whyEthereum": "When a covenant lives only in paper records, enforcement depends on whichever office happens to review a transfer, and an owner with an incentive to convert the unit can count on the check being missed. Encoding the restriction into the asset onchain means the rule travels with the property and stays verifiable by tenants and the public rather than sitting with a registry that has to notice a violation.",
@@ -31,6 +38,9 @@
     "title": "Age and eligibility proofs without identity disclosure",
     "domains": [
       "identity"
+    ],
+    "desires": [
+      "shopper/prove-without-revealing"
     ],
     "problem": "A teenager trying to prove they're 18 to access a website, or a doctor proving they hold a medical license to prescribe remotely, must hand over their full government ID — exposing date of birth, address, and ID number to a third party who only needed a yes/no answer — creating surveillance infrastructure and breach risk for a simple eligibility check.",
     "solutionSketch": "Zero-knowledge proofs that let individuals demonstrate they meet a threshold — over 18, licensed physician, accredited investor — without revealing the underlying document, name, or any other personal attribute beyond the specific claim being verified.",
@@ -46,6 +56,9 @@
       "government",
       "food-and-agriculture"
     ],
+    "desires": [
+      "farmer/get-paid-faster"
+    ],
     "problem": "Agricultural subsidy programs (e.g., EU Common Agricultural Policy direct payments, USDA conservation programs) require farmers to submit annual applications, undergo eligibility reviews, and wait months for payment — a process where administrative overhead consumes a significant share of program budgets and delays reach the farmers who need operating capital most. Eligibility conditions like acreage verification, crop compliance, and conservation practice adoption are checked manually by inspectors who can physically visit only a fraction of enrolled farms each year.",
     "solutionSketch": "Subsidy disbursements that execute automatically when satellite-verified acreage data, crop identification, and conservation practice adoption confirm eligibility — reducing administrative costs and getting payments to farmers at the start of the season rather than months after application.",
     "whyEthereum": "When subsidy payments depend on manual review, the agency controls the pace and the discretion, and farmers wait months while inspectors reach only a fraction of enrolled farms. Tying disbursement to verified eligibility data onchain makes the rule and the release visible to everyone, so payment timing follows the criteria rather than an administrator's queue or judgment.",
@@ -59,6 +72,10 @@
     "domains": [
       "ai"
     ],
+    "desires": [
+      "civic-participant/verify-public-decisions",
+      "patient/appeal-automated-decisions"
+    ],
     "problem": "AI is starting to make binding decisions: settling insurance claims, allocating grants, arbitrating disputes, moderating what stays up. When an AI reaches a verdict, the people affected have no way to confirm which model and inputs produced it. The operator can quietly swap in a cheaper or biased model, or deny that a decision was tampered with, and the party the decision went against has no recourse.",
     "solutionSketch": "AI adjudicators that carry a proof of how each verdict was reached, showing the disclosed model ran on the stated inputs. A claimant, applicant, or party to a dispute can check that the AI deciding their case is the one everyone agreed to, and that its decision was not swapped or edited after the fact.",
     "whyEthereum": "When the operator of an AI adjudicator is the only one who knows which model decided a case, the party it ruled against has to take the operator's word for it. Anchoring each verdict's proof onchain lets anyone check which model ran and on what inputs, so an AI making binding decisions answers to a record outside its operator's control.",
@@ -71,6 +88,10 @@
     "title": "AI model and training data markets",
     "domains": [
       "ai"
+    ],
+    "desires": [
+      "creator/ai-trained-on-my-work",
+      "researcher/ai-trained-on-my-work"
     ],
     "problem": "AI models and training datasets are passed through ad-hoc channels with no enforceable licensing, usage metering, or royalty distribution — so creators lose control the moment they publish. The problem runs deeper for the creative workers whose output trained these models: writers, artists, and photographers have no mechanism to verify whether their work was included in a training corpus, no ability to opt out retroactively, and no way to claim revenue from models that directly replicate their style.",
     "solutionSketch": "Tokenized AI models and training datasets with programmable licensing terms set at registration — enabling usage metering, automatic royalty distribution to all rights holders, and cryptographic provenance records that let creators verify inclusion in training corpora and receive proportional compensation without relying on AI companies to voluntarily disclose what they trained on.",
@@ -86,6 +107,9 @@
       "government",
       "business-operations"
     ],
+    "desires": [
+      "civic-participant/verify-public-decisions"
+    ],
     "problem": "Verifying a company's registration, licensing status, or true ownership requires navigating multiple disconnected databases — and existing beneficial ownership registries rely on self-reported filings with no verification mechanism, allowing shell company structures to hide the real owners of assets across jurisdictions. This structural opacity is systematically exploited for money laundering, sanctions evasion, and tax fraud.",
     "solutionSketch": "Cryptographically attested business registration and beneficial ownership records that chain legal entities to verified ultimate owners across jurisdictions — enabling instant verification for regulators, banks, and counterparties without relying on self-filed declarations or bilateral data-sharing between registries.",
     "whyEthereum": "Ownership registries today sit inside individual governments, so verification across borders depends on slow cooperation and a registry can be pressured to obscure who really controls an asset. A neutral onchain register lets banks, regulators, and counterparties check signed ownership attestations directly, without trusting any one jurisdiction to keep its records honest or to share them.",
@@ -98,6 +122,9 @@
     "title": "Budget execution tracking",
     "domains": [
       "government"
+    ],
+    "desires": [
+      "civic-participant/audit-public-money"
     ],
     "problem": "Public funds flow through opaque, fragmented databases between appropriation and expenditure, making it nearly impossible for citizens or auditors to trace how tax revenue is actually spent.",
     "solutionSketch": "Real-time tracking of public funds from appropriation to expenditure",
@@ -113,6 +140,9 @@
       "government",
       "business-operations"
     ],
+    "desires": [
+      "founder/cut-the-paperwork-tax-on-starting-up"
+    ],
     "problem": "Starting a business in most jurisdictions means coordinating with four to six separate agencies: the secretary of state for the entity, the IRS for an EIN, the state revenue department for sales-tax registration, the local government for a business license, and often a regulator for industry-specific licensing. Each has its own form, its own processing window, and its own way of communicating status. A founder waits weeks for paperwork that any of the agencies could in principle confirm in seconds, and any later proof to a bank, payment processor, or platform that the entity exists in good standing means going back to each issuer for a new certificate.",
     "solutionSketch": "A coordinated workflow where each agency issues its piece (incorporation, EIN, license, sales-tax registration) as a verifiable credential the founder holds, with signoffs anchored against issuer signing keys onchain. The founder reuses the same credential bundle to open a bank account, sign up with a processor, or apply for a contract, and a counterparty checks each piece against the issuing agency directly without that agency needing to operate a real-time lookup service.",
     "whyEthereum": "When business credentials are scattered across agency portals and paper certificates, anyone who needs to verify a founder's standing depends on whichever agency happens to have a working API or a willing clerk. Issuing the credentials onchain against state and federal signing keys lets the founder present them anywhere, and a bank or counterparty checks the actual issuer's signature rather than a vendor's claim about what the agency says.",
@@ -125,6 +155,9 @@
     "title": "Cap tables",
     "domains": [
       "business-operations"
+    ],
+    "desires": [
+      "founder/one-source-of-truth-for-equity"
     ],
     "problem": "Startup cap tables live in expensive, siloed platforms like Carta where ownership records can fall out of sync, transfers require manual legal work, and founders have no real-time, verifiable source of truth.",
     "solutionSketch": "A startup's cap table kept as an onchain record from incorporation onward, with issuance, vesting, and transfers written to it as they happen. Founders, investors, and employees read the same source of truth directly, and a transfer updates the record rather than requiring separate legal work to reconcile the official version later.",
@@ -140,6 +173,9 @@
       "environment",
       "finance"
     ],
+    "desires": [
+      "investor/verify-what-im-buying"
+    ],
     "problem": "Carbon credits and biodiversity offsets are traded as undifferentiated commodities despite vast differences in methodology and verification rigor, allowing low-quality credits to crowd out legitimate ones. Forests, watersheds, and biodiversity also lack liquid market representations.",
     "solutionSketch": "Differentiated environmental asset classes with onchain provenance, methodology metadata, and verification quality — enabling transparent pricing of ecological assets and markets that reward genuine impact.",
     "whyEthereum": "Credit quality today depends on rating agencies and registries whose judgments are opaque and whose business depends on the issuers they assess, so buyers cannot independently tell a rigorous credit from a weak one. Attaching provenance and methodology to each credit onchain lets buyers check quality themselves and makes double-counting visible to anyone, not just the registry.",
@@ -154,6 +190,10 @@
       "government",
       "environment"
     ],
+    "desires": [
+      "civic-participant/enforce-the-rules-already-on-the-books",
+      "community-organizer/enforce-the-rules-already-on-the-books"
+    ],
     "problem": "Coalitions like C40 Cities and the Global Covenant of Mayors have enrolled hundreds of cities in public emissions reduction pledges — but compliance tracking relies on self-reported data submitted to central secretariats, with no neutral mechanism for member cities or the public to verify whether commitments are being met or to detect when cities quietly abandon targets.",
     "solutionSketch": "An onchain record where city governments record verified emissions data, policy milestones, and adaptation measures — with attestations from IoT sensor networks, third-party auditors, and satellite monitoring — creating a publicly auditable record that any city, funder, or citizen can inspect.",
     "whyEthereum": "When a coalition secretariat holds the only record of who pledged what, member cities can quietly walk back targets and the body tracking compliance has its own reason to report progress favorably. Logging commitments and attested data onchain where no single member or secretariat controls lets any city, funder, or citizen check the record directly, and a city cannot rewrite its own history after the fact.",
@@ -166,6 +206,9 @@
     "title": "Civil registry and vital records",
     "domains": [
       "government"
+    ],
+    "desires": [
+      "civic-participant/own-my-records"
     ],
     "problem": "Birth, death, marriage, and residency records sit in siloed, often paper-based systems that vary by jurisdiction. Records are vulnerable to loss, hard to reconcile when someone moves or a local office changes hands, and a citizen usually cannot get a verifiable copy without going back to the issuing office.",
     "solutionSketch": "Civil registry records issued and maintained in an interoperable, verifiable format, so a birth or marriage record can be checked by any authorized party and carried across jurisdictions. The record survives the loss of a local office's files and does not have to be reissued from scratch each time it is needed.",
@@ -181,12 +224,15 @@
       "business-operations",
       "finance"
     ],
+    "desires": [
+      "oss-maintainer/paid-for-value-i-drive"
+    ],
     "problem": "A maintainer is fine with their library being free for individuals, students, and research, and would prefer commercial users that integrate it into paid products to pay a license fee. The current options are bad: keep the license fully permissive and watch a vendor charge six figures for a hosted version of the work, relicense to AGPL and accept a fight with every commercial user, or move to a source-available license and accept the cost of policing it. None of these scale to a single maintainer with a day job.",
     "solutionSketch": "A dual-licensing model where commercial use is gated by an onchain license token. The maintainer publishes the terms, commercial users acquire the token by paying a fee that flows directly to the project's address, and the build or runtime checks the presence of a valid license tied to the user's identity. Compliance is cheaper than litigation, the maintainer does not need a legal department, and individual or non-commercial use stays untouched.",
     "whyEthereum": "License enforcement at the scale of an indie maintainer fails because the cost of detecting non-compliance and the cost of pursuing it are both higher than the license fee. Issuing license tokens onchain, with a public price and a verifiable record of who holds one, shifts the work from enforcement to verification: any party in the supply chain can check whether a commercial deployment holds a current license, and the maintainer collects the fee without negotiating individually with each vendor.",
     "author": "Use Case Lab",
-    "createdAt": "2026-05-19T19:48:58.806Z",
-    "updatedAt": "2026-05-19T19:48:58.806Z"
+    "createdAt": "2026-05-22T11:17:47-05:00",
+    "updatedAt": "2026-05-22T11:17:47-05:00"
   },
   {
     "id": "community-currencies",
@@ -194,6 +240,9 @@
     "domains": [
       "finance",
       "civil-society"
+    ],
+    "desires": [
+      "community-organizer/coordinate-with-neighbors"
     ],
     "problem": "Local economies leak spending to global platforms and distant supply chains, and communities that want to circulate a local currency lack reliable infrastructure to issue, govern, and settle it at meaningful scale.",
     "solutionSketch": "Place- or network-specific currencies used by defined communities (cities, cooperatives, regions) to keep spending local, incentivize participation, and fund public goods rather than leaking value to external markets",
@@ -209,6 +258,10 @@
       "government",
       "civil-society"
     ],
+    "desires": [
+      "civic-participant/audit-public-money",
+      "community-organizer/audit-public-money"
+    ],
     "problem": "Revenue from commercial use of public spaces — parks, plazas, community halls — flows into general municipal budgets where residents can't see how much their neighborhood's spaces generated or how those funds were spent. Allocation decisions happen in opaque committee processes with no audit trail, and community groups that maintain or improve a space have no formal mechanism to influence how it's governed.",
     "solutionSketch": "A transparent treasury for each community space where commercial booking revenue is publicly tracked and spending decisions are made through participatory governance by verified local residents — creating a direct feedback loop between a space's economic activity and its neighborhood's investment priorities.",
     "whyEthereum": "When booking revenue flows into a general municipal budget, residents lose sight of what their neighborhood's spaces earned and how it was spent, and allocation happens in committee rooms with no record they can check. A treasury onchain makes every payment and disbursement publicly auditable, so the people who use and maintain a space can see and govern the money it generates.",
@@ -223,6 +276,9 @@
       "government",
       "real-estate-and-housing"
     ],
+    "desires": [
+      "civic-participant/verify-public-decisions"
+    ],
     "problem": "A residential construction project, whether it is adding units, building an accessory dwelling, or redeveloping a lot, passes through a sequence of agency signoffs (planning, zoning, building, fire, environmental, sometimes utilities) where each step can take weeks or months and the applicant has no real-time view of which desk the file currently sits on. The delays and discretion at each stage feed the housing-supply gap that drives affordability problems in many cities, and applicants without political access tend to wait longer or get steered through more requirements than connected developers.",
     "solutionSketch": "A permit case file recorded onchain from submission through final sign-off, with each agency review, inspection result, and decision rationale logged as it happens. The applicant sees where the permit sits in real time, the public can compare which projects move quickly and which stall, and deviations from the standard timeline or procedure surface against a shared baseline rather than hiding inside one office's filing system.",
     "whyEthereum": "When permit timelines and decisions live inside agency systems, the same officials whose discretion the public is meant to check also control the record of how that discretion was exercised, and an applicant or a journalist has no independent way to see where in the chain a project is stuck or why. Anchoring the case file onchain keeps the timeline and the signoffs auditable by anyone, so a city's commitment to predictable permitting becomes visible rather than something residents have to take on trust.",
@@ -235,6 +291,10 @@
     "title": "Content authenticity proofs",
     "domains": [
       "media"
+    ],
+    "desires": [
+      "creator/prove-i-made-this",
+      "journalist/prove-i-made-this"
     ],
     "problem": "Digital media is trivially fakeable. A photo, video, or document circulating online has no widespread way to be checked against the source it claims, and the same authoring tools that produce convincing media also produce convincing fakes. Newsrooms whose footage is doctored, creators whose work is plagiarized or attributed to someone else, and viewers trying to figure out what is real all face the same problem with no shared answer.",
     "solutionSketch": "Media signed at the point of capture and through each subsequent edit, building an authenticity chain anyone can check. A photo, video, or document carries a verifiable trail back to the device or person that produced it, edits register against that record, and a fabrication shows up against the original signed content rather than competing with it on visual plausibility alone.",
@@ -250,6 +310,7 @@
       "civil-society",
       "media"
     ],
+    "desires": [],
     "problem": "Social platforms rely on centralized moderation teams and opaque algorithms to decide what is spam, manipulation, or harmful — systems that don't scale, lack accountability, and are trivially captured by political pressure. Reputation-weighted community moderation and verified-human signals exist as concepts but have no neutral infrastructure to run on that any platform could adopt.",
     "solutionSketch": "Modular moderation infrastructure combining community-written notes on contested content, reputation-weighted flagging where established accounts carry more signal, and stake-based curation where moderators put tokens at risk on their judgments — all running onchain so any platform can read them without building its own moderation stack from scratch.",
     "whyEthereum": "When moderation lives inside a single platform, that company alone decides what gets suppressed, and the system is easily captured by political pressure aimed at one chokepoint. Running reputation, stake records, and community notes onchain keeps the moderation signal outside any one company's control, so any platform can read the same signal and the rules behind it are inspectable and forkable by users.",
@@ -263,6 +324,10 @@
     "domains": [
       "commerce",
       "food-and-agriculture"
+    ],
+    "desires": [
+      "community-organizer/coordinate-with-neighbors",
+      "merchant/own-my-audience"
     ],
     "problem": "Small producers selling through conventional distribution channels lose most of their margin to intermediaries, while consumers who want to buy local have no transparent, community-governed platform to connect with them directly.",
     "solutionSketch": "Community-owned platforms that let producers sell directly and keep more economic value within local food systems",
@@ -278,6 +343,9 @@
       "finance",
       "civil-society"
     ],
+    "desires": [
+      "community-organizer/pool-capital-with-peers"
+    ],
     "problem": "Small businesses, cooperatives, and credit unions lack mechanisms to pool reserves and share liquidity risk without expensive legacy banking infrastructure, forcing each member to maintain costly individual cash buffers.",
     "solutionSketch": "Blockchain-based cooperative finance that lets members pool capital, share liquidity, and access credit from one another — governed transparently and auditable by all participants.",
     "whyEthereum": "Pooling reserves through a bank or platform means an intermediary holds the pooled funds, sets the terms of access, and can freeze the pool or close it, while members have to trust its accounting. Running the pool onchain keeps the capital and its rules with the members who contributed it, and gives every participant an audit trail they can check themselves.",
@@ -290,6 +358,9 @@
     "title": "Direct creator storefronts with programmable revenue splits",
     "domains": [
       "commerce"
+    ],
+    "desires": [
+      "creator/keep-what-i-sell"
     ],
     "problem": "A musician selling merchandise, a Substack writer selling a course, and an artist selling prints each route payments through 2–4 intermediary platforms that take 10–30% combined, add delays before creators can access funds, and give the creator no way to automatically share revenue with collaborators, producers, or the fans who helped grow their audience.",
     "solutionSketch": "Direct storefronts where revenue splits among collaborators, co-creators, and communities execute automatically at the moment of purchase — with instant settlement, programmable royalty flows, and no platform intermediary taking a cut of every transaction.",
@@ -304,6 +375,9 @@
     "domains": [
       "finance"
     ],
+    "desires": [
+      "gig-worker/access-to-credit"
+    ],
     "problem": "Hundreds of millions of people are creditworthy — they pay rent on time, maintain savings, and run profitable small businesses — but are invisible to formal lenders because their financial history lives in bank apps, rental platforms, and payroll systems that lenders can't access without the borrower surrendering raw account credentials.",
     "solutionSketch": "zkTLS-based credit assessments where borrowers prove specific financial claims — 12 months of on-time rent payments, a salary above a threshold, a business revenue history — directly from source platforms without sharing login credentials, giving lenders verifiable underwriting data for borrowers who lack formal credit files.",
     "whyEthereum": "A data aggregator standing between borrowers and lenders collects raw account credentials and financial history into one store that becomes a surveillance point and a breach target. Building this with zero-knowledge proofs onchain lets a borrower prove a specific claim, like a year of on-time rent, without handing over the underlying account, and keeps the check from being logged by a company in the middle.",
@@ -316,6 +390,10 @@
     "title": "Cross-border payroll and contractor payments",
     "domains": [
       "business-operations"
+    ],
+    "desires": [
+      "founder/get-paid-faster",
+      "freelance-professional/send-receive-money-cheaply"
     ],
     "problem": "Cross-border payroll and contractor payments route through multiple intermediaries, taking days to settle with high fees, while tax reporting and compliance for global teams remain a manual reconciliation nightmare.",
     "solutionSketch": "Payroll and contractor payments settled directly to workers onchain instead of routed through a chain of correspondent banks. The employer keeps control of the schedule and the funds, payouts arrive in minutes rather than days, and tax and KYC reporting is generated from the payment record instead of reconciled by hand across jurisdictions.",
@@ -330,18 +408,25 @@
     "domains": [
       "media"
     ],
+    "desires": [
+      "creator/survive-demonetization"
+    ],
     "problem": "Deciding what deserves attention, which research is worth reading, which products are worth buying, which emerging work is worth following, is done for free by people who carry the cost of being early and wrong and capture none of the value when they turn out to be right. The systems that aggregate those judgments are platform recommender engines that rank by undisclosed rules, or review and ratings systems that are cheap to game because a fake recommendation costs the recommender nothing. The people best placed to surface quality have no economic stake in their own accuracy.",
     "solutionSketch": "Curation markets let a person stake reputation or capital on a recommendation, earn a share when the pick is later borne out, and lose stake when it is not. Smart contracts settle payouts against a measurable outcome agreed in advance, such as audience growth, sales, citations, or downstream curation, and each curator builds a public track record tied to their address. The same primitive covers prediction markets on whether a piece of work will succeed and reputation-weighted feeds where curators with the strongest history surface higher. Because a wrong call costs the curator real stake, the signal is harder to fake than a free rating.",
     "whyEthereum": "A curation market works only if the payout rules cannot be quietly rewritten by whoever hosts it, and only if a curator can carry their track record with them when a better venue appears. Settling stakes, attribution, and payouts onchain makes the incentive structure legible to everyone taking part and keeps each curator's history portable across whatever discovery surfaces emerge. A platform-owned recommender can be switched off or retuned without notice; an open curation market keeps running as long as its contracts and its participants do.",
     "author": "Use Case Lab",
-    "createdAt": "2026-05-21T19:39:16.826Z",
-    "updatedAt": "2026-05-21T19:39:16.826Z"
+    "createdAt": "2026-05-22T11:17:47-05:00",
+    "updatedAt": "2026-05-22T11:17:47-05:00"
   },
   {
     "id": "customs-records",
     "title": "Customs records across borders",
     "domains": [
       "logistics-and-trade"
+    ],
+    "desires": [
+      "manufacturer/cross-border-trade",
+      "merchant/send-receive-money-cheaply"
     ],
     "problem": "Cross-border shipments are delayed at customs because each agency keeps clearance documents and compliance status in its own proprietary database, with no real-time view that the agencies on either side of a border can both read.",
     "solutionSketch": "Customs documents and compliance status anchored onchain as commitments, with the documents themselves held off-chain and checked against onchain merkle proofs. An agency on either side of a border verifies a shipment's clearance and tariff status against the same attestations instead of re-requesting paperwork, so clearance is not held up waiting for one party to confirm what another has already verified.",
@@ -357,6 +442,7 @@
       "ai",
       "commerce"
     ],
+    "desires": [],
     "problem": "Valuable datasets have no standard way to be priced, packaged, or traded. Whether it is satellite imagery, industrial sensor telemetry, de-identified clinical records, or proprietary market data, the dataset changes hands through opaque brokers and bespoke NDA-driven deals where a buyer cannot verify quality or provenance. It cannot be combined with other datasets or posted as collateral the way a financial asset can.",
     "solutionSketch": "Datasets represented as onchain assets with licensing, metering, and revenue-split terms attached. They can be priced individually, combined into derived datasets (for example, a satellite feed merged with weather sensor data to produce a crop-yield estimate), traded, or used as collateral. Usage is recorded against the asset itself, so a data producer is paid by rules a buyer or broker cannot quietly revise.",
     "whyEthereum": "A data broker reports usage on its own, sets the prices, and can favor buyers it has relationships with, leaving data producers no way to check whether the royalties they receive match what was actually consumed. Representing data as an onchain asset keeps licensing terms and usage records verifiable by both sides, so producers are paid by rules the broker cannot quietly revise.",
@@ -369,6 +455,9 @@
     "title": "Dataset provenance and reuse tracking",
     "domains": [
       "science"
+    ],
+    "desires": [
+      "researcher/paid-for-value-i-drive"
     ],
     "problem": "Researchers who create high-quality datasets — curating, cleaning, and annotating data that takes months of work — receive almost no academic credit when other researchers use their data, because there's no reliable mechanism to track dataset reuse across papers and institutions. Simultaneously, researchers who want to build on prior work often can't verify whether a dataset has been altered since publication or confirm they're working with the same version that produced the original findings.",
     "solutionSketch": "A registry where published datasets are cryptographically fingerprinted at the time of deposit, with every subsequent access and citation recorded — so dataset creators receive verifiable credit proportional to actual reuse, and downstream researchers can confirm they're working with an unaltered version of the original data.",
@@ -384,6 +473,10 @@
       "health",
       "science"
     ],
+    "desires": [
+      "patient/trust-the-evidence",
+      "researcher/data-integrity"
+    ],
     "problem": "Decentralized clinical trials let patients participate from home using wearables, symptom-reporting apps, and telemedicine, which means data is collected across hundreds of patient devices rather than at monitored investigator sites. That makes it harder for sponsors and regulators to be confident that electronic source data has not been altered, that consent was properly obtained, and that the chain of custody from device to database is intact.",
     "solutionSketch": "Each sensor reading, patient-reported outcome, and consent signature is hashed and timestamped at the moment it is captured. That creates an audit trail showing the data has not been changed since collection, giving monitors, sponsors, and regulators confidence in source data integrity without depending on physical site visits.",
     "whyEthereum": "When trial data lives in a sponsor-controlled database, the party with the most to gain from a positive result also holds the ability to alter source records, and regulators have to take the chain of custody on trust. Committing each reading and consent signature onchain at the moment of capture keeps the record verifiable by monitors and regulators without depending on the sponsor's cooperation.",
@@ -397,6 +490,7 @@
     "domains": [
       "business-operations"
     ],
+    "desires": [],
     "problem": "Corporate decisions — which strategy to pursue, whether to hire or fire an executive, which product to prioritize — are made through a combination of politics, hierarchy, and intuition rather than mechanisms that aggregate genuine beliefs of those closest to the work. Board votes and management sign-off concentrate decision-making power in ways that reward confidence and seniority over accuracy, with no feedback loop that punishes bad predictions or rewards good ones. Organizations systematically act on what's good for those in power rather than what's good for the organization.",
     "solutionSketch": "Conditional prediction markets tied to company-specific metrics — share price, TVL, revenue, retention — where any proposal generates two parallel markets: expected metric outcome if it passes, and if it fails. The proposal executes if markets predict a positive impact. Participants with genuine information have financial incentive to trade accurately. Early implementations include Butter Markets (used in Optimism's grant allocation experiments) and MetaDAO, which has run 96+ proposals for 14 organizations using this mechanism.",
     "whyEthereum": "If the decision market runs on infrastructure that management controls, the people whose power the mechanism is meant to check can pause it, adjust how trades settle, or ignore a signal they dislike, which returns the decision to politics and seniority. Building it onchain keeps the market's rules and the link between its signal and the outcome verifiable by every participant, outside any single executive's reach.",
@@ -409,6 +503,9 @@
     "title": "Delivery-triggered payments",
     "domains": [
       "logistics-and-trade"
+    ],
+    "desires": [
+      "gig-worker/get-paid-faster"
     ],
     "problem": "Suppliers and freight carriers wait weeks for payment after goods are delivered because reconciliation between shipping documents, invoices, and proof of delivery is manual, while carriers lack verifiable proof-of-location or proof-of-condition to trigger automatic settlement.",
     "solutionSketch": "Conditional release of funds tied to oracle-verified delivery events, proof-of-location, and proof-of-condition, automating settlement for both goods delivery and freight logistics",
@@ -424,12 +521,15 @@
       "business-operations",
       "civil-society"
     ],
+    "desires": [
+      "oss-maintainer/paid-for-value-i-drive"
+    ],
     "problem": "A maintainer whose library is depended on by thousands of downstream projects sees none of the economic value those projects generate. When a downstream company sponsors a project, the money stops at the top-level library and rarely reaches the upstream dependencies that project quietly relies on. The deepest layers of the stack, the cryptography libraries and parsers and build tools, are also the most under-resourced, because gratitude does not propagate down the import graph the way usage does.",
     "solutionSketch": "Funding contracts that fan an incoming sponsorship or revenue share across the dependency tree, weighted by usage proofs derived from package manifests and build artifacts. A downstream project receiving a grant or commercial revenue routes a configurable portion through the contract, which splits it among direct and transitive dependencies according to a rule the project's maintainers publish. Support reaches the layers it should without each upstream maintainer having to chase it manually.",
     "whyEthereum": "Routing money through a dependency graph requires every participant to agree on the same set of weights and the same set of recipient addresses, and to be confident that the routing logic cannot be quietly altered between deposit and payout. Settling the splits onchain, against a usage graph anyone can audit, lets a downstream maintainer commit to funding upstream work in a way her sponsors and her dependencies can both verify, without putting a foundation in the middle to mediate the relationship.",
     "author": "Use Case Lab",
-    "createdAt": "2026-05-21T19:39:20.136Z",
-    "updatedAt": "2026-05-21T19:39:20.136Z"
+    "createdAt": "2026-05-22T11:17:47-05:00",
+    "updatedAt": "2026-05-22T11:17:47-05:00"
   },
   {
     "id": "digital-product-passports",
@@ -437,6 +537,10 @@
     "domains": [
       "environment",
       "logistics-and-trade"
+    ],
+    "desires": [
+      "manufacturer/prove-my-product-is-genuine",
+      "shopper/verify-what-im-buying"
     ],
     "problem": "The EU's Ecodesign for Sustainable Products Regulation (ESPR) mandates digital product passports for most goods sold in Europe by 2030 — but no neutral infrastructure exists for brands, recyclers, and regulators across supply chains to read and write to a common product record. Without it, origin and certification claims rely on paper trails that can be forged at every handoff, recycled materials lose their provenance once they re-enter supply chains, and secondhand buyers have no trustworthy way to verify repair history or remaining lifecycle value.",
     "solutionSketch": "Append-only product records that persist through every ownership transfer and material handoff — tracking origin, certifications, condition, repair history, and end-of-life status in a format any manufacturer, recycler, regulator, or secondhand buyer can read, satisfying ESPR requirements while making circular economy claims cryptographically verifiable rather than self-reported.",
@@ -450,6 +554,9 @@
     "title": "Digital vehicle passports",
     "domains": [
       "logistics-and-trade"
+    ],
+    "desires": [
+      "shopper/verify-what-im-buying"
     ],
     "problem": "A vehicle's full history — manufacturing specs, ownership transfers, lien status, accident damage, and maintenance — is scattered across dealer records, insurance databases, and government registries that do not communicate, making title fraud and odometer rollback easy.",
     "solutionSketch": "End-to-end records covering manufacturing, ownership, liens, maintenance, accidents, and recycling — serving as both lifecycle passport and verifiable title",
@@ -465,6 +572,9 @@
       "civil-society",
       "government"
     ],
+    "desires": [
+      "donor/audit-public-money"
+    ],
     "problem": "Billions of people without bank accounts cannot receive aid efficiently because traditional transfer systems depend on banking infrastructure and charge high fees through multiple intermediaries. Administering recurring universal basic income payments at scale adds a second layer of overhead: heavy bureaucratic processes for identity verification, eligibility checks, and distribution make such programs expensive to run and slow to reach recipients.",
     "solutionSketch": "Digital wallet-based transfer infrastructure that reaches unbanked populations directly at minimal cost — supporting both targeted aid disbursements and recurring automated payments, using decentralized identity and smart contracts to handle eligibility verification without centralized administrative overhead.",
     "whyEthereum": "When aid moves through banks and payment processors, those intermediaries take fees, decide who is allowed to receive funds, and can freeze or block transfers, leaving recipients dependent on institutions that may not serve them. Building distribution onchain lets funds reach anyone with a mobile wallet directly, and keeps the payment from being gated by a company or bank that can turn it off.",
@@ -477,6 +587,9 @@
     "title": "Dispute resolution for contracts and freelance agreements",
     "domains": [
       "business-operations"
+    ],
+    "desires": [
+      "freelance-professional/enforceable-contracts"
     ],
     "problem": "Resolving disputes in B2B contracts and freelance agreements requires expensive, slow litigation or arbitrary platform support teams that apply opaque rules — pricing out individuals and small businesses from meaningful access to justice and leaving the outcome entirely in the hands of a platform that has its own interests.",
     "solutionSketch": "Decentralized arbitration mechanisms where specialized juror pools evaluate disputes using standardized evidence and structured deliberation — with jurors staking tokens on verdicts, outcomes enforced automatically via smart contract, and no ability for a losing party to delay compliance.",
@@ -491,6 +604,7 @@
     "domains": [
       "business-operations"
     ],
+    "desires": [],
     "problem": "Expense approval runs on static workflows in an ERP or expense tool: fixed dollar thresholds and fixed approver chains. The rule cannot tell whether a department is already over budget, whether the company's cash position has tightened, who is asking, or what the money is for. Companies end up either routing everything through finance, which is slow, or setting limits loose enough to be risky.",
     "solutionSketch": "Expense approvals where the rule is evaluated for each request against live inputs rather than read from a fixed table. The approval can depend on the requester's role and seniority, the department's remaining budget, the company's current cash position, the vendor and spend category, and oracle-fed external conditions. A recurring renewal under budget clears on its own, a new vendor or a purchase that pushes a team over its quarter is routed for review, and spending can tighten automatically when runway falls below a set level.",
     "whyEthereum": "An approval rule that reads the company's finances and outside conditions only works if those inputs cannot be quietly edited by whoever wants the payment to clear. Running the rule in the account itself, against onchain balances and oracle feeds, makes both the policy and the inputs it judges against inspectable, so a dynamic approval is something the organization can audit rather than a black box inside an expense tool.",
@@ -503,6 +617,9 @@
     "title": "Earnouts and contingent payments",
     "domains": [
       "business-operations"
+    ],
+    "desires": [
+      "founder/pay-for-outcomes"
     ],
     "problem": "In a lot of deals, part of the price is paid later, contingent on something happening: an M&A earnout tied to post-close revenue or EBITDA, a milestone holdback released on a regulatory approval or a key hire, a contingent value right that pays out if a clinical trial succeeds, an escrowed indemnity released on a future date. Once the deal closes, the party that owes the contingent payment usually controls the books, the operations, and the timing decisions that determine whether the trigger ever fires. The other side either trusts that accounting or litigates after the fact, and disputes over contingent payments are a common source of post-close conflict.",
     "solutionSketch": "A structure where contingent consideration is escrowed onchain and released according to a pre-agreed payout rule. The rule is tied to an objective metric verified by an agreed source, such as an auditor, payment rail, signed API record, platform usage feed, regulatory milestone, or other third-party attestation. Both sides can see the same rule, the same verification source, and the same payout conditions before closing.",
@@ -517,6 +634,10 @@
     "domains": [
       "logistics-and-trade"
     ],
+    "desires": [
+      "manufacturer/cross-border-trade",
+      "merchant/send-receive-money-cheaply"
+    ],
     "problem": "The bill of lading, the single most important document in international shipping, still circulates as a paper original that must be physically couriered between parties, causing delays and fraud risk.",
     "solutionSketch": "Replacing paper document of title with NFT-like digital representation of title and transfer rights",
     "whyEthereum": "An electronic bill of lading run on one provider's platform makes that company the registry of who holds title, able to set access terms, see every trade, or freeze a transfer, and the whole trade lane depends on it staying available. Building it on neutral rails keeps the document of title as an asset the holder controls directly, transferable and verifiable without any single operator's permission.",
@@ -529,6 +650,10 @@
     "title": "Continuous environmental measurement and verification",
     "domains": [
       "environment"
+    ],
+    "desires": [
+      "civic-participant/enforce-the-rules-already-on-the-books",
+      "investor/verify-what-im-buying"
     ],
     "problem": "Environmental claims — RECs, carbon intensity labels, ESG reports, biodiversity credits — rely on self-reported data with infrequent third-party audits, enabling double-counting and greenwashing. Biodiversity credits are especially vulnerable: a credit representing habitat that degraded a year after issuance looks identical to one representing thriving ecosystem, with no mechanism to flag or invalidate it when outcomes reverse.",
     "solutionSketch": "Continuous verification of environmental outcomes using IoT sensors, satellite imagery, acoustic monitoring, and remote sensing — with data logged onchain so that RECs, carbon credits, and biodiversity offsets carry cryptographic proof of their ongoing validity rather than depending on infrequent audits.",
@@ -543,6 +668,9 @@
     "domains": [
       "government"
     ],
+    "desires": [
+      "civic-participant/enforce-the-rules-already-on-the-books"
+    ],
     "problem": "Environmental rules like emissions limits and air-quality thresholds are often clear, but acting on them still needs human sign-off at each step. By the time a restriction or fine is issued, the pollution it was meant to address has already happened. Enforcement reliably lags the events it is supposed to govern.",
     "solutionSketch": "Environmental rules and their triggers executed as smart contracts. When oracle-verified sensor readings cross a legal threshold, the consequence executes on its own, whether that is a traffic restriction during a pollution spike, a fine for an emissions breach, or a suspended permit. Enforcement keeps pace with the readings instead of waiting on a decision at each step.",
     "whyEthereum": "If the rules and their enforcement ran on a system one agency controlled, that agency could quietly change the logic or apply it selectively, favoring some polluters over others. Publishing the thresholds and their triggers onchain keeps them inspectable by anyone, so the public can confirm enforcement runs by the same rule it can read.",
@@ -555,6 +683,9 @@
     "title": "Cross-network EV charging roaming settlement",
     "domains": [
       "utilities"
+    ],
+    "desires": [
+      "shopper/send-receive-money-cheaply"
     ],
     "problem": "When an EV driver charges on a network other than their home provider, the roaming transaction passes through bilateral settlement agreements between the charge point operator (CPO) and the eMobility service provider (eMSP) — each pair requiring a custom integration. In Europe alone there are 500+ CPOs and dozens of eMSPs, and the bilateral model means most roaming pairs simply don't exist, leaving drivers unable to charge on large portions of the network without creating new accounts.",
     "solutionSketch": "A neutral settlement layer where any CPO and any eMSP can clear roaming transactions without bilateral agreements — using standardized session records (kWh delivered, time, location, tariff) that both parties confirm onchain, with payment executing automatically at session close.",
@@ -569,6 +700,9 @@
     "domains": [
       "media"
     ],
+    "desires": [
+      "fan/keep-what-i-pay-from-scalpers"
+    ],
     "problem": "Event ticketing is plagued by scalper bots, counterfeit tickets, and opaque resale markets where venues and artists lose control over pricing and capture none of the secondary-market value.",
     "solutionSketch": "Resalable access to events, concerts, and festivals",
     "whyEthereum": "A centralized ticket platform sits between fans and artists, sets the fees, runs an opaque resale market, and keeps the secondary value while venues lose control over their own pricing. Issuing tickets onchain keeps the resale rules and royalty splits with the venues and artists who set them, and lets fans verify a ticket is genuine without trusting whichever company happens to run the platform.",
@@ -581,6 +715,10 @@
     "title": "Fan-funded media with governance rights",
     "domains": [
       "media"
+    ],
+    "desires": [
+      "creator/fans-share-upside",
+      "fan/fans-share-upside"
     ],
     "problem": "Independent filmmakers, musicians, and journalists must either sign away creative control or run crowdfunding campaigns on platforms that offer backers no governance rights, transparent fund allocation, or financial upside in the work's success.",
     "solutionSketch": "Onchain funding and governance for films, music, and journalism — where backers hold tokens that represent both financial participation and voting rights over creative decisions.",
@@ -595,6 +733,9 @@
     "domains": [
       "media"
     ],
+    "desires": [
+      "creator/keep-what-i-sell"
+    ],
     "problem": "When a film or show is reused, streamed in a new window, licensed to another territory, or rerun, the actors, writers, and directors are owed residuals. Those payments are calculated and disbursed by studios and distributors from their own records of where and how often a title ran. Performers cannot see the underlying usage data, residual statements arrive long after the exhibition they cover, and underpayment is common enough that the guilds run standing audit programs to recover it.",
     "solutionSketch": "Residual terms encoded against verified distribution and streaming data, so that when a title runs in a new window the payment owed to each rights holder is computed and released from the same usage record everyone can see. A performer gets a residual that follows the actual exhibition of their work rather than a statement they have to take on trust.",
     "whyEthereum": "The studio or distributor that owes residuals is also the only party that records where and how often a title ran, so performers audit blind and chase payments well after the fact. Settling residuals onchain against verified distribution data puts the usage record and the payment rule where the guild and the performer can verify them directly, so a residual does not depend on the payer's own accounting.",
@@ -607,6 +748,9 @@
     "title": "Firearm licensing and registration",
     "domains": [
       "government"
+    ],
+    "desires": [
+      "civic-participant/own-my-records"
     ],
     "problem": "State firearm licensing (permit-to-purchase, FOID cards, concealed-carry permits) and state-level firearm registration sit in siloed, often paper-based systems that do not move with the holder across jurisdictions. A licensee crossing state lines, a transfer between residents of different states, or a buyer at a gun show in another state all run into systems that cannot verify each other's records, while federal law blocks the kind of centralized registry that would otherwise paper over the gap.",
     "solutionSketch": "Firearm licenses and registration records issued by states as verifiable credentials the holder carries, with selective disclosure so a check exposes only the specific fact in question, such as that a license is current and unrevoked. Verification anchors against the issuing state's signing key onchain, so a counterparty in another state can confirm a record without that state running a lookup service or anyone maintaining a federal database.",
@@ -622,6 +766,10 @@
       "food-and-agriculture",
       "logistics-and-trade"
     ],
+    "desires": [
+      "manufacturer/prove-my-product-is-genuine",
+      "shopper/verify-what-im-buying"
+    ],
     "problem": "When a food safety recall is issued, tracing contaminated product back to the source takes days or weeks because lot IDs change at every handoff between grower, packer, distributor, and retailer — each maintaining their own disconnected records — meaning contaminated product stays on shelves while investigators manually reconstruct the chain.",
     "solutionSketch": "A common lot ID standard that persists immutably through every handoff in the supply chain — so when a retailer scans a product, they can trace it back to the specific farm field and harvest date in seconds, and a recall can be executed against a precise subset of product rather than pulling entire categories from shelves.",
     "whyEthereum": "A traceability platform run by one large retailer or distributor would let that operator decide who sees the chain and could quietly edit records that point back to its own suppliers. Recording each handoff onchain keeps the history outside any one company's control, so a recall can be traced and food fraud caught by anyone in the chain rather than only the host.",
@@ -635,6 +783,9 @@
     "domains": [
       "civil-society"
     ],
+    "desires": [
+      "donor/audit-public-money"
+    ],
     "problem": "Charitable donations, advocacy grants, and international aid flow through opaque intermediary chains where funds are lost to corruption, misallocation, or overhead — with donors unable to verify money reached its intended recipients. After disasters this compounds: dozens of NGOs and agencies respond simultaneously with no joint view of who received what, duplicating aid in accessible areas while remote communities get nothing.",
     "solutionSketch": "Onchain tracking of fund flows from donor to final recipient with real-time visibility and audit logs — combined with onchain coordination infrastructure for disaster response that lets all responding organizations see disbursements, supply distribution, and beneficiary verification in a single view.",
     "whyEthereum": "When aid flows through intermediaries that report on themselves, donors see only what each organization chooses to disclose, and no responding agency has a joint view to coordinate against. Recording disbursements onchain keeps the trail visible to donors and responders alike, so contributions can be followed to the recipient without trusting any single organization's books.",
@@ -647,6 +798,9 @@
     "title": "Futarchy for public policy",
     "domains": [
       "government"
+    ],
+    "desires": [
+      "civic-participant/verify-public-decisions"
     ],
     "problem": "Democratic systems are good at aggregating what citizens want but systematically bad at determining which policies will actually deliver it. Voters choose representatives based on stated intentions; representatives vote on bills based on lobbying, ideology, and coalition politics rather than evidence of likely impact. Expert panels and think tanks aggregate some information but lack skin in the game — a consultant who recommends a bad policy faces no financial consequence.",
     "solutionSketch": "A governance layer that separates the question of values (decided democratically: what should we optimize for?) from the question of means (decided by markets: which policy will best achieve it?). Elected representatives define a measurable welfare metric — GDP, life expectancy, emissions index — and conditional prediction markets determine which policies are expected to raise it. A policy becomes law only when market estimates clearly predict it will improve welfare relative to the status quo. Robin Hanson's original formulation ('vote on values, bet on beliefs') has been live-tested by MetaDAO for DAO governance and explored by at least one government health agency since 2024.",
@@ -662,6 +816,9 @@
       "food-and-agriculture",
       "finance"
     ],
+    "desires": [
+      "farmer/access-to-credit"
+    ],
     "problem": "A subsistence farmer who needs $300 to buy seeds and fertilizer at planting time has no collateral for a bank loan and no trading history with formal lenders — so they borrow from local moneylenders at 60–100% annual interest rates, or go without inputs and accept a lower yield, trapping them in a cycle where they can never accumulate enough surplus to escape the next season's dependency.",
     "solutionSketch": "Pre-harvest financing backed by tokenized future crop receipts — letting farmers collateralize their standing crop against verified planting data, weather feeds, and historical yield records, with repayment automatically deducted from the proceeds when the harvest is sold.",
     "whyEthereum": "When financing runs through a single lender or platform, that operator sets the terms, holds the records, and can cut a farmer off or change the rules with no recourse, much as local moneylenders already do. Running the crop receipts and repayment onchain lets any lender extend credit against the same verifiable collateral, and the loan terms stay legible to the farmer instead of locked inside one provider's system.",
@@ -674,6 +831,9 @@
     "title": "Metering and paying home energy devices for grid flexibility",
     "domains": [
       "utilities"
+    ],
+    "desires": [
+      "shopper/send-receive-money-cheaply"
     ],
     "problem": "Home energy devices like batteries, smart thermostats, EV chargers, and water heaters can shift or reduce their load to help balance the grid, and utilities increasingly need that flexibility. There is no scalable way to meter what each individual device contributed and pay its owner for it. Every device runs a different protocol, and the contribution of any single home is too small for grid operators to track and settle on its own, so the flexibility goes uncompensated and underused.",
     "solutionSketch": "A settlement layer that meters the load reduction each device delivers, verifies it against the home's smart meter baseline, and pays the device owner automatically. By pooling many small contributions into one verifiable record, it makes it practical for aggregators to enroll millions of household devices and compensate each one for the flexibility it provides.",
@@ -688,6 +848,9 @@
     "domains": [
       "civil-society"
     ],
+    "desires": [
+      "community-organizer/coordinate-collective-action"
+    ],
     "problem": "Many valuable outcomes require enough people to act at once that no individual will move first. A new protocol reaching adoption, a local currency achieving network effects, a civic technology deployed across a city: each needs distributed, multi-actor commitment. Traditional crowdfunding pools money for a single project but cannot coordinate that kind of contribution, and prediction markets aggregate beliefs about what will happen without creating the conditions for it.",
     "solutionSketch": "Markets designed to coordinate an outcome rather than only forecast it. Buying YES stakes a participant financially in making the prediction come true, and the public price acts as a Schelling point: as more people buy YES, the rising price signals growing collective commitment and rewards the early believers who do the hard coordination work over late arrivals. The aim is to help an ecosystem tip, such as a new protocol reaching adoption or a civic technology getting deployed widely. Vitalik Buterin has flagged real manipulation risks here, including a 'hitman problem' where actors profit from causing bad outcomes and whale concentration that engineers a result rather than letting it emerge.",
     "whyEthereum": "A hyperstition market run by one company would leave that operator deciding who counts as a contributor, when the market resolves, and whether early believers actually get paid, which undercuts the coordination the market is meant to create. Running it onchain keeps the prices, the resolution rules, and the payouts outside any operator's hands, where participants can verify them and connect the market to other attestation systems without asking permission.",
@@ -700,6 +863,9 @@
     "title": "Impact certificates with retroactive outcome verification",
     "domains": [
       "civil-society"
+    ],
+    "desires": [
+      "donor/pay-for-outcomes"
     ],
     "problem": "Social-impact funders have no reliable way to verify that grant-funded programs delivered promised outcomes — a job training program reports 80% placement rates, but the funder has no independent mechanism to confirm these numbers, and the incentive structure rewards narrative over evidence because future grants depend on reported (not verified) impact.",
     "solutionSketch": "Tokenized impact certificates that represent verified outcomes — issued when an independent evaluator confirms results (e.g., verified job placements, measured emissions reductions, confirmed housing placements) — creating tradeable assets that retroactive funders can purchase to reward proven impact, aligning incentives so that programs that actually deliver attract more capital than programs that report well.",
@@ -715,6 +881,9 @@
       "government",
       "real-estate-and-housing"
     ],
+    "desires": [
+      "farmer/access-to-credit"
+    ],
     "problem": "In much of the developing world, the majority of land is held under customary or informal tenure with no formal title. Families have lived on, farmed, and built on land for generations under arrangements recognized locally but not in any registry that a bank, court, or buyer outside the community would accept. Without verifiable title, the holder cannot use the land as collateral, sell to a buyer outside the immediate community, or defend the claim in court if a more powerful party tries to take it. Hernando de Soto's estimate of the resulting \"dead capital\" runs into the trillions.",
     "solutionSketch": "Tenure records anchored against the actual chain of possession: witness attestations from neighbors, dated photos and surveys, signoffs from local authorities, rather than a court-issued title that does not exist. A community-recognized claim becomes a record a bank or counterparty outside the community can verify, without the holder having to retrofit a paper-title history that was never created.",
     "whyEthereum": "Land registries run by single governments or vendors in places without strong institutions are exactly where title fraud and land grabs happen, because the people in charge of the record are also the ones with reason to alter it. Anchoring tenure onchain keeps the record outside any one office's reach, so a family's claim does not depend on a particular government continuing to honor it, and a buyer or lender can verify provenance independent of the registry that issued it.",
@@ -727,6 +896,10 @@
     "title": "Insurance claims adjudication",
     "domains": [
       "insurance"
+    ],
+    "desires": [
+      "patient/appeal-automated-decisions",
+      "shopper/enforceable-contracts"
     ],
     "problem": "Insurance companies face hundreds of disputed claims monthly that don't fit automated processing rules — ambiguous coverage questions, contested damage assessments, conflicting evidence — and route them through traditional arbitration that takes 7–10 days, costs hundreds of dollars per case, and produces outcomes neither party finds credible.",
     "solutionSketch": "Specialized juror pools that evaluate disputed insurance claims using standardized evidence packages and structured deliberation protocols — with jurors staking tokens on their verdicts, outcomes determined by stake-weighted consensus, and payment executing automatically once adjudication is complete.",
@@ -742,6 +915,9 @@
       "logistics-and-trade",
       "finance"
     ],
+    "desires": [
+      "manufacturer/access-to-credit"
+    ],
     "problem": "Lenders offering inventory financing have no independent way to verify that pledged inventory actually exists, hasn't been double-pledged to another lender, and matches the borrower's representations — a $600B+ market plagued by warehouse receipt fraud (e.g., the Qingdao metals scandal where the same copper and aluminum were pledged to multiple banks simultaneously). The underlying issue is that inventory records across warehouses, suppliers, and retailers are maintained in disconnected systems with no single source of truth.",
     "solutionSketch": "Tokenized warehouse receipts linked to verified physical inventory — with each receipt representing a specific lot in a specific warehouse, ownership transferable onchain, and double-pledging detectable by any lender checking the onchain record before extending credit.",
     "whyEthereum": "A warehouse receipt system run by one operator leaves lenders trusting whoever maintains the database, and the Qingdao scandal showed how easily disconnected records hide the same inventory pledged many times. Putting receipts onchain gives every lender the same ownership record to check independently, so a receipt cannot be quietly handed to two parties and no one operator controls what the books say.",
@@ -755,6 +931,9 @@
     "domains": [
       "finance",
       "logistics-and-trade"
+    ],
+    "desires": [
+      "freelance-professional/get-paid-faster"
     ],
     "problem": "Small businesses and exporters wait 30-90 days for payment on legitimate invoices and receivables, while factoring intermediaries charge steep discount rates and lenders reject applications because documents are unverifiable PDFs prone to double-pledging.",
     "solutionSketch": "Tokenized invoices and receivables that can be verified, sold, collateralized, or traded in real time, so a business can raise cash against money it is owed without waiting out the payment term. A lender checks the same ownership record everyone else sees, which is what stops a single receivable from being pledged to several lenders at once.",
@@ -770,6 +949,10 @@
       "finance",
       "science"
     ],
+    "desires": [
+      "creator/fans-share-upside",
+      "researcher/fund-my-research"
+    ],
     "problem": "Intellectual property rights are indivisible and illiquid, making it nearly impossible for small investors to participate in IP financing, for researchers to crowdfund early-stage IP, or for inventors to unlock the dormant value of their portfolios.",
     "solutionSketch": "Fractional ownership, crowdfunding, financing, and trading of intellectual property rights through IP-NFTs and tokenized IP instruments",
     "whyEthereum": "A platform that hosts fractional IP shares controls who can buy in, what trades clear, and which projects get listed, and it can delist an asset or freeze a market to protect its own interests. Issuing these rights onchain keeps ownership records and transfers outside any one operator's reach, so inventors and small investors hold positions that stay tradable without asking permission.",
@@ -783,6 +966,10 @@
     "domains": [
       "science",
       "media"
+    ],
+    "desires": [
+      "creator/prove-i-made-this",
+      "researcher/prove-i-made-this"
     ],
     "problem": "Creators proving when a work was made and inventors establishing priority in patent disputes both rely on slow, expensive government registries that vary by jurisdiction and are vulnerable to retroactive challenge. Inventors lack a tamper-proof way to timestamp lab notebooks and experimental data, while creators have no instant, cross-jurisdictional proof of authorship that doesn't require navigating multiple national systems.",
     "solutionSketch": "Immutable, cryptographically timestamped records for both creative works and inventions — establishing proof of creation, authorship, and prior art at the moment of registration, verifiable instantly across jurisdictions without filing separately in each one.",
@@ -798,6 +985,9 @@
       "media",
       "civil-society"
     ],
+    "desires": [
+      "journalist/censorship-resistant-comms"
+    ],
     "problem": "A government whistleblower who wants to leak to a journalist faces a dilemma: submitting documents anonymously makes the story hard to verify and easy to dismiss, while providing proof of their insider status — job title, department, access level — makes them identifiable and exposes them to prosecution.",
     "solutionSketch": "Zero-knowledge systems where sources prove their organizational affiliation — that they work at a specific agency or hold a specific clearance level — without revealing their identity, generating a cryptographic attestation that journalists can publish to establish credibility without burning the source.",
     "whyEthereum": "A verification service run by a company would hold records linking sources to the credentials they proved, a single place that can be subpoenaed, breached, or pressured to expose a whistleblower. Building this with zero-knowledge proofs onchain lets a source prove their role without that link existing anywhere, so a journalist can publish credible proof and nothing about the source's identity is stored for anyone to compel.",
@@ -811,6 +1001,10 @@
     "domains": [
       "business-operations",
       "government"
+    ],
+    "desires": [
+      "merchant/prove-without-revealing",
+      "shopper/prove-without-revealing"
     ],
     "problem": "Every financial institution that onboards the same customer independently collects and stores the same identity documents, running redundant KYC checks that cost $50–500 per customer — while creating dozens of copies of sensitive identity data across institutions that each become breach targets. Cross-border transactions compound the problem: a European bank processing a payment to a US correspondent must demonstrate OFAC and EU sanctions compliance, which currently requires sharing enough customer data for the counterparty to independently screen — forcing a choice between privacy and compliance.",
     "solutionSketch": "Zero-knowledge proofs that let institutions demonstrate a customer passed KYC and sanctions screening — proving the fact of compliance without sharing the underlying identity documents, so counterparties can satisfy their regulatory obligations without receiving (and storing) sensitive data they didn't need.",
@@ -826,6 +1020,9 @@
       "real-estate-and-housing",
       "civil-society"
     ],
+    "desires": [
+      "community-organizer/fund-our-own-infrastructure"
+    ],
     "problem": "Land trusts and housing cooperatives are structured as 501(c)(3)s or limited equity co-ops, with governance rules buried in paper bylaws that members rarely read, share transfers processed through manual legal work, and financial reporting that requires expensive annual audits. The overhead scales linearly with the number of units and makes it prohibitively expensive to operate community-owned housing at anything beyond neighborhood scale.",
     "solutionSketch": "A governance and ownership coordination layer that sits on top of existing legal entities. Membership transfers automate within the constraints of the ground lease or co-op agreement, governance votes and financial reporting are verifiable to members in real time, and the per-unit administrative overhead drops to a level that lets CLT and co-op structures scale.",
     "whyEthereum": "When a land trust or co-op runs on paper bylaws and outside administrators, members rarely see how governance and money actually move, and they depend on staff or a vendor to process transfers and report honestly. Putting the coordination layer onchain lets members verify votes and distributions directly, keeping control of the organization with the people who belong to it.",
@@ -838,6 +1035,10 @@
     "title": "Letters of credit",
     "domains": [
       "logistics-and-trade"
+    ],
+    "desires": [
+      "manufacturer/cross-border-trade",
+      "merchant/send-receive-money-cheaply"
     ],
     "problem": "A letter of credit — the bank guarantee that an importer will pay an exporter on delivery — still requires physical paper documents to be couriered between banks across countries, a process that takes 5–10 days and costs $500–1500 per transaction for what is fundamentally a message saying 'we guarantee payment if these conditions are met.'",
     "solutionSketch": "Smart contract-based letters of credit that issue, transfer, and settle digitally — releasing payment to the exporter automatically when shipping documents and delivery conditions are cryptographically verified, without physical document exchange.",
@@ -853,6 +1054,10 @@
       "finance",
       "civil-society"
     ],
+    "desires": [
+      "community-organizer/fund-our-own-infrastructure",
+      "investor/access-gated-markets"
+    ],
     "problem": "Neighborhoods that want to collectively fund a solar array, community broadband network, or local community center have no mechanism to issue bonds to residents — municipal bond markets require expensive intermediaries and high minimums that exclude small projects and the residents who would benefit most from investing in their own community. Rural areas without broadband are particularly affected: incumbent telecoms won't build where returns are uncertain, while community-owned networks can't access upfront capital.",
     "solutionSketch": "Tokenized community bonds that let residents invest as little as $10 in specific local infrastructure projects — solar, broadband, community spaces — with coupon payments automated via smart contract and milestone-verified fund release ensuring projects are built before capital is fully deployed.",
     "whyEthereum": "Routing community bonds through a financial intermediary means an outside party holds the record, controls the minimums that price residents out, and can change terms or wind the program down. Building onchain keeps the bond's rules and the record of who is owed what with the community, verifiable by every resident and not dependent on a single firm staying in business.",
@@ -866,6 +1071,9 @@
     "domains": [
       "logistics-and-trade",
       "health"
+    ],
+    "desires": [
+      "manufacturer/quality-records-buyers-trust"
     ],
     "problem": "Pharmaceutical and medical device manufacturers need batch records that regulators and partners can trust, but most store them in mutable databases where a quality engineer can change a test result after the fact without anyone noticing. Reconciling records across suppliers for a single product lot takes weeks of manual document retrieval, which slows recalls when speed matters most.",
     "solutionSketch": "Batch records that capture every production step, quality test, and deviation with cryptographic attestation at the moment of recording. The record cannot be revised afterward, and lot-level history can be traced across the whole supplier chain instantly when a recall is triggered.",
@@ -881,6 +1089,9 @@
       "finance",
       "civil-society"
     ],
+    "desires": [
+      "donor/pay-for-outcomes"
+    ],
     "problem": "Education grants and scholarships from foundations, governments, and endowments are disbursed upfront with minimal accountability for outcomes — a foundation funding 200 scholarships across 50 institutions has no programmatic way to verify that recipients maintained enrollment, completed required coursework, or met GPA thresholds before the next tranche is released, relying instead on self-reported status updates from institutions that have financial incentive to retain enrolled students regardless of progress.",
     "solutionSketch": "Smart contract-governed scholarship funds that release tuition payments in tranches tied to institution-attested milestones — enrollment verification, credit completion, GPA maintenance — with transparent reporting to funders on aggregate outcomes across their entire portfolio.",
     "whyEthereum": "When disbursement runs through a single administrator, funders rely on self-reported status from institutions that have a financial reason to keep drawing funds whether or not students are progressing. Building the scholarship fund onchain keeps the release conditions and the record of each milestone and payment verifiable by funders directly, so accountability does not rest on trusting the institution's own reporting.",
@@ -895,6 +1106,10 @@
       "real-estate-and-housing",
       "finance"
     ],
+    "desires": [
+      "homeowner/transparent-mortgage",
+      "shopper/enforceable-contracts"
+    ],
     "problem": "Mortgage servicing and secondary market trading depend on legacy systems with slow reconciliation, making loan transfers error-prone and limiting borrower access to competitive terms.",
     "solutionSketch": "Servicing and secondary markets become programmable, traceable and accessible",
     "whyEthereum": "When servicing and secondary trading run on the private systems of a few large institutions, borrowers cannot see who holds their loan or whether terms were applied correctly, and the records can be reconciled in ways they never observe. Putting the loan and its servicing logic onchain keeps the obligation auditable by the borrower and tradable without permission from a gatekeeper.",
@@ -907,6 +1122,9 @@
     "title": "Music sync licensing",
     "domains": [
       "media"
+    ],
+    "desires": [
+      "creator/keep-what-i-sell"
     ],
     "problem": "A filmmaker, YouTuber, or advertiser who wants to license a song for their production must either navigate months-long negotiations with major labels — who often decline small requests entirely — or use generic royalty-free music, because there's no scalable way for independent artists to make their catalog licensable at standardized rates.",
     "solutionSketch": "A licensing registry where artists pre-set terms and prices for different use types — YouTube video, short film, TV ad, podcast — so any buyer can instantly purchase a sync license with automatic payment to all rights holders, without negotiation or a licensing intermediary.",
@@ -922,6 +1140,9 @@
       "civil-society",
       "business-operations"
     ],
+    "desires": [
+      "oss-maintainer/paid-for-value-i-drive"
+    ],
     "problem": "Open-source contributors build critical infrastructure but have no portable record of their contributions, and funding decisions are made by a small number of gatekeepers disconnected from the people doing the work.",
     "solutionSketch": "A portable record of who contributed what to open-source projects, with funding that flows against that record rather than through a handful of gatekeepers. Contributors carry their history across projects and platforms, and any funder can direct money toward the work using the same record, with reward flows that are visible to everyone.",
     "whyEthereum": "When contribution history and funding decisions sit inside one platform or with a few gatekeepers, that party decides whose work counts and can deplatform a contributor or steer money toward favored projects. Keeping contribution records and governance onchain lets the people doing the work carry their history anywhere, and any funder can recognize it without a central authority's approval.",
@@ -934,6 +1155,9 @@
     "title": "Opportunity markets",
     "domains": [
       "ai"
+    ],
+    "desires": [
+      "fan/fans-share-upside"
     ],
     "problem": "People with deep contextual expertise — a music fan who spots an unsigned artist, a researcher who recognizes a breakthrough paper, a local supplier who notices a successful business before investors — have valuable information but no institutional connections and no mechanism to monetize their insight. Traditional scout programs can't scale beyond the institution's ability to vet scouts and recommendations. Public prediction markets don't work either: for a scout to profit, someone must lose an offsetting amount — and no market maker wants to bet against thousands of opportunities they've never heard of. If an institution subsidizes liquidity publicly, competitors free-ride on the same signal.",
     "solutionSketch": "Private prediction markets where a sponsor (a label, VC, hiring firm) provides liquidity against outcomes like 'will we sign Artist X?' — but keeps prices visible only to themselves during an opportunity window of roughly two weeks. Anyone can create a market for any opportunity and stake their conviction. As scouts buy YES and drive prices up, the sponsor sees a rising private signal and investigates. If they act and the outcome resolves positively, the scout is paid automatically. After the window closes, positions become public. Designed by Dave White and Matt Liston (Paradigm, August 2025).\n\nSource: [Opportunity Markets, Paradigm 2025](https://www.paradigm.xyz/2025/08/opportunity-markets)",
@@ -949,6 +1173,9 @@
       "civil-society",
       "government"
     ],
+    "desires": [
+      "donor/pay-for-outcomes"
+    ],
     "problem": "Large social service contracts — for housing, job placement, addiction recovery — are paid upfront with no enforceable link between disbursement and delivery. Funders have no programmatic way to verify that contracted metrics like bed occupancy, assessment completions, or housing placements were actually achieved before releasing the next payment tranche.",
     "solutionSketch": "Smart contracts that release payments to service providers only when verified metrics are independently confirmed — turning outcome-based contracting from a legal aspiration into a structural property of how funds flow.",
     "whyEthereum": "When a funder both disburses money and judges whether outcomes were met, political pressure or a comfortable relationship with a provider can loosen the link between payment and delivery, and the public cannot see where the gap opened. Putting the release rule onchain keeps the conditions and the verification visible to everyone, so funds flow against confirmed results rather than a funder's discretion.",
@@ -962,6 +1189,9 @@
     "domains": [
       "insurance",
       "health"
+    ],
+    "desires": [
+      "patient/get-paid-faster"
     ],
     "problem": "Many health insurance claims have simple, verifiable trigger conditions. A policyholder is admitted to a hospital, or completes a covered preventive visit, and is clearly eligible for a payout. These claims still move through the same weeks-long adjudication pipeline as complex cases that need medical review, adding administrative cost and delay to products whose whole value is paying out quickly during a health event.",
     "solutionSketch": "Parametric health benefit products where a payout triggers automatically once a standardized medical event is attested, such as a hospital admission confirmed by the facility or a logged preventive visit. Claims that do not need utilization review or a medical necessity determination settle within hours instead of weeks.",
@@ -977,6 +1207,9 @@
       "food-and-agriculture",
       "insurance"
     ],
+    "desires": [
+      "farmer/get-paid-faster"
+    ],
     "problem": "Smallholder farmers in climate-vulnerable regions need weather insurance but manual claims processing takes weeks, requires costly adjusters who can't economically serve small policies, and produces disputes that erode trust in the product. Traditional underwriters also reject farmers who lack formal production records, even when satellite and weather data could substitute.",
     "solutionSketch": "Parametric insurance products for farmers triggered automatically by satellite imagery and weather station data — when rainfall or temperature readings cross pre-agreed thresholds indicating crop loss, payouts execute without a claim form or adjuster, making it economically viable to serve smallholders at scale.",
     "whyEthereum": "When an insurer controls both the policy terms and the decision to pay, a smallholder has little recourse if claims are delayed or denied, and the underwriter has every incentive to stall. Putting the payout rule onchain lets the trigger and the data feeding it stay visible to the farmer, so settlement does not depend on a company choosing to honor it.",
@@ -989,6 +1222,11 @@
     "title": "Participatory budgeting in local government",
     "domains": [
       "government"
+    ],
+    "desires": [
+      "civic-participant/verify-public-decisions",
+      "community-organizer/audit-public-money",
+      "donor/participatory-grantmaking"
     ],
     "problem": "Participatory budgeting lets residents propose and vote on how a portion of their local budget should be spent, but the process usually runs through paper ballots, ad-hoc websites, or proprietary platforms that the city pays a vendor to operate. Residents have no independent way to verify that their proposals were registered, their votes were counted as cast, or the resulting allocations actually matched the winning proposals once the budget is later executed.",
     "solutionSketch": "A participatory budgeting system where proposals, votes, and final allocations are recorded onchain, with verifiable ballot inclusion using zero-knowledge proofs. A resident can confirm their proposal was registered and their vote counted, the city can show the winning projects tied to actual disbursements, and the connection between what was voted on and what was funded is auditable end to end.",
@@ -1004,6 +1242,9 @@
       "health",
       "identity"
     ],
+    "desires": [
+      "patient/own-my-records"
+    ],
     "problem": "Medical records are siloed across hospitals, clinics, and insurers — leaving patients unable to access, control, or share their own health data when switching providers or seeking second opinions. The problem is acute for mental health: a patient switching therapists must reconstruct their entire psychiatric history from memory — medications that worked, dosages that caused side effects, previous diagnoses — because clinician notes have no standard format and no patient-controlled transfer mechanism.",
     "solutionSketch": "Systems that give patients direct control over their medical data in a standardized portable format — enabling secure sharing across providers, granular consent over which details are disclosed, and verifiable attestation of test results and clinical findings that can't be silently altered.",
     "whyEthereum": "When records sit in hospital and insurer systems, the institution decides what a patient can access and when, and a central store of medical histories becomes a target for breaches and surveillance. Building patient-controlled records onchain keeps consent and access with the patient, lets any provider verify a record was not altered, and avoids routing sensitive history through a company that can log it.",
@@ -1016,6 +1257,10 @@
     "title": "Pay-per-use micropayments",
     "domains": [
       "commerce"
+    ],
+    "desires": [
+      "creator/keep-what-i-sell",
+      "shopper/send-receive-money-cheaply"
     ],
     "problem": "Today's payment rails have an economic floor. Cards cannot profitably process anything below roughly $0.50 because the fixed per-transaction cost eats the margin, which blocks entire pricing models that would otherwise make sense: paying a few cents to read one article, paying per API call instead of buying into a subscription tier, paying per second of video streamed, paying a small tip to a creator. Sellers default to subscriptions, ad-supported content, or steep paywalls because the alternative would cost more to process than it collects.",
     "solutionSketch": "Stablecoin payments down to fractions of a cent settle directly between payer and seller, with no per-transaction fixed cost large enough to break the model. Pricing can match the unit of value (one article, one API call, one minute of stream, one model query), and a wallet can authorize small recurring or per-action payments without a card-network preauthorization flow in the middle.",
@@ -1030,6 +1275,9 @@
     "domains": [
       "science"
     ],
+    "desires": [
+      "researcher/paid-for-value-i-drive"
+    ],
     "problem": "Academic recognition systems only reward first-author publications, leaving researchers who generate datasets, perform reviews, or replicate studies with no formal credit for work that is essential to science. Peer reviewers perform skilled labor for free on behalf of journals that charge institutions thousands per year — with reviews disappearing after use and no portable track record that follows the reviewer across journals.",
     "solutionSketch": "A market for peer review where journals post requests, qualified reviewers bid and are paid automatically on acceptance, and completed reviews become part of a portable verifiable track record — combined with credentials for dataset generation, replication work, and other non-publication contributions that carry the same weight as authorship.",
     "whyEthereum": "When each journal keeps its own record of who reviewed what, a reviewer's track record is scattered across publishers who have no reason to share it, and the labor stays invisible the moment they move on. Putting review and contribution history onchain keeps that record with the researcher, readable by any institution, rather than locked inside the publishers that benefit from the free work.",
@@ -1042,6 +1290,10 @@
     "title": "Peer-to-peer energy markets",
     "domains": [
       "utilities"
+    ],
+    "desires": [
+      "community-organizer/coordinate-with-neighbors",
+      "shopper/send-receive-money-cheaply"
     ],
     "problem": "Rooftop solar owners and other distributed generators have no direct way to sell surplus electricity to their neighbors, forced instead to feed it back to the grid at wholesale rates set by monopoly utilities.",
     "solutionSketch": "Local energy trading and microgrids that let participants buy, sell, and balance electricity directly with one another",
@@ -1057,6 +1309,11 @@
       "health",
       "logistics-and-trade"
     ],
+    "desires": [
+      "manufacturer/prove-my-product-is-genuine",
+      "patient/verify-what-im-buying",
+      "shopper/verify-what-im-buying"
+    ],
     "problem": "A patient buying antimalarials has no way to verify the drug isn't one of the estimated 1-in-10 medicines in low-income markets that are substandard or falsified — counterfeit drugs with no active ingredient or toxic substitutes kill hundreds of thousands annually. The root cause is that pharmaceutical supply chains lack end-to-end verification from manufacturer to point of dispensing, making it impossible to confirm an unbroken chain of custody at the moment of sale.",
     "solutionSketch": "Per-unit identifiers linked to an onchain record of each drug's journey from manufacturer to shelf — allowing any pharmacist or patient with a smartphone to verify authenticity at the point of dispensing, while giving regulators end-to-end supply chain visibility to detect where counterfeits enter.",
     "whyEthereum": "A traceability system owned by one manufacturer or distributor can be edited to hide where counterfeits entered, and a pharmacist or patient has no way to check a record the same company controls. Recording each custody transfer onchain keeps the chain back to the manufacturer verifiable by anyone with a scan, so fraudulent insertion cannot be quietly written out.",
@@ -1069,6 +1326,10 @@
     "title": "Physical goods marketplaces",
     "domains": [
       "commerce"
+    ],
+    "desires": [
+      "merchant/own-my-audience",
+      "shopper/peer-to-peer-commerce"
     ],
     "problem": "Peer-to-peer resale of physical goods suffers from rampant fraud because there is no trustworthy way to verify item authenticity or enforce payment-on-delivery without a costly intermediary.",
     "solutionSketch": "Tokenized listings and escrowed settlement bring transparency to resale and secondary markets",
@@ -1083,6 +1344,9 @@
     "domains": [
       "media"
     ],
+    "desires": [
+      "fan/own-what-i-earned"
+    ],
     "problem": "In-game items, currencies, and progress are locked inside proprietary platforms that can freeze accounts, change economies, or shut down entirely, leaving players with no real ownership of assets they earned or purchased.",
     "solutionSketch": "Truly portable items/currency with minimal fees, rentals, AMM-driven markets, escrowed prize pools—shifting power from platforms to players",
     "whyEthereum": "When items and currency live on a studio's servers, the operator can freeze accounts, rewrite the economy, or shut the game down, and players keep nothing they earned. Holding assets onchain keeps ownership with the player and lets items move to any game or marketplace that supports the standard, beyond the reach of a single operator's kill switch.",
@@ -1095,6 +1359,10 @@
     "title": "Portable credentials and professional identity",
     "domains": [
       "identity"
+    ],
+    "desires": [
+      "freelance-professional/portable-reputation",
+      "journalist/portable-reputation"
     ],
     "problem": "Academic credentials are issued as PDFs locked in institutional databases, skills acquired across employers and platforms exist in disconnected silos, and workers lose their ratings and reputation every time they switch platforms. NGO workers and journalists face the same problem in higher-stakes form: they must repeatedly prove affiliations in hostile environments while sharing full identity documents puts them at risk of surveillance and retaliation.",
     "solutionSketch": "Tamper-proof, portable credentials — diplomas, micro-credentials, work history, ratings, union membership, press credentials — that workers and professionals own and carry across platforms, employers, and jurisdictions, with selective disclosure so only the relevant claim is disclosed in each context.",
@@ -1109,6 +1377,10 @@
     "domains": [
       "commerce"
     ],
+    "desires": [
+      "gig-worker/portable-reputation",
+      "shopper/peer-to-peer-commerce"
+    ],
     "problem": "A review you write on one platform stays there. Your accumulated reputation as a reliable reviewer, the products you have actually purchased, and the ratings you have given are siloed by Amazon, Yelp, Google, and each marketplace, and cannot travel with you to a new app or be carried into a context where the host platform has not approved it. A buyer searching for trustworthy review history on a new platform faces a cold start: the reputational signal is thin or missing entirely.",
     "solutionSketch": "Ratings and reviews kept as portable attestations the reviewer signs and controls, with the underlying purchase or interaction proven by an onchain receipt or credential. A reviewer's history travels with them across marketplaces and apps, a buyer can check whether a reviewer actually bought what they reviewed, and a new platform can bootstrap on existing reputation rather than starting from zero.",
     "whyEthereum": "When reviews live inside each marketplace, the platform owns the reputational signal and the writer cannot move it elsewhere. Recording reviews and the receipts behind them onchain keeps both with the reviewer, so the same reputation can be presented on any app and a receipt cannot be silently dropped by a platform that finds it inconvenient.",
@@ -1121,6 +1393,9 @@
     "title": "Portable social identity and reputation",
     "domains": [
       "identity"
+    ],
+    "desires": [
+      "creator/own-my-audience"
     ],
     "problem": "Users who build audiences on one social platform lose everything if they switch apps or get de-platformed. Follower counts and engagement metrics are also easily manipulated and impossible to verify independently.",
     "solutionSketch": "Onchain handles, profiles, and social graphs that work across multiple apps — combined with verifiable attestations for engagement and community participation that users own and carry with them.",
@@ -1136,6 +1411,10 @@
       "science",
       "health"
     ],
+    "desires": [
+      "patient/trust-the-evidence",
+      "researcher/data-integrity"
+    ],
     "problem": "Pharmaceutical companies register clinical trials, then selectively publish only the results that support their drug — a practice called outcome reporting bias that systematically distorts the medical evidence base and leads doctors to prescribe treatments that don't work or cause harm, because negative results simply disappear.",
     "solutionSketch": "A registry where trial protocols and primary endpoints are cryptographically committed before a trial begins — making it publicly provable whether published results match what was pre-registered and impossible to quietly bury unfavorable outcomes.",
     "whyEthereum": "A registry run by an industry body or a single institution can quietly let sponsors amend protocols or delay results, since the same parties that benefit from burying outcomes influence the registrar. Committing protocols onchain fixes the original record where no sponsor or operator can revise it, so anyone can check published results against what was promised.",
@@ -1148,6 +1427,9 @@
     "title": "Procurement",
     "domains": [
       "business-operations"
+    ],
+    "desires": [
+      "manufacturer/procurement-that-reconciles-itself"
     ],
     "problem": "Purchase orders, vendor agreements, and replenishment workflows run through email chains and disconnected ERP modules, with each party keeping its own copy of every transaction. Disputes over terms that were never machine-readable cause delays and duplicate orders. At month-end the same economic event lives as two separate records that have to be manually reconciled, consuming a large share of close-cycle time, and audit preparation depends on weeks of counterparty-confirmation letters.",
     "solutionSketch": "Purchase orders, vendor agreements, and replenishment schedules recorded as smart contracts that both buyer and vendor confirm at the point of origination. The same record serves both sides' books, so neither can later claim a different version, routine reorders trigger without manual sign-off, and the reconciliation step at close disappears because the record was joint from the start.",
@@ -1162,6 +1444,9 @@
     "domains": [
       "government"
     ],
+    "desires": [
+      "civic-participant/verify-public-decisions"
+    ],
     "problem": "Government procurement processes are rife with opaque bid evaluations, paper-based contract trails, and limited public visibility, creating fertile ground for favoritism and corruption.",
     "solutionSketch": "Transparent record of tenders, bids, evaluations, awards, supplier credentials, deliveries, and payments spanning the full procurement cycle to reduce corruption and enable public audit",
     "whyEthereum": "When the procurement record is held by the same agency awarding the contracts, the office with the most to gain from favoritism is also the one that controls what the public gets to see. Recording the full lifecycle onchain keeps bids, evaluations, and payments outside that agency's editing power, so citizens and auditors can check the process without asking permission.",
@@ -1174,6 +1459,9 @@
     "title": "Referral and affiliate payouts",
     "domains": [
       "commerce"
+    ],
+    "desires": [
+      "creator/paid-for-value-i-drive"
     ],
     "problem": "Referral and affiliate programs run inside the company's own systems. It tracks who referred whom, decides which conversions count, and controls the payout schedule. Referrers have to trust that attribution, disputes over whether a referral was credited are routine, and multi-step affiliate chains are hard for anyone outside the company to audit.",
     "solutionSketch": "Referral attribution and payout rules encoded so that a qualifying conversion, a signup or a purchase that meets the agreed terms, settles the payout to the referrer on its own. The referrer can confirm their referrals were counted and read the payout rules directly, and a chain of affiliates can each be paid from the same event without the company reconciling every tier by hand.",
@@ -1189,6 +1477,9 @@
       "food-and-agriculture",
       "environment"
     ],
+    "desires": [
+      "farmer/paid-for-value-i-drive"
+    ],
     "problem": "Farmers who adopt soil-building, biodiversity-enhancing, or low-input practices absorb higher costs and risks with no reliable mechanism to measure, certify, and compensate them for the ecological value they create.",
     "solutionSketch": "Reward mechanisms that compensate farmers for sustainable and regenerative agricultural behaviors",
     "whyEthereum": "When a single program operator records which practices were adopted and decides who gets paid, farmers depend on that intermediary's bookkeeping and funders cannot tell whether the money reached genuine impact. Recording adoption and outcomes onchain creates a payment trail that funders can verify directly and that no intermediary can revise to favor itself.",
@@ -1201,6 +1492,9 @@
     "title": "Reinsurance",
     "domains": [
       "insurance"
+    ],
+    "desires": [
+      "investor/access-gated-markets"
     ],
     "problem": "Reinsurance capital is locked behind opaque, relationship-driven markets accessible only to large institutional players, with high intermediation costs and no way for cedents or investors to independently audit counterparty exposure or track payout obligations in real time.",
     "solutionSketch": "A reinsurance protocol where cedents and capital providers transact directly. Risk tranches are tokenized, payouts settle automatically when a loss event is verified, and reserve levels and counterparty exposure update onchain as positions change. Any participant can audit positions and obligations in real time, rather than waiting on quarterly disclosures and rating-agency snapshots.",
@@ -1217,6 +1511,10 @@
       "environment",
       "utilities"
     ],
+    "desires": [
+      "community-organizer/fund-our-own-infrastructure",
+      "investor/access-gated-markets"
+    ],
     "problem": "Small-scale renewable energy projects struggle to attract financing because ownership, cash flows, and performance data are not standardized or auditable, making it prohibitively hard to bundle many sites into investable instruments.",
     "solutionSketch": "Onchain funding models for solar, storage, and community energy projects that track ownership, cash flows, and performance",
     "whyEthereum": "When a financing platform holds the ownership records and reports the performance data, investors depend on that operator's books and it can favor its own deals or fold and strand the projects. Recording ownership, cash flows, and generation data onchain keeps them auditable by anyone, so small projects can be bundled and financed without trusting a single intermediary's accounting.",
@@ -1229,6 +1527,9 @@
     "title": "Residential leasing",
     "domains": [
       "real-estate-and-housing"
+    ],
+    "desires": [
+      "shopper/enforceable-contracts"
     ],
     "problem": "Lease management involves manual rent collection, opaque deposit handling, and paper-based renewals that create disputes between landlords and tenants with no neutral enforcement mechanism.",
     "solutionSketch": "Lease payments, deposits, renewals and dispute resolution run as smart contracts, eliminating many intermediaries",
@@ -1243,6 +1544,9 @@
     "domains": [
       "business-operations"
     ],
+    "desires": [
+      "investor/access-gated-markets"
+    ],
     "problem": "Revenue-based financing lets a business raise capital and repay investors a set percentage of revenue until a return cap, instead of taking on fixed debt or giving up equity. Repayment depends on the business reporting revenue honestly and routing the payments on schedule, so investors fund against numbers they cannot see directly. Enforcement comes down to an audit clause or a lawsuit, which prices small issuers and small investors out of the instrument.",
     "solutionSketch": "A revenue-share bond where incoming revenue passes through a contract that routes the agreed percentage to bondholders as it arrives and stops once the return cap is reached. Repayment is a property of the revenue flow rather than something the issuer has to remember to do or investors have to chase, and the outstanding balance is visible to both sides at every point.",
     "whyEthereum": "When the issuer controls the books and the bank account, investors in a revenue-share deal depend on self-reported revenue and the issuer's willingness to remit on time. Settling the split onchain makes the repayment rule and the full payment history something both sides verify directly, so a small business can raise this way without investors needing to fund an audit to check the accounting.",
@@ -1256,6 +1560,9 @@
     "domains": [
       "science"
     ],
+    "desires": [
+      "researcher/surface-what-the-field-believes"
+    ],
     "problem": "Research funding committees allocate billions based on grant applications reviewed by small expert panels, with no mechanism to aggregate what the broader scientific community actually believes about which hypotheses are likely to replicate, which drugs will fail trials, or which research directions will prove fruitful — leaving funding systematically biased toward incremental work from established labs.",
     "solutionSketch": "Prediction markets where researchers stake tokens on the outcomes of specific scientific claims — will this trial replicate, will this drug hit its primary endpoint — with payouts flowing to those who were right. Market prices surface collective scientific belief in real time, and accumulated winnings serve as a credibility signal for funding allocation.",
     "whyEthereum": "A prediction market run by one company depends on that operator to hold the stakes, settle honestly, and not exclude participants or views it dislikes, and it can shut the market down when results embarrass powerful funders. Running it onchain keeps the stakes, the settlement rules, and the track record outside any single operator's control and auditable by anyone weighing the signal.",
@@ -1268,6 +1575,9 @@
     "title": "Scientific knowledge graph",
     "domains": [
       "science"
+    ],
+    "desires": [
+      "researcher/surface-what-the-field-believes"
     ],
     "problem": "Scientific knowledge is scattered across millions of papers and databases with no common layer connecting a finding to the data behind it, the studies that replicated or failed to replicate it, or the retractions that revised it. Whether a given result still stands is hard to see, and cross-domain connections are found mostly by accident.",
     "solutionSketch": "An onchain knowledge graph that links papers to their underlying data, their replications, and their retractions, maintained as a public resource rather than inside one publisher's database. A researcher or an application can trace a finding's current standing and follow connections across disciplines without negotiating access.",
@@ -1283,6 +1593,11 @@
       "food-and-agriculture",
       "logistics-and-trade"
     ],
+    "desires": [
+      "farmer/verified-origin-without-the-fee",
+      "manufacturer/reach-buyers-directly",
+      "merchant/verify-what-im-buying"
+    ],
     "problem": "A coffee cooperative in Guatemala that practices organic farming can't access premium export markets because the cost of formal certification (USDA Organic, Rainforest Alliance) is $5,000–15,000 per year — prohibitive for producers grossing $50,000. Without certification, buyers have no way to verify claims about growing practices, and the cooperative's product is priced as commodity-grade regardless of actual quality.",
     "solutionSketch": "Lightweight, verifiable sourcing records that document growing practices, input usage, and post-harvest handling at the cooperative level — creating a provenance trail that export buyers and roasters can verify without requiring expensive third-party certification as the only trust signal.",
     "whyEthereum": "When the only accepted proof of farming practices is a certification body charging fees a small cooperative cannot afford, that body becomes a gatekeeper deciding who reaches premium markets. Recording sourcing claims onchain lets a cooperative build provenance that buyers verify directly, so a track record accrues to the producer rather than to a certifier's private files.",
@@ -1296,6 +1611,9 @@
     "domains": [
       "government",
       "finance"
+    ],
+    "desires": [
+      "investor/access-gated-markets"
     ],
     "problem": "Issuing and settling government debt involves layers of intermediaries, T+2 or longer settlement windows, and high minimum denominations that exclude smaller investors from participating.",
     "solutionSketch": "Onchain issuance, settlement, and coupon tracking of public debt instruments, enabling faster settlement, lower costs, and broader investor access",
@@ -1311,6 +1629,9 @@
       "logistics-and-trade",
       "commerce"
     ],
+    "desires": [
+      "gig-worker/portable-reputation"
+    ],
     "problem": "Freight brokers sit between shippers who need loads moved and carriers who have trucks available, taking 15–20% margins on every transaction in exchange for making the match — a spread that exists almost entirely because the broker holds the relationship and information asymmetry, not because they add logistical value that a transparent protocol couldn't replace.",
     "solutionSketch": "A spot freight marketplace where shippers post loads with specifications and payment terms, carriers bid directly, payment is escrowed onchain and released automatically upon verified delivery, and both parties build a public reputation from their transaction history — cutting out the broker layer on transactions that don't require physical coordination.",
     "whyEthereum": "A freight marketplace run by one company recreates the broker problem: the operator holds the relationships and the reputation data, sets the take rate, and can drop a shipper or carrier from the market it controls. Running the marketplace onchain keeps the escrow and the reputation history outside any one operator's hands, so carriers carry their record between platforms and neither side depends on a middleman to hold funds honestly.",
@@ -1323,6 +1644,10 @@
     "title": "Title & escrow",
     "domains": [
       "real-estate-and-housing"
+    ],
+    "desires": [
+      "homeowner/faster-closings",
+      "shopper/enforceable-contracts"
     ],
     "problem": "Real estate closings take 30-60 days and require title companies, notaries, and attorneys to manually verify ownership chains in paper registries, adding thousands of dollars in fees to every transaction.",
     "solutionSketch": "Smart contracts replace paper registries and manual escrow flows, reducing settlement time and improving transparency",
@@ -1337,6 +1662,10 @@
     "domains": [
       "insurance"
     ],
+    "desires": [
+      "investor/portable-portfolio",
+      "shopper/enforceable-contracts"
+    ],
     "problem": "Insurance policies are illiquid, non-transferable instruments that policyholders cannot sell, swap, or restructure if their risk profile changes, trapping capital and limiting flexibility.",
     "solutionSketch": "Policies become tradable contracts, enabling secondary markets, swapping risk profiles and unlocking liquidity",
     "whyEthereum": "An insurer that keeps policies non-transferable benefits directly from the trapped capital, and a resale market it operates lets it decide who may sell and at what terms. Representing policies onchain moves the contract and its transfer rights out of the issuer's exclusive control, so a policyholder can sell or restructure coverage without the carrier's permission.",
@@ -1349,6 +1678,9 @@
     "title": "Loyalty points as liquid, transferable assets",
     "domains": [
       "commerce"
+    ],
+    "desires": [
+      "shopper/enforceable-contracts"
     ],
     "problem": "Frequent flyers and hotel loyalty members collectively hold an estimated $500 billion in unredeemed points — but those points expire silently, can't be combined across programs, can't be sold, and can be devalued unilaterally by the issuing company overnight with no recourse for holders.",
     "solutionSketch": "Tokenized loyalty points that are transferable between programs, sellable on secondary markets, and governed by transparent, immutable issuance and expiry rules — so holders have real property rights over value they've earned.",
@@ -1363,6 +1695,7 @@
     "domains": [
       "finance"
     ],
+    "desires": [],
     "problem": "SMEs extend trade credit to each other in isolated bilateral relationships, missing opportunities to net circular obligations and free up working capital that is locked in receivables chains.",
     "solutionSketch": "Netting obligations across SME networks",
     "whyEthereum": "A clearing operator that sees every firm's receivables holds a detailed map of who owes whom, and it can prioritize certain members, set the fees, or exclude competitors from the netting. Running the obligations onchain keeps the record out of any single firm's hands, so SMEs can net circular debt without handing a private intermediary leverage over their cash flow.",
@@ -1375,6 +1708,9 @@
     "title": "Creator royalties for game mods and user content",
     "domains": [
       "media"
+    ],
+    "desires": [
+      "fan/paid-for-value-i-drive"
     ],
     "problem": "Modders and content creators build maps, skins, and tools that drive player engagement, but receive no automatic compensation because platforms lack enforceable revenue-sharing mechanisms tied to actual usage.",
     "solutionSketch": "Tokenized blueprints, maps or mods permit automatic revenue splits, cross-client recognition, and creator-driven extension of game logic",
@@ -1390,6 +1726,9 @@
       "utilities",
       "environment"
     ],
+    "desires": [
+      "farmer/share-a-finite-resource-honestly"
+    ],
     "problem": "In drought-prone regions, water rights are traded in informal bilateral markets with no price transparency, while actual usage is monitored by infrequent physical inspections that miss illegal diversions — creating a tragedy of the commons where overuse is profitable and nearly undetectable until aquifers are depleted.",
     "solutionSketch": "Tokenized water rights tradeable on transparent markets, with IoT-verified usage continuously recorded onchain — creating a real-time allocation registry where overuse is immediately visible and rights can be transferred without paper title processes.",
     "whyEthereum": "If one agency or company runs the allocation registry, large water users can pressure it to overlook diversions or keep trades quiet, leaving downstream users with no independent view. Recording allocations and metered usage onchain lets every rights holder see the same picture, so overuse is visible to the people it harms.",
@@ -1404,6 +1743,9 @@
       "health",
       "ai"
     ],
+    "desires": [
+      "patient/own-my-records"
+    ],
     "problem": "Wearable devices generate valuable biometric data that is locked inside proprietary platforms, giving individuals no way to share, monetize, or direct their own fitness and health information to researchers or insurers on their own terms.",
     "solutionSketch": "A standard for wearable biometric data, such as continuous glucose readings, sleep stages, or heart-rate variability, where the individual holds custody and grants time-bounded access to specific buyers. Each reading is signed at the device, so a researcher or insurer can trust it has not been altered after capture. Payment for access settles to the individual rather than to the wearable platform, and access ends automatically when the agreed window or condition closes.",
     "whyEthereum": "When biometric data sits inside a wearable company's platform, that company decides who buys it and keeps the value while the individual carries the breach risk. Giving people custody of their own health data onchain lets them direct it to a researcher or insurer on their own terms and capture what it is worth.",
@@ -1417,6 +1759,9 @@
     "domains": [
       "civil-society"
     ],
+    "desires": [
+      "journalist/censorship-resistant-comms"
+    ],
     "problem": "Whistleblower testimonies and leaked evidence are vulnerable to tampering, metadata stripping, and retroactive denial, while existing submission channels routinely expose the identity of sources.",
     "solutionSketch": "Timestamping and storage of testimonies, photographs, or datasets with privacy-preserving disclosure",
     "whyEthereum": "A whistleblower submission channel run by any single organization can be subpoenaed, breached, or pressured into exposing who sent what, and the same operator could quietly alter or lose the evidence. Recording timestamped, privacy-preserving submissions onchain means the source does not have to trust an intermediary that can be compelled against them.",
@@ -1429,6 +1774,10 @@
     "title": "Wills and estate execution",
     "domains": [
       "civil-society"
+    ],
+    "desires": [
+      "homeowner/faster-closings",
+      "investor/portable-portfolio"
     ],
     "problem": "Estate execution depends on manual probate processes that take months or years, while trust administration requires fiduciaries to manually manage distributions and reporting across jurisdictions, with beneficiaries having limited visibility.",
     "solutionSketch": "Time-locked, oracle-triggered estate execution and programmable trust administration with transparent record-keeping — assets transfer automatically when verifiable conditions are met.",

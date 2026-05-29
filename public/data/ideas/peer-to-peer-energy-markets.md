@@ -1,6 +1,9 @@
 ---
 title: "Peer-to-peer energy markets"
 domains: utilities
+desires:
+  - community-organizer/coordinate-with-neighbors
+  - shopper/send-receive-money-cheaply
 ---
 
 ## Problem

@@ -19,37 +19,30 @@ desires:
     title: "I want to keep more of what I sell"
     framing: |
       Platforms take 10 to 30 percent of every sale and hold the money for weeks, so settling payments onchain with smart contracts that split revenue at the moment of sale lets a creator keep the cut and skip the wait.
-    ideas: [creator-storefronts, pay-per-use-micropayments, film-tv-residuals, music-sync-licensing]
   - id: prove-i-made-this
     title: "I want to prove I made what I made"
     framing: |
       Government IP registries are slow and per-jurisdiction while platform timestamps can be rewritten, so a signed onchain commitment made the moment of creation gives a creator evidence of origin that anyone can verify without trusting the hosting platform.
-    ideas: [content-authenticity-proofs, ip-registration-prior-art]
   - id: own-my-audience
-    title: "I want to own the relationship with my audience, not rent it"
+    title: "I want to keep reaching my followers if a platform suspends me"
     framing: |
-      A creator's followers and reputation live on whichever platform earned them and vanish when it demonetizes the account, so a portable social graph anchored onchain lets the audience move with the creator and stay their asset, not the platform's.
-    ideas: [portable-social-identity]
+      When my account gets locked or a platform decides my niche is off-brand, the audience I spent years building disappears overnight. If my follower list lived on a portable onchain graph instead of inside the app, I could message and sell to those same people from somewhere else the next day.
   - id: fans-share-upside
-    title: "I want my fans to share in what I build, not just consume it"
+    title: "I want my earliest backers to get paid back when something I make takes off"
     framing: |
-      Tip jars, merchandise, and pre-sold crowdfunding rewards never let a fan share in the upside of a work that succeeds, so onchain instruments make it practical to issue revenue shares and governance rights that pay out automatically as it earns.
-    ideas: [fan-funded-media, ip-assets]
+      The hundred people who funded my first record get a tote bag and a thank-you, even when the record ends up paying my rent for three years. If I could issue them a small revenue share that pays out automatically from streaming income, the people who took the risk would actually share in the reward.
   - id: paid-for-value-i-drive
-    title: "I want to be paid honestly for the value I drive"
+    title: "I want to trust the view and revenue numbers the platform pays me on"
     framing: |
-      Creators drive referrals, ad views, and mod downloads they cannot verify and simply accept the platform's earnings figure, so verifiable attribution onchain, with payouts triggered by the platform's own data, lets them audit the math behind their paycheck.
-    ideas: [ad-influencer-metrics, referral-affiliate-payouts]
+      My royalty statement says I had 412,000 streams last quarter and I have no way to check whether that's the real number or the number after the platform's accounting. If plays and ad views were counted against a log I could audit, I'd know my paycheck matched the activity instead of taking the platform's word for it.
   - id: ai-trained-on-my-work
     title: "I want compensation when AI is trained on my work"
     framing: |
       Foundation models are trained on creators' work without notice on datasets that are rarely disclosed, so onchain provenance for training data lets a creator see if their work is included, license it, and be paid when those models earn.
-    ideas: [ai-model-data-markets]
-  - id: reach-wider-audience
-    title: "I want to reach a wider audience"
+  - id: survive-demonetization
+    title: "I want my income not to vanish overnight when an algorithm decides my topic is off-brand"
     framing: |
-      Reaching new audiences is gated by opaque algorithms and paid promotion that prices out the creators who need reach most, so an open distribution layer where fans earn for spreading work they value gives growth no platform can switch off.
-    ideas: [curation-markets]
+      Platforms can demonetize a video, shadow-ban a hashtag, or quietly throttle my reach for any reason their policy team chooses, and the only appeal is a form that disappears into a queue. Revenue-eligible publishing on rails the platform can't unilaterally switch off means my paycheck depends on the work, not on whether my topic is on-brand this quarter.
 ---
 
 # Creator

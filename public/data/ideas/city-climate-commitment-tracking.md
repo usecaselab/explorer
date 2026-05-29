@@ -1,6 +1,9 @@
 ---
 title: "City climate commitment tracking"
 domains: government, environment
+desires:
+  - civic-participant/enforce-the-rules-already-on-the-books
+  - community-organizer/enforce-the-rules-already-on-the-books
 ---
 
 ## Problem

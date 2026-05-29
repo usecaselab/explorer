@@ -1,6 +1,8 @@
 ---
 title: "Revenue bonds"
 domains: business-operations
+desires:
+  - investor/access-gated-markets
 ---
 
 ## Problem

@@ -1,6 +1,9 @@
 ---
 title: "Physical goods marketplaces"
 domains: commerce
+desires:
+  - merchant/own-my-audience
+  - shopper/peer-to-peer-commerce
 ---
 
 ## Problem

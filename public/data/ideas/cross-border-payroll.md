@@ -1,6 +1,9 @@
 ---
 title: "Cross-border payroll and contractor payments"
 domains: business-operations
+desires:
+  - founder/get-paid-faster
+  - freelance-professional/send-receive-money-cheaply
 ---
 
 ## Problem

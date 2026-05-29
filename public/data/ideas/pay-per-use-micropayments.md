@@ -1,6 +1,9 @@
 ---
 title: "Pay-per-use micropayments"
 domains: commerce
+desires:
+  - creator/keep-what-i-sell
+  - shopper/send-receive-money-cheaply
 ---
 
 ## Problem

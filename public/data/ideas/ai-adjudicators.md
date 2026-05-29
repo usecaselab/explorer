@@ -1,6 +1,9 @@
 ---
 title: "Provable AI adjudicators"
 domains: ai
+desires:
+  - civic-participant/verify-public-decisions
+  - patient/appeal-automated-decisions
 ---
 
 ## Problem

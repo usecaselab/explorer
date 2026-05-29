@@ -1,6 +1,9 @@
 ---
 title: "Letters of credit"
 domains: logistics-and-trade
+desires:
+  - manufacturer/cross-border-trade
+  - merchant/send-receive-money-cheaply
 ---
 
 ## Problem

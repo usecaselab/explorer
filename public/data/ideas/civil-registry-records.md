@@ -1,6 +1,8 @@
 ---
 title: "Civil registry and vital records"
 domains: government
+desires:
+  - civic-participant/own-my-records
 ---
 
 ## Problem

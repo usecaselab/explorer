@@ -1,6 +1,8 @@
 ---
 title: "Dispute resolution for contracts and freelance agreements"
 domains: business-operations
+desires:
+  - freelance-professional/enforceable-contracts
 ---
 
 ## Problem

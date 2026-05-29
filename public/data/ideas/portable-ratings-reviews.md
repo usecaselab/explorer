@@ -1,6 +1,9 @@
 ---
 title: "Portable ratings & reviews"
 domains: commerce
+desires:
+  - gig-worker/portable-reputation
+  - shopper/peer-to-peer-commerce
 ---
 
 ## Problem

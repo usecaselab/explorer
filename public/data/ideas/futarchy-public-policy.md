@@ -1,6 +1,8 @@
 ---
 title: "Futarchy for public policy"
 domains: government
+desires:
+  - civic-participant/verify-public-decisions
 ---
 
 ## Problem

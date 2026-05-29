@@ -1,6 +1,9 @@
 ---
 title: "Data integrity for decentralized clinical trials"
 domains: health, science
+desires:
+  - patient/trust-the-evidence
+  - researcher/data-integrity
 ---
 
 ## Problem

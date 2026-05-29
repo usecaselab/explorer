@@ -1,6 +1,8 @@
 ---
 title: "Open-source contribution records and funding"
 domains: civil-society, business-operations
+desires:
+  - oss-maintainer/paid-for-value-i-drive
 ---
 
 ## Problem

@@ -2,6 +2,10 @@ export interface Idea {
   id: string;
   title: string;
   domains: string[];
+  // Persona desires this idea fulfills, as `personaId/desireId` refs. The
+  // single source of truth for the persona ↔ idea graph (see
+  // scripts/build-ideas.mjs: attachIdeasToDesires).
+  desires: string[];
   problem: string;
   solutionSketch: string;
   whyEthereum: string;

@@ -1,6 +1,8 @@
 ---
 title: "Ad delivery and influencer metrics"
 domains: commerce
+desires:
+  - creator/paid-for-value-i-drive
 ---
 
 ## Problem

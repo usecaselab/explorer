@@ -1,6 +1,8 @@
 ---
 title: "Land trust and housing co-op coordination"
 domains: real-estate-and-housing, civil-society
+desires:
+  - community-organizer/fund-our-own-infrastructure
 ---
 
 ## Problem

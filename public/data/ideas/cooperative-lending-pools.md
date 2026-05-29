@@ -1,6 +1,8 @@
 ---
 title: "Cooperative lending and liquidity pools"
 domains: finance, civil-society
+desires:
+  - community-organizer/pool-capital-with-peers
 ---
 
 ## Problem

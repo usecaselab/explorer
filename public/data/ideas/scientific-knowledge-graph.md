@@ -1,6 +1,8 @@
 ---
 title: "Scientific knowledge graph"
 domains: science
+desires:
+  - researcher/surface-what-the-field-believes
 ---
 
 ## Problem

@@ -1,6 +1,8 @@
 ---
 title: "Direct creator storefronts with programmable revenue splits"
 domains: commerce
+desires:
+  - creator/keep-what-i-sell
 ---
 
 ## Problem

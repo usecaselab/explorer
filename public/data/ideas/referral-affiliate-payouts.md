@@ -1,6 +1,8 @@
 ---
 title: "Referral and affiliate payouts"
 domains: commerce
+desires:
+  - creator/paid-for-value-i-drive
 ---
 
 ## Problem

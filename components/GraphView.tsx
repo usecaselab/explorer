@@ -244,10 +244,10 @@ export default function GraphView({
     hover != null && (hover.type === 'persona' ? hover.id === pid : hover.id === iid)
 
   return (
-    <section className="w-full flex-1 flex flex-col px-2 sm:px-4">
+    <section className="w-full flex-1 flex flex-col">
       <div
         ref={containerRef}
-        className="flex-1 relative rounded-2xl border border-gray-100 dark:border-gray-900 overflow-hidden bg-gray-50/40 dark:bg-neutral-900/40"
+        className="flex-1 relative overflow-hidden bg-gray-50/40 dark:bg-neutral-900/40"
       >
         <svg
           ref={svgRef}

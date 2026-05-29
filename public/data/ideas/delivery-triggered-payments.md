@@ -1,6 +1,8 @@
 ---
 title: "Delivery-triggered payments"
 domains: logistics-and-trade
+desires:
+  - gig-worker/get-paid-faster
 ---
 
 ## Problem

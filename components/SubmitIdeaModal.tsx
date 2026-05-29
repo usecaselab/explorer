@@ -99,6 +99,8 @@ export default function SubmitIdeaModal({ open, onClose }: SubmitIdeaModalProps)
   };
 
   // Per-field validity drives both progress indicator and submit button state.
+  // Persona linking via `desires:` happens later, by editing the markdown
+  // directly — too many desires to surface in a checklist comfortably.
   const fieldStatus = useMemo(
     () => ({
       title: title.trim().length > 0,

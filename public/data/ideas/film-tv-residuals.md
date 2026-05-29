@@ -1,6 +1,8 @@
 ---
 title: "Film and TV residual payments"
 domains: media
+desires:
+  - creator/keep-what-i-sell
 ---
 
 ## Problem

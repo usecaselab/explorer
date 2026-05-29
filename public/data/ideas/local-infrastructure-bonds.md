@@ -1,6 +1,9 @@
 ---
 title: "Local infrastructure bonds"
 domains: finance, civil-society
+desires:
+  - community-organizer/fund-our-own-infrastructure
+  - investor/access-gated-markets
 ---
 
 ## Problem

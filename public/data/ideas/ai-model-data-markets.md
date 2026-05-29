@@ -1,6 +1,9 @@
 ---
 title: "AI model and training data markets"
 domains: ai
+desires:
+  - creator/ai-trained-on-my-work
+  - researcher/ai-trained-on-my-work
 ---
 
 ## Problem

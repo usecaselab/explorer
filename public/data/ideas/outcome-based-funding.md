@@ -1,6 +1,8 @@
 ---
 title: "Outcome-based funding for social services"
 domains: civil-society, government
+desires:
+  - donor/pay-for-outcomes
 ---
 
 ## Problem

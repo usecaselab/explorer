@@ -1,6 +1,8 @@
 ---
 title: "Budget execution tracking"
 domains: government
+desires:
+  - civic-participant/audit-public-money
 ---
 
 ## Problem

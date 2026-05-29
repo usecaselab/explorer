@@ -1,6 +1,8 @@
 ---
 title: "Dependency-graph funding"
 domains: business-operations, civil-society
+desires:
+  - oss-maintainer/paid-for-value-i-drive
 ---
 
 ## Problem

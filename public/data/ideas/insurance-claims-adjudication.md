@@ -1,6 +1,9 @@
 ---
 title: "Insurance claims adjudication"
 domains: insurance
+desires:
+  - patient/appeal-automated-decisions
+  - shopper/enforceable-contracts
 ---
 
 ## Problem

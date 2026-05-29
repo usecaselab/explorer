@@ -1,6 +1,8 @@
 ---
 title: "Prediction markets for scientific claims"
 domains: science
+desires:
+  - researcher/surface-what-the-field-believes
 ---
 
 ## Problem

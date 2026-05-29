@@ -1,6 +1,8 @@
 ---
 title: "Spot freight market for trucking"
 domains: logistics-and-trade, commerce
+desires:
+  - gig-worker/portable-reputation
 ---
 
 ## Problem

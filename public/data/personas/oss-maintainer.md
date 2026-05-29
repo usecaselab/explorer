@@ -16,10 +16,9 @@ portraits:
     icon: wrench
 desires:
   - id: paid-for-value-i-drive
-    title: "I want to be recognized and paid fairly for the open-source work others depend on"
+    title: "I want the companies that depend on my library to actually pay for it"
     framing: |
-      Critical open-source libraries underpin billions in revenue while the maintainers who keep them alive go unpaid, and the money that does move stops at the top-level project instead of reaching the dependencies beneath it. Smart contracts that route a fraction of downstream usage into a funding pool, fan a sponsorship across the dependency graph by usage proofs, and meter commercial use through onchain license terms tie a maintainer's pay to the reach of their code rather than to who happens to ask.
-    ideas: [open-source-contribution-funding, dependency-graph-funding, commercial-use-licensing]
+      Fortune 500 services import my package millions of times a month and the tip jar still has $40 in it, because there's no point in the build chain where commercial use triggers payment. If a license could meter commercial usage and route a small fee back through the dependency graph, the companies shipping my code in production would pay automatically instead of when someone remembers to.
 ---
 
 # OSS Maintainer

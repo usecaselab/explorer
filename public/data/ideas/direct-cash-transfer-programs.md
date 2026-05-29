@@ -1,6 +1,8 @@
 ---
 title: "Direct cash transfers and basic income distribution"
 domains: civil-society, government
+desires:
+  - donor/audit-public-money
 ---
 
 ## Problem

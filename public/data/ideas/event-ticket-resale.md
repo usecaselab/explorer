@@ -1,6 +1,8 @@
 ---
 title: "Event tickets with resale rights"
 domains: media
+desires:
+  - fan/keep-what-i-pay-from-scalpers
 ---
 
 ## Problem

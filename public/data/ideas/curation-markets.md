@@ -1,6 +1,8 @@
 ---
 title: "Curation markets"
 domains: media
+desires:
+  - creator/survive-demonetization
 ---
 
 ## Problem

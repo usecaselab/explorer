@@ -130,7 +130,7 @@ export default function IdeaShowcase({
     // min-h-screen guarantees enough scrollable area below the cards so the
     // user can always scroll far enough to bring the sticky category row up
     // against the header — even when the filtered list is short.
-    <section className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 pb-8 sm:pb-12 md:pb-16 min-h-screen">
+    <section className="w-full pr-4 sm:pr-6 pb-8 sm:pb-12 md:pb-16 min-h-screen">
       <CategoryCarousel
         activeCategory={activeCategory}
         onSelect={(id) => setActiveCategory(activeCategory === id ? 'all' : id)}
@@ -397,7 +397,7 @@ function CategoryCarousel({
 
   return (
     <div
-      className="sticky z-10 -mx-4 sm:-mx-6 mb-8 sm:mb-12 bg-white dark:bg-neutral-950 border-b border-gray-100 dark:border-gray-900"
+      className="sticky z-10 -mr-4 sm:-mr-6 mb-8 sm:mb-12 bg-white dark:bg-neutral-950 border-b border-gray-100 dark:border-gray-900"
       style={{ top: 'var(--sticky-header-h, 80px)' }}
     >
       <div className="relative">

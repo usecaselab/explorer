@@ -1,6 +1,8 @@
 ---
 title: "Public procurement lifecycle"
 domains: government
+desires:
+  - civic-participant/verify-public-decisions
 ---
 
 ## Problem

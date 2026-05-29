@@ -16,25 +16,21 @@ portraits:
     icon: store
 desires:
   - id: send-receive-money-cheaply
-    title: "I want to settle cross-border deals without paying for paper"
+    title: "I want to pay my overseas suppliers without losing a week and 4% to the banks"
     framing: |
-      Cross-border trade still runs on paper, where payment guarantees crawl through correspondent banking for a week and bills of lading are couriered as physical originals, but issued onchain and settled against shipping data parties already inspect, the documents release goods and funds in hours.
-    ideas: [letters-of-credit, electronic-bill-of-lading, customs-records]
+      When I wire $20,000 to a supplier, my bank takes a cut, the correspondent bank takes another, and the money lands four days later at a worse rate than I was quoted. Settling in stablecoins onchain lets the funds arrive same-day at the rate I actually see.
   - id: own-my-audience
-    title: "I want to own the relationship with the people I sell to"
+    title: "I want to keep my customer list and reviews when I leave a marketplace"
     framing: |
-      Marketplaces sit between a merchant and their buyer, take a margin, and keep the contact details that would let the merchant sell direct, but onchain marketplaces with portable buyer identity let a small producer keep the customer record and reputation when they switch venues.
-    ideas: [cooperative-and-local-marketplaces, physical-goods-marketplaces]
+      Amazon and Etsy hold my buyer emails and the years of reviews I built up, so the day I try to sell direct or switch platforms I start from zero. A portable onchain reputation and buyer identity travels with me when I move.
   - id: verify-what-im-buying
-    title: "I want my buyers to trust where my goods came from"
+    title: "I want my origin claims to be checkable without paying a certifier every year"
     framing: |
-      Premium buyers pay more for verified origin, yet certification fees price small producers out of those very markets, so onchain provenance records, attached to each lot at production and verified by inspectors whose checks are visible, document quality at a fraction of the cost.
-    ideas: [small-producer-sourcing]
+      Buyers pay a premium for single-origin or fair-trade goods, but the certification bodies charge fees a cooperative my size cannot afford and own the stamp that grants market access. Provenance recorded onchain at harvest, with inspectors signing their checks publicly, gives buyers the same confidence without the gatekeeper.
   - id: prove-without-revealing
-    title: "I want to prove I'm a legitimate counterparty without resubmitting my documents to every platform"
+    title: "I want to onboard to a new bank or marketplace without handing over my passport again"
     framing: |
-      Every bank and marketplace asks for the same identity and sanctions-screening documents, and each stored copy is a future breach, but zero-knowledge KYC proofs let a merchant present a verified attestation that they have been screened without handing over the documents again.
-    ideas: [kyc-sanctions-proofs]
+      Every bank, payment processor, and B2B marketplace makes me upload the same passport scan, company papers, and sanctions screening, and each one becomes a future data breach. A reusable proof that I have already been screened lets me onboard without re-submitting the documents.
 ---
 
 # Merchant

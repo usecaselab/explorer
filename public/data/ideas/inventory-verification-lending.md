@@ -1,6 +1,8 @@
 ---
 title: "Cross-party inventory verification and inventory-backed lending"
 domains: logistics-and-trade, finance
+desires:
+  - manufacturer/access-to-credit
 ---
 
 ## Problem

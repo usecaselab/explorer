@@ -19,32 +19,26 @@ desires:
     title: "I want to prove when I made this work, and that I made it first"
     framing: |
       Priority disputes turn on dates researchers establish through slow, per-jurisdiction preprint timestamps, so a finding committed onchain at discovery with a cryptographic hash of the data gives evidence of priority any peer or funder can verify without trusting a platform.
-    ideas: [ip-registration-prior-art]
   - id: paid-for-value-i-drive
-    title: "I want credit and compensation when my data and reviews produce value for others"
+    title: "I want credit when other people's papers are built on my dataset"
     framing: |
-      A dataset reused across dozens of papers and a reviewer's work keeping a field honest are unpaid labor, so onchain provenance for datasets and signed attestations of reviewing, with citations routed through royalty contracts, capture the value a researcher generates.
-    ideas: [dataset-provenance-reuse-tracking, peer-review-markets]
+      My dataset has been reused in forty papers and I am thanked in a footnote when I am thanked at all, while the lab that ran the followups gets the citation and the next grant. A signed record of who produced a dataset and which papers drew on it, with citation and payment routed back automatically, would make reuse visible and pay the people whose work the field is standing on.
   - id: ai-trained-on-my-work
     title: "I want compensation when AI is trained on my work"
     framing: |
       Foundation models are trained on published research without the producers' consent, so onchain provenance for training data lets a researcher see whether their papers are included, license their use, and receive payment when the resulting models generate revenue.
-    ideas: [ai-model-data-markets]
   - id: data-integrity
     title: "I want trial and source data nobody can quietly rewrite"
     framing: |
       Clinical trials and replication efforts depend on source data in a single sponsor-controlled database anyone could edit before publication, so source readings committed onchain at capture, with append-only updates, let everyone verify the data matches what was collected.
-    ideas: [decentralized-clinical-trials, pre-registration-and-results]
   - id: fund-my-research
-    title: "I want to finance and license IP I already own without surrendering it"
+    title: "I want to raise money against my own research without signing it away"
     framing: |
-      Academic IP sits dormant because the inventor cannot finance against it without a tech transfer office that takes years, so tokenizing the rights and encoding revenue splits in smart contracts lets a researcher raise capital while retaining control.
-    ideas: [ip-assets]
+      My university's tech transfer office takes a year to even read the disclosure, then asks for the majority of any upside in exchange for filing a patent I am not allowed to license myself. Letting me sell rights or revenue shares in my own work directly to backers, with the splits enforced automatically, would let me fund the next stage without surrendering the work.
   - id: surface-what-the-field-believes
-    title: "I want a way to surface what the field actually believes is true"
+    title: "I want to know which papers will actually hold up before I build on them"
     framing: |
-      Funding and clinical decisions rest on high-profile papers routinely overturned by unseen replication failures, so prediction markets on replication outcomes, settled onchain against pre-registered tests, give the field a way to report what its own members think will hold up.
-    ideas: [scientific-claim-markets, scientific-knowledge-graph]
+      I have spent months chasing a result that the lab next door quietly failed to reproduce and never published. A market where researchers stake on whether a finding will replicate, settled against a pre-registered test, would surface what the field privately doubts long before a formal replication study lands.
 ---
 
 # Researcher

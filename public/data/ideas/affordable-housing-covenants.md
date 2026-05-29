@@ -1,6 +1,9 @@
 ---
 title: "Affordable housing covenant enforcement"
 domains: real-estate-and-housing, government
+desires:
+  - civic-participant/enforce-the-rules-already-on-the-books
+  - community-organizer/enforce-the-rules-already-on-the-books
 ---
 
 ## Problem

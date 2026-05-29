@@ -1,6 +1,8 @@
 ---
 title: "Residential leasing"
 domains: real-estate-and-housing
+desires:
+  - shopper/enforceable-contracts
 ---
 
 ## Problem

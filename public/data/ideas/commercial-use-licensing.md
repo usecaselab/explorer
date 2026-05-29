@@ -1,6 +1,8 @@
 ---
 title: "Commercial-use licensing for open source"
 domains: business-operations, finance
+desires:
+  - oss-maintainer/paid-for-value-i-drive
 ---
 
 ## Problem

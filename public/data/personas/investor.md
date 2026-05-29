@@ -16,20 +16,17 @@ portraits:
     icon: landmark
 desires:
   - id: access-gated-markets
-    title: "I want to access markets that institutional desks already trade"
+    title: "I want to buy government bonds and reinsurance the way the big funds do, not through a broker that marks them up"
     framing: |
-      Minimums and intermediary chains gate smaller investors out of sovereign debt, municipal bonds, and reinsurance pools, but issuing these instruments onchain lets them buy directly at the same prices, with settlement that does not depend on a broker taking the ticket.
-    ideas: [sovereign-municipal-bonds, local-infrastructure-bonds, reinsurance, revenue-bonds, renewable-project-financing]
+      A 10-year treasury or a slice of a reinsurance pool is something pension funds buy at par, but to get there as a retail investor I go through a broker who sets a $50k minimum and adds a spread. Issuing these instruments onchain lets me buy a $500 piece at the same price the desk pays.
   - id: verify-what-im-buying
-    title: "I want to verify the claims behind what I am buying"
+    title: "I want to know the carbon credits and green bonds I bought are actually doing what the brochure said"
     framing: |
-      Carbon credits and renewable performance reports come from registries and developers with overlapping commercial interests, but continuous measurement committed onchain, with outputs recorded as they happen, lets a buyer audit a claim against current reality rather than a one-time certification.
-    ideas: [carbon-biodiversity-credits, environmental-measurement-and-verification]
+      The carbon offsets and renewable-yield products in my portfolio come with PDFs from the issuer and a registry that the same issuer pays into, and I have no way to check whether the underlying project is still running. Sensor data and project performance posted onchain as it happens lets me audit my own holdings instead of trusting the brochure.
   - id: portable-portfolio
-    title: "I want my positions to be transferable and inheritable on my own terms"
+    title: "I want my kids to inherit my portfolio without a year of probate and a lawyer's cut"
     framing: |
-      Insurance policies and estate assets are locked to the holder and the issuer's paperwork, but tokenizing the underlying rights and encoding succession in smart contracts lets the holder restructure coverage or pass assets to beneficiaries without surrendering control to an intermediary.
-    ideas: [tokenized-policies-for-resale, wills-estate-execution]
+      My brokerage, pension, and insurance accounts each have their own beneficiary forms, surrender procedures, and lawyers, and when my father died it took a year to move anything. Assets held onchain with succession encoded in a smart contract pass to my heirs the moment the conditions are met, without an estate intermediary.
 ---
 
 # Investor

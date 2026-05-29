@@ -1,6 +1,8 @@
 ---
 title: "Regenerative practice incentives"
 domains: food-and-agriculture, environment
+desires:
+  - farmer/paid-for-value-i-drive
 ---
 
 ## Problem

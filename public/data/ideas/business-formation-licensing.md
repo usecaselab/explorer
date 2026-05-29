@@ -1,6 +1,8 @@
 ---
 title: "Business formation and licensing"
 domains: government, business-operations
+desires:
+  - founder/cut-the-paperwork-tax-on-starting-up
 ---
 
 ## Problem

@@ -1,6 +1,9 @@
 ---
 title: "Content authenticity proofs"
 domains: media
+desires:
+  - creator/prove-i-made-this
+  - journalist/prove-i-made-this
 ---
 
 ## Problem

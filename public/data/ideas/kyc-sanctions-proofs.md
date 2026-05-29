@@ -1,6 +1,9 @@
 ---
 title: "Privacy-preserving KYC and sanctions screening proofs"
 domains: business-operations, government
+desires:
+  - merchant/prove-without-revealing
+  - shopper/prove-without-revealing
 ---
 
 ## Problem

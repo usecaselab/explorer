@@ -1,6 +1,9 @@
 ---
 title: "IP assets"
 domains: finance, science
+desires:
+  - creator/fans-share-upside
+  - researcher/fund-my-research
 ---
 
 ## Problem

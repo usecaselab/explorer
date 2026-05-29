@@ -1,6 +1,8 @@
 ---
 title: "Source protection for journalists"
 domains: media, civil-society
+desires:
+  - journalist/censorship-resistant-comms
 ---
 
 ## Problem
