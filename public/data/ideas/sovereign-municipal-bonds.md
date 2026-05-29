@@ -1,6 +1,8 @@
 ---
 title: "Sovereign & municipal bonds"
 domains: government, finance
+desires:
+  - investor/access-gated-markets
 ---
 
 ## Problem

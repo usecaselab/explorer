@@ -1,6 +1,8 @@
 ---
 title: "Construction permits for housing"
 domains: government, real-estate-and-housing
+desires:
+  - civic-participant/verify-public-decisions
 ---
 
 ## Problem

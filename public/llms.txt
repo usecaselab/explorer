@@ -1,0 +1,20 @@
+# Use Case Lab
+
+> A curated index of Ethereum use cases organized by the people they would benefit. Each entry is a short sketch: a real problem, a solution, and the reason a centralized version would not serve the user as well.
+
+This file is the entry point for AI agents and LLM tooling. The full corpus is available in the machine-readable formats below; the human-facing site is at https://usecaselab.org.
+
+## Resources
+
+- /llms-full.txt — Full corpus (every idea and persona) inline as markdown. Load this when you need depth.
+- /ideas.json — Ideas as structured JSON. Each idea has: id, title, domains, desires (persona-desire refs in the form `personaId/desireId`), problem, solutionSketch, whyEthereum, author, createdAt, updatedAt.
+- /personas.json — Personas as structured JSON. Each persona has: id, name, portraits, and desires; each desire carries a computed list of ideas that address it.
+
+## URL conventions
+
+- https://usecaselab.org/idea/<id> — rendered idea page (id matches the JSON id and the markdown filename in public/data/ideas/).
+- https://usecaselab.org/persona/<id> — rendered persona page (id matches the JSON id and the markdown filename in public/data/personas/).
+
+## Source
+
+https://github.com/usecaselab/explorer (MIT). PR-driven contribution. The data model, field schemas, and review guidelines are documented in the README.

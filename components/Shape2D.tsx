@@ -159,6 +159,13 @@ export default function Shape2D({
     const dpr = window.devicePixelRatio || 1
     const resize = () => {
       const rect = canvas.getBoundingClientRect()
+      // A display:none ancestor (the showcase kept mounted behind an idea or
+      // persona page) makes getBoundingClientRect report 0×0, and the
+      // ResizeObserver fires with that. Writing a 1×1 buffer here would
+      // collapse the drawing, and it would not recover on reveal — RO does
+      // not re-fire on the hidden→visible transition. Bail and keep the last
+      // good buffer; the autoRotate rAF loop keeps it drawn correctly.
+      if (rect.width === 0 || rect.height === 0) return
       const newW = Math.max(1, Math.round(rect.width * dpr))
       const newH = Math.max(1, Math.round(rect.height * dpr))
       if (canvas.width !== newW || canvas.height !== newH) {
@@ -226,11 +233,16 @@ export default function Shape2D({
   }, [hovered, autoRotate])
 
   return (
+    // Absolutely positioned so the canvas — a replaced element whose intrinsic
+    // size tracks its pixel buffer — contributes nothing to its container's
+    // content-based size. In normal flow it would feed the flex item's
+    // min-height:auto, and each resize() would grow the container, which grows
+    // the canvas: a runaway loop. The container must be position:relative.
     <canvas
       ref={canvasRef}
       onMouseEnter={() => setInternalHovered(true)}
       onMouseLeave={() => setInternalHovered(false)}
-      style={{ width: '100%', height: '100%', display: 'block' }}
+      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block' }}
       aria-hidden="true"
     />
   )

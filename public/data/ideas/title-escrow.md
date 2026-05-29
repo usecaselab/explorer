@@ -1,6 +1,9 @@
 ---
 title: "Title & escrow"
 domains: real-estate-and-housing
+desires:
+  - homeowner/faster-closings
+  - shopper/enforceable-contracts
 ---
 
 ## Problem

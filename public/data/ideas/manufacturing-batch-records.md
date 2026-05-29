@@ -1,6 +1,8 @@
 ---
 title: "Batch and quality records for manufacturing"
 domains: logistics-and-trade, health
+desires:
+  - manufacturer/quality-records-buyers-trust
 ---
 
 ## Problem

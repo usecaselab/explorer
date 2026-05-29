@@ -1,6 +1,9 @@
 ---
 title: "Mortgage & home-equity rails"
 domains: real-estate-and-housing, finance
+desires:
+  - homeowner/transparent-mortgage
+  - shopper/enforceable-contracts
 ---
 
 ## Problem

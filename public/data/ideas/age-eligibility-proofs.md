@@ -1,6 +1,8 @@
 ---
 title: "Age and eligibility proofs without identity disclosure"
 domains: identity
+desires:
+  - shopper/prove-without-revealing
 ---
 
 ## Problem

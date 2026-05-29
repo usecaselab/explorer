@@ -1,6 +1,9 @@
 ---
 title: "Community space revenue and allocation"
 domains: government, civil-society
+desires:
+  - civic-participant/audit-public-money
+  - community-organizer/audit-public-money
 ---
 
 ## Problem

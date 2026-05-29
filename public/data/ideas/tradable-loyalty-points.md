@@ -1,6 +1,8 @@
 ---
 title: "Loyalty points as liquid, transferable assets"
 domains: commerce
+desires:
+  - shopper/enforceable-contracts
 ---
 
 ## Problem

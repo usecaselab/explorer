@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react'
-import { X, Lightbulb, FileText, Wrench, Mail } from 'lucide-react'
+import { X, Map, List, Plus, Mail, Info } from 'lucide-react'
 import type { RouteName } from './Sidebar'
-import ThemeToggle from './ThemeToggle'
 
 interface MobileNavProps {
   open: boolean
   current: RouteName
   onClose: () => void
   onNavigateHome: () => void
-  onNavigateRFPs: () => void
-  onNavigateToolkit: () => void
+  onNavigateIdeas: () => void
+  onOpenSubmit: () => void
   onOpenContact: () => void
+  onNavigateAbout: () => void
 }
 
 export default function MobileNav({
@@ -18,9 +18,10 @@ export default function MobileNav({
   current,
   onClose,
   onNavigateHome,
-  onNavigateRFPs,
-  onNavigateToolkit,
+  onNavigateIdeas,
+  onOpenSubmit,
   onOpenContact,
+  onNavigateAbout,
 }: MobileNavProps) {
   // Lock body scroll and bind Escape while open.
   useEffect(() => {
@@ -52,28 +53,34 @@ export default function MobileNav({
     href?: string
   }[] = [
     {
-      label: 'Ideas',
-      icon: Lightbulb,
-      active: current === 'home' || current === 'idea',
+      label: 'Persona Map',
+      icon: Map,
+      active: current === 'home' || current === 'persona' || current === 'idea',
       onClick: handle(onNavigateHome),
     },
     {
-      label: 'RFPs',
-      icon: FileText,
-      active: current === 'rfps' || current === 'rfp',
-      onClick: handle(onNavigateRFPs),
+      label: 'Idea List',
+      icon: List,
+      active: current === 'ideas',
+      onClick: handle(onNavigateIdeas),
     },
     {
-      label: 'Toolkit',
-      icon: Wrench,
-      active: current === 'toolkit',
-      onClick: handle(onNavigateToolkit),
+      label: 'Submit',
+      icon: Plus,
+      active: false,
+      onClick: handle(onOpenSubmit),
     },
     {
       label: 'Contact',
       icon: Mail,
       active: false,
       onClick: handle(onOpenContact),
+    },
+    {
+      label: 'About',
+      icon: Info,
+      active: current === 'about',
+      onClick: handle(onNavigateAbout),
     },
   ]
 
@@ -82,7 +89,11 @@ export default function MobileNav({
       <div className="absolute inset-0 bg-black/30 dark:bg-black/60" onClick={onClose} />
       <aside className="absolute top-0 right-0 bottom-0 w-72 max-w-[85vw] bg-white dark:bg-neutral-950 shadow-xl flex flex-col">
         <div className="flex items-center justify-between px-5 pt-5">
-          <button onClick={onClose} aria-label="Close menu" className="-ml-1 p-2 text-gray-400 hover:text-black dark:hover:text-white">
+          <button
+            onClick={onClose}
+            aria-label="Close menu"
+            className="-ml-1 p-2 text-gray-400 hover:text-black dark:hover:text-white"
+          >
             <X className="w-5 h-5" />
           </button>
           <button onClick={handle(onNavigateHome)} className="hover:opacity-70 transition-opacity">
@@ -117,9 +128,6 @@ export default function MobileNav({
             )
           })}
         </nav>
-        <div className="mt-auto px-5 pb-6">
-          <ThemeToggle className="p-2 -ml-2" />
-        </div>
       </aside>
     </div>
   )

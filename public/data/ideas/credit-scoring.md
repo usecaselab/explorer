@@ -1,6 +1,8 @@
 ---
 title: "Credit scoring from off-chain financial history"
 domains: finance
+desires:
+  - gig-worker/access-to-credit
 ---
 
 ## Problem

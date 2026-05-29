@@ -1,0 +1,1415 @@
+[
+  {
+    "id": "civic-participant",
+    "name": "Civic Participant",
+    "portraits": [
+      {
+        "name": "Hassan",
+        "role": "Civil engineer",
+        "location": "Amman",
+        "icon": "hard-hat"
+      },
+      {
+        "name": "Aiko",
+        "role": "Ward resident",
+        "location": "Osaka",
+        "icon": "house"
+      },
+      {
+        "name": "Rosa",
+        "role": "Procurement committee member",
+        "location": "Mexico City",
+        "icon": "scale"
+      }
+    ],
+    "desires": [
+      {
+        "id": "audit-public-money",
+        "title": "I want to see where my tax money actually went",
+        "framing": "Public budgets are executed in spreadsheets nobody sees and summarized in reports a year out of date, so government payments executed onchain, with each transfer traceable from appropriation to vendor, let anyone follow spending in real time.",
+        "ideas": [
+          "budget-execution-tracking",
+          "community-space-allocation"
+        ]
+      },
+      {
+        "id": "verify-public-decisions",
+        "title": "I want to know why my permit was denied and who decided",
+        "framing": "When a zoning appeal, a benefits claim, or a contract award goes against me, I get a one-line outcome and no record of who weighed what. A tamper-evident log of which official, which rule, and which inputs produced the decision would let me actually contest it.",
+        "ideas": [
+          "ai-adjudicators",
+          "beneficial-ownership",
+          "construction-permits-housing",
+          "futarchy-public-policy",
+          "participatory-budgeting",
+          "public-procurement-lifecycle"
+        ]
+      },
+      {
+        "id": "own-my-records",
+        "title": "I want my civil records under my own control, not stuck in the office that issued them",
+        "framing": "Birth, marriage, and death records govern every official interaction yet sit in physical files that can be lost or held hostage to a fee, so civil registries that issue them as signed onchain attestations let a citizen hold their proof.",
+        "ideas": [
+          "civil-registry-records",
+          "firearm-licensing-registration"
+        ]
+      },
+      {
+        "id": "enforce-the-rules-already-on-the-books",
+        "title": "I want environmental and housing rules enforced when they're broken, not years later",
+        "framing": "Environmental thresholds and housing covenants are rules whose enforcement lags so far behind violations that the harm is done first, so continuous measurement piped to onchain rule engines records a violation the same hour a threshold is crossed.",
+        "ideas": [
+          "affordable-housing-covenants",
+          "city-climate-commitment-tracking",
+          "environmental-measurement-and-verification",
+          "environmental-threshold-enforcement"
+        ]
+      }
+    ],
+    "related": [
+      {
+        "id": "community-organizer",
+        "name": "Community Organizer",
+        "shared": 2
+      },
+      {
+        "id": "donor",
+        "name": "Donor",
+        "shared": 1
+      },
+      {
+        "id": "patient",
+        "name": "Patient",
+        "shared": 1
+      }
+    ]
+  },
+  {
+    "id": "community-organizer",
+    "name": "Community Organizer",
+    "portraits": [
+      {
+        "name": "Naledi",
+        "role": "Tenants' association leader",
+        "location": "Cape Town",
+        "icon": "users"
+      },
+      {
+        "name": "Marcus",
+        "role": "Neighborhood council chair",
+        "location": "Detroit",
+        "icon": "landmark"
+      },
+      {
+        "name": "Lena",
+        "role": "Housing cooperative coordinator",
+        "location": "Berlin",
+        "icon": "house"
+      }
+    ],
+    "desires": [
+      {
+        "id": "coordinate-with-neighbors",
+        "title": "I want a local currency for my neighborhood that doesn't die when the operator quits",
+        "framing": "We've tried timebanks and local scrip and every one of them folded when the person running the spreadsheet moved on or the platform shut down. I want issuance rules, balances, and redemption to live somewhere the community keeps running even when I step back.",
+        "ideas": [
+          "community-currencies",
+          "cooperative-and-local-marketplaces",
+          "peer-to-peer-energy-markets"
+        ]
+      },
+      {
+        "id": "pool-capital-with-peers",
+        "title": "I want to pool capital with my neighbors without paying a bank to do it",
+        "framing": "Lending circles and mutual-aid pools cost money to administer through banks and hold more cash than they need, so onchain lending pools set contribution and disbursement rules in code and return the savings to members instead of a custodian.",
+        "ideas": [
+          "cooperative-lending-pools"
+        ]
+      },
+      {
+        "id": "fund-our-own-infrastructure",
+        "title": "I want my block to finance its own solar roof or fiber line and pay investors back from what it earns",
+        "framing": "Our co-op solar project is too small for a bank and too structured for a GoFundMe, so it just doesn't happen. I want a way to take small investments from neighbors and outside backers and pay them back from the meter revenue, with the repayment schedule something they can verify rather than trust me on.",
+        "ideas": [
+          "land-trust-housing-coop-coordination",
+          "local-infrastructure-bonds",
+          "renewable-project-financing"
+        ]
+      },
+      {
+        "id": "audit-public-money",
+        "title": "I want to watch the money my neighborhood voted on actually move",
+        "framing": "Participatory-budgeting votes disappear into a general-fund line item the community cannot track, so budget allocations executed through onchain payments, with each transfer traceable to the project it was meant to fund, close the gap between the vote and the spending.",
+        "ideas": [
+          "community-space-allocation",
+          "participatory-budgeting"
+        ]
+      },
+      {
+        "id": "enforce-the-rules-already-on-the-books",
+        "title": "I want the affordable-housing and climate commitments my city signed to actually hold",
+        "framing": "Cities quietly fall out of compliance with their housing covenants and emissions targets because enforcement is starved and the data is unqueryable, so onchain registries fed by attested rent rolls and emissions data make non-compliance visible the moment it happens.",
+        "ideas": [
+          "affordable-housing-covenants",
+          "city-climate-commitment-tracking"
+        ]
+      },
+      {
+        "id": "coordinate-collective-action",
+        "title": "I want a rent strike or buyer's pledge that only triggers once enough neighbors are in",
+        "framing": "Every rent strike I've tried to organize dies in the \"I'll do it if everyone else does\" phase. I want people to be able to commit publicly with their pledge held in escrow, so the action goes live the moment we cross the threshold and nobody is exposed alone.",
+        "ideas": [
+          "hyperstition-markets"
+        ]
+      }
+    ],
+    "related": [
+      {
+        "id": "civic-participant",
+        "name": "Civic Participant",
+        "shared": 2
+      },
+      {
+        "id": "donor",
+        "name": "Donor",
+        "shared": 1
+      }
+    ]
+  },
+  {
+    "id": "creator",
+    "name": "Creator",
+    "portraits": [
+      {
+        "name": "Maya",
+        "role": "Podcaster",
+        "location": "São Paulo",
+        "icon": "mic"
+      },
+      {
+        "name": "Joon",
+        "role": "Electronic musician",
+        "location": "Seoul",
+        "icon": "music"
+      },
+      {
+        "name": "Sarah",
+        "role": "Fiction writer",
+        "location": "Manchester",
+        "icon": "pen-line"
+      }
+    ],
+    "desires": [
+      {
+        "id": "keep-what-i-sell",
+        "title": "I want to keep more of what I sell",
+        "framing": "Platforms take 10 to 30 percent of every sale and hold the money for weeks, so settling payments onchain with smart contracts that split revenue at the moment of sale lets a creator keep the cut and skip the wait.",
+        "ideas": [
+          "creator-storefronts",
+          "film-tv-residuals",
+          "music-sync-licensing",
+          "pay-per-use-micropayments"
+        ]
+      },
+      {
+        "id": "prove-i-made-this",
+        "title": "I want to prove I made what I made",
+        "framing": "Government IP registries are slow and per-jurisdiction while platform timestamps can be rewritten, so a signed onchain commitment made the moment of creation gives a creator evidence of origin that anyone can verify without trusting the hosting platform.",
+        "ideas": [
+          "content-authenticity-proofs",
+          "ip-registration-prior-art"
+        ]
+      },
+      {
+        "id": "own-my-audience",
+        "title": "I want to keep reaching my followers if a platform suspends me",
+        "framing": "When my account gets locked or a platform decides my niche is off-brand, the audience I spent years building disappears overnight. If my follower list lived on a portable onchain graph instead of inside the app, I could message and sell to those same people from somewhere else the next day.",
+        "ideas": [
+          "portable-social-identity"
+        ]
+      },
+      {
+        "id": "fans-share-upside",
+        "title": "I want my earliest backers to get paid back when something I make takes off",
+        "framing": "The hundred people who funded my first record get a tote bag and a thank-you, even when the record ends up paying my rent for three years. If I could issue them a small revenue share that pays out automatically from streaming income, the people who took the risk would actually share in the reward.",
+        "ideas": [
+          "fan-funded-media",
+          "ip-assets"
+        ]
+      },
+      {
+        "id": "paid-for-value-i-drive",
+        "title": "I want to trust the view and revenue numbers the platform pays me on",
+        "framing": "My royalty statement says I had 412,000 streams last quarter and I have no way to check whether that's the real number or the number after the platform's accounting. If plays and ad views were counted against a log I could audit, I'd know my paycheck matched the activity instead of taking the platform's word for it.",
+        "ideas": [
+          "ad-influencer-metrics",
+          "referral-affiliate-payouts"
+        ]
+      },
+      {
+        "id": "ai-trained-on-my-work",
+        "title": "I want compensation when AI is trained on my work",
+        "framing": "Foundation models are trained on creators' work without notice on datasets that are rarely disclosed, so onchain provenance for training data lets a creator see if their work is included, license it, and be paid when those models earn.",
+        "ideas": [
+          "ai-model-data-markets"
+        ]
+      },
+      {
+        "id": "survive-demonetization",
+        "title": "I want my income not to vanish overnight when an algorithm decides my topic is off-brand",
+        "framing": "Platforms can demonetize a video, shadow-ban a hashtag, or quietly throttle my reach for any reason their policy team chooses, and the only appeal is a form that disappears into a queue. Revenue-eligible publishing on rails the platform can't unilaterally switch off means my paycheck depends on the work, not on whether my topic is on-brand this quarter.",
+        "ideas": [
+          "curation-markets"
+        ]
+      }
+    ],
+    "related": [
+      {
+        "id": "researcher",
+        "name": "Researcher",
+        "shared": 3
+      },
+      {
+        "id": "fan",
+        "name": "Fan",
+        "shared": 2
+      },
+      {
+        "id": "farmer",
+        "name": "Farmer",
+        "shared": 1
+      }
+    ]
+  },
+  {
+    "id": "donor",
+    "name": "Donor",
+    "portraits": [
+      {
+        "name": "Helen",
+        "role": "Disaster-relief donor",
+        "location": "Toronto",
+        "icon": "hand-heart"
+      },
+      {
+        "name": "Idris",
+        "role": "Foundation administrator",
+        "location": "Dubai",
+        "icon": "briefcase"
+      },
+      {
+        "name": "Sofia",
+        "role": "Scholarship director",
+        "location": "Buenos Aires",
+        "icon": "graduation-cap"
+      }
+    ],
+    "desires": [
+      {
+        "id": "audit-public-money",
+        "title": "I want to see where my money actually went",
+        "framing": "Donations are pooled and regranted through accounting the donor never sees, severing the link between a gift and a household, so settling transfers onchain with every hop visible lets a donor follow a contribution from gift to recipient.",
+        "ideas": [
+          "direct-cash-transfer-programs",
+          "fund-flows-disaster-relief"
+        ]
+      },
+      {
+        "id": "pay-for-outcomes",
+        "title": "I want to pay for delivered outcomes, not for promises",
+        "framing": "Grants are paid upfront against proposed outcomes and reported on by the same organization seeking the next grant, so conditioning payments on independently verified milestones attested onchain aligns funding with what programs achieve rather than how they tell the story.",
+        "ideas": [
+          "impact-certificates",
+          "milestone-scholarship-disbursement",
+          "outcome-based-funding"
+        ]
+      },
+      {
+        "id": "participatory-grantmaking",
+        "title": "I want the people a program serves to have a say in how the money is spent",
+        "framing": "Budgets are decided by program officers in another city who have never met the families a program serves, and the people closest to the need have no vote in how a dollar gets split. Letting recipients allocate funds directly, with every transfer traceable back to the decision behind it, puts the call in the hands of the people living the problem.",
+        "ideas": [
+          "participatory-budgeting"
+        ]
+      }
+    ],
+    "related": [
+      {
+        "id": "civic-participant",
+        "name": "Civic Participant",
+        "shared": 1
+      },
+      {
+        "id": "community-organizer",
+        "name": "Community Organizer",
+        "shared": 1
+      },
+      {
+        "id": "founder",
+        "name": "Founder",
+        "shared": 1
+      }
+    ]
+  },
+  {
+    "id": "fan",
+    "name": "Fan",
+    "portraits": [
+      {
+        "name": "Yuki",
+        "role": "Indie music fan",
+        "location": "Tokyo",
+        "icon": "music"
+      },
+      {
+        "name": "Tomas",
+        "role": "Documentary backer",
+        "location": "Mexico City",
+        "icon": "film"
+      },
+      {
+        "name": "Wei",
+        "role": "MMO player",
+        "location": "Shenzhen",
+        "icon": "gamepad-2"
+      }
+    ],
+    "desires": [
+      {
+        "id": "fans-share-upside",
+        "title": "I want a real stake in the artists and projects I back early",
+        "framing": "Tip jars, merchandise, and pre-sold crowdfunding rewards never let a fan share in the upside their early support helped create, so onchain instruments make it practical to issue fractional revenue shares that pay out automatically when the project earns.",
+        "ideas": [
+          "fan-funded-media",
+          "opportunity-markets"
+        ]
+      },
+      {
+        "id": "keep-what-i-pay-from-scalpers",
+        "title": "I want the money I spend on a ticket to reach the artist",
+        "framing": "Concert tickets reappear on resale platforms at multiples of face value with the markup going to scalpers, so tickets issued as onchain assets with resale rights in the contract let the artist cap secondary prices and collect a resale share.",
+        "ideas": [
+          "event-ticket-resale"
+        ]
+      },
+      {
+        "id": "own-what-i-earned",
+        "title": "I want to actually own the items and time I sank into a game",
+        "framing": "In-game items and progress sit on a studio's servers under terms that let the operator freeze accounts or shut the game down, but holding them as onchain assets keeps ownership with the player and lets the items move to any marketplace.",
+        "ideas": [
+          "player-owned-in-game-assets"
+        ]
+      },
+      {
+        "id": "paid-for-value-i-drive",
+        "title": "I want to be paid when the mods and content I make drive the game",
+        "framing": "Mods and user-generated content keep players engaged long past a game's launch, yet platforms rarely pay the modders, so onchain royalty contracts can route a share of the downstream activity to creators using the usage data the platform already collects.",
+        "ideas": [
+          "ugc-mod-royalties"
+        ]
+      }
+    ],
+    "related": [
+      {
+        "id": "creator",
+        "name": "Creator",
+        "shared": 2
+      },
+      {
+        "id": "farmer",
+        "name": "Farmer",
+        "shared": 1
+      },
+      {
+        "id": "oss-maintainer",
+        "name": "OSS Maintainer",
+        "shared": 1
+      }
+    ]
+  },
+  {
+    "id": "farmer",
+    "name": "Farmer",
+    "portraits": [
+      {
+        "name": "Joseph",
+        "role": "Maize and bean farmer",
+        "location": "Eldoret",
+        "icon": "wheat"
+      },
+      {
+        "name": "Elena",
+        "role": "Vineyard grower",
+        "location": "Mendoza",
+        "icon": "sprout"
+      },
+      {
+        "name": "Tomás",
+        "role": "Coffee cooperative lead",
+        "location": "Antigua",
+        "icon": "coffee"
+      }
+    ],
+    "desires": [
+      {
+        "id": "get-paid-faster",
+        "title": "I want subsidy and insurance payments to arrive when the loss happens, not months later",
+        "framing": "Agricultural subsidies and weather insurance routinely arrive months after the gap they exist to cover has swallowed the season, so smart contracts triggered by satellite rainfall data or government attestations release funds onchain the day a threshold is crossed.",
+        "ideas": [
+          "agricultural-subsidy-disbursement",
+          "parametric-weather-insurance"
+        ]
+      },
+      {
+        "id": "access-to-credit",
+        "title": "I want to borrow against my land and my standing crop without paying 80 percent interest",
+        "framing": "Smallholders are invisible to banks because pre-harvest credit has no collateral and their land carries no recognized title, so tokenized future-crop receipts and onchain land titles give a lender collateral it can price and repaid automatically at harvest sale.",
+        "ideas": [
+          "harvest-pre-financing",
+          "informal-land-tenure-formalization"
+        ]
+      },
+      {
+        "id": "paid-for-value-i-drive",
+        "title": "I want to get paid for the cover crops and hedgerows I plant, not just the bushels I sell",
+        "framing": "Buyers price my maize by weight and ignore the soil work that took years, while carbon programs gate payouts behind audits that cost more than a smallholder will ever earn from them. Satellite measurement plus onchain payouts would let me earn for the carbon and habitat my practices build without an auditor pocketing the margin.",
+        "ideas": [
+          "regenerative-practice-incentives"
+        ]
+      },
+      {
+        "id": "verified-origin-without-the-fee",
+        "title": "I want premium buyers to verify our quality without $10,000 in certification fees",
+        "framing": "Specialty buyers pay more for verified origin, but paper certification costs fall hardest on the small producers most likely to meet the standard, so onchain provenance for each lot lets a cooperative document quality cheaply and keep the premium.",
+        "ideas": [
+          "small-producer-sourcing"
+        ]
+      },
+      {
+        "id": "share-a-finite-resource-honestly",
+        "title": "I want water use measured so the neighbors with deeper wells stop draining the aquifer",
+        "framing": "In drought-prone regions overuse is profitable and undetectable under self-reported metering until the aquifer is gone, so onchain water-rights markets with continuous metering make overuse visible per well and let a farmer sell unused rights to a neighbor.",
+        "ideas": [
+          "water-rights-markets"
+        ]
+      }
+    ],
+    "related": [
+      {
+        "id": "gig-worker",
+        "name": "Gig Worker",
+        "shared": 2
+      },
+      {
+        "id": "creator",
+        "name": "Creator",
+        "shared": 1
+      },
+      {
+        "id": "fan",
+        "name": "Fan",
+        "shared": 1
+      }
+    ]
+  },
+  {
+    "id": "founder",
+    "name": "Founder",
+    "portraits": [
+      {
+        "name": "Anya",
+        "role": "Technical cofounder",
+        "location": "Berlin",
+        "icon": "code"
+      },
+      {
+        "name": "Femi",
+        "role": "Serial entrepreneur",
+        "location": "Lagos",
+        "icon": "trending-up"
+      },
+      {
+        "name": "Mia",
+        "role": "Healthtech founder",
+        "location": "Toronto",
+        "icon": "briefcase"
+      }
+    ],
+    "desires": [
+      {
+        "id": "get-paid-faster",
+        "title": "I want to pay and be paid across borders without three-day waits and percent-of-payroll fees",
+        "framing": "A distributed team means moving money to ten countries the same day, where wire fees, FX spreads, and late-transfer guesswork add up, so stablecoin payroll settled onchain delivers funds in minutes and generates the per-payee records tax authorities want.",
+        "ideas": [
+          "cross-border-payroll"
+        ]
+      },
+      {
+        "id": "one-source-of-truth-for-equity",
+        "title": "I want a cap table everyone can read from the same source",
+        "framing": "Cap tables live on vendor platforms that charge by the seat and reconcile poorly with equity portals and investor records, so a cap table represented onchain, with each issuance signed by its parties, gives everyone the same authoritative view.",
+        "ideas": [
+          "cap-tables"
+        ]
+      },
+      {
+        "id": "cut-the-paperwork-tax-on-starting-up",
+        "title": "I want to spend my first months building, not refiling the same documents",
+        "framing": "Forming a company takes weeks across several agencies and then every bank and customer asks for the same incorporation packet again, so onchain business registries let a founder present verifiable attestations issued by the registry instead of repeating the proof.",
+        "ideas": [
+          "business-formation-licensing"
+        ]
+      },
+      {
+        "id": "pay-for-outcomes",
+        "title": "I want partnership payouts to fire on the numbers, not on a partner's word",
+        "framing": "When a partner owes me a revenue share or a milestone payment, they own the dashboard that decides what I'm owed and I either trust their export or chase them for months. A contract that pays out against a billing feed both sides signed off on upfront takes the discretion away from whichever side holds the books.",
+        "ideas": [
+          "earnouts-contingent-payments"
+        ]
+      }
+    ],
+    "related": [
+      {
+        "id": "donor",
+        "name": "Donor",
+        "shared": 1
+      },
+      {
+        "id": "farmer",
+        "name": "Farmer",
+        "shared": 1
+      },
+      {
+        "id": "freelance-professional",
+        "name": "Freelance Professional",
+        "shared": 1
+      }
+    ]
+  },
+  {
+    "id": "freelance-professional",
+    "name": "Freelance Professional",
+    "portraits": [
+      {
+        "name": "Camille",
+        "role": "UX consultant",
+        "location": "Montreal",
+        "icon": "pen-tool"
+      },
+      {
+        "name": "Tomás",
+        "role": "Backend engineer",
+        "location": "Buenos Aires",
+        "icon": "code"
+      },
+      {
+        "name": "Hana",
+        "role": "Architect",
+        "location": "Berlin",
+        "icon": "building-2"
+      }
+    ],
+    "desires": [
+      {
+        "id": "send-receive-money-cheaply",
+        "title": "I want to pay and get paid across borders without losing a tenth of every job",
+        "framing": "A freelancer working across borders loses real money to wire fees, FX spreads, and platforms that hold funds for a week, so settling invoices onchain in stablecoins collapses the chain of intermediaries into a single transaction that arrives in minutes.",
+        "ideas": [
+          "cross-border-payroll"
+        ]
+      },
+      {
+        "id": "get-paid-faster",
+        "title": "I want to turn a net-60 invoice into rent money this week",
+        "framing": "Half my clients pay on net-60 or net-90 and I'm fronting rent from savings while a signed invoice sits in someone's AP queue. Factoring exists for big firms with big invoices; I want a pool that will advance against my invoice the day I send it, priced off my actual track record.",
+        "ideas": [
+          "invoice-receivables-financing"
+        ]
+      },
+      {
+        "id": "enforceable-contracts",
+        "title": "I want my contracts to be enforceable without hiring a lawyer",
+        "framing": "When a client refuses to pay, a freelancer can only write off the invoice or sue across jurisdictions, so smart contracts holding the fee in escrow until a milestone is met, with disputes routed to onchain arbitration, make enforcement affordable.",
+        "ideas": [
+          "dispute-resolution"
+        ]
+      },
+      {
+        "id": "portable-reputation",
+        "title": "I want my credentials and ratings to travel with me",
+        "framing": "A freelancer who moves between platforms or countries loses the reviews and credentials locked in databases the platform owns, so attestations of credentials and completed engagements, committed onchain by the issuer or client, let them carry their record anywhere.",
+        "ideas": [
+          "portable-professional-credentials"
+        ]
+      }
+    ],
+    "related": [
+      {
+        "id": "gig-worker",
+        "name": "Gig Worker",
+        "shared": 2
+      },
+      {
+        "id": "shopper",
+        "name": "Shopper",
+        "shared": 2
+      },
+      {
+        "id": "farmer",
+        "name": "Farmer",
+        "shared": 1
+      }
+    ]
+  },
+  {
+    "id": "gig-worker",
+    "name": "Gig Worker",
+    "portraits": [
+      {
+        "name": "Marcus",
+        "role": "Rideshare driver",
+        "location": "Atlanta",
+        "icon": "car"
+      },
+      {
+        "name": "Renata",
+        "role": "Food-delivery courier",
+        "location": "Lisbon",
+        "icon": "bike"
+      },
+      {
+        "name": "Dele",
+        "role": "Truck owner-operator",
+        "location": "Lagos",
+        "icon": "truck"
+      }
+    ],
+    "desires": [
+      {
+        "id": "get-paid-faster",
+        "title": "I want to be paid the moment the work is done",
+        "framing": "A driver or contractor often waits a week or more for pay because the platform reconciles on its own cycle, but smart contracts that release funds the moment a delivery is signed for, against signals already collected, close the gap to minutes.",
+        "ideas": [
+          "delivery-triggered-payments"
+        ]
+      },
+      {
+        "id": "portable-reputation",
+        "title": "I want my ratings and history to travel with me",
+        "framing": "A worker's ratings and job history are an asset built over thousands of hours yet trapped in a platform's database, so signed onchain attestations of completed jobs and ratings, issued by the platform but owned by the worker, let that reputation travel anywhere.",
+        "ideas": [
+          "portable-ratings-reviews",
+          "spot-freight-trucking"
+        ]
+      },
+      {
+        "id": "access-to-credit",
+        "title": "I want lenders to see the income I actually earn",
+        "framing": "Banks underwrite against W-2s and tax returns, so a gig worker with steady income across three platforms reads as irregular deposits and gets declined, but verifiable onchain payment histories from the platforms they use give a lender something concrete to underwrite.",
+        "ideas": [
+          "credit-scoring"
+        ]
+      }
+    ],
+    "related": [
+      {
+        "id": "farmer",
+        "name": "Farmer",
+        "shared": 2
+      },
+      {
+        "id": "freelance-professional",
+        "name": "Freelance Professional",
+        "shared": 2
+      },
+      {
+        "id": "founder",
+        "name": "Founder",
+        "shared": 1
+      }
+    ]
+  },
+  {
+    "id": "homeowner",
+    "name": "Homeowner",
+    "portraits": [
+      {
+        "name": "Linda",
+        "role": "Mortgage holder",
+        "location": "Phoenix",
+        "icon": "house"
+      },
+      {
+        "name": "Diego",
+        "role": "First-time buyer",
+        "location": "Lisbon",
+        "icon": "key"
+      },
+      {
+        "name": "Hannah",
+        "role": "Housing co-op board member",
+        "location": "Brooklyn",
+        "icon": "building-2"
+      }
+    ],
+    "desires": [
+      {
+        "id": "transparent-mortgage",
+        "title": "I want to see who holds my mortgage and how my payments are applied",
+        "framing": "After a mortgage is resold the borrower rarely knows who holds the note or whether the servicer's escrow math is right, but a mortgage held onchain, with every payment, rate adjustment, and assignment committed in the open, lets the borrower verify the figures.",
+        "ideas": [
+          "mortgage-home-equity-rails"
+        ]
+      },
+      {
+        "id": "faster-closings",
+        "title": "I want to close on a house in a week instead of paying a title company to spend two months chasing paper",
+        "framing": "Every closing means a title company billing me to retrace a chain of deeds that already exists in a county office, and a missed signature can push the date out twice. If the title lived onchain and the deed transferred when escrow released, the search and the wait both disappear without changing what's legally true.",
+        "ideas": [
+          "title-escrow",
+          "wills-estate-execution"
+        ]
+      }
+    ],
+    "related": []
+  },
+  {
+    "id": "investor",
+    "name": "Investor",
+    "portraits": [
+      {
+        "name": "Tomás",
+        "role": "Retail investor",
+        "location": "Lisbon",
+        "icon": "trending-up"
+      },
+      {
+        "name": "Priya",
+        "role": "Wealth advisor",
+        "location": "Mumbai",
+        "icon": "briefcase"
+      },
+      {
+        "name": "Akosua",
+        "role": "Family office principal",
+        "location": "Accra",
+        "icon": "landmark"
+      }
+    ],
+    "desires": [
+      {
+        "id": "access-gated-markets",
+        "title": "I want to buy government bonds and reinsurance the way the big funds do, not through a broker that marks them up",
+        "framing": "A 10-year treasury or a slice of a reinsurance pool is something pension funds buy at par, but to get there as a retail investor I go through a broker who sets a $50k minimum and adds a spread. Issuing these instruments onchain lets me buy a $500 piece at the same price the desk pays.",
+        "ideas": [
+          "local-infrastructure-bonds",
+          "reinsurance",
+          "renewable-project-financing",
+          "revenue-bonds",
+          "sovereign-municipal-bonds"
+        ]
+      },
+      {
+        "id": "verify-what-im-buying",
+        "title": "I want to know the carbon credits and green bonds I bought are actually doing what the brochure said",
+        "framing": "The carbon offsets and renewable-yield products in my portfolio come with PDFs from the issuer and a registry that the same issuer pays into, and I have no way to check whether the underlying project is still running. Sensor data and project performance posted onchain as it happens lets me audit my own holdings instead of trusting the brochure.",
+        "ideas": [
+          "carbon-biodiversity-credits",
+          "environmental-measurement-and-verification"
+        ]
+      },
+      {
+        "id": "portable-portfolio",
+        "title": "I want my kids to inherit my portfolio without a year of probate and a lawyer's cut",
+        "framing": "My brokerage, pension, and insurance accounts each have their own beneficiary forms, surrender procedures, and lawyers, and when my father died it took a year to move anything. Assets held onchain with succession encoded in a smart contract pass to my heirs the moment the conditions are met, without an estate intermediary.",
+        "ideas": [
+          "tokenized-policies-for-resale",
+          "wills-estate-execution"
+        ]
+      }
+    ],
+    "related": [
+      {
+        "id": "merchant",
+        "name": "Merchant",
+        "shared": 1
+      },
+      {
+        "id": "patient",
+        "name": "Patient",
+        "shared": 1
+      },
+      {
+        "id": "shopper",
+        "name": "Shopper",
+        "shared": 1
+      }
+    ]
+  },
+  {
+    "id": "journalist",
+    "name": "Journalist",
+    "portraits": [
+      {
+        "name": "Layla",
+        "role": "Investigative journalist",
+        "location": "Beirut",
+        "icon": "newspaper"
+      },
+      {
+        "name": "Marcus",
+        "role": "Protest videographer",
+        "location": "Atlanta",
+        "icon": "video"
+      },
+      {
+        "name": "Anna",
+        "role": "Freelance journalist",
+        "location": "Warsaw",
+        "icon": "pen-line"
+      }
+    ],
+    "desires": [
+      {
+        "id": "prove-i-made-this",
+        "title": "I want to prove a piece of footage or evidence is genuinely mine",
+        "framing": "Reporters are routinely accused of staging or doctoring their material, so a signed onchain commitment made the moment a photo or video is captured gives verifiable proof of authorship and time that any reader or court can independently check.",
+        "ideas": [
+          "content-authenticity-proofs"
+        ]
+      },
+      {
+        "id": "censorship-resistant-comms",
+        "title": "I want a source to be able to send me documents without leaving a trail my government can subpoena",
+        "framing": "SecureDrop sits on servers somebody owns and can be ordered to hand over logs, and any file I receive carries metadata that can burn the sender. I want a drop where the source proves they're a real insider without revealing who, and where no central operator holds records that can be compelled.",
+        "ideas": [
+          "journalist-source-protection",
+          "whistleblower-evidence-integrity"
+        ]
+      },
+      {
+        "id": "portable-reputation",
+        "title": "I want my reporting record to travel with me when I move outlets",
+        "framing": "A journalist's bylines, awards, and employment history are trapped in the systems of past outlets, so portable credentials anchored onchain and issued by editors and former employers let them present a verifiable record independent of any one outlet.",
+        "ideas": [
+          "portable-professional-credentials"
+        ]
+      }
+    ],
+    "related": [
+      {
+        "id": "creator",
+        "name": "Creator",
+        "shared": 1
+      },
+      {
+        "id": "freelance-professional",
+        "name": "Freelance Professional",
+        "shared": 1
+      },
+      {
+        "id": "gig-worker",
+        "name": "Gig Worker",
+        "shared": 1
+      }
+    ]
+  },
+  {
+    "id": "manufacturer",
+    "name": "Manufacturer",
+    "portraits": [
+      {
+        "name": "Amara",
+        "role": "Small-batch coffee roaster",
+        "location": "Addis Ababa",
+        "icon": "coffee"
+      },
+      {
+        "name": "Wei",
+        "role": "Contract electronics manufacturer",
+        "location": "Shenzhen",
+        "icon": "cpu"
+      },
+      {
+        "name": "Ingrid",
+        "role": "Plant operations director",
+        "location": "Stuttgart",
+        "icon": "factory"
+      }
+    ],
+    "desires": [
+      {
+        "id": "prove-my-product-is-genuine",
+        "title": "I want buyers to tell my product apart from the knock-offs that copy my label",
+        "framing": "Counterfeiters slap my brand on inferior parts and undercut me, and buyers cannot tell the difference until something fails. A component and assembly history recorded onchain at each step lets a buyer scan and confirm the unit in their hand is one I actually built.",
+        "ideas": [
+          "digital-product-passports",
+          "food-provenance-and-traceability",
+          "pharmaceutical-traceability"
+        ]
+      },
+      {
+        "id": "quality-records-buyers-trust",
+        "title": "I want quality records that buyers and auditors can trust",
+        "framing": "Batch and quality records sit in databases the manufacturer can edit, so recalls drag and auditors re-verify by hand, but records committed onchain as they are created give buyers, auditors, and regulators a quality history that cannot be quietly revised after the fact.",
+        "ideas": [
+          "manufacturing-batch-records"
+        ]
+      },
+      {
+        "id": "reach-buyers-directly",
+        "title": "I want to reach buyers without losing my margin to middlemen",
+        "framing": "Distributors and certification bodies own the buyer relationship and price a producer's access to it, but onchain sourcing records and direct settlement let a producer carry its own verifiable quality story to buyers and capture the margin that currently goes to the intermediary.",
+        "ideas": [
+          "small-producer-sourcing"
+        ]
+      },
+      {
+        "id": "cross-border-trade",
+        "title": "I want to ship and get paid across borders without weeks of bank paperwork",
+        "framing": "Cross-border shipping still runs on paper, where letters of credit take a week and bills of lading are couriered as physical originals, but issued onchain and settled against attested delivery data, the same documents release payment and goods in hours.",
+        "ideas": [
+          "customs-records",
+          "electronic-bill-of-lading",
+          "letters-of-credit"
+        ]
+      },
+      {
+        "id": "access-to-credit",
+        "title": "I want to finance production against the inventory I already hold",
+        "framing": "A manufacturer struggles to borrow against finished goods because lenders cannot verify the inventory exists, is the quality claimed, and is unpledged, but inventory verified and recorded onchain, with each pledge registered, lets them borrow at a rate reflecting the real risk.",
+        "ideas": [
+          "inventory-verification-lending"
+        ]
+      },
+      {
+        "id": "procurement-that-reconciles-itself",
+        "title": "I want my purchase orders to match my supplier's books without a month-end reconciliation",
+        "framing": "My team and my supplier's team keep separate copies of every PO, invoice, and delivery note in unrelated ERP systems, and someone burns a week each month chasing down the mismatches. A purchase order both sides sign onto a shared onchain record means there is only one version to reconcile against.",
+        "ideas": [
+          "procurement"
+        ]
+      }
+    ],
+    "related": [
+      {
+        "id": "farmer",
+        "name": "Farmer",
+        "shared": 1
+      },
+      {
+        "id": "gig-worker",
+        "name": "Gig Worker",
+        "shared": 1
+      }
+    ]
+  },
+  {
+    "id": "merchant",
+    "name": "Merchant",
+    "portraits": [
+      {
+        "name": "Halima",
+        "role": "Electronics importer",
+        "location": "Mombasa",
+        "icon": "package"
+      },
+      {
+        "name": "Diego",
+        "role": "Mezcal cooperative lead",
+        "location": "Oaxaca",
+        "icon": "utensils"
+      },
+      {
+        "name": "Priya",
+        "role": "Shopkeeper",
+        "location": "Birmingham",
+        "icon": "store"
+      }
+    ],
+    "desires": [
+      {
+        "id": "send-receive-money-cheaply",
+        "title": "I want to pay my overseas suppliers without losing a week and 4% to the banks",
+        "framing": "When I wire $20,000 to a supplier, my bank takes a cut, the correspondent bank takes another, and the money lands four days later at a worse rate than I was quoted. Settling in stablecoins onchain lets the funds arrive same-day at the rate I actually see.",
+        "ideas": [
+          "customs-records",
+          "electronic-bill-of-lading",
+          "letters-of-credit"
+        ]
+      },
+      {
+        "id": "own-my-audience",
+        "title": "I want to keep my customer list and reviews when I leave a marketplace",
+        "framing": "Amazon and Etsy hold my buyer emails and the years of reviews I built up, so the day I try to sell direct or switch platforms I start from zero. A portable onchain reputation and buyer identity travels with me when I move.",
+        "ideas": [
+          "cooperative-and-local-marketplaces",
+          "physical-goods-marketplaces"
+        ]
+      },
+      {
+        "id": "verify-what-im-buying",
+        "title": "I want my origin claims to be checkable without paying a certifier every year",
+        "framing": "Buyers pay a premium for single-origin or fair-trade goods, but the certification bodies charge fees a cooperative my size cannot afford and own the stamp that grants market access. Provenance recorded onchain at harvest, with inspectors signing their checks publicly, gives buyers the same confidence without the gatekeeper.",
+        "ideas": [
+          "small-producer-sourcing"
+        ]
+      },
+      {
+        "id": "prove-without-revealing",
+        "title": "I want to onboard to a new bank or marketplace without handing over my passport again",
+        "framing": "Every bank, payment processor, and B2B marketplace makes me upload the same passport scan, company papers, and sanctions screening, and each one becomes a future data breach. A reusable proof that I have already been screened lets me onboard without re-submitting the documents.",
+        "ideas": [
+          "kyc-sanctions-proofs"
+        ]
+      }
+    ],
+    "related": [
+      {
+        "id": "shopper",
+        "name": "Shopper",
+        "shared": 3
+      },
+      {
+        "id": "creator",
+        "name": "Creator",
+        "shared": 1
+      },
+      {
+        "id": "freelance-professional",
+        "name": "Freelance Professional",
+        "shared": 1
+      }
+    ]
+  },
+  {
+    "id": "oss-maintainer",
+    "name": "OSS Maintainer",
+    "portraits": [
+      {
+        "name": "Lukas",
+        "role": "Library maintainer",
+        "location": "Vienna",
+        "icon": "code"
+      },
+      {
+        "name": "Adaeze",
+        "role": "Open-source contributor",
+        "location": "Lagos",
+        "icon": "terminal"
+      },
+      {
+        "name": "Felipe",
+        "role": "Build tool author",
+        "location": "Porto Alegre",
+        "icon": "wrench"
+      }
+    ],
+    "desires": [
+      {
+        "id": "paid-for-value-i-drive",
+        "title": "I want the companies that depend on my library to actually pay for it",
+        "framing": "Fortune 500 services import my package millions of times a month and the tip jar still has $40 in it, because there's no point in the build chain where commercial use triggers payment. If a license could meter commercial usage and route a small fee back through the dependency graph, the companies shipping my code in production would pay automatically instead of when someone remembers to.",
+        "ideas": [
+          "commercial-use-licensing",
+          "dependency-graph-funding",
+          "open-source-contribution-funding"
+        ]
+      }
+    ],
+    "related": [
+      {
+        "id": "creator",
+        "name": "Creator",
+        "shared": 1
+      },
+      {
+        "id": "fan",
+        "name": "Fan",
+        "shared": 1
+      },
+      {
+        "id": "farmer",
+        "name": "Farmer",
+        "shared": 1
+      }
+    ]
+  },
+  {
+    "id": "patient",
+    "name": "Patient",
+    "portraits": [
+      {
+        "name": "Diane",
+        "role": "Autoimmune patient",
+        "location": "Cleveland",
+        "icon": "heart-pulse"
+      },
+      {
+        "name": "Kwame",
+        "role": "Parent and caregiver",
+        "location": "Accra",
+        "icon": "hand-heart"
+      },
+      {
+        "name": "Yuki",
+        "role": "Diabetes patient",
+        "location": "Osaka",
+        "icon": "pill"
+      }
+    ],
+    "desires": [
+      {
+        "id": "own-my-records",
+        "title": "I want my medical records under my own control",
+        "framing": "A patient rebuilds their history from memory at every appointment because each provider's records sit in a separate system, so health records in patient-controlled storage with onchain access permissions let them grant and revoke provider access in seconds.",
+        "ideas": [
+          "patient-controlled-health-records",
+          "wearables-and-health-data-exchanges"
+        ]
+      },
+      {
+        "id": "get-paid-faster",
+        "title": "I want insurance payouts when the trigger is met, not when an adjuster decides",
+        "framing": "Patients pay premiums for years and then wait weeks while an adjuster decides whether an admission qualified, so parametric insurance contracts settled onchain against verifiable triggers like admission records and diagnostic codes pay out the moment the condition is met.",
+        "ideas": [
+          "parametric-health-insurance"
+        ]
+      },
+      {
+        "id": "appeal-automated-decisions",
+        "title": "I want to see and challenge the algorithm that decided my case",
+        "framing": "Denials and prior authorization decisions run through models the insurer will not disclose, so adjudication models with weights and decision logs committed onchain let a patient see which model judged them and challenge it through neutral arbitration.",
+        "ideas": [
+          "ai-adjudicators",
+          "insurance-claims-adjudication"
+        ]
+      },
+      {
+        "id": "verify-what-im-buying",
+        "title": "I want to verify the drugs and treatments I am taking are real",
+        "framing": "Counterfeit medications kill hundreds of thousands a year and a patient cannot tell a real pack from a fake, so onchain provenance with each supply-chain handoff signed lets a pharmacist scan a pack and verify a legitimate manufacturer in seconds.",
+        "ideas": [
+          "pharmaceutical-traceability"
+        ]
+      },
+      {
+        "id": "trust-the-evidence",
+        "title": "I want to know the drug my doctor prescribed was tested honestly",
+        "framing": "The trial that got my medication approved is summarized in a leaflet written by the company that sold it, and I have no way to tell whether bad outcomes were quietly dropped before publication. Trial protocols and raw readings committed at capture, where nobody can revise the record after the fact, would let an independent doctor tell me whether the evidence actually holds up.",
+        "ideas": [
+          "decentralized-clinical-trials",
+          "pre-registration-and-results"
+        ]
+      }
+    ],
+    "related": [
+      {
+        "id": "civic-participant",
+        "name": "Civic Participant",
+        "shared": 1
+      },
+      {
+        "id": "farmer",
+        "name": "Farmer",
+        "shared": 1
+      },
+      {
+        "id": "founder",
+        "name": "Founder",
+        "shared": 1
+      }
+    ]
+  },
+  {
+    "id": "researcher",
+    "name": "Researcher",
+    "portraits": [
+      {
+        "name": "Aditi",
+        "role": "Computational biologist",
+        "location": "Bangalore",
+        "icon": "microscope"
+      },
+      {
+        "name": "Mateusz",
+        "role": "Materials science postdoc",
+        "location": "Warsaw",
+        "icon": "flask-conical"
+      },
+      {
+        "name": "Esther",
+        "role": "Clinical trial lead",
+        "location": "Nairobi",
+        "icon": "heart-pulse"
+      }
+    ],
+    "desires": [
+      {
+        "id": "prove-i-made-this",
+        "title": "I want to prove when I made this work, and that I made it first",
+        "framing": "Priority disputes turn on dates researchers establish through slow, per-jurisdiction preprint timestamps, so a finding committed onchain at discovery with a cryptographic hash of the data gives evidence of priority any peer or funder can verify without trusting a platform.",
+        "ideas": [
+          "ip-registration-prior-art"
+        ]
+      },
+      {
+        "id": "paid-for-value-i-drive",
+        "title": "I want credit when other people's papers are built on my dataset",
+        "framing": "My dataset has been reused in forty papers and I am thanked in a footnote when I am thanked at all, while the lab that ran the followups gets the citation and the next grant. A signed record of who produced a dataset and which papers drew on it, with citation and payment routed back automatically, would make reuse visible and pay the people whose work the field is standing on.",
+        "ideas": [
+          "dataset-provenance-reuse-tracking",
+          "peer-review-markets"
+        ]
+      },
+      {
+        "id": "ai-trained-on-my-work",
+        "title": "I want compensation when AI is trained on my work",
+        "framing": "Foundation models are trained on published research without the producers' consent, so onchain provenance for training data lets a researcher see whether their papers are included, license their use, and receive payment when the resulting models generate revenue.",
+        "ideas": [
+          "ai-model-data-markets"
+        ]
+      },
+      {
+        "id": "data-integrity",
+        "title": "I want trial and source data nobody can quietly rewrite",
+        "framing": "Clinical trials and replication efforts depend on source data in a single sponsor-controlled database anyone could edit before publication, so source readings committed onchain at capture, with append-only updates, let everyone verify the data matches what was collected.",
+        "ideas": [
+          "decentralized-clinical-trials",
+          "pre-registration-and-results"
+        ]
+      },
+      {
+        "id": "fund-my-research",
+        "title": "I want to raise money against my own research without signing it away",
+        "framing": "My university's tech transfer office takes a year to even read the disclosure, then asks for the majority of any upside in exchange for filing a patent I am not allowed to license myself. Letting me sell rights or revenue shares in my own work directly to backers, with the splits enforced automatically, would let me fund the next stage without surrendering the work.",
+        "ideas": [
+          "ip-assets"
+        ]
+      },
+      {
+        "id": "surface-what-the-field-believes",
+        "title": "I want to know which papers will actually hold up before I build on them",
+        "framing": "I have spent months chasing a result that the lab next door quietly failed to reproduce and never published. A market where researchers stake on whether a finding will replicate, settled against a pre-registered test, would surface what the field privately doubts long before a formal replication study lands.",
+        "ideas": [
+          "scientific-claim-markets",
+          "scientific-knowledge-graph"
+        ]
+      }
+    ],
+    "related": [
+      {
+        "id": "creator",
+        "name": "Creator",
+        "shared": 3
+      },
+      {
+        "id": "fan",
+        "name": "Fan",
+        "shared": 1
+      },
+      {
+        "id": "farmer",
+        "name": "Farmer",
+        "shared": 1
+      }
+    ]
+  },
+  {
+    "id": "shopper",
+    "name": "Shopper",
+    "portraits": [
+      {
+        "name": "Eleni",
+        "role": "Grocery shopper",
+        "location": "Athens",
+        "icon": "shopping-bag"
+      },
+      {
+        "name": "Devon",
+        "role": "EV driver",
+        "location": "Toronto",
+        "icon": "car"
+      },
+      {
+        "name": "Lakshmi",
+        "role": "Apartment renter",
+        "location": "Mumbai",
+        "icon": "house"
+      }
+    ],
+    "desires": [
+      {
+        "id": "verify-what-im-buying",
+        "title": "I want to know if the \"free-range\" carton actually came from a farm that lets the hens outside",
+        "framing": "I pay double for ethical labels and have no way to tell whether the certifier ever visited the farm or whether the carton was relabeled in the warehouse. If each handoff from coop to shelf was signed onchain I could scan the carton and see the actual farm and the last inspection date.",
+        "ideas": [
+          "digital-product-passports",
+          "digital-vehicle-passports",
+          "food-provenance-and-traceability",
+          "pharmaceutical-traceability"
+        ]
+      },
+      {
+        "id": "prove-without-revealing",
+        "title": "I want to prove I'm over 18 to a website without uploading my passport to it",
+        "framing": "Every age-gated site and every account signup wants a photo of my ID sitting on some vendor's server waiting to leak. A zero-knowledge proof tied to a credential my government already issued would let the site see \"yes, over 18\" and nothing else.",
+        "ideas": [
+          "age-eligibility-proofs",
+          "kyc-sanctions-proofs"
+        ]
+      },
+      {
+        "id": "peer-to-peer-commerce",
+        "title": "I want to sell my old bike to a stranger without giving eBay 13 percent for holding the money",
+        "framing": "The only reason I use a marketplace for a one-off sale is that neither side trusts the other to ship or pay first, and the platform charges a double-digit cut for that single service. Onchain escrow that releases when the buyer confirms delivery, plus a reputation I can carry between sites, would do the same job for cents.",
+        "ideas": [
+          "physical-goods-marketplaces",
+          "portable-ratings-reviews"
+        ]
+      },
+      {
+        "id": "send-receive-money-cheaply",
+        "title": "I want to plug my EV into any charger and have it just bill me, without signing up for that network",
+        "framing": "Every charging network wants its own app, account, and minimum top-up, because card fees make a single $4 session uneconomic to bill directly. Onchain micropayments that settle in fractions of a cent would let the car pay the charger per kilowatt-hour with no account in the middle.",
+        "ideas": [
+          "ev-charging-coordination",
+          "home-energy-grid-flexibility",
+          "pay-per-use-micropayments",
+          "peer-to-peer-energy-markets"
+        ]
+      },
+      {
+        "id": "enforceable-contracts",
+        "title": "I want my rental deposit back automatically when I move out clean, not whenever the landlord feels like it",
+        "framing": "My landlord holds two months of rent in an account I cannot see and decides on his own timeline whether to return it, and the small-claims path costs more than the deposit. If the deposit sat in onchain escrow that released on a signed move-out inspection, the discretion goes away.",
+        "ideas": [
+          "insurance-claims-adjudication",
+          "mortgage-home-equity-rails",
+          "residential-leasing",
+          "title-escrow",
+          "tokenized-policies-for-resale",
+          "tradable-loyalty-points"
+        ]
+      }
+    ],
+    "related": [
+      {
+        "id": "merchant",
+        "name": "Merchant",
+        "shared": 3
+      },
+      {
+        "id": "freelance-professional",
+        "name": "Freelance Professional",
+        "shared": 2
+      },
+      {
+        "id": "investor",
+        "name": "Investor",
+        "shared": 1
+      }
+    ]
+  }
+]

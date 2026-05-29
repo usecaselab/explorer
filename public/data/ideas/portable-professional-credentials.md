@@ -1,6 +1,9 @@
 ---
 title: "Portable credentials and professional identity"
 domains: identity
+desires:
+  - freelance-professional/portable-reputation
+  - journalist/portable-reputation
 ---
 
 ## Problem

@@ -1,6 +1,9 @@
 ---
 title: "Fan-funded media with governance rights"
 domains: media
+desires:
+  - creator/fans-share-upside
+  - fan/fans-share-upside
 ---
 
 ## Problem

@@ -1,6 +1,8 @@
 ---
 title: "Whistleblower & evidence integrity"
 domains: civil-society
+desires:
+  - journalist/censorship-resistant-comms
 ---
 
 ## Problem

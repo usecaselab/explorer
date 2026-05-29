@@ -1,6 +1,9 @@
 ---
 title: "Tokenized policies for resale"
 domains: insurance
+desires:
+  - investor/portable-portfolio
+  - shopper/enforceable-contracts
 ---
 
 ## Problem

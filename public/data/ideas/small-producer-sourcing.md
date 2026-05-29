@@ -1,6 +1,10 @@
 ---
 title: "Sourcing records for small-scale producers"
 domains: food-and-agriculture, logistics-and-trade
+desires:
+  - farmer/verified-origin-without-the-fee
+  - manufacturer/reach-buyers-directly
+  - merchant/verify-what-im-buying
 ---
 
 ## Problem

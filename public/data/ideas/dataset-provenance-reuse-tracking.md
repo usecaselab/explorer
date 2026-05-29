@@ -1,6 +1,8 @@
 ---
 title: "Dataset provenance and reuse tracking"
 domains: science
+desires:
+  - researcher/paid-for-value-i-drive
 ---
 
 ## Problem

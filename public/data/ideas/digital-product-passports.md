@@ -1,6 +1,9 @@
 ---
 title: "Digital product passports"
 domains: environment, logistics-and-trade
+desires:
+  - manufacturer/prove-my-product-is-genuine
+  - shopper/verify-what-im-buying
 ---
 
 ## Problem

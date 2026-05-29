@@ -1,6 +1,9 @@
 ---
 title: "Wills and estate execution"
 domains: civil-society
+desires:
+  - homeowner/faster-closings
+  - investor/portable-portfolio
 ---
 
 ## Problem

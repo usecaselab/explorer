@@ -1,6 +1,8 @@
 ---
 title: "Community currencies"
 domains: finance, civil-society
+desires:
+  - community-organizer/coordinate-with-neighbors
 ---
 
 ## Problem

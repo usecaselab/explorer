@@ -1,6 +1,9 @@
 ---
 title: "Continuous environmental measurement and verification"
 domains: environment
+desires:
+  - civic-participant/enforce-the-rules-already-on-the-books
+  - investor/verify-what-im-buying
 ---
 
 ## Problem

@@ -1,6 +1,10 @@
 ---
 title: "Drug authentication and supply chain traceability"
 domains: health, logistics-and-trade
+desires:
+  - manufacturer/prove-my-product-is-genuine
+  - patient/verify-what-im-buying
+  - shopper/verify-what-im-buying
 ---
 
 ## Problem

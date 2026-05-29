@@ -1,6 +1,8 @@
 ---
 title: "Informal land tenure formalization"
 domains: government, real-estate-and-housing
+desires:
+  - farmer/access-to-credit
 ---
 
 ## Problem

@@ -1,6 +1,8 @@
 ---
 title: "Opportunity markets"
 domains: ai
+desires:
+  - fan/fans-share-upside
 ---
 
 ## Problem

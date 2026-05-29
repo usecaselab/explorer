@@ -1,6 +1,9 @@
 ---
 title: "Renewable project financing"
 domains: finance, environment, utilities
+desires:
+  - community-organizer/fund-our-own-infrastructure
+  - investor/access-gated-markets
 ---
 
 ## Problem

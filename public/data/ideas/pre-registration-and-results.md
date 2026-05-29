@@ -1,6 +1,9 @@
 ---
 title: "Clinical trial pre-registration and results registry"
 domains: science, health
+desires:
+  - patient/trust-the-evidence
+  - researcher/data-integrity
 ---
 
 ## Problem

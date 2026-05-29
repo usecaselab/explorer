@@ -1,6 +1,8 @@
 ---
 title: "Parametric weather insurance for farmers"
 domains: food-and-agriculture, insurance
+desires:
+  - farmer/get-paid-faster
 ---
 
 ## Problem

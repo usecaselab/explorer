@@ -1,6 +1,8 @@
 ---
 title: "Music sync licensing"
 domains: media
+desires:
+  - creator/keep-what-i-sell
 ---
 
 ## Problem

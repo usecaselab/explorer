@@ -1,0 +1,2707 @@
+# Use Case Lab — Full Corpus
+
+A working atlas of where Ethereum meets the real world. Each entry below is one application of Ethereum to a specific real-world problem, with the cypherpunk reason a centralized version would fail.
+
+Site: https://usecaselab.org
+Source: https://github.com/usecaselab/explorer
+
+---
+
+# Personas (18)
+
+## Civic Participant
+
+URL: https://usecaselab.org/persona/civic-participant
+
+### Example people
+
+- Hassan, Civil engineer, Amman
+- Aiko, Ward resident, Osaka
+- Rosa, Procurement committee member, Mexico City
+
+### Desires
+
+1. I want to see where my tax money actually went
+   Public budgets are executed in spreadsheets nobody sees and summarized in reports a year out of date, so government payments executed onchain, with each transfer traceable from appropriation to vendor, let anyone follow spending in real time.
+   Related ideas: budget-execution-tracking, community-space-allocation
+
+2. I want to know why my permit was denied and who decided
+   When a zoning appeal, a benefits claim, or a contract award goes against me, I get a one-line outcome and no record of who weighed what. A tamper-evident log of which official, which rule, and which inputs produced the decision would let me actually contest it.
+   Related ideas: ai-adjudicators, beneficial-ownership, construction-permits-housing, futarchy-public-policy, participatory-budgeting, public-procurement-lifecycle
+
+3. I want my civil records under my own control, not stuck in the office that issued them
+   Birth, marriage, and death records govern every official interaction yet sit in physical files that can be lost or held hostage to a fee, so civil registries that issue them as signed onchain attestations let a citizen hold their proof.
+   Related ideas: civil-registry-records, firearm-licensing-registration
+
+4. I want environmental and housing rules enforced when they're broken, not years later
+   Environmental thresholds and housing covenants are rules whose enforcement lags so far behind violations that the harm is done first, so continuous measurement piped to onchain rule engines records a violation the same hour a threshold is crossed.
+   Related ideas: affordable-housing-covenants, city-climate-commitment-tracking, environmental-measurement-and-verification, environmental-threshold-enforcement
+
+---
+
+## Community Organizer
+
+URL: https://usecaselab.org/persona/community-organizer
+
+### Example people
+
+- Naledi, Tenants' association leader, Cape Town
+- Marcus, Neighborhood council chair, Detroit
+- Lena, Housing cooperative coordinator, Berlin
+
+### Desires
+
+1. I want a local currency for my neighborhood that doesn't die when the operator quits
+   We've tried timebanks and local scrip and every one of them folded when the person running the spreadsheet moved on or the platform shut down. I want issuance rules, balances, and redemption to live somewhere the community keeps running even when I step back.
+   Related ideas: community-currencies, cooperative-and-local-marketplaces, peer-to-peer-energy-markets
+
+2. I want to pool capital with my neighbors without paying a bank to do it
+   Lending circles and mutual-aid pools cost money to administer through banks and hold more cash than they need, so onchain lending pools set contribution and disbursement rules in code and return the savings to members instead of a custodian.
+   Related ideas: cooperative-lending-pools
+
+3. I want my block to finance its own solar roof or fiber line and pay investors back from what it earns
+   Our co-op solar project is too small for a bank and too structured for a GoFundMe, so it just doesn't happen. I want a way to take small investments from neighbors and outside backers and pay them back from the meter revenue, with the repayment schedule something they can verify rather than trust me on.
+   Related ideas: land-trust-housing-coop-coordination, local-infrastructure-bonds, renewable-project-financing
+
+4. I want to watch the money my neighborhood voted on actually move
+   Participatory-budgeting votes disappear into a general-fund line item the community cannot track, so budget allocations executed through onchain payments, with each transfer traceable to the project it was meant to fund, close the gap between the vote and the spending.
+   Related ideas: community-space-allocation, participatory-budgeting
+
+5. I want the affordable-housing and climate commitments my city signed to actually hold
+   Cities quietly fall out of compliance with their housing covenants and emissions targets because enforcement is starved and the data is unqueryable, so onchain registries fed by attested rent rolls and emissions data make non-compliance visible the moment it happens.
+   Related ideas: affordable-housing-covenants, city-climate-commitment-tracking
+
+6. I want a rent strike or buyer's pledge that only triggers once enough neighbors are in
+   Every rent strike I've tried to organize dies in the "I'll do it if everyone else does" phase. I want people to be able to commit publicly with their pledge held in escrow, so the action goes live the moment we cross the threshold and nobody is exposed alone.
+   Related ideas: hyperstition-markets
+
+---
+
+## Creator
+
+URL: https://usecaselab.org/persona/creator
+
+### Example people
+
+- Maya, Podcaster, São Paulo
+- Joon, Electronic musician, Seoul
+- Sarah, Fiction writer, Manchester
+
+### Desires
+
+1. I want to keep more of what I sell
+   Platforms take 10 to 30 percent of every sale and hold the money for weeks, so settling payments onchain with smart contracts that split revenue at the moment of sale lets a creator keep the cut and skip the wait.
+   Related ideas: creator-storefronts, film-tv-residuals, music-sync-licensing, pay-per-use-micropayments
+
+2. I want to prove I made what I made
+   Government IP registries are slow and per-jurisdiction while platform timestamps can be rewritten, so a signed onchain commitment made the moment of creation gives a creator evidence of origin that anyone can verify without trusting the hosting platform.
+   Related ideas: content-authenticity-proofs, ip-registration-prior-art
+
+3. I want to keep reaching my followers if a platform suspends me
+   When my account gets locked or a platform decides my niche is off-brand, the audience I spent years building disappears overnight. If my follower list lived on a portable onchain graph instead of inside the app, I could message and sell to those same people from somewhere else the next day.
+   Related ideas: portable-social-identity
+
+4. I want my earliest backers to get paid back when something I make takes off
+   The hundred people who funded my first record get a tote bag and a thank-you, even when the record ends up paying my rent for three years. If I could issue them a small revenue share that pays out automatically from streaming income, the people who took the risk would actually share in the reward.
+   Related ideas: fan-funded-media, ip-assets
+
+5. I want to trust the view and revenue numbers the platform pays me on
+   My royalty statement says I had 412,000 streams last quarter and I have no way to check whether that's the real number or the number after the platform's accounting. If plays and ad views were counted against a log I could audit, I'd know my paycheck matched the activity instead of taking the platform's word for it.
+   Related ideas: ad-influencer-metrics, referral-affiliate-payouts
+
+6. I want compensation when AI is trained on my work
+   Foundation models are trained on creators' work without notice on datasets that are rarely disclosed, so onchain provenance for training data lets a creator see if their work is included, license it, and be paid when those models earn.
+   Related ideas: ai-model-data-markets
+
+7. I want my income not to vanish overnight when an algorithm decides my topic is off-brand
+   Platforms can demonetize a video, shadow-ban a hashtag, or quietly throttle my reach for any reason their policy team chooses, and the only appeal is a form that disappears into a queue. Revenue-eligible publishing on rails the platform can't unilaterally switch off means my paycheck depends on the work, not on whether my topic is on-brand this quarter.
+   Related ideas: curation-markets
+
+---
+
+## Donor
+
+URL: https://usecaselab.org/persona/donor
+
+### Example people
+
+- Helen, Disaster-relief donor, Toronto
+- Idris, Foundation administrator, Dubai
+- Sofia, Scholarship director, Buenos Aires
+
+### Desires
+
+1. I want to see where my money actually went
+   Donations are pooled and regranted through accounting the donor never sees, severing the link between a gift and a household, so settling transfers onchain with every hop visible lets a donor follow a contribution from gift to recipient.
+   Related ideas: direct-cash-transfer-programs, fund-flows-disaster-relief
+
+2. I want to pay for delivered outcomes, not for promises
+   Grants are paid upfront against proposed outcomes and reported on by the same organization seeking the next grant, so conditioning payments on independently verified milestones attested onchain aligns funding with what programs achieve rather than how they tell the story.
+   Related ideas: impact-certificates, milestone-scholarship-disbursement, outcome-based-funding
+
+3. I want the people a program serves to have a say in how the money is spent
+   Budgets are decided by program officers in another city who have never met the families a program serves, and the people closest to the need have no vote in how a dollar gets split. Letting recipients allocate funds directly, with every transfer traceable back to the decision behind it, puts the call in the hands of the people living the problem.
+   Related ideas: participatory-budgeting
+
+---
+
+## Fan
+
+URL: https://usecaselab.org/persona/fan
+
+### Example people
+
+- Yuki, Indie music fan, Tokyo
+- Tomas, Documentary backer, Mexico City
+- Wei, MMO player, Shenzhen
+
+### Desires
+
+1. I want a real stake in the artists and projects I back early
+   Tip jars, merchandise, and pre-sold crowdfunding rewards never let a fan share in the upside their early support helped create, so onchain instruments make it practical to issue fractional revenue shares that pay out automatically when the project earns.
+   Related ideas: fan-funded-media, opportunity-markets
+
+2. I want the money I spend on a ticket to reach the artist
+   Concert tickets reappear on resale platforms at multiples of face value with the markup going to scalpers, so tickets issued as onchain assets with resale rights in the contract let the artist cap secondary prices and collect a resale share.
+   Related ideas: event-ticket-resale
+
+3. I want to actually own the items and time I sank into a game
+   In-game items and progress sit on a studio's servers under terms that let the operator freeze accounts or shut the game down, but holding them as onchain assets keeps ownership with the player and lets the items move to any marketplace.
+   Related ideas: player-owned-in-game-assets
+
+4. I want to be paid when the mods and content I make drive the game
+   Mods and user-generated content keep players engaged long past a game's launch, yet platforms rarely pay the modders, so onchain royalty contracts can route a share of the downstream activity to creators using the usage data the platform already collects.
+   Related ideas: ugc-mod-royalties
+
+---
+
+## Farmer
+
+URL: https://usecaselab.org/persona/farmer
+
+### Example people
+
+- Joseph, Maize and bean farmer, Eldoret
+- Elena, Vineyard grower, Mendoza
+- Tomás, Coffee cooperative lead, Antigua
+
+### Desires
+
+1. I want subsidy and insurance payments to arrive when the loss happens, not months later
+   Agricultural subsidies and weather insurance routinely arrive months after the gap they exist to cover has swallowed the season, so smart contracts triggered by satellite rainfall data or government attestations release funds onchain the day a threshold is crossed.
+   Related ideas: agricultural-subsidy-disbursement, parametric-weather-insurance
+
+2. I want to borrow against my land and my standing crop without paying 80 percent interest
+   Smallholders are invisible to banks because pre-harvest credit has no collateral and their land carries no recognized title, so tokenized future-crop receipts and onchain land titles give a lender collateral it can price and repaid automatically at harvest sale.
+   Related ideas: harvest-pre-financing, informal-land-tenure-formalization
+
+3. I want to get paid for the cover crops and hedgerows I plant, not just the bushels I sell
+   Buyers price my maize by weight and ignore the soil work that took years, while carbon programs gate payouts behind audits that cost more than a smallholder will ever earn from them. Satellite measurement plus onchain payouts would let me earn for the carbon and habitat my practices build without an auditor pocketing the margin.
+   Related ideas: regenerative-practice-incentives
+
+4. I want premium buyers to verify our quality without $10,000 in certification fees
+   Specialty buyers pay more for verified origin, but paper certification costs fall hardest on the small producers most likely to meet the standard, so onchain provenance for each lot lets a cooperative document quality cheaply and keep the premium.
+   Related ideas: small-producer-sourcing
+
+5. I want water use measured so the neighbors with deeper wells stop draining the aquifer
+   In drought-prone regions overuse is profitable and undetectable under self-reported metering until the aquifer is gone, so onchain water-rights markets with continuous metering make overuse visible per well and let a farmer sell unused rights to a neighbor.
+   Related ideas: water-rights-markets
+
+---
+
+## Founder
+
+URL: https://usecaselab.org/persona/founder
+
+### Example people
+
+- Anya, Technical cofounder, Berlin
+- Femi, Serial entrepreneur, Lagos
+- Mia, Healthtech founder, Toronto
+
+### Desires
+
+1. I want to pay and be paid across borders without three-day waits and percent-of-payroll fees
+   A distributed team means moving money to ten countries the same day, where wire fees, FX spreads, and late-transfer guesswork add up, so stablecoin payroll settled onchain delivers funds in minutes and generates the per-payee records tax authorities want.
+   Related ideas: cross-border-payroll
+
+2. I want a cap table everyone can read from the same source
+   Cap tables live on vendor platforms that charge by the seat and reconcile poorly with equity portals and investor records, so a cap table represented onchain, with each issuance signed by its parties, gives everyone the same authoritative view.
+   Related ideas: cap-tables
+
+3. I want to spend my first months building, not refiling the same documents
+   Forming a company takes weeks across several agencies and then every bank and customer asks for the same incorporation packet again, so onchain business registries let a founder present verifiable attestations issued by the registry instead of repeating the proof.
+   Related ideas: business-formation-licensing
+
+4. I want partnership payouts to fire on the numbers, not on a partner's word
+   When a partner owes me a revenue share or a milestone payment, they own the dashboard that decides what I'm owed and I either trust their export or chase them for months. A contract that pays out against a billing feed both sides signed off on upfront takes the discretion away from whichever side holds the books.
+   Related ideas: earnouts-contingent-payments
+
+---
+
+## Freelance Professional
+
+URL: https://usecaselab.org/persona/freelance-professional
+
+### Example people
+
+- Camille, UX consultant, Montreal
+- Tomás, Backend engineer, Buenos Aires
+- Hana, Architect, Berlin
+
+### Desires
+
+1. I want to pay and get paid across borders without losing a tenth of every job
+   A freelancer working across borders loses real money to wire fees, FX spreads, and platforms that hold funds for a week, so settling invoices onchain in stablecoins collapses the chain of intermediaries into a single transaction that arrives in minutes.
+   Related ideas: cross-border-payroll
+
+2. I want to turn a net-60 invoice into rent money this week
+   Half my clients pay on net-60 or net-90 and I'm fronting rent from savings while a signed invoice sits in someone's AP queue. Factoring exists for big firms with big invoices; I want a pool that will advance against my invoice the day I send it, priced off my actual track record.
+   Related ideas: invoice-receivables-financing
+
+3. I want my contracts to be enforceable without hiring a lawyer
+   When a client refuses to pay, a freelancer can only write off the invoice or sue across jurisdictions, so smart contracts holding the fee in escrow until a milestone is met, with disputes routed to onchain arbitration, make enforcement affordable.
+   Related ideas: dispute-resolution
+
+4. I want my credentials and ratings to travel with me
+   A freelancer who moves between platforms or countries loses the reviews and credentials locked in databases the platform owns, so attestations of credentials and completed engagements, committed onchain by the issuer or client, let them carry their record anywhere.
+   Related ideas: portable-professional-credentials
+
+---
+
+## Gig Worker
+
+URL: https://usecaselab.org/persona/gig-worker
+
+### Example people
+
+- Marcus, Rideshare driver, Atlanta
+- Renata, Food-delivery courier, Lisbon
+- Dele, Truck owner-operator, Lagos
+
+### Desires
+
+1. I want to be paid the moment the work is done
+   A driver or contractor often waits a week or more for pay because the platform reconciles on its own cycle, but smart contracts that release funds the moment a delivery is signed for, against signals already collected, close the gap to minutes.
+   Related ideas: delivery-triggered-payments
+
+2. I want my ratings and history to travel with me
+   A worker's ratings and job history are an asset built over thousands of hours yet trapped in a platform's database, so signed onchain attestations of completed jobs and ratings, issued by the platform but owned by the worker, let that reputation travel anywhere.
+   Related ideas: portable-ratings-reviews, spot-freight-trucking
+
+3. I want lenders to see the income I actually earn
+   Banks underwrite against W-2s and tax returns, so a gig worker with steady income across three platforms reads as irregular deposits and gets declined, but verifiable onchain payment histories from the platforms they use give a lender something concrete to underwrite.
+   Related ideas: credit-scoring
+
+---
+
+## Homeowner
+
+URL: https://usecaselab.org/persona/homeowner
+
+### Example people
+
+- Linda, Mortgage holder, Phoenix
+- Diego, First-time buyer, Lisbon
+- Hannah, Housing co-op board member, Brooklyn
+
+### Desires
+
+1. I want to see who holds my mortgage and how my payments are applied
+   After a mortgage is resold the borrower rarely knows who holds the note or whether the servicer's escrow math is right, but a mortgage held onchain, with every payment, rate adjustment, and assignment committed in the open, lets the borrower verify the figures.
+   Related ideas: mortgage-home-equity-rails
+
+2. I want to close on a house in a week instead of paying a title company to spend two months chasing paper
+   Every closing means a title company billing me to retrace a chain of deeds that already exists in a county office, and a missed signature can push the date out twice. If the title lived onchain and the deed transferred when escrow released, the search and the wait both disappear without changing what's legally true.
+   Related ideas: title-escrow, wills-estate-execution
+
+---
+
+## Investor
+
+URL: https://usecaselab.org/persona/investor
+
+### Example people
+
+- Tomás, Retail investor, Lisbon
+- Priya, Wealth advisor, Mumbai
+- Akosua, Family office principal, Accra
+
+### Desires
+
+1. I want to buy government bonds and reinsurance the way the big funds do, not through a broker that marks them up
+   A 10-year treasury or a slice of a reinsurance pool is something pension funds buy at par, but to get there as a retail investor I go through a broker who sets a $50k minimum and adds a spread. Issuing these instruments onchain lets me buy a $500 piece at the same price the desk pays.
+   Related ideas: local-infrastructure-bonds, reinsurance, renewable-project-financing, revenue-bonds, sovereign-municipal-bonds
+
+2. I want to know the carbon credits and green bonds I bought are actually doing what the brochure said
+   The carbon offsets and renewable-yield products in my portfolio come with PDFs from the issuer and a registry that the same issuer pays into, and I have no way to check whether the underlying project is still running. Sensor data and project performance posted onchain as it happens lets me audit my own holdings instead of trusting the brochure.
+   Related ideas: carbon-biodiversity-credits, environmental-measurement-and-verification
+
+3. I want my kids to inherit my portfolio without a year of probate and a lawyer's cut
+   My brokerage, pension, and insurance accounts each have their own beneficiary forms, surrender procedures, and lawyers, and when my father died it took a year to move anything. Assets held onchain with succession encoded in a smart contract pass to my heirs the moment the conditions are met, without an estate intermediary.
+   Related ideas: tokenized-policies-for-resale, wills-estate-execution
+
+---
+
+## Journalist
+
+URL: https://usecaselab.org/persona/journalist
+
+### Example people
+
+- Layla, Investigative journalist, Beirut
+- Marcus, Protest videographer, Atlanta
+- Anna, Freelance journalist, Warsaw
+
+### Desires
+
+1. I want to prove a piece of footage or evidence is genuinely mine
+   Reporters are routinely accused of staging or doctoring their material, so a signed onchain commitment made the moment a photo or video is captured gives verifiable proof of authorship and time that any reader or court can independently check.
+   Related ideas: content-authenticity-proofs
+
+2. I want a source to be able to send me documents without leaving a trail my government can subpoena
+   SecureDrop sits on servers somebody owns and can be ordered to hand over logs, and any file I receive carries metadata that can burn the sender. I want a drop where the source proves they're a real insider without revealing who, and where no central operator holds records that can be compelled.
+   Related ideas: journalist-source-protection, whistleblower-evidence-integrity
+
+3. I want my reporting record to travel with me when I move outlets
+   A journalist's bylines, awards, and employment history are trapped in the systems of past outlets, so portable credentials anchored onchain and issued by editors and former employers let them present a verifiable record independent of any one outlet.
+   Related ideas: portable-professional-credentials
+
+---
+
+## Manufacturer
+
+URL: https://usecaselab.org/persona/manufacturer
+
+### Example people
+
+- Amara, Small-batch coffee roaster, Addis Ababa
+- Wei, Contract electronics manufacturer, Shenzhen
+- Ingrid, Plant operations director, Stuttgart
+
+### Desires
+
+1. I want buyers to tell my product apart from the knock-offs that copy my label
+   Counterfeiters slap my brand on inferior parts and undercut me, and buyers cannot tell the difference until something fails. A component and assembly history recorded onchain at each step lets a buyer scan and confirm the unit in their hand is one I actually built.
+   Related ideas: digital-product-passports, food-provenance-and-traceability, pharmaceutical-traceability
+
+2. I want quality records that buyers and auditors can trust
+   Batch and quality records sit in databases the manufacturer can edit, so recalls drag and auditors re-verify by hand, but records committed onchain as they are created give buyers, auditors, and regulators a quality history that cannot be quietly revised after the fact.
+   Related ideas: manufacturing-batch-records
+
+3. I want to reach buyers without losing my margin to middlemen
+   Distributors and certification bodies own the buyer relationship and price a producer's access to it, but onchain sourcing records and direct settlement let a producer carry its own verifiable quality story to buyers and capture the margin that currently goes to the intermediary.
+   Related ideas: small-producer-sourcing
+
+4. I want to ship and get paid across borders without weeks of bank paperwork
+   Cross-border shipping still runs on paper, where letters of credit take a week and bills of lading are couriered as physical originals, but issued onchain and settled against attested delivery data, the same documents release payment and goods in hours.
+   Related ideas: customs-records, electronic-bill-of-lading, letters-of-credit
+
+5. I want to finance production against the inventory I already hold
+   A manufacturer struggles to borrow against finished goods because lenders cannot verify the inventory exists, is the quality claimed, and is unpledged, but inventory verified and recorded onchain, with each pledge registered, lets them borrow at a rate reflecting the real risk.
+   Related ideas: inventory-verification-lending
+
+6. I want my purchase orders to match my supplier's books without a month-end reconciliation
+   My team and my supplier's team keep separate copies of every PO, invoice, and delivery note in unrelated ERP systems, and someone burns a week each month chasing down the mismatches. A purchase order both sides sign onto a shared onchain record means there is only one version to reconcile against.
+   Related ideas: procurement
+
+---
+
+## Merchant
+
+URL: https://usecaselab.org/persona/merchant
+
+### Example people
+
+- Halima, Electronics importer, Mombasa
+- Diego, Mezcal cooperative lead, Oaxaca
+- Priya, Shopkeeper, Birmingham
+
+### Desires
+
+1. I want to pay my overseas suppliers without losing a week and 4% to the banks
+   When I wire $20,000 to a supplier, my bank takes a cut, the correspondent bank takes another, and the money lands four days later at a worse rate than I was quoted. Settling in stablecoins onchain lets the funds arrive same-day at the rate I actually see.
+   Related ideas: customs-records, electronic-bill-of-lading, letters-of-credit
+
+2. I want to keep my customer list and reviews when I leave a marketplace
+   Amazon and Etsy hold my buyer emails and the years of reviews I built up, so the day I try to sell direct or switch platforms I start from zero. A portable onchain reputation and buyer identity travels with me when I move.
+   Related ideas: cooperative-and-local-marketplaces, physical-goods-marketplaces
+
+3. I want my origin claims to be checkable without paying a certifier every year
+   Buyers pay a premium for single-origin or fair-trade goods, but the certification bodies charge fees a cooperative my size cannot afford and own the stamp that grants market access. Provenance recorded onchain at harvest, with inspectors signing their checks publicly, gives buyers the same confidence without the gatekeeper.
+   Related ideas: small-producer-sourcing
+
+4. I want to onboard to a new bank or marketplace without handing over my passport again
+   Every bank, payment processor, and B2B marketplace makes me upload the same passport scan, company papers, and sanctions screening, and each one becomes a future data breach. A reusable proof that I have already been screened lets me onboard without re-submitting the documents.
+   Related ideas: kyc-sanctions-proofs
+
+---
+
+## OSS Maintainer
+
+URL: https://usecaselab.org/persona/oss-maintainer
+
+### Example people
+
+- Lukas, Library maintainer, Vienna
+- Adaeze, Open-source contributor, Lagos
+- Felipe, Build tool author, Porto Alegre
+
+### Desires
+
+1. I want the companies that depend on my library to actually pay for it
+   Fortune 500 services import my package millions of times a month and the tip jar still has $40 in it, because there's no point in the build chain where commercial use triggers payment. If a license could meter commercial usage and route a small fee back through the dependency graph, the companies shipping my code in production would pay automatically instead of when someone remembers to.
+   Related ideas: commercial-use-licensing, dependency-graph-funding, open-source-contribution-funding
+
+---
+
+## Patient
+
+URL: https://usecaselab.org/persona/patient
+
+### Example people
+
+- Diane, Autoimmune patient, Cleveland
+- Kwame, Parent and caregiver, Accra
+- Yuki, Diabetes patient, Osaka
+
+### Desires
+
+1. I want my medical records under my own control
+   A patient rebuilds their history from memory at every appointment because each provider's records sit in a separate system, so health records in patient-controlled storage with onchain access permissions let them grant and revoke provider access in seconds.
+   Related ideas: patient-controlled-health-records, wearables-and-health-data-exchanges
+
+2. I want insurance payouts when the trigger is met, not when an adjuster decides
+   Patients pay premiums for years and then wait weeks while an adjuster decides whether an admission qualified, so parametric insurance contracts settled onchain against verifiable triggers like admission records and diagnostic codes pay out the moment the condition is met.
+   Related ideas: parametric-health-insurance
+
+3. I want to see and challenge the algorithm that decided my case
+   Denials and prior authorization decisions run through models the insurer will not disclose, so adjudication models with weights and decision logs committed onchain let a patient see which model judged them and challenge it through neutral arbitration.
+   Related ideas: ai-adjudicators, insurance-claims-adjudication
+
+4. I want to verify the drugs and treatments I am taking are real
+   Counterfeit medications kill hundreds of thousands a year and a patient cannot tell a real pack from a fake, so onchain provenance with each supply-chain handoff signed lets a pharmacist scan a pack and verify a legitimate manufacturer in seconds.
+   Related ideas: pharmaceutical-traceability
+
+5. I want to know the drug my doctor prescribed was tested honestly
+   The trial that got my medication approved is summarized in a leaflet written by the company that sold it, and I have no way to tell whether bad outcomes were quietly dropped before publication. Trial protocols and raw readings committed at capture, where nobody can revise the record after the fact, would let an independent doctor tell me whether the evidence actually holds up.
+   Related ideas: decentralized-clinical-trials, pre-registration-and-results
+
+---
+
+## Researcher
+
+URL: https://usecaselab.org/persona/researcher
+
+### Example people
+
+- Aditi, Computational biologist, Bangalore
+- Mateusz, Materials science postdoc, Warsaw
+- Esther, Clinical trial lead, Nairobi
+
+### Desires
+
+1. I want to prove when I made this work, and that I made it first
+   Priority disputes turn on dates researchers establish through slow, per-jurisdiction preprint timestamps, so a finding committed onchain at discovery with a cryptographic hash of the data gives evidence of priority any peer or funder can verify without trusting a platform.
+   Related ideas: ip-registration-prior-art
+
+2. I want credit when other people's papers are built on my dataset
+   My dataset has been reused in forty papers and I am thanked in a footnote when I am thanked at all, while the lab that ran the followups gets the citation and the next grant. A signed record of who produced a dataset and which papers drew on it, with citation and payment routed back automatically, would make reuse visible and pay the people whose work the field is standing on.
+   Related ideas: dataset-provenance-reuse-tracking, peer-review-markets
+
+3. I want compensation when AI is trained on my work
+   Foundation models are trained on published research without the producers' consent, so onchain provenance for training data lets a researcher see whether their papers are included, license their use, and receive payment when the resulting models generate revenue.
+   Related ideas: ai-model-data-markets
+
+4. I want trial and source data nobody can quietly rewrite
+   Clinical trials and replication efforts depend on source data in a single sponsor-controlled database anyone could edit before publication, so source readings committed onchain at capture, with append-only updates, let everyone verify the data matches what was collected.
+   Related ideas: decentralized-clinical-trials, pre-registration-and-results
+
+5. I want to raise money against my own research without signing it away
+   My university's tech transfer office takes a year to even read the disclosure, then asks for the majority of any upside in exchange for filing a patent I am not allowed to license myself. Letting me sell rights or revenue shares in my own work directly to backers, with the splits enforced automatically, would let me fund the next stage without surrendering the work.
+   Related ideas: ip-assets
+
+6. I want to know which papers will actually hold up before I build on them
+   I have spent months chasing a result that the lab next door quietly failed to reproduce and never published. A market where researchers stake on whether a finding will replicate, settled against a pre-registered test, would surface what the field privately doubts long before a formal replication study lands.
+   Related ideas: scientific-claim-markets, scientific-knowledge-graph
+
+---
+
+## Shopper
+
+URL: https://usecaselab.org/persona/shopper
+
+### Example people
+
+- Eleni, Grocery shopper, Athens
+- Devon, EV driver, Toronto
+- Lakshmi, Apartment renter, Mumbai
+
+### Desires
+
+1. I want to know if the "free-range" carton actually came from a farm that lets the hens outside
+   I pay double for ethical labels and have no way to tell whether the certifier ever visited the farm or whether the carton was relabeled in the warehouse. If each handoff from coop to shelf was signed onchain I could scan the carton and see the actual farm and the last inspection date.
+   Related ideas: digital-product-passports, digital-vehicle-passports, food-provenance-and-traceability, pharmaceutical-traceability
+
+2. I want to prove I'm over 18 to a website without uploading my passport to it
+   Every age-gated site and every account signup wants a photo of my ID sitting on some vendor's server waiting to leak. A zero-knowledge proof tied to a credential my government already issued would let the site see "yes, over 18" and nothing else.
+   Related ideas: age-eligibility-proofs, kyc-sanctions-proofs
+
+3. I want to sell my old bike to a stranger without giving eBay 13 percent for holding the money
+   The only reason I use a marketplace for a one-off sale is that neither side trusts the other to ship or pay first, and the platform charges a double-digit cut for that single service. Onchain escrow that releases when the buyer confirms delivery, plus a reputation I can carry between sites, would do the same job for cents.
+   Related ideas: physical-goods-marketplaces, portable-ratings-reviews
+
+4. I want to plug my EV into any charger and have it just bill me, without signing up for that network
+   Every charging network wants its own app, account, and minimum top-up, because card fees make a single $4 session uneconomic to bill directly. Onchain micropayments that settle in fractions of a cent would let the car pay the charger per kilowatt-hour with no account in the middle.
+   Related ideas: ev-charging-coordination, home-energy-grid-flexibility, pay-per-use-micropayments, peer-to-peer-energy-markets
+
+5. I want my rental deposit back automatically when I move out clean, not whenever the landlord feels like it
+   My landlord holds two months of rent in an account I cannot see and decides on his own timeline whether to return it, and the small-claims path costs more than the deposit. If the deposit sat in onchain escrow that released on a signed move-out inspection, the discretion goes away.
+   Related ideas: insurance-claims-adjudication, mortgage-home-equity-rails, residential-leasing, title-escrow, tokenized-policies-for-resale, tradable-loyalty-points
+
+---
+
+# Ideas (107)
+
+## Ad delivery and influencer metrics
+
+ID: `ad-influencer-metrics`
+Domains: Commerce
+URL: https://usecaselab.org/idea/ad-influencer-metrics
+
+### Problem
+
+Ad networks report impressions and clicks using their own unauditable metrics, enabling widespread fraud. Brands also pay influencers based on self-reported or platform-reported reach and engagement that is trivially inflated through bots and fake followers.
+
+### Solution
+
+Transparent impression tracking and verifiable reach metrics — with optional zero-knowledge proofs for audience size — so advertisers can independently confirm that spend reached real human audiences.
+
+### Why Ethereum
+
+Ad fraud persists because the ad network reports on its own delivery, and any auditor it hires can be acquired or pressured by the platform it is supposed to check. Recording delivery onchain that no participant controls gives advertisers a measurement they can verify independently and prevents the network from revising the numbers afterward.
+
+---
+
+## Affordable housing covenant enforcement
+
+ID: `affordable-housing-covenants`
+Domains: Real Estate & Housing, Government
+URL: https://usecaselab.org/idea/affordable-housing-covenants
+
+### Problem
+
+Affordable housing deed restrictions — requiring units to remain below market rate for 30, 50, or 99 years — are written into paper legal documents that must be manually checked at every ownership transfer, and routinely slip through conveyancing processes, effectively converting affordable units to market rate with no enforcement mechanism.
+
+### Solution
+
+Affordability restrictions encoded directly into property tokens that enforce covenants automatically at the point of transfer or rental — making it structurally impossible to sell or rent above the allowed price without the covenant being triggered.
+
+### Why Ethereum
+
+When a covenant lives only in paper records, enforcement depends on whichever office happens to review a transfer, and an owner with an incentive to convert the unit can count on the check being missed. Encoding the restriction into the asset onchain means the rule travels with the property and stays verifiable by tenants and the public rather than sitting with a registry that has to notice a violation.
+
+---
+
+## Age and eligibility proofs without identity disclosure
+
+ID: `age-eligibility-proofs`
+Domains: Identity
+URL: https://usecaselab.org/idea/age-eligibility-proofs
+
+### Problem
+
+A teenager trying to prove they're 18 to access a website, or a doctor proving they hold a medical license to prescribe remotely, must hand over their full government ID — exposing date of birth, address, and ID number to a third party who only needed a yes/no answer — creating surveillance infrastructure and breach risk for a simple eligibility check.
+
+### Solution
+
+Zero-knowledge proofs that let individuals demonstrate they meet a threshold — over 18, licensed physician, accredited investor — without revealing the underlying document, name, or any other personal attribute beyond the specific claim being verified.
+
+### Why Ethereum
+
+A centralized verification service would see every site a person unlocks and would hold everyone's identity documents in one place that becomes a target for breaches. Building this with zero-knowledge proofs onchain lets a person prove a specific claim without revealing the underlying document, and keeps the check from being routed through a company that can log or leak it.
+
+---
+
+## Agricultural subsidy disbursement
+
+ID: `agricultural-subsidy-disbursement`
+Domains: Government, Food & Agriculture
+URL: https://usecaselab.org/idea/agricultural-subsidy-disbursement
+
+### Problem
+
+Agricultural subsidy programs (e.g., EU Common Agricultural Policy direct payments, USDA conservation programs) require farmers to submit annual applications, undergo eligibility reviews, and wait months for payment — a process where administrative overhead consumes a significant share of program budgets and delays reach the farmers who need operating capital most. Eligibility conditions like acreage verification, crop compliance, and conservation practice adoption are checked manually by inspectors who can physically visit only a fraction of enrolled farms each year.
+
+### Solution
+
+Subsidy disbursements that execute automatically when satellite-verified acreage data, crop identification, and conservation practice adoption confirm eligibility — reducing administrative costs and getting payments to farmers at the start of the season rather than months after application.
+
+### Why Ethereum
+
+When subsidy payments depend on manual review, the agency controls the pace and the discretion, and farmers wait months while inspectors reach only a fraction of enrolled farms. Tying disbursement to verified eligibility data onchain makes the rule and the release visible to everyone, so payment timing follows the criteria rather than an administrator's queue or judgment.
+
+---
+
+## Provable AI adjudicators
+
+ID: `ai-adjudicators`
+Domains: AI
+URL: https://usecaselab.org/idea/ai-adjudicators
+
+### Problem
+
+AI is starting to make binding decisions: settling insurance claims, allocating grants, arbitrating disputes, moderating what stays up. When an AI reaches a verdict, the people affected have no way to confirm which model and inputs produced it. The operator can quietly swap in a cheaper or biased model, or deny that a decision was tampered with, and the party the decision went against has no recourse.
+
+### Solution
+
+AI adjudicators that carry a proof of how each verdict was reached, showing the disclosed model ran on the stated inputs. A claimant, applicant, or party to a dispute can check that the AI deciding their case is the one everyone agreed to, and that its decision was not swapped or edited after the fact.
+
+### Why Ethereum
+
+When the operator of an AI adjudicator is the only one who knows which model decided a case, the party it ruled against has to take the operator's word for it. Anchoring each verdict's proof onchain lets anyone check which model ran and on what inputs, so an AI making binding decisions answers to a record outside its operator's control.
+
+---
+
+## AI model and training data markets
+
+ID: `ai-model-data-markets`
+Domains: AI
+URL: https://usecaselab.org/idea/ai-model-data-markets
+
+### Problem
+
+AI models and training datasets are passed through ad-hoc channels with no enforceable licensing, usage metering, or royalty distribution — so creators lose control the moment they publish. The problem runs deeper for the creative workers whose output trained these models: writers, artists, and photographers have no mechanism to verify whether their work was included in a training corpus, no ability to opt out retroactively, and no way to claim revenue from models that directly replicate their style.
+
+### Solution
+
+Tokenized AI models and training datasets with programmable licensing terms set at registration — enabling usage metering, automatic royalty distribution to all rights holders, and cryptographic provenance records that let creators verify inclusion in training corpora and receive proportional compensation without relying on AI companies to voluntarily disclose what they trained on.
+
+### Why Ethereum
+
+If a marketplace ran on one company's platform, that operator would report usage on its own systems and decide what creators are owed, leaving the same disclosure gap that lets AI companies stay quiet about what they trained on. Putting licensing and provenance onchain keeps the usage record outside any operator's control, so creators can verify whether their work was used and claim compensation without depending on a platform to be honest.
+
+---
+
+## Business registries and beneficial ownership
+
+ID: `beneficial-ownership`
+Domains: Government, Business Operations
+URL: https://usecaselab.org/idea/beneficial-ownership
+
+### Problem
+
+Verifying a company's registration, licensing status, or true ownership requires navigating multiple disconnected databases — and existing beneficial ownership registries rely on self-reported filings with no verification mechanism, allowing shell company structures to hide the real owners of assets across jurisdictions. This structural opacity is systematically exploited for money laundering, sanctions evasion, and tax fraud.
+
+### Solution
+
+Cryptographically attested business registration and beneficial ownership records that chain legal entities to verified ultimate owners across jurisdictions — enabling instant verification for regulators, banks, and counterparties without relying on self-filed declarations or bilateral data-sharing between registries.
+
+### Why Ethereum
+
+Ownership registries today sit inside individual governments, so verification across borders depends on slow cooperation and a registry can be pressured to obscure who really controls an asset. A neutral onchain register lets banks, regulators, and counterparties check signed ownership attestations directly, without trusting any one jurisdiction to keep its records honest or to share them.
+
+---
+
+## Budget execution tracking
+
+ID: `budget-execution-tracking`
+Domains: Government
+URL: https://usecaselab.org/idea/budget-execution-tracking
+
+### Problem
+
+Public funds flow through opaque, fragmented databases between appropriation and expenditure, making it nearly impossible for citizens or auditors to trace how tax revenue is actually spent.
+
+### Solution
+
+Real-time tracking of public funds from appropriation to expenditure
+
+### Why Ethereum
+
+When the government keeps its own spending records, the body being audited also controls the records, and it can present a partial picture or revise entries before anyone outside sees them. Recording appropriations and expenditures onchain puts the trail where citizens and auditors can follow it directly, without depending on the agency's cooperation to confirm where tax revenue went.
+
+---
+
+## Business formation and licensing
+
+ID: `business-formation-licensing`
+Domains: Government, Business Operations
+URL: https://usecaselab.org/idea/business-formation-licensing
+
+### Problem
+
+Starting a business in most jurisdictions means coordinating with four to six separate agencies: the secretary of state for the entity, the IRS for an EIN, the state revenue department for sales-tax registration, the local government for a business license, and often a regulator for industry-specific licensing. Each has its own form, its own processing window, and its own way of communicating status. A founder waits weeks for paperwork that any of the agencies could in principle confirm in seconds, and any later proof to a bank, payment processor, or platform that the entity exists in good standing means going back to each issuer for a new certificate.
+
+### Solution
+
+A coordinated workflow where each agency issues its piece (incorporation, EIN, license, sales-tax registration) as a verifiable credential the founder holds, with signoffs anchored against issuer signing keys onchain. The founder reuses the same credential bundle to open a bank account, sign up with a processor, or apply for a contract, and a counterparty checks each piece against the issuing agency directly without that agency needing to operate a real-time lookup service.
+
+### Why Ethereum
+
+When business credentials are scattered across agency portals and paper certificates, anyone who needs to verify a founder's standing depends on whichever agency happens to have a working API or a willing clerk. Issuing the credentials onchain against state and federal signing keys lets the founder present them anywhere, and a bank or counterparty checks the actual issuer's signature rather than a vendor's claim about what the agency says.
+
+---
+
+## Cap tables
+
+ID: `cap-tables`
+Domains: Business Operations
+URL: https://usecaselab.org/idea/cap-tables
+
+### Problem
+
+Startup cap tables live in expensive, siloed platforms like Carta where ownership records can fall out of sync, transfers require manual legal work, and founders have no real-time, verifiable source of truth.
+
+### Solution
+
+A startup's cap table kept as an onchain record from incorporation onward, with issuance, vesting, and transfers written to it as they happen. Founders, investors, and employees read the same source of truth directly, and a transfer updates the record rather than requiring separate legal work to reconcile the official version later.
+
+### Why Ethereum
+
+When a cap table lives on a vendor's platform, founders and investors depend on that company to keep the record accurate, grant access, and not change its terms or pricing, and the official version can quietly diverge from what shareholders believe they hold. Recording ownership onchain gives every party the same signed record, verifiable directly and not held hostage to one provider.
+
+---
+
+## Carbon and biodiversity credit markets
+
+ID: `carbon-biodiversity-credits`
+Domains: Environment, Finance
+URL: https://usecaselab.org/idea/carbon-biodiversity-credits
+
+### Problem
+
+Carbon credits and biodiversity offsets are traded as undifferentiated commodities despite vast differences in methodology and verification rigor, allowing low-quality credits to crowd out legitimate ones. Forests, watersheds, and biodiversity also lack liquid market representations.
+
+### Solution
+
+Differentiated environmental asset classes with onchain provenance, methodology metadata, and verification quality — enabling transparent pricing of ecological assets and markets that reward genuine impact.
+
+### Why Ethereum
+
+Credit quality today depends on rating agencies and registries whose judgments are opaque and whose business depends on the issuers they assess, so buyers cannot independently tell a rigorous credit from a weak one. Attaching provenance and methodology to each credit onchain lets buyers check quality themselves and makes double-counting visible to anyone, not just the registry.
+
+---
+
+## City climate commitment tracking
+
+ID: `city-climate-commitment-tracking`
+Domains: Government, Environment
+URL: https://usecaselab.org/idea/city-climate-commitment-tracking
+
+### Problem
+
+Coalitions like C40 Cities and the Global Covenant of Mayors have enrolled hundreds of cities in public emissions reduction pledges — but compliance tracking relies on self-reported data submitted to central secretariats, with no neutral mechanism for member cities or the public to verify whether commitments are being met or to detect when cities quietly abandon targets.
+
+### Solution
+
+An onchain record where city governments record verified emissions data, policy milestones, and adaptation measures — with attestations from IoT sensor networks, third-party auditors, and satellite monitoring — creating a publicly auditable record that any city, funder, or citizen can inspect.
+
+### Why Ethereum
+
+When a coalition secretariat holds the only record of who pledged what, member cities can quietly walk back targets and the body tracking compliance has its own reason to report progress favorably. Logging commitments and attested data onchain where no single member or secretariat controls lets any city, funder, or citizen check the record directly, and a city cannot rewrite its own history after the fact.
+
+---
+
+## Civil registry and vital records
+
+ID: `civil-registry-records`
+Domains: Government
+URL: https://usecaselab.org/idea/civil-registry-records
+
+### Problem
+
+Birth, death, marriage, and residency records sit in siloed, often paper-based systems that vary by jurisdiction. Records are vulnerable to loss, hard to reconcile when someone moves or a local office changes hands, and a citizen usually cannot get a verifiable copy without going back to the issuing office.
+
+### Solution
+
+Civil registry records issued and maintained in an interoperable, verifiable format, so a birth or marriage record can be checked by any authorized party and carried across jurisdictions. The record survives the loss of a local office's files and does not have to be reissued from scratch each time it is needed.
+
+### Why Ethereum
+
+A civil registry held by one office or one vendor depends entirely on that operator to keep it intact, grant access, and stay in business, and records can be lost, altered, or made inaccessible when administrations change. Anchoring the registry onchain keeps each record verifiable independent of the office that issued it, so a citizen's vital records do not vanish with a server or a change in government.
+
+---
+
+## Commercial-use licensing for open source
+
+ID: `commercial-use-licensing`
+Domains: Business Operations, Finance
+URL: https://usecaselab.org/idea/commercial-use-licensing
+
+### Problem
+
+A maintainer is fine with their library being free for individuals, students, and research, and would prefer commercial users that integrate it into paid products to pay a license fee. The current options are bad: keep the license fully permissive and watch a vendor charge six figures for a hosted version of the work, relicense to AGPL and accept a fight with every commercial user, or move to a source-available license and accept the cost of policing it. None of these scale to a single maintainer with a day job.
+
+### Solution
+
+A dual-licensing model where commercial use is gated by an onchain license token. The maintainer publishes the terms, commercial users acquire the token by paying a fee that flows directly to the project's address, and the build or runtime checks the presence of a valid license tied to the user's identity. Compliance is cheaper than litigation, the maintainer does not need a legal department, and individual or non-commercial use stays untouched.
+
+### Why Ethereum
+
+License enforcement at the scale of an indie maintainer fails because the cost of detecting non-compliance and the cost of pursuing it are both higher than the license fee. Issuing license tokens onchain, with a public price and a verifiable record of who holds one, shifts the work from enforcement to verification: any party in the supply chain can check whether a commercial deployment holds a current license, and the maintainer collects the fee without negotiating individually with each vendor.
+
+---
+
+## Community currencies
+
+ID: `community-currencies`
+Domains: Finance, Civil Society
+URL: https://usecaselab.org/idea/community-currencies
+
+### Problem
+
+Local economies leak spending to global platforms and distant supply chains, and communities that want to circulate a local currency lack reliable infrastructure to issue, govern, and settle it at meaningful scale.
+
+### Solution
+
+Place- or network-specific currencies used by defined communities (cities, cooperatives, regions) to keep spending local, incentivize participation, and fund public goods rather than leaking value to external markets
+
+### Why Ethereum
+
+When a community currency runs on a vendor's platform, the provider can freeze balances or shut the system down, leaving the local economy dependent on decisions the community does not control. Building it onchain keeps the currency's rules and record with the community that governs them, where anyone can audit the system and it keeps working regardless of any single company.
+
+---
+
+## Community space revenue and allocation
+
+ID: `community-space-allocation`
+Domains: Government, Civil Society
+URL: https://usecaselab.org/idea/community-space-allocation
+
+### Problem
+
+Revenue from commercial use of public spaces — parks, plazas, community halls — flows into general municipal budgets where residents can't see how much their neighborhood's spaces generated or how those funds were spent. Allocation decisions happen in opaque committee processes with no audit trail, and community groups that maintain or improve a space have no formal mechanism to influence how it's governed.
+
+### Solution
+
+A transparent treasury for each community space where commercial booking revenue is publicly tracked and spending decisions are made through participatory governance by verified local residents — creating a direct feedback loop between a space's economic activity and its neighborhood's investment priorities.
+
+### Why Ethereum
+
+When booking revenue flows into a general municipal budget, residents lose sight of what their neighborhood's spaces earned and how it was spent, and allocation happens in committee rooms with no record they can check. A treasury onchain makes every payment and disbursement publicly auditable, so the people who use and maintain a space can see and govern the money it generates.
+
+---
+
+## Construction permits for housing
+
+ID: `construction-permits-housing`
+Domains: Government, Real Estate & Housing
+URL: https://usecaselab.org/idea/construction-permits-housing
+
+### Problem
+
+A residential construction project, whether it is adding units, building an accessory dwelling, or redeveloping a lot, passes through a sequence of agency signoffs (planning, zoning, building, fire, environmental, sometimes utilities) where each step can take weeks or months and the applicant has no real-time view of which desk the file currently sits on. The delays and discretion at each stage feed the housing-supply gap that drives affordability problems in many cities, and applicants without political access tend to wait longer or get steered through more requirements than connected developers.
+
+### Solution
+
+A permit case file recorded onchain from submission through final sign-off, with each agency review, inspection result, and decision rationale logged as it happens. The applicant sees where the permit sits in real time, the public can compare which projects move quickly and which stall, and deviations from the standard timeline or procedure surface against a shared baseline rather than hiding inside one office's filing system.
+
+### Why Ethereum
+
+When permit timelines and decisions live inside agency systems, the same officials whose discretion the public is meant to check also control the record of how that discretion was exercised, and an applicant or a journalist has no independent way to see where in the chain a project is stuck or why. Anchoring the case file onchain keeps the timeline and the signoffs auditable by anyone, so a city's commitment to predictable permitting becomes visible rather than something residents have to take on trust.
+
+---
+
+## Content authenticity proofs
+
+ID: `content-authenticity-proofs`
+Domains: Media
+URL: https://usecaselab.org/idea/content-authenticity-proofs
+
+### Problem
+
+Digital media is trivially fakeable. A photo, video, or document circulating online has no widespread way to be checked against the source it claims, and the same authoring tools that produce convincing media also produce convincing fakes. Newsrooms whose footage is doctored, creators whose work is plagiarized or attributed to someone else, and viewers trying to figure out what is real all face the same problem with no shared answer.
+
+### Solution
+
+Media signed at the point of capture and through each subsequent edit, building an authenticity chain anyone can check. A photo, video, or document carries a verifiable trail back to the device or person that produced it, edits register against that record, and a fabrication shows up against the original signed content rather than competing with it on visual plausibility alone.
+
+### Why Ethereum
+
+An authenticity record only works if people who distrust each other can check it independently, and a registry run by one platform or government can be pressured to revoke signatures or favor certain sources. Recording the authenticity chain onchain keeps the history of who signed what verifiable by anyone, without the hosting platform having to cooperate or stay neutral.
+
+---
+
+## Content moderation
+
+ID: `content-moderation`
+Domains: Civil Society, Media
+URL: https://usecaselab.org/idea/content-moderation
+
+### Problem
+
+Social platforms rely on centralized moderation teams and opaque algorithms to decide what is spam, manipulation, or harmful — systems that don't scale, lack accountability, and are trivially captured by political pressure. Reputation-weighted community moderation and verified-human signals exist as concepts but have no neutral infrastructure to run on that any platform could adopt.
+
+### Solution
+
+Modular moderation infrastructure combining community-written notes on contested content, reputation-weighted flagging where established accounts carry more signal, and stake-based curation where moderators put tokens at risk on their judgments — all running onchain so any platform can read them without building its own moderation stack from scratch.
+
+### Why Ethereum
+
+When moderation lives inside a single platform, that company alone decides what gets suppressed, and the system is easily captured by political pressure aimed at one chokepoint. Running reputation, stake records, and community notes onchain keeps the moderation signal outside any one company's control, so any platform can read the same signal and the rules behind it are inspectable and forkable by users.
+
+---
+
+## Cooperative and local marketplaces
+
+ID: `cooperative-and-local-marketplaces`
+Domains: Commerce, Food & Agriculture
+URL: https://usecaselab.org/idea/cooperative-and-local-marketplaces
+
+### Problem
+
+Small producers selling through conventional distribution channels lose most of their margin to intermediaries, while consumers who want to buy local have no transparent, community-governed platform to connect with them directly.
+
+### Solution
+
+Community-owned platforms that let producers sell directly and keep more economic value within local food systems
+
+### Why Ethereum
+
+A conventional marketplace operator sets the fees, owns the reviews and customer relationships, and can suspend a producer or change the rules, leaving small sellers dependent on a platform whose interests differ from theirs. A neutral marketplace layer no single company controls lets producers participate without lock-in and keep their reputation and customer ties as something they own.
+
+---
+
+## Cooperative lending and liquidity pools
+
+ID: `cooperative-lending-pools`
+Domains: Finance, Civil Society
+URL: https://usecaselab.org/idea/cooperative-lending-pools
+
+### Problem
+
+Small businesses, cooperatives, and credit unions lack mechanisms to pool reserves and share liquidity risk without expensive legacy banking infrastructure, forcing each member to maintain costly individual cash buffers.
+
+### Solution
+
+Blockchain-based cooperative finance that lets members pool capital, share liquidity, and access credit from one another — governed transparently and auditable by all participants.
+
+### Why Ethereum
+
+Pooling reserves through a bank or platform means an intermediary holds the pooled funds, sets the terms of access, and can freeze the pool or close it, while members have to trust its accounting. Running the pool onchain keeps the capital and its rules with the members who contributed it, and gives every participant an audit trail they can check themselves.
+
+---
+
+## Direct creator storefronts with programmable revenue splits
+
+ID: `creator-storefronts`
+Domains: Commerce
+URL: https://usecaselab.org/idea/creator-storefronts
+
+### Problem
+
+A musician selling merchandise, a Substack writer selling a course, and an artist selling prints each route payments through 2–4 intermediary platforms that take 10–30% combined, add delays before creators can access funds, and give the creator no way to automatically share revenue with collaborators, producers, or the fans who helped grow their audience.
+
+### Solution
+
+Direct storefronts where revenue splits among collaborators, co-creators, and communities execute automatically at the moment of purchase — with instant settlement, programmable royalty flows, and no platform intermediary taking a cut of every transaction.
+
+### Why Ethereum
+
+When a storefront platform sits between a creator and their buyers, it sets the fees, holds the funds before releasing them, and can suspend the account or change the split at will. Building onchain keeps the storefront's payment logic and revenue terms in the creator's hands, where collaborators are paid by rules no operator can quietly rewrite.
+
+---
+
+## Credit scoring from off-chain financial history
+
+ID: `credit-scoring`
+Domains: Finance
+URL: https://usecaselab.org/idea/credit-scoring
+
+### Problem
+
+Hundreds of millions of people are creditworthy — they pay rent on time, maintain savings, and run profitable small businesses — but are invisible to formal lenders because their financial history lives in bank apps, rental platforms, and payroll systems that lenders can't access without the borrower surrendering raw account credentials.
+
+### Solution
+
+zkTLS-based credit assessments where borrowers prove specific financial claims — 12 months of on-time rent payments, a salary above a threshold, a business revenue history — directly from source platforms without sharing login credentials, giving lenders verifiable underwriting data for borrowers who lack formal credit files.
+
+### Why Ethereum
+
+A data aggregator standing between borrowers and lenders collects raw account credentials and financial history into one store that becomes a surveillance point and a breach target. Building this with zero-knowledge proofs onchain lets a borrower prove a specific claim, like a year of on-time rent, without handing over the underlying account, and keeps the check from being logged by a company in the middle.
+
+---
+
+## Cross-border payroll and contractor payments
+
+ID: `cross-border-payroll`
+Domains: Business Operations
+URL: https://usecaselab.org/idea/cross-border-payroll
+
+### Problem
+
+Cross-border payroll and contractor payments route through multiple intermediaries, taking days to settle with high fees, while tax reporting and compliance for global teams remain a manual reconciliation nightmare.
+
+### Solution
+
+Payroll and contractor payments settled directly to workers onchain instead of routed through a chain of correspondent banks. The employer keeps control of the schedule and the funds, payouts arrive in minutes rather than days, and tax and KYC reporting is generated from the payment record instead of reconciled by hand across jurisdictions.
+
+### Why Ethereum
+
+Cross-border payroll routed through correspondent banks means each intermediary can delay, take a cut, or block a payment to a worker in a sanctioned-adjacent region, and the employer cannot see where money stalls. Running payouts onchain keeps the schedule and the funds under the employer's control and settles directly to workers without a chain of banks deciding whether the payment goes through.
+
+---
+
+## Curation markets
+
+ID: `curation-markets`
+Domains: Media
+URL: https://usecaselab.org/idea/curation-markets
+
+### Problem
+
+Deciding what deserves attention, which research is worth reading, which products are worth buying, which emerging work is worth following, is done for free by people who carry the cost of being early and wrong and capture none of the value when they turn out to be right. The systems that aggregate those judgments are platform recommender engines that rank by undisclosed rules, or review and ratings systems that are cheap to game because a fake recommendation costs the recommender nothing. The people best placed to surface quality have no economic stake in their own accuracy.
+
+### Solution
+
+Curation markets let a person stake reputation or capital on a recommendation, earn a share when the pick is later borne out, and lose stake when it is not. Smart contracts settle payouts against a measurable outcome agreed in advance, such as audience growth, sales, citations, or downstream curation, and each curator builds a public track record tied to their address. The same primitive covers prediction markets on whether a piece of work will succeed and reputation-weighted feeds where curators with the strongest history surface higher. Because a wrong call costs the curator real stake, the signal is harder to fake than a free rating.
+
+### Why Ethereum
+
+A curation market works only if the payout rules cannot be quietly rewritten by whoever hosts it, and only if a curator can carry their track record with them when a better venue appears. Settling stakes, attribution, and payouts onchain makes the incentive structure legible to everyone taking part and keeps each curator's history portable across whatever discovery surfaces emerge. A platform-owned recommender can be switched off or retuned without notice; an open curation market keeps running as long as its contracts and its participants do.
+
+---
+
+## Customs records across borders
+
+ID: `customs-records`
+Domains: Logistics & Trade
+URL: https://usecaselab.org/idea/customs-records
+
+### Problem
+
+Cross-border shipments are delayed at customs because each agency keeps clearance documents and compliance status in its own proprietary database, with no real-time view that the agencies on either side of a border can both read.
+
+### Solution
+
+Customs documents and compliance status anchored onchain as commitments, with the documents themselves held off-chain and checked against onchain merkle proofs. An agency on either side of a border verifies a shipment's clearance and tariff status against the same attestations instead of re-requesting paperwork, so clearance is not held up waiting for one party to confirm what another has already verified.
+
+### Why Ethereum
+
+A centralized customs system run by one vendor or one government puts a single operator in control of clearance for everyone, able to set access terms, see every shipment, or cut off a jurisdiction it disagrees with. Building it on neutral rails means no participating agency controls the system, and each can verify compliance status directly rather than trusting another party's database.
+
+---
+
+## Data assets
+
+ID: `data-assets`
+Domains: AI, Commerce
+URL: https://usecaselab.org/idea/data-assets
+
+### Problem
+
+Valuable datasets have no standard way to be priced, packaged, or traded. Whether it is satellite imagery, industrial sensor telemetry, de-identified clinical records, or proprietary market data, the dataset changes hands through opaque brokers and bespoke NDA-driven deals where a buyer cannot verify quality or provenance. It cannot be combined with other datasets or posted as collateral the way a financial asset can.
+
+### Solution
+
+Datasets represented as onchain assets with licensing, metering, and revenue-split terms attached. They can be priced individually, combined into derived datasets (for example, a satellite feed merged with weather sensor data to produce a crop-yield estimate), traded, or used as collateral. Usage is recorded against the asset itself, so a data producer is paid by rules a buyer or broker cannot quietly revise.
+
+### Why Ethereum
+
+A data broker reports usage on its own, sets the prices, and can favor buyers it has relationships with, leaving data producers no way to check whether the royalties they receive match what was actually consumed. Representing data as an onchain asset keeps licensing terms and usage records verifiable by both sides, so producers are paid by rules the broker cannot quietly revise.
+
+---
+
+## Dataset provenance and reuse tracking
+
+ID: `dataset-provenance-reuse-tracking`
+Domains: Science
+URL: https://usecaselab.org/idea/dataset-provenance-reuse-tracking
+
+### Problem
+
+Researchers who create high-quality datasets — curating, cleaning, and annotating data that takes months of work — receive almost no academic credit when other researchers use their data, because there's no reliable mechanism to track dataset reuse across papers and institutions. Simultaneously, researchers who want to build on prior work often can't verify whether a dataset has been altered since publication or confirm they're working with the same version that produced the original findings.
+
+### Solution
+
+A registry where published datasets are cryptographically fingerprinted at the time of deposit, with every subsequent access and citation recorded — so dataset creators receive verifiable credit proportional to actual reuse, and downstream researchers can confirm they're working with an unaltered version of the original data.
+
+### Why Ethereum
+
+A reuse registry held by one repository or publisher leaves dataset creators dependent on that operator to count citations fairly and keep serving the records, and it offers no independent way to confirm a dataset is unchanged. Fingerprinting data and recording access onchain keeps the citation trail outside any single operator's control and lets downstream researchers verify integrity themselves.
+
+---
+
+## Data integrity for decentralized clinical trials
+
+ID: `decentralized-clinical-trials`
+Domains: Health, Science
+URL: https://usecaselab.org/idea/decentralized-clinical-trials
+
+### Problem
+
+Decentralized clinical trials let patients participate from home using wearables, symptom-reporting apps, and telemedicine, which means data is collected across hundreds of patient devices rather than at monitored investigator sites. That makes it harder for sponsors and regulators to be confident that electronic source data has not been altered, that consent was properly obtained, and that the chain of custody from device to database is intact.
+
+### Solution
+
+Each sensor reading, patient-reported outcome, and consent signature is hashed and timestamped at the moment it is captured. That creates an audit trail showing the data has not been changed since collection, giving monitors, sponsors, and regulators confidence in source data integrity without depending on physical site visits.
+
+### Why Ethereum
+
+When trial data lives in a sponsor-controlled database, the party with the most to gain from a positive result also holds the ability to alter source records, and regulators have to take the chain of custody on trust. Committing each reading and consent signature onchain at the moment of capture keeps the record verifiable by monitors and regulators without depending on the sponsor's cooperation.
+
+---
+
+## Decision markets for corporate governance
+
+ID: `decision-markets-corporate-governance`
+Domains: Business Operations
+URL: https://usecaselab.org/idea/decision-markets-corporate-governance
+
+### Problem
+
+Corporate decisions — which strategy to pursue, whether to hire or fire an executive, which product to prioritize — are made through a combination of politics, hierarchy, and intuition rather than mechanisms that aggregate genuine beliefs of those closest to the work. Board votes and management sign-off concentrate decision-making power in ways that reward confidence and seniority over accuracy, with no feedback loop that punishes bad predictions or rewards good ones. Organizations systematically act on what's good for those in power rather than what's good for the organization.
+
+### Solution
+
+Conditional prediction markets tied to company-specific metrics — share price, TVL, revenue, retention — where any proposal generates two parallel markets: expected metric outcome if it passes, and if it fails. The proposal executes if markets predict a positive impact. Participants with genuine information have financial incentive to trade accurately. Early implementations include Butter Markets (used in Optimism's grant allocation experiments) and MetaDAO, which has run 96+ proposals for 14 organizations using this mechanism.
+
+### Why Ethereum
+
+If the decision market runs on infrastructure that management controls, the people whose power the mechanism is meant to check can pause it, adjust how trades settle, or ignore a signal they dislike, which returns the decision to politics and seniority. Building it onchain keeps the market's rules and the link between its signal and the outcome verifiable by every participant, outside any single executive's reach.
+
+---
+
+## Delivery-triggered payments
+
+ID: `delivery-triggered-payments`
+Domains: Logistics & Trade
+URL: https://usecaselab.org/idea/delivery-triggered-payments
+
+### Problem
+
+Suppliers and freight carriers wait weeks for payment after goods are delivered because reconciliation between shipping documents, invoices, and proof of delivery is manual, while carriers lack verifiable proof-of-location or proof-of-condition to trigger automatic settlement.
+
+### Solution
+
+Conditional release of funds tied to oracle-verified delivery events, proof-of-location, and proof-of-condition, automating settlement for both goods delivery and freight logistics
+
+### Why Ethereum
+
+When a buyer or a platform controls the system that decides when delivery counts as proven, the party that owes money also controls the trigger for paying it, and carriers wait while reconciliation drags. Building settlement onchain keeps the release conditions and the delivery record verifiable by both sides, so payment follows agreed proof rather than the payer's discretion.
+
+---
+
+## Dependency-graph funding
+
+ID: `dependency-graph-funding`
+Domains: Business Operations, Civil Society
+URL: https://usecaselab.org/idea/dependency-graph-funding
+
+### Problem
+
+A maintainer whose library is depended on by thousands of downstream projects sees none of the economic value those projects generate. When a downstream company sponsors a project, the money stops at the top-level library and rarely reaches the upstream dependencies that project quietly relies on. The deepest layers of the stack, the cryptography libraries and parsers and build tools, are also the most under-resourced, because gratitude does not propagate down the import graph the way usage does.
+
+### Solution
+
+Funding contracts that fan an incoming sponsorship or revenue share across the dependency tree, weighted by usage proofs derived from package manifests and build artifacts. A downstream project receiving a grant or commercial revenue routes a configurable portion through the contract, which splits it among direct and transitive dependencies according to a rule the project's maintainers publish. Support reaches the layers it should without each upstream maintainer having to chase it manually.
+
+### Why Ethereum
+
+Routing money through a dependency graph requires every participant to agree on the same set of weights and the same set of recipient addresses, and to be confident that the routing logic cannot be quietly altered between deposit and payout. Settling the splits onchain, against a usage graph anyone can audit, lets a downstream maintainer commit to funding upstream work in a way her sponsors and her dependencies can both verify, without putting a foundation in the middle to mediate the relationship.
+
+---
+
+## Digital product passports
+
+ID: `digital-product-passports`
+Domains: Environment, Logistics & Trade
+URL: https://usecaselab.org/idea/digital-product-passports
+
+### Problem
+
+The EU's Ecodesign for Sustainable Products Regulation (ESPR) mandates digital product passports for most goods sold in Europe by 2030 — but no neutral infrastructure exists for brands, recyclers, and regulators across supply chains to read and write to a common product record. Without it, origin and certification claims rely on paper trails that can be forged at every handoff, recycled materials lose their provenance once they re-enter supply chains, and secondhand buyers have no trustworthy way to verify repair history or remaining lifecycle value.
+
+### Solution
+
+Append-only product records that persist through every ownership transfer and material handoff — tracking origin, certifications, condition, repair history, and end-of-life status in a format any manufacturer, recycler, regulator, or secondhand buyer can read, satisfying ESPR requirements while making circular economy claims cryptographically verifiable rather than self-reported.
+
+### Why Ethereum
+
+If one company or industry body runs the product passport registry, it can shape what claims appear, revoke records, and gate which brands or recyclers may read and write. Keeping the product record on neutral rails means no single operator owns the history, so manufacturers, regulators, recyclers, and secondhand buyers can all verify origin and certification claims for themselves.
+
+---
+
+## Digital vehicle passports
+
+ID: `digital-vehicle-passports`
+Domains: Logistics & Trade
+URL: https://usecaselab.org/idea/digital-vehicle-passports
+
+### Problem
+
+A vehicle's full history — manufacturing specs, ownership transfers, lien status, accident damage, and maintenance — is scattered across dealer records, insurance databases, and government registries that do not communicate, making title fraud and odometer rollback easy.
+
+### Solution
+
+End-to-end records covering manufacturing, ownership, liens, maintenance, accidents, and recycling — serving as both lifecycle passport and verifiable title
+
+### Why Ethereum
+
+A vehicle history service run by one company controls which records are shown, can be pressured to omit damage a dealer wants hidden, and leaves a buyer trusting a database they cannot inspect. Recording the lifecycle onchain keeps the chain of ownership and maintenance verifiable by anyone, so title fraud and odometer rollback show up against a record no single operator can quietly edit.
+
+---
+
+## Direct cash transfers and basic income distribution
+
+ID: `direct-cash-transfer-programs`
+Domains: Civil Society, Government
+URL: https://usecaselab.org/idea/direct-cash-transfer-programs
+
+### Problem
+
+Billions of people without bank accounts cannot receive aid efficiently because traditional transfer systems depend on banking infrastructure and charge high fees through multiple intermediaries. Administering recurring universal basic income payments at scale adds a second layer of overhead: heavy bureaucratic processes for identity verification, eligibility checks, and distribution make such programs expensive to run and slow to reach recipients.
+
+### Solution
+
+Digital wallet-based transfer infrastructure that reaches unbanked populations directly at minimal cost — supporting both targeted aid disbursements and recurring automated payments, using decentralized identity and smart contracts to handle eligibility verification without centralized administrative overhead.
+
+### Why Ethereum
+
+When aid moves through banks and payment processors, those intermediaries take fees, decide who is allowed to receive funds, and can freeze or block transfers, leaving recipients dependent on institutions that may not serve them. Building distribution onchain lets funds reach anyone with a mobile wallet directly, and keeps the payment from being gated by a company or bank that can turn it off.
+
+---
+
+## Dispute resolution for contracts and freelance agreements
+
+ID: `dispute-resolution`
+Domains: Business Operations
+URL: https://usecaselab.org/idea/dispute-resolution
+
+### Problem
+
+Resolving disputes in B2B contracts and freelance agreements requires expensive, slow litigation or arbitrary platform support teams that apply opaque rules — pricing out individuals and small businesses from meaningful access to justice and leaving the outcome entirely in the hands of a platform that has its own interests.
+
+### Solution
+
+Decentralized arbitration mechanisms where specialized juror pools evaluate disputes using standardized evidence and structured deliberation — with jurors staking tokens on verdicts, outcomes enforced automatically via smart contract, and no ability for a losing party to delay compliance.
+
+### Why Ethereum
+
+When a platform resolves disputes among its own users, it applies rules it does not publish and reaches outcomes that serve its own interests, leaving the parties no way to check the process. Building arbitration onchain keeps the juror rules and the record of each verdict verifiable by both sides, so the outcome does not depend on trusting a support team that answers to the platform.
+
+---
+
+## Dynamic expense approvals
+
+ID: `dynamic-expense-approvals`
+Domains: Business Operations
+URL: https://usecaselab.org/idea/dynamic-expense-approvals
+
+### Problem
+
+Expense approval runs on static workflows in an ERP or expense tool: fixed dollar thresholds and fixed approver chains. The rule cannot tell whether a department is already over budget, whether the company's cash position has tightened, who is asking, or what the money is for. Companies end up either routing everything through finance, which is slow, or setting limits loose enough to be risky.
+
+### Solution
+
+Expense approvals where the rule is evaluated for each request against live inputs rather than read from a fixed table. The approval can depend on the requester's role and seniority, the department's remaining budget, the company's current cash position, the vendor and spend category, and oracle-fed external conditions. A recurring renewal under budget clears on its own, a new vendor or a purchase that pushes a team over its quarter is routed for review, and spending can tighten automatically when runway falls below a set level.
+
+### Why Ethereum
+
+An approval rule that reads the company's finances and outside conditions only works if those inputs cannot be quietly edited by whoever wants the payment to clear. Running the rule in the account itself, against onchain balances and oracle feeds, makes both the policy and the inputs it judges against inspectable, so a dynamic approval is something the organization can audit rather than a black box inside an expense tool.
+
+---
+
+## Earnouts and contingent payments
+
+ID: `earnouts-contingent-payments`
+Domains: Business Operations
+URL: https://usecaselab.org/idea/earnouts-contingent-payments
+
+### Problem
+
+In a lot of deals, part of the price is paid later, contingent on something happening: an M&A earnout tied to post-close revenue or EBITDA, a milestone holdback released on a regulatory approval or a key hire, a contingent value right that pays out if a clinical trial succeeds, an escrowed indemnity released on a future date. Once the deal closes, the party that owes the contingent payment usually controls the books, the operations, and the timing decisions that determine whether the trigger ever fires. The other side either trusts that accounting or litigates after the fact, and disputes over contingent payments are a common source of post-close conflict.
+
+### Solution
+
+A structure where contingent consideration is escrowed onchain and released according to a pre-agreed payout rule. The rule is tied to an objective metric verified by an agreed source, such as an auditor, payment rail, signed API record, platform usage feed, regulatory milestone, or other third-party attestation. Both sides can see the same rule, the same verification source, and the same payout conditions before closing.
+
+### Why Ethereum
+
+This is useful when the contingent payment depends on a metric both sides can define in advance and verify independently. Instead of leaving the payout entirely dependent on the paying party's later accounting, the parties can escrow funds, commit to a payout rule, and settle automatically when the agreed evidence is submitted. It does not eliminate the need for legal agreements or trusted data sources, but it does reduce post-close discretion, delay, and litigation leverage.
+
+---
+
+## Electronic Bill of Lading
+
+ID: `electronic-bill-of-lading`
+Domains: Logistics & Trade
+URL: https://usecaselab.org/idea/electronic-bill-of-lading
+
+### Problem
+
+The bill of lading, the single most important document in international shipping, still circulates as a paper original that must be physically couriered between parties, causing delays and fraud risk.
+
+### Solution
+
+Replacing paper document of title with NFT-like digital representation of title and transfer rights
+
+### Why Ethereum
+
+An electronic bill of lading run on one provider's platform makes that company the registry of who holds title, able to set access terms, see every trade, or freeze a transfer, and the whole trade lane depends on it staying available. Building it on neutral rails keeps the document of title as an asset the holder controls directly, transferable and verifiable without any single operator's permission.
+
+---
+
+## Continuous environmental measurement and verification
+
+ID: `environmental-measurement-and-verification`
+Domains: Environment
+URL: https://usecaselab.org/idea/environmental-measurement-and-verification
+
+### Problem
+
+Environmental claims — RECs, carbon intensity labels, ESG reports, biodiversity credits — rely on self-reported data with infrequent third-party audits, enabling double-counting and greenwashing. Biodiversity credits are especially vulnerable: a credit representing habitat that degraded a year after issuance looks identical to one representing thriving ecosystem, with no mechanism to flag or invalidate it when outcomes reverse.
+
+### Solution
+
+Continuous verification of environmental outcomes using IoT sensors, satellite imagery, acoustic monitoring, and remote sensing — with data logged onchain so that RECs, carbon credits, and biodiversity offsets carry cryptographic proof of their ongoing validity rather than depending on infrequent audits.
+
+### Why Ethereum
+
+Environmental claims today rest on data the issuer self-reports, and an auditor it pays can be dropped or pressured by the party it is supposed to check. Logging sensor and satellite data continuously onchain gives buyers and the public a measurement they can verify independently, and keeps a credit's record from being revised once an outcome reverses.
+
+---
+
+## Environmental-threshold enforcement
+
+ID: `environmental-threshold-enforcement`
+Domains: Government
+URL: https://usecaselab.org/idea/environmental-threshold-enforcement
+
+### Problem
+
+Environmental rules like emissions limits and air-quality thresholds are often clear, but acting on them still needs human sign-off at each step. By the time a restriction or fine is issued, the pollution it was meant to address has already happened. Enforcement reliably lags the events it is supposed to govern.
+
+### Solution
+
+Environmental rules and their triggers executed as smart contracts. When oracle-verified sensor readings cross a legal threshold, the consequence executes on its own, whether that is a traffic restriction during a pollution spike, a fine for an emissions breach, or a suspended permit. Enforcement keeps pace with the readings instead of waiting on a decision at each step.
+
+### Why Ethereum
+
+If the rules and their enforcement ran on a system one agency controlled, that agency could quietly change the logic or apply it selectively, favoring some polluters over others. Publishing the thresholds and their triggers onchain keeps them inspectable by anyone, so the public can confirm enforcement runs by the same rule it can read.
+
+---
+
+## Cross-network EV charging roaming settlement
+
+ID: `ev-charging-coordination`
+Domains: Utilities
+URL: https://usecaselab.org/idea/ev-charging-coordination
+
+### Problem
+
+When an EV driver charges on a network other than their home provider, the roaming transaction passes through bilateral settlement agreements between the charge point operator (CPO) and the eMobility service provider (eMSP) — each pair requiring a custom integration. In Europe alone there are 500+ CPOs and dozens of eMSPs, and the bilateral model means most roaming pairs simply don't exist, leaving drivers unable to charge on large portions of the network without creating new accounts.
+
+### Solution
+
+A neutral settlement layer where any CPO and any eMSP can clear roaming transactions without bilateral agreements — using standardized session records (kWh delivered, time, location, tariff) that both parties confirm onchain, with payment executing automatically at session close.
+
+### Why Ethereum
+
+If a single clearinghouse owned the roaming layer, it would decide which operators get to connect and could price its position as the chokepoint every charging session passes through. Settling sessions on neutral rails lets any operator and any provider clear with each other directly, and the rules of settlement are inspectable by all of them rather than set by one company.
+
+---
+
+## Event tickets with resale rights
+
+ID: `event-ticket-resale`
+Domains: Media
+URL: https://usecaselab.org/idea/event-ticket-resale
+
+### Problem
+
+Event ticketing is plagued by scalper bots, counterfeit tickets, and opaque resale markets where venues and artists lose control over pricing and capture none of the secondary-market value.
+
+### Solution
+
+Resalable access to events, concerts, and festivals
+
+### Why Ethereum
+
+A centralized ticket platform sits between fans and artists, sets the fees, runs an opaque resale market, and keeps the secondary value while venues lose control over their own pricing. Issuing tickets onchain keeps the resale rules and royalty splits with the venues and artists who set them, and lets fans verify a ticket is genuine without trusting whichever company happens to run the platform.
+
+---
+
+## Fan-funded media with governance rights
+
+ID: `fan-funded-media`
+Domains: Media
+URL: https://usecaselab.org/idea/fan-funded-media
+
+### Problem
+
+Independent filmmakers, musicians, and journalists must either sign away creative control or run crowdfunding campaigns on platforms that offer backers no governance rights, transparent fund allocation, or financial upside in the work's success.
+
+### Solution
+
+Onchain funding and governance for films, music, and journalism — where backers hold tokens that represent both financial participation and voting rights over creative decisions.
+
+### Why Ethereum
+
+A crowdfunding platform decides which projects are allowed to raise, what rights backers actually get, and whether promised payouts ever arrive, and it can change those terms or drop a project to manage its own risk. Building onchain keeps the funding terms and governance rights with the creators and backers, recorded where anyone can check them and no host can revoke them.
+
+---
+
+## Film and TV residual payments
+
+ID: `film-tv-residuals`
+Domains: Media
+URL: https://usecaselab.org/idea/film-tv-residuals
+
+### Problem
+
+When a film or show is reused, streamed in a new window, licensed to another territory, or rerun, the actors, writers, and directors are owed residuals. Those payments are calculated and disbursed by studios and distributors from their own records of where and how often a title ran. Performers cannot see the underlying usage data, residual statements arrive long after the exhibition they cover, and underpayment is common enough that the guilds run standing audit programs to recover it.
+
+### Solution
+
+Residual terms encoded against verified distribution and streaming data, so that when a title runs in a new window the payment owed to each rights holder is computed and released from the same usage record everyone can see. A performer gets a residual that follows the actual exhibition of their work rather than a statement they have to take on trust.
+
+### Why Ethereum
+
+The studio or distributor that owes residuals is also the only party that records where and how often a title ran, so performers audit blind and chase payments well after the fact. Settling residuals onchain against verified distribution data puts the usage record and the payment rule where the guild and the performer can verify them directly, so a residual does not depend on the payer's own accounting.
+
+---
+
+## Firearm licensing and registration
+
+ID: `firearm-licensing-registration`
+Domains: Government
+URL: https://usecaselab.org/idea/firearm-licensing-registration
+
+### Problem
+
+State firearm licensing (permit-to-purchase, FOID cards, concealed-carry permits) and state-level firearm registration sit in siloed, often paper-based systems that do not move with the holder across jurisdictions. A licensee crossing state lines, a transfer between residents of different states, or a buyer at a gun show in another state all run into systems that cannot verify each other's records, while federal law blocks the kind of centralized registry that would otherwise paper over the gap.
+
+### Solution
+
+Firearm licenses and registration records issued by states as verifiable credentials the holder carries, with selective disclosure so a check exposes only the specific fact in question, such as that a license is current and unrevoked. Verification anchors against the issuing state's signing key onchain, so a counterparty in another state can confirm a record without that state running a lookup service or anyone maintaining a federal database.
+
+### Why Ethereum
+
+A national firearm registry is politically blocked, and a single searchable database of who owns what could be queried, leaked, or weaponized. Issuing licenses and registration records as holder-controlled credentials, verifiable against state signing keys onchain, lets the system work across jurisdictions without any party maintaining the kind of central database the law forbids.
+
+---
+
+## Food provenance and traceability
+
+ID: `food-provenance-and-traceability`
+Domains: Food & Agriculture, Logistics & Trade
+URL: https://usecaselab.org/idea/food-provenance-and-traceability
+
+### Problem
+
+When a food safety recall is issued, tracing contaminated product back to the source takes days or weeks because lot IDs change at every handoff between grower, packer, distributor, and retailer — each maintaining their own disconnected records — meaning contaminated product stays on shelves while investigators manually reconstruct the chain.
+
+### Solution
+
+A common lot ID standard that persists immutably through every handoff in the supply chain — so when a retailer scans a product, they can trace it back to the specific farm field and harvest date in seconds, and a recall can be executed against a precise subset of product rather than pulling entire categories from shelves.
+
+### Why Ethereum
+
+A traceability platform run by one large retailer or distributor would let that operator decide who sees the chain and could quietly edit records that point back to its own suppliers. Recording each handoff onchain keeps the history outside any one company's control, so a recall can be traced and food fraud caught by anyone in the chain rather than only the host.
+
+---
+
+## Fund flows and disaster relief coordination
+
+ID: `fund-flows-disaster-relief`
+Domains: Civil Society
+URL: https://usecaselab.org/idea/fund-flows-disaster-relief
+
+### Problem
+
+Charitable donations, advocacy grants, and international aid flow through opaque intermediary chains where funds are lost to corruption, misallocation, or overhead — with donors unable to verify money reached its intended recipients. After disasters this compounds: dozens of NGOs and agencies respond simultaneously with no joint view of who received what, duplicating aid in accessible areas while remote communities get nothing.
+
+### Solution
+
+Onchain tracking of fund flows from donor to final recipient with real-time visibility and audit logs — combined with onchain coordination infrastructure for disaster response that lets all responding organizations see disbursements, supply distribution, and beneficiary verification in a single view.
+
+### Why Ethereum
+
+When aid flows through intermediaries that report on themselves, donors see only what each organization chooses to disclose, and no responding agency has a joint view to coordinate against. Recording disbursements onchain keeps the trail visible to donors and responders alike, so contributions can be followed to the recipient without trusting any single organization's books.
+
+---
+
+## Futarchy for public policy
+
+ID: `futarchy-public-policy`
+Domains: Government
+URL: https://usecaselab.org/idea/futarchy-public-policy
+
+### Problem
+
+Democratic systems are good at aggregating what citizens want but systematically bad at determining which policies will actually deliver it. Voters choose representatives based on stated intentions; representatives vote on bills based on lobbying, ideology, and coalition politics rather than evidence of likely impact. Expert panels and think tanks aggregate some information but lack skin in the game — a consultant who recommends a bad policy faces no financial consequence.
+
+### Solution
+
+A governance layer that separates the question of values (decided democratically: what should we optimize for?) from the question of means (decided by markets: which policy will best achieve it?). Elected representatives define a measurable welfare metric — GDP, life expectancy, emissions index — and conditional prediction markets determine which policies are expected to raise it. A policy becomes law only when market estimates clearly predict it will improve welfare relative to the status quo. Robin Hanson's original formulation ('vote on values, bet on beliefs') has been live-tested by MetaDAO for DAO governance and explored by at least one government health agency since 2024.
+
+### Why Ethereum
+
+If the market that decides policy ran on government-controlled infrastructure, the officials being judged could pause trading, exclude participants, or quietly discard a signal that went against them. Running the markets onchain keeps the prices and the welfare metric outside the control of the people they constrain, where any citizen can audit them and the mechanism keeps running without anyone's permission.
+
+---
+
+## Harvest pre-financing for smallholder farmers
+
+ID: `harvest-pre-financing`
+Domains: Food & Agriculture, Finance
+URL: https://usecaselab.org/idea/harvest-pre-financing
+
+### Problem
+
+A subsistence farmer who needs $300 to buy seeds and fertilizer at planting time has no collateral for a bank loan and no trading history with formal lenders — so they borrow from local moneylenders at 60–100% annual interest rates, or go without inputs and accept a lower yield, trapping them in a cycle where they can never accumulate enough surplus to escape the next season's dependency.
+
+### Solution
+
+Pre-harvest financing backed by tokenized future crop receipts — letting farmers collateralize their standing crop against verified planting data, weather feeds, and historical yield records, with repayment automatically deducted from the proceeds when the harvest is sold.
+
+### Why Ethereum
+
+When financing runs through a single lender or platform, that operator sets the terms, holds the records, and can cut a farmer off or change the rules with no recourse, much as local moneylenders already do. Running the crop receipts and repayment onchain lets any lender extend credit against the same verifiable collateral, and the loan terms stay legible to the farmer instead of locked inside one provider's system.
+
+---
+
+## Metering and paying home energy devices for grid flexibility
+
+ID: `home-energy-grid-flexibility`
+Domains: Utilities
+URL: https://usecaselab.org/idea/home-energy-grid-flexibility
+
+### Problem
+
+Home energy devices like batteries, smart thermostats, EV chargers, and water heaters can shift or reduce their load to help balance the grid, and utilities increasingly need that flexibility. There is no scalable way to meter what each individual device contributed and pay its owner for it. Every device runs a different protocol, and the contribution of any single home is too small for grid operators to track and settle on its own, so the flexibility goes uncompensated and underused.
+
+### Solution
+
+A settlement layer that meters the load reduction each device delivers, verifies it against the home's smart meter baseline, and pays the device owner automatically. By pooling many small contributions into one verifiable record, it makes it practical for aggregators to enroll millions of household devices and compensate each one for the flexibility it provides.
+
+### Why Ethereum
+
+An aggregator that meters device contributions and also pays for them reports on its own performance, and device owners have no independent way to confirm the demand reductions credited to them were measured honestly. Building the settlement layer onchain keeps the metering rules and the payment record verifiable by owners and regulators, so compensation does not rest on trusting the aggregator's books.
+
+---
+
+## Hyperstition markets
+
+ID: `hyperstition-markets`
+Domains: Civil Society
+URL: https://usecaselab.org/idea/hyperstition-markets
+
+### Problem
+
+Many valuable outcomes require enough people to act at once that no individual will move first. A new protocol reaching adoption, a local currency achieving network effects, a civic technology deployed across a city: each needs distributed, multi-actor commitment. Traditional crowdfunding pools money for a single project but cannot coordinate that kind of contribution, and prediction markets aggregate beliefs about what will happen without creating the conditions for it.
+
+### Solution
+
+Markets designed to coordinate an outcome rather than only forecast it. Buying YES stakes a participant financially in making the prediction come true, and the public price acts as a Schelling point: as more people buy YES, the rising price signals growing collective commitment and rewards the early believers who do the hard coordination work over late arrivals. The aim is to help an ecosystem tip, such as a new protocol reaching adoption or a civic technology getting deployed widely. Vitalik Buterin has flagged real manipulation risks here, including a 'hitman problem' where actors profit from causing bad outcomes and whale concentration that engineers a result rather than letting it emerge.
+
+### Why Ethereum
+
+A hyperstition market run by one company would leave that operator deciding who counts as a contributor, when the market resolves, and whether early believers actually get paid, which undercuts the coordination the market is meant to create. Running it onchain keeps the prices, the resolution rules, and the payouts outside any operator's hands, where participants can verify them and connect the market to other attestation systems without asking permission.
+
+---
+
+## Impact certificates with retroactive outcome verification
+
+ID: `impact-certificates`
+Domains: Civil Society
+URL: https://usecaselab.org/idea/impact-certificates
+
+### Problem
+
+Social-impact funders have no reliable way to verify that grant-funded programs delivered promised outcomes — a job training program reports 80% placement rates, but the funder has no independent mechanism to confirm these numbers, and the incentive structure rewards narrative over evidence because future grants depend on reported (not verified) impact.
+
+### Solution
+
+Tokenized impact certificates that represent verified outcomes — issued when an independent evaluator confirms results (e.g., verified job placements, measured emissions reductions, confirmed housing placements) — creating tradeable assets that retroactive funders can purchase to reward proven impact, aligning incentives so that programs that actually deliver attract more capital than programs that report well.
+
+### Why Ethereum
+
+If impact certificates lived on a platform owned by one funder or registry, that operator could decide which outcomes count and which funders are allowed to buy in, recreating the gatekeeping the model is meant to remove. Issuing them onchain keeps the certificates outside any single funder's control, so the same verified outcome can attract capital from many sources and anyone can check what a certificate represents.
+
+---
+
+## Informal land tenure formalization
+
+ID: `informal-land-tenure-formalization`
+Domains: Government, Real Estate & Housing
+URL: https://usecaselab.org/idea/informal-land-tenure-formalization
+
+### Problem
+
+In much of the developing world, the majority of land is held under customary or informal tenure with no formal title. Families have lived on, farmed, and built on land for generations under arrangements recognized locally but not in any registry that a bank, court, or buyer outside the community would accept. Without verifiable title, the holder cannot use the land as collateral, sell to a buyer outside the immediate community, or defend the claim in court if a more powerful party tries to take it. Hernando de Soto's estimate of the resulting "dead capital" runs into the trillions.
+
+### Solution
+
+Tenure records anchored against the actual chain of possession: witness attestations from neighbors, dated photos and surveys, signoffs from local authorities, rather than a court-issued title that does not exist. A community-recognized claim becomes a record a bank or counterparty outside the community can verify, without the holder having to retrofit a paper-title history that was never created.
+
+### Why Ethereum
+
+Land registries run by single governments or vendors in places without strong institutions are exactly where title fraud and land grabs happen, because the people in charge of the record are also the ones with reason to alter it. Anchoring tenure onchain keeps the record outside any one office's reach, so a family's claim does not depend on a particular government continuing to honor it, and a buyer or lender can verify provenance independent of the registry that issued it.
+
+---
+
+## Insurance claims adjudication
+
+ID: `insurance-claims-adjudication`
+Domains: Insurance
+URL: https://usecaselab.org/idea/insurance-claims-adjudication
+
+### Problem
+
+Insurance companies face hundreds of disputed claims monthly that don't fit automated processing rules — ambiguous coverage questions, contested damage assessments, conflicting evidence — and route them through traditional arbitration that takes 7–10 days, costs hundreds of dollars per case, and produces outcomes neither party finds credible.
+
+### Solution
+
+Specialized juror pools that evaluate disputed insurance claims using standardized evidence packages and structured deliberation protocols — with jurors staking tokens on their verdicts, outcomes determined by stake-weighted consensus, and payment executing automatically once adjudication is complete.
+
+### Why Ethereum
+
+When an insurer runs or hires the body that adjudicates its own disputed claims, the party with the conflict of interest controls the process, and the claimant has little way to know the deliberation was fair. Building adjudication onchain keeps the juror rules and the record of each verdict verifiable by both sides, so the outcome does not depend on trusting a panel the insurer can influence.
+
+---
+
+## Cross-party inventory verification and inventory-backed lending
+
+ID: `inventory-verification-lending`
+Domains: Logistics & Trade, Finance
+URL: https://usecaselab.org/idea/inventory-verification-lending
+
+### Problem
+
+Lenders offering inventory financing have no independent way to verify that pledged inventory actually exists, hasn't been double-pledged to another lender, and matches the borrower's representations — a $600B+ market plagued by warehouse receipt fraud (e.g., the Qingdao metals scandal where the same copper and aluminum were pledged to multiple banks simultaneously). The underlying issue is that inventory records across warehouses, suppliers, and retailers are maintained in disconnected systems with no single source of truth.
+
+### Solution
+
+Tokenized warehouse receipts linked to verified physical inventory — with each receipt representing a specific lot in a specific warehouse, ownership transferable onchain, and double-pledging detectable by any lender checking the onchain record before extending credit.
+
+### Why Ethereum
+
+A warehouse receipt system run by one operator leaves lenders trusting whoever maintains the database, and the Qingdao scandal showed how easily disconnected records hide the same inventory pledged many times. Putting receipts onchain gives every lender the same ownership record to check independently, so a receipt cannot be quietly handed to two parties and no one operator controls what the books say.
+
+---
+
+## Invoice and receivables financing
+
+ID: `invoice-receivables-financing`
+Domains: Finance, Logistics & Trade
+URL: https://usecaselab.org/idea/invoice-receivables-financing
+
+### Problem
+
+Small businesses and exporters wait 30-90 days for payment on legitimate invoices and receivables, while factoring intermediaries charge steep discount rates and lenders reject applications because documents are unverifiable PDFs prone to double-pledging.
+
+### Solution
+
+Tokenized invoices and receivables that can be verified, sold, collateralized, or traded in real time, so a business can raise cash against money it is owed without waiting out the payment term. A lender checks the same ownership record everyone else sees, which is what stops a single receivable from being pledged to several lenders at once.
+
+### Why Ethereum
+
+When invoices are PDFs and factoring runs through one intermediary, lenders depend on that intermediary's word and the same receivable can be pledged to several of them at once. Putting invoices onchain gives every lender the same ownership record to verify directly, so authenticity does not rest on a single platform and the same invoice cannot be sold twice.
+
+---
+
+## IP assets
+
+ID: `ip-assets`
+Domains: Finance, Science
+URL: https://usecaselab.org/idea/ip-assets
+
+### Problem
+
+Intellectual property rights are indivisible and illiquid, making it nearly impossible for small investors to participate in IP financing, for researchers to crowdfund early-stage IP, or for inventors to unlock the dormant value of their portfolios.
+
+### Solution
+
+Fractional ownership, crowdfunding, financing, and trading of intellectual property rights through IP-NFTs and tokenized IP instruments
+
+### Why Ethereum
+
+A platform that hosts fractional IP shares controls who can buy in, what trades clear, and which projects get listed, and it can delist an asset or freeze a market to protect its own interests. Issuing these rights onchain keeps ownership records and transfers outside any one operator's reach, so inventors and small investors hold positions that stay tradable without asking permission.
+
+---
+
+## IP registration and prior art
+
+ID: `ip-registration-prior-art`
+Domains: Science, Media
+URL: https://usecaselab.org/idea/ip-registration-prior-art
+
+### Problem
+
+Creators proving when a work was made and inventors establishing priority in patent disputes both rely on slow, expensive government registries that vary by jurisdiction and are vulnerable to retroactive challenge. Inventors lack a tamper-proof way to timestamp lab notebooks and experimental data, while creators have no instant, cross-jurisdictional proof of authorship that doesn't require navigating multiple national systems.
+
+### Solution
+
+Immutable, cryptographically timestamped records for both creative works and inventions — establishing proof of creation, authorship, and prior art at the moment of registration, verifiable instantly across jurisdictions without filing separately in each one.
+
+### Why Ethereum
+
+A registry run by one office or company decides which records stand, can be pressured to backdate or revoke entries, and leaves creators dependent on its goodwill across every jurisdiction. Recording a timestamp on neutral rails keeps the proof of when a work existed verifiable by anyone, with no operator able to alter the history after the fact.
+
+---
+
+## Source protection for journalists
+
+ID: `journalist-source-protection`
+Domains: Media, Civil Society
+URL: https://usecaselab.org/idea/journalist-source-protection
+
+### Problem
+
+A government whistleblower who wants to leak to a journalist faces a dilemma: submitting documents anonymously makes the story hard to verify and easy to dismiss, while providing proof of their insider status — job title, department, access level — makes them identifiable and exposes them to prosecution.
+
+### Solution
+
+Zero-knowledge systems where sources prove their organizational affiliation — that they work at a specific agency or hold a specific clearance level — without revealing their identity, generating a cryptographic attestation that journalists can publish to establish credibility without burning the source.
+
+### Why Ethereum
+
+A verification service run by a company would hold records linking sources to the credentials they proved, a single place that can be subpoenaed, breached, or pressured to expose a whistleblower. Building this with zero-knowledge proofs onchain lets a source prove their role without that link existing anywhere, so a journalist can publish credible proof and nothing about the source's identity is stored for anyone to compel.
+
+---
+
+## Privacy-preserving KYC and sanctions screening proofs
+
+ID: `kyc-sanctions-proofs`
+Domains: Business Operations, Government
+URL: https://usecaselab.org/idea/kyc-sanctions-proofs
+
+### Problem
+
+Every financial institution that onboards the same customer independently collects and stores the same identity documents, running redundant KYC checks that cost $50–500 per customer — while creating dozens of copies of sensitive identity data across institutions that each become breach targets. Cross-border transactions compound the problem: a European bank processing a payment to a US correspondent must demonstrate OFAC and EU sanctions compliance, which currently requires sharing enough customer data for the counterparty to independently screen — forcing a choice between privacy and compliance.
+
+### Solution
+
+Zero-knowledge proofs that let institutions demonstrate a customer passed KYC and sanctions screening — proving the fact of compliance without sharing the underlying identity documents, so counterparties can satisfy their regulatory obligations without receiving (and storing) sensitive data they didn't need.
+
+### Why Ethereum
+
+The current process forces a customer's identity documents to be copied into every institution that onboards them, leaving sensitive data scattered across many breach targets and copied to each counterparty. Zero-knowledge proofs onchain let an institution show that screening was done without handing over the underlying records, so the data stays with the customer rather than accumulating wherever a transaction goes.
+
+---
+
+## Land trust and housing co-op coordination
+
+ID: `land-trust-housing-coop-coordination`
+Domains: Real Estate & Housing, Civil Society
+URL: https://usecaselab.org/idea/land-trust-housing-coop-coordination
+
+### Problem
+
+Land trusts and housing cooperatives are structured as 501(c)(3)s or limited equity co-ops, with governance rules buried in paper bylaws that members rarely read, share transfers processed through manual legal work, and financial reporting that requires expensive annual audits. The overhead scales linearly with the number of units and makes it prohibitively expensive to operate community-owned housing at anything beyond neighborhood scale.
+
+### Solution
+
+A governance and ownership coordination layer that sits on top of existing legal entities. Membership transfers automate within the constraints of the ground lease or co-op agreement, governance votes and financial reporting are verifiable to members in real time, and the per-unit administrative overhead drops to a level that lets CLT and co-op structures scale.
+
+### Why Ethereum
+
+When a land trust or co-op runs on paper bylaws and outside administrators, members rarely see how governance and money actually move, and they depend on staff or a vendor to process transfers and report honestly. Putting the coordination layer onchain lets members verify votes and distributions directly, keeping control of the organization with the people who belong to it.
+
+---
+
+## Letters of credit
+
+ID: `letters-of-credit`
+Domains: Logistics & Trade
+URL: https://usecaselab.org/idea/letters-of-credit
+
+### Problem
+
+A letter of credit — the bank guarantee that an importer will pay an exporter on delivery — still requires physical paper documents to be couriered between banks across countries, a process that takes 5–10 days and costs $500–1500 per transaction for what is fundamentally a message saying 'we guarantee payment if these conditions are met.'
+
+### Solution
+
+Smart contract-based letters of credit that issue, transfer, and settle digitally — releasing payment to the exporter automatically when shipping documents and delivery conditions are cryptographically verified, without physical document exchange.
+
+### Why Ethereum
+
+A digital letter-of-credit network owned by one bank or consortium would let those operators decide who can issue and clear, and route every trade through infrastructure they control and price. Running letters of credit onchain keeps the guarantee and its conditions outside any single institution's hands, so any bank can participate and counterparties can verify the terms themselves rather than trusting a courier and an intermediary.
+
+---
+
+## Local infrastructure bonds
+
+ID: `local-infrastructure-bonds`
+Domains: Finance, Civil Society
+URL: https://usecaselab.org/idea/local-infrastructure-bonds
+
+### Problem
+
+Neighborhoods that want to collectively fund a solar array, community broadband network, or local community center have no mechanism to issue bonds to residents — municipal bond markets require expensive intermediaries and high minimums that exclude small projects and the residents who would benefit most from investing in their own community. Rural areas without broadband are particularly affected: incumbent telecoms won't build where returns are uncertain, while community-owned networks can't access upfront capital.
+
+### Solution
+
+Tokenized community bonds that let residents invest as little as $10 in specific local infrastructure projects — solar, broadband, community spaces — with coupon payments automated via smart contract and milestone-verified fund release ensuring projects are built before capital is fully deployed.
+
+### Why Ethereum
+
+Routing community bonds through a financial intermediary means an outside party holds the record, controls the minimums that price residents out, and can change terms or wind the program down. Building onchain keeps the bond's rules and the record of who is owed what with the community, verifiable by every resident and not dependent on a single firm staying in business.
+
+---
+
+## Batch and quality records for manufacturing
+
+ID: `manufacturing-batch-records`
+Domains: Logistics & Trade, Health
+URL: https://usecaselab.org/idea/manufacturing-batch-records
+
+### Problem
+
+Pharmaceutical and medical device manufacturers need batch records that regulators and partners can trust, but most store them in mutable databases where a quality engineer can change a test result after the fact without anyone noticing. Reconciling records across suppliers for a single product lot takes weeks of manual document retrieval, which slows recalls when speed matters most.
+
+### Solution
+
+Batch records that capture every production step, quality test, and deviation with cryptographic attestation at the moment of recording. The record cannot be revised afterward, and lot-level history can be traced across the whole supplier chain instantly when a recall is triggered.
+
+### Why Ethereum
+
+When batch records sit in a manufacturer's own mutable database, the company being audited controls the evidence and a quality result can be changed after the fact without anyone noticing. Committing each production step onchain puts the record beyond the manufacturer's reach to revise, so regulators and partners get an audit trail that holds because of how it is built rather than because a procedure was followed.
+
+---
+
+## Milestone-based scholarship and grant disbursement
+
+ID: `milestone-scholarship-disbursement`
+Domains: Finance, Civil Society
+URL: https://usecaselab.org/idea/milestone-scholarship-disbursement
+
+### Problem
+
+Education grants and scholarships from foundations, governments, and endowments are disbursed upfront with minimal accountability for outcomes — a foundation funding 200 scholarships across 50 institutions has no programmatic way to verify that recipients maintained enrollment, completed required coursework, or met GPA thresholds before the next tranche is released, relying instead on self-reported status updates from institutions that have financial incentive to retain enrolled students regardless of progress.
+
+### Solution
+
+Smart contract-governed scholarship funds that release tuition payments in tranches tied to institution-attested milestones — enrollment verification, credit completion, GPA maintenance — with transparent reporting to funders on aggregate outcomes across their entire portfolio.
+
+### Why Ethereum
+
+When disbursement runs through a single administrator, funders rely on self-reported status from institutions that have a financial reason to keep drawing funds whether or not students are progressing. Building the scholarship fund onchain keeps the release conditions and the record of each milestone and payment verifiable by funders directly, so accountability does not rest on trusting the institution's own reporting.
+
+---
+
+## Mortgage & home-equity rails
+
+ID: `mortgage-home-equity-rails`
+Domains: Real Estate & Housing, Finance
+URL: https://usecaselab.org/idea/mortgage-home-equity-rails
+
+### Problem
+
+Mortgage servicing and secondary market trading depend on legacy systems with slow reconciliation, making loan transfers error-prone and limiting borrower access to competitive terms.
+
+### Solution
+
+Servicing and secondary markets become programmable, traceable and accessible
+
+### Why Ethereum
+
+When servicing and secondary trading run on the private systems of a few large institutions, borrowers cannot see who holds their loan or whether terms were applied correctly, and the records can be reconciled in ways they never observe. Putting the loan and its servicing logic onchain keeps the obligation auditable by the borrower and tradable without permission from a gatekeeper.
+
+---
+
+## Music sync licensing
+
+ID: `music-sync-licensing`
+Domains: Media
+URL: https://usecaselab.org/idea/music-sync-licensing
+
+### Problem
+
+A filmmaker, YouTuber, or advertiser who wants to license a song for their production must either navigate months-long negotiations with major labels — who often decline small requests entirely — or use generic royalty-free music, because there's no scalable way for independent artists to make their catalog licensable at standardized rates.
+
+### Solution
+
+A licensing registry where artists pre-set terms and prices for different use types — YouTube video, short film, TV ad, podcast — so any buyer can instantly purchase a sync license with automatic payment to all rights holders, without negotiation or a licensing intermediary.
+
+### Why Ethereum
+
+A licensing intermediary decides whose catalog is listed, what a license costs, and when co-writers and producers are paid, and it can hold funds or drop an artist on its own terms. Building the registry onchain keeps the licensing terms and the record of who is owed what with the rights holders, where any buyer can verify a license and payment follows rules no administrator controls.
+
+---
+
+## Open-source contribution records and funding
+
+ID: `open-source-contribution-funding`
+Domains: Civil Society, Business Operations
+URL: https://usecaselab.org/idea/open-source-contribution-funding
+
+### Problem
+
+Open-source contributors build critical infrastructure but have no portable record of their contributions, and funding decisions are made by a small number of gatekeepers disconnected from the people doing the work.
+
+### Solution
+
+A portable record of who contributed what to open-source projects, with funding that flows against that record rather than through a handful of gatekeepers. Contributors carry their history across projects and platforms, and any funder can direct money toward the work using the same record, with reward flows that are visible to everyone.
+
+### Why Ethereum
+
+When contribution history and funding decisions sit inside one platform or with a few gatekeepers, that party decides whose work counts and can deplatform a contributor or steer money toward favored projects. Keeping contribution records and governance onchain lets the people doing the work carry their history anywhere, and any funder can recognize it without a central authority's approval.
+
+---
+
+## Opportunity markets
+
+ID: `opportunity-markets`
+Domains: AI
+URL: https://usecaselab.org/idea/opportunity-markets
+
+### Problem
+
+People with deep contextual expertise — a music fan who spots an unsigned artist, a researcher who recognizes a breakthrough paper, a local supplier who notices a successful business before investors — have valuable information but no institutional connections and no mechanism to monetize their insight. Traditional scout programs can't scale beyond the institution's ability to vet scouts and recommendations. Public prediction markets don't work either: for a scout to profit, someone must lose an offsetting amount — and no market maker wants to bet against thousands of opportunities they've never heard of. If an institution subsidizes liquidity publicly, competitors free-ride on the same signal.
+
+### Solution
+
+Private prediction markets where a sponsor (a label, VC, hiring firm) provides liquidity against outcomes like 'will we sign Artist X?' — but keeps prices visible only to themselves during an opportunity window of roughly two weeks. Anyone can create a market for any opportunity and stake their conviction. As scouts buy YES and drive prices up, the sponsor sees a rising private signal and investigates. If they act and the outcome resolves positively, the scout is paid automatically. After the window closes, positions become public. Designed by Dave White and Matt Liston (Paradigm, August 2025).
+
+Source: [Opportunity Markets, Paradigm 2025](https://www.paradigm.xyz/2025/08/opportunity-markets)
+
+### Why Ethereum
+
+If the sponsor ran the market on its own system, it would control the prices, the resolution, and the payout, and an outside scout would have no way to know their signal was used or their stake honored. Running it onchain keeps payouts bound to the resolution rule and makes the trades auditable once the window closes, so a sponsor cannot quietly exploit information a scout surfaced.
+
+---
+
+## Outcome-based funding for social services
+
+ID: `outcome-based-funding`
+Domains: Civil Society, Government
+URL: https://usecaselab.org/idea/outcome-based-funding
+
+### Problem
+
+Large social service contracts — for housing, job placement, addiction recovery — are paid upfront with no enforceable link between disbursement and delivery. Funders have no programmatic way to verify that contracted metrics like bed occupancy, assessment completions, or housing placements were actually achieved before releasing the next payment tranche.
+
+### Solution
+
+Smart contracts that release payments to service providers only when verified metrics are independently confirmed — turning outcome-based contracting from a legal aspiration into a structural property of how funds flow.
+
+### Why Ethereum
+
+When a funder both disburses money and judges whether outcomes were met, political pressure or a comfortable relationship with a provider can loosen the link between payment and delivery, and the public cannot see where the gap opened. Putting the release rule onchain keeps the conditions and the verification visible to everyone, so funds flow against confirmed results rather than a funder's discretion.
+
+---
+
+## Parametric health insurance payouts
+
+ID: `parametric-health-insurance`
+Domains: Insurance, Health
+URL: https://usecaselab.org/idea/parametric-health-insurance
+
+### Problem
+
+Many health insurance claims have simple, verifiable trigger conditions. A policyholder is admitted to a hospital, or completes a covered preventive visit, and is clearly eligible for a payout. These claims still move through the same weeks-long adjudication pipeline as complex cases that need medical review, adding administrative cost and delay to products whose whole value is paying out quickly during a health event.
+
+### Solution
+
+Parametric health benefit products where a payout triggers automatically once a standardized medical event is attested, such as a hospital admission confirmed by the facility or a logged preventive visit. Claims that do not need utilization review or a medical necessity determination settle within hours instead of weeks.
+
+### Why Ethereum
+
+When the insurer alone controls the claims pipeline, it has an incentive to slow or deny payouts on products whose value depends on speed, and the policyholder has little recourse. Encoding the trigger conditions onchain means a clearly eligible event pays out on terms both sides agreed to in advance, without the payer being able to add friction after the fact.
+
+---
+
+## Parametric weather insurance for farmers
+
+ID: `parametric-weather-insurance`
+Domains: Food & Agriculture, Insurance
+URL: https://usecaselab.org/idea/parametric-weather-insurance
+
+### Problem
+
+Smallholder farmers in climate-vulnerable regions need weather insurance but manual claims processing takes weeks, requires costly adjusters who can't economically serve small policies, and produces disputes that erode trust in the product. Traditional underwriters also reject farmers who lack formal production records, even when satellite and weather data could substitute.
+
+### Solution
+
+Parametric insurance products for farmers triggered automatically by satellite imagery and weather station data — when rainfall or temperature readings cross pre-agreed thresholds indicating crop loss, payouts execute without a claim form or adjuster, making it economically viable to serve smallholders at scale.
+
+### Why Ethereum
+
+When an insurer controls both the policy terms and the decision to pay, a smallholder has little recourse if claims are delayed or denied, and the underwriter has every incentive to stall. Putting the payout rule onchain lets the trigger and the data feeding it stay visible to the farmer, so settlement does not depend on a company choosing to honor it.
+
+---
+
+## Participatory budgeting in local government
+
+ID: `participatory-budgeting`
+Domains: Government
+URL: https://usecaselab.org/idea/participatory-budgeting
+
+### Problem
+
+Participatory budgeting lets residents propose and vote on how a portion of their local budget should be spent, but the process usually runs through paper ballots, ad-hoc websites, or proprietary platforms that the city pays a vendor to operate. Residents have no independent way to verify that their proposals were registered, their votes were counted as cast, or the resulting allocations actually matched the winning proposals once the budget is later executed.
+
+### Solution
+
+A participatory budgeting system where proposals, votes, and final allocations are recorded onchain, with verifiable ballot inclusion using zero-knowledge proofs. A resident can confirm their proposal was registered and their vote counted, the city can show the winning projects tied to actual disbursements, and the connection between what was voted on and what was funded is auditable end to end.
+
+### Why Ethereum
+
+When a city runs participatory budgeting through a contracted vendor or its own database, the body whose spending is being constrained also controls the record of what residents chose, and any inconvenient outcome could be quietly adjusted or lost between the vote and the budget. Recording proposals, votes, and disbursements onchain keeps the chain from input to execution verifiable by residents directly, so the city's commitment to funding what people voted for becomes structural rather than discretionary.
+
+---
+
+## Patient-controlled health records
+
+ID: `patient-controlled-health-records`
+Domains: Health, Identity
+URL: https://usecaselab.org/idea/patient-controlled-health-records
+
+### Problem
+
+Medical records are siloed across hospitals, clinics, and insurers — leaving patients unable to access, control, or share their own health data when switching providers or seeking second opinions. The problem is acute for mental health: a patient switching therapists must reconstruct their entire psychiatric history from memory — medications that worked, dosages that caused side effects, previous diagnoses — because clinician notes have no standard format and no patient-controlled transfer mechanism.
+
+### Solution
+
+Systems that give patients direct control over their medical data in a standardized portable format — enabling secure sharing across providers, granular consent over which details are disclosed, and verifiable attestation of test results and clinical findings that can't be silently altered.
+
+### Why Ethereum
+
+When records sit in hospital and insurer systems, the institution decides what a patient can access and when, and a central store of medical histories becomes a target for breaches and surveillance. Building patient-controlled records onchain keeps consent and access with the patient, lets any provider verify a record was not altered, and avoids routing sensitive history through a company that can log it.
+
+---
+
+## Pay-per-use micropayments
+
+ID: `pay-per-use-micropayments`
+Domains: Commerce
+URL: https://usecaselab.org/idea/pay-per-use-micropayments
+
+### Problem
+
+Today's payment rails have an economic floor. Cards cannot profitably process anything below roughly $0.50 because the fixed per-transaction cost eats the margin, which blocks entire pricing models that would otherwise make sense: paying a few cents to read one article, paying per API call instead of buying into a subscription tier, paying per second of video streamed, paying a small tip to a creator. Sellers default to subscriptions, ad-supported content, or steep paywalls because the alternative would cost more to process than it collects.
+
+### Solution
+
+Stablecoin payments down to fractions of a cent settle directly between payer and seller, with no per-transaction fixed cost large enough to break the model. Pricing can match the unit of value (one article, one API call, one minute of stream, one model query), and a wallet can authorize small recurring or per-action payments without a card-network preauthorization flow in the middle.
+
+### Why Ethereum
+
+The fee floor on card payments exists because every transaction is intermediated by networks, processors, and banks that each take a fixed-cost slice. Settling small payments onchain removes that stack, so the unit of pricing can be the unit of value rather than what the rails can profitably process.
+
+---
+
+## Researcher credentials and peer review markets
+
+ID: `peer-review-markets`
+Domains: Science
+URL: https://usecaselab.org/idea/peer-review-markets
+
+### Problem
+
+Academic recognition systems only reward first-author publications, leaving researchers who generate datasets, perform reviews, or replicate studies with no formal credit for work that is essential to science. Peer reviewers perform skilled labor for free on behalf of journals that charge institutions thousands per year — with reviews disappearing after use and no portable track record that follows the reviewer across journals.
+
+### Solution
+
+A market for peer review where journals post requests, qualified reviewers bid and are paid automatically on acceptance, and completed reviews become part of a portable verifiable track record — combined with credentials for dataset generation, replication work, and other non-publication contributions that carry the same weight as authorship.
+
+### Why Ethereum
+
+When each journal keeps its own record of who reviewed what, a reviewer's track record is scattered across publishers who have no reason to share it, and the labor stays invisible the moment they move on. Putting review and contribution history onchain keeps that record with the researcher, readable by any institution, rather than locked inside the publishers that benefit from the free work.
+
+---
+
+## Peer-to-peer energy markets
+
+ID: `peer-to-peer-energy-markets`
+Domains: Utilities
+URL: https://usecaselab.org/idea/peer-to-peer-energy-markets
+
+### Problem
+
+Rooftop solar owners and other distributed generators have no direct way to sell surplus electricity to their neighbors, forced instead to feed it back to the grid at wholesale rates set by monopoly utilities.
+
+### Solution
+
+Local energy trading and microgrids that let participants buy, sell, and balance electricity directly with one another
+
+### Why Ethereum
+
+A monopoly utility sets the rate at which it buys back surplus solar and is the only party that can match neighbors who want to trade, so it has every reason to keep prices low and the market closed. Running local energy trading onchain lets neighbors transact directly on terms they agree to, with settlement that does not depend on the utility choosing to allow it.
+
+---
+
+## Drug authentication and supply chain traceability
+
+ID: `pharmaceutical-traceability`
+Domains: Health, Logistics & Trade
+URL: https://usecaselab.org/idea/pharmaceutical-traceability
+
+### Problem
+
+A patient buying antimalarials has no way to verify the drug isn't one of the estimated 1-in-10 medicines in low-income markets that are substandard or falsified — counterfeit drugs with no active ingredient or toxic substitutes kill hundreds of thousands annually. The root cause is that pharmaceutical supply chains lack end-to-end verification from manufacturer to point of dispensing, making it impossible to confirm an unbroken chain of custody at the moment of sale.
+
+### Solution
+
+Per-unit identifiers linked to an onchain record of each drug's journey from manufacturer to shelf — allowing any pharmacist or patient with a smartphone to verify authenticity at the point of dispensing, while giving regulators end-to-end supply chain visibility to detect where counterfeits enter.
+
+### Why Ethereum
+
+A traceability system owned by one manufacturer or distributor can be edited to hide where counterfeits entered, and a pharmacist or patient has no way to check a record the same company controls. Recording each custody transfer onchain keeps the chain back to the manufacturer verifiable by anyone with a scan, so fraudulent insertion cannot be quietly written out.
+
+---
+
+## Physical goods marketplaces
+
+ID: `physical-goods-marketplaces`
+Domains: Commerce
+URL: https://usecaselab.org/idea/physical-goods-marketplaces
+
+### Problem
+
+Peer-to-peer resale of physical goods suffers from rampant fraud because there is no trustworthy way to verify item authenticity or enforce payment-on-delivery without a costly intermediary.
+
+### Solution
+
+Tokenized listings and escrowed settlement bring transparency to resale and secondary markets
+
+### Why Ethereum
+
+A marketplace platform holds the funds, decides every dispute, and can favor whichever side it prefers or take fees for the privilege of being trusted. Holding payment in escrow onchain lets buyer and seller transact without trusting each other or a company, with release bound to confirmed delivery rather than a platform's judgment.
+
+---
+
+## Player-owned in-game assets
+
+ID: `player-owned-in-game-assets`
+Domains: Media
+URL: https://usecaselab.org/idea/player-owned-in-game-assets
+
+### Problem
+
+In-game items, currencies, and progress are locked inside proprietary platforms that can freeze accounts, change economies, or shut down entirely, leaving players with no real ownership of assets they earned or purchased.
+
+### Solution
+
+Truly portable items/currency with minimal fees, rentals, AMM-driven markets, escrowed prize pools—shifting power from platforms to players
+
+### Why Ethereum
+
+When items and currency live on a studio's servers, the operator can freeze accounts, rewrite the economy, or shut the game down, and players keep nothing they earned. Holding assets onchain keeps ownership with the player and lets items move to any game or marketplace that supports the standard, beyond the reach of a single operator's kill switch.
+
+---
+
+## Portable credentials and professional identity
+
+ID: `portable-professional-credentials`
+Domains: Identity
+URL: https://usecaselab.org/idea/portable-professional-credentials
+
+### Problem
+
+Academic credentials are issued as PDFs locked in institutional databases, skills acquired across employers and platforms exist in disconnected silos, and workers lose their ratings and reputation every time they switch platforms. NGO workers and journalists face the same problem in higher-stakes form: they must repeatedly prove affiliations in hostile environments while sharing full identity documents puts them at risk of surveillance and retaliation.
+
+### Solution
+
+Tamper-proof, portable credentials — diplomas, micro-credentials, work history, ratings, union membership, press credentials — that workers and professionals own and carry across platforms, employers, and jurisdictions, with selective disclosure so only the relevant claim is disclosed in each context.
+
+### Why Ethereum
+
+When credentials live in an institution's database or a hiring platform's records, the worker depends on that operator to stay in business, stay cooperative, and not gate access behind its own terms. Issuing them onchain lets the holder carry proof of their qualifications themselves, disclose only the relevant claim, and have it checked by anyone without routing through a company that can revoke or surveil that access.
+
+---
+
+## Portable ratings & reviews
+
+ID: `portable-ratings-reviews`
+Domains: Commerce
+URL: https://usecaselab.org/idea/portable-ratings-reviews
+
+### Problem
+
+A review you write on one platform stays there. Your accumulated reputation as a reliable reviewer, the products you have actually purchased, and the ratings you have given are siloed by Amazon, Yelp, Google, and each marketplace, and cannot travel with you to a new app or be carried into a context where the host platform has not approved it. A buyer searching for trustworthy review history on a new platform faces a cold start: the reputational signal is thin or missing entirely.
+
+### Solution
+
+Ratings and reviews kept as portable attestations the reviewer signs and controls, with the underlying purchase or interaction proven by an onchain receipt or credential. A reviewer's history travels with them across marketplaces and apps, a buyer can check whether a reviewer actually bought what they reviewed, and a new platform can bootstrap on existing reputation rather than starting from zero.
+
+### Why Ethereum
+
+When reviews live inside each marketplace, the platform owns the reputational signal and the writer cannot move it elsewhere. Recording reviews and the receipts behind them onchain keeps both with the reviewer, so the same reputation can be presented on any app and a receipt cannot be silently dropped by a platform that finds it inconvenient.
+
+---
+
+## Portable social identity and reputation
+
+ID: `portable-social-identity`
+Domains: Identity
+URL: https://usecaselab.org/idea/portable-social-identity
+
+### Problem
+
+Users who build audiences on one social platform lose everything if they switch apps or get de-platformed. Follower counts and engagement metrics are also easily manipulated and impossible to verify independently.
+
+### Solution
+
+Onchain handles, profiles, and social graphs that work across multiple apps — combined with verifiable attestations for engagement and community participation that users own and carry with them.
+
+### Why Ethereum
+
+On a conventional social platform the company owns the follower graph, so it can de-platform a creator or change the rules and the audience does not come along. Holding the handle and social graph onchain keeps the connection between a person and their audience with the people involved, readable by any app, and survivable if one platform turns hostile or disappears.
+
+---
+
+## Clinical trial pre-registration and results registry
+
+ID: `pre-registration-and-results`
+Domains: Science, Health
+URL: https://usecaselab.org/idea/pre-registration-and-results
+
+### Problem
+
+Pharmaceutical companies register clinical trials, then selectively publish only the results that support their drug — a practice called outcome reporting bias that systematically distorts the medical evidence base and leads doctors to prescribe treatments that don't work or cause harm, because negative results simply disappear.
+
+### Solution
+
+A registry where trial protocols and primary endpoints are cryptographically committed before a trial begins — making it publicly provable whether published results match what was pre-registered and impossible to quietly bury unfavorable outcomes.
+
+### Why Ethereum
+
+A registry run by an industry body or a single institution can quietly let sponsors amend protocols or delay results, since the same parties that benefit from burying outcomes influence the registrar. Committing protocols onchain fixes the original record where no sponsor or operator can revise it, so anyone can check published results against what was promised.
+
+---
+
+## Procurement
+
+ID: `procurement`
+Domains: Business Operations
+URL: https://usecaselab.org/idea/procurement
+
+### Problem
+
+Purchase orders, vendor agreements, and replenishment workflows run through email chains and disconnected ERP modules, with each party keeping its own copy of every transaction. Disputes over terms that were never machine-readable cause delays and duplicate orders. At month-end the same economic event lives as two separate records that have to be manually reconciled, consuming a large share of close-cycle time, and audit preparation depends on weeks of counterparty-confirmation letters.
+
+### Solution
+
+Purchase orders, vendor agreements, and replenishment schedules recorded as smart contracts that both buyer and vendor confirm at the point of origination. The same record serves both sides' books, so neither can later claim a different version, routine reorders trigger without manual sign-off, and the reconciliation step at close disappears because the record was joint from the start.
+
+### Why Ethereum
+
+When procurement and intercompany accounting run through one company's ERP, the terms and the transactions are only as reliable as that party's records, and either side can later claim a different version. Putting the agreement and the transaction record onchain gives both parties the same machine-readable history that neither can revise alone, so the workflow and the audit trail do not depend on trusting one counterparty's system.
+
+---
+
+## Public procurement lifecycle
+
+ID: `public-procurement-lifecycle`
+Domains: Government
+URL: https://usecaselab.org/idea/public-procurement-lifecycle
+
+### Problem
+
+Government procurement processes are rife with opaque bid evaluations, paper-based contract trails, and limited public visibility, creating fertile ground for favoritism and corruption.
+
+### Solution
+
+Transparent record of tenders, bids, evaluations, awards, supplier credentials, deliveries, and payments spanning the full procurement cycle to reduce corruption and enable public audit
+
+### Why Ethereum
+
+When the procurement record is held by the same agency awarding the contracts, the office with the most to gain from favoritism is also the one that controls what the public gets to see. Recording the full lifecycle onchain keeps bids, evaluations, and payments outside that agency's editing power, so citizens and auditors can check the process without asking permission.
+
+---
+
+## Referral and affiliate payouts
+
+ID: `referral-affiliate-payouts`
+Domains: Commerce
+URL: https://usecaselab.org/idea/referral-affiliate-payouts
+
+### Problem
+
+Referral and affiliate programs run inside the company's own systems. It tracks who referred whom, decides which conversions count, and controls the payout schedule. Referrers have to trust that attribution, disputes over whether a referral was credited are routine, and multi-step affiliate chains are hard for anyone outside the company to audit.
+
+### Solution
+
+Referral attribution and payout rules encoded so that a qualifying conversion, a signup or a purchase that meets the agreed terms, settles the payout to the referrer on its own. The referrer can confirm their referrals were counted and read the payout rules directly, and a chain of affiliates can each be paid from the same event without the company reconciling every tier by hand.
+
+### Why Ethereum
+
+A referral program has the company paying people it has a standing incentive to underpay, while also being the only party that records who referred what. Putting attribution and payout rules onchain lets referrers verify their own conversions against rules they can read, so the program does not rest on trusting the dashboard of the business writing the checks.
+
+---
+
+## Regenerative practice incentives
+
+ID: `regenerative-practice-incentives`
+Domains: Food & Agriculture, Environment
+URL: https://usecaselab.org/idea/regenerative-practice-incentives
+
+### Problem
+
+Farmers who adopt soil-building, biodiversity-enhancing, or low-input practices absorb higher costs and risks with no reliable mechanism to measure, certify, and compensate them for the ecological value they create.
+
+### Solution
+
+Reward mechanisms that compensate farmers for sustainable and regenerative agricultural behaviors
+
+### Why Ethereum
+
+When a single program operator records which practices were adopted and decides who gets paid, farmers depend on that intermediary's bookkeeping and funders cannot tell whether the money reached genuine impact. Recording adoption and outcomes onchain creates a payment trail that funders can verify directly and that no intermediary can revise to favor itself.
+
+---
+
+## Reinsurance
+
+ID: `reinsurance`
+Domains: Insurance
+URL: https://usecaselab.org/idea/reinsurance
+
+### Problem
+
+Reinsurance capital is locked behind opaque, relationship-driven markets accessible only to large institutional players, with high intermediation costs and no way for cedents or investors to independently audit counterparty exposure or track payout obligations in real time.
+
+### Solution
+
+A reinsurance protocol where cedents and capital providers transact directly. Risk tranches are tokenized, payouts settle automatically when a loss event is verified, and reserve levels and counterparty exposure update onchain as positions change. Any participant can audit positions and obligations in real time, rather than waiting on quarterly disclosures and rating-agency snapshots.
+
+### Why Ethereum
+
+Reinsurance today is intermediated through a small set of brokers, and a cedent's view of a counterparty's book comes from quarterly financials and ratings rather than the live state of its positions. Settling it onchain keeps reserve levels and obligations verifiable by every participant in real time, and lowers the access threshold for new capital providers and smaller cedents to take part.
+
+---
+
+## Renewable project financing
+
+ID: `renewable-project-financing`
+Domains: Finance, Environment, Utilities
+URL: https://usecaselab.org/idea/renewable-project-financing
+
+### Problem
+
+Small-scale renewable energy projects struggle to attract financing because ownership, cash flows, and performance data are not standardized or auditable, making it prohibitively hard to bundle many sites into investable instruments.
+
+### Solution
+
+Onchain funding models for solar, storage, and community energy projects that track ownership, cash flows, and performance
+
+### Why Ethereum
+
+When a financing platform holds the ownership records and reports the performance data, investors depend on that operator's books and it can favor its own deals or fold and strand the projects. Recording ownership, cash flows, and generation data onchain keeps them auditable by anyone, so small projects can be bundled and financed without trusting a single intermediary's accounting.
+
+---
+
+## Residential leasing
+
+ID: `residential-leasing`
+Domains: Real Estate & Housing
+URL: https://usecaselab.org/idea/residential-leasing
+
+### Problem
+
+Lease management involves manual rent collection, opaque deposit handling, and paper-based renewals that create disputes between landlords and tenants with no neutral enforcement mechanism.
+
+### Solution
+
+Lease payments, deposits, renewals and dispute resolution run as smart contracts, eliminating many intermediaries
+
+### Why Ethereum
+
+In a normal lease the landlord holds the deposit and controls the paperwork, so a tenant depends on that landlord's goodwill to get terms honored and money returned. Running rent, deposits, and renewals onchain fixes the terms in a smart contract both parties agreed to and can inspect, so neither side can quietly change them and disputes resolve against a record no one owns alone.
+
+---
+
+## Revenue bonds
+
+ID: `revenue-bonds`
+Domains: Business Operations
+URL: https://usecaselab.org/idea/revenue-bonds
+
+### Problem
+
+Revenue-based financing lets a business raise capital and repay investors a set percentage of revenue until a return cap, instead of taking on fixed debt or giving up equity. Repayment depends on the business reporting revenue honestly and routing the payments on schedule, so investors fund against numbers they cannot see directly. Enforcement comes down to an audit clause or a lawsuit, which prices small issuers and small investors out of the instrument.
+
+### Solution
+
+A revenue-share bond where incoming revenue passes through a contract that routes the agreed percentage to bondholders as it arrives and stops once the return cap is reached. Repayment is a property of the revenue flow rather than something the issuer has to remember to do or investors have to chase, and the outstanding balance is visible to both sides at every point.
+
+### Why Ethereum
+
+When the issuer controls the books and the bank account, investors in a revenue-share deal depend on self-reported revenue and the issuer's willingness to remit on time. Settling the split onchain makes the repayment rule and the full payment history something both sides verify directly, so a small business can raise this way without investors needing to fund an audit to check the accounting.
+
+---
+
+## Prediction markets for scientific claims
+
+ID: `scientific-claim-markets`
+Domains: Science
+URL: https://usecaselab.org/idea/scientific-claim-markets
+
+### Problem
+
+Research funding committees allocate billions based on grant applications reviewed by small expert panels, with no mechanism to aggregate what the broader scientific community actually believes about which hypotheses are likely to replicate, which drugs will fail trials, or which research directions will prove fruitful — leaving funding systematically biased toward incremental work from established labs.
+
+### Solution
+
+Prediction markets where researchers stake tokens on the outcomes of specific scientific claims — will this trial replicate, will this drug hit its primary endpoint — with payouts flowing to those who were right. Market prices surface collective scientific belief in real time, and accumulated winnings serve as a credibility signal for funding allocation.
+
+### Why Ethereum
+
+A prediction market run by one company depends on that operator to hold the stakes, settle honestly, and not exclude participants or views it dislikes, and it can shut the market down when results embarrass powerful funders. Running it onchain keeps the stakes, the settlement rules, and the track record outside any single operator's control and auditable by anyone weighing the signal.
+
+---
+
+## Scientific knowledge graph
+
+ID: `scientific-knowledge-graph`
+Domains: Science
+URL: https://usecaselab.org/idea/scientific-knowledge-graph
+
+### Problem
+
+Scientific knowledge is scattered across millions of papers and databases with no common layer connecting a finding to the data behind it, the studies that replicated or failed to replicate it, or the retractions that revised it. Whether a given result still stands is hard to see, and cross-domain connections are found mostly by accident.
+
+### Solution
+
+An onchain knowledge graph that links papers to their underlying data, their replications, and their retractions, maintained as a public resource rather than inside one publisher's database. A researcher or an application can trace a finding's current standing and follow connections across disciplines without negotiating access.
+
+### Why Ethereum
+
+A knowledge graph owned by one publisher or database vendor would let that operator decide which findings connect, who can build on the layer, and what gets charged for access, recreating the silos the project is trying to dissolve. Building it onchain keeps the connective layer outside any single institution's control, so any researcher or application can link findings across disciplines without negotiating for permission.
+
+---
+
+## Sourcing records for small-scale producers
+
+ID: `small-producer-sourcing`
+Domains: Food & Agriculture, Logistics & Trade
+URL: https://usecaselab.org/idea/small-producer-sourcing
+
+### Problem
+
+A coffee cooperative in Guatemala that practices organic farming can't access premium export markets because the cost of formal certification (USDA Organic, Rainforest Alliance) is $5,000–15,000 per year — prohibitive for producers grossing $50,000. Without certification, buyers have no way to verify claims about growing practices, and the cooperative's product is priced as commodity-grade regardless of actual quality.
+
+### Solution
+
+Lightweight, verifiable sourcing records that document growing practices, input usage, and post-harvest handling at the cooperative level — creating a provenance trail that export buyers and roasters can verify without requiring expensive third-party certification as the only trust signal.
+
+### Why Ethereum
+
+When the only accepted proof of farming practices is a certification body charging fees a small cooperative cannot afford, that body becomes a gatekeeper deciding who reaches premium markets. Recording sourcing claims onchain lets a cooperative build provenance that buyers verify directly, so a track record accrues to the producer rather than to a certifier's private files.
+
+---
+
+## Sovereign & municipal bonds
+
+ID: `sovereign-municipal-bonds`
+Domains: Government, Finance
+URL: https://usecaselab.org/idea/sovereign-municipal-bonds
+
+### Problem
+
+Issuing and settling government debt involves layers of intermediaries, T+2 or longer settlement windows, and high minimum denominations that exclude smaller investors from participating.
+
+### Solution
+
+Onchain issuance, settlement, and coupon tracking of public debt instruments, enabling faster settlement, lower costs, and broader investor access
+
+### Why Ethereum
+
+The intermediaries that clear and custody government debt set the minimum sizes, the settlement timelines, and the fees, and they decide which investors get access at all. Issuing bonds onchain lets coupons and settlement run on public rules, so smaller investors can hold debt directly and the terms are not gated by the firms that profit from the layers in between.
+
+---
+
+## Spot freight market for trucking
+
+ID: `spot-freight-trucking`
+Domains: Logistics & Trade, Commerce
+URL: https://usecaselab.org/idea/spot-freight-trucking
+
+### Problem
+
+Freight brokers sit between shippers who need loads moved and carriers who have trucks available, taking 15–20% margins on every transaction in exchange for making the match — a spread that exists almost entirely because the broker holds the relationship and information asymmetry, not because they add logistical value that a transparent protocol couldn't replace.
+
+### Solution
+
+A spot freight marketplace where shippers post loads with specifications and payment terms, carriers bid directly, payment is escrowed onchain and released automatically upon verified delivery, and both parties build a public reputation from their transaction history — cutting out the broker layer on transactions that don't require physical coordination.
+
+### Why Ethereum
+
+A freight marketplace run by one company recreates the broker problem: the operator holds the relationships and the reputation data, sets the take rate, and can drop a shipper or carrier from the market it controls. Running the marketplace onchain keeps the escrow and the reputation history outside any one operator's hands, so carriers carry their record between platforms and neither side depends on a middleman to hold funds honestly.
+
+---
+
+## Title & escrow
+
+ID: `title-escrow`
+Domains: Real Estate & Housing
+URL: https://usecaselab.org/idea/title-escrow
+
+### Problem
+
+Real estate closings take 30-60 days and require title companies, notaries, and attorneys to manually verify ownership chains in paper registries, adding thousands of dollars in fees to every transaction.
+
+### Solution
+
+Smart contracts replace paper registries and manual escrow flows, reducing settlement time and improving transparency
+
+### Why Ethereum
+
+Title companies and escrow agents sit between buyer and seller, hold the funds, and are the sole authority on whether ownership records are correct, which adds cost and a point of failure both parties must trust. Recording title and escrow onchain keeps the ownership chain auditable by anyone and releases funds against conditions neither side can quietly rewrite.
+
+---
+
+## Tokenized policies for resale
+
+ID: `tokenized-policies-for-resale`
+Domains: Insurance
+URL: https://usecaselab.org/idea/tokenized-policies-for-resale
+
+### Problem
+
+Insurance policies are illiquid, non-transferable instruments that policyholders cannot sell, swap, or restructure if their risk profile changes, trapping capital and limiting flexibility.
+
+### Solution
+
+Policies become tradable contracts, enabling secondary markets, swapping risk profiles and unlocking liquidity
+
+### Why Ethereum
+
+An insurer that keeps policies non-transferable benefits directly from the trapped capital, and a resale market it operates lets it decide who may sell and at what terms. Representing policies onchain moves the contract and its transfer rights out of the issuer's exclusive control, so a policyholder can sell or restructure coverage without the carrier's permission.
+
+---
+
+## Loyalty points as liquid, transferable assets
+
+ID: `tradable-loyalty-points`
+Domains: Commerce
+URL: https://usecaselab.org/idea/tradable-loyalty-points
+
+### Problem
+
+Frequent flyers and hotel loyalty members collectively hold an estimated $500 billion in unredeemed points — but those points expire silently, can't be combined across programs, can't be sold, and can be devalued unilaterally by the issuing company overnight with no recourse for holders.
+
+### Solution
+
+Tokenized loyalty points that are transferable between programs, sellable on secondary markets, and governed by transparent, immutable issuance and expiry rules — so holders have real property rights over value they've earned.
+
+### Why Ethereum
+
+When points live in an issuer's private database, the company that owes the value also writes the rules, and it can devalue balances, block transfers, or expire points overnight with no recourse for holders. Issuing loyalty value onchain puts the balance and its issuance rules where the holder can see and move them, so earned value behaves like property rather than a revocable entry.
+
+---
+
+## Trade credit clearing
+
+ID: `trade-credit-clearing`
+Domains: Finance
+URL: https://usecaselab.org/idea/trade-credit-clearing
+
+### Problem
+
+SMEs extend trade credit to each other in isolated bilateral relationships, missing opportunities to net circular obligations and free up working capital that is locked in receivables chains.
+
+### Solution
+
+Netting obligations across SME networks
+
+### Why Ethereum
+
+A clearing operator that sees every firm's receivables holds a detailed map of who owes whom, and it can prioritize certain members, set the fees, or exclude competitors from the netting. Running the obligations onchain keeps the record out of any single firm's hands, so SMEs can net circular debt without handing a private intermediary leverage over their cash flow.
+
+---
+
+## Creator royalties for game mods and user content
+
+ID: `ugc-mod-royalties`
+Domains: Media
+URL: https://usecaselab.org/idea/ugc-mod-royalties
+
+### Problem
+
+Modders and content creators build maps, skins, and tools that drive player engagement, but receive no automatic compensation because platforms lack enforceable revenue-sharing mechanisms tied to actual usage.
+
+### Solution
+
+Tokenized blueprints, maps or mods permit automatic revenue splits, cross-client recognition, and creator-driven extension of game logic
+
+### Why Ethereum
+
+When a game platform decides whether and how modders get paid, the company that profits from their work also sets the payout rules and can change or withhold them at will. Putting the royalty logic onchain ties creator splits to actual usage in a way no single platform controls, so compensation does not depend on a publisher choosing to honor it.
+
+---
+
+## Water rights trading and usage verification
+
+ID: `water-rights-markets`
+Domains: Utilities, Environment
+URL: https://usecaselab.org/idea/water-rights-markets
+
+### Problem
+
+In drought-prone regions, water rights are traded in informal bilateral markets with no price transparency, while actual usage is monitored by infrequent physical inspections that miss illegal diversions — creating a tragedy of the commons where overuse is profitable and nearly undetectable until aquifers are depleted.
+
+### Solution
+
+Tokenized water rights tradeable on transparent markets, with IoT-verified usage continuously recorded onchain — creating a real-time allocation registry where overuse is immediately visible and rights can be transferred without paper title processes.
+
+### Why Ethereum
+
+If one agency or company runs the allocation registry, large water users can pressure it to overlook diversions or keep trades quiet, leaving downstream users with no independent view. Recording allocations and metered usage onchain lets every rights holder see the same picture, so overuse is visible to the people it harms.
+
+---
+
+## Wearables and health data exchanges
+
+ID: `wearables-and-health-data-exchanges`
+Domains: Health, AI
+URL: https://usecaselab.org/idea/wearables-and-health-data-exchanges
+
+### Problem
+
+Wearable devices generate valuable biometric data that is locked inside proprietary platforms, giving individuals no way to share, monetize, or direct their own fitness and health information to researchers or insurers on their own terms.
+
+### Solution
+
+A standard for wearable biometric data, such as continuous glucose readings, sleep stages, or heart-rate variability, where the individual holds custody and grants time-bounded access to specific buyers. Each reading is signed at the device, so a researcher or insurer can trust it has not been altered after capture. Payment for access settles to the individual rather than to the wearable platform, and access ends automatically when the agreed window or condition closes.
+
+### Why Ethereum
+
+When biometric data sits inside a wearable company's platform, that company decides who buys it and keeps the value while the individual carries the breach risk. Giving people custody of their own health data onchain lets them direct it to a researcher or insurer on their own terms and capture what it is worth.
+
+---
+
+## Whistleblower & evidence integrity
+
+ID: `whistleblower-evidence-integrity`
+Domains: Civil Society
+URL: https://usecaselab.org/idea/whistleblower-evidence-integrity
+
+### Problem
+
+Whistleblower testimonies and leaked evidence are vulnerable to tampering, metadata stripping, and retroactive denial, while existing submission channels routinely expose the identity of sources.
+
+### Solution
+
+Timestamping and storage of testimonies, photographs, or datasets with privacy-preserving disclosure
+
+### Why Ethereum
+
+A whistleblower submission channel run by any single organization can be subpoenaed, breached, or pressured into exposing who sent what, and the same operator could quietly alter or lose the evidence. Recording timestamped, privacy-preserving submissions onchain means the source does not have to trust an intermediary that can be compelled against them.
+
+---
+
+## Wills and estate execution
+
+ID: `wills-estate-execution`
+Domains: Civil Society
+URL: https://usecaselab.org/idea/wills-estate-execution
+
+### Problem
+
+Estate execution depends on manual probate processes that take months or years, while trust administration requires fiduciaries to manually manage distributions and reporting across jurisdictions, with beneficiaries having limited visibility.
+
+### Solution
+
+Time-locked, oracle-triggered estate execution and programmable trust administration with transparent record-keeping — assets transfer automatically when verifiable conditions are met.
+
+### Why Ethereum
+
+When estate execution runs through a court, a bank, or a single executor, the people who hold the assets also decide when and whether to release them, and a beneficiary has little recourse against delay or self-dealing. Building the trust logic onchain keeps the release conditions and the record visible to every heir, so distribution follows rules nobody can quietly rewrite.
+
+---
+

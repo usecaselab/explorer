@@ -1,6 +1,10 @@
 ---
 title: "Participatory budgeting in local government"
 domains: government
+desires:
+  - civic-participant/verify-public-decisions
+  - community-organizer/audit-public-money
+  - donor/participatory-grantmaking
 ---
 
 ## Problem

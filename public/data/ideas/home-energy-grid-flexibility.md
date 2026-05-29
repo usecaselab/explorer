@@ -1,6 +1,8 @@
 ---
 title: "Metering and paying home energy devices for grid flexibility"
 domains: utilities
+desires:
+  - shopper/send-receive-money-cheaply
 ---
 
 ## Problem

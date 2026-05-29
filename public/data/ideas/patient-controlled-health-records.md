@@ -1,6 +1,8 @@
 ---
 title: "Patient-controlled health records"
 domains: health, identity
+desires:
+  - patient/own-my-records
 ---
 
 ## Problem

@@ -1,6 +1,9 @@
 ---
 title: "Cooperative and local marketplaces"
 domains: commerce, food-and-agriculture
+desires:
+  - community-organizer/coordinate-with-neighbors
+  - merchant/own-my-audience
 ---
 
 ## Problem

@@ -14,7 +14,7 @@
 
 Use Case Lab is a curated index. Every idea here is a markdown file in [`public/data/ideas/`](public/data/ideas) — you contribute by opening a pull request that adds or edits one.
 
-The fastest path is to click **Add Idea** on [the live site](https://usecaselab.org). The form will pre-fill a new file on GitHub — you fill it out, click "Propose new file," and a PR opens automatically. We review it, suggest edits if needed, and merge.
+The fastest path is to click **Submit** in the sidebar on [the live site](https://usecaselab.org). The form fills in the title, domains, and three body sections, then opens a prefilled new-file PR on GitHub. We review, suggest edits if needed, and merge. Linking the idea to persona desires (the `desires:` frontmatter, see below) is done by editing the markdown directly — either in the same PR or a follow-up.
 
 You can also skip the form and add the file directly in the repo:
 
@@ -30,6 +30,9 @@ Each idea is short (3 sections, ~200–800 words total). Treat it as a one-pager
 ---
 title: "A short, punchy title"
 domains: commerce, finance
+desires:
+  - merchant/own-my-audience
+  - founder/get-paid-faster
 ---
 
 ## Problem
@@ -58,8 +61,34 @@ sits) and what building on open, neutral rails changes.
 - **Why Ethereum, honestly.** The strongest ideas need Ethereum's actual properties (censorship resistance, open source, privacy, security, credible neutrality) in a way a centralized platform can't substitute.
 - **Reasonable scope.** One idea per file. If you're describing a whole platform with five sub-products, split it up — or pitch the single most interesting piece.
 - **Domain IDs match.** The `domains:` frontmatter values must match the IDs in [`components/IdeaShowcase.tsx`](components/IdeaShowcase.tsx) (the `DOMAIN_CONFIG` keys). Currently: `ai`, `business-operations`, `civil-society`, `commerce`, `environment`, `finance`, `food-and-agriculture`, `government`, `health`, `identity`, `insurance`, `logistics-and-trade`, `media`, `real-estate-and-housing`, `science`, `utilities`. Pick 1–4.
+- **Link to personas.** The `desires:` frontmatter is the single source of truth for the persona ↔ idea graph. Each entry is `<personaId>/<desireId>`, referencing an existing desire on an existing persona in [`public/data/personas/`](public/data/personas). Browse the persona files to find existing desires that fit. Linking is optional — an idea without `desires:` still shows up in the Idea List, just not on any persona page — but most ideas should map to at least one desire. If no existing desire fits, propose a new one by editing the relevant persona file in the same PR.
 
 We're not strict about prose style — write like you would in a doc to a colleague. Clear and direct beats clever.
+
+## How personas connect to ideas
+
+The persona map and persona detail pages are driven by a reverse-index: the build script reads each idea's `desires:` field and populates the corresponding desire's idea list on each persona. You only have to edit idea files to wire up the graph — persona files own the persona metadata (name, portraits, desires with titles and framings), but no longer carry an `ideas:` list per desire.
+
+Persona files live in [`public/data/personas/`](public/data/personas) with this shape:
+
+```markdown
+---
+id: farmer
+name: Farmer
+portraits:
+  - name: Joseph
+    role: Maize and bean farmer
+    location: Eldoret
+    icon: wheat
+desires:
+  - id: get-paid-faster
+    title: "I want subsidy and insurance payments to arrive when the loss happens, not months later"
+    framing: |
+      Multi-line description of the problem, framed in the persona's own situation.
+---
+```
+
+A new desire just needs a unique-within-persona `id`, a `title`, and a `framing`. Existing ideas pick it up the moment they add `<personaId>/<id>` to their `desires:` list. The build script warns on broken refs (typos in persona ID, missing desire ID).
 
 ## Editing an existing idea
 
@@ -68,10 +97,18 @@ Every idea page has an **Edit** button that opens that file on GitHub. Click it,
 ## How it gets onto the site
 
 ```
-public/data/ideas/*.md  ──build─→  public/ideas.json  ──fetch─→  React SPA
+public/data/ideas/*.md     ──┐
+                              ├──build──→  public/{ideas,personas}.json
+public/data/personas/*.md  ──┘            public/llms.txt
+                                          public/llms-full.txt
+                                              │
+                                              ↓
+                                          React SPA
 ```
 
 When your PR merges into `main`, GitHub Actions rebuilds the site and your idea is live in a couple of minutes. There's no separate review step or moderation queue — merge is the publish.
+
+The build script ([`scripts/build-ideas.mjs`](scripts/build-ideas.mjs)) also emits `/llms.txt` and `/llms-full.txt` for AI agents — see the [About page](https://usecaselab.org/about#for-agents) for usage.
 
 ## Running the site locally (only if you're touching code)
 

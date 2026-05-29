@@ -1,6 +1,8 @@
 ---
 title: "Wearables and health data exchanges"
 domains: health, ai
+desires:
+  - patient/own-my-records
 ---
 
 ## Problem

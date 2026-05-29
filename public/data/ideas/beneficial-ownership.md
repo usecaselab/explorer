@@ -1,6 +1,8 @@
 ---
 title: "Business registries and beneficial ownership"
 domains: government, business-operations
+desires:
+  - civic-participant/verify-public-decisions
 ---
 
 ## Problem

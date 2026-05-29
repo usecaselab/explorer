@@ -1,6 +1,8 @@
 ---
 title: "Creator royalties for game mods and user content"
 domains: media
+desires:
+  - fan/paid-for-value-i-drive
 ---
 
 ## Problem

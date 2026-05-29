@@ -1,6 +1,8 @@
 ---
 title: "Fund flows and disaster relief coordination"
 domains: civil-society
+desires:
+  - donor/audit-public-money
 ---
 
 ## Problem

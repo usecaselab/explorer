@@ -1,26 +1,28 @@
 import React from 'react'
-import { Lightbulb, FileText, Wrench, Mail } from 'lucide-react'
-import ThemeToggle from './ThemeToggle'
+import { Map, List, Plus, Mail, Info } from 'lucide-react'
 
-export type RouteName = 'home' | 'rfps' | 'rfp' | 'idea' | 'toolkit'
+export type RouteName = 'home' | 'ideas' | 'about' | 'idea' | 'persona'
 
 interface SidebarProps {
   current: RouteName
   onNavigateHome: () => void
-  onNavigateRFPs: () => void
-  onNavigateToolkit: () => void
+  onNavigateIdeas: () => void
+  onOpenSubmit: () => void
   onOpenContact: () => void
+  onNavigateAbout: () => void
 }
 
 // Two visual modes, switched purely by viewport width:
 //   md  (768–1023px): narrow icon rail (no labels, no logo)
 //   lg+ (1024px+):    full sidebar with logo + labeled nav
+// Hidden on mobile (< 768px); MobileNav drawer covers that case.
 export default function Sidebar({
   current,
   onNavigateHome,
-  onNavigateRFPs,
-  onNavigateToolkit,
+  onNavigateIdeas,
+  onOpenSubmit,
   onOpenContact,
+  onNavigateAbout,
 }: SidebarProps) {
   const items: {
     label: string
@@ -30,22 +32,24 @@ export default function Sidebar({
     href?: string
   }[] = [
     {
-      label: 'Ideas',
-      icon: Lightbulb,
-      active: current === 'home' || current === 'idea',
+      label: 'Persona Map',
+      icon: Map,
+      // The home route is the map view; persona/idea detail pages reached
+      // from it count as "in the map" too.
+      active: current === 'home' || current === 'persona' || current === 'idea',
       onClick: onNavigateHome,
     },
     {
-      label: 'RFPs',
-      icon: FileText,
-      active: current === 'rfps' || current === 'rfp',
-      onClick: onNavigateRFPs,
+      label: 'Idea List',
+      icon: List,
+      active: current === 'ideas',
+      onClick: onNavigateIdeas,
     },
     {
-      label: 'Toolkit',
-      icon: Wrench,
-      active: current === 'toolkit',
-      onClick: onNavigateToolkit,
+      label: 'Submit',
+      icon: Plus,
+      active: false,
+      onClick: onOpenSubmit,
     },
     {
       label: 'Contact',
@@ -53,10 +57,16 @@ export default function Sidebar({
       active: false,
       onClick: onOpenContact,
     },
+    {
+      label: 'About',
+      icon: Info,
+      active: current === 'about',
+      onClick: onNavigateAbout,
+    },
   ]
 
   return (
-    <aside className="hidden md:flex md:w-14 lg:w-64 flex-shrink-0 flex-col gap-8 px-2 lg:px-6 py-6 sm:py-8 border-r border-gray-100 dark:border-gray-900 sticky top-0 self-start h-screen">
+    <aside className="hidden md:flex md:w-14 lg:w-44 flex-shrink-0 flex-col gap-8 px-2 lg:px-3 py-6 sm:py-8 border-r border-gray-100 dark:border-gray-900 sticky top-0 self-start h-screen">
       <button
         onClick={onNavigateHome}
         className="hidden lg:block hover:opacity-70 transition-opacity self-start"
@@ -100,10 +110,6 @@ export default function Sidebar({
           )
         })}
       </nav>
-
-      <div className="mt-auto flex justify-center lg:justify-start">
-        <ThemeToggle className="p-2 lg:-ml-2" />
-      </div>
     </aside>
   )
 }

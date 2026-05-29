@@ -1,6 +1,8 @@
 ---
 title: "Digital vehicle passports"
 domains: logistics-and-trade
+desires:
+  - shopper/verify-what-im-buying
 ---
 
 ## Problem

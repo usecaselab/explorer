@@ -1,6 +1,8 @@
 ---
 title: "Researcher credentials and peer review markets"
 domains: science
+desires:
+  - researcher/paid-for-value-i-drive
 ---
 
 ## Problem

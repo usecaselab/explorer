@@ -1,6 +1,8 @@
 ---
 title: "Cap tables"
 domains: business-operations
+desires:
+  - founder/one-source-of-truth-for-equity
 ---
 
 ## Problem

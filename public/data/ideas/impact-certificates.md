@@ -1,6 +1,8 @@
 ---
 title: "Impact certificates with retroactive outcome verification"
 domains: civil-society
+desires:
+  - donor/pay-for-outcomes
 ---
 
 ## Problem

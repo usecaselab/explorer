@@ -1,6 +1,8 @@
 ---
 title: "Parametric health insurance payouts"
 domains: insurance, health
+desires:
+  - patient/get-paid-faster
 ---
 
 ## Problem

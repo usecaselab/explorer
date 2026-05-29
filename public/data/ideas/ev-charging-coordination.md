@@ -1,6 +1,8 @@
 ---
 title: "Cross-network EV charging roaming settlement"
 domains: utilities
+desires:
+  - shopper/send-receive-money-cheaply
 ---
 
 ## Problem

@@ -1,6 +1,8 @@
 ---
 title: "Reinsurance"
 domains: insurance
+desires:
+  - investor/access-gated-markets
 ---
 
 ## Problem

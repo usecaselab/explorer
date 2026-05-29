@@ -1,9 +1,11 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { ExternalLink, Check, Copy, Github, ChevronLeft } from 'lucide-react'
 import { renderMarkdownLinks } from '../utils'
 import Shape2D from './Shape2D'
 import { getDomainConfig, DOMAIN_CONFIG } from './IdeaShowcase'
 import { useEscapeKey } from '../lib/useEscapeKey'
+import { appearancesForIdea, type IdeaAppearance } from '../lib/api'
+import { personaColor } from '../lib/personas'
 
 const REPO = 'usecaselab/explorer'
 const BRANCH = 'main'
@@ -62,12 +64,18 @@ interface IdeaPageProps {
   idea: IdeaEntry
   accentColor: string
   onBack: () => void
+  onSelectPersona?: (personaId: string) => void
 }
 
-export default function IdeaPage({ idea, accentColor, onBack }: IdeaPageProps) {
+export default function IdeaPage({ idea, accentColor, onBack, onSelectPersona }: IdeaPageProps) {
   const [stolen, setStolen] = useState(false)
+  const [appearances, setAppearances] = useState<IdeaAppearance[]>([])
 
   useEscapeKey(true, onBack)
+
+  useEffect(() => {
+    appearancesForIdea(idea.id).then(setAppearances).catch(() => {})
+  }, [idea.id])
 
   const handleSteal = useCallback(() => {
     navigator.clipboard.writeText(ideaAsMarkdown(idea))
@@ -78,7 +86,11 @@ export default function IdeaPage({ idea, accentColor, onBack }: IdeaPageProps) {
   const conf = getDomainConfig(idea.domains)
 
   return (
-    <div className="w-full max-w-6xl px-4 sm:px-6 pt-3 sm:pt-4 pb-6 sm:pb-8">
+    <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 pt-3 sm:pt-4 pb-6 sm:pb-8">
+      {/* Back button sits at the left edge of the centered container, the
+          same position as PersonaPage's back button. The image and title
+          below are a flex row, but the back button is hoisted out so the
+          image doesn't shift its horizontal position. */}
       <button
         onClick={onBack}
         aria-label="Back"
@@ -87,16 +99,11 @@ export default function IdeaPage({ idea, accentColor, onBack }: IdeaPageProps) {
         <ChevronLeft className="w-4 h-4" />
       </button>
 
-      {/* Hero + content as one flex row: shape on the left, everything else
-          (title and content sections) in the right column so they share the
-          same left edge. Content is capped at max-w-3xl so the Why Ethereum
-          block and the right-aligned Edit button don't sprawl wider than
-          the body prose. */}
       <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
-        <div className="hidden md:block w-48 aspect-square rounded-2xl overflow-hidden bg-gray-50/50 dark:bg-neutral-900/50 flex-shrink-0">
+        <div className="relative hidden md:block w-48 aspect-square rounded-2xl overflow-hidden bg-gray-50/50 dark:bg-neutral-900/50 flex-shrink-0">
           <Shape2D shape={conf.shape} color={conf.color} seed={idea.id} autoRotate />
         </div>
-        <div className="flex-1 min-w-0 w-full pt-1">
+        <div className="flex-1 min-w-0">
           <div className="flex items-start justify-between gap-3 mb-3">
             <div className="flex flex-wrap gap-1.5">
               {idea.domains.map(d => {
@@ -124,6 +131,39 @@ export default function IdeaPage({ idea, accentColor, onBack }: IdeaPageProps) {
           <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold leading-tight tracking-tight text-black dark:text-white">
             {idea.title}
           </h1>
+
+          {appearances.length > 0 && (() => {
+            // One persona can have multiple desires that link to the same
+            // idea; dedupe so each persona appears at most once in the list.
+            const seen = new Set<string>()
+            const uniquePersonas = appearances.filter((a) => {
+              if (seen.has(a.personaId)) return false
+              seen.add(a.personaId)
+              return true
+            })
+            return (
+              <div className="mt-4 text-sm text-gray-500 dark:text-gray-400 max-w-3xl">
+                <span className="text-xs font-medium uppercase tracking-widest text-gray-400 dark:text-gray-500 mr-2">
+                  Personas
+                </span>
+                {uniquePersonas.map((a, i) => (
+                  <React.Fragment key={a.personaId}>
+                    {i > 0 && <span className="mr-1.5 text-gray-400 dark:text-gray-500">,</span>}
+                    <button
+                      onClick={() => onSelectPersona?.(a.personaId)}
+                      className="inline-flex items-center gap-1.5 hover:text-black dark:hover:text-white transition-colors"
+                    >
+                      <span
+                        className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                        style={{ backgroundColor: personaColor(a.personaId) }}
+                      />
+                      <span className="font-medium">{a.personaName}</span>
+                    </button>
+                  </React.Fragment>
+                ))}
+              </div>
+            )
+          })()}
 
           <div className="mt-10 sm:mt-14 space-y-10 sm:space-y-14 max-w-3xl">
             {/* Problem */}

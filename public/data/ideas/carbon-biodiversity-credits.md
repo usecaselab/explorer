@@ -1,6 +1,8 @@
 ---
 title: "Carbon and biodiversity credit markets"
 domains: environment, finance
+desires:
+  - investor/verify-what-im-buying
 ---
 
 ## Problem

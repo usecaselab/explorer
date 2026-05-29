@@ -1,6 +1,9 @@
 ---
 title: "IP registration and prior art"
 domains: science, media
+desires:
+  - creator/prove-i-made-this
+  - researcher/prove-i-made-this
 ---
 
 ## Problem

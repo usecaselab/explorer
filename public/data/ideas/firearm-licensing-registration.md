@@ -1,6 +1,8 @@
 ---
 title: "Firearm licensing and registration"
 domains: government
+desires:
+  - civic-participant/own-my-records
 ---
 
 ## Problem

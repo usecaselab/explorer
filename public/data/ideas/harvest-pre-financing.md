@@ -1,6 +1,8 @@
 ---
 title: "Harvest pre-financing for smallholder farmers"
 domains: food-and-agriculture, finance
+desires:
+  - farmer/access-to-credit
 ---
 
 ## Problem

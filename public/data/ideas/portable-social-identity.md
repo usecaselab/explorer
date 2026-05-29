@@ -1,6 +1,8 @@
 ---
 title: "Portable social identity and reputation"
 domains: identity
+desires:
+  - creator/own-my-audience
 ---
 
 ## Problem

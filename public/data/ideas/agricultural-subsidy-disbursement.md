@@ -1,6 +1,8 @@
 ---
 title: "Agricultural subsidy disbursement"
 domains: government, food-and-agriculture
+desires:
+  - farmer/get-paid-faster
 ---
 
 ## Problem

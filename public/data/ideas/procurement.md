@@ -1,6 +1,8 @@
 ---
 title: "Procurement"
 domains: business-operations
+desires:
+  - manufacturer/procurement-that-reconciles-itself
 ---
 
 ## Problem

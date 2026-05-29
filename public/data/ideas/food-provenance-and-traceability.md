@@ -1,6 +1,9 @@
 ---
 title: "Food provenance and traceability"
 domains: food-and-agriculture, logistics-and-trade
+desires:
+  - manufacturer/prove-my-product-is-genuine
+  - shopper/verify-what-im-buying
 ---
 
 ## Problem

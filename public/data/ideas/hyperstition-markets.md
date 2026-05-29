@@ -1,6 +1,8 @@
 ---
 title: "Hyperstition markets"
 domains: civil-society
+desires:
+  - community-organizer/coordinate-collective-action
 ---
 
 ## Problem

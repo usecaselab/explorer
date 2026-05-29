@@ -1,6 +1,8 @@
 ---
 title: "Water rights trading and usage verification"
 domains: utilities, environment
+desires:
+  - farmer/share-a-finite-resource-honestly
 ---
 
 ## Problem

@@ -1,6 +1,8 @@
 ---
 title: "Earnouts and contingent payments"
 domains: business-operations
+desires:
+  - founder/pay-for-outcomes
 ---
 
 ## Problem

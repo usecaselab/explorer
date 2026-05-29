@@ -1,6 +1,8 @@
 ---
 title: "Milestone-based scholarship and grant disbursement"
 domains: finance, civil-society
+desires:
+  - donor/pay-for-outcomes
 ---
 
 ## Problem

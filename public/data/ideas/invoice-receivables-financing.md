@@ -1,6 +1,8 @@
 ---
 title: "Invoice and receivables financing"
 domains: finance, logistics-and-trade
+desires:
+  - freelance-professional/get-paid-faster
 ---
 
 ## Problem

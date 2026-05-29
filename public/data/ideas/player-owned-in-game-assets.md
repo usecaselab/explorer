@@ -1,6 +1,8 @@
 ---
 title: "Player-owned in-game assets"
 domains: media
+desires:
+  - fan/own-what-i-earned
 ---
 
 ## Problem
