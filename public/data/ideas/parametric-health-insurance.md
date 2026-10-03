@@ -11,7 +11,9 @@ Many health insurance claims have simple, verifiable trigger conditions. A polic
 
 ## Solution
 
-Parametric health benefit products where a payout triggers automatically once a standardized medical event is attested, such as a hospital admission confirmed by the facility or a logged preventive visit. Claims that do not need utilization review or a medical necessity determination settle within hours instead of weeks.
+Parametric health benefit products where a payout triggers automatically once a standardized medical event is attested, such as a hospital admission confirmed by the facility or a logged preventive visit. Claims that do not need utilization review or a medical necessity determination settle within hours instead of weeks, and the trigger conditions are fixed in the policy where the policyholder can read them rather than buried in an adjudication workflow.
+
+A workable starting point is a single benefit with an unambiguous, facility-confirmed trigger, such as a fixed hospital-admission cash benefit that pays on the admission record alone. The first version needs only an attested event feed from the facility and an escrow that releases the agreed amount, leaving everything that genuinely requires medical judgment on the existing pipeline.
 
 ## Why Ethereum
 

@@ -43,6 +43,10 @@ desires:
     title: "I want my income not to vanish overnight when an algorithm decides my topic is off-brand"
     framing: |
       Platforms can demonetize a video, shadow-ban a hashtag, or quietly throttle my reach for any reason their policy team chooses, and the only appeal is a form that disappears into a queue. Revenue-eligible publishing on rails the platform can't unilaterally switch off means my paycheck depends on the work, not on whether my topic is on-brand this quarter.
+  - id: license-my-likeness
+    title: "I want to control and get paid when my voice or face is used to generate synthetic performances"
+    framing: |
+      Models can now clone my voice or face from a few clips and generate performances I never gave, and once a tool has done it there is no record of what was authorized and no point where a fee is owed. Consent and terms for each use recorded onchain, with payment owed per licensed generation, let me decide where my likeness may appear and be paid when it is, instead of discovering the deepfake after the fact.
 ---
 
 # Creator

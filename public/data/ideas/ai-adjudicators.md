@@ -12,7 +12,9 @@ AI is starting to make binding decisions: settling insurance claims, allocating 
 
 ## Solution
 
-AI adjudicators that carry a proof of how each verdict was reached, showing the disclosed model ran on the stated inputs. A claimant, applicant, or party to a dispute can check that the AI deciding their case is the one everyone agreed to, and that its decision was not swapped or edited after the fact.
+AI adjudicators that attach a proof to every verdict, showing that the disclosed model ran on the stated inputs to reach the recorded decision. The model's identity, the rules it was given, and the case inputs are committed onchain before a decision issues, and the verdict carries a verifiable trace anyone affected can check. A claimant, applicant, or party to a dispute can confirm that the system deciding their case is the one everyone agreed to, that its weights were not quietly swapped for a cheaper or more biased model, and that the output was not edited after the fact.
+
+A workable starting point is one narrow, high-volume decision where the inputs are already structured and the stakes are bounded, such as first-pass insurance claim triage or content-moderation appeals. The first version needs only a committed model hash, the case inputs recorded against each verdict, and a published rule for how a contested decision escalates to human review.
 
 ## Why Ethereum
 

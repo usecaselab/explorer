@@ -7,11 +7,13 @@ desires:
 
 ## Problem
 
-Social-impact funders have no reliable way to verify that grant-funded programs delivered promised outcomes — a job training program reports 80% placement rates, but the funder has no independent mechanism to confirm these numbers, and the incentive structure rewards narrative over evidence because future grants depend on reported (not verified) impact.
+Social-impact funders have no reliable way to confirm that a grant actually delivered what it promised. A job-training nonprofit reports an 80 percent placement rate, but the funder has no independent mechanism to check the figure, and the only consequence of the number is whether the next grant gets approved. That structure rewards organizations that tell a good story over ones that produce results, because future funding tracks reported impact rather than verified impact. Programs that genuinely work and programs that merely report well are indistinguishable to the people writing the checks.
 
 ## Solution
 
-Tokenized impact certificates that represent verified outcomes — issued when an independent evaluator confirms results (e.g., verified job placements, measured emissions reductions, confirmed housing placements) — creating tradeable assets that retroactive funders can purchase to reward proven impact, aligning incentives so that programs that actually deliver attract more capital than programs that report well.
+Impact certificates issued onchain only when an independent evaluator confirms a result actually happened: a verified job placement, a measured ton of emissions avoided, a confirmed housing placement. Each certificate is a tradeable record of a proven outcome that retroactive funders can buy, which turns "we delivered" from a line in a report into an asset with a price, and routes more capital toward programs that produce results than toward ones that write good narratives.
+
+A workable starting point is one outcome type in one program area where results are cheap to verify, such as confirmed job placements attested through payroll data, with a single trusted evaluator signing each certificate and one retroactive funder committing to buy verified outcomes. A market of competing evaluators and funders can build on that base once the first certificates clear.
 
 ## Why Ethereum
 

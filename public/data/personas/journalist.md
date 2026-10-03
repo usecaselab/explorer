@@ -27,6 +27,14 @@ desires:
     title: "I want my reporting record to travel with me when I move outlets"
     framing: |
       A journalist's bylines, awards, and employment history are trapped in the systems of past outlets, so portable credentials anchored onchain and issued by editors and former employers let them present a verifiable record independent of any one outlet.
+  - id: publish-through-pressure
+    title: "I want my story to stay up when a host or app store is leaned on to take it down"
+    framing: |
+      A government or a litigant who cannot sue me directly leans on my host, my domain registrar, or the app store instead, and the piece disappears without ever facing a court. Publishing to storage and rails no single company controls means a story stays reachable as long as readers want it, rather than living at the mercy of whichever intermediary is easiest to pressure.
+  - id: archive-that-survives
+    title: "I want my published work to outlive the outlet that hosted it"
+    framing: |
+      When an outlet is sold, folds, or quietly settles a complaint, its archive can be edited or pulled offline and years of reporting vanish from the record. Work committed to permanent, content-addressed storage with an onchain index stays verifiable and reachable independent of the publisher, so what I reported cannot be unpublished after the fact.
 ---
 
 # Journalist

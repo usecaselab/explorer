@@ -8,11 +8,13 @@ desires:
 
 ## Problem
 
-Peer-to-peer resale of physical goods suffers from rampant fraud because there is no trustworthy way to verify item authenticity or enforce payment-on-delivery without a costly intermediary.
+Someone selling a used camera, a bike, or a pair of sneakers to a stranger faces a standoff: the buyer will not pay before the item ships and the seller will not ship before they are paid, and neither can confirm the other is honest or that the goods are authentic rather than counterfeit. The usual fix is a marketplace that holds the money and adjudicates disputes, but it charges a double-digit fee for that single service, owns the dispute outcome, and can freeze a payout or favor whichever side it prefers. High-value resale categories like sneakers and watches have spawned dedicated authentication middlemen precisely because the base platforms cannot be trusted to settle fairly.
 
 ## Solution
 
-Tokenized listings and escrowed settlement bring transparency to resale and secondary markets
+Listings represented as onchain records and payment held in escrow that releases on confirmed delivery, so a buyer and seller who do not trust each other can transact without trusting a platform either. The escrow rule is visible to both before they commit, release is bound to a delivery confirmation or a signed handoff rather than a moderator's discretion, and where authenticity matters a verifiable provenance record or a third-party attestation can travel with the item.
+
+The smallest viable version is peer-to-peer escrow for a single high-value resale category where fraud and platform fees both bite hardest, sneakers, watches, or used electronics, with funds released on a delivery scan and disputes routed to neutral arbitration. Reputation, authentication partners, and broader catalogs can build out from there.
 
 ## Why Ethereum
 

@@ -7,11 +7,13 @@ desires:
 
 ## Problem
 
-Local economies leak spending to global platforms and distant supply chains, and communities that want to circulate a local currency lack reliable infrastructure to issue, govern, and settle it at meaningful scale.
+Communities that want to keep spending close to home have long run local currencies, from timebanks to paper scrip like the Bristol Pound or BerkShares, but almost all of them fold. The currency lives in a spreadsheet one volunteer maintains or on a vendor platform the group rents, so when that person moves on or the company shuts the service down, balances and redemption records vanish and the merchants who accepted it are left holding nothing. Local businesses lose the customers the scheme was meant to send them, and residents lose whatever they had banked. The gap is durable infrastructure: there is no neutral place to hold issuance rules, balances, and redemption that keeps running once the founder steps back.
 
 ## Solution
 
-Place- or network-specific currencies used by defined communities (cities, cooperatives, regions) to keep spending local, incentivize participation, and fund public goods rather than leaking value to external markets
+A place- or network-specific currency issued as an onchain token, with issuance limits, earning rules, and redemption terms written into a contract the community governs rather than a server one person controls. Residents earn units for local participation or buy them against a reserve, merchants accept them and redeem at agreed terms, and any surplus can fund public goods the members vote on. Because the rules and balances are public, anyone can audit how much is in circulation and how it is backed.
+
+The smallest viable version is one town or one cooperative network with a fixed issuance cap, a handful of committed merchants, and redemption backed one-to-one by a pooled reserve or accepted for a local fee. Reputation-based earning, multi-currency exchange, and regional networks can come later.
 
 ## Why Ethereum
 

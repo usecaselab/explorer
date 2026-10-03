@@ -8,11 +8,13 @@ desires:
 
 ## Problem
 
-Coalitions like C40 Cities and the Global Covenant of Mayors have enrolled hundreds of cities in public emissions reduction pledges — but compliance tracking relies on self-reported data submitted to central secretariats, with no neutral mechanism for member cities or the public to verify whether commitments are being met or to detect when cities quietly abandon targets.
+Coalitions like C40 Cities and the Global Covenant of Mayors have enrolled hundreds of cities in public emissions reduction pledges, but compliance tracking relies on self-reported data submitted to a central secretariat. There is no neutral mechanism for member cities, funders, or residents to verify whether a commitment is actually being met, and a city that falls behind can quietly soften its target or stop reporting with little consequence. The secretariat compiling the numbers also has its own reason to show the coalition succeeding, so the body keeping score is not independent of the outcome it reports.
 
 ## Solution
 
-An onchain record where city governments record verified emissions data, policy milestones, and adaptation measures — with attestations from IoT sensor networks, third-party auditors, and satellite monitoring — creating a publicly auditable record that any city, funder, or citizen can inspect.
+A public record where each city government posts its emissions data, policy milestones, and adaptation measures, backed by attestations from independent sources: IoT sensor networks, third-party auditors, and satellite monitoring rather than the city's own unverified spreadsheet. Because the record sits where no single member or secretariat can rewrite it, any city, funder, or resident can check a commitment against attested data and see when a target is missed or quietly dropped.
+
+A workable starting point is one measurable, sensor-friendly commitment across a small group of cities that already report it, such as municipal-fleet or building-energy emissions, with satellite and meter data anchored as it arrives. Broader inventories and self-reported categories can be layered on once the verifiable core is trusted.
 
 ## Why Ethereum
 

@@ -11,7 +11,9 @@ Small businesses and exporters wait 30-90 days for payment on legitimate invoice
 
 ## Solution
 
-Tokenized invoices and receivables that can be verified, sold, collateralized, or traded in real time, so a business can raise cash against money it is owed without waiting out the payment term. A lender checks the same ownership record everyone else sees, which is what stops a single receivable from being pledged to several lenders at once.
+Represent each invoice as an onchain asset that records who issued it, who owes it, and who currently holds the right to be paid, so a business can sell or borrow against money it is owed instead of waiting out a 60- or 90-day term. Because ownership lives in one place every lender can read, the same receivable cannot be quietly pledged to several lenders at once, and a buyer can confirm an invoice is genuine and unencumbered before advancing a cent.
+
+A workable starting point is one large buyer with many small suppliers, a retailer or a logistics firm whose approved invoices are already verifiable, financing those receivables through a single pool that advances against them the day they are confirmed. Open secondary trading and cross-buyer marketplaces can come later.
 
 ## Why Ethereum
 

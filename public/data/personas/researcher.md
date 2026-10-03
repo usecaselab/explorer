@@ -10,10 +10,10 @@ portraits:
     role: Materials science postdoc
     location: Warsaw
     icon: flask-conical
-  - name: Esther
-    role: Clinical trial lead
-    location: Nairobi
-    icon: heart-pulse
+  - name: Kenji
+    role: Particle physicist
+    location: Tsukuba
+    icon: atom
 desires:
   - id: prove-i-made-this
     title: "I want to prove when I made this work, and that I made it first"
@@ -30,7 +30,7 @@ desires:
   - id: data-integrity
     title: "I want trial and source data nobody can quietly rewrite"
     framing: |
-      Clinical trials and replication efforts depend on source data in a single sponsor-controlled database anyone could edit before publication, so source readings committed onchain at capture, with append-only updates, let everyone verify the data matches what was collected.
+      Experiments and replication efforts depend on source data in a single lab- or sponsor-controlled database anyone could edit before publication, so source readings committed onchain at capture, with append-only updates, let everyone verify the data matches what was collected.
   - id: fund-my-research
     title: "I want to raise money against my own research without signing it away"
     framing: |

@@ -11,7 +11,9 @@ Land trusts and housing cooperatives are structured as 501(c)(3)s or limited equ
 
 ## Solution
 
-A governance and ownership coordination layer that sits on top of existing legal entities. Membership transfers automate within the constraints of the ground lease or co-op agreement, governance votes and financial reporting are verifiable to members in real time, and the per-unit administrative overhead drops to a level that lets CLT and co-op structures scale.
+A governance and ownership coordination layer that sits on top of the existing legal entity rather than replacing it. Membership shares are held onchain and transfer within the constraints the ground lease or co-op agreement already sets, governance votes are recorded so any member can verify the count, and contributions and distributions post to a ledger members can read in real time instead of waiting on an annual audit. The per-unit overhead drops to where running community-owned housing past a single building stops being prohibitive.
+
+The smallest viable version is one co-op or land trust putting its share register and its votes onchain, so members can confirm who holds what and how a decision was actually tallied, while the legal entity and its bylaws stay exactly as filed. Automated transfers within the ground-lease rules and live financial reporting can layer on once the register is the source of truth members trust.
 
 ## Why Ethereum
 

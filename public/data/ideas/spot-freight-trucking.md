@@ -7,11 +7,13 @@ desires:
 
 ## Problem
 
-Freight brokers sit between shippers who need loads moved and carriers who have trucks available, taking 15–20% margins on every transaction in exchange for making the match — a spread that exists almost entirely because the broker holds the relationship and information asymmetry, not because they add logistical value that a transparent protocol couldn't replace.
+Freight brokers sit between shippers who need loads moved and carriers who have trucks available, and they take 15 to 20 percent of the freight bill on every load in exchange for making the match. Much of that spread exists because the broker holds the relationships and the information: a carrier cannot see what a shipper is paying, and a shipper cannot see what a carrier would accept. For a straightforward lane that needs no special handling, that margin buys coordination a transparent market could provide directly. The cost falls hardest on small owner-operators, who run on thin margins and have little leverage over the broker setting their rate.
 
 ## Solution
 
-A spot freight marketplace where shippers post loads with specifications and payment terms, carriers bid directly, payment is escrowed onchain and released automatically upon verified delivery, and both parties build a public reputation from their transaction history — cutting out the broker layer on transactions that don't require physical coordination.
+A spot freight marketplace where shippers post loads with specifications and payment terms, carriers bid directly, and the agreed rate sits in onchain escrow that releases automatically on verified delivery. Both sides build a reputation from their actual transaction history, so a carrier's on-time record and a shipper's prompt-payment record travel with them rather than living in a broker's private files. On routine loads that need no physical coordination, the broker layer comes out and the carrier keeps the margin that used to be the spread.
+
+A workable starting point is a single dense lane or a regional shipper network where loads are standardized and delivery can be confirmed from a signed proof of delivery or a telematics ping, with disputes routed to onchain arbitration. Multi-leg and specialized freight can come later.
 
 ## Why Ethereum
 

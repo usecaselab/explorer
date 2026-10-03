@@ -8,11 +8,13 @@ desires:
 
 ## Problem
 
-Small-scale renewable energy projects struggle to attract financing because ownership, cash flows, and performance data are not standardized or auditable, making it prohibitively hard to bundle many sites into investable instruments.
+Small-scale renewable projects, a rooftop solar array, a community battery, a village mini-grid, struggle to attract financing because the basic facts an investor needs are not standardized or independently checkable. Ownership, cash flows, and generation data sit in spreadsheets and on a developer's word, so bundling many small sites into one investable instrument means re-verifying each one by hand. Banks find the diligence cost on a small project larger than the deal is worth, and retail investors who would happily back local clean energy have no way in. The capital exists and the projects exist, but the two cannot meet without a layer of standardized, auditable records that today is missing.
 
 ## Solution
 
-Onchain funding models for solar, storage, and community energy projects that track ownership, cash flows, and performance
+Record each project's ownership, cash flows, and metered generation onchain, so a small solar, storage, or community-energy site produces a standardized, auditable track record instead of a private spreadsheet. With the same fields verifiable across many sites, projects can be bundled into an instrument investors underwrite without re-checking each one by hand, and coupon or revenue-share payments can settle from the metered income automatically.
+
+A workable starting point is a single developer with a handful of operating sites publishing live generation and revenue data onchain and financing them through one pool that pays investors from that metered income. Cross-developer bundling, standardized rating, and secondary trading can come later, once the record itself is trusted.
 
 ## Why Ethereum
 

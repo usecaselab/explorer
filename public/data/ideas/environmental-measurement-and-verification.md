@@ -8,11 +8,13 @@ desires:
 
 ## Problem
 
-Environmental claims — RECs, carbon intensity labels, ESG reports, biodiversity credits — rely on self-reported data with infrequent third-party audits, enabling double-counting and greenwashing. Biodiversity credits are especially vulnerable: a credit representing habitat that degraded a year after issuance looks identical to one representing thriving ecosystem, with no mechanism to flag or invalidate it when outcomes reverse.
+Environmental claims such as renewable energy certificates, carbon intensity labels, ESG reports, and biodiversity credits rest on data the seller reports itself, checked by an audit that happens once a year if at all. That gap lets the same megawatt-hour or ton be counted twice, and lets a project keep selling credits long after the outcome it promised has reversed. Biodiversity credits are especially exposed: a credit for habitat that degraded a year after issuance looks identical on the registry to one backing a thriving ecosystem, and a buyer assembling a portfolio against a sustainability mandate has no way to tell them apart or to learn when one goes bad.
 
 ## Solution
 
-Continuous verification of environmental outcomes using IoT sensors, satellite imagery, acoustic monitoring, and remote sensing — with data logged onchain so that RECs, carbon credits, and biodiversity offsets carry cryptographic proof of their ongoing validity rather than depending on infrequent audits.
+Tie each environmental credit to a live measurement stream rather than a one-time audit. Sensors, satellite imagery, acoustic monitoring, and remote sensing feed readings committed onchain on a schedule, so a credit carries a running, timestamped proof that the outcome it represents still holds. When a monitored value crosses a threshold, say canopy loss on a forest plot, the credit's record flags or invalidates automatically, and a buyer sees the degradation instead of discovering it years later.
+
+A workable starting point is one outcome with a cheap, hard-to-game signal, such as satellite-measured forest cover on a defined parcel, attached to the credits issued against that parcel. Acoustic biodiversity monitoring and ground-sensor networks can layer on once the satellite feed is trusted.
 
 ## Why Ethereum
 

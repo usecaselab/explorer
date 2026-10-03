@@ -8,11 +8,13 @@ desires:
 
 ## Problem
 
-Independent filmmakers, musicians, and journalists must either sign away creative control or run crowdfunding campaigns on platforms that offer backers no governance rights, transparent fund allocation, or financial upside in the work's success.
+Independent filmmakers, musicians, and journalists who want to fund a project without a studio or label have two bad options. They can sign with a gatekeeper that fronts the money and takes creative control and most of the upside, or they can crowdfund on a platform where backers get a tote bag and a thank-you note and no stake in what they helped create. Crowdfunding platforms decide which projects may raise, hold the funds, set what backers are actually owed, and offer no governance or financial participation. The hundred people who put up the money for a first record that ends up paying the artist's rent for three years see none of that success.
 
 ## Solution
 
-Onchain funding and governance for films, music, and journalism — where backers hold tokens that represent both financial participation and voting rights over creative decisions.
+Fund a project through onchain instruments where backers hold tokens that represent both a share of revenue and a defined vote over specific creative decisions. Streaming income, licensing fees, and box-office splits flow back to token holders automatically as the work earns, and the funding terms and governance rights are recorded where backers can check them and no host can quietly change or revoke them.
+
+A workable starting point is a single album or documentary issuing revenue-share tokens to its early backers, with payouts wired from one named income source such as a distributor's streaming payments, and governance limited to a few real choices like single selection or release timing. Broader creative voting and multi-project catalogs can come once the payout mechanics work on one release.
 
 ## Why Ethereum
 

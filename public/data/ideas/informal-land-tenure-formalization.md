@@ -13,6 +13,8 @@ In much of the developing world, the majority of land is held under customary or
 
 Tenure records anchored against the actual chain of possession: witness attestations from neighbors, dated photos and surveys, signoffs from local authorities, rather than a court-issued title that does not exist. A community-recognized claim becomes a record a bank or counterparty outside the community can verify, without the holder having to retrofit a paper-title history that was never created.
 
+A workable starting point is a single community or cooperative mapping its own parcels with neighbor attestations and a local-authority signoff, producing a verifiable possession record that one partner lender agrees to recognize as collateral. Court-grade title and national registry integration can come later; the first win is turning a locally-recognized claim into something an outside lender will actually underwrite.
+
 ## Why Ethereum
 
 Land registries run by single governments or vendors in places without strong institutions are exactly where title fraud and land grabs happen, because the people in charge of the record are also the ones with reason to alter it. Anchoring tenure onchain keeps the record outside any one office's reach, so a family's claim does not depend on a particular government continuing to honor it, and a buyer or lender can verify provenance independent of the registry that issued it.

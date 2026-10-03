@@ -8,11 +8,13 @@ desires:
 
 ## Problem
 
-Estate execution depends on manual probate processes that take months or years, while trust administration requires fiduciaries to manually manage distributions and reporting across jurisdictions, with beneficiaries having limited visibility.
+When someone dies, moving their assets to their heirs runs through probate, a court process that routinely takes months or years, plus a bank or executor that controls the accounts in the meantime. A trust meant to avoid that still depends on a fiduciary who manually manages distributions and reporting, often across several jurisdictions, and the beneficiaries mostly have to take the fiduciary's word for what the estate holds and when they will see it. An heir who suspects delay or self-dealing has little practical recourse short of litigation. The people the assets are meant for end up waiting on, and trusting, the very parties who benefit from holding the money longer.
 
 ## Solution
 
-Time-locked, oracle-triggered estate execution and programmable trust administration with transparent record-keeping — assets transfer automatically when verifiable conditions are met.
+Estate and trust logic encoded in a smart contract, where assets held onchain pass to beneficiaries automatically when verifiable conditions are met: a death attested by a registry oracle, a beneficiary reaching a set age, a date arriving, rather than waiting on a court calendar or an executor's discretion. The distribution rules and the current holdings are visible to every heir, so nobody has to trust a fiduciary's account of what is in the estate, and the schedule executes the same way whether or not the administrator is paying attention.
+
+A workable starting point is a single revocable arrangement over assets already held onchain: a settlor sets beneficiaries and release conditions, a small set of attestations triggers distribution, and reporting is just the public record any heir can read. Bridging real-world assets and probate-court recognition can come as the legal wrappers mature.
 
 ## Why Ethereum
 

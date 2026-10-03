@@ -7,11 +7,13 @@ desires:
 
 ## Problem
 
-Medical records are siloed across hospitals, clinics, and insurers — leaving patients unable to access, control, or share their own health data when switching providers or seeking second opinions. The problem is acute for mental health: a patient switching therapists must reconstruct their entire psychiatric history from memory — medications that worked, dosages that caused side effects, previous diagnoses — because clinician notes have no standard format and no patient-controlled transfer mechanism.
+Medical records are siloed across hospitals, clinics, and insurers, leaving patients unable to access, control, or share their own health data when switching providers or seeking a second opinion. The gap is acute for mental health. A patient switching therapists often has to reconstruct an entire psychiatric history from memory, including which medications worked, which dosages caused side effects, and previous diagnoses, because clinician notes follow no standard format and there is no patient-controlled way to move them. The institution that holds the chart has little incentive to make leaving easy, so the friction that keeps a patient from switching is a feature of the system rather than an accident.
 
 ## Solution
 
-Systems that give patients direct control over their medical data in a standardized portable format — enabling secure sharing across providers, granular consent over which details are disclosed, and verifiable attestation of test results and clinical findings that can't be silently altered.
+A record format the patient holds and carries between providers, where the patient grants time-bounded, granular access rather than asking each institution to release a copy. A new clinician receives exactly the fields the patient chooses to share, can verify that a test result or diagnosis was attested by the issuing lab or doctor and has not been altered, and loses access automatically when the patient revokes it. The sensitive data itself stays encrypted and off the public chain; only the access grants and the integrity attestations are recorded onchain.
+
+The smallest viable version is a single high-friction handoff: let a patient carry a verifiable medication and allergy list, plus signed lab results, from one provider to the next. Full longitudinal records, imaging, and insurer integration can be layered on once the consent-and-verify pattern is in real use.
 
 ## Why Ethereum
 

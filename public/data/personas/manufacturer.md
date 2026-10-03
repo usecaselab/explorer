@@ -10,10 +10,10 @@ portraits:
     role: Contract electronics manufacturer
     location: Shenzhen
     icon: cpu
-  - name: Ingrid
-    role: Plant operations director
-    location: Stuttgart
-    icon: factory
+  - name: Mariana
+    role: Textile workshop owner
+    location: Oaxaca
+    icon: scissors
 desires:
   - id: prove-my-product-is-genuine
     title: "I want buyers to tell my product apart from the knock-offs that copy my label"
@@ -39,6 +39,10 @@ desires:
     title: "I want my purchase orders to match my supplier's books without a month-end reconciliation"
     framing: |
       My team and my supplier's team keep separate copies of every PO, invoice, and delivery note in unrelated ERP systems, and someone burns a week each month chasing down the mismatches. A purchase order both sides sign onto a shared onchain record means there is only one version to reconcile against.
+  - id: settle-net-without-a-bank
+    title: "I want to settle the net of what I owe my trading partners without a bank in the middle taking a cut and seeing everyone's books"
+    framing: |
+      Across a web of suppliers and buyers we each owe each other in overlapping amounts, and the only way to net those down today is through a clearing operator or bank that sees every firm's position, sets the fees, and decides who is in. Netting the obligations on a shared onchain record lets the circular debt cancel and only the true balance settle, without handing one intermediary a map of everyone's cash flow and the leverage that comes with it.
 ---
 
 # Manufacturer

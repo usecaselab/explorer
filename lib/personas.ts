@@ -1,10 +1,10 @@
 import {
-  Armchair, Bike, BookOpen, Briefcase, Building2, Car, Code, Coffee, Cpu,
+  Armchair, Atom, Bike, BookOpen, Briefcase, Building2, Car, Code, Coffee, Cpu,
   Factory, Film, FlaskConical, Gamepad2, GitBranch, GraduationCap,
-  HandHeart, HardHat, HeartPulse, House, Key, Landmark, Laptop,
+  HandHeart, HardHat, HeartPulse, House, Key, Landmark, Laptop, LineChart,
   Mic, Microscope, Music, Newspaper, Package, Palette, PenLine,
-  PenTool, Pill, Rocket, Scale, School, ShoppingBag, Smartphone,
-  Sprout, Star, Store, Terminal, Tractor, TrendingUp, Truck, User, Users,
+  PenTool, PiggyBank, Pill, Rocket, Scale, School, Scissors, ShoppingBag, Smartphone,
+  Sprout, Star, Store, Tag, Terminal, Tractor, TrendingUp, Truck, User, Users,
   Utensils, Video, Vote, Wheat, Wrench, type LucideIcon,
 } from 'lucide-react';
 
@@ -37,6 +37,7 @@ export const PERSONA_COLOR: Record<string, string> = {
   // Personal records / life
   'patient': '#DC2626',
   'homeowner': '#CA8A04',
+  'renter': '#0D9488',
 };
 
 export function personaColor(id: string): string {
@@ -54,10 +55,11 @@ const PORTRAIT_ICONS: Record<string, LucideIcon> = {
   'heart-pulse': HeartPulse, house: House, key: Key, landmark: Landmark,
   laptop: Laptop, mic: Mic, microscope: Microscope, music: Music,
   newspaper: Newspaper, package: Package, 'pen-line': PenLine, 'pen-tool': PenTool,
-  pill: Pill, scale: Scale, school: School, 'shopping-bag': ShoppingBag,
-  smartphone: Smartphone, sprout: Sprout, store: Store, terminal: Terminal,
+  pill: Pill, scale: Scale, school: School, scissors: Scissors, 'shopping-bag': ShoppingBag,
+  smartphone: Smartphone, sprout: Sprout, store: Store, tag: Tag, terminal: Terminal,
   'trending-up': TrendingUp, truck: Truck, users: Users, utensils: Utensils,
   video: Video, wheat: Wheat, wrench: Wrench,
+  atom: Atom, 'line-chart': LineChart, 'piggy-bank': PiggyBank,
 };
 
 // Resolve a portrait's icon by the kebab-case name in persona .md frontmatter.
@@ -94,6 +96,7 @@ const PERSONA_ICON: Record<string, LucideIcon> = {
   // Personal records / life
   'patient': HeartPulse,
   'homeowner': House,
+  'renter': Key,
 };
 
 // Resolve a persona's representative icon by persona id.
