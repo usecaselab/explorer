@@ -7,11 +7,13 @@ desires:
 
 ## Problem
 
-In-game items, currencies, and progress are locked inside proprietary platforms that can freeze accounts, change economies, or shut down entirely, leaving players with no real ownership of assets they earned or purchased.
+A player who spends years earning items, currency, and progress in an online game owns none of it in any durable sense. The assets live on the studio's servers under terms that let the operator freeze an account, rewrite the in-game economy, or shut the game down entirely, and when that happens the player keeps nothing. Items also cannot move between games or marketplaces, so value earned in one title is stranded there. The studio holds every lever, and a player who has sunk thousands of hours has no claim it is obliged to honor.
 
 ## Solution
 
-Truly portable items/currency with minimal fees, rentals, AMM-driven markets, escrowed prize pools—shifting power from platforms to players
+Represent in-game items and currency as onchain assets the player holds directly, so ownership survives account actions and the items can move to any game or marketplace that supports the standard. Players can trade between themselves at low cost, rent items to each other, settle prize pools in escrow that pays out by rule rather than by the operator's discretion, and price assets in open markets instead of a studio-run store.
+
+A workable starting point is a single cosmetic item class, say skins, in one game, minted as onchain tokens the studio honors in-client and that players can freely trade on an open marketplace. Cross-game interoperability, rentals, and escrowed tournaments can follow once players trust that the items they earn are genuinely theirs.
 
 ## Why Ethereum
 

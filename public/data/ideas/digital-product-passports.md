@@ -8,11 +8,13 @@ desires:
 
 ## Problem
 
-The EU's Ecodesign for Sustainable Products Regulation (ESPR) mandates digital product passports for most goods sold in Europe by 2030 — but no neutral infrastructure exists for brands, recyclers, and regulators across supply chains to read and write to a common product record. Without it, origin and certification claims rely on paper trails that can be forged at every handoff, recycled materials lose their provenance once they re-enter supply chains, and secondhand buyers have no trustworthy way to verify repair history or remaining lifecycle value.
+The EU's Ecodesign for Sustainable Products Regulation (ESPR) mandates digital product passports for most goods sold in Europe by 2030. No neutral infrastructure exists for brands, recyclers, and regulators across a supply chain to read and write to a common product record. Without it, origin and certification claims rely on paper trails that can be forged at every handoff, recycled materials lose their provenance once they re-enter supply chains, and secondhand buyers have no trustworthy way to verify repair history or remaining lifecycle value.
 
 ## Solution
 
-Append-only product records that persist through every ownership transfer and material handoff — tracking origin, certifications, condition, repair history, and end-of-life status in a format any manufacturer, recycler, regulator, or secondhand buyer can read, satisfying ESPR requirements while making circular economy claims cryptographically verifiable rather than self-reported.
+Give each product an append-only onchain record that persists through every ownership transfer and material handoff, capturing origin, certifications, condition, repair history, and end-of-life status. Any manufacturer, recycler, regulator, or secondhand buyer can read it from the same place, and each party writes only the entries it is authorized to sign, so a recycled-content or repair claim carries the signature of whoever attested it rather than a brand's self-report.
+
+The smallest viable version is one product category with a clear regulatory driver and high resale or counterfeit stakes, such as EV batteries, whose origin and state of health already need documenting. Start with a minimal record (manufacturer, certifications, and current holder) that satisfies the ESPR fields for that category, then extend to repair and recycling events as the set of authorized signers grows.
 
 ## Why Ethereum
 

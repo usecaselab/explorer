@@ -16,7 +16,7 @@ portraits:
     icon: graduation-cap
 desires:
   - id: audit-public-money
-    title: "I want to see where my money actually went"
+    title: "I want to see where my donation actually went"
     framing: |
       Donations are pooled and regranted through accounting the donor never sees, severing the link between a gift and a household, so settling transfers onchain with every hop visible lets a donor follow a contribution from gift to recipient.
   - id: pay-for-outcomes
@@ -27,6 +27,10 @@ desires:
     title: "I want the people a program serves to have a say in how the money is spent"
     framing: |
       Budgets are decided by program officers in another city who have never met the families a program serves, and the people closest to the need have no vote in how a dollar gets split. Letting recipients allocate funds directly, with every transfer traceable back to the decision behind it, puts the call in the hands of the people living the problem.
+  - id: give-directly-across-borders
+    title: "I want to give to a family or a clinic abroad without an NGO taking a cut and a month"
+    framing: |
+      A donation meant for a household overseas passes through an international NGO, a local partner, and a correspondent bank, each taking a fee and weeks of delay, and by the time it lands the link between my gift and the recipient is gone. Sending stablecoins directly to a recipient's wallet, with the transfer visible from end to end, gets the full amount there in minutes and lets me watch it arrive.
 ---
 
 # Donor

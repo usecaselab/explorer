@@ -13,6 +13,8 @@ Referral and affiliate programs run inside the company's own systems. It tracks 
 
 Referral attribution and payout rules encoded so that a qualifying conversion, a signup or a purchase that meets the agreed terms, settles the payout to the referrer on its own. The referrer can confirm their referrals were counted and read the payout rules directly, and a chain of affiliates can each be paid from the same event without the company reconciling every tier by hand.
 
+A workable starting point is a single program with a clear, machine-checkable conversion, such as a paid signup confirmed by an onchain receipt, paying one tier of referrers automatically against rules they can read. Multi-tier affiliate chains and cross-merchant attribution can come once the single-hop payout is trusted.
+
 ## Why Ethereum
 
 A referral program has the company paying people it has a standing incentive to underpay, while also being the only party that records who referred what. Putting attribution and payout rules onchain lets referrers verify their own conversions against rules they can read, so the program does not rest on trusting the dashboard of the business writing the checks.

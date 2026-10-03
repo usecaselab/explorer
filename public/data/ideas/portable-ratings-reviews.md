@@ -14,6 +14,8 @@ A review you write on one platform stays there. Your accumulated reputation as a
 
 Ratings and reviews kept as portable attestations the reviewer signs and controls, with the underlying purchase or interaction proven by an onchain receipt or credential. A reviewer's history travels with them across marketplaces and apps, a buyer can check whether a reviewer actually bought what they reviewed, and a new platform can bootstrap on existing reputation rather than starting from zero.
 
+A practical starting point is one vertical where a cold start hurts most, such as a new peer-to-peer marketplace, letting sellers and reviewers import attestations of purchases and ratings they earned elsewhere instead of rebuilding trust from scratch. A shared schema that other apps can read and write can follow once the portable record proves useful in one place.
+
 ## Why Ethereum
 
 When reviews live inside each marketplace, the platform owns the reputational signal and the writer cannot move it elsewhere. Recording reviews and the receipts behind them onchain keeps both with the reviewer, so the same reputation can be presented on any app and a receipt cannot be silently dropped by a platform that finds it inconvenient.

@@ -13,6 +13,8 @@ A maintainer is fine with their library being free for individuals, students, an
 
 A dual-licensing model where commercial use is gated by an onchain license token. The maintainer publishes the terms, commercial users acquire the token by paying a fee that flows directly to the project's address, and the build or runtime checks the presence of a valid license tied to the user's identity. Compliance is cheaper than litigation, the maintainer does not need a legal department, and individual or non-commercial use stays untouched.
 
+The smallest viable version targets one widely deployed library where commercial users are easy to identify, with a single license tier, a public price, and a build-time check that flags a production deployment lacking a valid token. Tiered pricing, per-seat metering, and enforcement across a whole org's dependency set can come once the basic license-as-token is accepted.
+
 ## Why Ethereum
 
 License enforcement at the scale of an indie maintainer fails because the cost of detecting non-compliance and the cost of pursuing it are both higher than the license fee. Issuing license tokens onchain, with a public price and a verifiable record of who holds one, shifts the work from enforcement to verification: any party in the supply chain can check whether a commercial deployment holds a current license, and the maintainer collects the fee without negotiating individually with each vendor.

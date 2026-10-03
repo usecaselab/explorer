@@ -9,11 +9,13 @@ desires:
 
 ## Problem
 
-A patient buying antimalarials has no way to verify the drug isn't one of the estimated 1-in-10 medicines in low-income markets that are substandard or falsified — counterfeit drugs with no active ingredient or toxic substitutes kill hundreds of thousands annually. The root cause is that pharmaceutical supply chains lack end-to-end verification from manufacturer to point of dispensing, making it impossible to confirm an unbroken chain of custody at the moment of sale.
+A patient buying antimalarials has no way to verify the drug isn't one of the estimated 1-in-10 medicines in low-income markets that are substandard or falsified. Counterfeit drugs with no active ingredient, or with toxic substitutes, kill hundreds of thousands of people a year. The root cause is that pharmaceutical supply chains lack end-to-end verification from manufacturer to point of dispensing, so no pharmacist or buyer can confirm an unbroken chain of custody at the moment of sale.
 
 ## Solution
 
-Per-unit identifiers linked to an onchain record of each drug's journey from manufacturer to shelf — allowing any pharmacist or patient with a smartphone to verify authenticity at the point of dispensing, while giving regulators end-to-end supply chain visibility to detect where counterfeits enter.
+Each unit carries a unique identifier that links to an onchain record of its journey from manufacturer through every distributor to the shelf. A pharmacist or patient scans the code at the point of dispensing and sees an unbroken chain of custody back to the factory, while a duplicate or out-of-sequence scan flags a unit that has been cloned or diverted. Regulators get end-to-end visibility into where in the chain falsified product is entering.
+
+A workable starting point is one high-counterfeit category in one market, such as antimalarials or insulin, with manufacturers committing serial numbers at packaging and pharmacies scanning at dispense. Coverage can widen to more drug classes and deeper into distribution once the scan-to-verify loop is in routine use at the counter.
 
 ## Why Ethereum
 

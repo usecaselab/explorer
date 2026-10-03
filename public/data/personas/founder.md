@@ -31,6 +31,10 @@ desires:
     title: "I want partnership payouts to fire on the numbers, not on a partner's word"
     framing: |
       When a partner owes me a revenue share or a milestone payment, they own the dashboard that decides what I'm owed and I either trust their export or chase them for months. A contract that pays out against a billing feed both sides signed off on upfront takes the discretion away from whichever side holds the books.
+  - id: spend-controls-that-enforce-themselves
+    title: "I want the rules for money leaving my company's accounts enforced by the account, not by whoever holds the password"
+    framing: |
+      Spending limits, approver chains, and budget caps live inside an expense tool or a bank portal where a person with access can override them and an auditor cannot see the real rule, and that gap only widens once software agents start paying for things on my behalf. Rules the account itself enforces against live balances, who is spending, how much, and on what, even when the spender is a piece of code, make the controls a property of the money rather than a promise from whoever administers the tool.
 ---
 
 # Founder

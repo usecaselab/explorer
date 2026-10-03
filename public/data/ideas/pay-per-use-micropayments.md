@@ -14,6 +14,8 @@ Today's payment rails have an economic floor. Cards cannot profitably process an
 
 Stablecoin payments down to fractions of a cent settle directly between payer and seller, with no per-transaction fixed cost large enough to break the model. Pricing can match the unit of value (one article, one API call, one minute of stream, one model query), and a wallet can authorize small recurring or per-action payments without a card-network preauthorization flow in the middle.
 
+A workable starting point is one metered service where subscriptions already frustrate buyers, such as pay-per-article news access or per-call API billing, with a prefunded wallet allowance the user tops up once and spends down a fraction of a cent at a time. Streaming media and machine-to-machine payments between autonomous agents can follow once the metering and settlement hold up on the simpler case.
+
 ## Why Ethereum
 
 The fee floor on card payments exists because every transaction is intermediated by networks, processors, and banks that each take a fixed-cost slice. Settling small payments onchain removes that stack, so the unit of pricing can be the unit of value rather than what the rails can profitably process.

@@ -7,11 +7,11 @@ desires:
 
 ## Problem
 
-People with deep contextual expertise — a music fan who spots an unsigned artist, a researcher who recognizes a breakthrough paper, a local supplier who notices a successful business before investors — have valuable information but no institutional connections and no mechanism to monetize their insight. Traditional scout programs can't scale beyond the institution's ability to vet scouts and recommendations. Public prediction markets don't work either: for a scout to profit, someone must lose an offsetting amount — and no market maker wants to bet against thousands of opportunities they've never heard of. If an institution subsidizes liquidity publicly, competitors free-ride on the same signal.
+People with deep contextual expertise have valuable information but no institutional connections and no mechanism to monetize their insight: a music fan who spots an unsigned artist, a researcher who recognizes a breakthrough paper, a local supplier who notices a successful business before investors. Traditional scout programs can't scale beyond the institution's ability to vet scouts and recommendations. Public prediction markets don't work either, because for a scout to profit someone must lose an offsetting amount, and no market maker wants to bet against thousands of opportunities they've never heard of. If an institution subsidizes liquidity publicly, competitors free-ride on the same signal.
 
 ## Solution
 
-Private prediction markets where a sponsor (a label, VC, hiring firm) provides liquidity against outcomes like 'will we sign Artist X?' — but keeps prices visible only to themselves during an opportunity window of roughly two weeks. Anyone can create a market for any opportunity and stake their conviction. As scouts buy YES and drive prices up, the sponsor sees a rising private signal and investigates. If they act and the outcome resolves positively, the scout is paid automatically. After the window closes, positions become public. Designed by Dave White and Matt Liston (Paradigm, August 2025).
+Private prediction markets where a sponsor (a label, VC, hiring firm) provides liquidity against outcomes like 'will we sign Artist X?' but keeps prices visible only to themselves during an opportunity window of roughly two weeks. Anyone can create a market for any opportunity and stake their conviction. As scouts buy YES and drive prices up, the sponsor sees a rising private signal and investigates. If they act and the outcome resolves positively, the scout is paid automatically. After the window closes, positions become public. Designed by Dave White and Matt Liston (Paradigm, August 2025).
 
 Source: [Opportunity Markets, Paradigm 2025](https://www.paradigm.xyz/2025/08/opportunity-markets)
 

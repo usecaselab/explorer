@@ -7,11 +7,13 @@ desires:
 
 ## Problem
 
-Large social service contracts — for housing, job placement, addiction recovery — are paid upfront with no enforceable link between disbursement and delivery. Funders have no programmatic way to verify that contracted metrics like bed occupancy, assessment completions, or housing placements were actually achieved before releasing the next payment tranche.
+Large social-service contracts for housing, job placement, and addiction recovery are typically paid upfront, with no enforceable link between when money is disbursed and whether the service was delivered. A funder writes the contract around metrics like bed occupancy, completed assessments, or housing placements, but has no programmatic way to confirm those numbers were actually hit before the next payment tranche goes out. Verification happens through reports the provider writes about itself, months after the money moved, and clawing back funds for unmet targets means a lawsuit almost nobody files. The result is that payment tracks the contract's existence rather than its performance.
 
 ## Solution
 
-Smart contracts that release payments to service providers only when verified metrics are independently confirmed — turning outcome-based contracting from a legal aspiration into a structural property of how funds flow.
+Service contracts where each payment tranche is held in a smart contract and releases only when an independent source confirms the agreed metric was met, so outcome-based contracting stops being a clause in an agreement and becomes the mechanism that actually moves the money. The provider knows exactly what triggers payment, the funder knows it cannot be released on a relationship or a soft report, and the verification, an attested occupancy count or a signed placement record, sits in the open for both sides and any auditor to check.
+
+A workable starting point is one contract with one provider on a single, cleanly measurable outcome, such as verified housing placements attested by the receiving agency, with tranches sized to each confirmed milestone. Multi-metric contracts and a roster of accredited verifiers can come once the basic release mechanism has paid out a few times.
 
 ## Why Ethereum
 

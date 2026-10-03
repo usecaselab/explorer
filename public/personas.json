@@ -38,6 +38,7 @@
         "framing": "When a zoning appeal, a benefits claim, or a contract award goes against me, I get a one-line outcome and no record of who weighed what. A tamper-evident log of which official, which rule, and which inputs produced the decision would let me actually contest it.",
         "ideas": [
           "ai-adjudicators",
+          "ballot-initiative-signatures",
           "beneficial-ownership",
           "construction-permits-housing",
           "futarchy-public-policy",
@@ -51,7 +52,8 @@
         "framing": "Birth, marriage, and death records govern every official interaction yet sit in physical files that can be lost or held hostage to a fee, so civil registries that issue them as signed onchain attestations let a citizen hold their proof.",
         "ideas": [
           "civil-registry-records",
-          "firearm-licensing-registration"
+          "firearm-licensing-registration",
+          "foundational-identity-for-the-undocumented"
         ]
       },
       {
@@ -123,6 +125,7 @@
         "title": "I want to pool capital with my neighbors without paying a bank to do it",
         "framing": "Lending circles and mutual-aid pools cost money to administer through banks and hold more cash than they need, so onchain lending pools set contribution and disbursement rules in code and return the savings to members instead of a custodian.",
         "ideas": [
+          "community-risk-pools",
           "cooperative-lending-pools"
         ]
       },
@@ -159,6 +162,7 @@
         "title": "I want a rent strike or buyer's pledge that only triggers once enough neighbors are in",
         "framing": "Every rent strike I've tried to organize dies in the \"I'll do it if everyone else does\" phase. I want people to be able to commit publicly with their pledge held in escrow, so the action goes live the moment we cross the threshold and nobody is exposed alone.",
         "ideas": [
+          "group-buying-pools",
           "hyperstition-markets"
         ]
       }
@@ -205,6 +209,7 @@
         "title": "I want to keep more of what I sell",
         "framing": "Platforms take 10 to 30 percent of every sale and hold the money for weeks, so settling payments onchain with smart contracts that split revenue at the moment of sale lets a creator keep the cut and skip the wait.",
         "ideas": [
+          "collaborative-royalty-splits",
           "creator-storefronts",
           "film-tv-residuals",
           "music-sync-licensing",
@@ -259,7 +264,16 @@
         "title": "I want my income not to vanish overnight when an algorithm decides my topic is off-brand",
         "framing": "Platforms can demonetize a video, shadow-ban a hashtag, or quietly throttle my reach for any reason their policy team chooses, and the only appeal is a form that disappears into a queue. Revenue-eligible publishing on rails the platform can't unilaterally switch off means my paycheck depends on the work, not on whether my topic is on-brand this quarter.",
         "ideas": [
+          "content-moderation",
           "curation-markets"
+        ]
+      },
+      {
+        "id": "license-my-likeness",
+        "title": "I want to control and get paid when my voice or face is used to generate synthetic performances",
+        "framing": "Models can now clone my voice or face from a few clips and generate performances I never gave, and once a tool has done it there is no record of what was authorized and no point where a fee is owed. Consent and terms for each use recorded onchain, with payment owed per licensed generation, let me decide where my likeness may appear and be paid when it is, instead of discovering the deepfake after the fact.",
+        "ideas": [
+          "creator-likeness-licensing"
         ]
       }
     ],
@@ -307,7 +321,7 @@
     "desires": [
       {
         "id": "audit-public-money",
-        "title": "I want to see where my money actually went",
+        "title": "I want to see where my donation actually went",
         "framing": "Donations are pooled and regranted through accounting the donor never sees, severing the link between a gift and a household, so settling transfers onchain with every hop visible lets a donor follow a contribution from gift to recipient.",
         "ideas": [
           "direct-cash-transfer-programs",
@@ -330,6 +344,14 @@
         "framing": "Budgets are decided by program officers in another city who have never met the families a program serves, and the people closest to the need have no vote in how a dollar gets split. Letting recipients allocate funds directly, with every transfer traceable back to the decision behind it, puts the call in the hands of the people living the problem.",
         "ideas": [
           "participatory-budgeting"
+        ]
+      },
+      {
+        "id": "give-directly-across-borders",
+        "title": "I want to give to a family or a clinic abroad without an NGO taking a cut and a month",
+        "framing": "A donation meant for a household overseas passes through an international NGO, a local partner, and a correspondent bank, each taking a fee and weeks of delay, and by the time it lands the link between my gift and the recipient is gone. Sending stablecoins directly to a recipient's wallet, with the transfer visible from end to end, gets the full amount there in minutes and lets me watch it arrive.",
+        "ideas": [
+          "direct-cross-border-giving"
         ]
       }
     ],
@@ -457,6 +479,7 @@
         "framing": "Agricultural subsidies and weather insurance routinely arrive months after the gap they exist to cover has swallowed the season, so smart contracts triggered by satellite rainfall data or government attestations release funds onchain the day a threshold is crossed.",
         "ideas": [
           "agricultural-subsidy-disbursement",
+          "crop-price-floor-protection",
           "parametric-weather-insurance"
         ]
       },
@@ -466,7 +489,8 @@
         "framing": "Smallholders are invisible to banks because pre-harvest credit has no collateral and their land carries no recognized title, so tokenized future-crop receipts and onchain land titles give a lender collateral it can price and repaid automatically at harvest sale.",
         "ideas": [
           "harvest-pre-financing",
-          "informal-land-tenure-formalization"
+          "informal-land-tenure-formalization",
+          "warehouse-receipts-for-grain"
         ]
       },
       {
@@ -565,7 +589,17 @@
         "title": "I want partnership payouts to fire on the numbers, not on a partner's word",
         "framing": "When a partner owes me a revenue share or a milestone payment, they own the dashboard that decides what I'm owed and I either trust their export or chase them for months. A contract that pays out against a billing feed both sides signed off on upfront takes the discretion away from whichever side holds the books.",
         "ideas": [
+          "decision-markets-corporate-governance",
           "earnouts-contingent-payments"
+        ]
+      },
+      {
+        "id": "spend-controls-that-enforce-themselves",
+        "title": "I want the rules for money leaving my company's accounts enforced by the account, not by whoever holds the password",
+        "framing": "Spending limits, approver chains, and budget caps live inside an expense tool or a bank portal where a person with access can override them and an auditor cannot see the real rule, and that gap only widens once software agents start paying for things on my behalf. Rules the account itself enforces against live balances, who is spending, how much, and on what, even when the spender is a piece of code, make the controls a property of the money rather than a promise from whoever administers the tool.",
+        "ideas": [
+          "agent-controlled-payments",
+          "dynamic-expense-approvals"
         ]
       }
     ],
@@ -642,6 +676,14 @@
         "ideas": [
           "portable-professional-credentials"
         ]
+      },
+      {
+        "id": "clients-without-the-platform-tax",
+        "title": "I want to find and keep clients without Upwork skimming 10 to 20 percent",
+        "framing": "Upwork and Fiverr connect me to a client and then take a double-digit cut of every invoice for as long as we work together, and they bury the option to take the relationship off-platform because the fee is the whole business. A reputation and work history I own, with direct onchain payment and escrow, would let me meet clients through any channel and keep the relationship without paying a platform tax on work the platform no longer does anything to earn.",
+        "ideas": [
+          "freelance-work-without-the-platform-tax"
+        ]
       }
     ],
     "related": [
@@ -708,7 +750,24 @@
         "title": "I want lenders to see the income I actually earn",
         "framing": "Banks underwrite against W-2s and tax returns, so a gig worker with steady income across three platforms reads as irregular deposits and gets declined, but verifiable onchain payment histories from the platforms they use give a lender something concrete to underwrite.",
         "ideas": [
-          "credit-scoring"
+          "credit-scoring",
+          "earnings-backed-advances"
+        ]
+      },
+      {
+        "id": "coverage-for-a-single-shift",
+        "title": "I want insurance I can switch on for one shift, not a yearly policy built for a salary",
+        "framing": "Traditional policies assume a steady job and an annual premium, so the cover that would actually protect me, against an injury on a delivery run, damage to the car I rent by the hour, or a cancelled gig, either does not exist for someone with my income pattern or costs more per year than I clear in a month. Coverage I can turn on for the hours I am working and pay for by the shift, settling as fast as the work itself pays, would fit how I actually earn.",
+        "ideas": [
+          "on-demand-microinsurance"
+        ]
+      },
+      {
+        "id": "due-process-when-deactivated",
+        "title": "I want a way to contest being kicked off the app, not a form that vanishes",
+        "framing": "One disputed complaint or an algorithm's mistake can deactivate my account overnight, cutting off my income with no hearing and an appeals form that disappears into a queue. An account and work record I hold myself, with deactivations and their stated reasons logged where a neutral party can review them, gives me a way to actually contest a suspension instead of starting over from zero on another platform.",
+        "ideas": [
+          "appealable-account-deactivation"
         ]
       }
     ],
@@ -770,6 +829,30 @@
           "title-escrow",
           "wills-estate-execution"
         ]
+      },
+      {
+        "id": "parametric-home-insurance",
+        "title": "I want a flood or fire payout when the sensor trips, not after a month of adjusters",
+        "framing": "When a storm floods my street the claim crawls through adjuster visits and paperwork for weeks while I am fronting repairs, and the insurer that wrote the policy is the same party deciding whether and when to pay. A parametric policy that pays a set amount the moment a trusted water or fire sensor crosses an agreed threshold settles in hours on terms I agreed to up front, with no adjuster in the loop.",
+        "ideas": [
+          "parametric-property-insurance"
+        ]
+      },
+      {
+        "id": "hoa-reserves-i-can-see",
+        "title": "I want to see my HOA's reserve fund and where the dues go",
+        "framing": "My homeowners' association collects dues every month and hands me a one-page summary at the annual meeting, with no way to know whether the reserve fund is solvent or being drained until a special assessment lands. A treasury held onchain, with every due, expense, and reserve balance visible to the owners who fund it, turns the board's private spreadsheet into something members can actually audit.",
+        "ideas": [
+          "hoa-treasury-transparency"
+        ]
+      },
+      {
+        "id": "pay-contractors-on-milestones",
+        "title": "I want to pay my contractor as work is verified, not hand over a deposit and hope",
+        "framing": "A renovation means wiring a large deposit to a contractor on trust, and if they vanish or the work fails inspection my only recourse is a lawsuit that costs more than the job. Payments held in escrow and released against signed inspection milestones mean the contractor is paid for work that was actually done and I am not out a deposit for work that never happened.",
+        "ideas": [
+          "renovation-milestone-escrow"
+        ]
       }
     ],
     "related": []
@@ -785,16 +868,16 @@
         "icon": "trending-up"
       },
       {
-        "name": "Priya",
-        "role": "Wealth advisor",
-        "location": "Mumbai",
-        "icon": "briefcase"
+        "name": "Nadia",
+        "role": "Index-fund saver",
+        "location": "Cairo",
+        "icon": "piggy-bank"
       },
       {
-        "name": "Akosua",
-        "role": "Family office principal",
-        "location": "Accra",
-        "icon": "landmark"
+        "name": "Bao",
+        "role": "DIY retail trader",
+        "location": "Hanoi",
+        "icon": "line-chart"
       }
     ],
     "desires": [
@@ -803,10 +886,12 @@
         "title": "I want to buy government bonds and reinsurance the way the big funds do, not through a broker that marks them up",
         "framing": "A 10-year treasury or a slice of a reinsurance pool is something pension funds buy at par, but to get there as a retail investor I go through a broker who sets a $50k minimum and adds a spread. Issuing these instruments onchain lets me buy a $500 piece at the same price the desk pays.",
         "ideas": [
+          "fractional-property-ownership",
           "local-infrastructure-bonds",
           "reinsurance",
           "renewable-project-financing",
           "revenue-bonds",
+          "shared-home-equity-finance",
           "sovereign-municipal-bonds"
         ]
       },
@@ -816,7 +901,8 @@
         "framing": "The carbon offsets and renewable-yield products in my portfolio come with PDFs from the issuer and a registry that the same issuer pays into, and I have no way to check whether the underlying project is still running. Sensor data and project performance posted onchain as it happens lets me audit my own holdings instead of trusting the brochure.",
         "ideas": [
           "carbon-biodiversity-credits",
-          "environmental-measurement-and-verification"
+          "environmental-measurement-and-verification",
+          "renewable-energy-certificates"
         ]
       },
       {
@@ -824,8 +910,25 @@
         "title": "I want my kids to inherit my portfolio without a year of probate and a lawyer's cut",
         "framing": "My brokerage, pension, and insurance accounts each have their own beneficiary forms, surrender procedures, and lawyers, and when my father died it took a year to move anything. Assets held onchain with succession encoded in a smart contract pass to my heirs the moment the conditions are met, without an estate intermediary.",
         "ideas": [
+          "self-custody-social-recovery",
           "tokenized-policies-for-resale",
           "wills-estate-execution"
+        ]
+      },
+      {
+        "id": "self-custody",
+        "title": "I want assets a broker, an exchange, or a government can't freeze on a Friday afternoon",
+        "framing": "My broker can restrict trading on a position, an exchange can halt withdrawals, and an account can be frozen by order while I watch from the outside, because the institution holds my assets and I hold only a claim against it. Holding the assets directly in a wallet I control means no intermediary can freeze, lend out, or lose them, and access depends on my keys rather than a company staying solvent and cooperative.",
+        "ideas": [
+          "self-custody-social-recovery"
+        ]
+      },
+      {
+        "id": "fees-i-can-actually-see",
+        "title": "I want to know what my broker really makes on my trades",
+        "framing": "The commission-free trade is paid for by order flow sold to a market maker, the fund skims an expense ratio, and the advisor takes a kickback I never see itemized, so the true cost of my portfolio is scattered across places the statement does not show. Execution and fees recorded onchain let me see exactly what each party took on each trade, rather than trusting a disclosure written to be skimmed past.",
+        "ideas": [
+          "transparent-trade-execution-and-fees"
         ]
       }
     ],
@@ -895,6 +998,22 @@
         "ideas": [
           "portable-professional-credentials"
         ]
+      },
+      {
+        "id": "publish-through-pressure",
+        "title": "I want my story to stay up when a host or app store is leaned on to take it down",
+        "framing": "A government or a litigant who cannot sue me directly leans on my host, my domain registrar, or the app store instead, and the piece disappears without ever facing a court. Publishing to storage and rails no single company controls means a story stays reachable as long as readers want it, rather than living at the mercy of whichever intermediary is easiest to pressure.",
+        "ideas": [
+          "censorship-resistant-publishing"
+        ]
+      },
+      {
+        "id": "archive-that-survives",
+        "title": "I want my published work to outlive the outlet that hosted it",
+        "framing": "When an outlet is sold, folds, or quietly settles a complaint, its archive can be edited or pulled offline and years of reporting vanish from the record. Work committed to permanent, content-addressed storage with an onchain index stays verifiable and reachable independent of the publisher, so what I reported cannot be unpublished after the fact.",
+        "ideas": [
+          "journalism-archive-that-survives"
+        ]
       }
     ],
     "related": [
@@ -932,10 +1051,10 @@
         "icon": "cpu"
       },
       {
-        "name": "Ingrid",
-        "role": "Plant operations director",
-        "location": "Stuttgart",
-        "icon": "factory"
+        "name": "Mariana",
+        "role": "Textile workshop owner",
+        "location": "Oaxaca",
+        "icon": "scissors"
       }
     ],
     "desires": [
@@ -954,6 +1073,7 @@
         "title": "I want quality records that buyers and auditors can trust",
         "framing": "Batch and quality records sit in databases the manufacturer can edit, so recalls drag and auditors re-verify by hand, but records committed onchain as they are created give buyers, auditors, and regulators a quality history that cannot be quietly revised after the fact.",
         "ideas": [
+          "cold-chain-integrity",
           "manufacturing-batch-records"
         ]
       },
@@ -988,7 +1108,17 @@
         "title": "I want my purchase orders to match my supplier's books without a month-end reconciliation",
         "framing": "My team and my supplier's team keep separate copies of every PO, invoice, and delivery note in unrelated ERP systems, and someone burns a week each month chasing down the mismatches. A purchase order both sides sign onto a shared onchain record means there is only one version to reconcile against.",
         "ideas": [
-          "procurement"
+          "procurement",
+          "returnable-transport-assets",
+          "trade-credit-clearing"
+        ]
+      },
+      {
+        "id": "settle-net-without-a-bank",
+        "title": "I want to settle the net of what I owe my trading partners without a bank in the middle taking a cut and seeing everyone's books",
+        "framing": "Across a web of suppliers and buyers we each owe each other in overlapping amounts, and the only way to net those down today is through a clearing operator or bank that sees every firm's position, sets the fees, and decides who is in. Netting the obligations on a shared onchain record lets the circular debt cancel and only the true balance settle, without handing one intermediary a map of everyone's cash flow and the leverage that comes with it.",
+        "ideas": [
+          "trade-credit-clearing"
         ]
       }
     ],
@@ -1116,6 +1246,30 @@
           "dependency-graph-funding",
           "open-source-contribution-funding"
         ]
+      },
+      {
+        "id": "trustworthy-builds",
+        "title": "I want the people installing my package to know the build they got is the one I shipped",
+        "framing": "A compromised build server or a stolen publish token can ship malware under my name, and the people who install my package have no way to check that the artifact they pulled matches the source I actually released, as the xz backdoor showed. If each release were signed and its provenance committed onchain, any installer or CI pipeline could verify the binary came from me and refuse anything that does not match.",
+        "ideas": [
+          "signed-build-provenance"
+        ]
+      },
+      {
+        "id": "identity-across-forges",
+        "title": "I want my contribution history to be mine, not locked to one platform's account",
+        "framing": "My commits, reviews, and releases live inside one company's account, and if it suspends me, gets acquired, or I move to a self-hosted forge, years of provable work vanish with the login. An identity I control, with contributions attested onchain by the projects and forges I work across, lets me carry that record between GitHub, Codeberg, and anywhere else without a platform's permission.",
+        "ideas": [
+          "portable-developer-identity"
+        ]
+      },
+      {
+        "id": "split-funding-fairly",
+        "title": "I want sponsorship to reach every contributor who keeps this project alive, not just me",
+        "framing": "Sponsorship money lands in the lead maintainer's account while the dozen people who triage issues and write patches see none of it, because there is no easy way to divide a recurring sponsorship across a changing set of contributors. A split contract that routes incoming funds to current contributors by shares the project sets and can update pays the whole team automatically instead of relying on one person to redistribute by hand.",
+        "ideas": [
+          "contributor-funding-splits"
+        ]
       }
     ],
     "related": [
@@ -1183,6 +1337,7 @@
         "framing": "Denials and prior authorization decisions run through models the insurer will not disclose, so adjudication models with weights and decision logs committed onchain let a patient see which model judged them and challenge it through neutral arbitration.",
         "ideas": [
           "ai-adjudicators",
+          "appealable-health-insurance-claims",
           "insurance-claims-adjudication"
         ]
       },
@@ -1191,6 +1346,7 @@
         "title": "I want to verify the drugs and treatments I am taking are real",
         "framing": "Counterfeit medications kill hundreds of thousands a year and a patient cannot tell a real pack from a fake, so onchain provenance with each supply-chain handoff signed lets a pharmacist scan a pack and verify a legitimate manufacturer in seconds.",
         "ideas": [
+          "cold-chain-integrity",
           "pharmaceutical-traceability"
         ]
       },
@@ -1223,6 +1379,65 @@
     ]
   },
   {
+    "id": "renter",
+    "name": "Renter",
+    "portraits": [
+      {
+        "name": "Lakshmi",
+        "role": "Apartment renter",
+        "location": "Mumbai",
+        "icon": "house"
+      },
+      {
+        "name": "Darnell",
+        "role": "Month-to-month tenant",
+        "location": "Chicago",
+        "icon": "building-2"
+      },
+      {
+        "name": "Mei",
+        "role": "Student renter",
+        "location": "Taipei",
+        "icon": "key"
+      }
+    ],
+    "desires": [
+      {
+        "id": "rental-deposit-escrow",
+        "title": "I want my deposit back automatically when I move out clean, not whenever the landlord feels like it",
+        "framing": "My landlord holds two months of rent in an account I cannot see and decides on his own timeline whether to return it, and the small-claims path costs more than the deposit. If the deposit sat in onchain escrow that released on a signed move-out inspection, the discretion would go away.",
+        "ideas": [
+          "residential-leasing"
+        ]
+      },
+      {
+        "id": "portable-rental-history",
+        "title": "I want my rental history and references to travel with me to the next place",
+        "framing": "Every application asks me to prove I pay on time and leave places clean, but that record lives in the heads of past landlords and the files of agencies I cannot access, so I start from zero each move while tenants with connections get the unit. Payment history and landlord references attested onchain and held by me let a new landlord verify a real track record without my chasing down old ones for a letter.",
+        "ideas": [
+          "portable-rental-history"
+        ]
+      },
+      {
+        "id": "prove-income-without-oversharing",
+        "title": "I want to prove I can afford the rent without handing a landlord my whole financial life",
+        "framing": "To rent a flat I am asked for bank statements, pay slips, and sometimes full account access, all of it sitting in a landlord's inbox waiting to leak, just to show I clear an income threshold. A zero-knowledge proof that my income exceeds the rent by the multiple they require lets them see that I qualify and nothing else.",
+        "ideas": [
+          "rent-affordability-proofs"
+        ]
+      },
+      {
+        "id": "repairs-the-landlord-cant-ignore",
+        "title": "I want unmade repairs to draw on the rent, without my being the one who breaks the lease",
+        "framing": "When the heat or the plumbing fails, a tenant's only leverage is to withhold rent and risk eviction, or wait months for a housing complaint to be heard. Rent routed through an escrow that diverts to a repair fund when a documented, unaddressed habitability issue passes a deadline gives a tenant real leverage without unilaterally breaching the lease.",
+        "ideas": [
+          "habitability-repair-escrow"
+        ]
+      }
+    ],
+    "related": []
+  },
+  {
     "id": "researcher",
     "name": "Researcher",
     "portraits": [
@@ -1239,10 +1454,10 @@
         "icon": "flask-conical"
       },
       {
-        "name": "Esther",
-        "role": "Clinical trial lead",
-        "location": "Nairobi",
-        "icon": "heart-pulse"
+        "name": "Kenji",
+        "role": "Particle physicist",
+        "location": "Tsukuba",
+        "icon": "atom"
       }
     ],
     "desires": [
@@ -1259,6 +1474,7 @@
         "title": "I want credit when other people's papers are built on my dataset",
         "framing": "My dataset has been reused in forty papers and I am thanked in a footnote when I am thanked at all, while the lab that ran the followups gets the citation and the next grant. A signed record of who produced a dataset and which papers drew on it, with citation and payment routed back automatically, would make reuse visible and pay the people whose work the field is standing on.",
         "ideas": [
+          "data-assets",
           "dataset-provenance-reuse-tracking",
           "peer-review-markets"
         ]
@@ -1274,8 +1490,9 @@
       {
         "id": "data-integrity",
         "title": "I want trial and source data nobody can quietly rewrite",
-        "framing": "Clinical trials and replication efforts depend on source data in a single sponsor-controlled database anyone could edit before publication, so source readings committed onchain at capture, with append-only updates, let everyone verify the data matches what was collected.",
+        "framing": "Experiments and replication efforts depend on source data in a single lab- or sponsor-controlled database anyone could edit before publication, so source readings committed onchain at capture, with append-only updates, let everyone verify the data matches what was collected.",
         "ideas": [
+          "data-assets",
           "decentralized-clinical-trials",
           "pre-registration-and-results"
         ]
@@ -1293,6 +1510,7 @@
         "title": "I want to know which papers will actually hold up before I build on them",
         "framing": "I have spent months chasing a result that the lab next door quietly failed to reproduce and never published. A market where researchers stake on whether a finding will replicate, settled against a pre-registered test, would surface what the field privately doubts long before a formal replication study lands.",
         "ideas": [
+          "replication-bounties",
           "scientific-claim-markets",
           "scientific-knowledge-graph"
         ]
@@ -1333,10 +1551,10 @@
         "icon": "car"
       },
       {
-        "name": "Lakshmi",
-        "role": "Apartment renter",
-        "location": "Mumbai",
-        "icon": "house"
+        "name": "Mateo",
+        "role": "Secondhand marketplace seller",
+        "location": "Naples",
+        "icon": "tag"
       }
     ],
     "desires": [
@@ -1357,7 +1575,8 @@
         "framing": "Every age-gated site and every account signup wants a photo of my ID sitting on some vendor's server waiting to leak. A zero-knowledge proof tied to a credential my government already issued would let the site see \"yes, over 18\" and nothing else.",
         "ideas": [
           "age-eligibility-proofs",
-          "kyc-sanctions-proofs"
+          "kyc-sanctions-proofs",
+          "proof-of-personhood"
         ]
       },
       {
@@ -1382,13 +1601,11 @@
       },
       {
         "id": "enforceable-contracts",
-        "title": "I want my rental deposit back automatically when I move out clean, not whenever the landlord feels like it",
-        "framing": "My landlord holds two months of rent in an account I cannot see and decides on his own timeline whether to return it, and the small-claims path costs more than the deposit. If the deposit sat in onchain escrow that released on a signed move-out inspection, the discretion goes away.",
+        "title": "I want consumer contracts to enforce themselves, not run on the seller's goodwill",
+        "framing": "When a subscription quietly renews after I cancel, a refund stalls for weeks, or an escrow release drags, I am at the mercy of whichever company holds the money and wrote the terms. Everyday agreements held as onchain contracts, paying out, refunding, or releasing on conditions both sides agreed to up front, take the discretion away from the party that benefits from the delay.",
         "ideas": [
           "insurance-claims-adjudication",
-          "mortgage-home-equity-rails",
-          "residential-leasing",
-          "title-escrow",
+          "revocable-subscription-payments",
           "tokenized-policies-for-resale",
           "tradable-loyalty-points"
         ]

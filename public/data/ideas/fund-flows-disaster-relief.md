@@ -7,11 +7,13 @@ desires:
 
 ## Problem
 
-Charitable donations, advocacy grants, and international aid flow through opaque intermediary chains where funds are lost to corruption, misallocation, or overhead — with donors unable to verify money reached its intended recipients. After disasters this compounds: dozens of NGOs and agencies respond simultaneously with no joint view of who received what, duplicating aid in accessible areas while remote communities get nothing.
+Charitable donations, advocacy grants, and international aid flow through opaque intermediary chains where money is lost to corruption, misallocation, or overhead, and a donor cannot verify that their gift reached the household it was meant for. After a disaster this compounds: dozens of NGOs and agencies respond at once with no joint view of who received what, so aid piles up in accessible areas while remote communities get nothing. The donor sees a glossy impact report a year later; the affected family and the agency working next door see neither the money nor each other's distributions.
 
 ## Solution
 
-Onchain tracking of fund flows from donor to final recipient with real-time visibility and audit logs — combined with onchain coordination infrastructure for disaster response that lets all responding organizations see disbursements, supply distribution, and beneficiary verification in a single view.
+Fund flows recorded onchain from the donor's gift to the final recipient, so each hop is visible and a contribution can be followed to the household rather than disappearing into a regrant. On top of that trail sits a shared coordination layer: responding organizations post disbursements, supply drops, and beneficiary verifications to a common record, so every agency works from the same picture of who has already been served and duplication and gaps both become visible in real time.
+
+The smallest viable version is one funding corridor for a single response: a handful of agencies agreeing to post their transfers and beneficiary check-ins to a shared onchain registry, with a public dashboard donors can read. Wider participation and automated triggers for releasing tranches can follow.
 
 ## Why Ethereum
 

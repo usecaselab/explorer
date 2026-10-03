@@ -8,11 +8,13 @@ desires:
 
 ## Problem
 
-Affordable housing deed restrictions — requiring units to remain below market rate for 30, 50, or 99 years — are written into paper legal documents that must be manually checked at every ownership transfer, and routinely slip through conveyancing processes, effectively converting affordable units to market rate with no enforcement mechanism.
+Affordable housing deed restrictions hold a unit below market rate for a fixed term, often 30, 50, or 99 years, in exchange for public subsidy or a density bonus the developer already received. These covenants live in paper legal documents that someone has to read and apply by hand at every resale or re-rental. In practice the check depends on whichever title officer or housing agency happens to look, and busy conveyancing routinely lets a restricted unit transfer at full market price. Once that happens the affordability is gone, the public got nothing for the subsidy it paid, and the next low-income household that should have qualified never hears the unit existed.
 
 ## Solution
 
-Affordability restrictions encoded directly into property tokens that enforce covenants automatically at the point of transfer or rental — making it structurally impossible to sell or rent above the allowed price without the covenant being triggered.
+Encode the affordability restriction into the onchain record that governs the unit's transfer, so the covenant is checked the moment a sale or lease is registered rather than depending on someone remembering to look. The rule travels with the property, names the ceiling price and the qualifying conditions, and a transfer that breaches it is flagged or blocked at registration instead of discovered years later.
+
+The smallest viable version is one housing agency attaching a covenant attestation to the units in a single subsidy program, with a public check that any title officer, lender, or tenant can run against a proposed transfer. That alone turns a covenant nobody verifies into one that surfaces a violation at the point of sale. Automated price enforcement and integration with the deed registry can follow once the attestation is trusted.
 
 ## Why Ethereum
 

@@ -100,9 +100,6 @@ export default function PersonaPage({
                   {desire.title}
                 </h3>
               </div>
-              <p className="ml-0 sm:ml-[3ch] text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6 max-w-3xl">
-                {desire.framing}
-              </p>
 
               {desire.ideas.length > 0 && (
                 <div className="ml-0 sm:ml-[3ch] grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">

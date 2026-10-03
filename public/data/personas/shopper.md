@@ -10,10 +10,10 @@ portraits:
     role: EV driver
     location: Toronto
     icon: car
-  - name: Lakshmi
-    role: Apartment renter
-    location: Mumbai
-    icon: house
+  - name: Mateo
+    role: Secondhand marketplace seller
+    location: Naples
+    icon: tag
 desires:
   - id: verify-what-im-buying
     title: "I want to know if the \"free-range\" carton actually came from a farm that lets the hens outside"
@@ -32,9 +32,9 @@ desires:
     framing: |
       Every charging network wants its own app, account, and minimum top-up, because card fees make a single $4 session uneconomic to bill directly. Onchain micropayments that settle in fractions of a cent would let the car pay the charger per kilowatt-hour with no account in the middle.
   - id: enforceable-contracts
-    title: "I want my rental deposit back automatically when I move out clean, not whenever the landlord feels like it"
+    title: "I want consumer contracts to enforce themselves, not run on the seller's goodwill"
     framing: |
-      My landlord holds two months of rent in an account I cannot see and decides on his own timeline whether to return it, and the small-claims path costs more than the deposit. If the deposit sat in onchain escrow that released on a signed move-out inspection, the discretion goes away.
+      When a subscription quietly renews after I cancel, a refund stalls for weeks, or an escrow release drags, I am at the mercy of whichever company holds the money and wrote the terms. Everyday agreements held as onchain contracts, paying out, refunding, or releasing on conditions both sides agreed to up front, take the discretion away from the party that benefits from the delay.
 ---
 
 # Shopper

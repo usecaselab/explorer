@@ -7,11 +7,13 @@ desires:
 
 ## Problem
 
-Agricultural subsidy programs (e.g., EU Common Agricultural Policy direct payments, USDA conservation programs) require farmers to submit annual applications, undergo eligibility reviews, and wait months for payment — a process where administrative overhead consumes a significant share of program budgets and delays reach the farmers who need operating capital most. Eligibility conditions like acreage verification, crop compliance, and conservation practice adoption are checked manually by inspectors who can physically visit only a fraction of enrolled farms each year.
+Agricultural subsidy programs such as the EU Common Agricultural Policy direct payments and USDA conservation programs require farmers to submit annual applications, undergo eligibility reviews, and wait months for payment. Administrative overhead consumes a significant share of program budgets, and the delays fall hardest on the smaller farms that need operating capital at the start of the season. Eligibility conditions like acreage verification, crop compliance, and conservation practice adoption are checked manually by inspectors who can physically visit only a fraction of enrolled farms each year, so most approvals rest on paperwork an administrator chooses when to process.
 
 ## Solution
 
-Subsidy disbursements that execute automatically when satellite-verified acreage data, crop identification, and conservation practice adoption confirm eligibility — reducing administrative costs and getting payments to farmers at the start of the season rather than months after application.
+Subsidy disbursements that execute against verified eligibility data rather than an inspector's queue. Satellite imagery confirms planted acreage and crop type, attestations from agronomists or cooperatives confirm conservation practices, and once the conditions a program already publishes are met, the payment releases to the farmer onchain at the start of the season instead of months after the application clears review. The rule and the release sit together, so a farmer can see exactly which condition is still outstanding rather than waiting on an opaque approval.
+
+A workable starting point is one payment line with a clean remote-sensing trigger, such as an acreage-based direct payment in a single region, run alongside the existing manual process as a parallel proof. Conservation practices that need ground inspection, and full program migration, come later once the satellite-triggered payments have a track record.
 
 ## Why Ethereum
 

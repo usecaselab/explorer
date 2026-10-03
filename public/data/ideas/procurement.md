@@ -11,7 +11,9 @@ Purchase orders, vendor agreements, and replenishment workflows run through emai
 
 ## Solution
 
-Purchase orders, vendor agreements, and replenishment schedules recorded as smart contracts that both buyer and vendor confirm at the point of origination. The same record serves both sides' books, so neither can later claim a different version, routine reorders trigger without manual sign-off, and the reconciliation step at close disappears because the record was joint from the start.
+Purchase orders, vendor agreements, and replenishment schedules recorded as onchain contracts that both buyer and vendor confirm at the point of origination. The same entry serves both sides' books, so neither can later claim a different version of the terms, routine reorders fire against agreed triggers without manual sign-off, and the month-end reconciliation step disappears because the record was joint from the start rather than two copies to square. Disputes over what was actually ordered fall away, because the order was machine-readable and signed by both parties when it was placed.
+
+A workable starting point is one buyer and a couple of high-volume suppliers moving their recurring POs onto a shared record, with each side's existing ERP writing to and reading from it, leaving price negotiation and one-off purchases where they are today. Multi-tier supply chains and fully automated replenishment can layer on once the two-party record is trusted.
 
 ## Why Ethereum
 

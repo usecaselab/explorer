@@ -1,6 +1,8 @@
 ---
 title: "Dynamic expense approvals"
 domains: business-operations
+desires:
+  - founder/spend-controls-that-enforce-themselves
 ---
 
 ## Problem

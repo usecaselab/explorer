@@ -7,11 +7,13 @@ desires:
 
 ## Problem
 
-A government whistleblower who wants to leak to a journalist faces a dilemma: submitting documents anonymously makes the story hard to verify and easy to dismiss, while providing proof of their insider status — job title, department, access level — makes them identifiable and exposes them to prosecution.
+A government or corporate whistleblower who wants to leak to a journalist faces a bind. Submitting documents anonymously makes the story hard to verify and easy for the target to dismiss as fabricated, while the proof of insider status that would make it credible, the job title, the department, the access level, is exactly what makes the source identifiable and exposes them to prosecution. Existing secure-drop systems run on servers someone owns and can be ordered to hand over logs, and any file received carries metadata that can burn the sender. The source has to choose between being believed and being safe, and the tools available force the trade.
 
 ## Solution
 
-Zero-knowledge systems where sources prove their organizational affiliation — that they work at a specific agency or hold a specific clearance level — without revealing their identity, generating a cryptographic attestation that journalists can publish to establish credibility without burning the source.
+A submission system where a source proves their organizational affiliation, that they work at a named agency or hold a given clearance level, using a zero-knowledge proof that reveals nothing else about who they are. The proof produces a cryptographic attestation the journalist can publish alongside the story, so readers and editors can confirm the documents came from a genuine insider without any record existing that links the attestation back to a person.
+
+A workable starting point is one credential type for one class of source, for example proving current employment at a specific public agency against a set of signed staff credentials, with the proof verified onchain and no operator holding the underlying identity. Document transport and metadata scrubbing can be layered on once the affiliation proof is trusted by a newsroom.
 
 ## Why Ethereum
 

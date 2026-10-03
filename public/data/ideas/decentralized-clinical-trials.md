@@ -12,7 +12,9 @@ Decentralized clinical trials let patients participate from home using wearables
 
 ## Solution
 
-Each sensor reading, patient-reported outcome, and consent signature is hashed and timestamped at the moment it is captured. That creates an audit trail showing the data has not been changed since collection, giving monitors, sponsors, and regulators confidence in source data integrity without depending on physical site visits.
+Each sensor reading, patient-reported outcome, and consent signature is hashed and timestamped onchain at the moment it is captured on the patient's device, before it reaches the sponsor's database. That commitment lets a monitor or regulator later confirm that a given record matches what was collected and has not been edited, reordered, or backfilled, without depending on a physical visit to an investigator site. Consent versions and withdrawals are recorded the same way, so it is provable which version of the protocol a patient agreed to and exactly when.
+
+A workable starting point is the consent and primary-endpoint data for a single decentralized trial: hash each event at capture, keep the raw data in the existing electronic system, and give regulators a verification tool that checks any record against its onchain commitment. Full source-data capture and cross-sponsor registries can follow once the verification step is trusted.
 
 ## Why Ethereum
 

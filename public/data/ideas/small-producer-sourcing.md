@@ -9,11 +9,11 @@ desires:
 
 ## Problem
 
-A coffee cooperative in Guatemala that practices organic farming can't access premium export markets because the cost of formal certification (USDA Organic, Rainforest Alliance) is $5,000–15,000 per year — prohibitive for producers grossing $50,000. Without certification, buyers have no way to verify claims about growing practices, and the cooperative's product is priced as commodity-grade regardless of actual quality.
+A coffee cooperative in Guatemala that already farms organically cannot reach premium export buyers because formal certification (USDA Organic, Rainforest Alliance, Fair Trade) runs 5,000 to 15,000 dollars a year in fees and audits, which is prohibitive for a co-op grossing 50,000 dollars. Without the stamp, buyers have no trusted way to verify claims about how the coffee was grown and handled, so the lot is priced as undifferentiated commodity-grade regardless of its actual quality. The certifier, not the producer, owns the proof that unlocks the premium market, and the cost of that proof falls hardest on exactly the small producers most likely to meet the standard.
 
 ## Solution
 
-Lightweight, verifiable sourcing records that document growing practices, input usage, and post-harvest handling at the cooperative level — creating a provenance trail that export buyers and roasters can verify without requiring expensive third-party certification as the only trust signal.
+Lightweight, verifiable sourcing records kept at the cooperative level: growing practices, input use, harvest dates, and post-harvest handling recorded per lot as the work happens, with inspectors and co-op officers signing their checks in the open. A roaster or importer can trace a lot and see the practices and who attested to them, building confidence without one expensive certifier as the only accepted trust signal. The smallest viable version is a single cooperative documenting a handful of fields it already manages, recording the lot history and letting a few direct buyers verify it, rather than chasing full certification equivalence. As a track record accrues to the producer, the same provenance can support repeat buyers and price premiums, and recognized certifiers can layer their audits on top of a record that already exists.
 
 ## Why Ethereum
 

@@ -11,7 +11,9 @@ Billions of people without bank accounts cannot receive aid efficiently because 
 
 ## Solution
 
-Digital wallet-based transfer infrastructure that reaches unbanked populations directly at minimal cost — supporting both targeted aid disbursements and recurring automated payments, using decentralized identity and smart contracts to handle eligibility verification without centralized administrative overhead.
+Aid and basic-income payments delivered straight to recipients' wallets, where a smart contract handles eligibility and disbursement and the funds move without a chain of banks and processors taking a cut at each hop. A program can run one-off emergency transfers or a recurring stipend on a schedule, with enrollment tied to a decentralized identity so a recipient proves eligibility once rather than re-verifying at every payment, and stablecoins hold value between the disbursement and the moment someone cashes out.
+
+A workable starting point is a single targeted program run by one organization: a fixed monthly transfer to an enrolled cohort, paid to wallets the recipients control, with a published list of disbursements anyone can audit. Local cash-out through mobile money or agents, and broader eligibility logic, can come once the rail is proven.
 
 ## Why Ethereum
 

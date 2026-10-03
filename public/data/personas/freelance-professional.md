@@ -31,6 +31,10 @@ desires:
     title: "I want my credentials and ratings to travel with me"
     framing: |
       A freelancer who moves between platforms or countries loses the reviews and credentials locked in databases the platform owns, so attestations of credentials and completed engagements, committed onchain by the issuer or client, let them carry their record anywhere.
+  - id: clients-without-the-platform-tax
+    title: "I want to find and keep clients without Upwork skimming 10 to 20 percent"
+    framing: |
+      Upwork and Fiverr connect me to a client and then take a double-digit cut of every invoice for as long as we work together, and they bury the option to take the relationship off-platform because the fee is the whole business. A reputation and work history I own, with direct onchain payment and escrow, would let me meet clients through any channel and keep the relationship without paying a platform tax on work the platform no longer does anything to earn.
 ---
 
 # Freelance Professional

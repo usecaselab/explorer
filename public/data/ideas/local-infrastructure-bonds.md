@@ -8,11 +8,13 @@ desires:
 
 ## Problem
 
-Neighborhoods that want to collectively fund a solar array, community broadband network, or local community center have no mechanism to issue bonds to residents — municipal bond markets require expensive intermediaries and high minimums that exclude small projects and the residents who would benefit most from investing in their own community. Rural areas without broadband are particularly affected: incumbent telecoms won't build where returns are uncertain, while community-owned networks can't access upfront capital.
+A neighborhood that wants to fund a solar array, a community broadband line, or a local center has no practical way to borrow the money from the people who would benefit. Municipal bond markets run through underwriters and require minimums and legal overhead that price out a project this small along with the residents who would gladly put in a few hundred dollars. Rural areas feel it most: incumbent telecoms will not build where the return is uncertain, and a community-owned network cannot raise the upfront capital to build it itself. So projects that residents want and would fund simply do not get financed.
 
 ## Solution
 
-Tokenized community bonds that let residents invest as little as $10 in specific local infrastructure projects — solar, broadband, community spaces — with coupon payments automated via smart contract and milestone-verified fund release ensuring projects are built before capital is fully deployed.
+Issue a community bond as an onchain instrument that lets a resident invest as little as ten dollars in a specific local project and receive coupon payments on a schedule written into the contract. Funds release against verified construction milestones, so capital is not fully deployed until the work it pays for is actually underway, and every resident can see how much was raised, what is owed, and what has been paid back.
+
+A workable starting point is a single project with clear revenue, such as a solar roof that sells power back to the grid or a fiber line with subscriber income, funded by neighbors plus a few outside backers and repaid from that meter or subscription revenue. Standardized terms, larger raises, and secondary trading among residents can come later.
 
 ## Why Ethereum
 

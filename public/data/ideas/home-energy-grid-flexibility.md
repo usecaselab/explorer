@@ -11,7 +11,9 @@ Home energy devices like batteries, smart thermostats, EV chargers, and water he
 
 ## Solution
 
-A settlement layer that meters the load reduction each device delivers, verifies it against the home's smart meter baseline, and pays the device owner automatically. By pooling many small contributions into one verifiable record, it makes it practical for aggregators to enroll millions of household devices and compensate each one for the flexibility it provides.
+A settlement layer that meters the load each device shifts or sheds during a grid event, checks it against the home's smart meter baseline, and pays the owner automatically against that verified record. Because the metering rule and the payment are the same onchain logic, an aggregator can pool millions of tiny household contributions into one auditable record and still compensate each device for exactly what it delivered, rather than averaging everyone into a flat credit that hides who actually showed up.
+
+The smallest viable version is one device class in one utility's flexibility program: home batteries responding to a published dispatch signal, with each event's baseline, measured reduction, and per-kWh price written onchain and the owner paid in stablecoin at settlement. Thermostats, EV chargers, and water heaters can join once the metering format is proven on the simplest, most measurable load.
 
 ## Why Ethereum
 
